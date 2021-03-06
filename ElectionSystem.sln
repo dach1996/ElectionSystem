@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.WebApi", "Dach.ElectionSystem.WebApi\Dach.ElectionSystem.WebApi.csproj", "{F7420FC1-DC12-4383-BA3E-5901AAB5F2C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Repository", "Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj", "{55A795C6-F586-4935-9ACE-D45035DE0E2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Services", "Dach.ElectionSystem.Services\Dach.ElectionSystem.Services.csproj", "{BF9A2AFC-2259-4691-8A09-6A51790A2885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Utils", "Dach.ElectionSystem.Utils\Dach.ElectionSystem.Utils.csproj", "{762E3382-84E0-4123-9899-2EB29E092972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Models", "Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj", "{C88F2754-711F-4673-8482-C79657765038}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7420FC1-DC12-4383-BA3E-5901AAB5F2C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7420FC1-DC12-4383-BA3E-5901AAB5F2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7420FC1-DC12-4383-BA3E-5901AAB5F2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7420FC1-DC12-4383-BA3E-5901AAB5F2C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A795C6-F586-4935-9ACE-D45035DE0E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A795C6-F586-4935-9ACE-D45035DE0E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A795C6-F586-4935-9ACE-D45035DE0E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A795C6-F586-4935-9ACE-D45035DE0E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9A2AFC-2259-4691-8A09-6A51790A2885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9A2AFC-2259-4691-8A09-6A51790A2885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9A2AFC-2259-4691-8A09-6A51790A2885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9A2AFC-2259-4691-8A09-6A51790A2885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{762E3382-84E0-4123-9899-2EB29E092972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762E3382-84E0-4123-9899-2EB29E092972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762E3382-84E0-4123-9899-2EB29E092972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762E3382-84E0-4123-9899-2EB29E092972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C88F2754-711F-4673-8482-C79657765038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C88F2754-711F-4673-8482-C79657765038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C88F2754-711F-4673-8482-C79657765038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C88F2754-711F-4673-8482-C79657765038}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5ED03EF4-3E7A-4824-9CB9-34C85679E03E}
+	EndGlobalSection
+EndGlobal
