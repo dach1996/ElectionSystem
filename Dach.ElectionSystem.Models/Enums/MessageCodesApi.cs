@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Dach.ElectionSystem.Models.Enums
@@ -12,11 +13,13 @@ namespace Dach.ElectionSystem.Models.Enums
         /// <summary>
         /// Transacción exitosa
         /// </summary>
-        Ok = 0,
+       [EnumMember(Value = "Requiere Token")]
+        WithOutToken = 100,
 
         /// <summary>
         /// Error del sistema
         /// </summary>
-        SystemError = 60,
+        [EnumMember(Value = "Token Incorrecto")]
+        InvalidToken = 101
     }
 }

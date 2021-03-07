@@ -9,24 +9,22 @@ namespace Dach.ElectionSystem.Models.ResponseBase
     public class ApiControllerBase : ControllerBase
     {
         
-        protected IActionResult Success<T>(T data)
+        protected  IActionResult Success<T>(T data)
         {
-
             return Ok(new GenericResponse<T>
             {
+
                 Code = 200,
                 ResponseType = nameof(ResponseType.Data),
-                Message ="ok",
+                Message = "Operación realizada con Éxito",
                 Content = data
-            });
+            });;
         }
-
         protected new IActionResult NotFound()
         {
-            var message = (int)MessageCodesApi.SystemError;
-            return Ok(new GenericResponse<string>
+            return NotFound(new GenericResponse<string>
             {
-                Code = 3,
+                Code = 404,
                 Message ="No encontrado"
             });
         }
@@ -37,17 +35,18 @@ namespace Dach.ElectionSystem.Models.ResponseBase
             return BadRequest(new GenericResponse<T>
             {
                 Code = 2,
-                Message ="errors",
+                Message ="Error al realizar petición",
                 Content = data
             });
         }
 
-        protected IActionResult Error(string message)
+        protected  IActionResult Error(string message)
         {
            return BadRequest(new GenericResponse<string>
             {
-                Code = 1,
-                Message = "Errror",
+                Code = 400,
+                ResponseType = nameof(ResponseType.Error),
+                Message = "Error",
                 Content = message
             });
         }

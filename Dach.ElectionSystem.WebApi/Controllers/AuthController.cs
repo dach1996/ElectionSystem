@@ -1,9 +1,13 @@
 ﻿using Dach.ElectionSystem.Models.Auth;
 using Dach.ElectionSystem.Models.ResponseBase;
+using Dach.ElectionSystem.Services.Logger;
+using Dach.ElectionSystem.Utils.Log;
 using Dach.ElectionSystem.Utils.Segurity.JWT;
+using log4net.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -20,10 +24,12 @@ namespace Dach.ElectionSystem.WebApi.Properties
     public class AuthController : ApiControllerBase
     {
         private readonly IConfiguration _configuration;
+        private readonly ILoggerCustom _logger;
 
-        public AuthController(IConfiguration configuration)
+        public AuthController(IConfiguration configuration, ILoggerCustom logger)
         {
             _configuration = configuration;
+            _logger = logger;
         }
 
         /// <summary>
@@ -35,14 +41,14 @@ namespace Dach.ElectionSystem.WebApi.Properties
         {
             try
             {
-                var secretKey = _configuration.GetValue<string>("ParamsJWT:JWT_SECRET_KEY");
-                var expireTime = _configuration.GetValue<string>("ParamsJWT:JWT_EXPIRE_MINUTES");
-                var token = new TokenHandler().GenerateTokenJwt(requestLogin.Username,secretKey,expireTime);
-                return Success(token);
+                 var secretKey = _configuration.GetValue<string>("ParamsJWT:JWT_SECRET_KEY");
+                 var expireTime = _configuration.GetValue<string>("ParamsJWT:JWT_EXPIRE_MINUTES");
+                 var token = new TokenHandler().GenerateTokenJwt(requestLogin.Username,secretKey,expireTime);
+                 return Success(token);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return Success<string>(await Task.Run(() => { return "HOLA"; }));
+                return Error(ex.Message);
             }
         }
 

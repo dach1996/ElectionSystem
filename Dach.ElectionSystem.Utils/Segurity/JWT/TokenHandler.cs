@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 using System.Linq;
+using Dach.ElectionSystem.Utils.ExceptionGeneric;
+using System.Net;
+using Dach.ElectionSystem.Models.Enums;
 
 namespace Dach.ElectionSystem.Utils.Segurity.JWT
 {
@@ -44,16 +47,17 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
 
         }
 
-        public async Task<bool> ValidateToken(HttpContext context, string secretKey)
+        public void ValidateToken(HttpContext context, string secretKey)
         {
-            var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
             try
             {
+                var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+                if (token == null)
+                    throw new ExeptionCustom(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var key = Encoding.ASCII.GetBytes(secretKey);
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
                 {
-
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     ValidateLifetime = true,
@@ -61,13 +65,14 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
                     LifetimeValidator = this.LifetimeValidator,
                     IssuerSigningKey = new SymmetricSecurityKey(key)
                 }, out SecurityToken validatedToken);
-
-                var jwtToken = (JwtSecurityToken)validatedToken;
-                return true;
             }
-            catch
+            catch (ExeptionCustom)
             {
-                return false;
+                throw;
+            }
+            catch (Exception)
+            {
+                throw new ExeptionCustom(MessageCodesApi.InvalidToken, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
         }
         private bool LifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken securityToken, TokenValidationParameters validationParameters)

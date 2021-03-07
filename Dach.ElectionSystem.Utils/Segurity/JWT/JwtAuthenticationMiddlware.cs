@@ -22,35 +22,23 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
 
         public async Task Invoke(HttpContext context)
         {
-
             if (IsUrlAllow(context))
-             await _next.Invoke(context);
-            if (!IsUrlAllow(context))
             {
-                await new TokenHandler().ValidateToken(context, "clave-secreta-api");
                 await _next.Invoke(context);
             }
             else
             {
-                throw new Exception("Error");
-            }    
+                new TokenHandler().ValidateToken(context, "clave-secreta-api");
+                await _next.Invoke(context);
+            }
         }
         private bool IsUrlAllow(HttpContext request)
         {
             var baseUrl = $"/api";
-            return 
+            return
                 request.Request.Path.StartsWithSegments("/swagger") ||
-                request.Request.Path.StartsWithSegments(baseUrl+"/Auth");
+                request.Request.Path.StartsWithSegments(baseUrl + "/Auth");
         }
 
-    }
-
-    public static class JwtMiddlware
-    {
-        public static IApplicationBuilder JwtAuthenticationMiddlware(this IApplicationBuilder app)
-        {
-            app.UseMiddleware<JwtAuthenticationMiddlware>();
-            return app;
-        }
     }
 }

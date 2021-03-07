@@ -10,22 +10,29 @@ using System.ServiceModel;
 using Dach.ElectionSystem.Models.ResponseBase;
 using Dach.ElectionSystem.Models.Enums;
 using Microsoft.AspNetCore.Builder;
+using Dach.ElectionSystem.Utils.ExceptionGeneric;
+using Dach.ElectionSystem.Utils.Extension;
 
 namespace Common.WebApi.Middleware
 {
     /// <summary>
-    /// Exception manager
+    /// Clase manejadora de expeciones MiddleWare
     /// </summary>
     public class ExceptionHandlingMiddleware
     {
-        private readonly ILogger<ExceptionHandlingMiddleware> _logger;
-        private readonly RequestDelegate _next;
+        #region Constructor
 
-        public ExceptionHandlingMiddleware( RequestDelegate next)
+        private readonly RequestDelegate _next;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public ExceptionHandlingMiddleware(RequestDelegate next)
         {
             _next = next;
         }
+        #endregion
 
+        #region Metodos
         /// <summary>
         /// Invoke
         /// </summary>
@@ -37,32 +44,32 @@ namespace Common.WebApi.Middleware
             {
                 await _next(httpContext).ConfigureAwait(false);
             }
-            catch (Exception customEx)
+            catch (ExeptionCustom customEx)
             {
-                 await HandleExceptionAsync(httpContext,"Errors"+customEx.Message);
+                await HandleExceptionAsync(httpContext, customEx);
             }
         }
 
-       private static Task HandleExceptionAsync(HttpContext context, string message, string source = null)
+        /// <summary>
+        /// Controlador de errores Http
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="context"></param>
+        /// <param name="message"></param>
+        /// <param name="responseType"></param>
+        /// <returns></returns>
+        private static Task HandleExceptionAsync(HttpContext context, ExeptionCustom customEx)
         {
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)HttpStatusCode.OK;
-
+            context.Response.StatusCode = (int)customEx.CodeHttp;
             var response = new GenericResponse<string>
             {
-                Code = 200,
-                ResponseType = nameof(ResponseType.Error),
-                Message = message
+                Code = (int)customEx.MessageCodesApi,
+                ResponseType = customEx.ResponseType.ToString(),
+                Message = customEx.MessageCodesApi.GetEnumMember()
             };
             return context.Response.WriteAsync(response.ToString());
         }
-    }
-    public static class ExceptionMiddlware
-    {
-        public static IApplicationBuilder ExeptionMiddlware(this IApplicationBuilder app)
-        {
-            app.UseMiddleware<ExceptionHandlingMiddleware>();
-            return app;
-        }
+        #endregion
     }
 }
