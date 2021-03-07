@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dach.ElectionSystem.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Dach.ElectionSystem.WebApi.Properties.AuthController">
+            <summary>
+            Controlador Autorizador mediante Token JWT
+            </summary>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Properties.AuthController.Post(Dach.ElectionSystem.Models.Auth.RequestLogin)">
+            <summary>
+            Generar token mediante credenciales
+            </summary>
+        </member>
+    </members>
+</doc>

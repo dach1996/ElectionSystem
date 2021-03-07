@@ -1,11 +1,28 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
+	<PropertyGroup>
+		<DocumentationFile>ElectionSystem.xml</DocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj" />
+	  <ProjectReference Include="..\Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj" />
+	  <ProjectReference Include="..\Dach.ElectionSystem.Services\Dach.ElectionSystem.Services.csproj" />
+	  <ProjectReference Include="..\Dach.ElectionSystem.Utils\Dach.ElectionSystem.Utils.csproj" />
+	</ItemGroup>
 
+	<ItemGroup>
+		<None Update="ElectionSystem.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 </Project>
