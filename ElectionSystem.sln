@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.WebApi", "Dach.ElectionSystem.WebApi\Dach.ElectionSystem.WebApi.csproj", "{F7420FC1-DC12-4383-BA3E-5901AAB5F2C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.WebApi", "Dach.ElectionSystem.WebApi\Dach.ElectionSystem.WebApi.csproj", "{F7420FC1-DC12-4383-BA3E-5901AAB5F2C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Repository", "Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj", "{55A795C6-F586-4935-9ACE-D45035DE0E2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.Repository", "Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj", "{55A795C6-F586-4935-9ACE-D45035DE0E2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Services", "Dach.ElectionSystem.Services\Dach.ElectionSystem.Services.csproj", "{BF9A2AFC-2259-4691-8A09-6A51790A2885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.Services", "Dach.ElectionSystem.Services\Dach.ElectionSystem.Services.csproj", "{BF9A2AFC-2259-4691-8A09-6A51790A2885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Utils", "Dach.ElectionSystem.Utils\Dach.ElectionSystem.Utils.csproj", "{762E3382-84E0-4123-9899-2EB29E092972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.Utils", "Dach.ElectionSystem.Utils\Dach.ElectionSystem.Utils.csproj", "{762E3382-84E0-4123-9899-2EB29E092972}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Models", "Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj", "{C88F2754-711F-4673-8482-C79657765038}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.Models", "Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj", "{C88F2754-711F-4673-8482-C79657765038}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

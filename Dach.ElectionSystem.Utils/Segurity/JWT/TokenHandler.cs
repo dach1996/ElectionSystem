@@ -39,7 +39,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
                 var jwtTokenString = tokenHandler.WriteToken(jwtSecurityToken);
                 return jwtTokenString;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //Logger.WL("GenerateTokenJwt", ex.Message, LogLevel.Error);
                 return String.Empty;
