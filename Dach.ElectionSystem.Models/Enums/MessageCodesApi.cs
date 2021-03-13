@@ -20,6 +20,12 @@ namespace Dach.ElectionSystem.Models.Enums
         /// Error del sistema
         /// </summary>
         [EnumMember(Value = "Token Incorrecto")]
-        InvalidToken = 101
+        InvalidToken = 101,
+
+      /// <summary>
+       /// Transacción exitosa
+       /// </summary>
+       [EnumMember(Value = "Error Inesperado")]
+        ErrorGeneric = 600
     }
 }

@@ -41,28 +41,26 @@ namespace Common.WebApi.Middleware
         public async Task InvokeAsync(HttpContext httpContext)
         {
             try
-             {
+            {
                 await _next(httpContext).ConfigureAwait(false);
             }
             catch (ExeptionCustom customEx)
             {
-                await HandleExceptionAsync(httpContext, customEx);
+                await HandleExceptionCustomAsync(httpContext, customEx);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                Console.Write(ex.Message);
+                await HandleExceptionAsync(httpContext, exception);
             }
         }
 
         /// <summary>
-        /// Controlador de errores Http
+        /// Controlador Genérico 
         /// </summary>
-        /// <param name="code"></param>
         /// <param name="context"></param>
-        /// <param name="message"></param>
-        /// <param name="responseType"></param>
+        /// <param name="customEx"></param>
         /// <returns></returns>
-        private static Task HandleExceptionAsync(HttpContext context, ExeptionCustom customEx)
+        private static Task HandleExceptionCustomAsync(HttpContext context, ExeptionCustom customEx)
         {
 
             context.Response.ContentType = "application/json";
@@ -75,7 +73,20 @@ namespace Common.WebApi.Middleware
             };
             return context.Response.WriteAsync(response.ToString());
         }
+        private static Task HandleExceptionAsync(HttpContext context, Exception exception)
+        {
 
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            var response = new GenericResponse<string>
+            {
+                Code = (int)MessageCodesApi.ErrorGeneric,
+                ResponseType = ResponseType.Error.ToString(),
+                Message = exception.Message,
+                Content = null
+            };
+            return context.Response.WriteAsync(response.ToString());
+        }
         #endregion
     }
 }

@@ -1,28 +1,38 @@
-﻿using Dach.ElectionSystem.Models.Auth;
+﻿
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
 using System.Linq;
-using Dach.ElectionSystem.Utils.ExceptionGeneric;
 using System.Net;
 using Dach.ElectionSystem.Models.Enums;
+using Dach.ElectionSystem.Models.ExceptionGeneric;
+using Dach.ElectionSystem.Services.TokenJWT;
+using Microsoft.Extensions.Configuration;
 
 namespace Dach.ElectionSystem.Utils.Segurity.JWT
 {
-    public class TokenHandler
+    public class TokenService : ITokenService
     {
-        public string GenerateTokenJwt(string username, string key, string minutsToExpired)
+        #region Contructor
+        public IConfiguration _configuration { get; }
+        private string secretKey { get; set; }
+        private string expireTime { get; set; }
+        public TokenService(IConfiguration configuraton)
+        {
+            _configuration = configuraton;
+            secretKey = _configuration.GetValue<string>("ParamsJWT:JWT_SECRET_KEY");
+            expireTime = _configuration.GetValue<string>("ParamsJWT:JWT_EXPIRE_MINUTES");
+        }
+        #endregion
+
+        public string GenerateTokenJwt(string username)
         {
             try
             {
-
-                var securityKey = new SymmetricSecurityKey(Encoding.Default.GetBytes(key));
+                var securityKey = new SymmetricSecurityKey(Encoding.Default.GetBytes(secretKey));
                 var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
                 // Crea claims
@@ -33,7 +43,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
                 var jwtSecurityToken = tokenHandler.CreateJwtSecurityToken(
                     subject: claimsIdentity,
                     notBefore: DateTime.UtcNow,
-                    expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(minutsToExpired)),
+                    expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(expireTime)),
                     signingCredentials: signingCredentials);
 
                 var jwtTokenString = tokenHandler.WriteToken(jwtSecurityToken);
@@ -47,7 +57,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
 
         }
 
-        public void ValidateToken(HttpContext context, string secretKey)
+        public void ValidateToken(HttpContext context)
         {
             try
             {

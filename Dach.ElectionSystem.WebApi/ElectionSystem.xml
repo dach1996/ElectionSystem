@@ -9,7 +9,7 @@
             Controlador Autorizador mediante Token JWT
             </summary>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Properties.AuthController.Post(Dach.ElectionSystem.Models.Auth.RequestLogin)">
+        <member name="M:Dach.ElectionSystem.WebApi.Properties.AuthController.Auth(Dach.ElectionSystem.Models.Auth.LoginRequest)">
             <summary>
             Generar token mediante credenciales
             </summary>

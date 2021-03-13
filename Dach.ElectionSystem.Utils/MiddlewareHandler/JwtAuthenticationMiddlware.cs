@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Dach.ElectionSystem.Services.TokenJWT;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -14,12 +15,17 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
 {
     public class JwtAuthenticationMiddlware
     {
+
         private readonly RequestDelegate _next;
-        public JwtAuthenticationMiddlware(RequestDelegate next)
+
+        public ITokenService _tokenService { get; }
+
+        public JwtAuthenticationMiddlware(RequestDelegate next, ITokenService tokenService)
         {
             _next = next;
+            _tokenService = tokenService;
         }
-
+        
         public async Task Invoke(HttpContext context)
         {
             if (IsUrlAllow(context))
@@ -28,7 +34,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
             }
             else
             {
-                new TokenHandler().ValidateToken(context, "clave-secreta-api");
+                _tokenService.ValidateToken(context);
                 await _next.Invoke(context);
             }
         }

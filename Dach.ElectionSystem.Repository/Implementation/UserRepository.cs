@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Repository.Implementation
 {
-    public class UserRepository : GenericRepository<UserDbSet>, IUsuarioRepository
+    public class UserRepository : GenericRepository<User>, IUsuarioRepository
     {
         public UserRepository(IUnitOfWork unitOfWork) : base(unitOfWork) {}
     }

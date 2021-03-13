@@ -12,7 +12,7 @@ namespace Dach.ElectionSystem.Repository.DBContext
     public class WebApiDbContext : DbContext
     {
         
-        public DbSet<UserDbSet> Usuarios { get; set; }
+        public DbSet<User> Usuarios { get; set; }
 
         public WebApiDbContext(DbContextOptions<WebApiDbContext> options) : base(options) { }
 

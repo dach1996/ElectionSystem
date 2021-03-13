@@ -14,9 +14,8 @@ namespace Dach.ElectionSystem.Repository.Intrastructure
     public static class InitRepository
     {
         public static void AddSingletonRepository(this IServiceCollection services) {
-
+            services.AddTransient<IUsuarioRepository, UserRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork.UnitOfWork>();
-            services.AddTransient<IUsuarioRepository,UserRepository> ();
         }
     }
 }
