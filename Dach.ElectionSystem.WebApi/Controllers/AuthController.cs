@@ -25,8 +25,10 @@ namespace Dach.ElectionSystem.WebApi.Properties
     {
         private readonly IConfiguration _configuration;
         private readonly ILoggerCustom _logger;
+        private readonly TokenHandler _tokenHandler;
 
-        public AuthController(IConfiguration configuration, ILoggerCustom logger)
+        public AuthController(IConfiguration configuration, ILoggerCustom logger
+          )
         {
             _configuration = configuration;
             _logger = logger;
@@ -39,17 +41,20 @@ namespace Dach.ElectionSystem.WebApi.Properties
         [HttpPost]
         public async Task<IActionResult> Post(RequestLogin requestLogin)
         {
-            try
+            return await Task<IActionResult>.Run(() =>
             {
-                 var secretKey = _configuration.GetValue<string>("ParamsJWT:JWT_SECRET_KEY");
-                 var expireTime = _configuration.GetValue<string>("ParamsJWT:JWT_EXPIRE_MINUTES");
-                 var token = new TokenHandler().GenerateTokenJwt(requestLogin.Username,secretKey,expireTime);
-                 return Success(token);
-            }
-            catch (Exception ex)
-            {
-                return Error(ex.Message);
-            }
+                try
+                {
+                    var secretKey = _configuration.GetValue<string>("ParamsJWT:JWT_SECRET_KEY");
+                    var expireTime = _configuration.GetValue<string>("ParamsJWT:JWT_EXPIRE_MINUTES");
+                    var token = new TokenHandler().GenerateTokenJwt(requestLogin.Username, secretKey, expireTime);
+                    return Success(token);
+                }
+                catch (Exception ex)
+                {
+                    return Error(ex.Message);
+                }
+            });
         }
 
     }

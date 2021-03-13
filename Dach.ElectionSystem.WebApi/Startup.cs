@@ -1,4 +1,6 @@
 using Common.WebApi.Middleware;
+using Dach.ElectionSystem.Repository.DBContext;
+using Dach.ElectionSystem.Repository.Intrastructure;
 using Dach.ElectionSystem.Services.Logger;
 using Dach.ElectionSystem.Utils.Log;
 using Dach.ElectionSystem.Utils.MiddlewareHandler;
@@ -9,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -44,8 +47,10 @@ namespace Dach.ElectionSystem.WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Elecciones", Version = "v1" });
                 c.IncludeXmlComments("ElectionSystem.xml");
             });
+            services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=DESKTOP-M167ESR ;Initial Catalog=ElectionSystemDb;Integrated Security=true; User Id=sa;Password=dach1996;"));
+            services.AddSingletonRepository();
             services.AddSingleton<ILoggerCustom,LoggerCustom>();
-        }
+           }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
@@ -57,9 +62,7 @@ namespace Dach.ElectionSystem.WebApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dach.ElectionSystem.WebApi v1"));
                
             }
-            
             app.UseHttpsRedirection();
-            
             app.UseRouting();
             app.SetCustomMiddleWare();
             app.UseEndpoints(endpoints =>

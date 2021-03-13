@@ -41,12 +41,16 @@ namespace Common.WebApi.Middleware
         public async Task InvokeAsync(HttpContext httpContext)
         {
             try
-            {
+             {
                 await _next(httpContext).ConfigureAwait(false);
             }
             catch (ExeptionCustom customEx)
             {
                 await HandleExceptionAsync(httpContext, customEx);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
             }
         }
 
@@ -60,6 +64,7 @@ namespace Common.WebApi.Middleware
         /// <returns></returns>
         private static Task HandleExceptionAsync(HttpContext context, ExeptionCustom customEx)
         {
+
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)customEx.CodeHttp;
             var response = new GenericResponse<string>
@@ -70,6 +75,7 @@ namespace Common.WebApi.Middleware
             };
             return context.Response.WriteAsync(response.ToString());
         }
+
         #endregion
     }
 }

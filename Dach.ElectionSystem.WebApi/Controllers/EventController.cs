@@ -1,4 +1,7 @@
-﻿using Dach.ElectionSystem.Models.ResponseBase;
+﻿using Dach.ElectionSystem.Models.Persitence;
+using Dach.ElectionSystem.Models.ResponseBase;
+using Dach.ElectionSystem.Repository.DBContext;
+using Dach.ElectionSystem.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,10 +16,17 @@ namespace Dach.ElectionSystem.WebApi.Controllers
     [ApiController]
     public class EventController : ApiControllerBase
     {
+        private IUsuarioRepository _userRepository;
+        public EventController(IUsuarioRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
         // GET: api/<EventController>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+
+          var a =  await _userRepository.CreateAsync(new UserDbSet { password= "",usuario=""});
             return  Success( new string[] { "value1", "value2" });
         }
 

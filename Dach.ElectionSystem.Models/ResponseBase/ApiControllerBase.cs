@@ -46,8 +46,8 @@ namespace Dach.ElectionSystem.Models.ResponseBase
             {
                 Code = 400,
                 ResponseType = nameof(ResponseType.Error),
-                Message = "Error",
-                Content = message
+                Message = message,
+                Content = null
             });
         }
     }
