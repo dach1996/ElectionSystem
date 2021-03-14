@@ -59,8 +59,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
 
         public void ValidateToken(HttpContext context)
         {
-            try
-            {
+            try { 
                 var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
                 if (token == null)
                     throw new ExeptionCustom(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
@@ -76,11 +75,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
                     IssuerSigningKey = new SymmetricSecurityKey(key)
                 }, out SecurityToken validatedToken);
             }
-            catch (ExeptionCustom)
-            {
-                throw;
-            }
-            catch (Exception)
+             catch (ArgumentException)
             {
                 throw new ExeptionCustom(MessageCodesApi.InvalidToken, ResponseType.Error, HttpStatusCode.Unauthorized);
             }

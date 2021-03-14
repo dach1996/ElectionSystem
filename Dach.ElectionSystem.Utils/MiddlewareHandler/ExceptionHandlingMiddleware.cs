@@ -10,8 +10,8 @@ using System.ServiceModel;
 using Dach.ElectionSystem.Models.ResponseBase;
 using Dach.ElectionSystem.Models.Enums;
 using Microsoft.AspNetCore.Builder;
-using Dach.ElectionSystem.Utils.ExceptionGeneric;
 using Dach.ElectionSystem.Utils.Extension;
+using Dach.ElectionSystem.Models.ExceptionGeneric;
 
 namespace Common.WebApi.Middleware
 {
