@@ -62,7 +62,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
             try { 
                 var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
                 if (token == null)
-                    throw new ExeptionCustom(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
+                    throw new ExceptionCustom(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var key = Encoding.ASCII.GetBytes(secretKey);
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
@@ -77,7 +77,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
             }
              catch (ArgumentException)
             {
-                throw new ExeptionCustom(MessageCodesApi.InvalidToken, ResponseType.Error, HttpStatusCode.Unauthorized);
+                throw new ExceptionCustom(MessageCodesApi.InvalidToken, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
         }
         private bool LifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken securityToken, TokenValidationParameters validationParameters)

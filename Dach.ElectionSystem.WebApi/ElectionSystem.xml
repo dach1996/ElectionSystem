@@ -14,5 +14,19 @@
             Generar token mediante credenciales
             </summary>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.Post(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest)">
+            <summary>
+            Crear nuevo evento
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.Delete(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest)">
+            <summary>
+            Eliminar Evento
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

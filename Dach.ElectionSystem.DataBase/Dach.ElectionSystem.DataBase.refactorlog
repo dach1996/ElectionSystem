@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="2610e2c1-06ec-408b-8788-02bec9e61144" ChangeDateTime="03/14/2021 18:29:20">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_EVENTO " />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="49ce7d16-3506-42ce-8cb1-466eeb59548e" ChangeDateTime="03/14/2021 18:30:42">
+    <Property Name="ElementName" Value="[dbo].[Table1].[ID_EVENTO]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NOMBRE_evento" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6501ee9f-e5fa-4f05-b833-8c671bfb310d" ChangeDateTime="03/14/2021 18:30:47">
+    <Property Name="ElementName" Value="[dbo].[Table1].[NOMBRE_evento]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NOMBRE_EVENTO" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="349760cb-bbc7-4e4e-8816-102182b1e747" ChangeDateTime="03/14/2021 18:35:27">
+    <Property Name="ElementName" Value="[dbo].[Table1].[NUMERO_MAX_PERSONAS]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NUM_MAX_PERSONAS" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="caaaf06b-2160-4438-b507-5d746d73f258" ChangeDateTime="03/14/2021 18:36:01">
+    <Property Name="ElementName" Value="[dbo].[Table1].[DESCRIPCIÓN]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DESCRIPCIÓN_EVENTO" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5f7a2ff1-e6cf-49d3-bb5d-b9ad52d1f504" ChangeDateTime="03/14/2021 18:36:02">
+    <Property Name="ElementName" Value="[dbo].[Table1].[MAX_PERSONAS]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MAX_PERSONAS_EVENTO" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7e4e0a0d-57c2-487d-963c-c5ed5a3af6bf" ChangeDateTime="03/14/2021 18:46:15">
+    <Property Name="ElementName" Value="[dbo].[EVENTOS].[DESCRIPCIÓN_EVENTO]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[EVENTOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DESCRIPCION_EVENTO" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5cacabef-a8b4-4caa-9e2d-70b8837072fc" ChangeDateTime="03/14/2021 18:46:20">
+    <Property Name="ElementName" Value="[dbo].[EVENTOS].[NUM_MAX_PERSONAS]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[EVENTOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NUM_MAX_PERSONAS_EVENTO" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="388a604f-88aa-48db-ac32-4101bce777a7" ChangeDateTime="03/14/2021 18:46:27">
+    <Property Name="ElementName" Value="[dbo].[EVENTOS].[NUM_MAX_CANDIDATOS]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[EVENTOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NUM_MAX_CANDIDATOS_EVENTO" />
+  </Operation>
+</Operations>

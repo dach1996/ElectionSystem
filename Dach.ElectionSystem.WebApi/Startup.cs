@@ -17,6 +17,15 @@ using Autofac;
 using Dach.ElectionSystem.Services.TokenJWT;
 using Dach.ElectionSystem.Utils.Extension;
 using System.Collections.Generic;
+using Dach.ElectionSystem.BusinessLogic.Auth;
+using Dach.ElectionSystem.BusinessLogic.Event;
+using Dach.ElectionSystem.Models.Auth;
+using Dach.ElectionSystem.Models.Response.Auth;
+using Dach.ElectionSystem.Models.Response.Event;
+using Dach.ElectionSystem.Models.Request.Event;
+using AutoMapper;
+using Dach.ElectionSystem.Utils.Mapper;
+using Dach.ElectionSystem.Utils.Mediator;
 
 namespace Dach.ElectionSystem.WebApi
 {
@@ -46,7 +55,9 @@ namespace Dach.ElectionSystem.WebApi
             services.AddSingleton<ILoggerCustom, LoggerCustom>();
             services.AddSingleton<ITokenService, TokenService>();
             services.ConfigureSwaggerServices(new List<string> { "ElectionSystem.xml" });
-            services.AddMediatR(typeof(Request));
+            services.AddMediatR(typeof(Startup).Assembly);
+            services.AddAutoMapper(typeof(CustomMapperDTO));
+            services.AddIMediaRServices();
 
         }
 

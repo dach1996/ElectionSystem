@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Repository.Interfaces
 {
-    public interface IUsuarioRepository : IGenericRepository<User>
+    public interface IUserRepository : IGenericRepository<User>
     {
     }
 }

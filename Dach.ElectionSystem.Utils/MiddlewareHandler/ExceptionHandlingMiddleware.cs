@@ -44,7 +44,7 @@ namespace Common.WebApi.Middleware
             {
                 await _next(httpContext).ConfigureAwait(false);
             }
-            catch (ExeptionCustom customEx)
+            catch (ExceptionCustom customEx)
             {
                 await HandleExceptionCustomAsync(httpContext, customEx);
             }
@@ -60,7 +60,7 @@ namespace Common.WebApi.Middleware
         /// <param name="context"></param>
         /// <param name="customEx"></param>
         /// <returns></returns>
-        private static Task HandleExceptionCustomAsync(HttpContext context, ExeptionCustom customEx)
+        private static Task HandleExceptionCustomAsync(HttpContext context, ExceptionCustom customEx)
         {
 
             context.Response.ContentType = "application/json";
@@ -82,7 +82,7 @@ namespace Common.WebApi.Middleware
             {
                 Code = (int)MessageCodesApi.ErrorGeneric,
                 ResponseType = ResponseType.Error.ToString(),
-                Message = exception.Message,
+                Message = exception.Message + exception.InnerException?? String.Empty,
                 Content = null
             };
             return context.Response.WriteAsync(response.ToString());

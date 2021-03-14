@@ -16,14 +16,14 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
     {
         private readonly ITokenService _tokenService;
 
-        public AuthHandler(IMediator mediator, IUsuarioRepository usuarioRepository, ITokenService tokenService)
+        public AuthHandler(IMediator mediator, IUserRepository usuarioRepository, ITokenService tokenService)
         {
             _mediator = mediator;
             _usuarioRepository = usuarioRepository;
             _tokenService = tokenService;
         }
         public IMediator _mediator { get; }
-        public IUsuarioRepository _usuarioRepository { get; }
+        public IUserRepository _usuarioRepository { get; }
 
         public async Task<LoginResponse> Handle(LoginRequest request, CancellationToken cancellationToken)
         {

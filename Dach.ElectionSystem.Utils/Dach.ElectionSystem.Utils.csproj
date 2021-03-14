@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="log4net" Version="2.0.12" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
@@ -17,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dach.ElectionSystem.BusinessLogic\Dach.ElectionSystem.BusinessLogic.csproj" />
     <ProjectReference Include="..\Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj" />
     <ProjectReference Include="..\Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj" />
     <ProjectReference Include="..\Dach.ElectionSystem.Services\Dach.ElectionSystem.Services.csproj" />

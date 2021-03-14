@@ -9,8 +9,7 @@
     <ProjectGuid>{7d782192-0ce5-472f-b6d8-aac054a5d2b8}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
-    <RootPath>
-    </RootPath>
+    <RootPath />
     <RootNamespace>Dach.ElectionSystem.DataBase</RootNamespace>
     <AssemblyName>Dach.ElectionSystem.DataBase</AssemblyName>
     <ModelCollation>3082,CI</ModelCollation>
@@ -50,7 +49,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
-    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
     <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
@@ -63,5 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\USUARIOS.sql" />
+    <Build Include="dbo\Tables\EVENTOS.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Dach.ElectionSystem.DataBase.refactorlog" />
   </ItemGroup>
 </Project>

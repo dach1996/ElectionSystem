@@ -53,8 +53,8 @@ namespace Dach.ElectionSystem.Repository.Implementation
 
         public async Task<bool> CreateAsync(T entity)
         {
+            
             bool created = false;
-
             try
             {
                 var save = await _unitOfWork.Context.Set<T>().AddAsync(entity);
@@ -68,6 +68,30 @@ namespace Dach.ElectionSystem.Repository.Implementation
                 throw;
             }
             return created;
+        }
+
+        public async Task<bool> DeleteByIdAsync(int Id)
+        {
+            bool remove = false;
+            var getEntity = await this.GetByIdAsync(Id);
+            try
+            {
+                var save = _unitOfWork.Context.Set<T>().Remove(getEntity);
+
+                if (save != null)
+                    remove = true;
+                _unitOfWork.Context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return remove;
+        }
+
+        public async Task<T> GetByIdAsync(int Id)
+        {
+            return await _unitOfWork.Context.Set<T>().FindAsync(Id = Id);
         }
     }
 }

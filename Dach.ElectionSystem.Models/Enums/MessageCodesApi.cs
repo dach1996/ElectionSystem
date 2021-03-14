@@ -22,10 +22,33 @@ namespace Dach.ElectionSystem.Models.Enums
         [EnumMember(Value = "Token Incorrecto")]
         InvalidToken = 101,
 
-      /// <summary>
-       /// Transacción exitosa
-       /// </summary>
-       [EnumMember(Value = "Error Inesperado")]
+        /// <summary>
+        /// Error del sistema
+        /// </summary>
+        [EnumMember(Value = "No se pudo crear registro")]
+        NotCreateRecord = 300,
+        /// <summary>
+        /// Error del sistema
+        /// </summary>
+        [EnumMember(Value = "No se pudo encontrar registro")]
+        NotFindRecord = 301,
+
+        /// <summary>
+        /// Error del sistema
+        /// </summary>
+        [EnumMember(Value = "No se pudo Actualizar registro")]
+        NotUpdateRecord = 302,
+
+        /// <summary>
+        /// Error del sistema
+        /// </summary>
+        [EnumMember(Value = "No se pudo Eliminar registro")]
+        NotDeleteRecord = 303,
+
+        /// <summary>
+        /// Transacción exitosa
+        /// </summary>
+        [EnumMember(Value = "Error Inesperado")]
         ErrorGeneric = 600
     }
 }

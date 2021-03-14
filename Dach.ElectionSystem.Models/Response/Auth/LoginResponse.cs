@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Models.Response.Auth
 {
-    public class LoginResponse
+    public class LoginResponse  
     {
         public string Token { get; set; }
     }

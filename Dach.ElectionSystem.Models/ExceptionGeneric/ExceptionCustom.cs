@@ -10,7 +10,7 @@ namespace Dach.ElectionSystem.Models.ExceptionGeneric
     /// Clase personalizada Error
     /// </summary>
    [Serializable]
-    public class ExeptionCustom : Exception
+    public class ExceptionCustom : Exception
     {
         /// <summary>
         /// Código HTTP que se debe responder
@@ -33,7 +33,7 @@ namespace Dach.ElectionSystem.Models.ExceptionGeneric
         /// <param name="codeHttp">Código de respuesta</param>
         /// <param name="messageCustom">Mensaje de respuesta</param>
         /// <param name="responseType">Tipo de respuesta</param>
-        public ExeptionCustom(MessageCodesApi messageCodesApi,  ResponseType responseType, HttpStatusCode codeHttp) :base()
+        public ExceptionCustom(MessageCodesApi messageCodesApi,  ResponseType responseType, HttpStatusCode codeHttp) :base()
         {
             CodeHttp = codeHttp;
             ResponseType = responseType;

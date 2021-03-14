@@ -10,9 +10,11 @@ namespace Dach.ElectionSystem.Repository.Interfaces
     public interface IGenericRepository<T> where T : class
     {
         Task<IEnumerable<T>> GetAsync();
+        Task<T> GetByIdAsync(int Id);
         Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> whereCondition = null,
                            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                            string includeProperties = "");
         Task<bool> CreateAsync(T entity);
+        Task<bool> DeleteByIdAsync(int Id);
     }
 }

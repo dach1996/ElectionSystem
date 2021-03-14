@@ -1,5 +1,7 @@
 ﻿using Dach.ElectionSystem.Models.Auth;
 using Dach.ElectionSystem.Models.Persitence;
+using Dach.ElectionSystem.Models.Request.Event;
+using Dach.ElectionSystem.Models.Response.Event;
 using Dach.ElectionSystem.Models.ResponseBase;
 using Dach.ElectionSystem.Repository.DBContext;
 using Dach.ElectionSystem.Repository.Interfaces;
@@ -18,46 +20,39 @@ namespace Dach.ElectionSystem.WebApi.Controllers
     [ApiController]
     public class EventController : ApiControllerBase
     {
-        private readonly IUsuarioRepository _userRepository;
-        private readonly IMediator mediator;
-
-        public EventController(IUsuarioRepository userRepository, IMediator mediator)
+        #region Constructor
+        private readonly IUserRepository _userRepository;
+        private readonly IMediator _mediator;
+        public EventController(IUserRepository userRepository, IMediator mediator)
         {
             _userRepository = userRepository;
-            this.mediator = mediator;
+            _mediator = mediator;
         }
-        // GET: api/<EventController>
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var a = await  mediator.Send(new LoginRequest() { Username="3", Password="2"});
+        #endregion
 
-            return  Success( new string[] { "value1", "value2" });
-        }
-
-        // GET api/<EventController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<EventController>
+        #region Request
+        /// <summary>
+        /// Crear nuevo evento
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        [ProducesResponseType(200, Type = typeof(EventCreateResponse))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        public async Task<IActionResult> Post([FromBody] EventCreateRequest request) => Success(await _mediator.Send(request));
 
-        // PUT api/<EventController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        /// <summary>
+        /// Eliminar Evento
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [ProducesResponseType(200, Type = typeof(EventDeleteResponse))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        public async Task<IActionResult> Delete([FromQuery] EventDeleteRequest request) => Success(await _mediator.Send(request));
+        #endregion
 
-        // DELETE api/<EventController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
