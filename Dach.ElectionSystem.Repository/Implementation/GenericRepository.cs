@@ -91,7 +91,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
 
         public async Task<T> GetByIdAsync(int Id)
         {
-            return await _unitOfWork.Context.Set<T>().FindAsync(Id = Id);
+            return await _unitOfWork.Context.Set<T>().FindAsync(Id);
         }
     }
 }

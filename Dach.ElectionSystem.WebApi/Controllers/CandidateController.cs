@@ -1,0 +1,35 @@
+﻿using Dach.ElectionSystem.Models.ResponseBase;
+using Dach.ElectionSystem.Services.Logger;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace Dach.ElectionSystem.WebApi.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CandidateController : ApiControllerBase
+    {
+        private readonly ILoggerCustom _logger;
+        private readonly IMediator _mediator;
+        public CandidateController(ILoggerCustom logger, IMediator mediator
+          )
+        {
+            _logger = logger;
+            _mediator = mediator;
+        }
+        // GET: api/<CandidateController>
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+      
+    }
+}

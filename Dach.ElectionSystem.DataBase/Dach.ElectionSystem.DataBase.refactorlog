@@ -63,4 +63,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="NUM_MAX_CANDIDATOS_EVENTO" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="b176d70a-59f2-4c10-9d6b-69a441627456" ChangeDateTime="03/18/2021 04:48:28">
+    <Property Name="ElementName" Value="[dbo].[CANDIDATOS].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CANDIDATOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_CANDIDATOS" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b705074b-40c8-4d2f-a8f5-9cdaa981f9aa" ChangeDateTime="03/18/2021 04:51:14">
+    <Property Name="ElementName" Value="[dbo].[GRUPOS].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GRUPOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_GRUPO" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="405a3cd4-53dd-4469-b05b-719803443889" ChangeDateTime="03/18/2021 04:51:55">
+    <Property Name="ElementName" Value="[dbo].[GRUPOS].[MAXIMO_CANDIDATOs_GRUPO]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GRUPOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MAXIMO_CANDIDATOS_GRUPO" />
+  </Operation>
 </Operations>

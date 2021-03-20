@@ -1,19 +1,17 @@
-﻿
-using Dach.ElectionSystem.Models.Persitence;
+﻿using Dach.ElectionSystem.Models.Persitences;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Repository.Implementation
 {
-    public class EventRepository : GenericRepository<Event>, IEventRepository
+    public class GroupRepository : GenericRepository<Group>, IGroupRepository
     {
-        public EventRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public GroupRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
     }

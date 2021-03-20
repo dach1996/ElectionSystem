@@ -18,6 +18,7 @@
 	<PropertyGroup>
 		<DocumentationFile>ElectionSystem.xml</DocumentationFile>
 		<NoWarn>$(NoWarn);1591</NoWarn>
+		<UserSecretsId>0754e811-d084-40c1-b564-61af42453c50</UserSecretsId>
 	</PropertyGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Dach.ElectionSystem.BusinessLogic\Dach.ElectionSystem.BusinessLogic.csproj" />
