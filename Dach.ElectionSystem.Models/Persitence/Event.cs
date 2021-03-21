@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Dach.ElectionSystem.Models.Persitence
 {
     [Table(name: "EVENTOS")]
     public class Event
     {
-        [Column("ID_EVENTO")]
+        [Key,Column("ID_EVENTO")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Column("NOMBRE_EVENTO")]
         public string Name { get; set; }

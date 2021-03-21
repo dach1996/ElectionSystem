@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
 using Dach.ElectionSystem.Models.Persitence;
+using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Request.Event;
+using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Models.Response.Event;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Dach.ElectionSystem.Utils.Mapper
 {
@@ -14,9 +12,13 @@ namespace Dach.ElectionSystem.Utils.Mapper
     {
         public CustomMapperDTO()
         {
-            ///Mappers to Event
+            //Mappers to Event
             CreateMap<EventCreateRequest, Event>();
             CreateMap<Event, EventCreateResponse>();
+
+            //Mappers to Candidate
+            CreateMap<CandidateCreateRequest, Candidate>();
+            CreateMap<Candidate, CandidateCreateResponse>();
         }
     }
 }

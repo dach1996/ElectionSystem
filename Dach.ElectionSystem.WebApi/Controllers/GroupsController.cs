@@ -26,12 +26,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         }
         #endregion
 
-        // GET api/<GroupsController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+
 
     }
 }

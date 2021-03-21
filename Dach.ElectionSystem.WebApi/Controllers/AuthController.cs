@@ -2,7 +2,6 @@
 using Dach.ElectionSystem.Models.Response.Auth;
 using Dach.ElectionSystem.Models.ResponseBase;
 using Dach.ElectionSystem.Services.Logger;
-using Dach.ElectionSystem.Utils.Log;
 using Dach.ElectionSystem.Utils.Segurity.JWT;
 using log4net.Core;
 using MediatR;

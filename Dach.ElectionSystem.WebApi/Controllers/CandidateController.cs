@@ -1,5 +1,8 @@
-﻿using Dach.ElectionSystem.Models.ResponseBase;
+﻿using Catel.Data;
+using Dach.ElectionSystem.Models.Request.Candidate;
+using Dach.ElectionSystem.Models.ResponseBase;
 using Dach.ElectionSystem.Services.Logger;
+using Dach.ElectionSystem.Utils.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,6 +16,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ServiceFilter(typeof(ModelFilter))]
     public class CandidateController : ApiControllerBase
     {
         private readonly ILoggerCustom _logger;
@@ -24,11 +28,10 @@ namespace Dach.ElectionSystem.WebApi.Controllers
             _mediator = mediator;
         }
         // GET: api/<CandidateController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        [HttpPost]
+        public async Task<IActionResult> CreateCandidate([FromBody]CandidateCreateRequest candidateCreateRequest) 
+            => Success(await _mediator.Send(candidateCreateRequest));
+ 
 
       
     }

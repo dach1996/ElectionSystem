@@ -25,6 +25,11 @@ namespace Dach.ElectionSystem.Models.Enums
         /// <summary>
         /// Error del sistema
         /// </summary>
+        [EnumMember(Value = "Modelo de datos Invalido")]
+        ModelInvalid = 150,
+        /// <summary>
+        /// Error del sistema
+        /// </summary>
         [EnumMember(Value = "No se pudo crear registro")]
         NotCreateRecord = 300,
         /// <summary>

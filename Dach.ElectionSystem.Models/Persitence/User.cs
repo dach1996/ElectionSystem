@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace Dach.ElectionSystem.Models.Persitence
     [Table(name:"USUARIOS")]
     public class User
     {
-        [Column("ID_USUARIO")]
+        [Key,Column("ID_USUARIO")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Column("NOMBRE_USUARIO")]
         public string UserName { get; set; }

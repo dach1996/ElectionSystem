@@ -26,6 +26,8 @@ using Dach.ElectionSystem.Models.Request.Event;
 using AutoMapper;
 using Dach.ElectionSystem.Utils.Mapper;
 using Dach.ElectionSystem.Utils.Mediator;
+using Dach.ElectionSystem.Utils.Filters;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Dach.ElectionSystem.WebApi
 {
@@ -43,9 +45,9 @@ namespace Dach.ElectionSystem.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=DESKTOP-M167ESR ;Initial Catalog=ElectionSystemDb;Integrated Security=true; User Id=sa;Password=dach1996;"));
+            services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=DESKTOP-6PGT33F;Initial Catalog=ElectionSystem;Integrated Security=true; User Id=sa;Password=dach1996;"));
             services.AddSingletonRepository();
-            services.AddControllers();
+            services.ConfigureController();
 
             services.AddSwaggerGen(c =>
             {
@@ -58,6 +60,7 @@ namespace Dach.ElectionSystem.WebApi
             services.AddMediatR(typeof(Startup).Assembly);
             services.AddAutoMapper(typeof(CustomMapperDTO));
             services.AddIMediaRServices();
+            services.AddScoped<ModelFilter>();
 
         }
 
@@ -72,12 +75,15 @@ namespace Dach.ElectionSystem.WebApi
             }
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dach.ElectionSystem.WebApi v1"));
-            app.UseHttpsRedirection();
-            app.UseRouting();
             app.SetCustomMiddleWare();
+            //app.UseHttpsRedirection();
+            app.UseRouting();
+            
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                
             });
         }
     }

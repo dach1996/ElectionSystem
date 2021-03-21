@@ -1,4 +1,5 @@
 
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dach.ElectionSystem.Models.Persitence
@@ -6,7 +7,9 @@ namespace Dach.ElectionSystem.Models.Persitence
     [Table(name: "CANDIDATOS")]
     public class Candidate
     {
-        [Column("ID_CANDIDATOS")]
+
+        [Key,Column("ID_CANDIDATOS")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Column("IMAGEN_CANDIDATO")]
         public string Image { get; set; }
