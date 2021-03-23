@@ -84,4 +84,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="MAXIMO_CANDIDATOS_GRUPO" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="38fa62fc-219a-4518-a9d4-a214ca613eae" ChangeDateTime="03/21/2021 19:20:50">
+    <Property Name="ElementName" Value="[dbo].[USUARIOS].[NOMBRE_USUARIO]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[USUARIOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NICK_USUARIO" />
+  </Operation>
 </Operations>

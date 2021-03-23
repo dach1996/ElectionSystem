@@ -1,12 +1,15 @@
 ﻿using Dach.ElectionSystem.BusinessLogic.Auth;
 using Dach.ElectionSystem.BusinessLogic.Candidate;
 using Dach.ElectionSystem.BusinessLogic.Event;
+using Dach.ElectionSystem.BusinessLogic.User;
 using Dach.ElectionSystem.Models.Auth;
 using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Request.Event;
+using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.Auth;
 using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Models.Response.Event;
+using Dach.ElectionSystem.Models.Response.User;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -31,6 +34,9 @@ namespace Dach.ElectionSystem.Utils.Mediator
 
             //Mediator Candidate
             services.AddTransient<IRequestHandler<CandidateCreateRequest, CandidateCreateResponse>, CandidateCreateHandler>();
+
+            //Mediator User
+            services.AddTransient<IRequestHandler<UserCreateRequest, UserCreateResponse>, UserCreateHandler>();
         }
     }
 }

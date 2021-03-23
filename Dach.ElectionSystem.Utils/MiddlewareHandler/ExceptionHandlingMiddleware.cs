@@ -23,12 +23,15 @@ namespace Common.WebApi.Middleware
         #region Constructor
 
         private readonly RequestDelegate _next;
+        private readonly ILogger<ExceptionHandlingMiddleware> logger;
+
         /// <summary>
         /// Constructor
         /// </summary>
-        public ExceptionHandlingMiddleware(RequestDelegate next)
+        public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
         {
             _next = next;
+            this.logger = logger;
         }
         #endregion
 
@@ -50,6 +53,7 @@ namespace Common.WebApi.Middleware
             }
             catch (Exception exception)
             {
+                logger.LogError(exception,"Error Detectado: ");
                 await HandleExceptionAsync(httpContext, exception);
             }
         }

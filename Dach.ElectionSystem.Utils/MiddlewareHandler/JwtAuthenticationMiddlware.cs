@@ -1,6 +1,7 @@
 ﻿using Dach.ElectionSystem.Services.TokenJWT;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -17,16 +18,16 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
     {
 
         private readonly RequestDelegate _next;
+        private readonly ILogger<JwtAuthenticationMiddlware> logger;
 
-        public ITokenService _tokenService { get; }
 
-        public JwtAuthenticationMiddlware(RequestDelegate next, ITokenService tokenService)
+        public JwtAuthenticationMiddlware(RequestDelegate next,  ILogger<JwtAuthenticationMiddlware> logger)
         {
             _next = next;
-            _tokenService = tokenService;
+            this.logger = logger;
         }
         
-        public async Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context, ITokenService tokenService)
         {
             if (IsUrlAllow(context))
             {
@@ -34,7 +35,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
             }
             else
             {
-                _tokenService.ValidateToken(context);
+                tokenService.ValidateToken(context);
                 await _next.Invoke(context);
             }
         }

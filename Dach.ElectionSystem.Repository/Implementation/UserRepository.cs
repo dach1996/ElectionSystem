@@ -12,6 +12,20 @@ namespace Dach.ElectionSystem.Repository.Implementation
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        public UserRepository(IUnitOfWork unitOfWork) : base(unitOfWork) {}
+        private readonly IUnitOfWork unitOfWork;
+
+        public UserRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
+        {
+            this.unitOfWork = unitOfWork;
+        }
+
+        public async Task<User> GetUserByUsernameOrEmailAndPassword(string username, string password)
+        {
+            
+            var user =  unitOfWork.Context.User.FirstOrDefault(user => (user.UserName == username || user.Email == username)
+                                                             && user.Password == password);
+            
+            return await Task.Run(()=>user);
+        }
     }
 }

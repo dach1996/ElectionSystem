@@ -2,9 +2,10 @@
 using Dach.ElectionSystem.Models.Persitence;
 using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Request.Event;
+using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Models.Response.Event;
-
+using Dach.ElectionSystem.Models.Response.User;
 
 namespace Dach.ElectionSystem.Utils.Mapper
 {
@@ -19,6 +20,10 @@ namespace Dach.ElectionSystem.Utils.Mapper
             //Mappers to Candidate
             CreateMap<CandidateCreateRequest, Candidate>();
             CreateMap<Candidate, CandidateCreateResponse>();
+
+            //Mapper to User
+            CreateMap<UserCreateRequest, User>();
+            CreateMap<User, UserCreateResponse>();
         }
     }
 }

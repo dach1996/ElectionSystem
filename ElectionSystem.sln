@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.Models"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Dach.ElectionSystem.DataBase", "Dach.ElectionSystem.DataBase\Dach.ElectionSystem.DataBase.sqlproj", "{7D782192-0CE5-472F-B6D8-AAC054A5D2B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.BusinessLogic", "Dach.ElectionSystem.BusinessLogic\Dach.ElectionSystem.BusinessLogic.csproj", "{C2D8260A-62D6-4F93-A36F-F58FF33991EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.BusinessLogic", "Dach.ElectionSystem.BusinessLogic\Dach.ElectionSystem.BusinessLogic.csproj", "{C2D8260A-62D6-4F93-A36F-F58FF33991EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Common", "Common\Dach.ElectionSystem.Common.csproj", "{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{C2D8260A-62D6-4F93-A36F-F58FF33991EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2D8260A-62D6-4F93-A36F-F58FF33991EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2D8260A-62D6-4F93-A36F-F58FF33991EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

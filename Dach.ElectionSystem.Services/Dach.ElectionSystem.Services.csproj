@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj" />
+    <ProjectReference Include="..\Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj" />
   </ItemGroup>
 
 </Project>

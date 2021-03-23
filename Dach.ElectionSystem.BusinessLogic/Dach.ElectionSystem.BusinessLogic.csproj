@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Common\Dach.ElectionSystem.Common.csproj" />
     <ProjectReference Include="..\Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj" />
     <ProjectReference Include="..\Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj" />
     <ProjectReference Include="..\Dach.ElectionSystem.Services\Dach.ElectionSystem.Services.csproj" />

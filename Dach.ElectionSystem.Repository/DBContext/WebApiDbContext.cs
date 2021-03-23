@@ -12,18 +12,19 @@ namespace Dach.ElectionSystem.Repository.DBContext
 {
     public class WebApiDbContext : DbContext
     {
-        
+        private readonly ILogger<WebApiDbContext> logger;
+
         public DbSet<User> User { get; set; }
         public DbSet<Event> Event { get; set; }
         public DbSet<Candidate> Candidate { get; set; }
         public DbSet<Group> Group { get; set; }
 
-        public WebApiDbContext(DbContextOptions<WebApiDbContext> options) : base(options) { }
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public WebApiDbContext(DbContextOptions<WebApiDbContext> options,ILogger<WebApiDbContext> logger) : base(options)
         {
-            base.OnConfiguring(optionsBuilder);
+            this.logger = logger;
         }
+
+
+    
     }
 }

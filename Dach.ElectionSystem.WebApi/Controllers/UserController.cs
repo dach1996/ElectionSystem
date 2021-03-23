@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dach.ElectionSystem.Models.Request.User;
+using Dach.ElectionSystem.Models.Response.User;
+using Dach.ElectionSystem.Models.ResponseBase;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +14,21 @@ namespace Dach.ElectionSystem.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController : ApiControllerBase
     {
+        private readonly IMediator _mediator;
+        public UserController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
 
+        /// <summary>
+        /// Generar token mediante credenciales
+        /// </summary>
+        [HttpPost]
+        [ProducesResponseType(200, Type = typeof(GenericResponse<UserCreateResponse>))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        public async Task<IActionResult> Auth(UserCreateRequest requestLogin) => Success(await _mediator.Send(requestLogin));
     }
 }

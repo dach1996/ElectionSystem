@@ -23,6 +23,17 @@ namespace Dach.ElectionSystem.Models.Enums
         InvalidToken = 101,
 
         /// <summary>
+        /// Error parceo de Token
+        /// </summary>
+        [EnumMember(Value = "Error lectura de token")]
+        InvalidParceToken = 101,
+
+        /// <summary>
+        /// Error del sistema
+        /// </summary>
+        [EnumMember(Value = "Datos Incorrectos")]
+        IncorrectData = 110,
+        /// <summary>
         /// Error del sistema
         /// </summary>
         [EnumMember(Value = "Modelo de datos Invalido")]
