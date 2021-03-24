@@ -19,6 +19,8 @@ using Dach.ElectionSystem.Utils.Mapper;
 using Dach.ElectionSystem.Utils.Mediator;
 using Dach.ElectionSystem.Utils.Filters;
 using System.IO;
+using System;
+using System.Reflection;
 
 namespace Dach.ElectionSystem.WebApi
 {
@@ -41,13 +43,15 @@ namespace Dach.ElectionSystem.WebApi
             services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=SQL5103.site4now.net;Initial Catalog=DB_A49E05_electionSystem;User Id=DB_A49E05_electionSystem_admin;Password=dach1996"));
 #endif
             services.AddSingletonRepository();
-            services.ConfigureController();
+            services.ConfigureController();        
 
-            services.AddSwaggerGen(c =>
+           services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Elecciones", Version = "v1" });
                 c.IncludeXmlComments("ElectionSystem.xml");
+                c.IncludeXmlComments("ElectionSystemModels.xml");
             });
+
             //  services.AddSingleton<ILoggerCustom, LoggerCustom>();
             services.AddTransient<ITokenService, TokenService>();
             services.ConfigureSwaggerServices(new List<string> { "ElectionSystem.xml" });

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Models.Request.User
@@ -54,11 +55,7 @@ namespace Dach.ElectionSystem.Models.Request.User
         /// <summary>
         /// Rol de Usuario
         /// </summary>
-        public int? Rol { get; set; }
-        /// <summary>
-        /// Rol de Usuario
-        /// </summary>
-        public string RolName { get; set; }
+        public Models.Enums.RolUser Role{ get; set; }
         /// <summary>
         /// Estado de Usuario
         /// </summary>
@@ -66,6 +63,7 @@ namespace Dach.ElectionSystem.Models.Request.User
         /// <summary>
         /// Token Base
         /// </summary>
+        [JsonIgnore]
         public TokenModel TokenModel { get; set; }
 
     }

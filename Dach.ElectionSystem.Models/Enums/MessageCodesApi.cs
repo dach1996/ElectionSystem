@@ -33,6 +33,13 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "Datos Incorrectos")]
         IncorrectData = 110,
+
+        /// <summary>
+        /// Error del sistema
+        /// </summary>
+        [EnumMember(Value = "Privilegios insuficientes")]
+        InsufficientPrivileges = 125,
+
         /// <summary>
         /// Error del sistema
         /// </summary>

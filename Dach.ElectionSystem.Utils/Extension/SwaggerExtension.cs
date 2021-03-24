@@ -23,11 +23,9 @@ namespace Dach.ElectionSystem.Utils.Extension
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey
                 };
-
-  
-                c.AddSecurityDefinition("Bearer", bearerSecurityScheme);
-
             });
+          
+
         }
 
     }

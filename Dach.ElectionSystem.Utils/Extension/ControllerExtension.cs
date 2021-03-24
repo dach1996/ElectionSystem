@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mime;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Utils.Extension
@@ -35,7 +36,8 @@ namespace Dach.ElectionSystem.Utils.Extension
                     return result;
                 };
             }
-            );
+            ).AddJsonOptions(options =>
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); ;
         }
     }
 }

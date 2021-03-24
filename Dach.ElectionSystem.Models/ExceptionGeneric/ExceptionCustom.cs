@@ -39,5 +39,6 @@ namespace Dach.ElectionSystem.Models.ExceptionGeneric
             ResponseType = responseType;
             MessageCodesApi = messageCodesApi;
         }
+
     }
 }

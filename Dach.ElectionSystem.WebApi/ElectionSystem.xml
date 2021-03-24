@@ -56,7 +56,7 @@
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.Auth(Dach.ElectionSystem.Models.Request.User.UserCreateRequest)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest)">
             <summary>
             Generar token mediante credenciales
             </summary>

@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dach.ElectionSystem.Models</name>
+    </assembly>
+    <members>
+        <member name="T:Dach.ElectionSystem.Models.Enums.MessageCodesApi">
+            <summary>
+            Mensages genéricos de error
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.WithOutToken">
+            <summary>
+            Transacción exitosa
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.InvalidToken">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.InvalidParceToken">
+            <summary>
+            Error parceo de Token
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.IncorrectData">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.InsufficientPrivileges">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ModelInvalid">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.NotCreateRecord">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.NotFindRecord">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.NotUpdateRecord">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.NotDeleteRecord">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ErrorGeneric">
+            <summary>
+            Transacción exitosa
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Enums.ResponseType">
+            <summary>
+            Tipo de respuesta
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.ResponseType.Data">
+            <summary>
+             Informativa
+             </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.ResponseType.Error">
+            <summary>
+             Error
+             </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Enums.RolUser">
+            <summary>
+            Rol from Users
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.RolUser.SuperAdmin">
+            <summary>
+            Rol SuperAdmin
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.RolUser.Admin">
+            <summary>
+            Rol Administrator
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.RolUser.User">
+            <summary>
+            Rol User
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.ExceptionGeneric.ExceptionCustom">
+            <summary>
+            Clase personalizada Error
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.ExceptionGeneric.ExceptionCustom.CodeHttp">
+            <summary>
+            Código HTTP que se debe responder
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.ExceptionGeneric.ExceptionCustom.ResponseType">
+            <summary>
+            Tipo de respuesta 
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.ExceptionGeneric.ExceptionCustom.MessageCodesApi">
+            <summary>
+            Código personalizado de error
+            </summary>
+        </member>
+        <member name="M:Dach.ElectionSystem.Models.ExceptionGeneric.ExceptionCustom.#ctor(Dach.ElectionSystem.Models.Enums.MessageCodesApi,Dach.ElectionSystem.Models.Enums.ResponseType,System.Net.HttpStatusCode)">
+            <summary>
+            Contructor
+            </summary>
+            <param name="codeHttp">Código de respuesta</param>
+            <param name="messageCustom">Mensaje de respuesta</param>
+            <param name="responseType">Tipo de respuesta</param>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Persitence.User">
+            <summary>
+            Mapeo de Tabla Usuarios
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.Id">
+            <summary>
+            Id único usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.DNI">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.UserName">
+            <summary>
+            Nick Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.Password">
+            <summary>
+            Contraseña Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.FirstName">
+            <summary>
+            Primer nombre Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.SecondName">
+            <summary>
+            Segundo nombre Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.FirstLastName">
+            <summary>
+            Primer Apellido Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.SecondLastName">
+            <summary>
+            Segundo Apellido Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.BirthDate">
+            <summary>
+            Fecha de nacimiento Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.Email">
+            <summary>
+            Email Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.Rol">
+            <summary>
+            Rol de Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.RolName">
+            <summary>
+            Rol de Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.IsActive">
+            <summary>
+            Estado de Usuario
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.RequestBase.TokenModel">
+            <summary>
+            Modelo Token para inyectar en Contexto
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.TokenModel.RolUser">
+            <summary>
+            Rol del Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.TokenModel.username">
+            <summary>
+            Nombre de usuario
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Auth.LoginRequest">
+            <summary>
+            Clase modelo para Request de Login
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Auth.LoginRequest.Username">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Auth.LoginRequest.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.User.UserCreateRequest">
+            <summary>
+            Request para crear Usuarios
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.DNI">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.UserName">
+            <summary>
+            Nick Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.Password">
+            <summary>
+            Contraseña Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.FirstName">
+            <summary>
+            Primer nombre Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.SecondName">
+            <summary>
+            Segundo nombre Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.FirstLastName">
+            <summary>
+            Primer Apellido Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.SecondLastName">
+            <summary>
+            Segundo Apellido Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.BirthDate">
+            <summary>
+            Fecha de nacimiento Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.Email">
+            <summary>
+            Email Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.RoleName">
+            <summary>
+            Rol de Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.IsActive">
+            <summary>
+            Estado de Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.TokenModel">
+            <summary>
+            Token Base
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1">
+            <summary>
+            Respuesta genérica
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1.Code">
+            <summary>
+            Código de respuesta
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1.ResponseType">
+            <summary>
+            Response type
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1.Message">
+            <summary>
+            Mensaje al usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1.Content">
+            <summary>
+            Información de vuelta al usuario
+            </summary>
+        </member>
+        <member name="M:Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1.ToString">
+            <summary>
+            Get a serialized Generic response class
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.User.UserCreateResponse">
+            <summary>
+            Response para crear usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.User.UserCreateResponse.Id">
+            <summary>
+            Id de usuario
+            </summary>
+        </member>
+    </members>
+</doc>
