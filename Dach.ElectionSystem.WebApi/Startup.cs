@@ -49,7 +49,7 @@ namespace Dach.ElectionSystem.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Elecciones", Version = "v1" });
                 c.IncludeXmlComments("ElectionSystem.xml");
-                c.IncludeXmlComments("ElectionSystemModels.xml");
+                //c.IncludeXmlComments("ElectionSystemModels.xml");
             });
 
             //  services.AddSingleton<ILoggerCustom, LoggerCustom>();

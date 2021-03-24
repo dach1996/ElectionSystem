@@ -1057,3 +1057,10 @@ WHERE @@ROWCOUNT = 1 AND [ID_USUARIO] = scope_identity();
 [23:09:36][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 5437.3881ms
 [23:09:36][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
 [23:09:36][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 326 - 401 - application/json 5482.6616ms
+[23:44:29][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[23:44:29][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[23:44:29][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[23:44:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[23:44:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 191.7680ms
+[23:44:31][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[23:44:31][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 393.6158ms

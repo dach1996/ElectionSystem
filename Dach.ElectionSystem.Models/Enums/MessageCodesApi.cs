@@ -43,6 +43,11 @@ namespace Dach.ElectionSystem.Models.Enums
         /// <summary>
         /// Error del sistema
         /// </summary>
+        [EnumMember(Value = "Datos ya registrados")]
+        DataExist = 125,
+        /// <summary>
+        /// Error del sistema
+        /// </summary>
         [EnumMember(Value = "Modelo de datos Invalido")]
         ModelInvalid = 150,
         /// <summary>

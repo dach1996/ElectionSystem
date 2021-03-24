@@ -1,0 +1,394 @@
+[00:47:13][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:47:13][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:47:13][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:47:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[00:47:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 165.7162ms
+[00:47:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[00:47:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 227.2592ms
+[01:00:52][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:00:52][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:00:52][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:00:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[01:01:12][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:01:12][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:01:12][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:01:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[01:01:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 213.4097ms
+[01:01:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[01:01:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 171.6607ms
+[01:17:41][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:17:41][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:17:41][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:17:41][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[01:17:41][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 182.1955ms
+[01:17:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[01:17:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 174.9559ms
+[01:18:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/Auth application/json 80
+[01:18:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[01:18:05][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[01:18:06][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:18:06][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (38ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE (([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)) AND ([u].[PASSWORD_USUARIO] = @__password_1)
+[01:18:07][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 1234.7666ms
+[01:18:07][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[01:18:07][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/Auth application/json 80 - 401 - application/json 1524.9505ms
+[01:18:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/Auth application/json 83
+[01:18:13][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[01:18:13][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[01:18:13][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:18:13][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE (([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)) AND ([u].[PASSWORD_USUARIO] = @__password_1)
+[01:18:13][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[01:18:13][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 271.685ms
+[01:18:13][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[01:18:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/Auth application/json 83 - 200 - application/json;+charset=utf-8 274.2468ms
+[01:18:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 328
+[01:18:20][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:18:20][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:18:23][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:18:23][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:18:31][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [USUARIOS] ([FECHA_NACIMIENTO_USUARIO], [CEDULA_USUARIO], [CORREO_USUARIO], [APELLIDO_USUARIO], [NOMBRE_USUARIO], [ESTADO_USUARIO], [PASSWORD_USUARIO], [ROL_USUARIO], [NOMBRE_ROL_USUARIO], [SEGUNDO_APELLIDO_USUARIO], [SEGUNDO_NOMBRE_USUARIO], [NICK_USUARIO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [ID_USUARIO]
+FROM [USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_USUARIO] = scope_identity();
+[01:18:52][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:18:52][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:18:52][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:18:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[01:18:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 201.6347ms
+[01:18:53][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[01:18:53][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 154.8485ms
+[01:18:56][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 328
+[01:18:56][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:18:56][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:18:58][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:18:59][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (51ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:18:59][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 3075.1902ms
+[01:18:59][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:18:59][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 328 - 204 - application/json 3571.5807ms
+[01:19:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 328
+[01:19:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:19:05][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:19:07][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:19:07][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:19:12][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 7098.2687ms
+[01:19:12][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:19:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 328 - 204 - application/json 7146.9082ms
+[01:19:16][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 329
+[01:19:16][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:19:16][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:19:18][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:19:18][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:19:33][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [USUARIOS] ([FECHA_NACIMIENTO_USUARIO], [CEDULA_USUARIO], [CORREO_USUARIO], [APELLIDO_USUARIO], [NOMBRE_USUARIO], [ESTADO_USUARIO], [PASSWORD_USUARIO], [ROL_USUARIO], [NOMBRE_ROL_USUARIO], [SEGUNDO_APELLIDO_USUARIO], [SEGUNDO_NOMBRE_USUARIO], [NICK_USUARIO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [ID_USUARIO]
+FROM [USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_USUARIO] = scope_identity();
+[01:20:08][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:20:08][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:20:08][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:20:08][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[01:20:08][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 170.6034ms
+[01:20:08][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[01:20:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.8161ms
+[01:20:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 330
+[01:20:22][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:20:22][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:20:24][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:20:24][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (46ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:20:26][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [USUARIOS] ([FECHA_NACIMIENTO_USUARIO], [CEDULA_USUARIO], [CORREO_USUARIO], [APELLIDO_USUARIO], [NOMBRE_USUARIO], [ESTADO_USUARIO], [PASSWORD_USUARIO], [ROL_USUARIO], [NOMBRE_ROL_USUARIO], [SEGUNDO_APELLIDO_USUARIO], [SEGUNDO_NOMBRE_USUARIO], [NICK_USUARIO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [ID_USUARIO]
+FROM [USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_USUARIO] = scope_identity();
+[01:20:35][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.User.UserCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[01:20:35][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 13712.8804ms
+[01:20:35][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:20:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 330 - 200 - application/json;+charset=utf-8 14137.8407ms
+[01:23:38][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:23:38][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:23:38][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:23:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[01:23:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 177.4450ms
+[01:23:39][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[01:23:39][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 161.1733ms
+[01:23:53][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 307
+[01:23:53][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:23:53][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:23:57][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:23:57][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (47ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:23:58][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [USUARIOS] ([FECHA_NACIMIENTO_USUARIO], [CEDULA_USUARIO], [CORREO_USUARIO], [APELLIDO_USUARIO], [NOMBRE_USUARIO], [ESTADO_USUARIO], [PASSWORD_USUARIO], [ROL_USUARIO], [NOMBRE_ROL_USUARIO], [SEGUNDO_APELLIDO_USUARIO], [SEGUNDO_NOMBRE_USUARIO], [NICK_USUARIO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [ID_USUARIO]
+FROM [USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_USUARIO] = scope_identity();
+[01:23:58][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.User.UserCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[01:23:58][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 4747.2554ms
+[01:23:58][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:23:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 307 - 200 - application/json;+charset=utf-8 5157.3281ms
+[01:24:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 307
+[01:24:04][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:24:04][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:24:06][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:24:06][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:24:06][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 1530.7759ms
+[01:24:06][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:24:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 307 - 204 - application/json 1737.9090ms
+[01:24:37][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:24:37][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:24:37][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:24:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[01:24:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 189.6051ms
+[01:24:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 307
+[01:24:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[01:24:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 218.5217ms
+[01:24:38][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:24:38][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:24:42][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:24:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (47ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:24:43][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 4824.1957ms
+[01:24:43][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:24:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 307 - 304 - application/json 5395.6314ms
+[01:25:18][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:25:18][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:25:18][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:25:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[01:25:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 203.3068ms
+[01:25:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[01:25:19][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.0628ms
+[01:25:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 307
+[01:25:21][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:25:21][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:25:22][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:25:22][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (36ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:25:22][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 1415.318ms
+[01:25:22][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:25:22][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 307 - 404 - application/json 1892.4477ms
+[01:25:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:25:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:25:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:25:28][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:25:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)
+[01:25:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [USUARIOS] ([FECHA_NACIMIENTO_USUARIO], [CEDULA_USUARIO], [CORREO_USUARIO], [APELLIDO_USUARIO], [NOMBRE_USUARIO], [ESTADO_USUARIO], [PASSWORD_USUARIO], [ROL_USUARIO], [NOMBRE_ROL_USUARIO], [SEGUNDO_APELLIDO_USUARIO], [SEGUNDO_NOMBRE_USUARIO], [NICK_USUARIO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [ID_USUARIO]
+FROM [USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_USUARIO] = scope_identity();
+[01:25:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.User.UserCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[01:25:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 218.3106ms
+[01:25:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:25:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 200 - application/json;+charset=utf-8 221.7533ms
+[01:25:55][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:25:55][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:25:55][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\Source\Repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:25:55][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/index.html - -
+[01:25:55][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 172.4087ms
+[01:25:56][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - -
+[01:25:56][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/2 GET https://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 153.7201ms
+[01:25:56][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:25:57][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:25:57][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:25:57][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:25:58][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (38ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:25:58][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 1431.7247ms
+[01:25:58][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:25:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 1962.0971ms
+[01:26:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:05][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:05][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:05][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:05][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 91.7073ms
+[01:26:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 259.4521ms
+[01:26:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 307
+[01:26:09][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:09][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:09][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:09][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 72.2896ms
+[01:26:09][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 307 - 404 - application/json 216.4839ms
+[01:26:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 307
+[01:26:09][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:09][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:09][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:10][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 54.0141ms
+[01:26:10][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:10][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 307 - 404 - application/json 201.7772ms
+[01:26:10][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 307
+[01:26:10][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:10][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:10][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:10][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:10][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 65.4724ms
+[01:26:10][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:10][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 307 - 404 - application/json 204.9393ms
+[01:26:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:21][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:21][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:21][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:21][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:21][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [USUARIOS] ([FECHA_NACIMIENTO_USUARIO], [CEDULA_USUARIO], [CORREO_USUARIO], [APELLIDO_USUARIO], [NOMBRE_USUARIO], [ESTADO_USUARIO], [PASSWORD_USUARIO], [ROL_USUARIO], [NOMBRE_ROL_USUARIO], [SEGUNDO_APELLIDO_USUARIO], [SEGUNDO_NOMBRE_USUARIO], [NICK_USUARIO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [ID_USUARIO]
+FROM [USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_USUARIO] = scope_identity();
+[01:26:21][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.User.UserCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[01:26:21][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 221.5914ms
+[01:26:21][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 200 - application/json;+charset=utf-8 222.5471ms
+[01:26:26][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:26][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:26][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:26][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:26][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:26][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 68.1676ms
+[01:26:26][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:26][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 209.9165ms
+[01:26:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:27][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:27][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:27][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:27][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:27][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 53.6188ms
+[01:26:27][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 184.9974ms
+[01:26:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:28][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (13ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 79.178ms
+[01:26:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 212.4478ms
+[01:26:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:28][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:29][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 50.7782ms
+[01:26:29][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 178.7745ms
+[01:26:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:29][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:29][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:29][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:29][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:29][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 56.3102ms
+[01:26:29][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 180.9369ms
+[01:26:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:30][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:30][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:30][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:30][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 53.7252ms
+[01:26:30][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 185.7543ms
+[01:26:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:30][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:30][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:30][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (8ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:30][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 73.6005ms
+[01:26:30][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:31][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 211.9395ms
+[01:26:31][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST https://localhost:44317/api/User application/json 308
+[01:26:31][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:31][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[01:26:31][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: DetailedErrorsEnabled 
+[01:26:31][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__email_1)
+[01:26:31][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 63.0827ms
+[01:26:31][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[01:26:31][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST https://localhost:44317/api/User application/json 308 - 404 - application/json 189.0439ms

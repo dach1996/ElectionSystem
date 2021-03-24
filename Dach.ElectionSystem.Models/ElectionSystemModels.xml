@@ -34,6 +34,11 @@
             Error del sistema
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.DataExist">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ModelInvalid">
             <summary>
             Error del sistema
@@ -331,6 +336,11 @@
         <member name="P:Dach.ElectionSystem.Models.Response.User.UserCreateResponse.Id">
             <summary>
             Id de usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.User.UserCreateResponse.Password">
+            <summary>
+            Contraseña Usuario
             </summary>
         </member>
     </members>

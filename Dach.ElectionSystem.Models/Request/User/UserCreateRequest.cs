@@ -59,6 +59,7 @@ namespace Dach.ElectionSystem.Models.Request.User
         /// <summary>
         /// Estado de Usuario
         /// </summary>
+        [JsonIgnore]
         public bool IsActive { get; set; }
         /// <summary>
         /// Token Base

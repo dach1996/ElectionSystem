@@ -27,5 +27,10 @@ namespace Dach.ElectionSystem.Repository.Implementation
             
             return await Task.Run(()=>user);
         }
+        public async Task<User> GetUserByUsernameAndEmail(string username, string email)
+        {
+            var user = unitOfWork.Context.User.FirstOrDefault(user => (user.UserName == username || user.Email == email));
+            return await Task.Run(() => user);
+        }
     }
 }
