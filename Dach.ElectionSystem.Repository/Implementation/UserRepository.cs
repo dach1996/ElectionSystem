@@ -21,15 +21,23 @@ namespace Dach.ElectionSystem.Repository.Implementation
 
         public async Task<User> GetUserByUsernameOrEmailAndPassword(string username, string password)
         {
-            
             var user =  unitOfWork.Context.User.FirstOrDefault(user => (user.UserName == username || user.Email == username)
                                                              && user.Password == password);
-            
             return await Task.Run(()=>user);
         }
         public async Task<User> GetUserByUsernameAndEmail(string username, string email)
         {
             var user = unitOfWork.Context.User.FirstOrDefault(user => (user.UserName == username || user.Email == email));
+            return await Task.Run(() => user);
+        }
+        public async Task<User> GetUserByUsernameByEmail(string email)
+        {
+            var user = unitOfWork.Context.User.FirstOrDefault(user => (user.Email == email));
+            return await Task.Run(() => user);
+        }
+        public async Task<User> GetUserByUsernameByUsername(string username)
+        {
+            var user = unitOfWork.Context.User.FirstOrDefault(user => (user.UserName == username));
             return await Task.Run(() => user);
         }
     }

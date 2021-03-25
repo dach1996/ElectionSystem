@@ -1,17 +1,16 @@
-﻿using Dach.ElectionSystem.Models.Base;
-using Dach.ElectionSystem.Models.Request.User;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Models.Response.User
 {
     /// <summary>
-    /// Response para crear usuario
+    /// Clase respuesta de Update Usuario
     /// </summary>
-    public class UserCreateResponse : UserResponseBase
+    public class UserUpdateResponse  : UserResponseBase
     {
         /// <summary>
         /// Id de usuario
@@ -21,6 +20,7 @@ namespace Dach.ElectionSystem.Models.Response.User
         /// <summary>
         /// Contraseña Usuario
         /// </summary>
-        public new string Password { get =>""; }
+        [JsonIgnore]
+        public new string Password { get => ""; }
     }
 }

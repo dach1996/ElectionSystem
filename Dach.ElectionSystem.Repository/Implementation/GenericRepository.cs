@@ -70,6 +70,26 @@ namespace Dach.ElectionSystem.Repository.Implementation
             return created;
         }
 
+        public async Task<bool> Update(T entity)
+        {
+
+            bool update = false;
+            try
+            {
+                var save =  _unitOfWork.Context.Set<T>().Update(entity);
+
+                if (save != null)
+                    update = true;
+                _unitOfWork.Context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return await Task.Run<bool>(() => update);
+        }
+
         public async Task<bool> DeleteByIdAsync(int Id)
         {
             bool remove = false;

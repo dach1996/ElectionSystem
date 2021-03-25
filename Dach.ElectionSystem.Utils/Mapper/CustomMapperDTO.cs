@@ -7,6 +7,8 @@ using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Models.Response.Event;
 using Dach.ElectionSystem.Models.Response.User;
 using Dach.ElectionSystem.Utils.Extension;
+using Dach.ElectionSystem.Utils.Mapper.User;
+
 namespace Dach.ElectionSystem.Utils.Mapper
 {
     public class CustomMapperDTO : Profile
@@ -20,20 +22,9 @@ namespace Dach.ElectionSystem.Utils.Mapper
             //Mappers to Candidate
             CreateMap<CandidateCreateRequest, Candidate>();
             CreateMap<Candidate, CandidateCreateResponse>();
+            UserMapper.Config(this);
 
-            //Mapper to User - User Create
-            CreateMap<UserCreateRequest, User>()
-                .ForMember(
-                destino=>destino.Rol,
-                origen=> origen.MapFrom(u=>(int)u.Role))
-                .ForMember(
-                destino => destino.RolName,
-                origen => origen.MapFrom(u =>u.Role.ToString())
-                );
-            CreateMap<User, UserCreateResponse>()
-                .ForMember(
-                destino => destino.Role,
-                origen => origen.MapFrom(u => u.Rol));
+
         }
     }
 }

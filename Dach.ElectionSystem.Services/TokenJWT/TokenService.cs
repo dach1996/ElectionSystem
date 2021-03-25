@@ -48,8 +48,9 @@ namespace Dach.ElectionSystem.Services.TokenJWT
                 // Crea claims
                 var claimsIdentity = new System.Collections.Generic.List<System.Security.Claims.Claim>()
                 { 
-                    new System.Security.Claims.Claim(Models.Enums.Claim.Name.ToString(), user.UserName),
+                    new System.Security.Claims.Claim(Models.Enums.Claim.Name.ToString(), user.UserName??String.Empty),
                     new System.Security.Claims.Claim(Models.Enums.Claim.Role.ToString(), user.RolName),
+                    new System.Security.Claims.Claim(Models.Enums.Claim.Email.ToString(), user.Email),
                 };
 
                 //Crear tokens
@@ -112,10 +113,12 @@ namespace Dach.ElectionSystem.Services.TokenJWT
                 var claims = jwtSecurityToken.Claims.ToList();
                 var rol = Enum.Parse<Models.Enums.RolUser>( claims.Where(c => c.Type == nameof(Models.Enums.Claim.Role)).First().Value);
                 var username = claims.Where(c => c.Type == nameof(Models.Enums.Claim.Name)).First().Value;
+                var email = claims.Where(c => c.Type == nameof(Models.Enums.Claim.Email)).First().Value;
                 var tokenModel = new TokenModel()
                 {
                     RolUser = rol,
-                    username = username
+                    Username = username,
+                    Email = email,
                 };
                 return tokenModel;
             }

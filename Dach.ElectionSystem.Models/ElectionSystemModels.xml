@@ -4,6 +4,86 @@
         <name>Dach.ElectionSystem.Models</name>
     </assembly>
     <members>
+        <member name="T:Dach.ElectionSystem.Models.Base.UserBase">
+            <summary>
+            Clase base para Usuarios
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.DNI">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.UserName">
+            <summary>
+            Nick Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.Password">
+            <summary>
+            Contraseña Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.FirstName">
+            <summary>
+            Primer nombre Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.SecondName">
+            <summary>
+            Segundo nombre Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.FirstLastName">
+            <summary>
+            Primer Apellido Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.SecondLastName">
+            <summary>
+            Segundo Apellido Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.BirthDate">
+            <summary>
+            Fecha de nacimiento Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.Email">
+            <summary>
+            Email Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.Role">
+            <summary>
+            Rol de Usuario
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Enums.Claim">
+            <summary>
+            Patrones de seguridad Disponibles
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.Claim.Name">
+            <summary>
+            Nombre de usuario
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.Claim.Role">
+            <summary>
+            Rol de Usuario
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.Claim.BirthDate">
+            <summary>
+            Fecha de Cumpleaños
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.Claim.Email">
+            <summary>
+            Email de Usuario
+            </summary>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Enums.MessageCodesApi">
             <summary>
             Mensages genéricos de error
@@ -212,9 +292,14 @@
             Rol del Usuario
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.RequestBase.TokenModel.username">
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.TokenModel.Username">
             <summary>
             Nombre de usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.TokenModel.Email">
+            <summary>
+            Email de usuario
             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Auth.LoginRequest">
@@ -237,64 +322,39 @@
             Request para crear Usuarios
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.DNI">
-            <summary>
-            Cédula Usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.UserName">
-            <summary>
-            Nick Usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.Password">
-            <summary>
-            Contraseña Usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.FirstName">
-            <summary>
-            Primer nombre Usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.SecondName">
-            <summary>
-            Segundo nombre Usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.FirstLastName">
-            <summary>
-            Primer Apellido Usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.SecondLastName">
-            <summary>
-            Segundo Apellido Usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.BirthDate">
-            <summary>
-            Fecha de nacimiento Usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.Email">
-            <summary>
-            Email Usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.Role">
-            <summary>
-            Rol de Usuario
-            </summary>
-        </member>
         <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.IsActive">
             <summary>
             Estado de Usuario
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.TokenModel">
+        <member name="T:Dach.ElectionSystem.Models.Request.User.UserRequestBase">
+            <summary>
+            Base de Modelo
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserRequestBase.TokenModel">
             <summary>
             Token Base
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.User.UserUpdateRequest">
+            <summary>
+            Clase Request para Update Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserUpdateRequest.Password">
+            <summary>
+            Contraseña Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserUpdateRequest.Email">
+            <summary>
+            Email Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserUpdateRequest.Role">
+            <summary>
+            Rol de Usuario
             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1">
@@ -339,6 +399,26 @@
             </summary>
         </member>
         <member name="P:Dach.ElectionSystem.Models.Response.User.UserCreateResponse.Password">
+            <summary>
+            Contraseña Usuario
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.User.UserResponseBase">
+            <summary>
+            Clase base para respuesta de Usuario
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.User.UserUpdateResponse">
+            <summary>
+            Clase respuesta de Update Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.User.UserUpdateResponse.Id">
+            <summary>
+            Id de usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.User.UserUpdateResponse.Password">
             <summary>
             Contraseña Usuario
             </summary>

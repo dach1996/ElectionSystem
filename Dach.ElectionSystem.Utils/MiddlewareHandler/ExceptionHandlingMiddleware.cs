@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Builder;
 using Dach.ElectionSystem.Utils.Extension;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 
-namespace Common.WebApi.Middleware
+namespace Dach.ElectionSystem.Utils.MiddlewareHandler
 {
     /// <summary>
     /// Clase manejadora de expeciones MiddleWare

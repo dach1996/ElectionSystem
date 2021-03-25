@@ -10,6 +10,7 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         public WebApiDbContext Context { get; set; }
+        
         public UnitOfWork(WebApiDbContext context)
         {
             Context = context;

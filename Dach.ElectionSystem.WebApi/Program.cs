@@ -20,13 +20,8 @@ namespace Dach.ElectionSystem.WebApi
                     webBuilder.UseStartup<Startup>();
                     webBuilder.ConfigureLogging((ctx, builder) =>
                     {
-
                         builder.AddConfiguration(ctx.Configuration.GetSection("Logging"));
                         builder.AddFile($"{Directory.GetCurrentDirectory()}\\Logs\\Log.txt", outputTemplate: "[{Timestamp:HH:mm:ss}][{Level:u3}][{SourceContext}]:{Message:lj}{NewLine}{Exception}");
-                        builder.AddConsole();
-                        builder.AddDebug();
-                        builder.AddEventSourceLogger();
-
                     });
                 });
     }

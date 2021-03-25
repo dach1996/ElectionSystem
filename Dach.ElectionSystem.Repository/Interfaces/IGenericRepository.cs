@@ -16,5 +16,6 @@ namespace Dach.ElectionSystem.Repository.Interfaces
                            string includeProperties = "");
         Task<bool> CreateAsync(T entity);
         Task<bool> DeleteByIdAsync(int Id);
+        Task<bool> Update(T entity);
     }
 }

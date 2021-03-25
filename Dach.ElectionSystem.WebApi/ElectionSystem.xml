@@ -58,7 +58,12 @@
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest)">
             <summary>
-            Generar token mediante credenciales
+            Crear Usuario
+            </summary>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.UpdateUser(Dach.ElectionSystem.Models.Request.User.UserUpdateRequest)">
+            <summary>
+            Actualizar Usuario
             </summary>
         </member>
     </members>

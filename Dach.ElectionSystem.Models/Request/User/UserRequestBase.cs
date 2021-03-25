@@ -1,6 +1,5 @@
-﻿using Dach.ElectionSystem.Models.RequestBase;
-using Dach.ElectionSystem.Models.Response.User;
-using MediatR;
+﻿using Dach.ElectionSystem.Models.Base;
+using Dach.ElectionSystem.Models.RequestBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +10,14 @@ using System.Threading.Tasks;
 namespace Dach.ElectionSystem.Models.Request.User
 {
     /// <summary>
-    /// Request para crear Usuarios
+    /// Base de Modelo
     /// </summary>
-    public class UserCreateRequest : UserRequestBase, IRequest<UserCreateResponse>
+    public abstract class UserRequestBase : UserBase, IRequestBase
     {
         /// <summary>
-        /// Estado de Usuario
+        /// Token Base
         /// </summary>
         [JsonIgnore]
-        public bool IsActive { get; set; }
+        public TokenModel TokenModel { get; set; }
     }
 }
