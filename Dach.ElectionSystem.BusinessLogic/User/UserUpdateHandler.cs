@@ -13,10 +13,10 @@ namespace Dach.ElectionSystem.BusinessLogic.User
 {
     public class UserUpdateHandler : IRequestHandler<UserUpdateRequest, UserUpdateResponse>
     {
+        #region Constructor
         private readonly ILogger<UserUpdateHandler> logger;
         private readonly IUserRepository userRepository;
         private readonly IMapper mapper;
-
         public UserUpdateHandler(
             ILogger<UserUpdateHandler> logger,
             IUserRepository userRepository,
@@ -27,7 +27,8 @@ namespace Dach.ElectionSystem.BusinessLogic.User
             this.userRepository = userRepository;
             this.mapper = mapper;
         }
-
+        #endregion
+        #region Handler
         public async Task<UserUpdateResponse> Handle(UserUpdateRequest request, CancellationToken cancellationToken)
         {
             var userCurrent = await userRepository.GetUserByUsernameByEmail(request.TokenModel.Email);
@@ -59,5 +60,6 @@ namespace Dach.ElectionSystem.BusinessLogic.User
             var userResponse = mapper.Map<UserUpdateResponse>(userCurrent);
             return userResponse;
         }
+        #endregion
     }
 }

@@ -43,13 +43,17 @@ namespace Dach.ElectionSystem.WebApi
             services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=SQL5103.site4now.net;Initial Catalog=DB_A49E05_electionSystem;User Id=DB_A49E05_electionSystem_admin;Password=dach1996"));
 #endif
             services.AddSingletonRepository();
-            services.ConfigureController();        
+            services.ConfigureController();
 
-           services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Elecciones", Version = "v1" });
-                c.IncludeXmlComments("ElectionSystem.xml");
+            services.AddSwaggerGen(c =>
+             {
+                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Elecciones", Version = "v1" });
+                 c.IncludeXmlComments("ElectionSystem.xml");
+#if DEBUG
+#else
                 c.IncludeXmlComments("ElectionSystemModels.xml");
+#endif
+
             });
 
             //  services.AddSingleton<ILoggerCustom, LoggerCustom>();

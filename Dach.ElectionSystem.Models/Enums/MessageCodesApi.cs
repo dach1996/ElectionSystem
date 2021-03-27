@@ -53,6 +53,11 @@ namespace Dach.ElectionSystem.Models.Enums
         /// <summary>
         /// Error del sistema
         /// </summary>
+        [EnumMember(Value = "Usuario se encuntra desactivado")]
+        UserIsInactive = 151,
+        /// <summary>
+        /// Error del sistema
+        /// </summary>
         [EnumMember(Value = "No se pudo crear registro")]
         NotCreateRecord = 300,
         /// <summary>

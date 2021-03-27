@@ -25,5 +25,9 @@ namespace Dach.ElectionSystem.Models.RequestBase
         /// Email de usuario
         /// </summary>
         public string Email { get; set; }
+        /// <summary>
+        /// Id de Usuario
+        /// </summary>
+        public string Id { get; set; }
     }
 }

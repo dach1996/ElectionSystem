@@ -26,6 +26,10 @@ namespace Dach.ElectionSystem.Models.Enums
         /// <summary>
         /// Email de Usuario
         /// </summary>
-        Email
+        Email,
+        /// <summary>
+        /// Id de Usuario
+        /// </summary>
+        Id
     }
 }

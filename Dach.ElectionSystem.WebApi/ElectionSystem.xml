@@ -66,5 +66,10 @@
             Actualizar Usuario
             </summary>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.DeleteHandler(Dach.ElectionSystem.Models.Request.User.UserDeleteRequest)">
+            <summary>
+            Desactivar Usuario
+            </summary>
+        </member>
     </members>
 </doc>

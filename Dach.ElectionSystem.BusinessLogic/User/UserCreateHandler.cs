@@ -57,7 +57,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
             if(existUser!=null)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.DataExist, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
             var userNew = mapper.Map<Models.Persitence.User>(request);
-            request.IsActive = true;
+            userNew.IsActive = true;
             var isRegister = await userRepository.CreateAsync(userNew);
             if(!isRegister)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);

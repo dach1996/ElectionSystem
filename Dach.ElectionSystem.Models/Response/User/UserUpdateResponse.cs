@@ -17,10 +17,5 @@ namespace Dach.ElectionSystem.Models.Response.User
         /// </summary>
         public int Id { get; set; }
 
-        /// <summary>
-        /// Contraseña Usuario
-        /// </summary>
-        [JsonIgnore]
-        public new string Password { get => ""; }
     }
 }

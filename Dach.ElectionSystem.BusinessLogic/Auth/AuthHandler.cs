@@ -4,21 +4,26 @@ using Dach.ElectionSystem.Models.Response.Auth;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.TokenJWT;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Dach.ElectionSystem.Common;
 
 namespace Dach.ElectionSystem.BusinessLogic.Auth
 {
+    [AllowAnonymous]
     public class AuthHandler : IRequestHandler<LoginRequest, LoginResponse>
     {
+        #region Constructor
         private readonly ITokenService _tokenService;
         private readonly ILogger<AuthHandler> _logger;
         private readonly IConfiguration _configuration;
         private readonly string _secretKey;
-
+        #endregion
+        
         public AuthHandler(IMediator mediator,
             IUserRepository usuarioRepository, 
             ITokenService tokenService,
@@ -41,6 +46,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
             var user = await _usuarioRepository.GetUserByUsernameOrEmailAndPassword(request.Username, passwordHash);
             if (user == null)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData,Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+            if(!user.IsActive)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.UserIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             var token = _tokenService.GenerateTokenJwt(user);
             return new LoginResponse() { Token = token };
         }

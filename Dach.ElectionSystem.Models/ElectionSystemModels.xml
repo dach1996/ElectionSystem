@@ -84,6 +84,11 @@
             Email de Usuario
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.Claim.Id">
+            <summary>
+            Id de Usuario
+            </summary>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Enums.MessageCodesApi">
             <summary>
             Mensages genéricos de error
@@ -120,6 +125,11 @@
             </summary>
         </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ModelInvalid">
+            <summary>
+            Error del sistema
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.UserIsInactive">
             <summary>
             Error del sistema
             </summary>
@@ -282,6 +292,16 @@
             Estado de Usuario
             </summary>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.RequestBase.IRequestBase">
+            <summary>
+            Clase base para todos los request
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.IRequestBase.TokenModel">
+            <summary>
+            Token para contexto
+            </summary>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.RequestBase.TokenModel">
             <summary>
             Modelo Token para inyectar en Contexto
@@ -300,6 +320,11 @@
         <member name="P:Dach.ElectionSystem.Models.RequestBase.TokenModel.Email">
             <summary>
             Email de usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.TokenModel.Id">
+            <summary>
+            Id de Usuario
             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Auth.LoginRequest">
@@ -325,6 +350,21 @@
         <member name="P:Dach.ElectionSystem.Models.Request.User.UserCreateRequest.IsActive">
             <summary>
             Estado de Usuario
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.User.UserDeleteRequest">
+            <summary>
+            Clase para Request Delete User
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserDeleteRequest.Id">
+            <summary>
+            Id de usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserDeleteRequest.TokenModel">
+            <summary>
+            Token Model
             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Request.User.UserRequestBase">
@@ -403,9 +443,19 @@
             Contraseña Usuario
             </summary>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.User.UserDeleteResponse">
+            <summary>
+            Clase respuesta de Delete User
+            </summary>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Response.User.UserResponseBase">
             <summary>
             Clase base para respuesta de Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.User.UserResponseBase.Password">
+            <summary>
+            Contraseña Usuario
             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Response.User.UserUpdateResponse">
@@ -416,11 +466,6 @@
         <member name="P:Dach.ElectionSystem.Models.Response.User.UserUpdateResponse.Id">
             <summary>
             Id de usuario
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Response.User.UserUpdateResponse.Password">
-            <summary>
-            Contraseña Usuario
             </summary>
         </member>
     </members>
