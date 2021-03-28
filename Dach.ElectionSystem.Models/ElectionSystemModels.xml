@@ -367,6 +367,47 @@
             Token Model
             </summary>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.User.UserGetRequest">
+            <summary>
+            Clase Model para User Get Request
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Id">
+            <summary>
+            Id de Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Username">
+            <summary>
+            Nick de Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.FirstName">
+            <summary>
+            Nombre Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.LastName">
+            <summary>
+            Apellido Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Role">
+            <summary>
+            Rol de Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.TokenModel">
+            <summary>
+            Token Contexto
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.User.UserRequestBase">
             <summary>
             Base de Modelo
@@ -447,6 +488,17 @@
             <summary>
             Clase respuesta de Delete User
             </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.User.UserGetResponse">
+            <summary>
+            Clase Modelo para Get User Response
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.User.UserGetResponse.ListUser">
+            <summary>
+            Lista de Usuario
+            </summary>
+            <value></value>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Response.User.UserResponseBase">
             <summary>

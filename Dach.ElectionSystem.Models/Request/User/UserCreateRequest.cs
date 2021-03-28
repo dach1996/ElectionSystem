@@ -1,5 +1,4 @@
-﻿using Dach.ElectionSystem.Models.RequestBase;
-using Dach.ElectionSystem.Models.Response.User;
+﻿using Dach.ElectionSystem.Models.Response.User;
 using MediatR;
 using System;
 using System.Collections.Generic;

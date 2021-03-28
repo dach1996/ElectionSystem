@@ -71,5 +71,10 @@
             Desactivar Usuario
             </summary>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler(Dach.ElectionSystem.Models.Request.User.UserGetRequest)">
+            <summary>
+            Consultar Usuarios
+            </summary>
+        </member>
     </members>
 </doc>

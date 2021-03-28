@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Globalization;
+using AutoMapper;
 using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.User;
 using System;
@@ -11,7 +12,7 @@ namespace Dach.ElectionSystem.Utils.Mapper.User
 {
     public static class UserMapper
     {
-        public static void Config(Profile profile)
+        public static void ConfigUserMapper(this CustomMapperDTO profile)
         {
             //Mapper to User - User Create
             profile.CreateMap<UserCreateRequest, Models.Persitence.User>()
@@ -41,12 +42,19 @@ namespace Dach.ElectionSystem.Utils.Mapper.User
                  .ForMember(
                  destino => destino.Role,
                  origen => origen.MapFrom(u => u.Rol));
-            
+
             //Mapper to User Delete
             profile.CreateMap<Models.Persitence.User, UserDeleteResponse>()
              .ForMember(
              destino => destino.Role,
              origen => origen.MapFrom(u => u.Rol));
+
+            //Mapper to User - Get Update
+
+            profile.CreateMap<Models.Persitence.User, UserResponseBase>()
+                 .ForMember(
+                 destino => destino.Role,
+                 origen => origen.MapFrom(u => u.Rol));
         }
 
     }

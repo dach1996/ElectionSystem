@@ -23,7 +23,7 @@ namespace Dach.ElectionSystem.Models.Base
         /// <summary>
         /// Contraseña Usuario
         /// </summary>
-        public string Password { get; set; }
+        public virtual string Password { get; set; }
         /// <summary>
         /// Primer nombre Usuario
         /// </summary>

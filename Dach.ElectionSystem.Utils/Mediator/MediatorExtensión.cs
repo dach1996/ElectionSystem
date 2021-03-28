@@ -34,11 +34,8 @@ namespace Dach.ElectionSystem.Utils.Mediator
 
             //Mediator Candidate
             services.AddTransient<IRequestHandler<CandidateCreateRequest, CandidateCreateResponse>, CandidateCreateHandler>();
-
-            //Mediator User
-            services.AddTransient<IRequestHandler<UserCreateRequest, UserCreateResponse>, UserCreateHandler>();
-            services.AddTransient<IRequestHandler<UserUpdateRequest, UserUpdateResponse>, UserUpdateHandler>();
-            services.AddTransient<IRequestHandler<UserDeleteRequest, UserDeleteResponse>, UserDeleteHandler>();
+           
+            MediatorUser.AddIMediaRUserConfig(services);
         }
     }
 }

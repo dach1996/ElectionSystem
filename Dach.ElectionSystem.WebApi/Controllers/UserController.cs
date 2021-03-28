@@ -29,7 +29,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(200, Type = typeof(GenericResponse<UserCreateResponse>))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> CreateUser(UserCreateRequest request) => Success(await _mediator.Send(request));
+        public async Task<IActionResult> CreateUser([FromBody]UserCreateRequest request) => Success(await _mediator.Send(request));
 
         /// <summary>
         /// Actualizar Usuario
@@ -38,7 +38,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(200, Type = typeof(GenericResponse<UserUpdateResponse>))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> UpdateUser(UserUpdateRequest request) => Success(await _mediator.Send(request));
+        public async Task<IActionResult> UpdateUser([FromBody]UserUpdateRequest request) => Success(await _mediator.Send(request));
 
         /// <summary>
         /// Desactivar Usuario
@@ -47,9 +47,16 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(200, Type = typeof(GenericResponse<UserDeleteResponse>))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> DeleteHandler([FromQuery]UserDeleteRequest request) => Success(await _mediator.Send(request));
+        public async Task<IActionResult> DeleteHandler([FromQuery] UserDeleteRequest request) => Success(await _mediator.Send(request));
 
-
+        /// <summary>
+        /// Consultar Usuarios
+        /// </summary>
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(GenericResponse<UserGetResponse>))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        public async Task<IActionResult> GetHandler([FromQuery] UserGetRequest request) => Success(await _mediator.Send(request));
 
         #endregion
     }

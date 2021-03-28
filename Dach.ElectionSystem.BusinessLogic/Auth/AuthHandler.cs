@@ -7,10 +7,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Dach.ElectionSystem.Common;
 
 namespace Dach.ElectionSystem.BusinessLogic.Auth
 {

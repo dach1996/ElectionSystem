@@ -22,7 +22,7 @@ namespace Dach.ElectionSystem.Utils.Mapper
             //Mappers to Candidate
             CreateMap<CandidateCreateRequest, Candidate>();
             CreateMap<Candidate, CandidateCreateResponse>();
-            UserMapper.Config(this);
+            this.ConfigUserMapper();
 
 
         }

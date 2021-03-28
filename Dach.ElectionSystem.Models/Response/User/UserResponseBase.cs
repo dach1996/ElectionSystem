@@ -11,13 +11,14 @@ namespace Dach.ElectionSystem.Models.Response.User
     /// <summary>
     /// Clase base para respuesta de Usuario
     /// </summary>
-    public abstract class UserResponseBase : UserBase
+    public  class UserResponseBase : UserBase
     {
 
+        
         /// <summary>
         /// Contraseña Usuario
         /// </summary>
         [JsonIgnore]
-        public new string Password { get => ""; }
+        public override string Password { get => ""; }
     }
 }
