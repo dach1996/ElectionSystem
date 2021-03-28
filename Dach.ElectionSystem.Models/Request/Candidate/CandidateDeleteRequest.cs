@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Models.Request.Candidate
 {
+    /// <summary>
+    /// Clase CandidateDeleteRequest
+    /// </summary>
     public class CandidateDeleteRequest : IRequest<string>
     {
     }

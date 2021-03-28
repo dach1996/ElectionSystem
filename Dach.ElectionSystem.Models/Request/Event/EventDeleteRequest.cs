@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Models.Request.Event
 {
+    /// <summary>
+    /// Clase EventDeleteRequest
+    /// </summary>
      public class EventDeleteRequest : IRequest<EventDeleteResponse>
     {
+        /// <summary>
+        /// Id de evento
+        /// </summary>
+        /// <value></value>
         public int IdEvent { get; set; }
     }
 }

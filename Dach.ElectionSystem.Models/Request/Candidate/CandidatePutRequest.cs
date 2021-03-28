@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Models.Request.Candidate
 {
+    /// <summary>
+    /// Clase CandidatePutRequest
+    /// </summary>
     public class CandidatePutRequest
     {
     }

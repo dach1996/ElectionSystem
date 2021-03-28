@@ -31,7 +31,7 @@ namespace Dach.ElectionSystem.Models.ExceptionGeneric
         /// Contructor
         /// </summary>
         /// <param name="codeHttp">Código de respuesta</param>
-        /// <param name="messageCustom">Mensaje de respuesta</param>
+        /// <param name="messageCodesApi">Mensaje de respuesta</param>
         /// <param name="responseType">Tipo de respuesta</param>
         public ExceptionCustom(MessageCodesApi messageCodesApi,  ResponseType responseType, HttpStatusCode codeHttp) :base()
         {

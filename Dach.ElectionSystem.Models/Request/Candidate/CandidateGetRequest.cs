@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Models.Request.Candidate
 {
+    /// <summary>
+    /// Clase CandidateGetRequest
+    /// </summary>
     public class CandidateGetRequest : IRequest<CandidateGetResponse>
     {
     }
