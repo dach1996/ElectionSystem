@@ -60,5 +60,10 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// <value></value>
         [Column("PUESTOS_LABORALES_CANDIDATO")]
         public string PostionsWorks { get; set; }
+        /// <summary>
+        /// Estado de Candidato
+        /// </summary>
+        [Column("ESTADO_CANDIDATO")] 
+        public bool IsActive { get; set; }
     }
 }

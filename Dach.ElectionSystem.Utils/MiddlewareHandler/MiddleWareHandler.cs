@@ -1,10 +1,6 @@
 ﻿
 using Dach.ElectionSystem.Utils.Segurity.JWT;
 using Microsoft.AspNetCore.Builder;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Dach.ElectionSystem.Utils.MiddlewareHandler
 {
     public static class MiddleWareHandler

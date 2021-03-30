@@ -3,23 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dach.ElectionSystem.Models.Base;
 
 namespace Dach.ElectionSystem.Models.Response.Event
 {
     /// <summary>
     /// Clase EventDeleteResponse
     /// </summary>
-    public class EventDeleteResponse
+    public class EventDeleteResponse : EventBase
     {
-        /// <summary>
-        /// Id de Evento
-        /// </summary>
-        /// <value></value>
-        public int Id { get; set; }
-        /// <summary>
-        /// Nombre de Evento
-        /// </summary>
-        /// <value></value>
-        public string Name { get; set; }
+   
     }
 }

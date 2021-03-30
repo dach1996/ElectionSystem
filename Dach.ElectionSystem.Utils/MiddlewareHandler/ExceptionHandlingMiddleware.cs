@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Linq;
-using System.Net;
-using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System.Xml;
-using System.ServiceModel;
 using Dach.ElectionSystem.Models.ResponseBase;
 using Dach.ElectionSystem.Models.Enums;
-using Microsoft.AspNetCore.Builder;
 using Dach.ElectionSystem.Utils.Extension;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 

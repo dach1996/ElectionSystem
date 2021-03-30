@@ -42,16 +42,16 @@
             <param name="candidateCreateRequest"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.Post(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest)">
             <summary>
             Crear nuevo evento
             </summary>
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.Delete(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest)">
             <summary>
-            Eliminar Evento
+            Desactivar Evento
             </summary>
             <param name="request"></param>
             <returns></returns>

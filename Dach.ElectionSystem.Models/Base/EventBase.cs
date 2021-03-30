@@ -1,69 +1,55 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-namespace Dach.ElectionSystem.Models.Persitence
+namespace Dach.ElectionSystem.Models.Base
 {
     /// <summary>
-    /// Clase de persistencia Eventos
+    /// Calse base para Evento
     /// </summary>
-    [Table(name: "EVENTOS")]
-    public class Event
+    public class EventBase
     {
         /// <summary>
-        /// Id de evento
+        /// Id de Evento
         /// </summary>
         /// <value></value>
-        [Key, Column("ID_EVENTO")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        /// <summary>
-        /// Nombre evento
-        /// </summary>
-        /// <value></value>
-        [Column("NOMBRE_EVENTO")]
-        public string Name { get; set; }
-        /// <summary>
-        /// Dirección de foto de Evento
-        /// </summary>
-        /// <value></value>
-        [Column("FOTO_EVENTO")]
-        public string Image { get; set; }
-        /// <summary>
-        /// Descripción de Evento
-        /// </summary>
-        /// <value></value>
-        [Column("DESCRIPCION_EVENTO")]
-        public string Description { get; set; }
-        /// <summary>
-        /// Permitir  máximo de personas por evento
-        /// </summary>
-        /// <value></value>
-        [Column("MAX_PERSONAS_EVENTO")]
-        public bool MaxPeople { get; set; }
-        /// <summary>
-        /// Numero máximo de participantes
-        /// </summary>
-        /// <value></value>
-        [Column("NUM_MAX_PERSONAS_EVENTO")]
-        public int NumberMaxPeople { get; set; }
-        /// <summary>
-        /// Número máximo de candidatos
-        /// </summary>
-        /// <value></value>
-        [Column("NUM_MAX_CANDIDATOS_EVENTO")]
-        public int NumberMaxCandidate { get; set; }
-        /// <summary>
-        /// Categoría de Evento.
-        /// </summary>
-        /// <value></value>
-        [Column("CATEGORIA")]
-        public string Category { get; set; }
         
         /// <summary>
-        /// Evento está Activo
+        /// Nombre de evento
         /// </summary>
         /// <value></value>
-        [Column("ESTADO_EVENTO")]
-        public bool IsActive { get; set; }
-
+        public string Name { get; set; }
+        /// <summary>
+        /// Ruta de imagen para evento
+        /// </summary>
+        /// <value></value>
+        public string Image { get; set; }
+        /// <summary>
+        /// Descripción de evento
+        /// </summary>
+        /// <value></value>
+        public string Description { get; set; }
+        /// <summary>
+        /// Permitir máximo personas para Evento
+        /// </summary>
+        /// <value></value>
+        public bool MaxPeople { get; set; }
+        /// <summary>
+        /// Número máximo de personas para evento
+        /// </summary>
+        /// <value></value>
+        public int NumberMaxPeople { get; set; }
+        /// <summary>
+        /// Máximo de Candidatos
+        /// </summary>
+        /// <value></value>
+        public int NumberMaxCandidate { get; set; }
+        /// <summary>
+        /// Categoría de Evento
+        /// </summary>
+        /// <value></value>
+        public string Category { get; set; }
+        /// <summary>
+        /// Evento Activo
+        /// </summary>
+        /// <value></value>
+        public bool? IsActive { get; set; }
     }
 }

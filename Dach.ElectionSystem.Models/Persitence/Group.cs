@@ -45,5 +45,10 @@ namespace Dach.ElectionSystem.Models.Persitences
         /// <value></value>
         [Column("FOTO_GRUPO")]
         public string  Image { get; set; }
+        /// <summary>
+        /// Estado de Grupo
+        /// </summary>
+        [Column("ESTADO_GRUPO")]
+         public bool IsActive { get; set; }
     }
 }

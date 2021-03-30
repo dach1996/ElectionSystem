@@ -17,7 +17,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Dach.ElectionSystem.DataBas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.BusinessLogic", "Dach.ElectionSystem.BusinessLogic\Dach.ElectionSystem.BusinessLogic.csproj", "{C2D8260A-62D6-4F93-A36F-F58FF33991EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dach.ElectionSystem.Common", "Common\Dach.ElectionSystem.Common.csproj", "{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.Common", "Dach.ElectionSystem.Common\Dach.ElectionSystem.Common.csproj", "{4C4E5CA1-E103-4764-A474-CA736EDF12F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +55,10 @@ Global
 		{C2D8260A-62D6-4F93-A36F-F58FF33991EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2D8260A-62D6-4F93-A36F-F58FF33991EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2D8260A-62D6-4F93-A36F-F58FF33991EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB99F0A9-C032-47B1-BC49-1BD8AE0CF56F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C4E5CA1-E103-4764-A474-CA736EDF12F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C4E5CA1-E103-4764-A474-CA736EDF12F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C4E5CA1-E103-4764-A474-CA736EDF12F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C4E5CA1-E103-4764-A474-CA736EDF12F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

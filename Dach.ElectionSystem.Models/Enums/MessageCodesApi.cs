@@ -41,10 +41,10 @@ namespace Dach.ElectionSystem.Models.Enums
         InsufficientPrivileges = 125,
 
         /// <summary>
-        /// Error del sistema
+        /// Datos ya registrados
         /// </summary>
         [EnumMember(Value = "Datos ya registrados")]
-        DataExist = 125,
+        DataExist = 126,
         /// <summary>
         /// Error del sistema
         /// </summary>
@@ -55,6 +55,11 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "Usuario se encuntra desactivado")]
         UserIsInactive = 151,
+         /// <summary>
+        /// Evento Descativado
+        /// </summary>
+        [EnumMember(Value = "Evento se encuntra desactivado")]
+        EventIsInactive = 152,
         /// <summary>
         /// Error del sistema
         /// </summary>
