@@ -19,11 +19,16 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         #region Constructor 
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;
+        private readonly IUserRepository userRepository;
 
-        public EventCreateHandler(IEventRepository eventRepository, IMapper mapper)
+        public EventCreateHandler(
+        IEventRepository eventRepository, 
+        IMapper mapper,
+        IUserRepository userRepository)
         {
             this._eventRepository = eventRepository;
             this._mapper = mapper;
+            this.userRepository = userRepository;
         }
         #endregion
         #region Handler
@@ -37,6 +42,14 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             var newEvent = _mapper.Map<Models.Persitence.Event>(request);
             //// TODO: Cuantificar numéro de eventos permitidos por usuario
             newEvent.IsActive=true;
+            var user =  await userRepository.GetUserByUsernameByEmail(request.TokenModel.Email);
+            newEvent.EventUser= new List<EventUser>(){
+                new EventUser()
+                {
+                    Event=newEvent,
+                    User=user
+                 }
+            };
             var hasCreate = await _eventRepository.CreateAsync(newEvent);
             if (!hasCreate)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);

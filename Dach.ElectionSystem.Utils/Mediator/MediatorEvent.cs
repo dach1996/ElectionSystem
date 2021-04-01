@@ -12,6 +12,7 @@ namespace Dach.ElectionSystem.Utils.Mediator
         {
             services.AddTransient<IRequestHandler<EventCreateRequest, EventCreateResponse>, EventCreateHandler>();
             services.AddTransient<IRequestHandler<EventDeleteRequest, EventDeleteResponse>, EventDeleteHandler>();
+            services.AddTransient<IRequestHandler<EventUpdateRequest, EventUpdateResponse>, EventUpdateHandler>();
         }
     }
 }

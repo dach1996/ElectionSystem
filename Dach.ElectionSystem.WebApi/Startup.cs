@@ -38,7 +38,9 @@ namespace Dach.ElectionSystem.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
 #if DEBUG
-            services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=DESKTOP-6PGT33F;Initial Catalog=ElectionSystem;Integrated Security=true; User Id=sa;Password=dach1996;").EnableDetailedErrors());
+            services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=DESKTOP-6PGT33F;Initial Catalog=ElectionSystem;Integrated Security=true; User Id=sa;Password=dach1996;")
+            .EnableDetailedErrors().
+            EnableSensitiveDataLogging());
 #else
             services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=SQL5103.site4now.net;Initial Catalog=DB_A49E05_electionSystem;User Id=DB_A49E05_electionSystem_admin;Password=dach1996"));
 #endif
@@ -49,10 +51,8 @@ namespace Dach.ElectionSystem.WebApi
              {
                  c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Elecciones", Version = "v1" });
                  c.IncludeXmlComments("ElectionSystem.xml");
-#if DEBUG
-#else
-                c.IncludeXmlComments("ElectionSystemModels.xml");
-#endif
+                 c.IncludeXmlComments("ElectionSystemModels.xml");
+
 
             });
 

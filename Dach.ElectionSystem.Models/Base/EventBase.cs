@@ -10,7 +10,7 @@ namespace Dach.ElectionSystem.Models.Base
         /// </summary>
         /// <value></value>
         public int Id { get; set; }
-        
+
         /// <summary>
         /// Nombre de evento
         /// </summary>
@@ -46,6 +46,7 @@ namespace Dach.ElectionSystem.Models.Base
         /// </summary>
         /// <value></value>
         public string Category { get; set; }
+
         /// <summary>
         /// Evento Activo
         /// </summary>

@@ -14,6 +14,10 @@ namespace Dach.ElectionSystem.Utils.Mapper.Event
             //Delete
             profile.CreateMap<EventDeleteRequest, Models.Persitence.Event>();
             profile.CreateMap<Models.Persitence.Event, EventDeleteResponse>();
+
+            //Update
+            profile.CreateMap<EventUpdateRequest, Models.Persitence.Event>();
+            profile.CreateMap<Models.Persitence.Event, EventUpdateResponse>();
         }
     }
 }

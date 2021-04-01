@@ -1,7 +1,7 @@
 ﻿using Dach.ElectionSystem.Models.Persitence;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Repository.UnitOfWork;
-
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +32,8 @@ namespace Dach.ElectionSystem.Repository.Implementation
         }
         public async Task<User> GetUserByUsernameByEmail(string email)
         {
-            var user = unitOfWork.Context.User.FirstOrDefault(user => (user.Email == email));
+            var user = unitOfWork.Context.User.Include(u=>u.EventUser).
+            FirstOrDefault(user => user.Email == email);
             return await Task.Run(() => user);
         }
         public async Task<User> GetUserByUsernameByUsername(string username)

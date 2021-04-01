@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Dach.ElectionSystem.Models.Persitence
 {
@@ -57,13 +58,20 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// <value></value>
         [Column("CATEGORIA")]
         public string Category { get; set; }
-        
+
         /// <summary>
         /// Evento está Activo
         /// </summary>
         /// <value></value>
         [Column("ESTADO_EVENTO")]
         public bool IsActive { get; set; }
+
+
+        /// <summary>
+        /// Eventos Usuarios
+        /// </summary>
+        /// <value></value>
+        public ICollection<EventUser> EventUser { get; set; }
 
     }
 }

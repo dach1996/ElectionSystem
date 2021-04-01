@@ -56,6 +56,13 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent(Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest)">
+            <summary>
+            Actualizar Evento
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest)">
             <summary>
             Crear Usuario

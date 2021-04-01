@@ -1,14 +1,10 @@
 ﻿using AutoMapper;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
-using Dach.ElectionSystem.Models.Persitence;
 using Dach.ElectionSystem.Models.Request.Event;
 using Dach.ElectionSystem.Models.Response.Event;
 using Dach.ElectionSystem.Repository.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -19,22 +15,41 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         #region Constructor
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;
-        public EventDeleteHandler(IEventRepository eventRepository, IMapper mapper)
+        private readonly IUserRepository userRepository;
+
+        public EventDeleteHandler(
+            IEventRepository eventRepository,
+            IMapper mapper,
+            IUserRepository userRepository)
         {
             this._eventRepository = eventRepository;
             this._mapper = mapper;
+            this.userRepository = userRepository;
         }
         #endregion
         #region Handler
         public async Task<EventDeleteResponse> Handle(EventDeleteRequest request, CancellationToken cancellationToken)
         {
+
+            //Valida que solo Administradores y super administradores puedan desactivar eventos
+            if (request.TokenModel.RolUser == Models.Enums.RolUser.User)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.InsufficientPrivileges, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+            //Obtiene evento por ID
             var getEvent = await _eventRepository.GetByIdAsync(request.Id);
             if (getEvent == null)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+            //Valida que evento esté Activo
             if (!getEvent.IsActive)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.EventIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+            //Obtiene el  usuario y valida que tenga ese evento registrado
+            var user = await userRepository.GetUserByUsernameByEmail(request.TokenModel.Email);
+            var isUserRegisterEvent = user.EventUser.Any(e=>e.IdEvent == getEvent.Id);
+            //Valida que el evento esté registrado al usuario
+            if (!isUserRegisterEvent)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.DataWithoutProperty, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
             getEvent.IsActive = false;
             var responseDelete = await _eventRepository.Update(getEvent);
+            //Valida que el evento se haya desactivado
             if (!responseDelete)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             return _mapper.Map<EventDeleteResponse>(getEvent);

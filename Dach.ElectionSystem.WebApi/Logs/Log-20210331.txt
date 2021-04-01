@@ -1,0 +1,487 @@
+[21:53:59][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[21:53:59][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[21:53:59][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[21:53:59][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[21:53:59][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger - -
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger - - - 301 0 - 136.2451ms
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 67.5244ms
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui.css - -
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-bundle.js - -
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-standalone-preset.js - -
+[21:54:00][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[21:54:00][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui.css - - - 200 142933 text/css 55.5515ms
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 47.1376ms
+[21:54:00][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 56.6511ms
+[21:54:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[21:54:01][ERR][Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware]:An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "DELETE api/Event" for actions - Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi),Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[21:54:01][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 500 - text/plain 263.0412ms
+[21:54:43][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[21:54:43][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[21:54:43][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[21:54:43][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[21:54:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[21:54:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 157.3228ms
+[21:54:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[21:54:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 204.1309ms
+[21:54:55][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/Auth application/json 55
+[21:54:56][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[21:54:56][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[21:54:56][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[21:54:56][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[21:54:56][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[21:54:57][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (39ms) [Parameters=[@__username_0='dach1' (Size = 4000), @__password_1='afa9a86c6b224574ae5436aacefc9b031187d3ec602b50746081bfe59a9e1a1f' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE (([u].[NICK_USUARIO] = @__username_0) OR ([u].[CORREO_USUARIO] = @__username_0)) AND ([u].[PASSWORD_USUARIO] = @__password_1)
+[21:54:57][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[21:54:57][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 1575.3499ms
+[21:54:57][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[21:54:57][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/Auth application/json 55 - 200 - application/json;+charset=utf-8 1849.7110ms
+[21:55:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/Event application/json 238
+[21:55:12][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[21:55:12][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[21:55:12][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[21:55:12][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (14ms) [Parameters=[@__request_Name_0='Elección  la toldda2' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[NOMBRE_EVENTO] = @__request_Name_0
+[21:55:13][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[21:55:13][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@p0='Eleccion multiple' (Size = 4000), @p1='Evento nuevo en el Ecuador' (Size = 4000), @p2='En blanco' (Size = 4000), @p3='True', @p4='False', @p5='Elección  la toldda2' (Size = 4000), @p6='0', @p7='0'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS] ([CATEGORIA], [DESCRIPCION_EVENTO], [FOTO_EVENTO], [ESTADO_EVENTO], [MAX_PERSONAS_EVENTO], [NOMBRE_EVENTO], [NUM_MAX_CANDIDATOS_EVENTO], [NUM_MAX_PERSONAS_EVENTO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [ID_EVENTO]
+FROM [EVENTOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTO] = scope_identity();
+[21:55:13][ERR][Microsoft.EntityFrameworkCore.Database.Command]:Failed executing DbCommand (4ms) [Parameters=[@p8='6010', @p9='2003'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS_USUARIOS] ([ID_EVENTO_EU], [ID_USUARIO_EU])
+VALUES (@p8, @p9);
+SELECT [ID_EVENTOS_USUARIOS]
+FROM [EVENTOS_USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTOS_USUARIOS] = scope_identity();
+[21:55:13][ERR][Microsoft.EntityFrameworkCore.Update]:An exception occurred in the database while saving changes for context type 'Dach.ElectionSystem.Repository.DBContext.WebApiDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): El nombre de objeto 'EVENTOS_USUARIOS' no es válido.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:e1009af9-9b15-471f-8305-20e734541f68
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): El nombre de objeto 'EVENTOS_USUARIOS' no es válido.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:e1009af9-9b15-471f-8305-20e734541f68
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Dach.ElectionSystem.Repository.Implementation.GenericRepository`1.CreateAsync(T entity) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\GenericRepository.cs:line 64
+[21:55:13][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi) in 693.1073ms
+[21:55:13][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[21:55:13][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): El nombre de objeto 'EVENTOS_USUARIOS' no es válido.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:e1009af9-9b15-471f-8305-20e734541f68
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Dach.ElectionSystem.Repository.Implementation.GenericRepository`1.CreateAsync(T entity) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\GenericRepository.cs:line 64
+   at Dach.ElectionSystem.BusinessLogic.Event.EventCreateHandler.Handle(EventCreateRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Event\EventCreateHandler.cs:line 53
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent(EventCreateRequest request) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[21:55:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/Event application/json 238 - 500 - application/json 957.5993ms
+[22:00:34][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[22:00:34][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[22:00:34][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[22:00:34][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[22:00:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[22:00:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 142.2498ms
+[22:00:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[22:00:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 177.6543ms
+[22:02:41][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[22:02:41][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[22:02:41][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[22:02:41][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[22:02:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger - -
+[22:02:45][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger - - - 301 0 - 354.0507ms
+[22:02:45][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[22:02:45][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 186.7327ms
+[22:02:45][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-bundle.js - -
+[22:02:45][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-standalone-preset.js - -
+[22:02:45][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui.css - -
+[22:02:45][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[22:02:45][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[22:02:45][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui.css - - - 200 142933 text/css 80.3744ms
+[22:02:45][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 80.6254ms
+[22:02:45][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[22:02:45][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 94.2972ms
+[22:02:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[22:02:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 256.5676ms
+[22:03:07][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/Event application/json 242
+[22:03:07][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[22:03:07][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[22:03:07][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:03:08][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[22:03:08][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:03:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (44ms) [Parameters=[@__request_Name_0='Elección  la tolasdfdda2' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[NOMBRE_EVENTO] = @__request_Name_0
+[22:03:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[22:03:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p0='Eleccion multiple' (Size = 4000), @p1='Evento nuevo en el Ecuador' (Size = 4000), @p2='En blanco' (Size = 4000), @p3='True', @p4='False', @p5='Elección  la tolasdfdda2' (Size = 4000), @p6='0', @p7='0'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS] ([CATEGORIA], [DESCRIPCION_EVENTO], [FOTO_EVENTO], [ESTADO_EVENTO], [MAX_PERSONAS_EVENTO], [NOMBRE_EVENTO], [NUM_MAX_CANDIDATOS_EVENTO], [NUM_MAX_PERSONAS_EVENTO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [ID_EVENTO]
+FROM [EVENTOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTO] = scope_identity();
+[22:03:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@p8='7010', @p9='2003'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS_USUARIOS] ([ID_EVENTO_EU], [ID_USUARIO_EU])
+VALUES (@p8, @p9);
+SELECT [ID_EVENTOS_USUARIOS]
+FROM [EVENTOS_USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTOS_USUARIOS] = scope_identity();
+[22:03:09][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[22:03:09][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi) in 1658.0769ms
+[22:03:09][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[22:03:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/Event application/json 242 - 200 - application/json;+charset=utf-8 2098.3428ms
+[22:06:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/Event application/json 245
+[22:06:27][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[22:06:27][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:06:27][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:06:27][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Name_0='Elección ddd la tolasdfdda2' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[NOMBRE_EVENTO] = @__request_Name_0
+[22:06:27][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[22:06:27][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@p0='Eleccion multiple' (Size = 4000), @p1='Evento nuevo en el Ecuador' (Size = 4000), @p2='En blanco' (Size = 4000), @p3='True', @p4='False', @p5='Elección ddd la tolasdfdda2' (Size = 4000), @p6='0', @p7='0'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS] ([CATEGORIA], [DESCRIPCION_EVENTO], [FOTO_EVENTO], [ESTADO_EVENTO], [MAX_PERSONAS_EVENTO], [NOMBRE_EVENTO], [NUM_MAX_CANDIDATOS_EVENTO], [NUM_MAX_PERSONAS_EVENTO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [ID_EVENTO]
+FROM [EVENTOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTO] = scope_identity();
+[22:06:27][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@p8='7011', @p9='2003'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS_USUARIOS] ([ID_EVENTO_EU], [ID_USUARIO_EU])
+VALUES (@p8, @p9);
+SELECT [ID_EVENTOS_USUARIOS]
+FROM [EVENTOS_USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTOS_USUARIOS] = scope_identity();
+[22:06:27][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[22:06:27][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi) in 45.3068ms
+[22:06:27][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[22:06:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/Event application/json 245 - 200 - application/json;+charset=utf-8 53.1474ms
+[22:06:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/Event application/json 248
+[22:06:35][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[22:06:35][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:06:35][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:06:35][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Name_0='Elección ddd la tolaghgsdfdda2' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[NOMBRE_EVENTO] = @__request_Name_0
+[22:06:35][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[22:06:35][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@p0='Eleccion multiple' (Size = 4000), @p1='Evento nuevo en el Ecuador' (Size = 4000), @p2='En blanco' (Size = 4000), @p3='True', @p4='False', @p5='Elección ddd la tolaghgsdfdda2' (Size = 4000), @p6='0', @p7='0'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS] ([CATEGORIA], [DESCRIPCION_EVENTO], [FOTO_EVENTO], [ESTADO_EVENTO], [MAX_PERSONAS_EVENTO], [NOMBRE_EVENTO], [NUM_MAX_CANDIDATOS_EVENTO], [NUM_MAX_PERSONAS_EVENTO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [ID_EVENTO]
+FROM [EVENTOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTO] = scope_identity();
+[22:06:35][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@p8='7012', @p9='2003'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS_USUARIOS] ([ID_EVENTO_EU], [ID_USUARIO_EU])
+VALUES (@p8, @p9);
+SELECT [ID_EVENTOS_USUARIOS]
+FROM [EVENTOS_USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTOS_USUARIOS] = scope_identity();
+[22:06:35][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[22:06:35][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi) in 22.5354ms
+[22:06:35][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[22:06:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/Event application/json 248 - 200 - application/json;+charset=utf-8 24.8349ms
+[22:08:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/Event application/json 237
+[22:08:43][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[22:08:43][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:08:43][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:08:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (5ms) [Parameters=[@__request_Name_0='Elección de la Tola' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[NOMBRE_EVENTO] = @__request_Name_0
+[22:08:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[22:08:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@p0='Eleccion multiple' (Size = 4000), @p1='Evento nuevo en el Ecuador' (Size = 4000), @p2='En blanco' (Size = 4000), @p3='True', @p4='False', @p5='Elección de la Tola' (Size = 4000), @p6='0', @p7='0'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS] ([CATEGORIA], [DESCRIPCION_EVENTO], [FOTO_EVENTO], [ESTADO_EVENTO], [MAX_PERSONAS_EVENTO], [NOMBRE_EVENTO], [NUM_MAX_CANDIDATOS_EVENTO], [NUM_MAX_PERSONAS_EVENTO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [ID_EVENTO]
+FROM [EVENTOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTO] = scope_identity();
+[22:08:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@p8='7013', @p9='2003'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS_USUARIOS] ([ID_EVENTO_EU], [ID_USUARIO_EU])
+VALUES (@p8, @p9);
+SELECT [ID_EVENTOS_USUARIOS]
+FROM [EVENTOS_USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTOS_USUARIOS] = scope_identity();
+[22:08:43][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[22:08:43][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi) in 22.2074ms
+[22:08:43][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[22:08:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/Event application/json 237 - 200 - application/json;+charset=utf-8 23.5223ms
+[22:09:15][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/Event?id=7013 application/json 8
+[22:09:15][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi)'
+[22:09:15][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "DesactiveEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:09:15][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:09:15][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__p_0='7013'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[ID_EVENTO] = @__p_0
+[22:09:21][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[22:09:21][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi) in 5797.5652ms
+[22:09:21][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi)'
+[22:09:21][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Dach.ElectionSystem.BusinessLogic.Event.EventDeleteHandler.Handle(EventDeleteRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Event\EventDeleteHandler.cs:line 51
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent(EventDeleteRequest request) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventController.cs:line 52
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[22:09:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 DELETE http://localhost:44317/api/Event?id=7013 application/json 8 - 500 - application/json 6042.6248ms
+[22:09:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/Event?id=7013 application/json 8
+[22:09:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi)'
+[22:09:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "DesactiveEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:09:28][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:09:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__p_0='7013'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[ID_EVENTO] = @__p_0
+[22:09:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[22:09:39][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi) in 10960.7038ms
+[22:09:39][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi)'
+[22:09:39][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Dach.ElectionSystem.BusinessLogic.Event.EventDeleteHandler.Handle(EventDeleteRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Event\EventDeleteHandler.cs:line 51
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent(EventDeleteRequest request) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventController.cs:line 52
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[22:09:39][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 DELETE http://localhost:44317/api/Event?id=7013 application/json 8 - 500 - application/json 11165.4700ms
+[22:09:49][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/Event?id=7013 application/json 8
+[22:09:49][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi)'
+[22:09:49][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "DesactiveEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:09:49][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:09:49][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__p_0='7013'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[ID_EVENTO] = @__p_0
+[22:09:53][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[22:21:01][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[22:21:01][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[22:21:01][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[22:21:01][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[22:21:02][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger - -
+[22:21:02][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger - - - 301 0 - 83.1265ms
+[22:21:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[22:21:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 55.2378ms
+[22:21:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[22:21:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 152.1399ms
+[22:21:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/Event?id=7013 application/json 8
+[22:21:12][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[22:21:12][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi)'
+[22:21:12][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "DesactiveEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:21:13][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[22:21:13][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:21:13][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (47ms) [Parameters=[@__p_0='7013'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[ID_EVENTO] = @__p_0
+[22:21:16][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[22:21:51][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[22:21:51][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[22:21:51][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[22:21:51][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[22:21:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[22:21:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 128.2074ms
+[22:21:53][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[22:21:54][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 141.6283ms
+[22:22:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/Event?id=7013 application/json 8
+[22:22:01][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[22:22:01][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi)'
+[22:22:01][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "DesactiveEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:22:02][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[22:22:02][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:22:02][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (39ms) [Parameters=[@__p_0='7013'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[ID_EVENTO] = @__p_0
+[22:22:05][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__email_0='1234' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID_USUARIO], [u].[FECHA_NACIMIENTO_USUARIO], [u].[CEDULA_USUARIO], [u].[CORREO_USUARIO], [u].[APELLIDO_USUARIO], [u].[NOMBRE_USUARIO], [u].[ESTADO_USUARIO], [u].[PASSWORD_USUARIO], [u].[ROL_USUARIO], [u].[NOMBRE_ROL_USUARIO], [u].[SEGUNDO_APELLIDO_USUARIO], [u].[SEGUNDO_NOMBRE_USUARIO], [u].[NICK_USUARIO]
+FROM [USUARIOS] AS [u]
+WHERE [u].[CORREO_USUARIO] = @__email_0
+[22:23:17][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[22:23:17][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[22:23:17][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[22:23:17][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[22:23:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[22:23:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 137.8018ms
+[22:23:19][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[22:23:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 143.7493ms
+[22:23:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/Event?id=7013 application/json 8
+[22:23:22][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[22:23:22][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent (Dach.ElectionSystem.WebApi)'
+[22:23:22][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "DesactiveEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[22:23:22][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[22:23:23][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[22:23:23][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (39ms) [Parameters=[@__p_0='7013'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[ID_EVENTO] = @__p_0

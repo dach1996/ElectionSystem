@@ -45,6 +45,13 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "Datos ya registrados")]
         DataExist = 126,
+
+        /// <summary>
+        /// Datos no registrados al usuario Actual
+        /// </summary>
+        [EnumMember(Value = "Datos no registrados al usuario")]
+        DataWithoutProperty = 127,
+        
         /// <summary>
         /// Error del sistema
         /// </summary>

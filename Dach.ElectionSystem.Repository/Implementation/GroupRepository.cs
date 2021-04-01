@@ -1,4 +1,4 @@
-﻿using Dach.ElectionSystem.Models.Persitences;
+﻿using Dach.ElectionSystem.Models.Persitence;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using System;

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dach.ElectionSystem.Models.Persitences
+namespace Dach.ElectionSystem.Models.Persitence
 {
     /// <summary>
     /// Clase modelo para Persistencia de Grupos

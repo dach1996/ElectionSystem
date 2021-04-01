@@ -1,11 +1,4 @@
-﻿using Dach.ElectionSystem.Models.Persitences;
-using Dach.ElectionSystem.Repository.Implementation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Dach.ElectionSystem.Models.Persitence;
 namespace Dach.ElectionSystem.Repository.Interfaces
 {
     public interface IGroupRepository: IGenericRepository<Group>

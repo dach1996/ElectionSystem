@@ -1,5 +1,4 @@
 ﻿using Dach.ElectionSystem.Models.Persitence;
-using Dach.ElectionSystem.Models.Persitences;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -22,7 +21,10 @@ namespace Dach.ElectionSystem.Repository.DBContext
         public WebApiDbContext(DbContextOptions<WebApiDbContext> options,ILogger<WebApiDbContext> logger) : base(options)
         {
             this.logger = logger;
+                
+           
         }
+
 
 
     

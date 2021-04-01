@@ -64,6 +64,7 @@
     <Build Include="dbo\Tables\EVENTOS.sql" />
     <Build Include="dbo\Tables\GRUPOS.sql" />
     <Build Include="dbo\Tables\CANDIDATOS.sql" />
+    <Build Include="dbo\Tables\EVENTOS_USUARIOS.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Dach.ElectionSystem.DataBase.refactorlog" />
