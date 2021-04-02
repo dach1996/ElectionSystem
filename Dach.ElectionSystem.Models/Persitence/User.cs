@@ -12,62 +12,67 @@ namespace Dach.ElectionSystem.Models.Persitence
     public class User
     {
         /// <summary>
+        /// Constructor
+        /// </summary>
+        public User()  {
+            this.AdministratorEvent = new List<AdministratorEvent>();
+            this.IsActive = true;
+        }
+        /// <summary>
         /// Id único usuario
         /// </summary>
-        [Key, Column("ID_USUARIO")] [DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
+        [Key, Column("USU_ID")] [DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
         /// <summary>
         /// Cédula Usuario
         /// </summary>
-        [Column("CEDULA_USUARIO")] public string DNI { get; set; }
+        [Column("USU_CEDULA")] public string DNI { get; set; }
         /// <summary>
         /// Nick Usuario
         /// </summary>
-        [Column("NICK_USUARIO")] public string UserName { get; set; }
+        [Column("USU_NICK")] public string UserName { get; set; }
         /// <summary>
         /// Contraseña Usuario
         /// </summary>
-        [Column("PASSWORD_USUARIO")] public string Password { get; set; }
+        [Column("USU_PASSWORD")] public string Password { get; set; }
         /// <summary>
         /// Primer nombre Usuario
         /// </summary>
-        [Column("NOMBRE_USUARIO")] public string FirstName { get; set; }
+        [Column("USU_NOMBRE")] public string FirstName { get; set; }
         /// <summary>
         /// Segundo nombre Usuario
         /// </summary>
-        [Column("SEGUNDO_NOMBRE_USUARIO")] public string SecondName { get; set; }
+        [Column("USU_SEGUNDO_NOMBRE")] public string SecondName { get; set; }
         /// <summary>
         /// Primer Apellido Usuario
         /// </summary>
-        [Column("APELLIDO_USUARIO")] public string FirstLastName { get; set; }
+        [Column("USU_APELLIDO")] public string FirstLastName { get; set; }
         /// <summary>
         /// Segundo Apellido Usuario
         /// </summary>
-        [Column("SEGUNDO_APELLIDO_USUARIO")] public string SecondLastName { get; set; }
+        [Column("USU_SEGUNDO_APELLIDO")] public string SecondLastName { get; set; }
         /// <summary>
         /// Fecha de nacimiento Usuario
         /// </summary>
-        [Column("FECHA_NACIMIENTO_USUARIO")] public DateTime? BirthDate { get; set; }
+        [Column("USU_FECHA_NACIMIENTO")] public DateTime? BirthDate { get; set; }
         /// <summary>
         /// Email Usuario
         /// </summary>
-        [Column("CORREO_USUARIO")] public string Email { get; set; }
-        /// <summary>
-        /// Rol de Usuario
-        /// </summary>
-        [Column("ROL_USUARIO")] public int? Rol { get; set; }
-        /// <summary>
-        /// Rol de Usuario
-        /// </summary>
-        [Column("NOMBRE_ROL_USUARIO")] public string RolName { get; set; }
+        [Column("USU_CORREO")] public string Email { get; set; }
+
         /// <summary>
         /// Estado de Usuario
         /// </summary>
-        [Column("ESTADO_USUARIO")] public bool IsActive { get; set; }
-     
+        [Column("USU_ESTADO")] public bool IsActive { get; set; }
+
+        /// <summary>
+        /// Estado de Usuario
+        /// </summary>
+        [Column("USU_NUM_EVENT_MAX")] public int MaxEventsAllow { get; set; } = 1;
+
         /// <summary>
         /// Eventos Usuarios
         /// </summary>
         /// <value></value>
-        public virtual  List<EventUser> EventUser { get; set; }
+        public virtual List<AdministratorEvent> AdministratorEvent { get; set; }
     }
 }

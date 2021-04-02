@@ -49,7 +49,6 @@ namespace Dach.ElectionSystem.Services.TokenJWT
                 var claimsIdentity = new System.Collections.Generic.List<System.Security.Claims.Claim>()
                 { 
                     new System.Security.Claims.Claim(Models.Enums.Claim.Name.ToString(), user.UserName??String.Empty),
-                    new System.Security.Claims.Claim(Models.Enums.Claim.Role.ToString(), user.RolName),
                     new System.Security.Claims.Claim(Models.Enums.Claim.Email.ToString(), user.Email),
                     new System.Security.Claims.Claim(Models.Enums.Claim.Id.ToString(), user.Id.ToString()),
                 };
@@ -99,6 +98,9 @@ namespace Dach.ElectionSystem.Services.TokenJWT
             {
                 _logger.LogError(ex.Message);
                 throw new ExceptionCustom(MessageCodesApi.InvalidToken, ResponseType.Error, HttpStatusCode.Unauthorized);
+            } catch (SecurityTokenValidationException ex){
+                 _logger.LogError(ex.Message);
+                throw new ExceptionCustom(MessageCodesApi.TokenExpired, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
         }
 
@@ -112,13 +114,11 @@ namespace Dach.ElectionSystem.Services.TokenJWT
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var jwtSecurityToken = tokenHandler.ReadJwtToken(token);
                 var claims = jwtSecurityToken.Claims.ToList();
-                var rol = Enum.Parse<Models.Enums.RolUser>( claims.Where(c => c.Type == nameof(Models.Enums.Claim.Role)).First().Value);
                 var username = claims.Where(c => c.Type == nameof(Models.Enums.Claim.Name)).First().Value;
                 var email = claims.Where(c => c.Type == nameof(Models.Enums.Claim.Email)).First().Value;
                 var id = claims.Where(c => c.Type == nameof(Models.Enums.Claim.Id)).First().Value;
                 var tokenModel = new TokenModel()
                 {
-                    RolUser = rol,
                     Username = username,
                     Email = email,
                     Id = id

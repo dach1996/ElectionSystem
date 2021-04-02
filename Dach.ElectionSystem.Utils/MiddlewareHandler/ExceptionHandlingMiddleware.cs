@@ -49,6 +49,7 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
             {
                 logger.LogError(exception,"Error Detectado: ");
                 await HandleExceptionAsync(httpContext, exception);
+                var typeException = exception.GetType();
             }
         }
 

@@ -32,7 +32,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
         }
         public async Task<User> GetUserByUsernameByEmail(string email)
         {
-            var user = unitOfWork.Context.User.Include(u=>u.EventUser).
+            var user = unitOfWork.Context.User.Include(u=>u.AdministratorEvent).
             FirstOrDefault(user => user.Email == email);
             return await Task.Run(() => user);
         }

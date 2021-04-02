@@ -37,19 +37,16 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         public async Task<EventUpdateResponse> Handle(EventUpdateRequest request, CancellationToken cancellationToken)
         {
             //Valida que el evento exista
-            var evetGet = await _eventRepository.GetByIdAsync(request.Id);
+            var evetGet = (await _eventRepository.GetEventsWithAdministratorAsync(e=>e.Id == request.Id)).FirstOrDefault();
             if (evetGet == null)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
             //Valida que el Usuario que envía el request, esté inscrito al evento
             var userGet = await userRepository.GetUserByUsernameByEmail(request.TokenModel.Email);
-            var hasRegisterEvent = userGet.EventUser.Any(e => e.IdEvent == evetGet.Id);
-            if (!hasRegisterEvent)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.DataWithoutProperty, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
-            //Actualiza el evento
+              //Actualiza el evento
             evetGet.Category = request.Category;
             evetGet.Description = request.Description;
             evetGet.Image = request.Description;
-            evetGet.IsActive = request.IsActive.Value;
+            evetGet.IsActive = request.IsActive;
             evetGet.MaxPeople = request.MaxPeople;
             evetGet.Name = request.Name;
             evetGet.NumberMaxCandidate = request.NumberMaxCandidate;

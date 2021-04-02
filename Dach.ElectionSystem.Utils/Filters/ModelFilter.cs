@@ -6,12 +6,13 @@ namespace Dach.ElectionSystem.Utils.Filters
 {
     public class ModelFilter : ActionFilterAttribute
     {
+        #region Constructor
         private readonly ITokenService tokenService;
-
         public ModelFilter(ITokenService tokenService)
         {
             this.tokenService = tokenService;
         }
+        #endregion
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             var test = context.ActionDescriptor.Parameters;

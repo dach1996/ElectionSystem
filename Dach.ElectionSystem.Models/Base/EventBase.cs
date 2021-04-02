@@ -45,12 +45,7 @@ namespace Dach.ElectionSystem.Models.Base
         /// Categoría de Evento
         /// </summary>
         /// <value></value>
-        public string Category { get; set; }
+        public string Category { get; set; }        
 
-        /// <summary>
-        /// Evento Activo
-        /// </summary>
-        /// <value></value>
-        public bool? IsActive { get; set; }
     }
 }

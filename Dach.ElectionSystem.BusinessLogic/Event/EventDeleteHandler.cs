@@ -31,9 +31,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         public async Task<EventDeleteResponse> Handle(EventDeleteRequest request, CancellationToken cancellationToken)
         {
 
-            //Valida que solo Administradores y super administradores puedan desactivar eventos
-            if (request.TokenModel.RolUser == Models.Enums.RolUser.User)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.InsufficientPrivileges, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+           
+             
             //Obtiene evento por ID
             var getEvent = await _eventRepository.GetByIdAsync(request.Id);
             if (getEvent == null)
@@ -43,11 +42,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.EventIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
             //Obtiene el  usuario y valida que tenga ese evento registrado
             var user = await userRepository.GetUserByUsernameByEmail(request.TokenModel.Email);
-            var isUserRegisterEvent = user.EventUser.Any(e=>e.IdEvent == getEvent.Id);
-            //Valida que el evento esté registrado al usuario
-            if (!isUserRegisterEvent)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.DataWithoutProperty, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
-            getEvent.IsActive = false;
+              getEvent.IsActive = false;
             var responseDelete = await _eventRepository.Update(getEvent);
             //Valida que el evento se haya desactivado
             if (!responseDelete)

@@ -37,11 +37,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                 logger.LogWarning($"No se encuentra usuario Token con ID:{request.TokenModel.Id}");
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             }
-            if (userCurrent.Rol != (int)Models.Enums.RolUser.SuperAdmin)
-            {
-                logger.LogWarning($"No se tiene permisos suficientes para esta acción {userCurrent.Rol.ToString()}");
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.InsufficientPrivileges, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
-            } 
+
             var userToDesactive = await userRepository.GetByIdAsync(Convert.ToInt32(request.Id));
             if (userToDesactive == null)
             {

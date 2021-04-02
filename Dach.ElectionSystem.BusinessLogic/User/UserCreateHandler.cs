@@ -3,9 +3,11 @@ using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.User;
 using Dach.ElectionSystem.Repository.Interfaces;
+using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -19,17 +21,20 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         private readonly IMapper mapper;
         private readonly string _secretKey;
         private readonly IConfiguration _configuration;
+        private readonly ValidateIntegrity validateIntegrity;
 
         public UserCreateHandler(
             ILogger<UserCreateHandler> logger,
             IUserRepository userRepository,
             IMapper mapper,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            ValidateIntegrity validateIntegrity)
         {
             this.logger = logger;
             this.userRepository = userRepository;
             this.mapper = mapper;
             _configuration = configuration;
+            this.validateIntegrity = validateIntegrity;
             _secretKey = _configuration.GetSection("SecretKey").Value;
         }
         #endregion
@@ -37,25 +42,12 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         #region Handler
         public async Task<UserCreateResponse> Handle(UserCreateRequest request, CancellationToken cancellationToken)
         {
+            //Hash a la clave
             request.Password = Common.Util.ComputeSHA256(request.Password, _secretKey);
-            //Controlar que solo se pueda crear superAdmin siendo SuperAdmin
-            if ((request.Role == Models.Enums.RolUser.Admin ||
-                    request.Role == Models.Enums.RolUser.SuperAdmin) &&
-                    request.TokenModel.RolUser != Models.Enums.RolUser.SuperAdmin)
-            {
-                logger.LogWarning($"No se puede crear usuario con Rol: {request.Role} siendo : {request.TokenModel.RolUser}");
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.InsufficientPrivileges, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
-            }
-            if (request.Role == Models.Enums.RolUser.User &&
-                request.TokenModel.RolUser == Models.Enums.RolUser.User)
-            {
-                logger.LogWarning($"No se puede crear usuario con Rol: {request.Role} siendo : {request.TokenModel.RolUser}");
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.InsufficientPrivileges, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
-            }
-
-            var existUser = await userRepository.GetUserByUsernameAndEmail(request.UserName,request.Email);
-            if(existUser!=null)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.DataExist, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+            //Valida que el usuario exista
+            var emailExist = await userRepository.GetAsync(u=>u.Email ==request.Email);
+            if(emailExist.Count() != 0)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.EmailRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
             var userNew = mapper.Map<Models.Persitence.User>(request);
             userNew.IsActive = true;
             var isRegister = await userRepository.CreateAsync(userNew);

@@ -20,5 +20,20 @@ namespace Dach.ElectionSystem.Models.Response.User
         /// </summary>
         [JsonIgnore]
         public override string Password { get => ""; }
+
+           /// <summary>
+        /// Id de usuario
+        /// </summary>
+        public int Id { get; set; }
+
+               /// <summary>
+        /// Estado del Usuario
+        /// </summary>
+        public bool IsActive { get; set; }
+
+        /// <summary>
+        /// Número maximo de eventos permitidos
+        /// </summary>
+        public int MaxEventsAllow { get; set; }
     }
 }

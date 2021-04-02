@@ -26,7 +26,19 @@ namespace Dach.ElectionSystem.Models.Enums
         /// Error parceo de Token
         /// </summary>
         [EnumMember(Value = "Error lectura de token")]
-        InvalidParceToken = 101,
+        InvalidParceToken = 102,
+
+            /// <summary>
+        /// Token Expirado
+        /// </summary>
+        [EnumMember(Value = "Token Expirado, Logee nuevamente")]
+        TokenExpired = 103,
+
+         /// <summary>
+        /// Inconsistencia de datos
+        /// </summary>
+        [EnumMember(Value = "Error inconsistencia de datos")]
+        DataInconsistency = 111,
 
         /// <summary>
         /// Error del sistema
@@ -51,6 +63,18 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "Datos no registrados al usuario")]
         DataWithoutProperty = 127,
+
+          /// <summary>
+        /// Email ya se encuentra registrado
+        /// </summary>
+        [EnumMember(Value = "Email Registrado")]
+        EmailRegistered = 128,
+
+            /// <summary>
+        /// Evento Registrado
+        /// </summary>
+        [EnumMember(Value = "Nombre de Evento ya registrado")]
+        EventRegistered = 128,
         
         /// <summary>
         /// Error del sistema
@@ -67,6 +91,11 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "Evento se encuntra desactivado")]
         EventIsInactive = 152,
+         /// <summary>
+        /// Error maximos  evento permitidos
+        /// </summary>
+        [EnumMember(Value = "Ha superado el número de eventos permitidos para este usuario")]
+        MaxEventAllow = 153,
         /// <summary>
         /// Error del sistema
         /// </summary>

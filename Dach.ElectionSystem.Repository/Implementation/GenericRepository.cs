@@ -34,9 +34,8 @@ namespace Dach.ElectionSystem.Repository.Implementation
             {
                 query = query.Where(whereCondition);
             }
-
             foreach (var includeProperty in includeProperties.Split
-                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+         (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
                 query = query.Include(includeProperty);
             }
@@ -51,9 +50,32 @@ namespace Dach.ElectionSystem.Repository.Implementation
             }
         }
 
+        public async Task<IQueryable<T>> GetQueryAsync(Expression<Func<T, bool>> whereCondition = null,
+                                  Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+                                  string includeProperties = "")
+        {
+            IQueryable<T> query = _unitOfWork.Context.Set<T>();
+
+            if (whereCondition != null)
+            {
+                query = query.Where(whereCondition);
+            }
+            foreach (var includeProperty in includeProperties.Split
+         (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+
+            if (orderBy != null)
+            {
+                orderBy(query);
+            }
+            return await Task.Run<IQueryable<T>>(()=> query);
+        }
+
         public async Task<bool> CreateAsync(T entity)
         {
-            
+
             bool created = false;
             try
             {
@@ -76,7 +98,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
             bool update = false;
             try
             {
-                var save =  _unitOfWork.Context.Set<T>().Update(entity);
+                var save = _unitOfWork.Context.Set<T>().Update(entity);
 
                 if (save != null)
                     update = true;

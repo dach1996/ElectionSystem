@@ -14,10 +14,6 @@ namespace Dach.ElectionSystem.Models.Request.User
     /// </summary>
     public class UserCreateRequest : UserRequestBase, IRequest<UserCreateResponse>
     {
-        /// <summary>
-        /// Estado de Usuario
-        /// </summary>
-        [JsonIgnore]
-        public bool IsActive { get; set; }
+ 
     }
 }

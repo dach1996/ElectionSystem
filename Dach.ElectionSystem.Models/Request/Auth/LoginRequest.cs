@@ -2,6 +2,7 @@
 using MediatR;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Dach.ElectionSystem.Models.Auth
@@ -12,12 +13,14 @@ namespace Dach.ElectionSystem.Models.Auth
     public class LoginRequest : IRequest<LoginResponse>
     {
         /// <summary>
-        /// Usuario
+        /// Email del usuario
         /// </summary>
-        public string Username { get; set; }
+        [Required]
+        public string Email { get; set; }
         /// <summary>
         /// Password
         /// </summary>
+        [Required]
         public string Password { get; set; }
     }
 }

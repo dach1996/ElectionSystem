@@ -10,6 +10,14 @@ namespace Dach.ElectionSystem.Models.Persitence
     public class Event
     {
         /// <summary>
+        /// Constructor
+        /// </summary>
+        public Event(){
+            this.IsActive = true;
+            this.AdministratorEvent = new List<AdministratorEvent>();
+        } 
+
+        /// <summary>
         /// Id de evento
         /// </summary>
         /// <value></value>
@@ -71,7 +79,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// Eventos Usuarios
         /// </summary>
         /// <value></value>
-        public ICollection<EventUser> EventUser { get; set; }
+        public ICollection<AdministratorEvent> AdministratorEvent { get; set; }
 
     }
 }

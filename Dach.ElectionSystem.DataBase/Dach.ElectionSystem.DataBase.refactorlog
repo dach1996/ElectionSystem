@@ -98,4 +98,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ID_EVENTOS_USUARIOS" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="21cb689b-05fd-4d64-9290-5b0f5d959576" ChangeDateTime="04/02/2021 18:02:38">
+    <Property Name="ElementName" Value="[dbo].[ADMINISTRADOR_EVENTO].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ADMINISTRADOR_EVENTO]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ADMINEVENT_ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="13f4fbb7-7d2c-4ae9-90ef-08ce33788e19" ChangeDateTime="04/02/2021 18:04:16">
+    <Property Name="ElementName" Value="[dbo].[ADMINISTRADOR_EVENTO].[ADMINEVENT_Fecha]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ADMINISTRADOR_EVENTO]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ADMINEVENT_FECHA" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d77b1add-3717-490a-8a0d-c447ed72f255" ChangeDateTime="04/02/2021 18:48:55">
+    <Property Name="ElementName" Value="[dbo].[USUARIOS].[ID_USUARIO]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[USUARIOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="USU_ID" />
+  </Operation>
 </Operations>

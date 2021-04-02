@@ -10,12 +10,7 @@ namespace Dach.ElectionSystem.Models.RequestBase
     /// Modelo Token para inyectar en Contexto
     /// </summary>
     public class TokenModel
-    {
-        /// <summary>
-        /// Rol del Usuario
-        /// </summary>
-        public Models.Enums.RolUser RolUser  { get; set; }
-        
+    {        
         /// <summary>
         /// Nombre de usuario
         /// </summary>

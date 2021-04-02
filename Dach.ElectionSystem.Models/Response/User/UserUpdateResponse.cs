@@ -12,10 +12,7 @@ namespace Dach.ElectionSystem.Models.Response.User
     /// </summary>
     public class UserUpdateResponse  : UserResponseBase
     {
-        /// <summary>
-        /// Id de usuario
-        /// </summary>
-        public int Id { get; set; }
+     
 
     }
 }

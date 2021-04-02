@@ -48,9 +48,5 @@ namespace Dach.ElectionSystem.Models.Base
         /// Email Usuario
         /// </summary>
         public string Email { get; set; }
-        /// <summary>
-        /// Rol de Usuario
-        /// </summary>
-        public Models.Enums.RolUser Role { get; set; }
     }
 }

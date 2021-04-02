@@ -1,6 +1,5 @@
 using Dach.ElectionSystem.Repository.DBContext;
 using Dach.ElectionSystem.Repository.Intrastructure;
-using Dach.ElectionSystem.Services.Logger;
 using Dach.ElectionSystem.Utils.MiddlewareHandler;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,16 +10,13 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MediatR;
-using Dach.ElectionSystem.Utils.Segurity.JWT;
 using Dach.ElectionSystem.Services.TokenJWT;
 using Dach.ElectionSystem.Utils.Extension;
 using System.Collections.Generic;
 using Dach.ElectionSystem.Utils.Mapper;
 using Dach.ElectionSystem.Utils.Mediator;
 using Dach.ElectionSystem.Utils.Filters;
-using System.IO;
-using System;
-using System.Reflection;
+using Dach.ElectionSystem.Services.Intrastructure;
 
 namespace Dach.ElectionSystem.WebApi
 {
@@ -44,7 +40,8 @@ namespace Dach.ElectionSystem.WebApi
 #else
             services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=SQL5103.site4now.net;Initial Catalog=DB_A49E05_electionSystem;User Id=DB_A49E05_electionSystem_admin;Password=dach1996"));
 #endif
-            services.AddSingletonRepository();
+            services.AddRepositorys();
+            services.AddServices();
             services.ConfigureController();
 
             services.AddSwaggerGen(c =>
@@ -56,8 +53,9 @@ namespace Dach.ElectionSystem.WebApi
 
             });
 
-            //  services.AddSingleton<ILoggerCustom, LoggerCustom>();
-            services.AddTransient<ITokenService, TokenService>();
+
+         
+        
             services.ConfigureSwaggerServices(new List<string> { "ElectionSystem.xml" });
             services.AddMediatR(typeof(Startup).Assembly);
             services.AddAutoMapper(typeof(CustomMapperDTO));

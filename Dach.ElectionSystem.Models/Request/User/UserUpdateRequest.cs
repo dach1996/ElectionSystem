@@ -16,20 +16,20 @@ namespace Dach.ElectionSystem.Models.Request.User
     public class UserUpdateRequest : UserRequestBase, IRequest<UserUpdateResponse>
     {
         /// <summary>
-        /// Contraseña Usuario
-        /// </summary>
-        [JsonIgnore]
-        private new string Password { get; set; }
-        /// <summary>
         /// Email Usuario
         /// </summary>
         [JsonIgnore]
         private new string Email { get; set; }
+
         /// <summary>
-        /// Rol de Usuario
+        /// Estado del Usuario
         /// </summary>
-        [JsonIgnore]
-        private new  Models.Enums.RolUser Role { get; set; }
-       
+        public bool IsActive { get; set; }
+
+        /// <summary>
+        /// Número maximo de eventos permitidos
+        /// </summary>
+        public int MaxEventsAllow { get; set; }
+
     }
 }

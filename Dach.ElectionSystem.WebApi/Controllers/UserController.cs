@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/users")]
     [ServiceFilter(typeof(Utils.Filters.ModelFilter))]
     [ApiController]
     public class UserController : ApiControllerBase
@@ -22,14 +22,6 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         #endregion
 
         #region Methods Controller
-        /// <summary>
-        /// Crear Usuario
-        /// </summary>
-        [HttpPost]
-        [ProducesResponseType(200, Type = typeof(GenericResponse<UserCreateResponse>))]
-        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
-        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> CreateUser([FromBody]UserCreateRequest request) => Success(await _mediator.Send(request));
 
         /// <summary>
         /// Actualizar Usuario
@@ -39,15 +31,6 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> UpdateUser([FromBody]UserUpdateRequest request) => Success(await _mediator.Send(request));
-
-        /// <summary>
-        /// Desactivar Usuario
-        /// </summary>
-        [HttpDelete]
-        [ProducesResponseType(200, Type = typeof(GenericResponse<UserDeleteResponse>))]
-        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
-        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> DeleteHandler([FromQuery] UserDeleteRequest request) => Success(await _mediator.Send(request));
 
         /// <summary>
         /// Consultar Usuarios

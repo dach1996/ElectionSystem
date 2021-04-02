@@ -17,5 +17,8 @@ namespace Dach.ElectionSystem.Repository.Interfaces
         Task<bool> CreateAsync(T entity);
         Task<bool> DeleteByIdAsync(int Id);
         Task<bool> Update(T entity);
+        Task<IQueryable<T>> GetQueryAsync(Expression<Func<T, bool>> whereCondition = null,
+                                  Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+                                  string includeProperties = "");
     }
 }
