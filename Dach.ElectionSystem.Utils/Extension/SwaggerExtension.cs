@@ -30,12 +30,12 @@ namespace Dach.ElectionSystem.Utils.Extension
                         Id = "BasicAuth",
                         Type = ReferenceType.SecurityScheme
                     }
-                    
+
                 };
                 c.AddSecurityDefinition(bearerSecurityScheme.Reference.Id, bearerSecurityScheme);
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement()
                 {
-                    { 
+                    {
                         bearerSecurityScheme,
                         new List<string>()
                     }
@@ -57,9 +57,12 @@ namespace Dach.ElectionSystem.Utils.Extension
                         foreach (var parameter in parameters)
                         {
                             if (parameter.Name.StartsWith("TokenModel"))
-                            {
                                 operation.Value.Parameters.Remove(parameter);
-                            }
+                            if (parameter.Name.ToUpper().StartsWith("ID") &&
+                            operation.Key == OperationType.Get &&
+                             parameter.In == ParameterLocation.Query)
+                                operation.Value.Parameters.Remove(parameter);
+
                         }
                     }
                 }

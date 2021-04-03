@@ -1,0 +1,34 @@
+{
+    "sqltools.connections": [
+        {
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "useUTC": true,
+                "encrypt": true
+            },
+            "previewLimit": 50,
+            "server": "DESKTOP-6PGT33F",
+            "port": 1433,
+            "driver": "MSSQL",
+            "name": "ElectionSystemLocal",
+            "database": "ElectionSystem",
+            "username": "sa",
+            "password": "dach1996"
+        },
+        {
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "useUTC": true,
+                "encrypt": true
+            },
+            "previewLimit": 50,
+            "server": "SQL5103.site4now.net",
+            "port": 1433,
+            "driver": "MSSQL",
+            "name": "ElectionSystemSmarterASP",
+            "database": "DB_A49E05_electionSystem",
+            "username": "DB_A49E05_electionSystem_admin",
+            "password": "dach1996"
+        }
+    ]
+}

@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.Response.Event;
 using MediatR;
@@ -6,19 +5,14 @@ using MediatR;
 namespace Dach.ElectionSystem.Models.Request.Event
 {
     /// <summary>
-    /// Clase EventUpdateRequest
+    /// Clase Event Get Request
     /// </summary>
-    public class EventUpdateRequest : EventBaseRequest, IRequest<EventUpdateResponse>
+    public class EventGetRequest : EventBaseRequest, IRequest<EventGetResponse>
     {
-        /// <summary>
-        /// Evento Activo
-        /// </summary>
-        public bool IsActive { get; set; }
         /// <summary>
         /// Id de Evento
         /// </summary>
         /// <value></value>
-        [JsonIgnore]
         public int? Id { get; set; }
     }
 }

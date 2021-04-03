@@ -22,6 +22,7 @@ namespace Dach.ElectionSystem.Utils.Mediator
            
             MediatorUser.AddIMediaRUserConfig(services);
             MediatorEvent.AddIMediaREventConfig(services);
+            MediatorGroup.AddIMediaRGroupConfig(services);
         }
     }
 }

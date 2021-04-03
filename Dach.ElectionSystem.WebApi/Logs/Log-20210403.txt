@@ -1,0 +1,1117 @@
+[09:45:22][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[09:45:23][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[09:45:23][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[09:45:23][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[09:45:23][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[09:45:23][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 135.7467ms
+[09:45:24][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[09:45:24][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 209.4154ms
+[10:00:20][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:00:20][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:00:20][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:00:20][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:00:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:00:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 117.5459ms
+[10:00:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:00:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 180.4954ms
+[10:03:12][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:03:12][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:03:12][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:03:12][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:03:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:03:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 121.2746ms
+[10:03:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:03:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 194.8524ms
+[10:05:53][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:05:53][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:05:53][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:05:53][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:05:53][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:05:54][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 123.1600ms
+[10:05:54][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:05:54][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 189.1798ms
+[10:12:37][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:12:37][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:12:37][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:12:37][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:12:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:12:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 136.4310ms
+[10:12:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:12:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 237.6401ms
+[10:13:27][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:13:27][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:13:27][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:13:27][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:13:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:13:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 115.3739ms
+[10:13:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:17:25][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:17:25][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:17:25][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:17:25][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:17:25][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:17:25][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 121.0475ms
+[10:17:26][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:17:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 17546.5100ms
+[10:19:05][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:19:05][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:19:05][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:19:05][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:19:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:19:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 127.6578ms
+[10:19:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:19:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 36344.3470ms
+[10:20:42][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:20:42][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:20:42][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:20:42][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:20:42][FTL][Microsoft.AspNetCore.Server.Kestrel]:Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:44317: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+ ---> System.Net.Sockets.SocketException (10048): Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.<Bind>g__BindSocket|13_0(<>c__DisplayClass13_0& )
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.<Bind>g__BindSocket|13_0(<>c__DisplayClass13_0& )
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass29_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IEnumerable`1 listenOptions, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+[10:20:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:20:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 122.5137ms
+[10:20:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:20:54][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10043.9829ms
+[10:21:51][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:21:51][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:21:51][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:21:51][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:21:52][FTL][Microsoft.AspNetCore.Server.Kestrel]:Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:44317: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+ ---> System.Net.Sockets.SocketException (10048): Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.<Bind>g__BindSocket|13_0(<>c__DisplayClass13_0& )
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.<Bind>g__BindSocket|13_0(<>c__DisplayClass13_0& )
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass29_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IEnumerable`1 listenOptions, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+[10:21:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:21:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 115.8811ms
+[10:21:53][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:21:53][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 198.5871ms
+[10:22:17][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:22:17][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:22:17][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:22:17][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:22:17][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:22:17][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 149.4550ms
+[10:22:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:22:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 191.9750ms
+[10:22:38][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:22:38][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:22:38][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:22:38][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:22:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:22:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 134.9896ms
+[10:22:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:22:50][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:27:04][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:27:04][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:27:04][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:27:04][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:27:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:27:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 115.0358ms
+[10:27:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:27:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/favicon-32x32.png - -
+[10:27:05][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+[10:27:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/favicon-32x32.png - - - 200 628 image/png 26.2714ms
+[10:27:16][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:27:16][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:27:16][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:27:16][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:27:16][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:27:16][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 134.5624ms
+[10:27:17][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:27:23][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 6200.5051ms
+[10:28:48][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:28:48][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:28:48][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:28:48][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:28:48][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:28:48][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 118.3788ms
+[10:28:49][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:28:49][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 188.1921ms
+[10:30:12][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:30:12][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:30:12][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:30:12][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:30:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:30:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 115.0310ms
+[10:30:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:35:09][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:35:09][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:35:09][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:35:09][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:35:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:35:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 118.9428ms
+[10:35:10][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:35:16][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 6687.4633ms
+[10:35:33][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:35:33][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:35:33][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:35:33][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:35:33][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:35:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 114.1703ms
+[10:35:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:35:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 174.1740ms
+[10:36:04][FTL][Microsoft.AspNetCore.Server.Kestrel]:Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:44317: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+ ---> System.Net.Sockets.SocketException (10048): Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.<Bind>g__BindSocket|13_0(<>c__DisplayClass13_0& )
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.<Bind>g__BindSocket|13_0(<>c__DisplayClass13_0& )
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass29_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IEnumerable`1 listenOptions, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+[10:36:13][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:36:13][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:36:13][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:36:13][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:36:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:36:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 117.8649ms
+[10:36:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:36:57][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:36:57][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:36:57][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:36:57][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:36:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:36:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 115.3207ms
+[10:36:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:36:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 187.4609ms
+[10:37:39][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:37:39][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:37:39][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:37:39][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:37:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:37:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 117.3684ms
+[10:37:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:39:57][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:39:57][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:39:57][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:39:57][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:39:57][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:39:57][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 116.2184ms
+[10:39:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:40:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 11695.9098ms
+[10:42:21][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:42:21][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:42:21][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:42:21][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:42:22][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:42:22][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 198.0885ms
+[10:42:23][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:42:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 6350.3470ms
+[10:42:55][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71
+[10:42:55][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[10:42:56][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[10:42:56][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[10:42:56][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[10:42:56][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[10:42:57][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (44ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[10:42:57][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[10:42:57][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 1437.4584ms
+[10:42:57][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[10:42:57][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71 - 200 - application/json;+charset=utf-8 1730.5064ms
+[10:43:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/Users/?username=dach1996 - -
+[10:43:04][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler (Dach.ElectionSystem.WebApi)'
+[10:43:04][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.User.UserGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[10:43:04][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[10:43:04][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (5ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[10:43:04][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+[10:43:04][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Username_0='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_NICK] = @__request_Username_0
+[10:43:04][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.User.UserGetResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[10:43:04][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler (Dach.ElectionSystem.WebApi) in 295.1367ms
+[10:43:04][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler (Dach.ElectionSystem.WebApi)'
+[10:43:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/Users/?username=dach1996 - - - 200 - application/json;+charset=utf-8 345.8804ms
+[10:43:24][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/Event application/json 236
+[10:43:24][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[10:43:24][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[10:43:24][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[10:43:24][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[10:43:24][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__request_Name_0='Elecció  deh Quito' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [EVENTOS] AS [e]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [e].[ID_EVENTO] = [a].[ADMINEVENT_EVENT_ID]
+WHERE [e].[NOMBRE_EVENTO] = @__request_Name_0
+ORDER BY [e].[ID_EVENTO], [a].[ADMINEVENT_ID]
+[10:43:24][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@p0='Eleccion multiple' (Size = 4000), @p1='Evento nuevo en el Ecuador' (Size = 4000), @p2='En blanco' (Size = 4000), @p3='True', @p4='False', @p5='Elecció  deh Quito' (Size = 4000), @p6='0', @p7='0'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EVENTOS] ([CATEGORIA], [DESCRIPCION_EVENTO], [FOTO_EVENTO], [ESTADO_EVENTO], [MAX_PERSONAS_EVENTO], [NOMBRE_EVENTO], [NUM_MAX_CANDIDATOS_EVENTO], [NUM_MAX_PERSONAS_EVENTO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [ID_EVENTO]
+FROM [EVENTOS]
+WHERE @@ROWCOUNT = 1 AND [ID_EVENTO] = scope_identity();
+[10:43:24][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p8='2021-04-03T10:43:24.4115545-05:00', @p9='1', @p10='1', @p11='All' (Size = 4000), @p12='True'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ADMINISTRADOR_EVENTO] ([ADMINEVENT_FECHA], [ADMINEVENT_EVENT_ID], [ADMINEVENT_USER_ID], [ADMINEVENT_PRVILEGIOS], [ADMINEVENT_ESTADO])
+VALUES (@p8, @p9, @p10, @p11, @p12);
+SELECT [ADMINEVENT_ID]
+FROM [ADMINISTRADOR_EVENTO]
+WHERE @@ROWCOUNT = 1 AND [ADMINEVENT_ID] = scope_identity();
+[10:43:24][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[10:43:24][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi) in 210.088ms
+[10:43:24][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[10:43:24][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/Event application/json 236 - 200 - application/json;+charset=utf-8 215.2732ms
+[10:43:26][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/Event application/json 236
+[10:43:26][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[10:43:26][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[10:43:26][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[10:43:26][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[10:43:26][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__request_Name_0='Elecció  deh Quito' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [EVENTOS] AS [e]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [e].[ID_EVENTO] = [a].[ADMINEVENT_EVENT_ID]
+WHERE [e].[NOMBRE_EVENTO] = @__request_Name_0
+ORDER BY [e].[ID_EVENTO], [a].[ADMINEVENT_ID]
+[10:43:26][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi) in 143.2438ms
+[10:43:26][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[10:43:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/Event application/json 236 - 409 - application/json 345.1518ms
+[10:43:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/Event application/json 236
+[10:43:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[10:43:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[10:43:28][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[10:43:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[10:43:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_Name_0='Elecció  deh Quito' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [EVENTOS] AS [e]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [e].[ID_EVENTO] = [a].[ADMINEVENT_EVENT_ID]
+WHERE [e].[NOMBRE_EVENTO] = @__request_Name_0
+ORDER BY [e].[ID_EVENTO], [a].[ADMINEVENT_ID]
+[10:43:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi) in 109.6067ms
+[10:43:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[10:43:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/Event application/json 236 - 409 - application/json 272.4220ms
+[10:43:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/Event/2 application/json 314
+[10:43:42][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[10:43:42][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[10:43:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/Event/2 application/json 314 - 405 0 - 0.9408ms
+[10:43:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/Event/1 application/json 314
+[10:43:46][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[10:43:46][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[10:43:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/Event/1 application/json 314 - 405 0 - 0.9275ms
+[10:43:50][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/Event/3 application/json 314
+[10:43:50][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[10:43:50][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[10:43:50][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/Event/3 application/json 314 - 405 0 - 0.4929ms
+[10:43:54][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/Event/3 application/json 298
+[10:43:54][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[10:43:54][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[10:43:54][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/Event/3 application/json 298 - 405 0 - 1.1819ms
+[10:44:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/Event/3 application/json 298
+[10:44:12][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[10:44:12][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[10:44:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/Event/3 application/json 298 - 405 0 - 0.4528ms
+[10:45:15][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:45:15][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:45:15][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:45:15][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:45:15][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:45:15][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 118.1936ms
+[10:45:16][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:45:16][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 163.3584ms
+[10:45:23][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/events/3 application/json 298
+[10:45:24][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[10:45:24][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:45:24][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "UpdateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateEvent(Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[10:45:26][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi) in 2738.6829ms
+[10:45:26][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:45:33][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.ArgumentException: Int32 does not implement IRequest (Parameter 'request')
+   at MediatR.Mediator.<>c__DisplayClass5_0.<Send>b__0(Type requestTypeKey)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at MediatR.Mediator.Send(Object request, CancellationToken cancellationToken)
+   at Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent(EventUpdateRequest request, Nullable`1 id) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventController.cs:line 66
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[10:45:33][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/events/3 application/json 298 - 500 - application/json 9579.7940ms
+[10:45:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/events/3 application/json 298
+[10:45:40][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:45:40][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "UpdateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateEvent(Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[10:54:04][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:54:04][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:54:04][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:54:04][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:54:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:54:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 125.7098ms
+[10:54:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:54:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 181.8871ms
+[10:54:07][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/events/3 application/json 298
+[10:54:08][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[10:54:08][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:54:08][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "UpdateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateEvent(Dach.ElectionSystem.Models.Request.Event.EventUpdateRequestBase, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[10:54:11][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[10:54:11][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[10:54:12][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (65ms) [Parameters=[@__request_Id_0='3' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [EVENTOS] AS [e]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [e].[ID_EVENTO] = [a].[ADMINEVENT_EVENT_ID]
+WHERE [e].[ID_EVENTO] = @__request_Id_0
+ORDER BY [e].[ID_EVENTO], [a].[ADMINEVENT_ID]
+[10:54:12][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi) in 4686.8804ms
+[10:54:12][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:54:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/events/3 application/json 298 - 404 - application/json 5360.1632ms
+[10:54:17][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/events/2 application/json 298
+[10:54:17][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:54:17][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "UpdateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateEvent(Dach.ElectionSystem.Models.Request.Event.EventUpdateRequestBase, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[10:54:19][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[10:54:19][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Id_0='2' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [EVENTOS] AS [e]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [e].[ID_EVENTO] = [a].[ADMINEVENT_EVENT_ID]
+WHERE [e].[ID_EVENTO] = @__request_Id_0
+ORDER BY [e].[ID_EVENTO], [a].[ADMINEVENT_ID]
+[10:54:19][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi) in 2160.1296ms
+[10:54:19][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:54:19][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/events/2 application/json 298 - 404 - application/json 2344.9576ms
+[10:54:23][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/events/1 application/json 298
+[10:54:23][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:54:23][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "UpdateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateEvent(Dach.ElectionSystem.Models.Request.Event.EventUpdateRequestBase, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[10:54:25][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[10:54:25][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__request_Id_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [EVENTOS] AS [e]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [e].[ID_EVENTO] = [a].[ADMINEVENT_EVENT_ID]
+WHERE [e].[ID_EVENTO] = @__request_Id_0
+ORDER BY [e].[ID_EVENTO], [a].[ADMINEVENT_ID]
+[10:54:25][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@__email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[USU_ID], [t].[USU_FECHA_NACIMIENTO], [t].[USU_CEDULA], [t].[USU_CORREO], [t].[USU_APELLIDO], [t].[USU_NOMBRE], [t].[USU_ESTADO], [t].[USU_NUM_EVENT_MAX], [t].[USU_PASSWORD], [t].[USU_SEGUNDO_APELLIDO], [t].[USU_SEGUNDO_NOMBRE], [t].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM (
+    SELECT TOP(1) [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+    FROM [USUARIOS] AS [u]
+    WHERE [u].[USU_CORREO] = @__email_0
+) AS [t]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [t].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+ORDER BY [t].[USU_ID], [a].[ADMINEVENT_ID]
+[10:54:25][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@p8='1', @p0='Eleccion multiple' (Size = 4000), @p1='Evento nuevo en el Ecuado ' (Size = 4000), @p2='Evento nuevo en el Ecuado ' (Size = 4000), @p3='True', @p4='False', @p5='Elección de la Tola58' (Size = 4000), @p6='5', @p7='5'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [EVENTOS] SET [CATEGORIA] = @p0, [DESCRIPCION_EVENTO] = @p1, [FOTO_EVENTO] = @p2, [ESTADO_EVENTO] = @p3, [MAX_PERSONAS_EVENTO] = @p4, [NOMBRE_EVENTO] = @p5, [NUM_MAX_CANDIDATOS_EVENTO] = @p6, [NUM_MAX_PERSONAS_EVENTO] = @p7
+WHERE [ID_EVENTO] = @p8;
+SELECT @@ROWCOUNT;
+[10:54:25][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventUpdateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[10:54:25][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi) in 2169.9126ms
+[10:54:25][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:54:25][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/events/1 application/json 298 - 200 - application/json;+charset=utf-8 2172.5238ms
+[10:59:36][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[10:59:36][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[10:59:36][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[10:59:36][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[10:59:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[10:59:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 119.9638ms
+[10:59:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[10:59:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 190.9083ms
+[10:59:48][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/events/1 application/json 298
+[10:59:48][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[10:59:48][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:59:48][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "UpdateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateEvent(Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[10:59:49][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[10:59:49][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[10:59:49][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (38ms) [Parameters=[@__request_Id_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [EVENTOS] AS [e]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [e].[ID_EVENTO] = [a].[ADMINEVENT_EVENT_ID]
+WHERE [e].[ID_EVENTO] = @__request_Id_0
+ORDER BY [e].[ID_EVENTO], [a].[ADMINEVENT_ID]
+[10:59:49][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@__email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[USU_ID], [t].[USU_FECHA_NACIMIENTO], [t].[USU_CEDULA], [t].[USU_CORREO], [t].[USU_APELLIDO], [t].[USU_NOMBRE], [t].[USU_ESTADO], [t].[USU_NUM_EVENT_MAX], [t].[USU_PASSWORD], [t].[USU_SEGUNDO_APELLIDO], [t].[USU_SEGUNDO_NOMBRE], [t].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM (
+    SELECT TOP(1) [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+    FROM [USUARIOS] AS [u]
+    WHERE [u].[USU_CORREO] = @__email_0
+) AS [t]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [t].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+ORDER BY [t].[USU_ID], [a].[ADMINEVENT_ID]
+[10:59:50][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@p8='1', @p0='Eleccion multiple' (Size = 4000), @p1='Evento nuevo en el Ecuado ' (Size = 4000), @p2='Evento nuevo en el Ecuado ' (Size = 4000), @p3='True', @p4='False', @p5='Elección de la Tola58' (Size = 4000), @p6='5', @p7='5'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [EVENTOS] SET [CATEGORIA] = @p0, [DESCRIPCION_EVENTO] = @p1, [FOTO_EVENTO] = @p2, [ESTADO_EVENTO] = @p3, [MAX_PERSONAS_EVENTO] = @p4, [NOMBRE_EVENTO] = @p5, [NUM_MAX_CANDIDATOS_EVENTO] = @p6, [NUM_MAX_PERSONAS_EVENTO] = @p7
+WHERE [ID_EVENTO] = @p8;
+SELECT @@ROWCOUNT;
+[10:59:50][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventUpdateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[10:59:50][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi) in 1518.1471ms
+[10:59:50][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[10:59:50][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/events/1 application/json 298 - 200 - application/json;+charset=utf-8 1877.2424ms
+[11:00:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/events/1 application/json 299
+[11:00:03][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[11:00:03][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "UpdateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateEvent(Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:00:03][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:00:03][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_Id_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [EVENTOS] AS [e]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [e].[ID_EVENTO] = [a].[ADMINEVENT_EVENT_ID]
+WHERE [e].[ID_EVENTO] = @__request_Id_0
+ORDER BY [e].[ID_EVENTO], [a].[ADMINEVENT_ID]
+[11:00:03][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@__email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[USU_ID], [t].[USU_FECHA_NACIMIENTO], [t].[USU_CEDULA], [t].[USU_CORREO], [t].[USU_APELLIDO], [t].[USU_NOMBRE], [t].[USU_ESTADO], [t].[USU_NUM_EVENT_MAX], [t].[USU_PASSWORD], [t].[USU_SEGUNDO_APELLIDO], [t].[USU_SEGUNDO_NOMBRE], [t].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM (
+    SELECT TOP(1) [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+    FROM [USUARIOS] AS [u]
+    WHERE [u].[USU_CORREO] = @__email_0
+) AS [t]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [t].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+ORDER BY [t].[USU_ID], [a].[ADMINEVENT_ID]
+[11:00:03][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@p8='1', @p0='Eleccion multiple' (Size = 4000), @p1='Evento nuevo en el Ecuado ' (Size = 4000), @p2='Evento nuevo en el Ecuado ' (Size = 4000), @p3='False', @p4='False', @p5='Elección de la Tola58' (Size = 4000), @p6='5', @p7='5'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [EVENTOS] SET [CATEGORIA] = @p0, [DESCRIPCION_EVENTO] = @p1, [FOTO_EVENTO] = @p2, [ESTADO_EVENTO] = @p3, [MAX_PERSONAS_EVENTO] = @p4, [NOMBRE_EVENTO] = @p5, [NUM_MAX_CANDIDATOS_EVENTO] = @p6, [NUM_MAX_PERSONAS_EVENTO] = @p7
+WHERE [ID_EVENTO] = @p8;
+SELECT @@ROWCOUNT;
+[11:00:03][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventUpdateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:00:03][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi) in 41.7288ms
+[11:00:03][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent (Dach.ElectionSystem.WebApi)'
+[11:00:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/events/1 application/json 299 - 200 - application/json;+charset=utf-8 44.5153ms
+[11:00:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/events application/json 236
+[11:00:20][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[11:00:20][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:00:20][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:00:20][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[11:00:20][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Name_0='Elecció  deh Quito' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [EVENTOS] AS [e]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [e].[ID_EVENTO] = [a].[ADMINEVENT_EVENT_ID]
+WHERE [e].[NOMBRE_EVENTO] = @__request_Name_0
+ORDER BY [e].[ID_EVENTO], [a].[ADMINEVENT_ID]
+[11:00:20][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi) in 170.699ms
+[11:00:20][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent (Dach.ElectionSystem.WebApi)'
+[11:00:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/events application/json 236 - 400 - application/json 372.3536ms
+[11:00:36][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/Users/?username=dach1996 - -
+[11:00:36][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:00:36][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.User.UserGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[11:00:36][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:00:36][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[11:00:36][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+[11:00:36][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Username_0='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_NICK] = @__request_Username_0
+[11:00:36][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.User.UserGetResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:00:36][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler (Dach.ElectionSystem.WebApi) in 52.4871ms
+[11:00:36][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:00:36][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/Users/?username=dach1996 - - - 200 - application/json;+charset=utf-8 57.2634ms
+[11:12:46][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[11:12:46][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[11:12:46][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[11:12:46][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[11:12:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[11:12:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 140.3491ms
+[11:12:47][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[11:12:47][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 207.5934ms
+[11:13:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/1 - -
+[11:13:06][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:IDX10230: Lifetime validation failed. Delegate returned false, securitytoken: 'System.IdentityModel.Tokens.Jwt.JwtSecurityToken'.
+[11:13:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/1 - - - 401 - application/json 405.2551ms
+[11:13:10][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71
+[11:13:10][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[11:13:10][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[11:13:10][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[11:13:10][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[11:13:10][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:13:11][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (41ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[11:13:11][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:13:11][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 1220.5072ms
+[11:13:11][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[11:13:11][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71 - 200 - application/json;+charset=utf-8 1293.2841ms
+[11:13:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/1 - -
+[11:13:13][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:13:13][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:13:13][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi) in 60.2156ms
+[11:13:13][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:13:13][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.ArgumentException: Int32 does not implement IRequest (Parameter 'request')
+   at MediatR.Mediator.<>c__DisplayClass5_0.<Send>b__0(Type requestTypeKey)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at MediatR.Mediator.Send(Object request, CancellationToken cancellationToken)
+   at Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler(EventGetRequest request, Nullable`1 id) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventController.cs:line 86
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[11:13:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/1 - - - 500 - application/json 164.6187ms
+[11:13:36][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/1 - -
+[11:13:36][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:13:36][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:13:36][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi) in 29.2987ms
+[11:13:36][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:13:36][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.ArgumentException: Int32 does not implement IRequest (Parameter 'request')
+   at MediatR.Mediator.<>c__DisplayClass5_0.<Send>b__0(Type requestTypeKey)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at MediatR.Mediator.Send(Object request, CancellationToken cancellationToken)
+   at Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler(EventGetRequest request, Nullable`1 id) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventController.cs:line 86
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[11:13:36][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/1 - - - 500 - application/json 71.4519ms
+[11:14:19][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[11:14:19][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[11:14:19][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[11:14:19][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[11:14:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[11:14:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 156.9369ms
+[11:14:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[11:14:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 239.1667ms
+[11:14:23][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/1 - -
+[11:14:23][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[11:14:23][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:14:23][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:14:24][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[11:14:24][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:14:25][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+[11:14:25][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventGetResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:14:25][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi) in 1408.7513ms
+[11:14:25][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:14:25][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/1 - - - 200 - application/json;+charset=utf-8 1805.4642ms
+[11:14:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events - -
+[11:14:29][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:14:29][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:14:29][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:14:29][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+[11:14:29][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventGetResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:14:29][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi) in 33.6902ms
+[11:14:29][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:14:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events - - - 200 - application/json;+charset=utf-8 37.9851ms
+[11:14:33][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/3 - -
+[11:14:33][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:14:33][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:14:33][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:14:33][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+[11:14:33][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventGetResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:14:33][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi) in 16.0053ms
+[11:14:33][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:14:33][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/3 - - - 200 - application/json;+charset=utf-8 19.7196ms
+[11:14:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/3 - -
+[11:14:42][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:14:42][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:16:14][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[11:16:14][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[11:16:14][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[11:16:14][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[11:16:15][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[11:16:15][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 146.0330ms
+[11:16:15][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[11:16:16][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 206.4102ms
+[11:16:54][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[11:16:54][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[11:16:54][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[11:16:54][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[11:16:55][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[11:16:55][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 163.9822ms
+[11:16:55][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[11:16:56][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 197.4185ms
+[11:17:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/3 - -
+[11:17:03][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[11:17:03][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:17:03][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:17:07][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[11:17:07][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:17:08][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (36ms) [Parameters=[@__request_Id_0='3' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[ID_EVENTO] = @__request_Id_0
+[11:17:08][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventGetResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:17:08][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi) in 5045.9978ms
+[11:17:08][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:17:08][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/3 - - - 200 - application/json;+charset=utf-8 5437.8268ms
+[11:17:11][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/ - -
+[11:17:11][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:17:11][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:17:11][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:17:11][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+[11:17:11][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventGetResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:17:11][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi) in 91.5191ms
+[11:17:11][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:17:11][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/ - - - 200 - application/json;+charset=utf-8 97.9343ms
+[11:17:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/ - -
+[11:17:14][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:17:14][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:17:14][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:17:14][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+[11:17:14][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventGetResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:17:14][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi) in 12.5919ms
+[11:17:14][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:17:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/ - - - 200 - application/json;+charset=utf-8 14.9850ms
+[11:17:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/1 - -
+[11:17:20][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:17:20][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.EventController (Dach.ElectionSystem.WebApi).
+[11:17:20][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[11:17:20][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Id_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ID_EVENTO], [e].[CATEGORIA], [e].[DESCRIPCION_EVENTO], [e].[FOTO_EVENTO], [e].[ESTADO_EVENTO], [e].[MAX_PERSONAS_EVENTO], [e].[NOMBRE_EVENTO], [e].[NUM_MAX_CANDIDATOS_EVENTO], [e].[NUM_MAX_PERSONAS_EVENTO]
+FROM [EVENTOS] AS [e]
+WHERE [e].[ID_EVENTO] = @__request_Id_0
+[11:17:20][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Event.EventGetResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:17:20][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi) in 10.1168ms
+[11:17:20][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler (Dach.ElectionSystem.WebApi)'
+[11:17:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/1 - - - 200 - application/json;+charset=utf-8 11.3190ms
+[15:34:07][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:34:07][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:34:07][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:34:07][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:34:08][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:34:08][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 136.3922ms
+[15:34:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:34:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 229.6995ms
+[15:35:00][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:35:00][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:35:00][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:35:00][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:35:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:35:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 177.9778ms
+[15:35:01][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:35:01][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 291.9960ms
+[15:35:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/events/1 - -
+[15:35:09][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:IDX10230: Lifetime validation failed. Delegate returned false, securitytoken: 'System.IdentityModel.Tokens.Jwt.JwtSecurityToken'.
+[15:35:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/events/1 - - - 401 - application/json 387.3217ms
+[15:35:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71
+[15:35:18][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[15:35:18][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[15:35:18][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[15:35:19][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[15:35:19][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 660.2786ms
+[15:35:19][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[15:35:19][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.InvalidOperationException: 'Group.IdEvent' and 'Group.IsActive' are both mapped to column 'GRP_ESTADO' in 'GRUPOS' but are configured to use different data types ('int' and 'bit').
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateCompatible(IProperty property, IProperty duplicateProperty, String columnName, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.ValidateCompatible(IProperty property, IProperty duplicateProperty, String columnName, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedColumnsCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.ValidateSharedColumnsCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at Dach.ElectionSystem.Repository.Implementation.GenericRepository`1.GetAsync(Expression`1 whereCondition, Func`2 orderBy, String includeProperties) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\GenericRepository.cs:line 31
+   at Dach.ElectionSystem.BusinessLogic.Auth.AuthHandler.Handle(LoginRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Auth\AuthHandler.cs:line 45
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Properties.AuthController.Auth(LoginRequest requestLogin) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\AuthController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 25
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[15:35:19][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71 - 500 - application/json 844.9074ms
+[15:37:32][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:37:32][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:37:32][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:37:32][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:37:32][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:37:32][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 141.2842ms
+[15:37:33][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:37:33][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 201.5395ms
+[15:37:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71
+[15:37:58][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[15:37:59][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[15:37:59][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[15:37:59][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[15:37:59][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[15:38:00][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (43ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[15:38:00][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[15:38:00][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 1466.1885ms
+[15:38:00][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[15:38:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71 - 200 - application/json;+charset=utf-8 1688.8845ms
+[15:41:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/group - -
+[15:41:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/group - - - 404 0 - 48.6003ms
+[15:42:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/group - -
+[15:42:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/group - - - 404 0 - 1.4568ms
+[15:42:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/groups - -
+[15:42:44][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.GroupsController.GetHandler (Dach.ElectionSystem.WebApi)'
+[15:42:44][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "GetHandler", controller = "Groups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetHandler(Dach.ElectionSystem.Models.Request.Group.GroupGetRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.GroupsController (Dach.ElectionSystem.WebApi).
+[15:42:51][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.GroupsController.GetHandler (Dach.ElectionSystem.WebApi) in 6727.1842ms
+[15:42:51][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.GroupsController.GetHandler (Dach.ElectionSystem.WebApi)'
+[15:42:51][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.NotImplementedException: The method or operation is not implemented.
+   at Dach.ElectionSystem.BusinessLogic.Group.GroupGetHandler.Handle(GroupGetRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Group\GroupGetHandler.cs:line 41
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Controllers.GroupsController.GetHandler(GroupGetRequest request, Nullable`1 id) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\GroupsController.cs:line 80
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[15:42:51][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/groups - - - 500 - application/json 6831.8092ms
+[15:42:59][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/groups/ - 0
+[15:42:59][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[15:42:59][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[15:42:59][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/groups/ - 0 - 405 0 - 0.7870ms
+[15:43:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/groups/ application/json 2
+[15:43:09][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[15:43:09][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[15:43:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/groups/ application/json 2 - 405 0 - 0.5115ms
+[15:43:34][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:43:34][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:43:34][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:43:34][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:43:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:43:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 120.2989ms
+[15:43:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:43:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.0920ms
+[15:45:04][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:45:04][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:45:04][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:45:04][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:45:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:45:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 121.3997ms
+[15:45:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:45:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 197.0206ms
+[15:46:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/groups/ application/json 125
+[15:46:13][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[15:46:13][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[15:46:13][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[15:46:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/groups/ application/json 125 - 405 0 - 335.5760ms
+[15:46:23][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/groups/1 application/json 125
+[15:46:23][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.GroupsController.UpdateGroup (Dach.ElectionSystem.WebApi)'
+[15:46:23][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "UpdateGroup", controller = "Groups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateGroup(Dach.ElectionSystem.Models.Request.Group.GroupUpdateRequest, System.Nullable`1[System.Int32]) on controller Dach.ElectionSystem.WebApi.Controllers.GroupsController (Dach.ElectionSystem.WebApi).
+[15:46:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/groups/1 - -
+[15:46:46][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[15:46:46][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[15:46:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 DELETE http://localhost:44317/api/groups/1 - - - 405 0 - 37.8372ms
+[15:46:46][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.GroupsController.UpdateGroup (Dach.ElectionSystem.WebApi) in 23463.1943ms
+[15:46:46][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.GroupsController.UpdateGroup (Dach.ElectionSystem.WebApi)'
+[15:46:47][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.NotImplementedException: The method or operation is not implemented.
+   at Dach.ElectionSystem.BusinessLogic.Group.GroupUpdateHandler.Handle(GroupUpdateRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Group\GroupUpdateHandler.cs:line 41
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Controllers.GroupsController.UpdateGroup(GroupUpdateRequest request, Nullable`1 id) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\GroupsController.cs:line 61
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[15:46:47][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/groups/1 application/json 125 - 500 - application/json 23612.2081ms
+[15:46:51][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/groups/1 - -
+[15:46:51][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[15:46:51][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[15:46:51][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 DELETE http://localhost:44317/api/groups/1 - - - 405 0 - 0.5235ms
+[15:48:26][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:48:26][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:48:26][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:48:26][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:48:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:48:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 149.5594ms
+[15:48:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:48:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 213.3469ms
+[15:48:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/groups/1 - -
+[15:48:38][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[15:48:38][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[15:48:38][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[15:48:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 DELETE http://localhost:44317/api/groups/1 - - - 405 0 - 360.5788ms
+[15:49:27][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:49:27][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:49:27][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:49:27][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:49:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:49:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 146.3575ms
+[15:49:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:49:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 203.7424ms
+[15:49:54][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/groups/1 - -
+[15:49:54][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[15:49:54][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.GroupsController.DesactiveGroup (Dach.ElectionSystem.WebApi)'
+[15:49:54][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "DesactiveGroup", controller = "Groups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DesactiveGroup(Dach.ElectionSystem.Models.Request.Group.GroupDeleteRequest) on controller Dach.ElectionSystem.WebApi.Controllers.GroupsController (Dach.ElectionSystem.WebApi).
+[15:49:59][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.GroupsController.DesactiveGroup (Dach.ElectionSystem.WebApi) in 4028.2022ms
+[15:49:59][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.GroupsController.DesactiveGroup (Dach.ElectionSystem.WebApi)'
+[15:49:59][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.NotImplementedException: The method or operation is not implemented.
+   at Dach.ElectionSystem.BusinessLogic.Group.GroupDeleteHandler.Handle(GroupDeleteRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Group\GroupDeleteHandler.cs:line 41
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Controllers.GroupsController.DesactiveGroup(GroupDeleteRequest request) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\GroupsController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[15:49:59][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 DELETE http://localhost:44317/api/groups/1 - - - 500 - application/json 4548.2737ms
+[15:50:54][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/groups application/json 92
+[15:50:54][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.GroupsController.CreateGroup (Dach.ElectionSystem.WebApi)'
+[15:50:54][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateGroup", controller = "Groups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateGroup(Dach.ElectionSystem.Models.Request.Group.GroupCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.GroupsController (Dach.ElectionSystem.WebApi).
+[15:51:00][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.GroupsController.CreateGroup (Dach.ElectionSystem.WebApi) in 5062.2613ms
+[15:51:00][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.GroupsController.CreateGroup (Dach.ElectionSystem.WebApi)'
+[15:51:00][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+System.NotImplementedException: The method or operation is not implemented.
+   at Dach.ElectionSystem.BusinessLogic.Group.GroupCreateHandler.Handle(GroupCreateRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Group\GroupCreateHandler.cs:line 38
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Controllers.GroupsController.CreateGroup(GroupCreateRequest request) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\GroupsController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[15:51:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/groups application/json 92 - 500 - application/json 5116.7416ms
+[15:57:47][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:57:47][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:57:47][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:57:47][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:57:47][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:57:47][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 119.9651ms
+[15:57:48][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:57:48][ERR][Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware]:An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler (Dach.ElectionSystem.WebApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[15:57:48][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 500 - text/plain 217.1437ms
+[15:59:06][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:59:06][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:59:06][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:59:06][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:59:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:59:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 122.9135ms
+[15:59:07][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:59:07][ERR][Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware]:An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler (Dach.ElectionSystem.WebApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[15:59:07][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 500 - text/plain 224.8446ms
+[15:59:43][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[15:59:43][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[15:59:43][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[15:59:43][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[15:59:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[15:59:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 167.8062ms
+[15:59:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[15:59:44][ERR][Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware]:An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler (Dach.ElectionSystem.WebApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[15:59:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 500 - text/plain 211.1777ms
+[16:00:40][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[16:00:40][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[16:00:40][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[16:00:40][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[16:00:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[16:00:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 122.7690ms
+[16:00:41][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[16:00:41][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 252.7146ms

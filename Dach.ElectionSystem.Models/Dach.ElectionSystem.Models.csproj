@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>ElectionSystemModels.xml</DocumentationFile>
+    <DocumentationFile>../Dach.ElectionSystem.WebApi/ElectionSystemModels.xml</DocumentationFile>
     <OutputPath></OutputPath>
   </PropertyGroup>
 

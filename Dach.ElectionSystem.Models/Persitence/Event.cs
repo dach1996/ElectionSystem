@@ -9,13 +9,19 @@ namespace Dach.ElectionSystem.Models.Persitence
     [Table(name: "EVENTOS")]
     public class Event
     {
+        #region Constructor
         /// <summary>
         /// Constructor
         /// </summary>
-        public Event(){
+        public Event()
+        {
             this.IsActive = true;
             this.AdministratorEvent = new List<AdministratorEvent>();
-        } 
+            this.Group = new List<Group>();
+        }
+        #endregion
+        
+        #region Attributes
 
         /// <summary>
         /// Id de evento
@@ -73,13 +79,22 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// <value></value>
         [Column("ESTADO_EVENTO")]
         public bool IsActive { get; set; }
-
-
+        #endregion
+        
+        #region Relations
         /// <summary>
         /// Eventos Usuarios
         /// </summary>
         /// <value></value>
         public ICollection<AdministratorEvent> AdministratorEvent { get; set; }
+
+        /// <summary>
+        /// Eventos Usuarios
+        /// </summary>
+        /// <value></value>
+        public ICollection<Group> Group { get; set; }
+        #endregion
+
 
     }
 }

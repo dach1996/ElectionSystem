@@ -2,20 +2,19 @@ using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.Base;
 using Dach.ElectionSystem.Models.RequestBase;
 
-namespace Dach.ElectionSystem.Models.Request.Event
+namespace Dach.ElectionSystem.Models.Request.Group
 {
+
     /// <summary>
-    /// Clase base para Request de Evento
+    /// Clase Base GroupBaseRequest
     /// </summary>
-    public class EventBaseRequest : EventBase, IRequestBase
+    public class GroupBaseRequest : GroupBase, IRequestBase
     {
-
-
         /// <summary>
-        /// Clase contexto de Token
+        /// Contexto de Datos
         /// </summary>
         /// <value></value>
         [JsonIgnore]
-        public TokenModel TokenModel { get; set; }
+        public TokenModel TokenModel { get ; set ; }
     }
 }

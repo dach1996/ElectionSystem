@@ -10,6 +10,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
+using Dach.ElectionSystem.Services.Data;
 
 namespace Dach.ElectionSystem.BusinessLogic.User
 {
@@ -19,36 +20,38 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         private readonly ILogger<UserGetHandler> logger;
         private readonly IUserRepository userRepository;
         private readonly IMapper mapper;
+        private readonly ValidateIntegrity validateIntegrity;
+
         public UserGetHandler(
             ILogger<UserGetHandler> logger,
             IUserRepository userRepository,
-            IMapper mapper
+            IMapper mapper,
+            ValidateIntegrity validateIntegrity
             )
         {
             this.logger = logger;
             this.userRepository = userRepository;
             this.mapper = mapper;
+            this.validateIntegrity = validateIntegrity;
         }
         #endregion
         public async Task<UserGetResponse> Handle(UserGetRequest request, CancellationToken cancellationToken)
         {
-            var userCurrent = await userRepository.GetUserByUsernameByEmail(request.TokenModel.Email);
-            if (userCurrent == null)
-            {
-                logger.LogWarning($"No se encuentra usuario Token con ID:{request.TokenModel.Id}");
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
-            }
+            var userCurrent = await validateIntegrity.ValidateUser(request);
             var listUser = new List<Models.Persitence.User>();
             if (request.Id != null)
                 listUser = (await userRepository.GetAsync(u => u.Id == request.Id)).ToList();
+            else
+                listUser = (await userRepository.GetAsync()).ToList();
             if (request.FirstName != null)
                 listUser = (await userRepository.GetAsync(u => u.FirstName == request.FirstName)).ToList();
             if (request.LastName != null)
                 listUser = (await userRepository.GetAsync(u => u.FirstLastName == request.LastName)).ToList();
             if (request.Username != null)
                 listUser = (await userRepository.GetAsync(u => u.UserName == request.Username)).ToList();
-             var listUserGet = mapper.Map<List<Models.Persitence.User>,List<UserResponseBase>>(listUser);
-            return  new UserGetResponse(){
+            var listUserGet = mapper.Map<List<Models.Persitence.User>, List<UserResponseBase>>(listUser);
+            return new UserGetResponse()
+            {
                 ListUser = listUserGet
             };
         }

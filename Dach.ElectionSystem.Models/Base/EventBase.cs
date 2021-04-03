@@ -5,11 +5,6 @@ namespace Dach.ElectionSystem.Models.Base
     /// </summary>
     public class EventBase
     {
-        /// <summary>
-        /// Id de Evento
-        /// </summary>
-        /// <value></value>
-        public int Id { get; set; }
 
         /// <summary>
         /// Nombre de evento

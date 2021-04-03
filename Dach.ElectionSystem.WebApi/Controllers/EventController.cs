@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/events")]
     [ApiController]
     [ServiceFilter(typeof(ModelFilter))]
     public class EventController : ApiControllerBase
@@ -46,21 +46,50 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpDelete]
+        [Route("{id}")]
         [ProducesResponseType(200, Type = typeof(EventDeleteResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> DesactiveEvent([FromQuery] EventDeleteRequest request) => Success(await _mediator.Send(request));
+        public async Task<IActionResult> DesactiveEvent([FromRoute] EventDeleteRequest request) => Success(await _mediator.Send(request));
 
         /// <summary>
         /// Actualizar Evento
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut]
+        [Route("{id}")]
         [ProducesResponseType(200, Type = typeof(EventUpdateResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> UpdateEvent([FromBody] EventUpdateRequest request) => Success(await _mediator.Send(request));
+        public async Task<IActionResult> UpdateEvent([FromBody] EventUpdateRequest request, [FromRoute] int? id)
+        {
+            request.Id = id;
+            return Success(await _mediator.Send(request));
+        }
+
+
+
+        /// <summary>
+        /// Consulta de Eventos
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(EventGetResponse))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [Route("{id}")]
+        [Route("")]
+        public async Task<IActionResult> GetHandler([FromQuery] EventGetRequest request, [FromRoute] int? id)
+        {
+            request.Id = id;
+            return
+            Success(await _mediator.Send(request));
+        }
+
         #endregion
 
     }

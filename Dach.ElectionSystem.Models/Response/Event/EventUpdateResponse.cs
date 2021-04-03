@@ -5,13 +5,8 @@ namespace Dach.ElectionSystem.Models.Response.Event
     /// <summary>
     /// Clase EventUpdateResponse
     /// </summary>
-    public class EventUpdateResponse : EventBase
+    public class EventUpdateResponse : EventResponseBase
     {
-        /// <summary>
-        /// Estado de Evento
-        /// </summary>
-        /// <value></value>
-        public bool IsActive { get; set; }
-        
+       
     }
 }
