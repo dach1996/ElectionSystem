@@ -74,8 +74,10 @@ namespace Dach.ElectionSystem.WebApi
                 app.UseDeveloperExceptionPage();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dach.ElectionSystem.WebApi v1"));
+             app.UseHttpsRedirection();
             app.SetCustomMiddleWare();
-            app.UseHttpsRedirection();
+           
+            
             app.UseRouting();
 
 

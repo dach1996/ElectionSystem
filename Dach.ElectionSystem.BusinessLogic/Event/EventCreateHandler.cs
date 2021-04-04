@@ -44,11 +44,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             var existEvent = await _eventRepository.GetEventsWithAdministratorAsync(e => e.Name == request.Name);
             if (existEvent.Count() > 0)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.EventRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
-            if (userCurrent.AdministratorEvent.Count() >= userCurrent.MaxEventsAllow)
+            if (userCurrent.ListAdministratorEvent.Count() >= userCurrent.MaxEventsAllow)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.MaxEventAllow, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
             var newEvent = _mapper.Map<Models.Persitence.Event>(request);
             //Registramos al usuario como Administrador
-            newEvent.AdministratorEvent = new List<AdministratorEvent>()
+            newEvent.ListAdministratorEvent = new List<AdministratorEvent>()
             {
                 new AdministratorEvent(){
                 Event= newEvent,

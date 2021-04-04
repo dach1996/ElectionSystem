@@ -1,21 +1,11 @@
-﻿using Dach.ElectionSystem.Models.Request.Candidate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Dach.ElectionSystem.Models.Base;
 namespace Dach.ElectionSystem.Models.Response.Candidate
 {
     /// <summary>
     /// Clase CandidateCreateResponse
     /// </summary>
-    public class CandidateCreateResponse : CandidateCreateRequest
+    public class CandidateCreateResponse : CandidateResponseBase
     {
-        /// <summary>
-        /// Id de candidato
-        /// </summary>
-        /// <value></value>
-        public int Id { get; set; }
+
     }
 }

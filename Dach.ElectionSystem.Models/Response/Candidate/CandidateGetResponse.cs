@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 namespace Dach.ElectionSystem.Models.Response.Candidate
 {
     /// <summary>
@@ -11,5 +6,9 @@ namespace Dach.ElectionSystem.Models.Response.Candidate
     /// </summary>
     public class CandidateGetResponse
     {
+        /// <summary>
+        /// Lista de Candidatos
+        /// </summary>
+        public List<CandidateResponseBase>  ListCandidate{ get; set; }
     }
 }

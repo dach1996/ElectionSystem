@@ -1,4 +1,3 @@
-
 using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.Response.Group;
 using MediatR;

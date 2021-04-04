@@ -1,17 +1,30 @@
-﻿using Dach.ElectionSystem.Models.Response.Candidate;
+﻿using Dach.ElectionSystem.Models.RequestBase;
+using Dach.ElectionSystem.Models.Response.Candidate;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Dach.ElectionSystem.Models.Request.Candidate
 {
     /// <summary>
     /// Clase CandidateGetRequest
     /// </summary>
-    public class CandidateGetRequest : IRequest<CandidateGetResponse>
+    public class CandidateGetRequest : RequestBaseImpl, IRequest<CandidateGetResponse>
     {
+        /// <summary>
+        /// Id de Evento
+        /// </summary>
+        /// <value></value>
+        public int? IdEvent { get; set; }
+
+        /// <summary>
+        /// Id de Grupo
+        /// </summary>
+        /// <value></value>
+        public int? IdGroup { get; set; }
+
+        /// <summary>
+        /// Id de Candidato
+        /// </summary>
+        /// <value></value>
+        public int? IdCandidate { get; set; }
+
     }
 }

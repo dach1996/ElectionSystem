@@ -16,83 +16,90 @@ namespace Dach.ElectionSystem.Models.Persitence
         public Event()
         {
             this.IsActive = true;
-            this.AdministratorEvent = new List<AdministratorEvent>();
-            this.Group = new List<Group>();
+            this.ListAdministratorEvent = new List<AdministratorEvent>();
+            this.ListVote = new List<Vote>();
+            this.ListGroup = new List<Group>();
         }
         #endregion
-        
+
         #region Attributes
 
         /// <summary>
         /// Id de evento
         /// </summary>
         /// <value></value>
-        [Key, Column("ID_EVENTO")]
+        [Key, Column("EVT_ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         /// <summary>
         /// Nombre evento
         /// </summary>
         /// <value></value>
-        [Column("NOMBRE_EVENTO")]
+        [Column("EVT_NOMBRE")]
         public string Name { get; set; }
         /// <summary>
         /// Dirección de foto de Evento
         /// </summary>
         /// <value></value>
-        [Column("FOTO_EVENTO")]
+        [Column("EVT_FOTO")]
         public string Image { get; set; }
         /// <summary>
         /// Descripción de Evento
         /// </summary>
         /// <value></value>
-        [Column("DESCRIPCION_EVENTO")]
+        [Column("EVT_DESCRIPCION")]
         public string Description { get; set; }
         /// <summary>
         /// Permitir  máximo de personas por evento
         /// </summary>
         /// <value></value>
-        [Column("MAX_PERSONAS_EVENTO")]
+        [Column("EVT_MAX_PERSONAS")]
         public bool MaxPeople { get; set; }
         /// <summary>
         /// Numero máximo de participantes
         /// </summary>
         /// <value></value>
-        [Column("NUM_MAX_PERSONAS_EVENTO")]
+        [Column("EVT_NUM_MAX_PERSONAS")]
         public int NumberMaxPeople { get; set; }
         /// <summary>
         /// Número máximo de candidatos
         /// </summary>
         /// <value></value>
-        [Column("NUM_MAX_CANDIDATOS_EVENTO")]
+        [Column("EVT_NUM_MAX_CANDIDATOS")]
         public int NumberMaxCandidate { get; set; }
         /// <summary>
         /// Categoría de Evento.
         /// </summary>
         /// <value></value>
-        [Column("CATEGORIA")]
+        [Column("EVT_CATEGORIA")]
         public string Category { get; set; }
 
         /// <summary>
         /// Evento está Activo
         /// </summary>
         /// <value></value>
-        [Column("ESTADO_EVENTO")]
+        [Column("EVT_ESTADO")]
         public bool IsActive { get; set; }
         #endregion
-        
+
         #region Relations
         /// <summary>
         /// Eventos Usuarios
         /// </summary>
         /// <value></value>
-        public ICollection<AdministratorEvent> AdministratorEvent { get; set; }
+        public ICollection<AdministratorEvent> ListAdministratorEvent { get; set; }
 
         /// <summary>
         /// Eventos Usuarios
         /// </summary>
         /// <value></value>
-        public ICollection<Group> Group { get; set; }
+        public ICollection<Group> ListGroup { get; set; }
+
+        /// <summary>
+        /// Eventos Usuarios
+        /// </summary>
+        /// <value></value>
+        public ICollection<Vote> ListVote { get; set; }
         #endregion
 
 

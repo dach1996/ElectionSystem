@@ -4,6 +4,53 @@
         <name>Dach.ElectionSystem.Models</name>
     </assembly>
     <members>
+        <member name="T:Dach.ElectionSystem.Models.Base.CandidateBase">
+            <summary>
+            Clase base para candidato
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Image">
+            <summary>
+            Imagen del candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Video">
+            <summary>
+            Video del Candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Details">
+            <summary>
+            Detalles de Candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Role">
+            <summary>
+            Rol de candidato en el Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Age">
+            <summary>
+            Edad del candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.ProposalDetails">
+            <summary>
+            Propuesta de candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.PostionsWorks">
+            <summary>
+            Posiciones de trabajo 
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Base.EventBase">
             <summary>
             Calse base para Evento
@@ -443,6 +490,30 @@
             Estado de Candidato
             </summary>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.IdEvent">
+            <summary>
+            Id del evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.IdUser">
+            <summary>
+             Id del Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.Event">
+            <summary>
+            Relación con Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.User">
+            <summary>
+            Relación con Usuario
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Persitence.Event">
             <summary>
             Clase de persistencia Eventos
@@ -507,50 +578,21 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.AdministratorEvent">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.ListAdministratorEvent">
             <summary>
             Eventos Usuarios
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.Group">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.ListGroup">
             <summary>
             Eventos Usuarios
             </summary>
             <value></value>
         </member>
-        <member name="T:Dach.ElectionSystem.Models.Persitence.EventUser">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.ListVote">
             <summary>
-            Clase de persistencia muchos a muchos Eventos Usuarios
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.EventUser.Id">
-            <summary>
-            Id de Eventos Usuario
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.EventUser.IdUser">
-            <summary>
-            Id Usuario
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.EventUser.IdEvent">
-            <summary>
-            Id Evento
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.EventUser.Event">
-            <summary>
-            Evento
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.EventUser.User">
-            <summary>
-            Usuarios
+            Eventos Usuarios
             </summary>
             <value></value>
         </member>
@@ -681,9 +723,73 @@
             Estado de Usuario
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.User.AdministratorEvent">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.IsAdministrator">
             <summary>
-            Eventos Usuarios
+            Estado de Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.ListAdministratorEvent">
+            <summary>
+            Lista de Eventos administradors por el usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.ListCandidate">
+            <summary>
+            Lista de Candidatos que puede ser el usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Persitence.Vote">
+            <summary>
+            Clase para persistencia de votos
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.Id">
+            <summary>
+            Id único usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.IdEvent">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.IdUser">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.IdGroup">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.Date">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.HasVote">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.Event">
+            <summary>
+            Relación con Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.User">
+            <summary>
+            Relación con Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.Group">
+            <summary>
+            Relación con Grupo
             </summary>
             <value></value>
         </member>
@@ -696,6 +802,33 @@
             <summary>
             Token para contexto
             </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.RequestBase.IUserContext">
+            <summary>
+            Contexto de Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.IUserContext.UserContext">
+            <summary>
+            Token para contexto
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.RequestBase.RequestBaseImpl">
+            <summary>
+            Clase Base de Request
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.RequestBaseImpl.TokenModel">
+            <summary>
+            Token Model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.RequestBaseImpl.UserContext">
+            <summary>
+            Usuario del Contexto
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Dach.ElectionSystem.Models.RequestBase.TokenModel">
             <summary>
@@ -732,56 +865,43 @@
             Password
             </summary>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.Candidate.CandidateBaseRequest">
+            <summary>
+            Clase  Base para Request de candidatos
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateBaseRequest.TokenModel">
+            <summary>
+            Token Model
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateBaseRequest.UserContext">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest">
             <summary>
             Clase Candidate Create Request
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.Image">
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.IdEvent">
             <summary>
-            Imagen del candidato
+            Id de Evento
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.Video">
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.IdGroup">
             <summary>
-            Video del Candidato
+            Id de Grupo
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.Details">
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.IdUser">
             <summary>
-            Detalles de Candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.Role">
-            <summary>
-            Rol de candidato en el Evento
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.Age">
-            <summary>
-            Edad del candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.ProposalDetails">
-            <summary>
-            Propuesta de candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.PostionsWorks">
-            <summary>
-            Posiciones de trabajo 
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.TokenModel">
-            <summary>
-            Clase contexto de Token
+            Id de Usuario a Candidato
             </summary>
             <value></value>
         </member>
@@ -790,15 +910,69 @@
             Clase CandidateDeleteRequest
             </summary>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest.IdEvent">
+            <summary>
+            Id de Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest.IdGroup">
+            <summary>
+            Id de Grupo
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest.IdCandidate">
+            <summary>
+            Id de Candidato
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest">
             <summary>
             Clase CandidateGetRequest
             </summary>
         </member>
-        <member name="T:Dach.ElectionSystem.Models.Request.Candidate.CandidatePutRequest">
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest.IdEvent">
+            <summary>
+            Id de Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest.IdGroup">
+            <summary>
+            Id de Grupo
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest.IdCandidate">
+            <summary>
+            Id de Candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.Candidate.CandidateUpdateRequest">
             <summary>
             Clase CandidatePutRequest
             </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateUpdateRequest.IdEvent">
+            <summary>
+            Id de Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateUpdateRequest.IdGroup">
+            <summary>
+            Id de Grupo
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateUpdateRequest.IdCandidate">
+            <summary>
+            Id de Candidato
+            </summary>
+            <value></value>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Event.EventBaseRequest">
             <summary>
@@ -808,6 +982,12 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Event.EventBaseRequest.TokenModel">
             <summary>
             Clase contexto de Token
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventBaseRequest.UserContext">
+            <summary>
+            Contexto de Usuario
             </summary>
             <value></value>
         </member>
@@ -824,11 +1004,6 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest.Id">
             <summary>
             Id de Evento
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest.TokenModel">
-            <summary>
-            Token Model
             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Event.EventGetRequest">
@@ -869,6 +1044,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupBaseRequest.UserContext">
+            <summary>
+            Contexto de Usuario
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Group.GroupCreateRequest">
             <summary>
             Clase GroupCreateRequest
@@ -894,12 +1075,6 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupDeleteRequest.IdGroup">
             <summary>
             Id del Grupo
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupDeleteRequest.TokenModel">
-            <summary>
-            Contexto de Datos
             </summary>
             <value></value>
         </member>
@@ -957,11 +1132,6 @@
             Id de usuario
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserDeleteRequest.TokenModel">
-            <summary>
-            Token Model
-            </summary>
-        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.User.UserGetRequest">
             <summary>
             Clase Model para User Get Request
@@ -1003,6 +1173,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.UserContext">
+            <summary>
+            Contexto de Usuario
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.User.UserRequestBase">
             <summary>
             Base de Modelo
@@ -1012,6 +1188,12 @@
             <summary>
             Token Base
             </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserRequestBase.UserContext">
+            <summary>
+            Contexto de Usuario
+            </summary>
+            <value></value>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Request.User.UserUpdateRequest">
             <summary>
@@ -1114,12 +1296,6 @@
             Clase CandidateCreateResponse
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Response.Candidate.CandidateCreateResponse.Id">
-            <summary>
-            Id de candidato
-            </summary>
-            <value></value>
-        </member>
         <member name="T:Dach.ElectionSystem.Models.Response.Candidate.CandidateDeleteResponse">
             <summary>
             Clase CandidateDeleteResponse
@@ -1130,7 +1306,29 @@
             Clase CandidateGetResponse
             </summary>
         </member>
-        <member name="T:Dach.ElectionSystem.Models.Response.Candidate.CandidatePutResponse">
+        <member name="P:Dach.ElectionSystem.Models.Response.Candidate.CandidateGetResponse.ListCandidate">
+            <summary>
+            Lista de Candidatos
+            </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.Candidate.CandidateResponseBase">
+            <summary>
+            Clase base para respuesta de candidato
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Candidate.CandidateResponseBase.Id">
+            <summary>
+            Id de candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Candidate.CandidateResponseBase.IsActive">
+            <summary>
+            Id de candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.Candidate.CandidateUpdateResponse">
             <summary>
             Clase CandidatePutResponse
             </summary>

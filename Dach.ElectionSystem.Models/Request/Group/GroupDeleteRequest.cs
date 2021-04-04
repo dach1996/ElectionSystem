@@ -8,7 +8,7 @@ namespace Dach.ElectionSystem.Models.Request.Group
     /// <summary>
     /// Clase GroupDeleteRequest
     /// </summary>
-    public class GroupDeleteRequest : IRequestBase, IRequest<GroupDeleteResponse>
+    public class GroupDeleteRequest : RequestBaseImpl, IRequest<GroupDeleteResponse>
     {
         /// <summary>
         /// Id del Evento
@@ -23,12 +23,5 @@ namespace Dach.ElectionSystem.Models.Request.Group
         /// <value></value>
         [JsonIgnore]
         public int IdGroup { get; set; }
-
-        /// <summary>
-        /// Contexto de Datos
-        /// </summary>
-        /// <value></value>
-        [JsonIgnore]
-        public TokenModel TokenModel { get; set; }
     }
 }

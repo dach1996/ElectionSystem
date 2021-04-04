@@ -11,6 +11,7 @@ namespace Dach.ElectionSystem.Repository.Intrastructure
             services.AddTransient<IEventRepository, EventRepository>();
             services.AddTransient<IGroupRepository, GroupRepository>();
             services.AddTransient<ICandidateRepository, CandidateRepository>();
+            services.AddTransient<IVoteRepository, VoteRepository>();
             //Unit work
             services.AddTransient<IUnitOfWork, UnitOfWork.UnitOfWork>();
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Dach.ElectionSystem.WebApi.Controllers
 {
     [Route("api/users")]
-    [ServiceFilter(typeof(Utils.Filters.ModelFilter))]
+
     [ApiController]
     public class UserController : ApiControllerBase
     {
@@ -30,6 +30,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(200, Type = typeof(GenericResponse<UserUpdateResponse>))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [ServiceFilter(typeof(Utils.Filters.ModelFilter))]
         public async Task<IActionResult> UpdateUser([FromBody] UserUpdateRequest request) => Success(await _mediator.Send(request));
 
         /// <summary>
@@ -41,12 +42,24 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         [Route("{id}")]
         [Route("")]
+        [ServiceFilter(typeof(Utils.Filters.ModelFilter))]
         public async Task<IActionResult> GetHandler([FromQuery] UserGetRequest request, [FromRoute] int? id)
         {
             if (id != null)
                 request.Id = id;
             return Success(await _mediator.Send(request));
         }
+
+        /// <summary>
+        /// Crear Usuario
+        /// </summary>
+        [HttpPost]
+        [ProducesResponseType(200, Type = typeof(GenericResponse<UserCreateResponse>))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        public async Task<IActionResult> CreateUser([FromBody] UserCreateRequest request)
+        => Success(await _mediator.Send(request));
+
 
         #endregion
     }

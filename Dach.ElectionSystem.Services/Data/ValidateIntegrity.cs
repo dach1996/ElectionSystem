@@ -32,7 +32,7 @@ namespace Dach.ElectionSystem.Services.Data
             var existUser = await userRepository.GetAsync(u =>  u.Id == System.Convert.ToInt32(request.TokenModel.Id) &&
                                                                 u.UserName == request.TokenModel.Username &&
                                                                 u.Email == request.TokenModel.Email,
-                                                                includeProperties: nameof(User.AdministratorEvent));
+                                                                includeProperties: nameof(User.ListAdministratorEvent));
             if(existUser.Count()!=1)
                throw new ExceptionCustom(MessageCodesApi.DataInconsistency, ResponseType.Error, HttpStatusCode.Unauthorized);
             return existUser.FirstOrDefault();

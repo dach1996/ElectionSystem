@@ -15,14 +15,12 @@ namespace Dach.ElectionSystem.Utils.Mediator
         {
 
             //IMediator Login
-            services.AddTransient<IRequestHandler<LoginRequest, LoginResponse>, AuthHandler>();
-    
-            //Mediator Candidate
-            services.AddTransient<IRequestHandler<CandidateCreateRequest, CandidateCreateResponse>, CandidateCreateHandler>();
-           
+            services.AddTransient<IRequestHandler<LoginRequest, LoginResponse>, AuthHandler>();         
             MediatorUser.AddIMediaRUserConfig(services);
             MediatorEvent.AddIMediaREventConfig(services);
             MediatorGroup.AddIMediaRGroupConfig(services);
+            MediatorCandidate.AddIMediaRCandidateConfig(services);
+            MediatorVote.AddIMediaRVoteConfig(services);
         }
     }
 }

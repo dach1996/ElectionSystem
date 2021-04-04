@@ -47,7 +47,7 @@ namespace Dach.ElectionSystem.Services.TokenJWT
 
                 // Crea claims
                 var claimsIdentity = new System.Collections.Generic.List<System.Security.Claims.Claim>()
-                { 
+                {
                     new System.Security.Claims.Claim(Models.Enums.Claim.Name.ToString(), user.UserName??String.Empty),
                     new System.Security.Claims.Claim(Models.Enums.Claim.Email.ToString(), user.Email),
                     new System.Security.Claims.Claim(Models.Enums.Claim.Id.ToString(), user.Id.ToString()),
@@ -56,7 +56,7 @@ namespace Dach.ElectionSystem.Services.TokenJWT
                 //Crear tokens
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var jwtSecurityToken = tokenHandler.CreateJwtSecurityToken(
-                    
+
                     subject: new ClaimsIdentity(claimsIdentity),
                     notBefore: DateTime.UtcNow,
                     expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(expireTime)),
@@ -68,14 +68,16 @@ namespace Dach.ElectionSystem.Services.TokenJWT
             }
             catch (Exception ex)
             {
-             _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
         }
 
         public void ValidateToken(HttpContext context)
         {
-            try { 
+            try
+            {
+                _logger.Log(LogLevel.Error, $"Estoy en Token");
                 var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
                 if (token == null)
                     throw new ExceptionCustom(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
@@ -90,16 +92,18 @@ namespace Dach.ElectionSystem.Services.TokenJWT
                     LifetimeValidator = this.LifetimeValidator,
                     IssuerSigningKey = new SymmetricSecurityKey(key)
                 }, out SecurityToken validatedToken);
-                
+
 
             }
-             catch (ArgumentException ex)
+            catch (ArgumentException ex)
 
             {
                 _logger.LogError(ex.Message);
                 throw new ExceptionCustom(MessageCodesApi.InvalidToken, ResponseType.Error, HttpStatusCode.Unauthorized);
-            } catch (SecurityTokenValidationException ex){
-                 _logger.LogError(ex.Message);
+            }
+            catch (SecurityTokenValidationException ex)
+            {
+                _logger.LogError(ex.Message);
                 throw new ExceptionCustom(MessageCodesApi.TokenExpired, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
         }

@@ -66,7 +66,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// <summary>
         /// Id de evento
         /// </summary>
-        [Column("GRP_EVENTO_ID")]
+        [Column("GRP_EVT_ID")]
         [ForeignKey(nameof(Event))]
         public int IdEvent { get; set; }
         #endregion

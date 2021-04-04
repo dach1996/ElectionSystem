@@ -42,5 +42,11 @@ namespace Dach.ElectionSystem.Models.Request.User
         /// <value></value>
         [JsonIgnore]
         public TokenModel TokenModel { get; set; }
+              /// <summary>
+        /// Contexto de Usuario
+        /// </summary>
+        /// <value></value>
+        [JsonIgnore]
+        public Persitence.User UserContext { get; set; }
     }
 }

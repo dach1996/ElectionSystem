@@ -42,6 +42,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         #region Handler
         public async Task<UserCreateResponse> Handle(UserCreateRequest request, CancellationToken cancellationToken)
         {
+            logger.Log(LogLevel.Error, "Entre al controlador");
             //Hash a la clave
             request.Password = Common.Util.ComputeSHA256(request.Password, _secretKey);
             //Valida que el usuario exista

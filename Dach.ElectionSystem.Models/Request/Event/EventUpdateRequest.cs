@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.Response.Event;
 using MediatR;

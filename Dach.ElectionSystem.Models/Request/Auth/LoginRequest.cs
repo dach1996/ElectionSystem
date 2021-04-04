@@ -1,9 +1,6 @@
 ﻿using Dach.ElectionSystem.Models.Response.Auth;
 using MediatR;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Dach.ElectionSystem.Models.Auth
 {

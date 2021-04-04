@@ -24,7 +24,7 @@ namespace Dach.ElectionSystem.WebApi.Properties
             _mediator = mediator;
         }
         #endregion
-        
+
         #region Methods Controller
         /// <summary>
         /// Generar token mediante credenciales
@@ -36,17 +36,7 @@ namespace Dach.ElectionSystem.WebApi.Properties
         [Route("login")]
         public async Task<IActionResult> Auth(LoginRequest requestLogin)
          => Success(await _mediator.Send(requestLogin));
-
-        /// <summary>
-        /// Crear Usuario
-        /// </summary>
-        [HttpPost]
-        [ProducesResponseType(200, Type = typeof(GenericResponse<UserCreateResponse>))]
-        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
-        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        [Route("new")]
-        public async Task<IActionResult> CreateUser([FromBody] UserCreateRequest request) 
-        => Success(await _mediator.Send(request));
         #endregion
+
     }
 }
