@@ -19,34 +19,6 @@
             Crear Usuario
             </summary>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.CreateCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest)">
-            <summary>
-            Crear Candidato
-            </summary>
-            <param name="candidateCreateRequest"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.GetCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest)">
-            <summary>
-            Obtener datos de Candidato
-            </summary>
-            <param name="candidateCreateRequest"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.PutCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest)">
-            <summary>
-            Modificar Candidato
-            </summary>
-            <param name="candidateCreateRequest"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.DeleteCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest)">
-            <summary>
-            Borrar Candidato
-            </summary>
-            <param name="candidateCreateRequest"></param>
-            <returns></returns>
-        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest)">
             <summary>
             Crear nuevo evento
@@ -77,34 +49,38 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.GroupsController.CreateGroup(Dach.ElectionSystem.Models.Request.Group.GroupCreateRequest)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.GroupController.CreateGroup(Dach.ElectionSystem.Models.Request.Group.GroupCreateRequest,System.Int32)">
             <summary>
-            Crear nuevo Groupo
+            Crear nuevo evento
             </summary>
             <param name="request"></param>
+            <param name="idEvent"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.GroupsController.DesactiveGroup(Dach.ElectionSystem.Models.Request.Group.GroupDeleteRequest)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.GroupController.DesactiveGroup(Dach.ElectionSystem.Models.Request.Group.GroupDeleteRequest,System.Int32,System.Int32)">
             <summary>
-            Desactivar Groupo
+            Desactivar Grupo
             </summary>
             <param name="request"></param>
-            <returns></returns>
+            <param name="idEvent"></param>
+            <param name="idGroup"></param>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.GroupsController.UpdateGroup(Dach.ElectionSystem.Models.Request.Group.GroupUpdateRequest,System.Nullable{System.Int32})">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.GroupController.UpdateGroup(Dach.ElectionSystem.Models.Request.Group.GroupUpdateRequest,System.Int32,System.Int32)">
             <summary>
             Actualizar Groupo
             </summary>
             <param name="request"></param>
-            <param name="id"></param>
+            <param name="idEvent"></param>
+            <param name="idGroup"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.GroupsController.GetHandler(Dach.ElectionSystem.Models.Request.Group.GroupGetRequest,System.Nullable{System.Int32})">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.GroupController.GetHandler(Dach.ElectionSystem.Models.Request.Group.GroupGetRequest,System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
             Consulta de Groupos
             </summary>
             <param name="request"></param>
-            <param name="id"></param>
+            <param name="idEvent"></param>
+            <param name="idGroup"></param>
             <returns></returns>
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.UpdateUser(Dach.ElectionSystem.Models.Request.User.UserUpdateRequest)">

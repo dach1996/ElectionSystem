@@ -5,7 +5,7 @@ namespace Dach.ElectionSystem.Utils.Mapper.Group
 {
     public static class GroupMapper
     {
-            public static void ConfigGroupMapper(this CustomMapperDTO profile)
+        public static void ConfigGroupMapper(this CustomMapperDTO profile)
         {
             //Create
             profile.CreateMap<GroupCreateRequest, Models.Persitence.Group>();
@@ -19,7 +19,7 @@ namespace Dach.ElectionSystem.Utils.Mapper.Group
             profile.CreateMap<GroupUpdateRequest, Models.Persitence.Group>();
             profile.CreateMap<Models.Persitence.Group, GroupUpdateResponse>();
 
-              //Get
+            //Get
             profile.CreateMap<GroupGetRequest, Models.Persitence.Group>();
             profile.CreateMap<Models.Persitence.Group, GroupBaseResponse>();
         }

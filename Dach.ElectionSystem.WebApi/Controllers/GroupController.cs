@@ -7,81 +7,98 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 namespace Dach.ElectionSystem.WebApi.Controllers
 {
-    [Route("api/groups")]
+    [Route("api/events")]
     [ApiController]
     [ServiceFilter(typeof(ModelFilter))]
-    public class GroupsController : ApiControllerBase
+    public class GroupController : ApiControllerBase
     {
 
         #region Constructor
         private readonly IMediator _mediator;
-        public GroupsController(IMediator mediator)
+        public GroupController(IMediator mediator)
         {
             _mediator = mediator;
         }
         #endregion
 
+        #region Methods Controllers
+
         /// <summary>
-        /// Crear nuevo Groupo
+        /// Crear nuevo evento
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="idEvent"></param>
         /// <returns></returns>
         [HttpPost]
+        [Route("{idEvent}/groups")]
         [ProducesResponseType(200, Type = typeof(GroupCreateResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> CreateGroup([FromBody] GroupCreateRequest request) => Success(await _mediator.Send(request));
+        public async Task<IActionResult> CreateGroup([FromBody] GroupCreateRequest request, int idEvent)
+        {
+            request.IdEvent = idEvent;
+            return Success(await _mediator.Send(request));
+        }
 
 
         /// <summary>
-        /// Desactivar Groupo
+        /// Desactivar Grupo
         /// </summary>
         /// <param name="request"></param>
-        /// <returns></returns>
+        /// <param name="idEvent"></param>
+        /// <param name="idGroup"></param>
         [HttpDelete]
-        [Route("{id}")]
+        [Route("{idEvent}/groups/{idGroup}")]
         [ProducesResponseType(200, Type = typeof(GroupDeleteResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> DesactiveGroup([FromRoute] GroupDeleteRequest request) => Success(await _mediator.Send(request));
+        public async Task<IActionResult> DesactiveGroup([FromRoute] GroupDeleteRequest request, [FromRoute] int idEvent, [FromRoute] int idGroup)
+        {
+            request.IdEvent = idEvent;
+            request.IdGroup = idGroup;
+            return Success(await _mediator.Send(request));
+        }
 
         /// <summary>
         /// Actualizar Groupo
         /// </summary>
         /// <param name="request"></param>
-        /// <param name="id"></param>
+        /// <param name="idEvent"></param>
+        /// <param name="idGroup"></param>
         /// <returns></returns>
         [HttpPut]
-        [Route("{id}")]
+        [Route("{idEvent}/groups/{idGroup}")]
         [ProducesResponseType(200, Type = typeof(GroupUpdateResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> UpdateGroup([FromBody] GroupUpdateRequest request, [FromRoute] int? id)
+        public async Task<IActionResult> UpdateGroup([FromBody] GroupUpdateRequest request, [FromRoute] int idEvent, [FromRoute] int idGroup)
         {
-            request.Id = id;
+            request.IdGroup = idGroup;
+            request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
         }
-
-
 
         /// <summary>
         /// Consulta de Groupos
         /// </summary>
         /// <param name="request"></param>
-        /// <param name="id"></param>
+        /// <param name="idEvent"></param>
+        /// <param name="idGroup"></param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(GroupGetResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        [Route("{id}")]
-        [Route("")]
-        public async Task<IActionResult> GetHandler([FromQuery] GroupGetRequest request, [FromRoute] int? id)
+        [Route("{idEvent}/groups/{idGroup}")]
+        [Route("{idEvent}/groups")]
+        [Route("groups")]
+        public async Task<IActionResult> GetHandler([FromQuery] GroupGetRequest request, [FromRoute] int? idEvent, [FromRoute] int? idGroup)
         {
-            request.Id = id;
-            return
-            Success(await _mediator.Send(request));
+            request.IdEvent = idEvent;
+            request.IdGroup = idGroup;
+            return Success(await _mediator.Send(request));
         }
+        #endregion
 
     }
 }

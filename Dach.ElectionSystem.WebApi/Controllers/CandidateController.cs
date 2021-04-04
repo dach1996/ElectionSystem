@@ -14,63 +14,63 @@ namespace Dach.ElectionSystem.WebApi.Controllers
     [ServiceFilter(typeof(ModelFilter))]
     public class CandidateController : ApiControllerBase
     {
+        /*
+                private readonly IMediator _mediator;
+                public CandidateController(IMediator mediator
+                  )
+                {
+                    _mediator = mediator;
+                }
 
-        private readonly IMediator _mediator;
-        public CandidateController(IMediator mediator
-          )
-        {
-            _mediator = mediator;
-        }
+                /// <summary>
+                /// Crear Candidato
+                /// </summary>
+                /// <param name="candidateCreateRequest"></param>
+                /// <returns></returns>
+                [HttpPost]
+                [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
+                [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+                [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+                public async Task<IActionResult> CreateCandidate([FromBody]CandidateCreateRequest candidateCreateRequest) 
+                    => Success(await _mediator.Send(candidateCreateRequest));
 
-        /// <summary>
-        /// Crear Candidato
-        /// </summary>
-        /// <param name="candidateCreateRequest"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
-        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
-        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> CreateCandidate([FromBody]CandidateCreateRequest candidateCreateRequest) 
-            => Success(await _mediator.Send(candidateCreateRequest));
+                /// <summary>
+                /// Obtener datos de Candidato
+                /// </summary>
+                /// <param name="candidateCreateRequest"></param>
+                /// <returns></returns>
+                [HttpGet]
+                [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
+                [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+                [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+                public async Task<IActionResult> GetCandidate([FromQuery] CandidateCreateRequest candidateCreateRequest)
+                    => Success(await _mediator.Send(candidateCreateRequest));
 
-        /// <summary>
-        /// Obtener datos de Candidato
-        /// </summary>
-        /// <param name="candidateCreateRequest"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
-        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
-        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> GetCandidate([FromQuery] CandidateCreateRequest candidateCreateRequest)
-            => Success(await _mediator.Send(candidateCreateRequest));
+                /// <summary>
+                /// Modificar Candidato
+                /// </summary>
+                /// <param name="candidateCreateRequest"></param>
+                /// <returns></returns>
+                [HttpPut]
+                [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
+                [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+                [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+                public async Task<IActionResult> PutCandidate([FromBody] CandidateCreateRequest candidateCreateRequest)
+                   => Success(await _mediator.Send(candidateCreateRequest));
 
-        /// <summary>
-        /// Modificar Candidato
-        /// </summary>
-        /// <param name="candidateCreateRequest"></param>
-        /// <returns></returns>
-        [HttpPut]
-        [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
-        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
-        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> PutCandidate([FromBody] CandidateCreateRequest candidateCreateRequest)
-           => Success(await _mediator.Send(candidateCreateRequest));
-
-        /// <summary>
-        /// Borrar Candidato
-        /// </summary>
-        /// <param name="candidateCreateRequest"></param>
-        /// <returns></returns>
-        [HttpDelete]
-        [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
-        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
-        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> DeleteCandidate([FromBody] CandidateCreateRequest candidateCreateRequest)
-           => Success(await _mediator.Send(candidateCreateRequest));
+                /// <summary>
+                /// Borrar Candidato
+                /// </summary>
+                /// <param name="candidateCreateRequest"></param>
+                /// <returns></returns>
+                [HttpDelete]
+                [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
+                [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+                [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+                public async Task<IActionResult> DeleteCandidate([FromBody] CandidateCreateRequest candidateCreateRequest)
+                   => Success(await _mediator.Send(candidateCreateRequest));
 
 
-
+        */
     }
 }

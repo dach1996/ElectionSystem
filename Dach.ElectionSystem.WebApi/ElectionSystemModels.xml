@@ -874,10 +874,28 @@
             Clase GroupCreateRequest
             </summary>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupCreateRequest.IdEvent">
+            <summary>
+            Id del evento
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Group.GroupDeleteRequest">
             <summary>
             Clase GroupDeleteRequest
             </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupDeleteRequest.IdEvent">
+            <summary>
+            Id del Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupDeleteRequest.IdGroup">
+            <summary>
+            Id del Grupo
+            </summary>
+            <value></value>
         </member>
         <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupDeleteRequest.TokenModel">
             <summary>
@@ -890,9 +908,15 @@
             Clase GroupGetRequest
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupGetRequest.Id">
+        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupGetRequest.IdGroup">
             <summary>
             Ide de grupo
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupGetRequest.IdEvent">
+            <summary>
+            Id de Evento
             </summary>
             <value></value>
         </member>
@@ -906,9 +930,15 @@
             Estado de Grupo
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupUpdateRequest.Id">
+        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupUpdateRequest.IdGroup">
             <summary>
             Ide de grupo
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Group.GroupUpdateRequest.IdEvent">
+            <summary>
+            Id del Evento
             </summary>
             <value></value>
         </member>

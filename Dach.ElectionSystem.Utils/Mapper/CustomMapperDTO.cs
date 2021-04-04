@@ -3,6 +3,7 @@ using Dach.ElectionSystem.Models.Persitence;
 using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Utils.Mapper.Event;
+using Dach.ElectionSystem.Utils.Mapper.Group;
 using Dach.ElectionSystem.Utils.Mapper.User;
 
 namespace Dach.ElectionSystem.Utils.Mapper
@@ -16,6 +17,7 @@ namespace Dach.ElectionSystem.Utils.Mapper
             CreateMap<Candidate, CandidateCreateResponse>();
             this.ConfigEventMapper();
             this.ConfigUserMapper();
+            this.ConfigGroupMapper();
         }
     }
 }
