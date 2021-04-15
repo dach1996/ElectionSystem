@@ -5,6 +5,8 @@ using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Repository.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -37,12 +39,13 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         #region Handler
              public async Task<CandidateGetResponse> Handle(CandidateGetRequest request, CancellationToken cancellationToken)
         {
-            var newCandidate = mapper.Map<Models.Persitence.Candidate>(request);
-            var isCreate = await candidateRepository.CreateAsync(newCandidate);
-            if (!isCreate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-            var response = mapper.Map<CandidateCreateResponse>(newCandidate);
-            return null;
+            var listCandidates = new List<Models.Persitence.Candidate>();
+                listCandidates = (await  candidateRepository.GetAsync()).ToList();
+           
+            var response = mapper.Map<List<CandidateResponseBase>>(listCandidates);
+            return new CandidateGetResponse(){
+                ListCandidate =response
+            };
         }
         #endregion
        

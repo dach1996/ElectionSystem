@@ -1779,3 +1779,19 @@ WHERE [u].[USU_CORREO] = @__request_Email_0
 [17:53:05][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 1865.4558ms
 [17:53:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
 [17:53:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/users application/json 287 - 409 - application/json 7297.8363ms
+[19:29:29][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[19:29:29][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[19:29:29][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[19:29:29][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[19:29:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[19:29:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 128.4924ms
+[19:29:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[19:29:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 522.2125ms
+[19:43:11][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[19:43:11][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[19:43:11][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[19:43:11][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[19:43:11][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[19:43:11][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 138.0919ms
+[19:43:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[19:43:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 306.3996ms

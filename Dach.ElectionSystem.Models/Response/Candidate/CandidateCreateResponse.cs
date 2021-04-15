@@ -1,4 +1,4 @@
-﻿using Dach.ElectionSystem.Models.Base;
+﻿
 namespace Dach.ElectionSystem.Models.Response.Candidate
 {
     /// <summary>

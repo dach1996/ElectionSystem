@@ -17,6 +17,9 @@ using Dach.ElectionSystem.Utils.Mapper;
 using Dach.ElectionSystem.Utils.Mediator;
 using Dach.ElectionSystem.Utils.Filters;
 using Dach.ElectionSystem.Services.Intrastructure;
+using System.Reflection;
+using Dach.ElectionSystem.BusinessLogic.Group;
+using Dach.ElectionSystem.BusinessLogic.Auth;
 
 namespace Dach.ElectionSystem.WebApi
 {
@@ -51,15 +54,16 @@ namespace Dach.ElectionSystem.WebApi
                  c.IncludeXmlComments("ElectionSystemModels.xml");
 
 
+
             });
 
 
          
         
             services.ConfigureSwaggerServices(new List<string> { "ElectionSystem.xml" });
-            services.AddMediatR(typeof(Startup).Assembly);
+            services.AddMediatR(typeof(AuthHandler));
             services.AddAutoMapper(typeof(CustomMapperDTO));
-            services.AddIMediaRServices();
+           // services.AddIMediaRServices();
             services.AddScoped<ModelFilter>();
 
 
@@ -73,7 +77,7 @@ namespace Dach.ElectionSystem.WebApi
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dach.ElectionSystem.WebApi v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Sistema de Eleccione"));
              app.UseHttpsRedirection();
             app.SetCustomMiddleWare();
            

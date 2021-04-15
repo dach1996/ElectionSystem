@@ -14,38 +14,44 @@
             Generar token mediante credenciales
             </summary>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.CreateCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest,System.Int32)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.CreateCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest,System.Int32,System.Int32,System.Int32)">
             <summary>
-            Crear nuevo Candidato
+            Crear Candidato
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
+            <param name="idCandidate"></param>
+            <param name="idGroup"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.DesactiveCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.DesactiveCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
             Desactivar Candidato
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
             <param name="idCandidate"></param>
+            <param name="idGroup"></param>
+            <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.UpdateCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateUpdateRequest,System.Int32,System.Int32)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.UpdateCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateUpdateRequest,System.Int32,System.Int32,System.Int32)">
             <summary>
             Actualizar Candidato
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
             <param name="idCandidate"></param>
+            <param name="idGroup"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.GetHandler(Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.GetHandler(Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
-            Consulta de Candidato
+            Consultar Candidato
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
             <param name="idCandidate"></param>
+            <param name="idGroup"></param>
             <returns></returns>
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest)">

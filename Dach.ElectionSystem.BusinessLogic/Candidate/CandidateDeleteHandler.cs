@@ -5,6 +5,7 @@ using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Repository.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -37,12 +38,22 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         #region Handler
              public async Task<CandidateDeleteResponse> Handle(CandidateDeleteRequest request, CancellationToken cancellationToken)
         {
-            var newCandidate = mapper.Map<Models.Persitence.Candidate>(request);
-            var isCreate = await candidateRepository.CreateAsync(newCandidate);
-            if (!isCreate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-            var response = mapper.Map<CandidateCreateResponse>(newCandidate);
-            return null;
+            var group = (await groupRepository.GetAsync(g => g.Id == request.IdGroup)).FirstOrDefault();
+            if (group == null)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+           
+            var compareEvent = (await eventRepository.GetAsync(e => e.Id == request.IdEvent)).FirstOrDefault();
+            if (compareEvent == null)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+            var candidate = (await candidateRepository.GetAsync(u => u.Id == request.IdCandidate)).FirstOrDefault();
+            if (candidate == null)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+            candidate.IsActive=false;
+             var isUpdate = await candidateRepository.Update(candidate);
+            if (!isUpdate)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+            var response = mapper.Map<CandidateDeleteResponse>(candidate);
+            return response;
         }
         #endregion
        

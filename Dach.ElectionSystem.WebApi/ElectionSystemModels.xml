@@ -490,7 +490,7 @@
             Estado de Candidato
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.IdEvent">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.IdGroup">
             <summary>
             Id del evento
             </summary>
@@ -502,7 +502,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.Event">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.Group">
             <summary>
             Relación con Evento
             </summary>
@@ -1389,6 +1389,12 @@
         <member name="P:Dach.ElectionSystem.Models.Response.Group.GroupBaseResponse.Id">
             <summary>
             Ide de grupo
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Group.GroupBaseResponse.IdEvent">
+            <summary>
+            Ide de Evento
             </summary>
             <value></value>
         </member>

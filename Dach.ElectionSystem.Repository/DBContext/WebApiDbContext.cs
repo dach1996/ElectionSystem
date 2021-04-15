@@ -1,12 +1,6 @@
 ﻿using Dach.ElectionSystem.Models.Persitence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Dach.ElectionSystem.Repository.DBContext
 {
     public class WebApiDbContext : DbContext
@@ -27,12 +21,5 @@ namespace Dach.ElectionSystem.Repository.DBContext
         public DbSet<Vote> Vote { get; set; }
         public DbSet<AdministratorEvent> AdministratorEvents { get; set; }
         #endregion
-
-
-     
-
-
-
-    
     }
 }

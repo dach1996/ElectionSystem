@@ -17,5 +17,11 @@ namespace Dach.ElectionSystem.Models.Response.Group
         /// </summary>
         /// <value></value>
         public int Id { get; set; }
+
+        /// <summary>
+        /// Ide de Evento
+        /// </summary>
+        /// <value></value>
+        public int IdEvent{ get; set; }
     }
 }

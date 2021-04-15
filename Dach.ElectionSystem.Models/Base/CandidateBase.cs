@@ -34,7 +34,7 @@ namespace Dach.ElectionSystem.Models.Base
         /// </summary>
         /// <value></value>
         [Required]
-        public int Age { get; set; }
+        public int? Age { get; set; }
         /// <summary>
         /// Propuesta de candidato
         /// </summary>

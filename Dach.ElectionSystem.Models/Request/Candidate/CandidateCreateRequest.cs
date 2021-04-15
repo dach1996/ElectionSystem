@@ -26,7 +26,6 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
         /// Id de Usuario a Candidato
         /// </summary>
         /// <value></value>
-        [JsonIgnore]
         public int IdUser { get; set; }
     }
 }

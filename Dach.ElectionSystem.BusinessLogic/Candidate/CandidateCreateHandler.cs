@@ -5,6 +5,7 @@ using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Repository.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,33 +19,47 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         private readonly ILogger<CandidateCreateHandler> logger;
         private readonly IEventRepository eventRepository;
         private readonly IGroupRepository groupRepository;
+        private readonly IUserRepository userRepository;
 
         public CandidateCreateHandler(
             ICandidateRepository candidateRepository,
             IMapper mapper,
             ILogger<CandidateCreateHandler> logger,
             IEventRepository eventRepository,
-            IGroupRepository groupRepository)
+            IGroupRepository groupRepository,
+            IUserRepository userRepository)
         {
             this.candidateRepository = candidateRepository;
             this.mapper = mapper;
             this.logger = logger;
             this.eventRepository = eventRepository;
             this.groupRepository = groupRepository;
+            this.userRepository = userRepository;
         }
         #endregion
 
         #region Handler
-             public async Task<CandidateCreateResponse> Handle(CandidateCreateRequest request, CancellationToken cancellationToken)
+        public async Task<CandidateCreateResponse> Handle(CandidateCreateRequest request, CancellationToken cancellationToken)
         {
+            var group = (await groupRepository.GetAsync(g => g.Id == request.IdGroup)).FirstOrDefault();
+            if (group == null)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+           
+            var compareEvent = (await eventRepository.GetAsync(e => e.Id == request.IdEvent)).FirstOrDefault();
+            if (compareEvent == null)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+            var user = (await userRepository.GetAsync(u => u.Id == request.IdUser)).FirstOrDefault();
+            if (user == null)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
             var newCandidate = mapper.Map<Models.Persitence.Candidate>(request);
             var isCreate = await candidateRepository.CreateAsync(newCandidate);
+
             if (!isCreate)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             var response = mapper.Map<CandidateCreateResponse>(newCandidate);
             return response;
         }
         #endregion
-       
+
     }
 }

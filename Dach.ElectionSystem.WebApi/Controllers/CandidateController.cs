@@ -21,21 +21,27 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         #region Methods Controllers
 
         /// <summary>
-        /// Crear nuevo Candidato
+        /// Crear Candidato
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
+        /// <param name="idCandidate"></param>
+        /// <param name="idGroup"></param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> CreateCandidate([FromBody] CandidateCreateRequest request, int idEvent)
+        public async Task<IActionResult> CreateCandidate(
+            [FromBody] CandidateCreateRequest request,
+            [FromRoute] int idEvent,
+            [FromRoute] int idCandidate,
+            [FromRoute] int idGroup)
         {
             request.IdEvent = idEvent;
+            request.IdGroup = idGroup;
             return Success(await _mediator.Send(request));
         }
-
 
         /// <summary>
         /// Desactivar Candidato
@@ -43,14 +49,21 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
         /// <param name="idCandidate"></param>
+        /// <param name="idGroup"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{idCandidate}")]
         [ProducesResponseType(200, Type = typeof(CandidateDeleteResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> DesactiveCandidate([FromQuery]CandidateDeleteRequest request, [FromRoute] int? idEvent, [FromRoute] int? idCandidate)
+        public async Task<IActionResult> DesactiveCandidate(
+            [FromQuery] CandidateDeleteRequest request,
+            [FromRoute] int? idEvent,
+            [FromRoute] int? idCandidate,
+            [FromRoute] int? idGroup)
         {
             request.IdEvent = idEvent;
+            request.IdGroup = idGroup;
             request.IdCandidate = idCandidate;
             return Success(await _mediator.Send(request));
         }
@@ -61,25 +74,33 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
         /// <param name="idCandidate"></param>
+        /// <param name="idGroup"></param>
         /// <returns></returns>
         [HttpPut]
         [Route("{idCandidate}")]
         [ProducesResponseType(200, Type = typeof(CandidateUpdateResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> UpdateCandidate([FromBody] CandidateUpdateRequest request, [FromRoute] int idEvent, [FromRoute] int idCandidate)
+        public async Task<IActionResult> UpdateCandidate(
+            [FromBody] CandidateUpdateRequest request,
+            [FromRoute] int idEvent,
+            [FromRoute] int idCandidate,
+            [FromRoute] int idGroup)
         {
+            request.IdGroup = idGroup;
             request.IdCandidate = idCandidate;
             request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
         }
 
+
         /// <summary>
-        /// Consulta de Candidato
+        /// Consultar Candidato
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
         /// <param name="idCandidate"></param>
+        /// <param name="idGroup"></param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(CandidateGetResponse))]
@@ -87,8 +108,13 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         [Route("{idCandidate}")]
         [Route("")]
-        public async Task<IActionResult> GetHandler([FromQuery] CandidateGetRequest request, [FromRoute] int? idEvent, [FromRoute] int? idCandidate)
+        public async Task<IActionResult> GetHandler(
+         [FromQuery] CandidateGetRequest request,
+         [FromRoute] int? idEvent,
+         [FromRoute] int? idCandidate,
+         [FromRoute] int? idGroup)
         {
+            request.IdGroup = idGroup;
             request.IdEvent = idEvent;
             request.IdCandidate = idCandidate;
             return Success(await _mediator.Send(request));
