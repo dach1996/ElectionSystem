@@ -10,7 +10,6 @@ namespace Dach.ElectionSystem.Models.RequestBase
         /// <summary>
         /// Token para contexto
         /// </summary>
-  
         TokenModel TokenModel { get; set; }
 
     }

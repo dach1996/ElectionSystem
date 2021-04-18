@@ -11,7 +11,6 @@ namespace Dach.ElectionSystem.Models.RequestBase
         /// <summary>
         /// Token para contexto
         /// </summary>
-        [JsonIgnore]
-        User UserContext { get; set; }
+           User UserContext { get; set; }
     }
 }

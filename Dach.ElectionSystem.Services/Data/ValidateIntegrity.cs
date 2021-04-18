@@ -13,9 +13,19 @@ namespace Dach.ElectionSystem.Services.Data
     {
         #region Constructor        
         private readonly IUserRepository userRepository;
-        public ValidateIntegrity(IUserRepository userRepository)
+        private readonly IVoteRepository voteRepository;
+        private readonly IEventRepository eventRepository;
+        private readonly ICandidateRepository candidateRepository;
+        public ValidateIntegrity(
+            IUserRepository userRepository,
+            IVoteRepository voteRepository,
+            IEventRepository eventRepository,
+            ICandidateRepository candidateRepository)
         {
             this.userRepository = userRepository;
+            this.voteRepository = voteRepository;
+            this.eventRepository = eventRepository;
+            this.candidateRepository = candidateRepository;
         }
         #endregion
 
@@ -29,14 +39,40 @@ namespace Dach.ElectionSystem.Services.Data
         /// <returns></returns>
         public async Task<User> ValidateUser(IRequestBase request)
         {
-            var existUser = await userRepository.GetAsync(u =>  u.Id == System.Convert.ToInt32(request.TokenModel.Id) &&
+            var existUser = await userRepository.GetAsync(u => u.Id == System.Convert.ToInt32(request.TokenModel.Id) &&
                                                                 u.UserName == request.TokenModel.Username &&
                                                                 u.Email == request.TokenModel.Email,
                                                                 includeProperties: nameof(User.ListAdministratorEvent));
-            if(existUser.Count()!=1)
-               throw new ExceptionCustom(MessageCodesApi.DataInconsistency, ResponseType.Error, HttpStatusCode.Unauthorized);
+            if (existUser.Count() != 1)
+                throw new ExceptionCustom(MessageCodesApi.DataInconsistency, ResponseType.Error, HttpStatusCode.Unauthorized);
             return existUser.FirstOrDefault();
         }
-        #endregion  
+
+        public async Task<Event> ValidateEvent(int id)
+        {
+            var existEvent = await eventRepository.GetAsync(u => u.Id == id);
+            if (existEvent.Count() != 1)
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound);
+            return existEvent.FirstOrDefault();
+        }
+
+        public async Task<Vote> ValidateVote(int id)
+        {
+            var existVote = await voteRepository.GetAsync(u => u.Id == id);
+            if (existVote.Count() != 1)
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound);
+            return existVote.FirstOrDefault();
+        }
+
+        public async Task<Candidate> ValidateCandiate(int id)
+        {
+            var existCandidate = await candidateRepository.GetAsyncInclude(u => u.Id == id
+                                                                            ,includeProperties: u=> $"{nameof(u.User)}");
+            if (existCandidate.Count() != 1)
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound);
+            return existCandidate.FirstOrDefault();
+        }
+
+        #endregion
     }
 }

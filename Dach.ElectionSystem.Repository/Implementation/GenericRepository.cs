@@ -1,4 +1,5 @@
-﻿using Dach.ElectionSystem.Repository.Interfaces;
+﻿using System.Runtime.Serialization;
+using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -70,7 +71,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
             {
                 orderBy(query);
             }
-            return await Task.Run<IQueryable<T>>(()=> query);
+            return await Task.Run<IQueryable<T>>(() => query);
         }
 
         public async Task<bool> CreateAsync(T entity)
@@ -134,6 +135,37 @@ namespace Dach.ElectionSystem.Repository.Implementation
         public async Task<T> GetByIdAsync(int Id)
         {
             return await _unitOfWork.Context.Set<T>().FindAsync(Id);
+        }
+
+        public async Task<IEnumerable<T>> GetAsyncInclude(Expression<Func<T, bool>> whereCondition = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+        Expression<Func<T, string>> includeProperties = null)
+        {
+
+
+            IQueryable<T> query = _unitOfWork.Context.Set<T>();
+
+            if (whereCondition != null)
+            {
+                query = query.Where(whereCondition);
+            }
+
+
+            if (includeProperties != null)
+            {
+                var propertys = includeProperties.Body.ToString().Replace("\\", "").Replace("\"", "");
+                foreach (var includeProperty in propertys.Split
+                 (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                    query = query.Include(includeProperty);
+            }
+
+            if (orderBy != null)
+            {
+                return await orderBy(query).ToListAsync();
+            }
+            else
+            {
+                return await query.ToListAsync();
+            }
         }
     }
 }

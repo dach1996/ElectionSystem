@@ -95,5 +95,38 @@
             Crear Usuario
             </summary>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest,System.Int32)">
+            <summary>
+            Registrar Voto
+            </summary>
+            <param name="request"></param>
+            <param name="idEvent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.DesactiveVote(Dach.ElectionSystem.Models.Request.Vote.VoteDeleteRequest,System.Int32)">
+            <summary>
+            Desactivar Votante
+            </summary>
+            <param name="request"></param>
+            <param name="idEvent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.UpdateVote(Dach.ElectionSystem.Models.Request.Vote.VoteUpdateRequest,System.Int32,System.Int32)">
+            <summary>
+            Votar
+            </summary>
+            <param name="request"></param>
+            <param name="idEvent"></param>
+            <param name="idCandidate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.GetHandler(Dach.ElectionSystem.Models.Request.Vote.VoteGetRequest,System.Int32)">
+            <summary>
+            Consultar Votos
+            </summary>
+            <param name="request"></param>
+            <param name="idEvent"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

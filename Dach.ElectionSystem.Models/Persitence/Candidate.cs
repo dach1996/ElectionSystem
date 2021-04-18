@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Dach.ElectionSystem.Models.Persitence
@@ -18,53 +19,62 @@ namespace Dach.ElectionSystem.Models.Persitence
         [Key, Column("CAN_IDS")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         /// <summary>
         /// Ruta de imagen Candidato
         /// </summary>
         /// <value></value>
         [Column("CAN_IMAGEN")]
         public string Image { get; set; }
+
         /// <summary>
         /// Ruta Video de Candidato
         /// </summary>
         /// <value></value>
         [Column("CAN_VIDEO")]
         public string Video { get; set; }
+
         /// <summary>
         /// Detalles de Candidato
         /// </summary>
         /// <value></value>
         [Column("CAN_DETALLES")]
         public string Details { get; set; }
+
         /// <summary>
         /// Rol de Candidato
         /// </summary>
         /// <value></value>
         [Column("CAN_ROL")]
         public string Role { get; set; }
+
         /// <summary>
         /// Edad de Candidato
         /// </summary>
         /// <value></value>
         [Column("CAN_EDAD")]
         public int Age { get; set; }
+
         /// <summary>
         /// Propuesta de Candidato
         /// </summary>
         /// <value></value>
         [Column("CAN_PROPUESTA")]
         public string ProposalDetails { get; set; }
+
         /// <summary>
         /// Puestos Laborales de candidato
         /// </summary>
         /// <value></value>
         [Column("CAN_PUESTOS_LABORALES")]
         public string PostionsWorks { get; set; }
+
         /// <summary>
         /// Estado de Candidato
         /// </summary>
         [Column("CAN_ESTADO")]
         public bool IsActive { get; set; }
+
         /// <summary>
         /// Id del evento
         /// </summary>
@@ -72,6 +82,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         [Column("CAN_EVT_ID")]
         [ForeignKey(nameof(Event))]
         public int IdEvent { get; set; }
+
         /// <summary>
         ///  Id del Usuario
         /// </summary>
@@ -87,11 +98,19 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// </summary>
         /// <value></value>
         public Event Event { get; set; }
+        
         /// <summary>
         /// Relación con Usuario
         /// </summary>
         /// <value></value>
         public User User { get; set; }
+
+        /// <summary>
+        /// Relación con Votos
+        /// </summary>
+        /// <value></value>
+        public ICollection<Vote> ListVotes { get; set; }
+        
         #endregion
     }
 }

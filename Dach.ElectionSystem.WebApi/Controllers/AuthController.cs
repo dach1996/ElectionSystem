@@ -1,11 +1,8 @@
 ﻿using Dach.ElectionSystem.Models.Auth;
-using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.Auth;
-using Dach.ElectionSystem.Models.Response.User;
 using Dach.ElectionSystem.Models.ResponseBase;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.WebApi.Properties
