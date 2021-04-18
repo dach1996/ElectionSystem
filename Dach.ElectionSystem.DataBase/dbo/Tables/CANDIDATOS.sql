@@ -8,6 +8,6 @@
   [CAN_PROPUESTA] VARCHAR(50) NULL,
   [CAN_PUESTOS_LABORALES] VARCHAR(50) NULL,
   [CAN_ESTADO] BIT NULL,
-  [CAN_GRP_ID] int null,
+  [CAN_EVT_ID] int null,
   [CAN_USU_ID] int null
 )

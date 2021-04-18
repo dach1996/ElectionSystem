@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.WebApi.Controllers
 {
-    [Route("api/events/{idEvent}/groups/{idGroup}/candidates")]
+    [Route("api/events/{idEvent}/candidates")]
     [ApiController]
     [ServiceFilter(typeof(ModelFilter))]
     public class CandidateController : ApiControllerBase
@@ -26,7 +26,6 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
         /// <param name="idCandidate"></param>
-        /// <param name="idGroup"></param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
@@ -35,11 +34,9 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         public async Task<IActionResult> CreateCandidate(
             [FromBody] CandidateCreateRequest request,
             [FromRoute] int idEvent,
-            [FromRoute] int idCandidate,
-            [FromRoute] int idGroup)
+            [FromRoute] int idCandidate )
         {
             request.IdEvent = idEvent;
-            request.IdGroup = idGroup;
             return Success(await _mediator.Send(request));
         }
 
@@ -49,7 +46,6 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
         /// <param name="idCandidate"></param>
-        /// <param name="idGroup"></param>
         /// <returns></returns>
         [HttpDelete]
         [Route("{idCandidate}")]
@@ -59,11 +55,9 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         public async Task<IActionResult> DesactiveCandidate(
             [FromQuery] CandidateDeleteRequest request,
             [FromRoute] int? idEvent,
-            [FromRoute] int? idCandidate,
-            [FromRoute] int? idGroup)
+            [FromRoute] int? idCandidate)
         {
             request.IdEvent = idEvent;
-            request.IdGroup = idGroup;
             request.IdCandidate = idCandidate;
             return Success(await _mediator.Send(request));
         }
@@ -74,7 +68,6 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
         /// <param name="idCandidate"></param>
-        /// <param name="idGroup"></param>
         /// <returns></returns>
         [HttpPut]
         [Route("{idCandidate}")]
@@ -84,10 +77,8 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         public async Task<IActionResult> UpdateCandidate(
             [FromBody] CandidateUpdateRequest request,
             [FromRoute] int idEvent,
-            [FromRoute] int idCandidate,
-            [FromRoute] int idGroup)
+            [FromRoute] int idCandidate)
         {
-            request.IdGroup = idGroup;
             request.IdCandidate = idCandidate;
             request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
@@ -100,7 +91,6 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
         /// <param name="idCandidate"></param>
-        /// <param name="idGroup"></param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(CandidateGetResponse))]
@@ -111,10 +101,8 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         public async Task<IActionResult> GetHandler(
          [FromQuery] CandidateGetRequest request,
          [FromRoute] int? idEvent,
-         [FromRoute] int? idCandidate,
-         [FromRoute] int? idGroup)
+         [FromRoute] int? idCandidate)
         {
-            request.IdGroup = idGroup;
             request.IdEvent = idEvent;
             request.IdCandidate = idCandidate;
             return Success(await _mediator.Send(request));

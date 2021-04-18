@@ -16,13 +16,6 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
         public int IdEvent { get; set; }
 
         /// <summary>
-        /// Id de Grupo
-        /// </summary>
-        /// <value></value>
-        [JsonIgnore]
-        public int IdGroup { get; set; }
-
-        /// <summary>
         /// Id de Usuario a Candidato
         /// </summary>
         /// <value></value>

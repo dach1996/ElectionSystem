@@ -19,20 +19,17 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         private readonly IMapper mapper;
         private readonly ILogger<CandidateGetHandler> logger;
         private readonly IEventRepository eventRepository;
-        private readonly IGroupRepository groupRepository;
 
         public CandidateGetHandler(
             ICandidateRepository candidateRepository,
             IMapper mapper,
             ILogger<CandidateGetHandler> logger,
-            IEventRepository eventRepository,
-            IGroupRepository groupRepository)
+            IEventRepository eventRepository)
         {
             this.candidateRepository = candidateRepository;
             this.mapper = mapper;
             this.logger = logger;
             this.eventRepository = eventRepository;
-            this.groupRepository = groupRepository;
         }
         #endregion
 

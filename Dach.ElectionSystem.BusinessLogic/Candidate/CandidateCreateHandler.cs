@@ -18,7 +18,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         private readonly IMapper mapper;
         private readonly ILogger<CandidateCreateHandler> logger;
         private readonly IEventRepository eventRepository;
-        private readonly IGroupRepository groupRepository;
         private readonly IUserRepository userRepository;
 
         public CandidateCreateHandler(
@@ -26,14 +25,12 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
             IMapper mapper,
             ILogger<CandidateCreateHandler> logger,
             IEventRepository eventRepository,
-            IGroupRepository groupRepository,
             IUserRepository userRepository)
         {
             this.candidateRepository = candidateRepository;
             this.mapper = mapper;
             this.logger = logger;
             this.eventRepository = eventRepository;
-            this.groupRepository = groupRepository;
             this.userRepository = userRepository;
         }
         #endregion
@@ -41,9 +38,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         #region Handler
         public async Task<CandidateCreateResponse> Handle(CandidateCreateRequest request, CancellationToken cancellationToken)
         {
-            var group = (await groupRepository.GetAsync(g => g.Id == request.IdGroup)).FirstOrDefault();
-            if (group == null)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
            
             var compareEvent = (await eventRepository.GetAsync(e => e.Id == request.IdEvent)).FirstOrDefault();
             if (compareEvent == null)

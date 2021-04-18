@@ -31,12 +31,6 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// <summary>
         /// Cédula Usuario
         /// </summary>
-        [Column("VTO_GRP_ID")]
-        [ForeignKey(nameof(Group))]
-        public int IdGroup { get; set; }
-        /// <summary>
-        /// Cédula Usuario
-        /// </summary>
         [Column("VTO_FECHA")]
         public DateTime Date { get; set; }
         /// <summary>
@@ -57,11 +51,6 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// </summary>
         /// <value></value>
         public User  User { get; set; }
-        /// <summary>
-        /// Relación con Grupo
-        /// </summary>
-        /// <value></value>
-        public Group Group { get; set; }     
         #endregion  
     }
 }

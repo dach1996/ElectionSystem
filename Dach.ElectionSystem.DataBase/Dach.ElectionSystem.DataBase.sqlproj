@@ -62,7 +62,6 @@
   <ItemGroup>
     <Build Include="dbo\Tables\USUARIOS.sql" />
     <Build Include="dbo\Tables\EVENTOS.sql" />
-    <Build Include="dbo\Tables\GRUPOS.sql" />
     <Build Include="dbo\Tables\CANDIDATOS.sql" />
     <Build Include="dbo\Tables\ADMINISTRADOR_EVENTO.sql" />
     <Build Include="dbo\Tables\VOTOS.sql" />

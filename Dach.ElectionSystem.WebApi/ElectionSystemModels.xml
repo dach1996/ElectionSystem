@@ -490,7 +490,7 @@
             Estado de Candidato
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.IdGroup">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.IdEvent">
             <summary>
             Id del evento
             </summary>
@@ -502,7 +502,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.Group">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.Event">
             <summary>
             Relación con Evento
             </summary>
@@ -584,7 +584,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.ListGroup">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.ListCandidate">
             <summary>
             Eventos Usuarios
             </summary>
@@ -593,63 +593,6 @@
         <member name="P:Dach.ElectionSystem.Models.Persitence.Event.ListVote">
             <summary>
             Eventos Usuarios
-            </summary>
-            <value></value>
-        </member>
-        <member name="T:Dach.ElectionSystem.Models.Persitence.Group">
-            <summary>
-            Clase modelo para Persistencia de Grupos
-            </summary>
-        </member>
-        <member name="M:Dach.ElectionSystem.Models.Persitence.Group.#ctor">
-            <summary>
-            Constructor
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Group.Id">
-            <summary>
-            Id de Grupo
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Group.Name">
-            <summary>
-            Nombre de Grupo
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Group.Details">
-            <summary>
-            Detalles de grupo
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Group.MaxCandidate">
-            <summary>
-            Máximo de candidatos por grupo
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Group.Image">
-            <summary>
-            Ruta de imágen para grupo
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Group.IsActive">
-            <summary>
-            Estado de Grupo
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Group.IdEvent">
-            <summary>
-            Id de evento
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Group.Event">
-            <summary>
-            Evento
             </summary>
             <value></value>
         </member>
@@ -760,11 +703,6 @@
             Cédula Usuario
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.IdGroup">
-            <summary>
-            Cédula Usuario
-            </summary>
-        </member>
         <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.Date">
             <summary>
             Cédula Usuario
@@ -784,12 +722,6 @@
         <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.User">
             <summary>
             Relación con Usuario
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.Group">
-            <summary>
-            Relación con Grupo
             </summary>
             <value></value>
         </member>
@@ -893,12 +825,6 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.IdGroup">
-            <summary>
-            Id de Grupo
-            </summary>
-            <value></value>
-        </member>
         <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest.IdUser">
             <summary>
             Id de Usuario a Candidato
@@ -913,12 +839,6 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest.IdEvent">
             <summary>
             Id de Evento
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest.IdGroup">
-            <summary>
-            Id de Grupo
             </summary>
             <value></value>
         </member>
@@ -939,12 +859,6 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest.IdGroup">
-            <summary>
-            Id de Grupo
-            </summary>
-            <value></value>
-        </member>
         <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest.IdCandidate">
             <summary>
             Id de Candidato
@@ -959,12 +873,6 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateUpdateRequest.IdEvent">
             <summary>
             Id de Evento
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateUpdateRequest.IdGroup">
-            <summary>
-            Id de Grupo
             </summary>
             <value></value>
         </member>

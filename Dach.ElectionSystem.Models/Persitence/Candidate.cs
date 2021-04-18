@@ -69,9 +69,9 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// Id del evento
         /// </summary>
         /// <value></value>
-        [Column("CAN_GRP_ID")]
-        [ForeignKey(nameof(Group))]
-        public int IdGroup { get; set; }
+        [Column("CAN_EVT_ID")]
+        [ForeignKey(nameof(Event))]
+        public int IdEvent { get; set; }
         /// <summary>
         ///  Id del Usuario
         /// </summary>
@@ -86,7 +86,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// Relación con Evento
         /// </summary>
         /// <value></value>
-        public Group Group { get; set; }
+        public Event Event { get; set; }
         /// <summary>
         /// Relación con Usuario
         /// </summary>

@@ -10,15 +10,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MediatR;
-using Dach.ElectionSystem.Services.TokenJWT;
 using Dach.ElectionSystem.Utils.Extension;
 using System.Collections.Generic;
 using Dach.ElectionSystem.Utils.Mapper;
-using Dach.ElectionSystem.Utils.Mediator;
 using Dach.ElectionSystem.Utils.Filters;
 using Dach.ElectionSystem.Services.Intrastructure;
-using System.Reflection;
-using Dach.ElectionSystem.BusinessLogic.Group;
 using Dach.ElectionSystem.BusinessLogic.Auth;
 
 namespace Dach.ElectionSystem.WebApi

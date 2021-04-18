@@ -18,7 +18,7 @@ namespace Dach.ElectionSystem.Models.Persitence
             this.IsActive = true;
             this.ListAdministratorEvent = new List<AdministratorEvent>();
             this.ListVote = new List<Vote>();
-            this.ListGroup = new List<Group>();
+            this.ListCandidate = new List<Candidate>();
         }
         #endregion
 
@@ -93,7 +93,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// Eventos Usuarios
         /// </summary>
         /// <value></value>
-        public ICollection<Group> ListGroup { get; set; }
+        public ICollection<Candidate> ListCandidate{ get; set; }
 
         /// <summary>
         /// Eventos Usuarios
