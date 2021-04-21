@@ -1779,3 +1779,436 @@ FROM [VOTOS] AS [v]
 [17:11:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.GetHandler (Dach.ElectionSystem.WebApi) in 9349.7799ms
 [17:11:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.GetHandler (Dach.ElectionSystem.WebApi)'
 [17:11:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/votes/events application/json 217 - 200 - application/json;+charset=utf-8 9755.1452ms
+[17:25:10][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[17:25:10][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[17:25:10][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[17:25:10][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[17:25:11][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[17:25:11][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 121.7683ms
+[17:25:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[17:25:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 335.6919ms
+[17:25:31][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71
+[17:25:31][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[17:25:31][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[17:25:31][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[17:25:32][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[17:25:32][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[17:25:32][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (45ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[17:25:33][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[17:25:33][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 1392.7162ms
+[17:25:33][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[17:25:33][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71 - 200 - application/json;+charset=utf-8 1611.1087ms
+[17:25:36][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/1 application/json 10
+[17:25:36][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:Estoy en Token
+[17:25:36][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi)'
+[17:25:36][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVote", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[17:25:36][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[17:25:36][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (5ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[17:25:39][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__id_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EVT_ID], [e].[EVT_CATEGORIA], [e].[EVT_DESCRIPCION], [e].[EVT_FOTO], [e].[EVT_ESTADO], [e].[EVT_MAX_PERSONAS], [e].[EVT_NOMBRE], [e].[EVT_NUM_MAX_CANDIDATOS], [e].[EVT_NUM_MAX_PERSONAS]
+FROM [EVENTOS] AS [e]
+WHERE [e].[EVT_ID] = @__id_0
+[17:25:39][ERR][Microsoft.EntityFrameworkCore.Database.Command]:Failed executing DbCommand (14ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000', @p1='False', @p2='0', @p3='1', @p4='1', @p5='True'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS] ([VTO_FECHA], [VTO_REGISTRO], [VTO_CAN_ID], [VTO_EVT_ID], [VTO_USU_ID], [VTO_ESTADO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [VTO_ID]
+FROM [VOTOS]
+WHERE @@ROWCOUNT = 1 AND [VTO_ID] = scope_identity();
+[17:25:39][ERR][Microsoft.EntityFrameworkCore.Update]:An exception occurred in the database while saving changes for context type 'Dach.ElectionSystem.Repository.DBContext.WebApiDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): La conversión del tipo de datos datetime2 en datetime produjo un valor fuera de intervalo.
+Se terminó la instrucción.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:7233a841-61c5-4ec3-92c9-0d5de7a934f0
+Error Number:242,State:3,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): La conversión del tipo de datos datetime2 en datetime produjo un valor fuera de intervalo.
+Se terminó la instrucción.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:7233a841-61c5-4ec3-92c9-0d5de7a934f0
+Error Number:242,State:3,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Dach.ElectionSystem.Repository.Implementation.GenericRepository`1.CreateAsync(T entity) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\GenericRepository.cs:line 87
+[17:25:39][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi) in 3315.8766ms
+[17:25:39][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi)'
+[17:25:39][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): La conversión del tipo de datos datetime2 en datetime produjo un valor fuera de intervalo.
+Se terminó la instrucción.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:7233a841-61c5-4ec3-92c9-0d5de7a934f0
+Error Number:242,State:3,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Dach.ElectionSystem.Repository.Implementation.GenericRepository`1.CreateAsync(T entity) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\GenericRepository.cs:line 87
+   at Dach.ElectionSystem.BusinessLogic.Vote.VoteCreateHandler.Handle(VoteCreateRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vote\VoteCreateHandler.cs:line 50
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote(VoteCreateRequest request, Int32 idEvent) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\VoteController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[17:25:39][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/votes/events/1 application/json 10 - 500 - application/json 3588.1402ms
+[17:25:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/1 application/json 10
+[17:25:42][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:Estoy en Token
+[17:25:42][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi)'
+[17:25:42][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVote", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[17:25:42][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[17:25:42][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[17:25:44][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__id_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EVT_ID], [e].[EVT_CATEGORIA], [e].[EVT_DESCRIPCION], [e].[EVT_FOTO], [e].[EVT_ESTADO], [e].[EVT_MAX_PERSONAS], [e].[EVT_NOMBRE], [e].[EVT_NUM_MAX_CANDIDATOS], [e].[EVT_NUM_MAX_PERSONAS]
+FROM [EVENTOS] AS [e]
+WHERE [e].[EVT_ID] = @__id_0
+[17:26:25][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[17:26:25][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[17:26:25][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[17:26:25][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[17:26:26][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[17:26:26][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 140.8639ms
+[17:26:26][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[17:26:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 285.6844ms
+[17:26:41][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/1 application/json 10
+[17:26:41][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[17:26:41][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:Estoy en Token
+[17:26:41][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi)'
+[17:26:42][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVote", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[17:26:42][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[17:26:42][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[17:26:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (41ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[17:26:46][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__id_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EVT_ID], [e].[EVT_CATEGORIA], [e].[EVT_DESCRIPCION], [e].[EVT_FOTO], [e].[EVT_ESTADO], [e].[EVT_MAX_PERSONAS], [e].[EVT_NOMBRE], [e].[EVT_NUM_MAX_CANDIDATOS], [e].[EVT_NUM_MAX_PERSONAS]
+FROM [EVENTOS] AS [e]
+WHERE [e].[EVT_ID] = @__id_0
+[17:26:46][ERR][Microsoft.EntityFrameworkCore.Database.Command]:Failed executing DbCommand (4ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000', @p1='False', @p2='0', @p3='1', @p4='1', @p5='True'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS] ([VTO_FECHA], [VTO_REGISTRO], [VTO_CAN_ID], [VTO_EVT_ID], [VTO_USU_ID], [VTO_ESTADO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [VTO_ID]
+FROM [VOTOS]
+WHERE @@ROWCOUNT = 1 AND [VTO_ID] = scope_identity();
+[17:26:46][ERR][Microsoft.EntityFrameworkCore.Update]:An exception occurred in the database while saving changes for context type 'Dach.ElectionSystem.Repository.DBContext.WebApiDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): La conversión del tipo de datos datetime2 en datetime produjo un valor fuera de intervalo.
+Se terminó la instrucción.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:f3870d56-6f4d-47e5-a7fa-84a2d8a88aff
+Error Number:242,State:3,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): La conversión del tipo de datos datetime2 en datetime produjo un valor fuera de intervalo.
+Se terminó la instrucción.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:f3870d56-6f4d-47e5-a7fa-84a2d8a88aff
+Error Number:242,State:3,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Dach.ElectionSystem.Repository.Implementation.GenericRepository`1.CreateAsync(T entity) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\GenericRepository.cs:line 87
+[17:26:46][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi) in 4420.165ms
+[17:26:46][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi)'
+[17:26:46][ERR][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Error Detectado: 
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): La conversión del tipo de datos datetime2 en datetime produjo un valor fuera de intervalo.
+Se terminó la instrucción.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:f3870d56-6f4d-47e5-a7fa-84a2d8a88aff
+Error Number:242,State:3,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Dach.ElectionSystem.Repository.Implementation.GenericRepository`1.CreateAsync(T entity) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\GenericRepository.cs:line 87
+   at Dach.ElectionSystem.BusinessLogic.Vote.VoteCreateHandler.Handle(VoteCreateRequest request, CancellationToken cancellationToken) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vote\VoteCreateHandler.cs:line 50
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote(VoteCreateRequest request, Int32 idEvent) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\VoteController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Dach.ElectionSystem.Utils.Segurity.JWT.JwtAuthenticationMiddlware.Invoke(HttpContext context, ITokenService tokenService) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs:line 30
+   at Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs:line 42
+[17:26:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/votes/events/1 application/json 10 - 500 - application/json 5121.0705ms
+[17:26:51][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/1 application/json 10
+[17:26:51][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:Estoy en Token
+[17:26:51][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi)'
+[17:26:51][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVote", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[17:26:51][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[17:26:51][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[17:26:54][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__id_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EVT_ID], [e].[EVT_CATEGORIA], [e].[EVT_DESCRIPCION], [e].[EVT_FOTO], [e].[EVT_ESTADO], [e].[EVT_MAX_PERSONAS], [e].[EVT_NOMBRE], [e].[EVT_NUM_MAX_CANDIDATOS], [e].[EVT_NUM_MAX_PERSONAS]
+FROM [EVENTOS] AS [e]
+WHERE [e].[EVT_ID] = @__id_0
+[17:28:13][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[17:28:13][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[17:28:13][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[17:28:13][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[17:28:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[17:28:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 123.4510ms
+[17:28:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[17:28:15][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 305.7674ms
+[17:28:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/1 application/json 10
+[17:28:18][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[17:28:18][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:Estoy en Token
+[17:28:18][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi)'
+[17:28:18][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVote", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[17:28:19][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[17:28:19][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[17:28:19][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (43ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[17:28:21][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__id_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EVT_ID], [e].[EVT_CATEGORIA], [e].[EVT_DESCRIPCION], [e].[EVT_FOTO], [e].[EVT_ESTADO], [e].[EVT_MAX_PERSONAS], [e].[EVT_NOMBRE], [e].[EVT_NUM_MAX_CANDIDATOS], [e].[EVT_NUM_MAX_PERSONAS]
+FROM [EVENTOS] AS [e]
+WHERE [e].[EVT_ID] = @__id_0
+[17:28:21][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@p0=NULL (DbType = DateTime2), @p1='False', @p2='0', @p3='1', @p4='1', @p5='True'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS] ([VTO_FECHA], [VTO_REGISTRO], [VTO_CAN_ID], [VTO_EVT_ID], [VTO_USU_ID], [VTO_ESTADO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [VTO_ID]
+FROM [VOTOS]
+WHERE @@ROWCOUNT = 1 AND [VTO_ID] = scope_identity();
+[17:28:21][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Vote.VoteCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[17:28:21][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi) in 2999.2642ms
+[17:28:21][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote (Dach.ElectionSystem.WebApi)'
+[17:28:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/votes/events/1 application/json 10 - 200 - application/json;+charset=utf-8 3390.4414ms
+[17:28:24][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 DELETE http://localhost:44317/api/votes/events/1 application/json 224
+[17:28:24][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:Estoy en Token
+[17:28:24][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.DesactiveVote (Dach.ElectionSystem.WebApi)'
+[17:28:24][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "DesactiveVote", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DesactiveVote(Dach.ElectionSystem.Models.Request.Vote.VoteDeleteRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[17:28:24][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[17:28:24][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[17:28:26][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__id_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EVT_ID], [e].[EVT_CATEGORIA], [e].[EVT_DESCRIPCION], [e].[EVT_FOTO], [e].[EVT_ESTADO], [e].[EVT_MAX_PERSONAS], [e].[EVT_NOMBRE], [e].[EVT_NUM_MAX_CANDIDATOS], [e].[EVT_NUM_MAX_PERSONAS]
+FROM [EVENTOS] AS [e]
+WHERE [e].[EVT_ID] = @__id_0
+[17:28:26][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__eventCurrent_Id_0='1', @__request_UserContext_Id_1='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE ([v].[VTO_EVT_ID] = @__eventCurrent_Id_0) AND ([v].[VTO_USU_ID] = @__request_UserContext_Id_1)
+[17:28:26][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@p6='1', @p0='2021-04-18T17:05:55.9670000' (Nullable = true), @p1='True', @p2='9', @p3='1', @p4='1', @p5='False'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [VOTOS] SET [VTO_FECHA] = @p0, [VTO_REGISTRO] = @p1, [VTO_CAN_ID] = @p2, [VTO_EVT_ID] = @p3, [VTO_USU_ID] = @p4, [VTO_ESTADO] = @p5
+WHERE [VTO_ID] = @p6;
+SELECT @@ROWCOUNT;
+[17:28:26][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Vote.VoteDeleteResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[17:28:26][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.DesactiveVote (Dach.ElectionSystem.WebApi) in 2146.9523ms
+[17:28:26][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.DesactiveVote (Dach.ElectionSystem.WebApi)'
+[17:28:26][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 DELETE http://localhost:44317/api/votes/events/1 application/json 224 - 200 - application/json;+charset=utf-8 2159.1445ms
+[17:28:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 PUT http://localhost:44317/api/votes/events/1/candidates/9 application/json 217
+[17:28:28][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:Estoy en Token
+[17:28:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.UpdateVote (Dach.ElectionSystem.WebApi)'
+[17:28:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "UpdateVote", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateVote(Dach.ElectionSystem.Models.Request.Vote.VoteUpdateRequest, Int32, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[17:28:28][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[17:28:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__ToInt32_0='1', @__request_TokenModel_Username_1='dach1996' (Size = 4000), @__request_TokenModel_Email_2='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [a].[ADMINEVENT_ID]
+[17:28:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__id_0='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EVT_ID], [e].[EVT_CATEGORIA], [e].[EVT_DESCRIPCION], [e].[EVT_FOTO], [e].[EVT_ESTADO], [e].[EVT_MAX_PERSONAS], [e].[EVT_NOMBRE], [e].[EVT_NUM_MAX_CANDIDATOS], [e].[EVT_NUM_MAX_PERSONAS]
+FROM [EVENTOS] AS [e]
+WHERE [e].[EVT_ID] = @__id_0
+[17:28:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__id_0='9'], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CAN_IDS], [c].[CAN_EDAD], [c].[CAN_DETALLES], [c].[CAN_EVT_ID], [c].[CAN_USU_ID], [c].[CAN_IMAGEN], [c].[CAN_ESTADO], [c].[CAN_PUESTOS_LABORALES], [c].[CAN_PROPUESTA], [c].[CAN_ROL], [c].[CAN_VIDEO], [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [CANDIDATOS] AS [c]
+INNER JOIN [USUARIOS] AS [u] ON [c].[CAN_USU_ID] = [u].[USU_ID]
+WHERE [c].[CAN_IDS] = @__id_0
+[17:28:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__eventCurrent_Id_0='1', @__request_UserContext_Id_1='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE ([v].[VTO_EVT_ID] = @__eventCurrent_Id_0) AND ([v].[VTO_USU_ID] = @__request_UserContext_Id_1)
+[17:28:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@p6='1', @p0='2021-04-18T17:28:30.6484356-05:00' (Nullable = true), @p1='True', @p2='9', @p3='1', @p4='1', @p5='False'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [VOTOS] SET [VTO_FECHA] = @p0, [VTO_REGISTRO] = @p1, [VTO_CAN_ID] = @p2, [VTO_EVT_ID] = @p3, [VTO_USU_ID] = @p4, [VTO_ESTADO] = @p5
+WHERE [VTO_ID] = @p6;
+SELECT @@ROWCOUNT;
+[17:28:30][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Vote.VoteUpdateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[17:28:30][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.UpdateVote (Dach.ElectionSystem.WebApi) in 1702.9973ms
+[17:28:30][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.UpdateVote (Dach.ElectionSystem.WebApi)'
+[17:28:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 PUT http://localhost:44317/api/votes/events/1/candidates/9 application/json 217 - 200 - application/json;+charset=utf-8 1710.7371ms

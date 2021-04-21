@@ -9,6 +9,7 @@ namespace Dach.ElectionSystem.Repository.Intrastructure
         public static void AddRepositorys(this IServiceCollection services) {
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IEventRepository, EventRepository>();
+            services.AddTransient<IEventAdministratorRepository, EventAdministratorRepository>();
             services.AddTransient<ICandidateRepository, CandidateRepository>();
             services.AddTransient<IVoteRepository, VoteRepository>();
             //Unit work

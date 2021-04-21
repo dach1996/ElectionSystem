@@ -27,17 +27,25 @@ namespace Dach.ElectionSystem.Models.ExceptionGeneric
         /// </summary>
         public MessageCodesApi MessageCodesApi { get; set; }
 
+        
+        /// <summary>
+        /// Código personalizado de error
+        /// </summary>
+        public string MessageSpecific { get; set; }
+
         /// <summary>
         /// Contructor
         /// </summary>
         /// <param name="codeHttp">Código de respuesta</param>
         /// <param name="messageCodesApi">Mensaje de respuesta</param>
         /// <param name="responseType">Tipo de respuesta</param>
-        public ExceptionCustom(MessageCodesApi messageCodesApi,  ResponseType responseType, HttpStatusCode codeHttp) :base()
+        /// <param name="messageSpecific">Mensaje Específico</param>
+        public ExceptionCustom(MessageCodesApi messageCodesApi,  ResponseType responseType, HttpStatusCode codeHttp, string messageSpecific="") :base()
         {
             CodeHttp = codeHttp;
             ResponseType = responseType;
             MessageCodesApi = messageCodesApi;
+            MessageSpecific= messageSpecific;
         }
 
     }

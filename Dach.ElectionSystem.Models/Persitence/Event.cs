@@ -16,7 +16,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         public Event()
         {
             this.IsActive = true;
-            this.ListAdministratorEvent = new List<AdministratorEvent>();
+            this.ListEventAdministrator = new List<EventAdministrator>();
             this.ListVote = new List<Vote>();
             this.ListCandidate = new List<Candidate>();
         }
@@ -87,7 +87,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// Eventos Usuarios
         /// </summary>
         /// <value></value>
-        public ICollection<AdministratorEvent> ListAdministratorEvent { get; set; }
+        public ICollection<EventAdministrator> ListEventAdministrator { get; set; }
 
         /// <summary>
         /// Eventos Usuarios

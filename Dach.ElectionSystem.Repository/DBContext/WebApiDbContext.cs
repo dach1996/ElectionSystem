@@ -18,7 +18,7 @@ namespace Dach.ElectionSystem.Repository.DBContext
         public DbSet<Event> Event { get; set; }
         public DbSet<Candidate> Candidate { get; set; }
         public DbSet<Vote> Vote { get; set; }
-        public DbSet<AdministratorEvent> AdministratorEvents { get; set; }
+        public DbSet<EventAdministrator> EventAdministrator { get; set; }
         #endregion
     }
 }

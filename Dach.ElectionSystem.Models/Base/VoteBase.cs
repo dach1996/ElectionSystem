@@ -10,7 +10,7 @@ namespace Dach.ElectionSystem.Models.Base
          /// <summary>
         /// Cédula Usuario
         /// </summary>
-        public virtual DateTime Date { get; set; }
+        public virtual DateTime? Date { get; set; }
 
         /// <summary>
         /// Cédula Usuario

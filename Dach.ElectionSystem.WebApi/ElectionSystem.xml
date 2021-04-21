@@ -50,6 +50,33 @@
             <param name="idCandidate"></param>
             <returns></returns>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventAdministratorController.CreateEventAdministrator(System.Int32,System.Int32,Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorCreateRequest)">
+            <summary>
+            Crear nuevo EventAdministratoro
+            </summary>
+            <param name="idEvent"></param>
+            <param name="idUser"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventAdministratorController.DesactiveEventAdministrator(System.Int32,System.Int32,Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorDeleteRequest)">
+            <summary>
+            Desactivar Administrador de Evento
+            </summary>
+            <param name="idEvent"></param>
+            <param name="idUser"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventAdministratorController.UpdateEventAdministrator(System.Int32,System.Int32,Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorUpdateRequest)">
+            <summary>
+            Activar EventAdministratoro
+            </summary>
+            <param name="idEvent"></param>
+            <param name="idUser"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest)">
             <summary>
             Crear nuevo evento

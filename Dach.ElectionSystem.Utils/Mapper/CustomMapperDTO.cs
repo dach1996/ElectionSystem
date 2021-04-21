@@ -3,6 +3,7 @@ using Dach.ElectionSystem.Utils.Mapper.Event;
 using Dach.ElectionSystem.Utils.Mapper.User;
 using Dach.ElectionSystem.Utils.Mapper.Candidate;
 using Dach.ElectionSystem.Utils.Mapper.Vote;
+using Dach.ElectionSystem.Utils.Mapper.EventAdministrator;
 
 namespace Dach.ElectionSystem.Utils.Mapper
 {
@@ -16,6 +17,7 @@ namespace Dach.ElectionSystem.Utils.Mapper
             this.ConfigUserMapper();
             this.ConfigCandidateMapper();
             this.ConfigVoteMapper();
+            this.ConfigEventAdministratorMapper();
         }
     }
 }

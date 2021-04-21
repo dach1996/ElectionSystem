@@ -23,7 +23,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
          string includeProperties = ""   )    
         {
             var query = await this.GetQueryAsync(whereCondition, orderBy, includeProperties);
-            return await query.Include(e=>e.ListAdministratorEvent).ToListAsync();
+            return await query.Include(e=>e.ListEventAdministrator).ToListAsync();
         }
 
     }

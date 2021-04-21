@@ -17,7 +17,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// </summary>
         public User()
         {
-            this.ListAdministratorEvent = new List<AdministratorEvent>();
+            this.ListEventAdministrator = new List<EventAdministrator>();
             this.ListCandidate = new List<Candidate>();
             this.IsActive = true;
             this.MaxEventsAllow = 1;
@@ -88,7 +88,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// Lista de Eventos administradors por el usuario
         /// </summary>
         /// <value></value>
-        public virtual List<AdministratorEvent> ListAdministratorEvent { get; set; }
+        public virtual List<EventAdministrator> ListEventAdministrator { get; set; }
 
         /// <summary>
         /// Lista de Candidatos que puede ser el usuario

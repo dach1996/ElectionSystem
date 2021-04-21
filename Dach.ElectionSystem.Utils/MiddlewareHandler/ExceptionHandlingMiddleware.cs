@@ -68,7 +68,7 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
             {
                 Code = (int)customEx.MessageCodesApi,
                 ResponseType = customEx.ResponseType.ToString(),
-                Message = customEx.MessageCodesApi.GetEnumMember()
+                Message = $"{customEx.MessageCodesApi.GetEnumMember()} {customEx.MessageSpecific}"
             };
             return context.Response.WriteAsync(response.ToString());
         }

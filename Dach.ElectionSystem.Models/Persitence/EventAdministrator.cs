@@ -7,13 +7,13 @@ namespace Dach.ElectionSystem.Models.Persitence
     /// Tabla Administradores de eventos
     /// </summary>
     [Table(name: "ADMINISTRADOR_EVENTO")]
-    public class AdministratorEvent
+    public class EventAdministrator
     {
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public AdministratorEvent()
+        public EventAdministrator()
         {
             this.Date = DateTime.Now;
             this.Privileges = "All";

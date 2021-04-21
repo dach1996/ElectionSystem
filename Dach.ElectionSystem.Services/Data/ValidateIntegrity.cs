@@ -42,9 +42,9 @@ namespace Dach.ElectionSystem.Services.Data
             var existUser = await userRepository.GetAsync(u => u.Id == System.Convert.ToInt32(request.TokenModel.Id) &&
                                                                 u.UserName == request.TokenModel.Username &&
                                                                 u.Email == request.TokenModel.Email,
-                                                                includeProperties: nameof(User.ListAdministratorEvent));
+                                                                includeProperties: nameof(User.ListEventAdministrator));
             if (existUser.Count() != 1)
-                throw new ExceptionCustom(MessageCodesApi.DataInconsistency, ResponseType.Error, HttpStatusCode.Unauthorized);
+                throw new ExceptionCustom(MessageCodesApi.DataInconsistency, ResponseType.Error, HttpStatusCode.Unauthorized, $"No se encuntra usuario con correo:{request.TokenModel.Email}");
             return existUser.FirstOrDefault();
         }
 
@@ -52,15 +52,23 @@ namespace Dach.ElectionSystem.Services.Data
         {
             var existEvent = await eventRepository.GetAsync(u => u.Id == id);
             if (existEvent.Count() != 1)
-                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound);
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el evento con Id:{id}");
             return existEvent.FirstOrDefault();
+        }
+
+        public async Task<User> ValidateUser(int idUser)
+        {
+            var existUser = await userRepository.GetAsync(u => u.Id == idUser );
+            if (existUser.Count() != 1)
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.Unauthorized,$"No se encuntra el Usuario con Id:{idUser}" );
+            return existUser.FirstOrDefault();
         }
 
         public async Task<Vote> ValidateVote(int id)
         {
             var existVote = await voteRepository.GetAsync(u => u.Id == id);
             if (existVote.Count() != 1)
-                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound);
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound,$"No se encuntra el voto con Id:{id}");
             return existVote.FirstOrDefault();
         }
 
@@ -69,7 +77,7 @@ namespace Dach.ElectionSystem.Services.Data
             var existCandidate = await candidateRepository.GetAsyncInclude(u => u.Id == id
                                                                             ,includeProperties: u=> $"{nameof(u.User)}");
             if (existCandidate.Count() != 1)
-                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound);
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el candidato con Id:{id}");
             return existCandidate.FirstOrDefault();
         }
 

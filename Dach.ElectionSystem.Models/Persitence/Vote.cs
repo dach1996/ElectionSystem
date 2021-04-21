@@ -43,7 +43,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// Cédula Usuario
         /// </summary>
         [Column("VTO_FECHA")]
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         /// <summary>
         /// Cédula Usuario
