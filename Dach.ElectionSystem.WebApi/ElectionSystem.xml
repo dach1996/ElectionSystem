@@ -77,6 +77,14 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventAdministratorController.GetHandler(System.Int32,Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorGetRequest)">
+            <summary>
+            Consulta lista de administradores por evento
+            </summary>
+            <param name="idEvent"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.CreateEvent(Dach.ElectionSystem.Models.Request.Event.EventCreateRequest)">
             <summary>
             Crear nuevo evento

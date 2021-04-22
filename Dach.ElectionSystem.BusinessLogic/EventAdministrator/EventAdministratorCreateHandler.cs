@@ -43,7 +43,12 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
             var events = await validateIntegrity.ValidateEvent(request.IdEvent);
             //Valida que exista el usuario
             var user = await validateIntegrity.ValidateUser(request.IdUser);
-            //Valida que el usuario no sea administrador en este momento
+            //Valida que el usuario de contexto sea administrador en este e vento
+            var isUserCurrentAdministrator = request.UserContext.ListEventAdministrator.Exists(e => e.Id == events.Id);
+             if (!isUserCurrentAdministrator)
+                throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
+                "El no tiene permisos para registrar administradores a este evento");
+            //Valida que el usuario a ingresar no sea administrador en este momento
             var isUserAdministrator = user.ListEventAdministrator.Exists(e => e.Id == events.Id);
             if (isUserAdministrator)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
@@ -53,8 +58,7 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
             {
                 IdUser = user.Id,
                 IdEvent = events.Id,
-                Privileges = "Admin",
-                State = true,
+                Privileges = "All",
                 Date = DateTime.Now
             };
             var isCreate = await _eventAdministratorRepository.CreateAsync(eventAdministrator);

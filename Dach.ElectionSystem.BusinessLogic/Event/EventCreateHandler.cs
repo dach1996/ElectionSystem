@@ -47,6 +47,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             if (userCurrent.ListEventAdministrator.Count() >= userCurrent.MaxEventsAllow)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.MaxEventAllow, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
             var newEvent = _mapper.Map<Models.Persitence.Event>(request);
+            //Registramos al usuario como creador del evento
+            newEvent.UserCreator = userCurrent;
             //Registramos al usuario como Administrador
             newEvent.ListEventAdministrator = new List<Models.Persitence.EventAdministrator>()
             {

@@ -1,3 +1,4 @@
+using System;
 using Dach.ElectionSystem.Models.Base;
 
 namespace Dach.ElectionSystem.Models.Response.EventAdministrator
@@ -24,5 +25,13 @@ namespace Dach.ElectionSystem.Models.Response.EventAdministrator
         /// </summary>
         /// <value></value>
         public int IdEvent { get; set; }
+
+        /// <summary>
+        /// Fecha de Cambio
+        /// </summary>
+        /// <value></value>
+        public DateTime Date { get; set; }
+        
+        
     }
 }

@@ -9,14 +9,7 @@ namespace Dach.ElectionSystem.Models.Request.EventAdministrator
     /// Clase EventAdministrator Get Request
     /// </summary>
     public class EventAdministratorGetRequest : RequestBaseImpl, IRequest<EventAdministratorGetResponse>
-    {
-             /// <summary>
-        /// Id Usuario
-        /// </summary>
-        /// <value></value>
-        [JsonIgnore]
-        public int IdUser { get; set; }
-        
+    {      
         
         /// <summary>
         /// Id Evento

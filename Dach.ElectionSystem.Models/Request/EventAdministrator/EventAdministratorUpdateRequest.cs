@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Dach.ElectionSystem.Models.RequestBase;
 using Dach.ElectionSystem.Models.Response.EventAdministrator;
 using MediatR;
 
@@ -7,11 +8,22 @@ namespace Dach.ElectionSystem.Models.Request.EventAdministrator
     /// <summary>
     /// Clase EventAdministratorUpdateRequest
     /// </summary>
-    public class EventAdministratorUpdateRequest : EventAdministratorBaseRequest, IRequest<EventAdministratorUpdateResponse>
+    public class EventAdministratorUpdateRequest : RequestBaseImpl, IRequest<EventAdministratorUpdateResponse>
     {
         /// <summary>
-        /// EventAdministratoro Activo
+        /// Id Usuario
         /// </summary>
-        public bool IsActive { get; set; }
+        /// <value></value>
+        [JsonIgnore]
+        public int IdUser { get; set; }
+
+
+        /// <summary>
+        /// Id Evento
+        /// </summary>
+        /// <value></value>
+        [JsonIgnore]
+        public int IdEvent { get; set; }
+
     }
 }

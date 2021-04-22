@@ -99,21 +99,23 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         }
 
 
-       
+       /// <summary>
+       /// Consulta lista de administradores por evento
+       /// </summary>
+       /// <param name="idEvent"></param>
+       /// <param name="request"></param>
+       /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(EventAdministratorGetResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        [Route("{idEvent}/users/{idUser}")]
-        [Route("")]
+        [Route("{idEvent}")]
         public async Task<IActionResult> GetHandler(
             [FromRoute] int idEvent,
-            [FromRoute] int idUser,
             [FromBody] EventAdministratorGetRequest request)
 
         {
             request.IdEvent = idEvent;
-            request.IdUser = idUser;
             return Success(await _mediator.Send(request));
         }
 

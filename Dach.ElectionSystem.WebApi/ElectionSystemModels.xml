@@ -552,6 +552,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.IdUser">
+            <summary>
+            Id Usuario Creador de evento
+            </summary>
+            <value></value>
+        </member>
         <member name="P:Dach.ElectionSystem.Models.Persitence.Event.IsActive">
             <summary>
             Evento está Activo
@@ -561,6 +567,12 @@
         <member name="P:Dach.ElectionSystem.Models.Persitence.Event.ListEventAdministrator">
             <summary>
             Eventos Usuarios
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.UserCreator">
+            <summary>
+            Usuario creadors
             </summary>
             <value></value>
         </member>
@@ -992,12 +1004,6 @@
             Clase EventAdministrator Get Request
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorGetRequest.IdUser">
-            <summary>
-            Id Usuario
-            </summary>
-            <value></value>
-        </member>
         <member name="P:Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorGetRequest.IdEvent">
             <summary>
             Id Evento
@@ -1009,10 +1015,17 @@
             Clase EventAdministratorUpdateRequest
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorUpdateRequest.IsActive">
+        <member name="P:Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorUpdateRequest.IdUser">
             <summary>
-            EventAdministratoro Activo
+            Id Usuario
             </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorUpdateRequest.IdEvent">
+            <summary>
+            Id Evento
+            </summary>
+            <value></value>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Event.EventBaseRequest">
             <summary>
@@ -1379,6 +1392,12 @@
         <member name="P:Dach.ElectionSystem.Models.Response.EventAdministrator.EventAdministratorResponseBase.IdEvent">
             <summary>
             Id Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.EventAdministrator.EventAdministratorResponseBase.Date">
+            <summary>
+            Fecha de Cambio
             </summary>
             <value></value>
         </member>

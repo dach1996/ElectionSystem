@@ -74,6 +74,14 @@ namespace Dach.ElectionSystem.Models.Persitence
         [Column("EVT_CATEGORIA")]
         public string Category { get; set; }
 
+         /// <summary>
+        /// Id Usuario Creador de evento
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_ID_USUARIO_CREADOR")]
+        [ForeignKey(nameof(UserCreator))]
+        public int IdUser { get; set; }
+
         /// <summary>
         /// Evento está Activo
         /// </summary>
@@ -88,6 +96,12 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// </summary>
         /// <value></value>
         public ICollection<EventAdministrator> ListEventAdministrator { get; set; }
+
+        /// <summary>
+        /// Usuario creadors
+        /// </summary>
+        /// <value></value>
+        public User UserCreator { get; set; }
 
         /// <summary>
         /// Eventos Usuarios
