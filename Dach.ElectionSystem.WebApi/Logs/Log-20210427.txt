@@ -1,0 +1,375 @@
+[00:01:17][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:01:17][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:01:17][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:01:17][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:01:17][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:01:17][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 164.2400ms
+[00:01:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:01:19][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 450.9540ms
+[00:02:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/auth/forgottenpassword application/json 45
+[00:02:05][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:02:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[00:02:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[00:02:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/auth/forgottenpassword application/json 45 - 405 0 - 250.3740ms
+[00:02:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/api/auth/forgottenpassword application/json 45
+[00:02:14][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint '405 HTTP Method Not Supported'
+[00:02:14][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint '405 HTTP Method Not Supported'
+[00:02:14][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/api/auth/forgottenpassword application/json 45 - 405 0 - 3.2683ms
+[00:02:19][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45
+[00:02:19][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:02:19][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:37:41][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:37:41][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:37:41][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:37:41][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:37:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:37:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 180.4331ms
+[00:37:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:37:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 421.4982ms
+[00:38:15][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45
+[00:38:15][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:38:15][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:38:15][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:38:21][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[00:38:22][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:38:22][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (69ms) [Parameters=[@__request_Email_0='dach199620121@gmail.com5' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:38:27][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (6ms) [Parameters=[@p12='1', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach199620121@gmail.com5' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='a5c0297e6bdd13b9b5559c67560d26bb593193ca1faf07b085b5c6d6b9d523c2' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:38:29][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 13168.2423ms
+[00:38:29][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:38:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45 - 500 - application/json 13659.8531ms
+[00:38:36][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45
+[00:38:38][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:38:38][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:38:40][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:38:40][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Email_0='dach199620121@gmail.com5' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:38:42][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@p12='1', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach199620121@gmail.com5' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='ed52ed396581ba795eb46eff80126c105842575c40747aeccf2af148fb6a2b89' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:38:58][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:38:58][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:38:58][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:38:58][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:38:59][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:38:59][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 151.5471ms
+[00:39:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:39:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 494.9117ms
+[00:39:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45
+[00:39:04][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:39:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:39:05][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:39:08][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[00:39:08][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:39:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (75ms) [Parameters=[@__request_Email_0='dach199620121@gmail.com5' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:39:13][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (10ms) [Parameters=[@p12='1', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach199620121@gmail.com5' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='6c3f1980a1a5d9a93d71fb0afe7d905aa33434bc87674f21582e635b37ef529b' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:44:23][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:44:23][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:44:23][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:44:23][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:44:23][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:44:24][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 148.6382ms
+[00:44:24][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:44:25][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 377.8824ms
+[00:44:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45
+[00:44:28][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:44:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:44:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:44:32][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[00:44:32][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:44:33][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (51ms) [Parameters=[@__request_Email_0='dach199620121@gmail.com5' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:44:35][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (6ms) [Parameters=[@p12='1', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach199620121@gmail.com5' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='42aa9856da07189af19d06e7027b36a3187b2a8c16aad8c044009e69d3c5f6f3' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:45:03][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 34527.9888ms
+[00:45:03][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:45:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45 - 500 - application/json 34977.3104ms
+[00:49:28][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:49:28][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:49:28][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:49:28][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:49:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:49:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 141.1464ms
+[00:49:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:49:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 469.9353ms
+[00:49:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45
+[00:49:35][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:49:35][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:49:35][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:49:38][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[00:49:38][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:49:38][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (49ms) [Parameters=[@__request_Email_0='dach199620121@gmail.com5' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:49:39][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (5ms) [Parameters=[@p12='1', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach199620121@gmail.com5' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='3bff278ec164dce81d9a74193424157de4449bc5283023113a5e8a602b7e4df7' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:50:03][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[MediatR.Unit, MediatR, Version=9.0.0.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2]]'.
+[00:50:03][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 27800.8731ms
+[00:50:03][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:50:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45 - 200 - application/json;+charset=utf-8 28043.1311ms
+[00:50:08][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45
+[00:50:08][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:50:08][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:50:10][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:50:10][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@__request_Email_0='dach199620121@gmail.com5' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:50:10][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p12='1', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach199620121@gmail.com5' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='dd32df5df7f8d524e00ab59879b30697d079df890964f51968bca5e1016d4f4d' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:50:30][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[MediatR.Unit, MediatR, Version=9.0.0.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2]]'.
+[00:50:30][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 22007.1435ms
+[00:50:30][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:50:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 45 - 200 - application/json;+charset=utf-8 22014.0529ms
+[00:50:32][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 49
+[00:50:32][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:50:32][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:50:35][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:50:35][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Email_0='dach199620121@gmail.comasdf5' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:50:35][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 3035.5721ms
+[00:50:35][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:50:36][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 49 - 401 - application/json 3229.1489ms
+[00:50:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43
+[00:50:46][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:50:46][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:50:46][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:50:46][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:50:46][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 92.8914ms
+[00:50:46][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:50:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43 - 401 - application/json 281.0326ms
+[00:51:17][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/users application/json 284
+[00:51:17][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[00:51:17][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Dach.ElectionSystem.Models.Request.User.UserCreateRequest) on controller Dach.ElectionSystem.WebApi.Controllers.UserController (Dach.ElectionSystem.WebApi).
+[00:51:17][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:51:17][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:51:18][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p0='2021-03-24T02:39:11.7410000Z' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach19962012@gmail.com' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='afa9a86c6b224574ae5436aacefc9b031187d3ec602b50746081bfe59a9e1a1f' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [USUARIOS] ([USU_FECHA_NACIMIENTO], [USU_CEDULA], [USU_CORREO], [USU_APELLIDO], [USU_NOMBRE], [USU_ESTADO], [USU_ADMINISTRADOR], [USU_NUM_EVENT_MAX], [USU_PASSWORD], [USU_SEGUNDO_APELLIDO], [USU_SEGUNDO_NOMBRE], [USU_NICK])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [USU_ID]
+FROM [USUARIOS]
+WHERE @@ROWCOUNT = 1 AND [USU_ID] = scope_identity();
+[00:51:18][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.User.UserCreateResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[00:51:18][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi) in 313.9664ms
+[00:51:18][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser (Dach.ElectionSystem.WebApi)'
+[00:51:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/users application/json 284 - 200 - application/json;+charset=utf-8 321.8715ms
+[00:51:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43
+[00:51:21][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:51:21][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:51:21][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:51:21][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:51:21][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[@p12='1008', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach19962012@gmail.com' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='63031c36db5a12f543df8587f11ad67a4e9c720371b24248a5b1dbacbb551600' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:51:25][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[MediatR.Unit, MediatR, Version=9.0.0.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2]]'.
+[00:51:25][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 3665.1537ms
+[00:51:25][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:51:25][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43 - 200 - application/json;+charset=utf-8 3665.7852ms
+[00:51:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 80
+[00:51:52][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[00:51:52][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:51:52][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:51:52][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:51:52][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[00:51:52][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 146.4664ms
+[00:51:52][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[00:51:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 80 - 200 - application/json;+charset=utf-8 149.9514ms
+[00:52:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 80
+[00:52:12][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[00:52:12][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:52:12][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:52:12][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:52:12][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[00:52:12][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 6.5556ms
+[00:52:12][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[00:52:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 80 - 200 - application/json;+charset=utf-8 7.1070ms
+[00:52:16][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43
+[00:52:16][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:52:16][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:52:16][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:52:16][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:52:16][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p12='1008', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach19962012@gmail.com' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='b67fd51306e215f2b13506365e0a0a0d95ee5b31d24c697211af00dce65e228f' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:52:16][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[MediatR.Unit, MediatR, Version=9.0.0.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2]]'.
+[00:52:16][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 570.2191ms
+[00:52:16][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:52:16][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43 - 200 - application/json;+charset=utf-8 571.1949ms
+[00:52:20][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43
+[00:52:20][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:52:20][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:52:20][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:52:20][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (10ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:52:20][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@p12='1008', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach19962012@gmail.com' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='68ea18edaf73b2c49ee8299332221355bb1a75da76691e9196cd59b7a806f92b' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:52:56][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:52:56][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:52:56][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:52:56][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:52:56][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:52:56][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 132.3488ms
+[00:52:57][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:52:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 461.7986ms
+[00:53:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43
+[00:53:05][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:53:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:53:05][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:53:06][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[00:53:06][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:53:06][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (52ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:53:07][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (7ms) [Parameters=[@p12='1008', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach19962012@gmail.com' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='f0a777f03980ccdcb5972b050c1af6b5caa1179c86bac4c803899538d47910c1' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:53:10][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[MediatR.Unit, MediatR, Version=9.0.0.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2]]'.
+[00:53:10][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 5333.1534ms
+[00:53:10][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:53:10][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43 - 200 - application/json;+charset=utf-8 5629.7100ms
+[00:54:24][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:54:24][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:54:24][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:54:24][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:54:24][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:54:24][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 150.8029ms
+[00:54:25][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:54:25][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 403.4433ms
+[00:54:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43
+[00:54:34][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:54:34][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:54:34][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:54:35][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[00:54:35][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:54:36][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (65ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:54:36][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (5ms) [Parameters=[@p12='1008', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach19962012@gmail.com' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='162a70a47224c204c8236679054d7c369bae723de58b205838fd30cbe0bcdde3' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:54:40][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[MediatR.Unit, MediatR, Version=9.0.0.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2]]'.
+[00:54:40][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 5305.3336ms
+[00:54:40][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:54:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43 - 200 - application/json;+charset=utf-8 5547.1477ms
+[00:55:11][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43
+[00:55:11][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:55:11][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:55:11][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:55:11][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:55:11][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p12='1008', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach19962012@gmail.com' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='d6d29710b0a903cdbdde42526a155f71049f6d8152f40c031ac03b41eaaa41e1' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:56:57][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:56:57][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:56:57][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:56:57][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:56:57][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:56:57][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 144.3355ms
+[00:56:58][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:56:59][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 327.6756ms
+[00:57:05][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43
+[00:57:05][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:57:05][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:57:05][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:57:06][WRN][Microsoft.EntityFrameworkCore.Model.Validation]:Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[00:57:06][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:57:06][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (48ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:57:07][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (6ms) [Parameters=[@p12='1008', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach19962012@gmail.com' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='4591c8f69adfd46297c28a4ae9d73455210499ade4e3af06f45cccf276d3d4ad' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:57:12][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[MediatR.Unit, MediatR, Version=9.0.0.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2]]'.
+[00:57:12][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 6568.503ms
+[00:57:12][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:57:12][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43 - 200 - application/json;+charset=utf-8 6819.7772ms
+[00:58:10][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43
+[00:58:10][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:58:10][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "ForgottenPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:58:10][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled DetailedErrorsEnabled 
+[00:58:10][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__request_Email_0='dach19962012@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_NUM_EVENT_MAX], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] = @__request_Email_0
+[00:58:10][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p12='1008', @p0='2021-03-24T00:00:00.0000000' (Nullable = true), @p1='1716361462' (Size = 4000), @p2='dach19962012@gmail.com' (Size = 4000), @p3='Cárdenas' (Size = 4000), @p4='Danny' (Size = 4000), @p5='True', @p6='False', @p7='1', @p8='c75c5a390e4a1af0a695562493a3ffa63b0a4291d41614b956f33432f3f85658' (Size = 4000), @p9='Hidalgo' (Size = 4000), @p10='Alexander' (Size = 4000), @p11='dach1996' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [USUARIOS] SET [USU_FECHA_NACIMIENTO] = @p0, [USU_CEDULA] = @p1, [USU_CORREO] = @p2, [USU_APELLIDO] = @p3, [USU_NOMBRE] = @p4, [USU_ESTADO] = @p5, [USU_ADMINISTRADOR] = @p6, [USU_NUM_EVENT_MAX] = @p7, [USU_PASSWORD] = @p8, [USU_SEGUNDO_APELLIDO] = @p9, [USU_SEGUNDO_NOMBRE] = @p10, [USU_NICK] = @p11
+WHERE [USU_ID] = @p12;
+SELECT @@ROWCOUNT;
+[00:58:13][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[MediatR.Unit, MediatR, Version=9.0.0.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2]]'.
+[00:58:13][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi) in 3155.9462ms
+[00:58:13][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword (Dach.ElectionSystem.WebApi)'
+[00:58:13][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/forgottenpassword application/json 43 - 200 - application/json;+charset=utf-8 3158.9021ms

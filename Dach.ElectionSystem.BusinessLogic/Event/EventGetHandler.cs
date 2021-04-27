@@ -36,12 +36,16 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         {
             var listEvents = new List<Models.Persitence.Event>();
             if (request.Id != null)
-                listEvents = (await _eventRepository.GetAsync(e=>e.Id == request.Id)).ToList();
+                listEvents = (await _eventRepository.GetAsync(e => e.Id == request.Id)).ToList();
             else
                 listEvents = (await _eventRepository.GetAsync()).ToList();
-            
-            return new EventGetResponse(){
-                ListEvents = _mapper.Map<List<EventResponseBase>>(listEvents)
+            var response =  listEvents.OrderByDescending(e => e.Id)
+            .Skip(request.Offset)
+            .Take(request.Limit)
+            .ToList();
+            return new EventGetResponse()
+            {
+                ListEvents = _mapper.Map<List<EventResponseBase>>(response)
             };
         }
         #endregion

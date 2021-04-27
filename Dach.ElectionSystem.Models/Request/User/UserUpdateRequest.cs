@@ -17,14 +17,16 @@ namespace Dach.ElectionSystem.Models.Request.User
         private new string Email { get; set; }
 
         /// <summary>
-        /// Estado del Usuario
+        /// Constraseña de Usuario
         /// </summary>
-        public bool IsActive { get; set; }
+        [JsonIgnore]
+        private new string Password { get; set; }
 
         /// <summary>
         /// Número maximo de eventos permitidos
         /// </summary>
-        public int MaxEventsAllow { get; set; }
+        [JsonIgnore]
+        private int MaxEventsAllow { get; set; }
 
     }
 }

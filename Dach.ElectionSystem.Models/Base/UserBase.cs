@@ -1,52 +1,62 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dach.ElectionSystem.Models.Base
 {
     /// <summary>
     /// Clase base para Usuarios
     /// </summary>
-    public class UserBase
+    public abstract class UserBase
     {
         /// <summary>
         /// Cédula Usuario
         /// </summary>
-        public string DNI { get; set; }
+        [Required]
+        public virtual string DNI { get; set; }
+
         /// <summary>
         /// Nick Usuario
         /// </summary>
-        public string UserName { get; set; }
+        [Required]
+        public virtual string UserName { get; set; }
 
         /// <summary>
         /// Contraseña Usuario
         /// </summary>
+        [Required]
         public virtual string Password { get; set; }
+
         /// <summary>
         /// Primer nombre Usuario
         /// </summary>
-        public string FirstName { get; set; }
+        [Required]
+        public virtual string FirstName { get; set; }
         /// <summary>
         /// Segundo nombre Usuario
         /// </summary>
-        public string SecondName { get; set; }
+        public virtual string SecondName { get; set; }
+
         /// <summary>
         /// Primer Apellido Usuario
         /// </summary>
-        public string FirstLastName { get; set; }
+        [Required]
+        public virtual string FirstLastName { get; set; }
+
         /// <summary>
         /// Segundo Apellido Usuario
         /// </summary>
-        public string SecondLastName { get; set; }
+        public virtual string SecondLastName { get; set; }
+
         /// <summary>
         /// Fecha de nacimiento Usuario
         /// </summary>
-        public DateTime? BirthDate { get; set; }
+        [Required]
+        public virtual DateTime? BirthDate { get; set; }
+
         /// <summary>
         /// Email Usuario
         /// </summary>
-        public string Email { get; set; }
+        [Required]
+        public virtual string Email { get; set; }
     }
 }

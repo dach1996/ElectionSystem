@@ -8,12 +8,12 @@ namespace Dach.ElectionSystem.Models.Enums
     /// <summary>
     /// Mensages genéricos de error
     /// </summary>
-    public enum  MessageCodesApi
+    public enum MessageCodesApi
     {
         /// <summary>
         /// Transacción exitosa
         /// </summary>
-       [EnumMember(Value = "Requiere Token")]
+        [EnumMember(Value = "Requiere Token")]
         WithOutToken = 100,
 
         /// <summary>
@@ -28,13 +28,13 @@ namespace Dach.ElectionSystem.Models.Enums
         [EnumMember(Value = "Error lectura de token")]
         InvalidParceToken = 102,
 
-            /// <summary>
+        /// <summary>
         /// Token Expirado
         /// </summary>
         [EnumMember(Value = "Token Expirado, Logee nuevamente")]
         TokenExpired = 103,
 
-         /// <summary>
+        /// <summary>
         /// Inconsistencia de datos
         /// </summary>
         [EnumMember(Value = "Error inconsistencia de datos")]
@@ -64,18 +64,24 @@ namespace Dach.ElectionSystem.Models.Enums
         [EnumMember(Value = "Datos no registrados al usuario")]
         DataWithoutProperty = 127,
 
-          /// <summary>
+        /// <summary>
         /// Email ya se encuentra registrado
         /// </summary>
         [EnumMember(Value = "Email Registrado")]
         EmailRegistered = 128,
 
-            /// <summary>
+        /// <summary>
         /// Evento Registrado
         /// </summary>
         [EnumMember(Value = "Nombre de Evento ya registrado")]
-        EventRegistered = 128,
-        
+        EventRegistered = 129,
+
+        /// <summary>
+        /// Error al Enviar Mail
+        /// </summary>
+        [EnumMember(Value = "No se pudo enviar el Mail")]
+        MailError = 130,
+
         /// <summary>
         /// Error del sistema
         /// </summary>
@@ -86,16 +92,29 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "Usuario se encuntra desactivado")]
         UserIsInactive = 151,
-         /// <summary>
+        /// <summary>
         /// Evento Descativado
         /// </summary>
         [EnumMember(Value = "Evento se encuntra desactivado")]
         EventIsInactive = 152,
-         /// <summary>
+        /// <summary>
         /// Error maximos  evento permitidos
         /// </summary>
         [EnumMember(Value = "Ha superado el número de eventos permitidos para este usuario")]
         MaxEventAllow = 153,
+
+        /// <summary>
+        /// Error maximos  evento permitidos
+        /// </summary>
+        [EnumMember(Value = "El número maximo de personas para el evento no puede ser menor a 5")]
+        MaxPeopleEvent = 154,
+
+        /// <summary>
+        /// Error maximos  evento permitidos
+        /// </summary>
+        [EnumMember(Value = "El usuario actual no es el creador de Evento")]
+        EventCreator = 155,
+
         /// <summary>
         /// Error del sistema
         /// </summary>

@@ -19,5 +19,6 @@ namespace Dach.ElectionSystem.Models.Request.Event
         /// <value></value>
         [JsonIgnore]
         public int? Id { get; set; }
+        
     }
 }

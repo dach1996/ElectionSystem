@@ -1,6 +1,5 @@
-﻿using System;
+﻿
 using AutoMapper;
-using AutoMapper.Configuration;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.User;
@@ -8,6 +7,7 @@ using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -48,7 +48,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
             userCurrent.SecondName = userUpdate.SecondName;
             userCurrent.UserName = userUpdate.UserName;
             userCurrent.BirthDate = userUpdate.BirthDate;
-            userCurrent.Password = userUpdate.Password;
+            //Actualizar Usuario
             var isUserUpdate = await userRepository.Update(userCurrent);
             if (!isUserUpdate)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);

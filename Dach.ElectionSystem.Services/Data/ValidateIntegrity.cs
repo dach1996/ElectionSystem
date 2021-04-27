@@ -53,14 +53,17 @@ namespace Dach.ElectionSystem.Services.Data
             var existEvent = await eventRepository.GetAsync(u => u.Id == id);
             if (existEvent.Count() != 1)
                 throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el evento con Id:{id}");
+            var eventCurrent = existEvent.First();
+            if (eventCurrent.IsDelete)
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"El evento con Id:{id} ha sido borrado");
             return existEvent.FirstOrDefault();
         }
 
         public async Task<User> ValidateUser(int idUser)
         {
-            var existUser = await userRepository.GetAsync(u => u.Id == idUser );
+            var existUser = await userRepository.GetAsync(u => u.Id == idUser);
             if (existUser.Count() != 1)
-                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.Unauthorized,$"No se encuntra el Usuario con Id:{idUser}" );
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.Unauthorized, $"No se encuntra el Usuario con Id:{idUser}");
             return existUser.FirstOrDefault();
         }
 
@@ -68,14 +71,14 @@ namespace Dach.ElectionSystem.Services.Data
         {
             var existVote = await voteRepository.GetAsync(u => u.Id == id);
             if (existVote.Count() != 1)
-                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound,$"No se encuntra el voto con Id:{id}");
+                throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el voto con Id:{id}");
             return existVote.FirstOrDefault();
         }
 
         public async Task<Candidate> ValidateCandiate(int id)
         {
             var existCandidate = await candidateRepository.GetAsyncInclude(u => u.Id == id
-                                                                            ,includeProperties: u=> $"{nameof(u.User)}");
+                                                                            , includeProperties: u => $"{nameof(u.User)}");
             if (existCandidate.Count() != 1)
                 throw new ExceptionCustom(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el candidato con Id:{id}");
             return existCandidate.FirstOrDefault();

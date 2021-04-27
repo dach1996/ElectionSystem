@@ -1,4 +1,8 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -107,6 +111,55 @@ namespace Dach.ElectionSystem.Common
             }
             return hashInputSalt == password;
         }
+
+
+        public static void CopyPropertiesTo<T, TU>(this T source, TU dest)
+        {
+            var sourceProps = typeof(T).GetProperties().Where(x => x.CanRead).ToList();
+            var destProps = typeof(TU).GetProperties()
+                    .Where(x => x.CanWrite)
+                    .ToList();
+            foreach (var item in sourceProps)
+            {
+                var h = item.GetValue(source);
+            }
+            foreach (var sourceProp in sourceProps)
+            {
+                if (destProps.Any(x => x.Name == sourceProp.Name))
+                {
+                    var p = destProps.First(x => x.Name == sourceProp.Name);
+                    if (p.CanWrite)
+                    { // check if the property can be set or no.
+                        p.SetValue(dest, sourceProp.GetValue(source, null), null);
+                    }
+                }
+
+            }
+
+        }
+
+        /// <summary>
+        /// Genera un código combinado en base a letras y números
+        /// </summary>
+        /// <param name="numberCharacters"></param>
+        /// <returns></returns>
+        public static string GenerateCode(int numberCharacters)
+        {
+            var allowableChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            var random = new byte[numberCharacters];
+            //Genera los números random
+            using (var rng = new RNGCryptoServiceProvider())
+                rng.GetBytes(random);
+            //Transforma caracteres permitidos a lista.
+            var characteresArray = allowableChars.ToCharArray();
+            //Obtiene número de caracteres soportados
+            var characteresArraylength = characteresArray.Length;
+            var chars = new char[numberCharacters];
+            for (var i = 0; i < numberCharacters; i++)
+                chars[i] = characteresArray[random[i] % characteresArraylength];
+            return new string(chars);
+        }
         #endregion
+
     }
 }

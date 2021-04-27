@@ -88,6 +88,13 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// <value></value>
         [Column("EVT_ESTADO")]
         public bool IsActive { get; set; }
+
+        /// <summary>
+        /// Borrado Lógico del Evento
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_BORRADO")]
+        public bool IsDelete { get; set; }
         #endregion
 
         #region Relations

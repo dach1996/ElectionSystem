@@ -10,7 +10,6 @@ namespace Dach.ElectionSystem.Models.Request.Event
     public class EventBaseRequest : EventBase, IRequestBase
     {
 
-
         /// <summary>
         /// Clase contexto de Token
         /// </summary>

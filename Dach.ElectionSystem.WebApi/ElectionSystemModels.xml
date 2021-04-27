@@ -292,6 +292,11 @@
             Evento Registrado
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.MailError">
+            <summary>
+            Error al Enviar Mail
+            </summary>
+        </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ModelInvalid">
             <summary>
             Error del sistema
@@ -308,6 +313,16 @@
             </summary>
         </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.MaxEventAllow">
+            <summary>
+            Error maximos  evento permitidos
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.MaxPeopleEvent">
+            <summary>
+            Error maximos  evento permitidos
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.EventCreator">
             <summary>
             Error maximos  evento permitidos
             </summary>
@@ -336,6 +351,21 @@
             <summary>
             Transacción exitosa
             </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Enums.OrderBy">
+            <summary>
+            Tipos de ordenamiento
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.OrderBy.Desc">
+            <summary>
+             Descendente
+             </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.OrderBy.Asc">
+            <summary>
+             Ascendente
+             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Enums.ResponseType">
             <summary>
@@ -405,6 +435,41 @@
             <param name="messageCodesApi">Mensaje de respuesta</param>
             <param name="responseType">Tipo de respuesta</param>
             <param name="messageSpecific">Mensaje Específico</param>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Mail.MailModel">
+            <summary>
+            Modelo para Mail
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Mail.MailModel.From">
+            <summary>
+            De
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Mail.MailModel.Subject">
+            <summary>
+            Asunto
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Mail.MailModel.To">
+            <summary>
+            Para
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Mail.MailModel.Template">
+            <summary>
+            TemplateId
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Mail.MailModel.Params">
+            <summary>
+            Parámetros
+            </summary>
+            <value></value>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Persitence.Candidate">
             <summary>
@@ -561,6 +626,12 @@
         <member name="P:Dach.ElectionSystem.Models.Persitence.Event.IsActive">
             <summary>
             Evento está Activo
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.IsDelete">
+            <summary>
+            Borrado Lógico del Evento
             </summary>
             <value></value>
         </member>
@@ -848,6 +919,16 @@
             Id de Usuario
             </summary>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest">
+            <summary>
+            Clase modelo para Request de Login
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest.Email">
+            <summary>
+            Email del usuario
+            </summary>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Auth.LoginRequest">
             <summary>
             Clase modelo para Request de Login
@@ -1070,6 +1151,36 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventGetRequest.Offset">
+            <summary>
+            Paginación
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventGetRequest.OrderBy">
+            <summary>
+            Orden de Consulta
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventGetRequest.Limit">
+            <summary>
+            Cantidad de Registros
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventGetRequest.Name">
+            <summary>
+            Nombre de evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventGetRequest.Category">
+            <summary>
+            Categoría de Evento
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest">
             <summary>
             Clase EventUpdateRequest
@@ -1083,6 +1194,29 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest.Id">
             <summary>
             Id de Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.Methods.IGetRequest">
+            <summary>
+            Clase que erada los métodos get
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Methods.IGetRequest.Offset">
+            <summary>
+            Paginación
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Methods.IGetRequest.OrderBy">
+            <summary>
+            Orden
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Methods.IGetRequest.Limit">
+            <summary>
+            Límite de Registros
             </summary>
             <value></value>
         </member>
@@ -1174,9 +1308,9 @@
             Email Usuario
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserUpdateRequest.IsActive">
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserUpdateRequest.Password">
             <summary>
-            Estado del Usuario
+            Constraseña de Usuario
             </summary>
         </member>
         <member name="P:Dach.ElectionSystem.Models.Request.User.UserUpdateRequest.MaxEventsAllow">

@@ -14,6 +14,11 @@
             Generar token mediante credenciales
             </summary>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Properties.AuthController.ForgottenPassword(Dach.ElectionSystem.Models.Auth.ForggotenPasswordRequest)">
+            <summary>
+            Olvidé contraseña
+            </summary>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.CreateCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest,System.Int32,System.Int32)">
             <summary>
             Crear Candidato

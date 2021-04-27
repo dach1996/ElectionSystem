@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.BusinessLogic.Auth
 {
-    [AllowAnonymous]
     public class AuthHandler : IRequestHandler<LoginRequest, LoginResponse>
     {
         #region Constructor
