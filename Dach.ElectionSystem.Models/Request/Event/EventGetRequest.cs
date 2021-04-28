@@ -23,7 +23,7 @@ namespace Dach.ElectionSystem.Models.Request.Event
         /// </summary>
         /// <value></value>
         [Required]
-        [Range(1,int.MaxValue)]
+        [Range(0,int.MaxValue)]
         public int Offset { get; set; }
 
         /// <summary>
