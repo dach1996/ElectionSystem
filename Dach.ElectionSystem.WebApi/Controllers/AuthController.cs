@@ -38,7 +38,7 @@ namespace Dach.ElectionSystem.WebApi.Properties
         /// Olvidé contraseña
         /// </summary>
         [HttpPost]
-        [ProducesResponseType(200, Type = typeof(GenericResponse<ForggotenPasswordRequest>))]
+        [ProducesResponseType(200, Type = typeof(GenericResponse<Unit>))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         [Route("forgottenpassword")]

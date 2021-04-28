@@ -1,6 +1,7 @@
 ﻿using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.User;
 using Dach.ElectionSystem.Models.ResponseBase;
+using Dach.ElectionSystem.Utils.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace Dach.ElectionSystem.WebApi.Controllers
 {
     [Route("api/users")]
-
+    [ServiceFilter(typeof(ModelFilter))]
     [ApiController]
     public class UserController : ApiControllerBase
     {
@@ -60,6 +61,17 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         public async Task<IActionResult> CreateUser([FromBody] UserCreateRequest request)
         => Success(await _mediator.Send(request));
 
+
+        /// <summary>
+        /// Cambiar Contraseña
+        /// </summary>
+        [HttpPost]
+        [ProducesResponseType(200, Type = typeof(GenericResponse<Unit>))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [Route("changepassword")]
+        public async Task<IActionResult> CreateUser([FromBody] ChangePasswordRequest request)
+        => Success(await _mediator.Send(request));
 
         #endregion
     }

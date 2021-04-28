@@ -135,6 +135,11 @@
             Crear Usuario
             </summary>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser(Dach.ElectionSystem.Models.Request.User.ChangePasswordRequest)">
+            <summary>
+            Cambiar Contraseña
+            </summary>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest,System.Int32)">
             <summary>
             Registrar Voto

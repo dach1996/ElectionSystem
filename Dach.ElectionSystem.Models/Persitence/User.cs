@@ -43,6 +43,10 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// </summary>
         [Column("USU_PASSWORD")] public string Password { get; set; }
         /// <summary>
+        /// Contraseña Usuario
+        /// </summary>
+        [Column("USU_TEM_PASSWORD")] public string TemPassword { get; set; }
+        /// <summary>
         /// Primer nombre Usuario
         /// </summary>
         [Column("USU_NOMBRE")] public string FirstName { get; set; }

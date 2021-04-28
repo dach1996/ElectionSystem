@@ -41,7 +41,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
         public async Task<LoginResponse> Handle(LoginRequest request, CancellationToken cancellationToken)
         {
             var passwordHash = Common.Util.ComputeSHA256(request.Password, _secretKey);
-            var user = (await _usuarioRepository.GetAsync(u => u.Email == request.Email)).FirstOrDefault();
+            var user = (await _usuarioRepository.GetAsync(u => u.Email == request.Email && (u.Password == passwordHash || u.TemPassword == passwordHash))).FirstOrDefault();
             if (user == null)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             if (!user.IsActive)

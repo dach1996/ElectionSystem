@@ -747,6 +747,11 @@
             Contraseña Usuario
             </summary>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.User.TemPassword">
+            <summary>
+            Contraseña Usuario
+            </summary>
+        </member>
         <member name="P:Dach.ElectionSystem.Models.Persitence.User.FirstName">
             <summary>
             Primer nombre Usuario
@@ -1217,6 +1222,17 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Methods.IGetRequest.Limit">
             <summary>
             Límite de Registros
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.User.ChangePasswordRequest">
+            <summary>
+            Request para cambiar de contraseña
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.ChangePasswordRequest.NewPassword">
+            <summary>
+            Nueva Contraseña
             </summary>
             <value></value>
         </member>

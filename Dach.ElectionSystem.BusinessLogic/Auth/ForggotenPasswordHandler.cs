@@ -48,7 +48,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
             var user = (await _usuarioRepository.GetAsync(u => u.Email == request.Email)).FirstOrDefault();
             if (user == null)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
-            user.Password = passwordHash;
+            user.TemPassword = passwordHash;
             var isUpdate = await _usuarioRepository.Update(user);
             if (!isUpdate)
                 throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
