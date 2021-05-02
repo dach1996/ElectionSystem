@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>Dach.ElectionSystem.Common</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>0af010bc-c2ff-4ac9-959a-d2fed1454865</ProjectGuid>
+  <FullPath>C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\Dach.ElectionSystem.Common.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\wwwda\source\repos\ElectionSystem\.sonarqube\conf\124\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\bin\Debug\net5.0\Dach.ElectionSystem.Common.dll.RoslynCA.json|C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\bin\Debug\net5.0\Dach.ElectionSystem.Common.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\wwwda\source\repos\ElectionSystem\.sonarqube\out\124</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>net5.0</TargetFramework>
+</ProjectInfo>

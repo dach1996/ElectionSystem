@@ -70,7 +70,6 @@ namespace Dach.ElectionSystem.Services.TokenJWT
         {
             try
             {
-                _logger.Log(LogLevel.Error, $"Estoy en Token");
                 var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
                 if (token == null)
                     throw new CustomException(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);

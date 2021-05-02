@@ -19,6 +19,7 @@ namespace Dach.ElectionSystem.Models.Persitence
             this.ListEventAdministrator = new List<EventAdministrator>();
             this.ListVote = new List<Vote>();
             this.ListCandidate = new List<Candidate>();
+
         }
         #endregion
 
@@ -74,7 +75,14 @@ namespace Dach.ElectionSystem.Models.Persitence
         [Column("EVT_CATEGORIA")]
         public string Category { get; set; }
 
-         /// <summary>
+        /// <summary>
+        /// Código de Evento
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_CODIGO_EVENTO")]
+        public string CodeEvent { get; set; }
+
+        /// <summary>
         /// Id Usuario Creador de evento
         /// </summary>
         /// <value></value>
@@ -114,7 +122,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// Eventos Usuarios
         /// </summary>
         /// <value></value>
-        public ICollection<Candidate> ListCandidate{ get; set; }
+        public ICollection<Candidate> ListCandidate { get; set; }
 
         /// <summary>
         /// Eventos Usuarios
