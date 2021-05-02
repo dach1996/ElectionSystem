@@ -5,18 +5,10 @@ namespace Dach.ElectionSystem.Utils.Mapper.User
 {
     public static class UserMapper
     {
-        public static void ConfigUserMapper(this CustomMapperDTO profile)
+        public static void ConfigUserMapper(this CustomMapperDto profile)
         {
             //Mapper to User - User Create
-            /*profile.CreateMap<UserCreateRequest, Models.Persitence.User>()
-                .ForMember(
-                destino => destino.Rol,
-                origen => origen.MapFrom(u => (int)u.Role))
-                .ForMember(
-                destino => destino.RolName,
-                origen => origen.MapFrom(u => u.Role.ToString())
-                );*/
-            profile.CreateMap<UserCreateRequest, Models.Persitence.User>();
+             profile.CreateMap<UserCreateRequest, Models.Persitence.User>();
             profile.CreateMap<Models.Persitence.User, UserCreateResponse>();
 
             //Mapper to User - User Update

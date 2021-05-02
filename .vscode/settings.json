@@ -30,5 +30,6 @@
             "username": "DB_A49E05_electionSystem_admin",
             "password": "dach1996"
         }
-    ]
+    ],
+    "omnisharp.enableRoslynAnalyzers": true
 }

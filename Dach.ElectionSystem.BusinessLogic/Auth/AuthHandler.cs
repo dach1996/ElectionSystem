@@ -17,24 +17,17 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
     {
         #region Constructor
         private readonly ITokenService _tokenService;
-        private readonly ILogger<AuthHandler> _logger;
-        private readonly IConfiguration _configuration;
         private readonly string _secretKey;
-        public IMediator _mediator { get; }
-        public IUserRepository _usuarioRepository { get; }
+        private readonly IUserRepository _usuarioRepository;
 
-        public AuthHandler(IMediator mediator,
+        public AuthHandler(
             IUserRepository usuarioRepository,
             ITokenService tokenService,
-            ILogger<AuthHandler> logger,
             IConfiguration configuration)
         {
-            _mediator = mediator;
             _usuarioRepository = usuarioRepository;
             _tokenService = tokenService;
-            _logger = logger;
-            _configuration = configuration;
-            _secretKey = _configuration.GetSection("SecretKey").Value;
+            _secretKey = configuration.GetSection("SecretKey").Value;
         }
 
         #endregion
@@ -43,9 +36,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
             var passwordHash = Common.Util.ComputeSHA256(request.Password, _secretKey);
             var user = (await _usuarioRepository.GetAsync(u => u.Email == request.Email && (u.Password == passwordHash || u.TemPassword == passwordHash))).FirstOrDefault();
             if (user == null)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             if (!user.IsActive)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.UserIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                throw new CustomException(Models.Enums.MessageCodesApi.UserIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             var token = _tokenService.GenerateTokenJwt(user);
             return new LoginResponse() { Token = token };
         }

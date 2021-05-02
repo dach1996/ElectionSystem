@@ -1,18 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Dach.ElectionSystem.Utils.Extension
 {
     public static class SwaggerExtension
     {
-        public static void ConfigureSwaggerServices(this IServiceCollection services, List<string> documentationFiles)
+        public static void ConfigureSwaggerServices(this IServiceCollection services)
         {
 
             services.AddSwaggerGen(c =>
@@ -56,18 +51,22 @@ namespace Dach.ElectionSystem.Utils.Extension
                         var parameters = operation.Value.Parameters.ToList();
                         foreach (var parameter in parameters)
                         {
-                            if (parameter.Name.StartsWith("TokenModel"))
-                                operation.Value.Parameters.Remove(parameter);
-                            if (parameter.Name.ToUpper().StartsWith("ID") &&
-                            (operation.Key == OperationType.Get
-                            || operation.Key == OperationType.Delete )&&
-                             parameter.In == ParameterLocation.Query)
-                                operation.Value.Parameters.Remove(parameter);
-                            if (parameter.Name.StartsWith("UserContext"))
-                                operation.Value.Parameters.Remove(parameter);
+                            DeleteParams(parameter, operation);
                         }
                     }
                 }
+            }
+            private static void DeleteParams(OpenApiParameter parameter, KeyValuePair<OperationType, OpenApiOperation> operation)
+            {
+                if (parameter.Name.StartsWith("TokenModel"))
+                    operation.Value.Parameters.Remove(parameter);
+                if (parameter.Name.ToUpper().StartsWith("ID") &&
+                (operation.Key == OperationType.Get
+                || operation.Key == OperationType.Delete) &&
+                 parameter.In == ParameterLocation.Query)
+                    operation.Value.Parameters.Remove(parameter);
+                if (parameter.Name.StartsWith("UserContext"))
+                    operation.Value.Parameters.Remove(parameter);
             }
         }
     }

@@ -9,7 +9,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
 {
     [Route("api/votes")]
     [ApiController]
-    [ServiceFilter(typeof(ModelFilter))]
+    [ServiceFilter(typeof(ModelFilterAttribute))]
     public class VoteController : ApiControllerBase
     {
         #region Constructor

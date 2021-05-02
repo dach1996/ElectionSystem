@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace Dach.ElectionSystem.Models.Enums
 {
     /// <summary>
     /// Mensages genéricos de error
     /// </summary>
+    [Serializable]
     public enum MessageCodesApi
     {
         /// <summary>
@@ -33,6 +33,12 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "Token Expirado, Logee nuevamente")]
         TokenExpired = 103,
+
+        /// <summary>
+        /// Inconsistencia de datos
+        /// </summary>
+        [EnumMember(Value = "Servicio No Autorizado")]
+        NotAuthorization = 112,
 
         /// <summary>
         /// Inconsistencia de datos

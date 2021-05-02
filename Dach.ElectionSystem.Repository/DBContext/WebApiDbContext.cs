@@ -6,10 +6,8 @@ namespace Dach.ElectionSystem.Repository.DBContext
     public class WebApiDbContext : DbContext
     {
         #region Constructor
-        private readonly ILogger<WebApiDbContext> logger;
-           public WebApiDbContext(DbContextOptions<WebApiDbContext> options,ILogger<WebApiDbContext> logger) : base(options)
+           public WebApiDbContext(DbContextOptions<WebApiDbContext> options) : base(options)
         {
-            this.logger = logger;
         }
         #endregion
         
@@ -19,6 +17,7 @@ namespace Dach.ElectionSystem.Repository.DBContext
         public DbSet<Candidate> Candidate { get; set; }
         public DbSet<Vote> Vote { get; set; }
         public DbSet<EventAdministrator> EventAdministrator { get; set; }
+        public DbSet<EventNumber> EventNumber { get; set; }
         #endregion
     }
 }

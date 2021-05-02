@@ -7,9 +7,9 @@ using Dach.ElectionSystem.Utils.Mapper.EventAdministrator;
 
 namespace Dach.ElectionSystem.Utils.Mapper
 {
-    public class CustomMapperDTO : Profile
+    public class CustomMapperDto : Profile
     {
-        public CustomMapperDTO()
+        public CustomMapperDto()
         {
             //Mappers to Candidate
 

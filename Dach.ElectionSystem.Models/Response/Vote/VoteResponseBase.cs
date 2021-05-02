@@ -17,7 +17,7 @@ namespace Dach.ElectionSystem.Models.Response.Vote
         /// Id de Voteo
         /// </summary>
         /// <value></value>
-        public int id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Id de Evento

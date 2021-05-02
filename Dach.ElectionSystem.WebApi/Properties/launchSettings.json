@@ -24,7 +24,8 @@
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:44317;http://localhost:44318",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CONNECTION_SQL": "Server=DESKTOP-6PGT33F;Initial Catalog=ElectionSystem;Integrated Security=true; User Id=sa;Password=dach1996;"
       }
     }
   }

@@ -2,7 +2,7 @@
 using System;
 namespace Dach.ElectionSystem.Repository.UnitOfWork
 { 
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork
     {
         WebApiDbContext Context { get; }
         void SaveChanges();

@@ -14,32 +14,23 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
     public class CandidateUpdateHandler : IRequestHandler<CandidateUpdateRequest, CandidateUpdateResponse>
     {
         #region Constructor
-        private readonly ICandidateRepository candidateRepository;
+        private readonly ICandidateRepository _candidateRepository;
         private readonly IMapper mapper;
-        private readonly ILogger<CandidateUpdateHandler> logger;
-        private readonly IEventRepository eventRepository;
-
         public CandidateUpdateHandler(
             ICandidateRepository candidateRepository,
-            IMapper mapper,
-            ILogger<CandidateUpdateHandler> logger,
-            IEventRepository eventRepository
-           )
+            IMapper mapper  )
         {
-            this.candidateRepository = candidateRepository;
-            this.mapper = mapper;
-            this.logger = logger;
-            this.eventRepository = eventRepository;
-           
+            this._candidateRepository = candidateRepository;
+            this.mapper = mapper;         
         }
         #endregion
 
         #region Handler
              public async Task<CandidateUpdateResponse> Handle(CandidateUpdateRequest request, CancellationToken cancellationToken)
         {
-            var updateCandidate = (await candidateRepository.GetAsync(c => c.Id==request.IdCandidate)).FirstOrDefault();
+            var updateCandidate = (await _candidateRepository.GetAsync(c => c.Id==request.IdCandidate)).FirstOrDefault();
             if(updateCandidate==null)
-             throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+             throw new CustomException(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
             
             updateCandidate.Age = request.Age.Value;
             updateCandidate.Details = request.Details;
@@ -47,9 +38,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
             updateCandidate.PostionsWorks = request.PostionsWorks;
             updateCandidate.Role = request.Role;
             updateCandidate.ProposalDetails = request.ProposalDetails;
-            var isUpdate = await candidateRepository.Update(updateCandidate);
+            var isUpdate = await _candidateRepository.Update(updateCandidate);
             if (!isUpdate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             var response = mapper.Map<CandidateUpdateResponse>(updateCandidate);
             return response;
         }

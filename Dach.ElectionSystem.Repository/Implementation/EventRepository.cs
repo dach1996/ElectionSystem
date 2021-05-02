@@ -13,9 +13,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
     public class EventRepository : GenericRepository<Event>, IEventRepository
     {
         #region Constructor
-        private readonly IUnitOfWork unitOfWork;
-        public EventRepository(IUnitOfWork unitOfWork) : base(unitOfWork) =>
-            this.unitOfWork = unitOfWork;
+        public EventRepository(IUnitOfWork unitOfWork) : base(unitOfWork){}
         #endregion
 
         public async Task<IEnumerable<Event>> GetEventsWithAdministratorAsync(Expression<Func<Event, bool>> whereCondition = null, Func<IQueryable<Event>,

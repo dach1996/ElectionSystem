@@ -16,18 +16,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         #region Constructor
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;
-        private readonly IUserRepository userRepository;
         private readonly ValidateIntegrity validateIntegrity;
 
         public EventDeleteHandler(
             IEventRepository eventRepository,
             IMapper mapper,
-            IUserRepository userRepository,
             ValidateIntegrity validateIntegrity)
         {
             this._eventRepository = eventRepository;
             this._mapper = mapper;
-            this.userRepository = userRepository;
             this.validateIntegrity = validateIntegrity;
         }
         #endregion
@@ -39,13 +36,13 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             //Valida que el usuario administrador no tenga un evento con el mismo nombre:
             var isUserCurrentCreatorEvent = eventCurrent.IdUser == request.UserContext.Id;
             if (!isUserCurrentCreatorEvent)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.EventCreator, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
+                throw new CustomException(Models.Enums.MessageCodesApi.EventCreator, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
             eventCurrent.IsDelete = true;
             eventCurrent.Name = $"{eventCurrent.Name}_{DateTime.Now}_Delete";
             var responseDelete = await _eventRepository.Update(eventCurrent);
             //Valida que el evento se haya desactivado
             if (!responseDelete)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotDeleteRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotDeleteRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             return _mapper.Map<EventDeleteResponse>(eventCurrent);
         }
         #endregion

@@ -16,18 +16,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         #region Constructor
         private readonly IVoteRepository _VoteRepository;
         private readonly IMapper _mapper;
-        private readonly IUserRepository userRepository;
-        private readonly ValidateIntegrity validateIntegrity;
+         private readonly ValidateIntegrity validateIntegrity;
 
         public VoteDeleteHandler(
             IVoteRepository VoteRepository,
             IMapper mapper,
-            IUserRepository userRepository,
             ValidateIntegrity validateIntegrity)
         {
             this._VoteRepository = VoteRepository;
             this._mapper = mapper;
-            this.userRepository = userRepository;
             this.validateIntegrity = validateIntegrity;
         }
         #endregion
@@ -40,12 +37,12 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
             var voteCurrent = (await _VoteRepository.GetAsyncInclude(v=> v.IdEvent == eventCurrent.Id &&
                                                                     v.IdUser == request.UserContext.Id)).FirstOrDefault();
             if (voteCurrent == null)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
 
             voteCurrent.IsActive=false;
             var isUpdate = await _VoteRepository.Update(voteCurrent);
             if (!isUpdate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotDeleteRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotDeleteRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             return _mapper.Map<VoteDeleteResponse>(voteCurrent);
         }
         #endregion

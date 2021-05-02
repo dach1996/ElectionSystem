@@ -7,7 +7,7 @@ using Dach.ElectionSystem.Models.Request.Vote;
 using Dach.ElectionSystem.Models.Response.Vote;
 using Dach.ElectionSystem.Repository.Interfaces;
 using MediatR;
-using Microsoft.Extensions.Logging;
+
 
 namespace Dach.ElectionSystem.BusinessLogic.Vote
 {
@@ -16,19 +16,13 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         #region Constructor
         private readonly IVoteRepository _VoteRepository;
         private readonly IMapper _mapper;
-        private readonly IUserRepository userRepository;
-        private readonly ILogger<VoteGetHandler> logger;
 
         public VoteGetHandler(
             IVoteRepository VoteRepository,
-            IMapper mapper,
-            IUserRepository userRepository,
-            ILogger<VoteGetHandler> logger)
+            IMapper mapper)
         {
             this._VoteRepository = VoteRepository;
             this._mapper = mapper;
-            this.userRepository = userRepository;
-            this.logger = logger;
         }
         #endregion
         #region Handler

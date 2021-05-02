@@ -9,10 +9,8 @@ using System.Linq;
 using System.Net;
 using Dach.ElectionSystem.Models.Enums;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
-using Dach.ElectionSystem.Services.TokenJWT;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Models.Persitence;
 using Dach.ElectionSystem.Models.RequestBase;
 
@@ -23,18 +21,13 @@ namespace Dach.ElectionSystem.Services.TokenJWT
 
         #region Contructor
         private readonly ILogger<TokenService> _logger;
-        public IConfiguration _configuration { get; }
-        private string secretKey { get; set; }
-        private string expireTime { get; set; }
-
-        private readonly IUserRepository _userRepository;
-        public TokenService(IConfiguration configuraton, ILogger<TokenService> logger, IUserRepository userRepository)
+        private readonly string secretKey;
+        private readonly string expireTime;
+        public TokenService(IConfiguration configuraton, ILogger<TokenService> logger)
         {
-            _configuration = configuraton;
             _logger = logger;
-            _userRepository = userRepository;
-            secretKey = _configuration.GetSection("SecretKey").Value;
-            expireTime = _configuration.GetValue<string>("ParamsJWT:JWT_EXPIRE_MINUTES");
+            secretKey = configuraton.GetSection("SecretKey").Value;
+            expireTime = configuraton.GetValue<string>("ParamsJWT:JWT_EXPIRE_MINUTES");
         }
         #endregion
 
@@ -80,7 +73,7 @@ namespace Dach.ElectionSystem.Services.TokenJWT
                 _logger.Log(LogLevel.Error, $"Estoy en Token");
                 var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
                 if (token == null)
-                    throw new ExceptionCustom(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
+                    throw new CustomException(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var key = Encoding.ASCII.GetBytes(secretKey);
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
@@ -99,12 +92,12 @@ namespace Dach.ElectionSystem.Services.TokenJWT
 
             {
                 _logger.LogError(ex.Message);
-                throw new ExceptionCustom(MessageCodesApi.InvalidToken, ResponseType.Error, HttpStatusCode.Unauthorized);
+                throw new CustomException(MessageCodesApi.InvalidToken, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
             catch (SecurityTokenValidationException ex)
             {
                 _logger.LogError(ex.Message);
-                throw new ExceptionCustom(MessageCodesApi.TokenExpired, ResponseType.Error, HttpStatusCode.Unauthorized);
+                throw new CustomException(MessageCodesApi.TokenExpired, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
         }
 
@@ -114,13 +107,13 @@ namespace Dach.ElectionSystem.Services.TokenJWT
             {
                 var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
                 if (token == null)
-                    throw new ExceptionCustom(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
+                    throw new CustomException(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var jwtSecurityToken = tokenHandler.ReadJwtToken(token);
                 var claims = jwtSecurityToken.Claims.ToList();
-                var username = claims.Where(c => c.Type == nameof(Models.Enums.Claim.Name)).First().Value;
-                var email = claims.Where(c => c.Type == nameof(Models.Enums.Claim.Email)).First().Value;
-                var id = claims.Where(c => c.Type == nameof(Models.Enums.Claim.Id)).First().Value;
+                var username = claims.FirstOrDefault(c => c.Type == nameof(Models.Enums.Claim.Name)).Value;
+                var email = claims.FirstOrDefault(c => c.Type == nameof(Models.Enums.Claim.Email)).Value;
+                var id = claims.FirstOrDefault(c => c.Type == nameof(Models.Enums.Claim.Id)).Value;
                 var tokenModel = new TokenModel()
                 {
                     Username = username,
@@ -132,17 +125,13 @@ namespace Dach.ElectionSystem.Services.TokenJWT
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                throw new ExceptionCustom(MessageCodesApi.InvalidParceToken, ResponseType.Error, HttpStatusCode.Unauthorized);
+                throw new CustomException(MessageCodesApi.InvalidParceToken, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
         }
 
         private bool LifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
         {
-            if (expires != null)
-            {
-                if (DateTime.UtcNow < expires) return true;
-            }
-            return false;
+            return (expires != null && DateTime.UtcNow < expires);
         }
     }
 }

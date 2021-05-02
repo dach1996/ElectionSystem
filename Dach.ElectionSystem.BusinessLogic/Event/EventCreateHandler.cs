@@ -17,19 +17,16 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         #region Constructor 
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;
-        private readonly IUserRepository userRepository;
         private readonly ValidateIntegrity validateIntegrity;
 
         public EventCreateHandler(
         IEventRepository eventRepository,
         IMapper mapper,
-        IUserRepository userRepository,
         ValidateIntegrity validateIntegrity
         )
         {
             this._eventRepository = eventRepository;
             this._mapper = mapper;
-            this.userRepository = userRepository;
             this.validateIntegrity = validateIntegrity;
         }
         #endregion
@@ -39,16 +36,12 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             //Valida el usuario que envía request
             var userCurrent = await validateIntegrity.ValidateUser(request);
             //Valida el número de eventos permitidos para el usuario
-            var eventCount = await _eventRepository.GetAsync(e => e.IdUser== userCurrent.Id && !e.IsDelete);
-            if ( eventCount.Count() >= userCurrent.MaxEventsAllow)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.MaxEventAllow, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+            var eventCount = await _eventRepository.GetAsync(e => e.IdUser == userCurrent.Id && !e.IsDelete);
+            if (eventCount.Count() >= userCurrent.EventNumber.NumberMaxEvent)
+                throw new CustomException(Models.Enums.MessageCodesApi.MaxEventAllow, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
             //Valida coerencia de Datos del request
-            if (request.MaxPeople)
-            {
-                if (request.NumberMaxCandidate <= 5)
-                    throw new ExceptionCustom(Models.Enums.MessageCodesApi.MaxPeopleEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
-            }
-
+            if (request.MaxPeople && request.NumberMaxCandidate <= 5)
+                throw new CustomException(Models.Enums.MessageCodesApi.MaxPeopleEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
             var newEvent = _mapper.Map<Models.Persitence.Event>(request);
             //Registramos al usuario como creador del evento
             newEvent.UserCreator = userCurrent;
@@ -63,7 +56,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             var hasCreate = await _eventRepository.CreateAsync(newEvent);
             //Valida que el evento sea creado
             if (!hasCreate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             var responseEvent = _mapper.Map<EventCreateResponse>(newEvent);
             return responseEvent;
         }

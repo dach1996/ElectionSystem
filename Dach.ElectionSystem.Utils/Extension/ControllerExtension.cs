@@ -37,7 +37,7 @@ namespace Dach.ElectionSystem.Utils.Extension
                 };
             }
             ).AddJsonOptions(options =>
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); ;
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); 
         }
     }
 }

@@ -20,7 +20,6 @@ namespace Dach.ElectionSystem.Models.Persitence
             this.ListEventAdministrator = new List<EventAdministrator>();
             this.ListCandidate = new List<Candidate>();
             this.IsActive = true;
-            this.MaxEventsAllow = 1;
             this.IsAdministrator = false;
         }
         #endregion
@@ -79,12 +78,8 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// <summary>
         /// Estado de Usuario
         /// </summary>
-        [Column("USU_NUM_EVENT_MAX")] public int MaxEventsAllow { get; set; }
-
-        /// <summary>
-        /// Estado de Usuario
-        /// </summary>
         [Column("USU_ADMINISTRADOR")] public bool IsAdministrator { get; set; }
+
         #endregion
 
         #region Relations
@@ -99,6 +94,11 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// </summary>
         /// <value></value>
         public virtual List<Candidate> ListCandidate { get; set; }
+
+        /// <summary>
+        /// Relación con cantidad de eventos permitidos
+        /// </summary>
+        public virtual EventNumber EventNumber { get; set; }
         #endregion
 
     }

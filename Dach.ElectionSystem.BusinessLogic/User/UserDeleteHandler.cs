@@ -35,26 +35,26 @@ namespace Dach.ElectionSystem.BusinessLogic.User
             if (userCurrent == null)
             {
                 logger.LogWarning($"No se encuentra usuario Token con ID:{request.TokenModel.Id}");
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             }
 
             var userToDesactive = await userRepository.GetByIdAsync(Convert.ToInt32(request.Id));
             if (userToDesactive == null)
             {
                 
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             }
             if (!userToDesactive.IsActive)
             {
                 logger.LogWarning($"El usuario con Id: {request.Id} ya está desactivado");
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.UserIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                throw new CustomException(Models.Enums.MessageCodesApi.UserIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             }
             userToDesactive.IsActive = false;
             var isUpdate = await userRepository.Update(userToDesactive);
             if (!isUpdate)
             {
                 logger.LogWarning($"No se pudo actualizar Usuario");
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             }
             return mapper.Map<UserDeleteResponse>(userToDesactive);
         }

@@ -13,7 +13,7 @@ namespace Dach.ElectionSystem.Utils.Extension
         {
             var fi = value.GetType().GetField(value.ToString());
 
-            if (fi ==null && fi.GetCustomAttributes(typeof(DescriptionAttribute), false) is DescriptionAttribute[] attributes && attributes.Any())
+            if (fi.GetCustomAttributes(typeof(DescriptionAttribute), false) is DescriptionAttribute[] attributes && attributes.Any())
             {
                 return attributes.First().Description;
             }

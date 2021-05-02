@@ -19,13 +19,12 @@
             Olvidé contraseña
             </summary>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.CreateCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest,System.Int32,System.Int32)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.CreateCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest,System.Int32)">
             <summary>
             Crear Candidato
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
-            <param name="idCandidate"></param>
             <returns></returns>
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.DesactiveCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest,System.Nullable{System.Int32},System.Nullable{System.Int32})">
@@ -135,9 +134,14 @@
             Crear Usuario
             </summary>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.CreateUser(Dach.ElectionSystem.Models.Request.User.ChangePasswordRequest)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.ChangePassword(Dach.ElectionSystem.Models.Request.User.ChangePasswordRequest)">
             <summary>
             Cambiar Contraseña
+            </summary>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.IncreaseEvents(Dach.ElectionSystem.Models.Request.User.IncreaseEventsRequest)">
+            <summary>
+            Incrementar el número de eventos permitidos
             </summary>
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest,System.Int32)">

@@ -9,13 +9,10 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
     {
 
         private readonly RequestDelegate _next;
-        private readonly ILogger<JwtAuthenticationMiddlware> logger;
 
-
-        public JwtAuthenticationMiddlware(RequestDelegate next,  ILogger<JwtAuthenticationMiddlware> logger)
+        public JwtAuthenticationMiddlware(RequestDelegate next)
         {
             _next = next;
-            this.logger = logger;
         }
         
         public async Task Invoke(HttpContext context, ITokenService tokenService)
@@ -30,7 +27,7 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
                 await _next.Invoke(context);
             }
         }
-        private bool IsUrlAllow(HttpContext request)
+        private static bool IsUrlAllow(HttpContext request)
         {
             var baseUrl = $"/api";
             return

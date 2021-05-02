@@ -1,12 +1,10 @@
-﻿using System.Runtime.Serialization;
-using Dach.ElectionSystem.Repository.Interfaces;
+﻿using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Repository.Implementation
@@ -25,7 +23,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
             return await _unitOfWork.Context.Set<T>().ToListAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> whereCondition = null,
+        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> whereCondition,
                                   Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                   string includeProperties = "")
         {
@@ -69,7 +67,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
 
             if (orderBy != null)
             {
-                orderBy(query);
+                _ = orderBy(query);
             }
             return await Task.Run<IQueryable<T>>(() => query);
         }
@@ -78,18 +76,13 @@ namespace Dach.ElectionSystem.Repository.Implementation
         {
 
             bool created = false;
-            try
-            {
-                var save = await _unitOfWork.Context.Set<T>().AddAsync(entity);
 
-                if (save != null)
-                    created = true;
-                _unitOfWork.Context.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            var save = await _unitOfWork.Context.Set<T>().AddAsync(entity);
+
+            if (save != null)
+                created = true;
+            _unitOfWork.Context.SaveChanges();
+
             return created;
         }
 
@@ -97,19 +90,12 @@ namespace Dach.ElectionSystem.Repository.Implementation
         {
 
             bool update = false;
-            try
-            {
-                var save = _unitOfWork.Context.Set<T>().Update(entity);
 
-                if (save != null)
-                    update = true;
-                _unitOfWork.Context.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            var save = _unitOfWork.Context.Set<T>().Update(entity);
 
+            if (save != null)
+                update = true;
+            _unitOfWork.Context.SaveChanges();
             return await Task.Run<bool>(() => update);
         }
 
@@ -117,18 +103,13 @@ namespace Dach.ElectionSystem.Repository.Implementation
         {
             bool remove = false;
             var getEntity = await this.GetByIdAsync(Id);
-            try
-            {
+
                 var save = _unitOfWork.Context.Set<T>().Remove(getEntity);
 
                 if (save != null)
                     remove = true;
                 _unitOfWork.Context.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+
             return remove;
         }
 

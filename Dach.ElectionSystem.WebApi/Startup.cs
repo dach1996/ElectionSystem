@@ -7,15 +7,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MediatR;
 using Dach.ElectionSystem.Utils.Extension;
-using System.Collections.Generic;
 using Dach.ElectionSystem.Utils.Mapper;
 using Dach.ElectionSystem.Utils.Filters;
 using Dach.ElectionSystem.Services.Intrastructure;
 using Dach.ElectionSystem.BusinessLogic.Auth;
+using System;
 
 namespace Dach.ElectionSystem.WebApi
 {
@@ -32,13 +31,7 @@ namespace Dach.ElectionSystem.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-#if DEBUG
-            services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=DESKTOP-6PGT33F;Initial Catalog=ElectionSystem;Integrated Security=true; User Id=sa;Password=dach1996;")
-            .EnableDetailedErrors().
-            EnableSensitiveDataLogging());
-#else
-            services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer("Server=SQL5103.site4now.net;Initial Catalog=DB_A49E05_electionSystem;User Id=DB_A49E05_electionSystem_admin;Password=dach1996"));
-#endif
+            services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer(Environment.GetEnvironmentVariable("CONNECTION_SQL")));
             services.AddRepositorys();
             services.AddServices();
             services.ConfigureController();
@@ -52,21 +45,12 @@ namespace Dach.ElectionSystem.WebApi
 
 
             });
-
-
-         
-        
-            services.ConfigureSwaggerServices(new List<string> { "ElectionSystem.xml" });
+            services.ConfigureSwaggerServices();
             services.AddMediatR(typeof(AuthHandler));
-            services.AddAutoMapper(typeof(CustomMapperDTO));
-           // services.AddIMediaRServices();
-            services.AddScoped<ModelFilter>();
-
-
+            services.AddAutoMapper(typeof(CustomMapperDto));
+            services.AddScoped<ModelFilterAttribute>();
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
 

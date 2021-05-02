@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Dach.ElectionSystem.Models.Auth;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
-using Dach.ElectionSystem.Models.Response.Auth;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.TokenJWT;
 using MediatR;
@@ -16,28 +15,18 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
     public class ForggotenPasswordHandler : IRequestHandler<ForggotenPasswordRequest, Unit>
     {
         #region Constructor
-        private readonly ITokenService _tokenService;
-        private readonly ILogger<AuthHandler> _logger;
-        private readonly IConfiguration _configuration;
         private readonly Services.Notification.INotification notification;
         private readonly string _secretKey;
-        public IMediator _mediator { get; }
-        public IUserRepository _usuarioRepository { get; }
+        private readonly IUserRepository _usuarioRepository;
 
-        public ForggotenPasswordHandler(IMediator mediator,
+        public ForggotenPasswordHandler(
             IUserRepository usuarioRepository,
-            ITokenService tokenService,
-            ILogger<AuthHandler> logger,
             IConfiguration configuration,
            Services.Notification.INotification notification)
         {
-            _mediator = mediator;
             _usuarioRepository = usuarioRepository;
-            _tokenService = tokenService;
-            _logger = logger;
-            _configuration = configuration;
             this.notification = notification;
-            _secretKey = _configuration.GetSection("SecretKey").Value;
+            _secretKey = configuration.GetSection("SecretKey").Value;
         }
 
         #endregion
@@ -47,11 +36,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
             var passwordHash = Common.Util.ComputeSHA256(newPasswordGenerate, _secretKey);
             var user = (await _usuarioRepository.GetAsync(u => u.Email == request.Email)).FirstOrDefault();
             if (user == null)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             user.TemPassword = passwordHash;
             var isUpdate = await _usuarioRepository.Update(user);
             if (!isUpdate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             var isSend = notification.SendMail(
                 new Models.Mail.MailModel()
                 {
@@ -63,7 +52,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
                 }
             );
             if (!isSend)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.MailError, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.MailError, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
 
             return Unit.Value;
         }

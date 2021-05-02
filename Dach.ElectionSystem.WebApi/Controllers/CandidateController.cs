@@ -10,7 +10,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
 {
     [Route("api/events/{idEvent}/candidates")]
     [ApiController]
-    [ServiceFilter(typeof(ModelFilter))]
+    [ServiceFilter(typeof(ModelFilterAttribute))]
     public class CandidateController : ApiControllerBase
     {
         #region Constructor
@@ -20,21 +20,19 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         #endregion
         #region Methods Controllers
 
-        /// <summary>
-        /// Crear Candidato
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="idEvent"></param>
-        /// <param name="idCandidate"></param>
-        /// <returns></returns>
+       /// <summary>
+       /// Crear Candidato
+       /// </summary>
+       /// <param name="request"></param>
+       /// <param name="idEvent"></param>
+       /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> CreateCandidate(
             [FromBody] CandidateCreateRequest request,
-            [FromRoute] int idEvent,
-            [FromRoute] int idCandidate )
+            [FromRoute] int idEvent )
         {
             request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));

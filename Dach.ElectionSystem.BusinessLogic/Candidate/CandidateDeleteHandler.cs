@@ -4,7 +4,6 @@ using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Repository.Interfaces;
 using MediatR;
-using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,19 +15,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         #region Constructor
         private readonly ICandidateRepository candidateRepository;
         private readonly IMapper mapper;
-        private readonly ILogger<CandidateDeleteHandler> logger;
         private readonly IEventRepository eventRepository;
-
         public CandidateDeleteHandler(
             ICandidateRepository candidateRepository,
             IMapper mapper,
-            ILogger<CandidateDeleteHandler> logger,
             IEventRepository eventRepository
             )
         {
             this.candidateRepository = candidateRepository;
             this.mapper = mapper;
-            this.logger = logger;
             this.eventRepository = eventRepository;
         }
         #endregion
@@ -39,14 +34,14 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
            
             var compareEvent = (await eventRepository.GetAsync(e => e.Id == request.IdEvent)).FirstOrDefault();
             if (compareEvent == null)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
             var candidate = (await candidateRepository.GetAsync(u => u.Id == request.IdCandidate)).FirstOrDefault();
             if (candidate == null)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
             candidate.IsActive = false;
             var isUpdate = await candidateRepository.Update(candidate);
             if (!isUpdate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             var response = mapper.Map<CandidateDeleteResponse>(candidate);
             return response;
         }

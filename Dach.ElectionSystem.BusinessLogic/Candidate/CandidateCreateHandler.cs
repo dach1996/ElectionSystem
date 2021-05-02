@@ -16,20 +16,17 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         #region Constructor
         private readonly ICandidateRepository candidateRepository;
         private readonly IMapper mapper;
-        private readonly ILogger<CandidateCreateHandler> logger;
         private readonly IEventRepository eventRepository;
         private readonly IUserRepository userRepository;
 
         public CandidateCreateHandler(
             ICandidateRepository candidateRepository,
             IMapper mapper,
-            ILogger<CandidateCreateHandler> logger,
             IEventRepository eventRepository,
             IUserRepository userRepository)
         {
             this.candidateRepository = candidateRepository;
             this.mapper = mapper;
-            this.logger = logger;
             this.eventRepository = eventRepository;
             this.userRepository = userRepository;
         }
@@ -41,15 +38,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
            
             var compareEvent = (await eventRepository.GetAsync(e => e.Id == request.IdEvent)).FirstOrDefault();
             if (compareEvent == null)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
             var user = (await userRepository.GetAsync(u => u.Id == request.IdUser)).FirstOrDefault();
             if (user == null)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
             var newCandidate = mapper.Map<Models.Persitence.Candidate>(request);
             var isCreate = await candidateRepository.CreateAsync(newCandidate);
 
             if (!isCreate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             var response = mapper.Map<CandidateCreateResponse>(newCandidate);
             return response;
         }

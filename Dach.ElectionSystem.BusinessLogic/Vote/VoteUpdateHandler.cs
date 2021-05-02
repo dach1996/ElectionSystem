@@ -18,21 +18,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         #region Constructor
         private readonly IVoteRepository _VoteRepository;
         private readonly IMapper _mapper;
-        private readonly IUserRepository userRepository;
-        private readonly ILogger<VoteUpdateHandler> logger;
-        private readonly ValidateIntegrity validateIntegrity;
+                private readonly ValidateIntegrity validateIntegrity;
 
         public VoteUpdateHandler(
             IVoteRepository VoteRepository,
             IMapper mapper,
-            IUserRepository userRepository,
-            ILogger<VoteUpdateHandler> logger,
             ValidateIntegrity validateIntegrity)
         {
             this._VoteRepository = VoteRepository;
             this._mapper = mapper;
-            this.userRepository = userRepository;
-            this.logger = logger;
             this.validateIntegrity = validateIntegrity;
         }
         #endregion
@@ -45,7 +39,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
             //Validamos que exista el Candidato
             var candidateCurrent = await validateIntegrity.ValidateCandiate(request.IdCandidate);
             if (candidateCurrent.IdEvent != eventCurrent.Id)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.DataInconsistency, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
+                throw new CustomException(Models.Enums.MessageCodesApi.DataInconsistency, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
 
             var voteCurrent = (await _VoteRepository.GetAsyncInclude(v => v.IdEvent == eventCurrent.Id &&
                                                                              v.IdUser == request.UserContext.Id)).FirstOrDefault();
@@ -56,7 +50,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
 
             var isUpdate = await _VoteRepository.Update(voteCurrent);
             if (!isUpdate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             return _mapper.Map<VoteUpdateResponse>(voteCurrent);
         }
         #endregion

@@ -26,7 +26,7 @@ namespace Dach.ElectionSystem.Models.ResponseBase
                 ResponseType = nameof(ResponseType.Data),
                 Message = "Operación realizada con Éxito",
                 Content = data
-            }); ;
+            }); 
         }
         /// <summary>
         /// Respuestas no encontradas

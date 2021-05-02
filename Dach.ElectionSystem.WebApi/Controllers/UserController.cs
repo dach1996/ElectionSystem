@@ -1,7 +1,6 @@
 ﻿using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.User;
 using Dach.ElectionSystem.Models.ResponseBase;
-using Dach.ElectionSystem.Utils.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -10,7 +9,6 @@ using System.Threading.Tasks;
 namespace Dach.ElectionSystem.WebApi.Controllers
 {
     [Route("api/users")]
-    [ServiceFilter(typeof(ModelFilter))]
     [ApiController]
     public class UserController : ApiControllerBase
     {
@@ -31,7 +29,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(200, Type = typeof(GenericResponse<UserUpdateResponse>))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        [ServiceFilter(typeof(Utils.Filters.ModelFilter))]
+        [ServiceFilter(typeof(Utils.Filters.ModelFilterAttribute))]
         public async Task<IActionResult> UpdateUser([FromBody] UserUpdateRequest request) => Success(await _mediator.Send(request));
 
         /// <summary>
@@ -43,7 +41,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         [Route("{id}")]
         [Route("")]
-        [ServiceFilter(typeof(Utils.Filters.ModelFilter))]
+        [ServiceFilter(typeof(Utils.Filters.ModelFilterAttribute))]
         public async Task<IActionResult> GetHandler([FromQuery] UserGetRequest request, [FromRoute] int? id)
         {
             if (id != null)
@@ -69,8 +67,21 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(200, Type = typeof(GenericResponse<Unit>))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [ServiceFilter(typeof(Utils.Filters.ModelFilterAttribute))]
         [Route("changepassword")]
-        public async Task<IActionResult> CreateUser([FromBody] ChangePasswordRequest request)
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
+        => Success(await _mediator.Send(request));
+
+         /// <summary>
+        /// Incrementar el número de eventos permitidos
+        /// </summary>
+        [HttpPost]
+        [ProducesResponseType(200, Type = typeof(GenericResponse<Unit>))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [ServiceFilter(typeof(Utils.Filters.ModelFilterAttribute))]
+        [Route("increaseEvents")]
+        public async Task<IActionResult> IncreaseEvents([FromBody] IncreaseEventsRequest request)
         => Success(await _mediator.Send(request));
 
         #endregion

@@ -14,19 +14,12 @@ namespace Dach.ElectionSystem.Models.Request.User
         /// Email Usuario
         /// </summary>
         [JsonIgnore]
-        private new string Email { get; set; }
+        override public string Email { get; set; }
 
         /// <summary>
         /// Constraseña de Usuario
         /// </summary>
         [JsonIgnore]
-        private new string Password { get; set; }
-
-        /// <summary>
-        /// Número maximo de eventos permitidos
-        /// </summary>
-        [JsonIgnore]
-        private int MaxEventsAllow { get; set; }
-
+        override public string Password { get; set; }
     }
 }

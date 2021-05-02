@@ -6,7 +6,7 @@ namespace Dach.ElectionSystem.Utils.Mapper.Vote
 {
     public static class VoteMapper
     {
-        public static void ConfigVoteMapper(this CustomMapperDTO profile)
+        public static void ConfigVoteMapper(this CustomMapperDto profile)
         {
               profile.CreateMap<VoteCreateRequest, Models.Persitence.Vote>();
             profile.CreateMap<Models.Persitence.Vote, VoteCreateResponse>();

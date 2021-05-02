@@ -5,7 +5,7 @@ namespace Dach.ElectionSystem.Utils.Mapper.EventAdministrator
 {
     public static class EventAdministratorMapper
     {
-        public static void ConfigEventAdministratorMapper(this CustomMapperDTO profile)
+        public static void ConfigEventAdministratorMapper(this CustomMapperDto profile)
         {
             //Create
             profile.CreateMap<EventAdministratorCreateRequest, Models.Persitence.EventAdministrator>();

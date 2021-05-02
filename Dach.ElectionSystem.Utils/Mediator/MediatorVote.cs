@@ -5,10 +5,16 @@ namespace Dach.ElectionSystem.Utils.Mediator
 {
     public static class MediatorVote
     {
-        
-           public static void AddIMediaRVoteConfig(this IServiceCollection services)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="services"></param>
+        public static void AddIMediaRVoteConfig(this IServiceCollection services)
         {
-           
+            if (services is null)
+            {
+                throw new System.ArgumentNullException(nameof(services));
+            }
         }
     }
 }

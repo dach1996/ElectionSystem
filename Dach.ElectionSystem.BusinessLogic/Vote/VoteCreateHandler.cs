@@ -19,19 +19,16 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         #region Constructor 
         private readonly IVoteRepository _VoteRepository;
         private readonly IMapper _mapper;
-        private readonly IUserRepository userRepository;
         private readonly ValidateIntegrity validateIntegrity;
 
         public VoteCreateHandler(
         IVoteRepository VoteRepository,
         IMapper mapper,
-        IUserRepository userRepository,
         ValidateIntegrity validateIntegrity
         )
         {
             this._VoteRepository = VoteRepository;
             this._mapper = mapper;
-            this.userRepository = userRepository;
             this.validateIntegrity = validateIntegrity;
         }
         #endregion
@@ -49,7 +46,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
             };
             var isCreate = await _VoteRepository.CreateAsync(newVote);
             if (!isCreate)
-                throw new ExceptionCustom(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             return _mapper.Map<VoteCreateResponse>(newVote);
         }
         #endregion

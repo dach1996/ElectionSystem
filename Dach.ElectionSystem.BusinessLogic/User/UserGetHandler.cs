@@ -17,19 +17,16 @@ namespace Dach.ElectionSystem.BusinessLogic.User
     public class UserGetHandler : IRequestHandler<UserGetRequest, UserGetResponse>
     {
         #region Constructor
-        private readonly ILogger<UserGetHandler> logger;
         private readonly IUserRepository userRepository;
         private readonly IMapper mapper;
         private readonly ValidateIntegrity validateIntegrity;
 
         public UserGetHandler(
-            ILogger<UserGetHandler> logger,
             IUserRepository userRepository,
             IMapper mapper,
             ValidateIntegrity validateIntegrity
             )
         {
-            this.logger = logger;
             this.userRepository = userRepository;
             this.mapper = mapper;
             this.validateIntegrity = validateIntegrity;
@@ -37,8 +34,8 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         #endregion
         public async Task<UserGetResponse> Handle(UserGetRequest request, CancellationToken cancellationToken)
         {
-            var userCurrent = await validateIntegrity.ValidateUser(request);
-            var listUser = new List<Models.Persitence.User>();
+            await validateIntegrity.ValidateUser(request);
+            List<Models.Persitence.User> listUser;
             if (request.Id != null)
                 listUser = (await userRepository.GetAsync(u => u.Id == request.Id)).ToList();
             else

@@ -41,15 +41,14 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
             {
                 await _next(httpContext).ConfigureAwait(false);
             }
-            catch (ExceptionCustom customEx)
+            catch (CustomException customEx)
             {
-                await HandleExceptionCustomAsync(httpContext, customEx);
+                await HandleCustomExceptionAsync(httpContext, customEx);
             }
             catch (Exception exception)
             {
                 logger.LogError(exception,"Error Detectado: ");
                 await HandleExceptionAsync(httpContext, exception);
-                var typeException = exception.GetType();
             }
         }
 
@@ -59,7 +58,7 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
         /// <param name="context"></param>
         /// <param name="customEx"></param>
         /// <returns></returns>
-        private static Task HandleExceptionCustomAsync(HttpContext context, ExceptionCustom customEx)
+        private static Task HandleCustomExceptionAsync(HttpContext context, CustomException customEx)
         {
 
             context.Response.ContentType = "application/json";

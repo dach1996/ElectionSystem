@@ -19,6 +19,7 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
                 "ASPNETCORE_URLS": "http://localhost:44317",
+                "CONNECTION_SQL": "Server=DESKTOP-6PGT33F;Initial Catalog=ElectionSystem;Integrated Security=true; User Id=sa;Password=dach1996;",
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"

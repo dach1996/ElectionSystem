@@ -1,4 +1,5 @@
-﻿using Dach.ElectionSystem.Repository.DBContext;
+﻿using System;
+using Dach.ElectionSystem.Repository.DBContext;
 namespace Dach.ElectionSystem.Repository.UnitOfWork
 { 
     public class UnitOfWork : IUnitOfWork
@@ -9,11 +10,6 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
         {
             Context = context;
         }
-        public void Dispose()
-        {
-            Context.Dispose();
-        }
-
         public void SaveChanges()
         {
             Context.SaveChanges();

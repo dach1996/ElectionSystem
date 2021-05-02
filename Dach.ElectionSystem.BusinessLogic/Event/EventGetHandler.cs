@@ -16,25 +16,19 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         #region Constructor
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;
-        private readonly IUserRepository userRepository;
-        private readonly ILogger<EventGetHandler> logger;
 
         public EventGetHandler(
             IEventRepository eventRepository,
-            IMapper mapper,
-            IUserRepository userRepository,
-            ILogger<EventGetHandler> logger)
+            IMapper mapper)
         {
             this._eventRepository = eventRepository;
             this._mapper = mapper;
-            this.userRepository = userRepository;
-            this.logger = logger;
         }
         #endregion
         #region Handler
         public async Task<EventGetResponse> Handle(EventGetRequest request, CancellationToken cancellationToken)
         {
-            var listEvents = new List<Models.Persitence.Event>();
+            List<Models.Persitence.Event> listEvents;
             if (request.Id != null)
                 listEvents = (await _eventRepository.GetAsync(e => e.Id == request.Id)).ToList();
             else

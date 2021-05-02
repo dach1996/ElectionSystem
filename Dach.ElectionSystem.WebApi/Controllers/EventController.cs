@@ -2,7 +2,6 @@
 using Dach.ElectionSystem.Models.Request.Event;
 using Dach.ElectionSystem.Models.Response.Event;
 using Dach.ElectionSystem.Models.ResponseBase;
-using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Utils.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -13,16 +12,14 @@ namespace Dach.ElectionSystem.WebApi.Controllers
 {
     [Route("api/events")]
     [ApiController]
-    [ServiceFilter(typeof(ModelFilter))]
+    [ServiceFilter(typeof(ModelFilterAttribute))]
     public class EventController : ApiControllerBase
     {
         #region Constructor
-        private readonly IUserRepository _userRepository;
         private readonly IMediator _mediator;
 
-        public EventController(IUserRepository userRepository, IMediator mediator)
+        public EventController(IMediator mediator)
         {
-            _userRepository = userRepository;
             _mediator = mediator;
         }
         #endregion
