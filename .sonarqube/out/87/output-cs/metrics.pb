@@ -1,14 +1,34 @@
-·
-aC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Data\ValidateIntegrity.cs 8j!"#$%&'rG
-*+,-./012356789:;=>?@ABCDEFHIJKLMNPQRSTUVWZ[xÇ,-./012789:?@ABCDEJKLMRSTUVá
-fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Intrastructure\InitServices.cs 8r	
-Çs
-eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Notification\INotification.csr	û
-lC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Notification\NotificationSendGrid.cs 8r	
-xÇ	s
-aC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\TokenJWT\ITokenService.csr	
-û
-`C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\TokenJWT\TokenService.cs( 8j)1rÄ	
-"#$%&'*+,-./2356789;<=>?@ABCEFGHIJKLMNOPQRSTUVWZ[]^_`abcdefhijklmnopqrstuvwxyz{|}~ÄÅÇÑÖÜáàâxÇ(&',-.367;<@AIJKLNOU^_cdlmnpqrst{ÄÜè
-áC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csrñ
-ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\obj\Debug\net5.0\Dach.ElectionSystem.Services.AssemblyInfo.csjr	
+Ç
+fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\DBContext\WebApiDbContext.cs 8r	
+ä
+oC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\CandidateRepository.cs 8r
+å
+xC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\EventAdministratorRepository.cs 8r
+	ì
+kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\EventRepository.cs 8r	Ç…
+mC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\GenericRepository.cs0 	8rê
+ !"#$%&'(*+,-./01245678:;<=>?@ABDEFGHIKLNPRSTVWYZ\^`abcdfghikmnoqrtuvwyz{~ÄÅÇÉÜáàâäãåéèêëíìîïñóòxÇ: "$%'*,08:<>?ADFHPRSTV^`abcikmnoqv~ÄÇÜàâäãéêî∞
+jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\UserRepository.cs	 8r*	 !"#$%&'()*+,-xÇ#$%)*Ä
+jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\VoteRepository.cs 8r	
+~
+lC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\ICandidateRepository.csr	
+á
+uC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IEventAdministratorRepository.csr	
+}
+hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IEventRepository.csr	
+â
+jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IGenericRepository.csr	
+y
+gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IUserRepository.csr	
+t
+gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IVoteRepository.csr	î
+jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Intrastructure\InitRepository.cs 8jr	
+Ç
+u
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\UnitOfWork\IUnitOfWork.cs8r
+	
+Ñ
+bC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\UnitOfWork\UnitOfWork.cs 8r	
+Çë
+âC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csrö
+âC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\obj\Debug\net5.0\Dach.ElectionSystem.Repository.AssemblyInfo.csjr	

@@ -18,7 +18,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         #region Constructor
         private readonly IVoteRepository _VoteRepository;
         private readonly IMapper _mapper;
-                private readonly ValidateIntegrity validateIntegrity;
+        private readonly ValidateIntegrity validateIntegrity;
 
         public VoteUpdateHandler(
             IVoteRepository VoteRepository,
@@ -39,15 +39,20 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
             //Validamos que exista el Candidato
             var candidateCurrent = await validateIntegrity.ValidateCandiate(request.IdCandidate);
             if (candidateCurrent.IdEvent != eventCurrent.Id)
-                throw new CustomException(Models.Enums.MessageCodesApi.DataInconsistency, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
-
+                throw new CustomException(Models.Enums.MessageCodesApi.CandidateDontRegister, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
+            //Valida que el usuario esté registrado al evento
             var voteCurrent = (await _VoteRepository.GetAsyncInclude(v => v.IdEvent == eventCurrent.Id &&
                                                                              v.IdUser == request.UserContext.Id)).FirstOrDefault();
+            if (voteCurrent == null)
+                throw new CustomException(Models.Enums.MessageCodesApi.UserNotRegisterEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
+            //Valida que el usuario no registre voto
+            if (voteCurrent.HasVote)
+                throw new CustomException(Models.Enums.MessageCodesApi.UserHasVote, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
             //Guardamos los datos del Voto                                                              
             voteCurrent.IdCandidate = candidateCurrent.Id;
-            voteCurrent.Date = DateTime.Now;
+            voteCurrent.DateVote = DateTime.Now;
             voteCurrent.HasVote = true;
-
+            //Registra el voto del usuario
             var isUpdate = await _VoteRepository.Update(voteCurrent);
             if (!isUpdate)
                 throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);

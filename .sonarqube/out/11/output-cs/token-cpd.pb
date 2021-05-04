@@ -2917,359 +2917,453 @@ Privileges66 
 ;>>Z [
 }?? 	
 }CC 
-}DD ∂1
+}DD Â=
 hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Event\EventCreateHandler.cs
-	namespace 	
-Dach
+	namespace 	
+Dach
  
-. 
-ElectionSystem 
-. 
-BusinessLogic +
-.+ ,
-Event, 1
-{ 
-public 
+. 
+ElectionSystem 
+. 
+BusinessLogic +
+.+ ,
+Event, 1
+{ 
+public 
 
-class 
-EventCreateHandler #
-:$ %
-IRequestHandler& 5
-<5 6
-EventCreateRequest6 H
-,H I
-EventCreateResponseJ ]
->] ^
-{ 
-private 
-readonly 
-IEventRepository )
-_eventRepository* :
-;: ;
-private 
-readonly 
-IMapper  
-_mapper! (
-;( )
-private 
-readonly 
-ValidateIntegrity *
-validateIntegrity+ <
-;< =
-public 
-EventCreateHandler !
-(! "
-IEventRepository 
-eventRepository (
-,( )
-IMapper 
-mapper 
-, 
-ValidateIntegrity 
-validateIntegrity +
-) 	
-{ 	
-this 
-. 
-_eventRepository !
-=" #
-eventRepository$ 3
-;3 4
-this 
-. 
-_mapper 
-= 
-mapper !
-;! "
-this 
-. 
-validateIntegrity "
-=# $
-validateIntegrity% 6
-;6 7
-} 	
-public"" 
-async"" 
-Task"" 
-<"" 
-EventCreateResponse"" -
->""- .
-Handle""/ 5
-(""5 6
-EventCreateRequest""6 H
-request""I P
-,""P Q
-CancellationToken""R c
-cancellationToken""d u
-)""u v
-{## 	
-var%% 
-userCurrent%% 
-=%% 
-await%% #
-validateIntegrity%%$ 5
-.%%5 6
-ValidateUser%%6 B
-(%%B C
-request%%C J
-)%%J K
-;%%K L
-var'' 
-
-eventCount'' 
-='' 
-await'' "
-_eventRepository''# 3
-.''3 4
-GetAsync''4 <
-(''< =
-e''= >
-=>''? A
-e''B C
-.''C D
-IdUser''D J
-==''K M
-userCurrent''N Y
-.''Y Z
-Id''Z \
-&&''] _
-!''` a
-e''a b
-.''b c
-IsDelete''c k
-)''k l
-;''l m
-if(( 
-((( 
-
-eventCount(( 
-.(( 
-Count((  
-(((  !
-)((! "
->=((# %
-userCurrent((& 1
-.((1 2
-EventNumber((2 =
-.((= >
-NumberMaxEvent((> L
-)((L M
-throw)) 
-new)) 
-CustomException)) )
-())) *
-Models))* 0
-.))0 1
-Enums))1 6
-.))6 7
-MessageCodesApi))7 F
-.))F G
-MaxEventAllow))G T
-,))T U
-Models))V \
-.))\ ]
-Enums))] b
-.))b c
-ResponseType))c o
-.))o p
-Error))p u
-,))u v
-System))w }
-.))} ~
-Net	))~ Å
+class 
+EventCreateHandler #
+:$ %
+IRequestHandler& 5
+<5 6
+EventCreateRequest6 H
+,H I
+EventCreateResponseJ ]
+>] ^
+{ 
+private 
+readonly 
+IEventRepository )
+_eventRepository* :
+;: ;
+private 
+readonly 
+IMapper  
+_mapper! (
+;( )
+private 
+readonly 
+ValidateIntegrity *
+validateIntegrity+ <
+;< =
+private 
+readonly 
+IConfiguration '
+configuration( 5
+;5 6
+public 
+EventCreateHandler !
+(! "
+IEventRepository 
+eventRepository (
+,( )
+IMapper 
+mapper 
+, 
+ValidateIntegrity 
+validateIntegrity +
+,+ ,
+IConfiguration 
+configuration $
+) 	
+{   	
+this!! 
+.!! 
+_eventRepository!! !
+=!!" #
+eventRepository!!$ 3
+;!!3 4
+this"" 
+."" 
+_mapper"" 
+="" 
+mapper"" !
+;""! "
+this## 
+.## 
+validateIntegrity## "
+=### $
+validateIntegrity##% 6
+;##6 7
+this$$ 
+.$$ 
+configuration$$ 
+=$$  
+configuration$$! .
+;$$. /
+}%% 	
+public(( 
+async(( 
+Task(( 
+<(( 
+EventCreateResponse(( -
+>((- .
+Handle((/ 5
+(((5 6
+EventCreateRequest((6 H
+request((I P
+,((P Q
+CancellationToken((R c
+cancellationToken((d u
+)((u v
+{)) 	
+var++ 
+userCurrent++ 
+=++ 
+await++ #
+validateIntegrity++$ 5
+.++5 6
+ValidateUser++6 B
+(++B C
+request++C J
+)++J K
+;++K L
+var-- 
+events-- 
+=-- 
+await-- 
+_eventRepository-- /
+.--/ 0
+GetAsync--0 8
+(--8 9
+e--9 :
+=>--; =
+e--> ?
+.--? @
+IdUser--@ F
+==--G I
+userCurrent--J U
+.--U V
+Id--V X
+&&--Y [
+!--\ ]
+e--] ^
+.--^ _
+IsDelete--_ g
+)--g h
+;--h i
+if.. 
+(.. 
+events.. 
+... 
+Count.. 
+(.. 
+).. 
+>=.. !
+userCurrent.." -
+...- .
+EventNumber... 9
+...9 :
+NumberMaxEvent..: H
+)..H I
+throw// 
+new// 
+CustomException// )
+(//) *
+Models//* 0
+.//0 1
+Enums//1 6
+.//6 7
+MessageCodesApi//7 F
+.//F G
+MaxEventAllow//G T
+,//T U
+Models//V \
+.//\ ]
+Enums//] b
+.//b c
+ResponseType//c o
+.//o p
+Error//p u
+,//u v
+System//w }
+.//} ~
+Net	//~ Å
 .
-))Å Ç
+//Å Ç
 HttpStatusCode
-))Ç ê
+//Ç ê
 .
-))ê ë
+//ê ë
 
 BadRequest
-))ë õ
+//ë õ
 )
-))õ ú
+//õ ú
 ;
-))ú ù
-if++ 
-(++ 
-request++ 
-.++ 
-	MaxPeople++ !
-&&++" $
-request++% ,
-.++, -
-NumberMaxCandidate++- ?
-<=++@ B
-$num++C D
-)++D E
-throw,, 
-new,, 
-CustomException,, )
-(,,) *
-Models,,* 0
-.,,0 1
-Enums,,1 6
-.,,6 7
-MessageCodesApi,,7 F
-.,,F G
-MaxPeopleEvent,,G U
-,,,U V
-Models,,W ]
-.,,] ^
-Enums,,^ c
-.,,c d
-ResponseType,,d p
-.,,p q
-Error,,q v
-,,,v w
-System,,x ~
-.,,~ 
-Net	,, Ç
+//ú ù
+if11 
+(11 
+request11 
+.11 
+	MaxPeople11 !
+&&11" $
+request11% ,
+.11, -
+NumberMaxCandidate11- ?
+<=11@ B
+$num11C D
+)11D E
+throw22 
+new22 
+CustomException22 )
+(22) *
+Models22* 0
+.220 1
+Enums221 6
+.226 7
+MessageCodesApi227 F
+.22F G
+MaxPeopleEvent22G U
+,22U V
+Models22W ]
+.22] ^
+Enums22^ c
+.22c d
+ResponseType22d p
+.22p q
+Error22q v
+,22v w
+System22x ~
+.22~ 
+Net	22 Ç
 .
-,,Ç É
+22Ç É
 HttpStatusCode
-,,É ë
+22É ë
 .
-,,ë í
+22ë í
 
 BadRequest
-,,í ú
+22í ú
 )
-,,ú ù
+22ú ù
 ;
-,,ù û
-var-- 
-newEvent-- 
-=-- 
-_mapper-- "
-.--" #
-Map--# &
-<--& '
-Models--' -
-.--- .
-
-Persitence--. 8
-.--8 9
-Event--9 >
->--> ?
-(--? @
-request--@ G
-)--G H
-;--H I
-newEvent// 
-.// 
-UserCreator//  
-=//! "
-userCurrent//# .
-;//. /
-newEvent11 
-.11 "
-ListEventAdministrator11 +
-=11, -
-new11. 1
-List112 6
-<116 7
-Models117 =
-.11= >
-
-Persitence11> H
-.11H I
-EventAdministrator11I [
->11[ \
-(11\ ]
-)11] ^
-{22 
-new33 
-Models33 
-.33 
-
-Persitence33 %
-.33% &
-EventAdministrator33& 8
-(338 9
-)339 :
-{33: ;
-Event44 
-=44 
-newEvent44 
-,44  
-User55 
-=55 
-userCurrent55 "
-}66 
-}77 
-;77 
-var88 
-	hasCreate88 
-=88 
-await88 !
-_eventRepository88" 2
-.882 3
-CreateAsync883 >
-(88> ?
-newEvent88? G
-)88G H
-;88H I
-if:: 
-(:: 
-!:: 
-	hasCreate:: 
-):: 
-throw;; 
-new;; 
-CustomException;; )
-(;;) *
-Models;;* 0
-.;;0 1
-Enums;;1 6
-.;;6 7
-MessageCodesApi;;7 F
-.;;F G
-NotCreateRecord;;G V
-,;;V W
-Models;;X ^
-.;;^ _
-Enums;;_ d
-.;;d e
-ResponseType;;e q
-.;;q r
-Error;;r w
-,;;w x
-System;;y 
-.	;; Ä
+22ù û
+if33 
+(33 
+events33 
+.33 
+Any33 
+(33 
+e33 
+=>33 
+e33  !
+.33! "
+Name33" &
+==33' )
+request33* 1
+.331 2
+Name332 6
+)336 7
+)337 8
+throw44 
+new44 
+CustomException44 )
+(44) *
+Models44* 0
+.440 1
+Enums441 6
+.446 7
+MessageCodesApi447 F
+.44F G
+EventRegistered44G V
+,44V W
+Models44X ^
+.44^ _
+Enums44_ d
+.44d e
+ResponseType44e q
+.44q r
+Error44r w
+,44w x
+System44y 
+.	44 Ä
 Net
-;;Ä É
+44Ä É
 .
-;;É Ñ
+44É Ñ
 HttpStatusCode
-;;Ñ í
+44Ñ í
 .
-;;í ì!
-InternalServerError
-;;ì ¶
+44í ì
+
+BadRequest
+44ì ù
 )
-;;¶ ß
+44ù û
 ;
-;;ß ®
-var<< 
-responseEvent<< 
-=<< 
-_mapper<<  '
-.<<' (
-Map<<( +
-<<<+ ,
-EventCreateResponse<<, ?
-><<? @
-(<<@ A
-newEvent<<A I
-)<<I J
-;<<J K
-return== 
-responseEvent==  
-;==  !
-}>> 	
-}@@ 
-}AA ø#
+44û ü
+var55 
+newEvent55 
+=55 
+_mapper55 "
+.55" #
+Map55# &
+<55& '
+Models55' -
+.55- .
+
+Persitence55. 8
+.558 9
+Event559 >
+>55> ?
+(55? @
+request55@ G
+)55G H
+;55H I
+newEvent77 
+.77 
+UserCreator77  
+=77! "
+userCurrent77# .
+;77. /
+newEvent99 
+.99 "
+ListEventAdministrator99 +
+=99, -
+new99. 1
+List992 6
+<996 7
+Models997 =
+.99= >
+
+Persitence99> H
+.99H I
+EventAdministrator99I [
+>99[ \
+(99\ ]
+)99] ^
+{:: 
+new;; 
+Models;; 
+.;; 
+
+Persitence;; %
+.;;% &
+EventAdministrator;;& 8
+(;;8 9
+);;9 :
+{;;: ;
+Event<< 
+=<< 
+newEvent<< 
+,<<  
+User== 
+=== 
+userCurrent== "
+}>> 
+}?? 
+;?? 
+newEventAA 
+.AA 
+	CodeEventAA 
+=AA  
+CommonAA! '
+.AA' (
+UtilAA( ,
+.AA, -
+GenerateCodeAA- 9
+(AA9 :
+ConvertAA: A
+.AAA B
+ToInt32AAB I
+(AAI J
+configurationAAJ W
+.AAW X
+
+GetSectionAAX b
+(AAb c
+$strAAc x
+)AAx y
+.AAy z
+ValueAAz 
+)	AA Ä
+)
+AAÄ Å
+;
+AAÅ Ç
+varCC 
+	hasCreateCC 
+=CC 
+awaitCC !
+_eventRepositoryCC" 2
+.CC2 3
+CreateAsyncCC3 >
+(CC> ?
+newEventCC? G
+)CCG H
+;CCH I
+ifEE 
+(EE 
+!EE 
+	hasCreateEE 
+)EE 
+throwFF 
+newFF 
+CustomExceptionFF )
+(FF) *
+ModelsFF* 0
+.FF0 1
+EnumsFF1 6
+.FF6 7
+MessageCodesApiFF7 F
+.FFF G
+NotCreateRecordFFG V
+,FFV W
+ModelsFFX ^
+.FF^ _
+EnumsFF_ d
+.FFd e
+ResponseTypeFFe q
+.FFq r
+ErrorFFr w
+,FFw x
+SystemFFy 
+.	FF Ä
+Net
+FFÄ É
+.
+FFÉ Ñ
+HttpStatusCode
+FFÑ í
+.
+FFí ì!
+InternalServerError
+FFì ¶
+)
+FF¶ ß
+;
+FFß ®
+varGG 
+responseEventGG 
+=GG 
+_mapperGG  '
+.GG' (
+MapGG( +
+<GG+ ,
+EventCreateResponseGG, ?
+>GG? @
+(GG@ A
+newEventGGA I
+)GGI J
+;GGJ K
+returnHH 
+responseEventHH  
+;HH  !
+}II 	
+}KK 
+}LL ø#
 hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Event\EventDeleteHandler.cs
 	namespace 	
 Dach
@@ -6001,7 +6095,7 @@ userUpdate--$ .
 ;33  
 }44 	
 }66 
-}77 ã
+}77 Ã7
 fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vote\VoteCreateHandler.cs
 	namespace 	
 Dach
@@ -6028,7 +6122,7 @@ fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vo
 private 
 readonly 
 IVoteRepository (
-_VoteRepository) 8
+_voteRepository) 8
 ;8 9
 private 
 readonly 
@@ -6044,7 +6138,7 @@ fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vo
 VoteCreateHandler  
 (  !
 IVoteRepository 
-VoteRepository &
+voteRepository &
 ,& '
 IMapper 
 mapper 
@@ -6055,9 +6149,9 @@ fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vo
 { 	
 this 
 . 
-_VoteRepository  
+_voteRepository  
 =! "
-VoteRepository# 1
+voteRepository# 1
 ;1 2
 this 
 . 
@@ -6086,119 +6180,327 @@ fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vo
 CancellationToken$$P a
 cancellationToken$$b s
 )$$s t
-{%% 	
-var'' 
-eventCurrent'' 
-='' 
-await'' $
-validateIntegrity''% 6
-.''6 7
-ValidateEvent''7 D
-(''D E
-request''E L
-.''L M
-IdEvent''M T
-)''T U
-;''U V
-var)) 
-newVote)) 
-=)) 
-new)) 
-Models))  &
-.))& '
-
-Persitence))' 1
-.))1 2
-Vote))2 6
-())6 7
-)))7 8
-{** 
-IdEvent++ 
-=++ 
-eventCurrent++ &
-.++& '
-Id++' )
-,++) *
-IdUser,, 
-=,, 
-request,,  
-.,,  !
-UserContext,,! ,
-.,,, -
-Id,,- /
-,,,/ 0
-IsActive-- 
-=-- 
-true-- 
-,--  
-}.. 
-;.. 
-var// 
-isCreate// 
-=// 
-await//  
-_VoteRepository//! 0
-.//0 1
-CreateAsync//1 <
-(//< =
-newVote//= D
-)//D E
-;//E F
-if00 
-(00 
-!00 
-isCreate00 
-)00 
-throw11 
-new11 
-CustomException11 )
-(11) *
-Models11* 0
-.110 1
-Enums111 6
-.116 7
-MessageCodesApi117 F
-.11F G
-NotCreateRecord11G V
-,11V W
-Models11X ^
-.11^ _
-Enums11_ d
-.11d e
-ResponseType11e q
-.11q r
-Error11r w
-,11w x
-System11y 
-.	11 Ä
+{%% 	
+await'' 
+validateIntegrity'' #
+.''# $
+ValidateUser''$ 0
+(''0 1
+request''1 8
+.''8 9
+IdUser''9 ?
+)''? @
+;''@ A
+var)) 
+eventCurrent)) 
+=)) 
+await)) $
+validateIntegrity))% 6
+.))6 7
+ValidateEvent))7 D
+())D E
+request))E L
+.))L M
+IdEvent))M T
+)))T U
+;))U V
+var++ 
+participants++ 
+=++ 
+await++ $
+_voteRepository++% 4
+.++4 5
+GetAsync++5 =
+(++= >
+v++> ?
+=>++@ B
+v++C D
+.++D E
+IdEvent++E L
+==++M O
+request++P W
+.++W X
+IdEvent++X _
+)++_ `
+;++` a
+var-- 
+hasRegister-- 
+=-- 
+participants-- *
+.--* +
+Any--+ .
+(--. /
+u--/ 0
+=>--1 3
+u--4 5
+.--5 6
+IdUser--6 <
+==--= ?
+request--@ G
+.--G H
+IdUser--H N
+)--N O
+;--O P
+if.. 
+(.. 
+!.. 
+hasRegister.. 
+).. 
+throw// 
+new// 
+CustomException// )
+(//) *
+Models//* 0
+.//0 1
+Enums//1 6
+.//6 7
+MessageCodesApi//7 F
+.//F G
+UserRegisterEvent//G X
+,//X Y
+Models//Z `
+.//` a
+Enums//a f
+.//f g
+ResponseType//g s
+.//s t
+Error//t y
+,//y z
+System	//{ Å
+.
+//Å Ç
 Net
-11Ä É
+//Ç Ö
 .
-11É Ñ
+//Ö Ü
 HttpStatusCode
-11Ñ í
+//Ü î
 .
-11í ì!
-InternalServerError
-11ì ¶
+//î ï
+
+BadRequest
+//ï ü
 )
-11¶ ß
+//ü †
 ;
-11ß ®
-return22 
-_mapper22 
-.22 
-Map22 
-<22 
-VoteCreateResponse22 1
->221 2
-(222 3
-newVote223 :
-)22: ;
-;22; <
-}33 	
-}55 
-}66 ’#
+//† °
+if11 
+(11 
+eventCurrent11 
+.11 
+	MaxPeople11 &
+&&11' )
+participants11* 6
+.116 7
+Count117 <
+(11< =
+)11= >
+>11? @
+eventCurrent11A M
+.11M N
+NumberMaxPeople11N ]
+)11] ^
+throw22 
+new22 
+CustomException22 )
+(22) *
+Models22* 0
+.220 1
+Enums221 6
+.226 7
+MessageCodesApi227 F
+.22F G 
+LimitMaxParticipants22G [
+,22[ \
+Models22] c
+.22c d
+Enums22d i
+.22i j
+ResponseType22j v
+.22v w
+Error22w |
+,22| }
+System	22~ Ñ
+.
+22Ñ Ö
+Net
+22Ö à
+.
+22à â
+HttpStatusCode
+22â ó
+.
+22ó ò
+Conflict
+22ò †
+)
+22† °
+;
+22° ¢
+if44 
+(44 
+!44 
+eventCurrent44 
+.44 "
+ListEventAdministrator44 4
+.444 5
+Any445 8
+(448 9
+e449 :
+=>44; =
+e44> ?
+.44? @
+IdUser44@ F
+==44G I
+request44J Q
+.44Q R
+UserContext44R ]
+.44] ^
+Id44^ `
+)44` a
+)44a b
+throw55 
+new55 
+CustomException55 )
+(55) *
+Models55* 0
+.550 1
+Enums551 6
+.556 7
+MessageCodesApi557 F
+.55F G'
+UserIsnotAdministratorEvent55G b
+,55b c
+Models55d j
+.55j k
+Enums55k p
+.55p q
+ResponseType55q }
+.55} ~
+Error	55~ É
+,
+55É Ñ
+System
+55Ö ã
+.
+55ã å
+Net
+55å è
+.
+55è ê
+HttpStatusCode
+55ê û
+.
+55û ü
+
+BadRequest
+55ü ©
+)
+55© ™
+;
+55™ ´
+var88 
+newVote88 
+=88 
+new88 
+Models88 $
+.88$ %
+
+Persitence88% /
+.88/ 0
+Vote880 4
+(884 5
+)885 6
+{99 
+IdEvent:: 
+=:: 
+request:: !
+.::! "
+IdEvent::" )
+,::) *
+IdUser;; 
+=;; 
+request;;  
+.;;  !
+IdUser;;! '
+,;;' (
+IsActive<< 
+=<< 
+true<< 
+,<<  
+DateInscription== 
+===  !
+DateTime==" *
+.==* +
+Now==+ .
+}>> 
+;>> 
+var?? 
+isCreate?? 
+=?? 
+await??  
+_voteRepository??! 0
+.??0 1
+CreateAsync??1 <
+(??< =
+newVote??= D
+)??D E
+;??E F
+if@@ 
+(@@ 
+!@@ 
+isCreate@@ 
+)@@ 
+throwAA 
+newAA 
+CustomExceptionAA )
+(AA) *
+ModelsAA* 0
+.AA0 1
+EnumsAA1 6
+.AA6 7
+MessageCodesApiAA7 F
+.AAF G
+NotCreateRecordAAG V
+,AAV W
+ModelsAAX ^
+.AA^ _
+EnumsAA_ d
+.AAd e
+ResponseTypeAAe q
+.AAq r
+ErrorAAr w
+,AAw x
+SystemAAy 
+.	AA Ä
+Net
+AAÄ É
+.
+AAÉ Ñ
+HttpStatusCode
+AAÑ í
+.
+AAí ì!
+InternalServerError
+AAì ¶
+)
+AA¶ ß
+;
+AAß ®
+returnBB 
+_mapperBB 
+.BB 
+MapBB 
+<BB 
+VoteCreateResponseBB 1
+>BB1 2
+(BB2 3
+newVoteBB3 :
+)BB: ;
+;BB; <
+}CC 	
+}EE 
+}FF ’#
 fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vote\VoteDeleteHandler.cs
 	namespace 	
 Dach
@@ -6556,7 +6858,7 @@ cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vo
 ;## 
 }$$ 	
 }'' 
-}(( „(
+}(( Á(
 fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vote\VoteUpdateHandler.cs
 	namespace 	
 Dach
@@ -6762,13 +7064,13 @@ fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vo
 Id//7 9
 ;//9 :
 voteCurrent00 
-.00 
-Date00 
-=00 
-DateTime00 '
-.00' (
-Now00( +
-;00+ ,
+.00 
+DateVote00  
+=00! "
+DateTime00# +
+.00+ ,
+Now00, /
+;00/ 0
 voteCurrent11 
 .11 
 HasVote11 

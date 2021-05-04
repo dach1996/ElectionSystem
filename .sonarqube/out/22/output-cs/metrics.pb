@@ -12,9 +12,9 @@ VC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Base\User
 VC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Base\VoteBase.cs 8j	
 r		|
 TC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\Claim.csj	
- r!"#ˇ
-^C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\MessageCodesApi.csjW	 !%&'+,-123789=>?CDEIJKOPQUVW[\]`abefgjklpqrvwx|}~ÅÇÉáàâçéèìîïrD
-"#()./45:;@AFGLMRSXY^_cdhimnstyzÄÑÖäãêëñóòôm
+ r!"#ù
+^C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\MessageCodesApi.csji	 !%&'+,-123789=>?CDEIJKOPQUVW[\]abcghimnorstwxy|}~ÇÉÑàâäéèêìîïôöõü†°•¶ßrP
+"#()./45:;@AFGLMRSXY^_dejkpquvz{ÄÖÜãåëíñóúù¢£®©™´m
 VC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\OrderBy.csj		
 rw
 [C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\ResponseType.csj		
@@ -30,17 +30,17 @@ WC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Mail\Mail
 j	
  !"#r$%&…
 ]C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\Candidate.cs 8j:	 !%&'(,-./3456:;<=ABCDHIJNOPQVWXY`abcfghilmnor&
-"#)*0178>?EFKLRSTZ[\djpstﬁ
-YC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\Event.cs 8jB"#$%()*+./014567:;<=@ABCFGHIMNOPUVWX\]^_efghklmnqrstwxyzr.	
- !&',-2389>?DEJKQRSYZ`aiou{ÄÇ¡
+"#)*0178>?EFKLRSTZ[\djpstÈ
+YC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\Event.cs !8!jI#$%&)*+,/0125678;<=>ABCDGHIJNOPQUVWX]^_`defgmnopstuvyz{|ÄÅÇr2	
+ !"'(-.349:?@EFKLRSYZ[abhiqw}ÉáàÇ¡
 fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\EventAdministrator.cs 8j& !%&'(,-./3456:;<=ABCDFGHIr!	
 "#$)*+0178>?EJMNÇû
 _C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\EventNumber.cs 	8	j !"&'()/012r	
 #$%*+367Ç«
 XC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\User.cs !8!j8	
- !"$%&()*,-.01245689:<=>@ABDEFIJKNOPVWXY\]^_bcdr"#'+/37;?CGLQZ`ehiÇß
-XC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\Vote.cs 8j$	#$%*+,012678?@ABEFGHKLMNr
- !&'(-.349:CIOQRy
+ !"$%&()*,-.01245689:<=>@ABDEFIJKNOPVWXY\]^_bcdr"#'+/37;?CGLQZ`ehiÇ¨
+XC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\Vote.cs 8j'	#$%*+,012678<=>EFGHKLMNQRSTr!
+ !&'(-.349:?@IOUWXy
 aC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\RequestBase\IRequestBase.cs8j
 r	z
 aC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\RequestBase\IUserContext.cs8jr		
@@ -106,11 +106,11 @@ eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\U
 	
 râ
 gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\User\UserUpdateRequest.cs 8j		
-rê
-eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteBaseRequest.cs 8j	
-r "#{
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteCreateRequest.csj	r	
-{
+rè
+eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteBaseRequest.cs 8j	
+r!"ê
+gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteCreateRequest.cs 8j	
+r !{
 gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteDeleteRequest.csj	r	
 z
 dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteGetRequest.csj
@@ -147,9 +147,10 @@ kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\
 kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventDeleteResponse.csj
 r	Ñ
 hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventGetResponse.cs 8jr		
-â
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventResponseBase.cs 8j
-r		}
+é
+iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventResponseBase.cs 8j
+r
+	}
 kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventUpdateResponse.csjr	z
 iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\User\UserCreateResponse.csjr	z
 iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\User\UserDeleteResponse.csjr	

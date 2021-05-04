@@ -1,753 +1,187 @@
-Ω
-[C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Base\CandidateBase.cs
-
- 
-
- 
-
- 
-
- 
-
- 
-
-%% 
-
-++ %
-
-00 #~
-dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Base\EventAdministratorBase.cs
-
- 0
-
-  π
-WC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Base\EventBase.cs
-
-		 #
-
- "
-
- #
-
- )
-
-&& %
-
-.. *
-
-66 -
-
-== &ï
-WC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Base\GroupBase.cs
-
- 
-
- 
-
- 
-
- 
-
- –
-VC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Base\UserBase.cs
-
-		 "
-
- !
-
- &
-
- &
-
-!! '
-
-%% (
-
-++ +
-
-00 ,
-
-66! *
-
-<< #|
-VC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Base\VoteBase.cs
-
- 
-
-! %
-
- #û
-TC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\Claim.cs
-
- 
-
- 
-
- 
-
- 
-
- 
-
-!! 
-ñ
-^C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\MessageCodesApi.cs
-
- 
-
- 
-
- 
-
- 
-
-## 
-
-)) 
-
-// 
-
-55 
-
-;; 
-
-AA 
-
-GG 
-
-MM 
-
-SS 
-
-YY 
-
-__ 
-
-dd 
-
-ii 
-
-nn 
-
-tt 
-
-zz 
-
-ÄÄ 
-
-ÖÖ 
-
-ãã 
-
-ëë 
-
-óó |
-VC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\OrderBy.cs
-
- 
-
- 
-
- Å
-[C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\ResponseType.cs
-
- 
-
- 
-
- à
-VC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Enums\RolUser.cs
-
- 
-
- 
-
- 
-
- Ï
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\ExceptionGeneric\CustomException.cs
-
- !
- &.. 
- (// 
- .00 
-## %11 
-
-,, 
-,,/ >00 -
-,,M Y// '
-,,j r.. 
-	,,{ ä11 -
-
-:: !
-::4 8::[ _
-::K R::a h°
-WC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Mail\MailModel.cs
-
- 
-
- 
-
- 
-
- 
-
- 
-
-$$ ß
-]C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\Candidate.cs
-
- 
-
- 
-
- 
-
-## 
-
-** 
-
-11 
-
-88 
-
-?? %
-
-FF #
-
-LL 
-dd SS  
-
-TT 
-jj [[ 
-
-\\ 
-
-pp! *Ÿ
-YC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\Event.cs
+Â
+eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Extension\ControllerExtension.cs
+
+ +
+
+ .
+G O 
+B E 
+7 >$ +
+ !" +
+  "
+  "
+7 8< =
+  ""< D
+"" ## $$ !
+'' $(( Ø
+_C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Extension\EnumExtension.cs
 
 
 
- 
+ %
 
- 
-ZZ  
-ii/ E '
-{{! ) 
-uu& 3 
+ /(
+5 : . 3 
+  
+f pt ~ !
 
-!! 
+ *(
+5 : 1 6" '
+  5 9≥
+bC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Extension\SwaggerExtension.cs
 
-'' 
-
--- 
-
-33 !
-
-99 
-
-?? "
-
-EE %
-
-KK 
-oo RR &
-
-SS 
-
-aa í
-fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\EventAdministrator.cs
+ (
 
 
 
- #
+ 3
+
+
+L T (
+# $  && (
+ (( <K _"" ,
+++ (&&! 4
 
- !
-11  
-??   
-88  
+-- 
+--. 8//% /
 
- 
-JJ ## 
-
-$$ 
-EE **  
-
-++ Ω
-_C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\EventNumber.cs
+--P W
+// !11. 2
+11! *33) 2664 =
+33 &442 <
+44% .66) 2
+;;  ,66 (P
+;;> G== >>6 ??? BB CC6 ?DD EE6 ?=
+	;;w Ä>> @@ AA CC EE Ã
+dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Filters\ModelFilterAttribute.cs
 
 
 
- 
+ %
+' 3 !!* 6
++ < """2 C
 
- 
-++ ! 
+ #
+2 >  ,
+. ?% 6
 
- 
-33 $$ 
+# 92
+Q X "  1 8!!E L$$. 5
+r v$$7 ;
+ 0 4
+ ,* =  I \
+ ' (
+- .2 3(
+    !! "" ""Q ] 
+hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mapper\Candidate\CandidateMapper.cs
 
-%% ⁄
-XC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\User.cs
+ '
 
- 
-
- 
-ZZ0 F '
-``' 4 
-LL+ 3 
-QQ2 A  
-
-a c
-
-##- 0
-
-''+ 3
-
-++/ 7
-
-//3 >
-
-33- 6
-
-775 ?
-
-;;/ <
-
-??7 E
-
-CC: C
-
-GG- 2
-
-ee# .¸
-XC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Persitence\Vote.cs
-
- 
-
- 
-CC   
-
- 
-II    
-
-!! 
-OO "'' $
-
-(( 
-
-.. 
-
-44 
-
-:: {
-aC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\RequestBase\IRequestBase.cs
-
- !
-
- {
-aC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\RequestBase\IUserContext.cs
-
-		 !
-
- Ü
-`C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\RequestBase\RequestBase.cs
-
-		  
-
- $
-
- ë
-_C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\RequestBase\TokenModel.cs
-
- 
-
- 
-
- 
-
- à
-nC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Auth\ForggotenPasswordRequest.cs
-
-		 )
-
- à
-bC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Auth\LoginRequest.cs
+ 0F
+F M      x
+^C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mapper\CustomMapperDTO.cs
 
 
 
- 
+  
 
- 
+ 
+zC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mapper\EventAdministrator\EventAdministratorMapper.cs
 
- ï
-oC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Candidate\CandidateBaseRequest.cs
+ 0
 
-
+ 9Z
+O V        ÷
+`C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mapper\Event\EventMapper.cs
+
+ #
+
+ ,Z
+B I        ¿
+^C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mapper\User\UserMapper.cs
+
+ "
+
+ +F
+A H      ‘
+^C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mapper\Vote\VoteMapper.cs
+
+ "
+
+		 +Z
+		A H        ∞
+bC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mediator\MediatorCandidate.cs
+
+		 )
+
+ 42
+M U    ¨
+^C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mediator\MediatorEvent.cs
+
+		 %
+
+ 32
+L T    ª
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mediator\MediatorExtensi√≥n.cs
+
+ )
+
+ -<
+F N . 60 88 @. 6´
+]C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mediator\MediatorUser.cs
+
+		 $
+
+ 22
+K S    ó
+]C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\Mediator\MediatorVote.cs
+
+ $
+
+ /
+H P > FÖ
+uC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\ExceptionHandlingMiddleware.cs
+ ,! <I d
+) . ** 
+> D 22 
+
+ *
+; ? 
+f l  
+
+&& %(
+&&2 =** '..1 <33+ 6
+,,# +..> F
+== 6.. 0
+00 &22  )338 A
+JJ 033 *(
+==C J@@ AA HH <
+==\ dAA/ 7DD $EE 'FF %FFH P
+BB HH/ 7(
+JJ= DMM NN VV 
+JJP YSS #SS. 7
+OO VV/ 7é
+tC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\JwtAuthenticationMiddlware.cs
+
+ +(
+) .   
+
+ )
+: > 
+
+  2
+- 4 "# *+ 2# *
+D P 
+ & 2
+3 :"" ## $$ $$> E
+   ##8 ?$$( /Ø
+kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\MiddlewareHandler\MiddleWareHandler.cs
+
+ )
+
+* =(
+W Z
 
- %
-
- $
-
- *ó
-qC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Candidate\CandidateCreateRequest.cs
-
-		 '
-
- 
-
- ó
-qC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Candidate\CandidateDeleteRequest.cs
-
- '
-
- 
-
- î
-nC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Candidate\CandidateGetRequest.cs
-
-		 $
-
- 
-
- ó
-qC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Candidate\CandidateUpdateRequest.cs
-
-		 '
-
- 
-
- ¿
-ÅC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\EventAdministrator\EventAdministratorBaseRequest.cs
-
-
-
- .
-
- 
-
- 
-
-"" $
-
-)) *í
-ÉC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\EventAdministrator\EventAdministratorCreateRequest.cs
-
-
-
- 0™
-ÉC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\EventAdministrator\EventAdministratorDeleteRequest.cs
-
-
-
- 0
-
- 
-
- õ
-ÄC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\EventAdministrator\EventAdministratorGetRequest.cs
-
- -
-
- ™
-ÉC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\EventAdministrator\EventAdministratorUpdateRequest.cs
-
- 0
-
- 
-
- ç
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Event\EventBaseRequest.cs
-
-
-
- !
-
- $
-
- *w
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Event\EventCreateRequest.cs
-
-
-
- #É
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Event\EventDeleteRequest.cs
-
-		 $
-
- º
-fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Event\EventGetRequest.cs
-
-  
-
- 
-
- 
-
-"" 
-
-** 
-
-00 
-
-77 è
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Event\EventUpdateRequest.cs
-
-
-
- #
-
- 
-
- ñ
-dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Methods\IGetRequest.cs
-
-  
-
- 
-
- 
-
- Ö
-kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\User\ChangePasswordRequest.cs
-
- &
-
- !©
-kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\User\IncreaseEventsRequest.cs
-
- &
-
- #
-
- '
-
- (
-
-   u
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\User\UserCreateRequest.cs
-
-
-
- "Å
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\User\UserDeleteRequest.cs
-
-
-
- "
-
- ∆
-dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\User\UserGetRequest.cs
-
- 
-
- 
-
- 
-
- 
-
-!! 
-
-&&% )
-
-,, $
-
-22 *ã
-eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\User\UserRequestBase.cs
-
- )
-
- $
-
- *ç
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\User\UserUpdateRequest.cs
-
- "
-
- $
-
- 'ó
-eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteBaseRequest.cs
-
- )
-
- $
-
- *
-
-   u
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteCreateRequest.cs
-
-
-
- "u
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteDeleteRequest.cs
-
-
-
- "r
-dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteGetRequest.cs
-
- Å
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Request\Vote\VoteUpdateRequest.cs
-
- "
-
- ß
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\ResponseBase\ApiControllerBase.cs
-
- "
-
-  '
-( )+ ,* +
-- 1 
-
-##$ ,
-
-22 1
-222 3225 6552 3
-227 ;99 
-
-BB  %
-BB- 4HH !€
-eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\ResponseBase\GenericResponse.cs
-
-  
-! "   
-
- 
-
- "
-
- 
-
-   
-
-&& '
-(( ,,2 9~
-dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Auth\LoginResponse.cs
-
- 
-
- Å
-sC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Candidate\CandidateCreateResponse.cs
-
- (Å
-sC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Candidate\CandidateDeleteResponse.cs
-
- (ä
-pC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Candidate\CandidateGetResponse.cs
-
- %
-
-, 9ó
-qC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Candidate\CandidateResponseBase.cs
-
- &
-
- 
-
- Å
-sC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Candidate\CandidateUpdateResponse.cs
-
- (î
-ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\EventAdministrator\EventAdministratorCreateResponse.cs
-
- 1î
-ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\EventAdministrator\EventAdministratorDeleteResponse.cs
-
- 1ù
-ÇC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\EventAdministrator\EventAdministratorGetResponse.cs
-
-		 .
-
-4 K¬
-ÉC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\EventAdministrator\EventAdministratorResponseBase.cs
-
-		 /
-
- 
-
- 
-
- 
-
-!! î
-ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\EventAdministrator\EventAdministratorUpdateResponse.cs
-
- 1y
-kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventCreateResponse.cs
-
- $y
-kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventDeleteResponse.cs
-
- $Ç
-hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventGetResponse.cs
-
-		 !
-
-' 1è
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventResponseBase.cs
-
- "
-
- 
-
- y
-kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Event\EventUpdateResponse.cs
-
- $w
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\User\UserCreateResponse.cs
-
- #w
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\User\UserDeleteResponse.cs
-
- #Ä
-fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\User\UserGetResponse.cs
-
-  
-
-& .•
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\User\UserResponseBase.cs
-
- "
-
- '
-
- 
-
-   
-
-%% !w
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\User\UserUpdateResponse.cs
-
- #w
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Vote\VoteCreateResponse.cs
-
- #w
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Vote\VoteDeleteResponse.cs
-
- #Ä
-fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Vote\VoteGetResponse.cs
-
-  
-
-& /±
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Vote\VoteResponseBase.cs
-
- !
-
- 
-
- 
-
- 
-
-   
-
-&& w
-iC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Response\Vote\VoteUpdateResponse.cs
-
- #à
-ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csÑ
-ÅC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\obj\Debug\net5.0\Dach.ElectionSystem.Models.AssemblyInfo.cs
+   á
+ÑC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csÅ
+C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Utils\obj\Debug\net5.0\Dach.ElectionSystem.Utils.AssemblyInfo.cs

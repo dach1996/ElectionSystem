@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>Dach.ElectionSystem.Repository</ProjectName>
+  <ProjectName>Dach.ElectionSystem.Models</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
-  <ProjectGuid>0a5f939d-6b5f-46ad-bc2c-6bf87e7afe84</ProjectGuid>
-  <FullPath>C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj</FullPath>
+  <ProjectGuid>51887013-2390-4ceb-a7d9-96e2a19a7358</ProjectGuid>
+  <FullPath>C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
     <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\wwwda\source\repos\ElectionSystem\.sonarqube\conf\86\FilesToAnalyze.txt" />
   </AnalysisResults>
   <AnalysisSettings>
-    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\bin\Debug\net5.0\Dach.ElectionSystem.Repository.dll.RoslynCA.json|C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\bin\Debug\net5.0\Dach.ElectionSystem.Repository.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\bin\Debug\net5.0\Dach.ElectionSystem.Models.dll.RoslynCA.json|C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Models\bin\Debug\net5.0\Dach.ElectionSystem.Models.dll.RoslynCA.json</Property>
     <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\wwwda\source\repos\ElectionSystem\.sonarqube\out\86</Property>
   </AnalysisSettings>
   <Configuration>Debug</Configuration>

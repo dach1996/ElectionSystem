@@ -89,6 +89,48 @@ namespace Dach.ElectionSystem.Models.Enums
         MailError = 130,
 
         /// <summary>
+        /// Erro usuario registrado en el Evento
+        /// </summary>
+        [EnumMember(Value = "Usuario ya registrado en Evento")]
+        UserRegisterEvent = 131,
+
+        /// <summary>
+        /// Máximo de participantes excedido para el evento
+        /// </summary>
+        [EnumMember(Value = "El número de participantes ha usperado la cantidad permitida")]
+        LimitMaxParticipants = 132,
+
+        /// <summary>
+        /// Usuario no es administrador del evento
+        /// </summary>
+        [EnumMember(Value = "El Usuario no es administrador del evento")]
+        UserIsnotAdministratorEvent = 133,
+
+        /// <summary>
+        ///Candidato no se encuentra registrado
+        /// </summary>
+        [EnumMember(Value = "Candidato no está registrado al evento")]
+        CandidateDontRegister = 134,
+
+        /// <summary>
+        /// Erro usuario registrado en el Evento
+        /// </summary>
+        [EnumMember(Value = "Usuario no registrado al evento")]
+        UserNotRegisterEvent = 135,
+
+        /// <summary>
+        /// Usuario ya registra voto
+        /// </summary>
+        [EnumMember(Value = "El usuario ya ha participado en el evento")]
+        UserHasVote = 136,
+
+        /// <summary>
+        /// Usuario ya registra voto
+        /// </summary>
+        [EnumMember(Value = "El usuario se encuentra registrado como candidato en el evento")]
+        IsCandidateInEvent = 137,        
+
+        /// <summary>
         /// Error del sistema
         /// </summary>
         [EnumMember(Value = "Modelo de datos Invalido")]

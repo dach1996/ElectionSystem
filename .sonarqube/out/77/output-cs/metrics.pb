@@ -1,5 +1,22 @@
-˝
-MC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\Util.cs0 8j$%&'()/:;<=>?G^ghijkpsurX	 !"*+,-.012345678@ABCDEFHIJKLMNORSTUVWXYZ[\]^_`acelmnoqrtvwxyz{~x
-Ç) ,-.0123567BCEFHIJKLNTUVXZ\]_qrtvxyzç
-ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csrí
-ÅC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\obj\Debug\net5.0\Dach.ElectionSystem.Common.AssemblyInfo.csjr	
+°
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\AuthController.cs 8j	
+%&'r!	 !"#()*+,-.12Ç#.Ë
+hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\CandidateController.cs 8j)*+,-./?@ABCDEVWXYZ[\rI	
+ !"#$%&'0123456789:;<=FGHIJKLMNOPQRS]^_`abcdefghijkmnÇ%&:;<PQRhijı
+qC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventAdministratorController.cs 8j !"3456789JKLMNOPbcdefgrL	#$%&'()*+-./01:;<=>?@ABDEFGHQRSTUVWXY[\]^_hijklmnoqrstxyÇ./0EFG\]^rs…
+dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventController.cs 8j ()*+,456789GHIJKLr6!"#$%-./012:;<=>?@ABCMNOPQRSTUVWX\]Ç%2ABUVW…
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\UserController.cs 8j#$%456?@AKLMr<	
+ !&'()*+,-./012789:;<BCDEFGHINOPQRSTUXYxÇ!/01<IU‚
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\VoteController.cs
+ 8j./0123ABCDEFGYZ[\]^rJ	
+ !"#$%&'()*+,456789:;<=>?HIJKLMNOPQRSTU_`abcdefghijklpqÇ
+)*+=>RSTjk~
+PC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Program.cs 8r	
+Çµ
+PC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Startup.cs 8jr;	
+ !"#$%'()*+/01234569:;<=>ADEFHIJKxÇ"#$%')*+01239:;<=>ADFç
+ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csrì
+ÅC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\obj\Debug\net5.0\Dach.ElectionSystem.WebApi.AssemblyInfo.csjr
+•
+îC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\obj\Debug\net5.0\Dach.ElectionSystem.WebApi.MvcApplicationPartsAssemblyInfo.csjr	
+

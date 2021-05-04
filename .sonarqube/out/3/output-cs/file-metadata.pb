@@ -1,8 +1,6 @@
 j
 aC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Data\ValidateIntegrity.csutf-8o
-fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Intrastructure\InitServices.csutf-8h
-_C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Logger\ILoggerCustom.csutf-8g
-^C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Logger\LoggerCustom.csutf-8n
+fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Intrastructure\InitServices.csutf-8n
 eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Notification\INotification.csutf-8u
 lC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Notification\NotificationSendGrid.csutf-8j
 aC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\TokenJWT\ITokenService.csutf-8i

@@ -7,7 +7,7 @@ namespace Dach.ElectionSystem.Models.Persitence
     /// <summary>
     /// Clase para persistencia de votos
     /// </summary>
-      [Table(name: "VOTOS")]
+    [Table(name: "VOTOS")]
     public class Vote
     {
         #region Attributes
@@ -42,8 +42,14 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// <summary>
         /// Cédula Usuario
         /// </summary>
-        [Column("VTO_FECHA")]
-        public DateTime? Date { get; set; }
+        [Column("VTO_FECHA_INSCRIPCION")]
+        public DateTime DateInscription { get; set; }
+
+        /// <summary>
+        /// Cédula Usuario
+        /// </summary>
+        [Column("VTO_FECHA_VOTACION")]
+        public DateTime? DateVote { get; set; }
 
         /// <summary>
         /// Cédula Usuario

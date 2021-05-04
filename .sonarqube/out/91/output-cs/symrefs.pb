@@ -1,272 +1,169 @@
-Ë
-fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\DBContext\WebApiDbContext.cs
-  		3 B
+Å
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\AuthController.cs
 
-		 !
-		D K		T [
+ (
+# , ## #.. #
 
- 
+ 
+( 0  
 
- !
+"") -
+""; G##) 5
 
-  )
+--) :
+--T `..) 5æ
+hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\CandidateController.cs
 
- 
+ $<
+# , &&! *<<! *RR! *jj! *
 
-) ;
+ "
+- 5  
 
-" -ü
-oC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\CandidateRepository.cs
+!!) 8
+"". 5%% &&0 7
+## #%% %
 
- $
+55) ;(
+66/ 6:: ;; <<0 7
+77 $:: %
+88 (;;" -
 
- "
-/ 9B L®
-xC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\EventAdministratorRepository.cs
+KK) 8(
+LL. 5PP QQ RR0 7
+MM #QQ %
+NN 'PP" -
 
- -
+cc) 3(
+dd) 0hh ii jj0 7
+ee !hh %
+ff %ii" -«
+qC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventAdministratorController.cs
 
-		 +
-		8 B		K Uï
-kC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\EventRepository.cs
+ -<
+# , 00! *GG! *^^! *ss! *
 
-  
+ +
+6 >  
 
- 
-+ 5> H
+(() A
+)) #.. %
+** "// #(
+++7 >.. // 000 7
 
-. M
-l z1 ?
-# *A H
- !J [
-  
-' (* +…
-mC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\GenericRepository.cs
+??) D
+@@ #EE %
+AA "FF #(
+BB7 >EE FF GG0 7
 
- "Ã
-# $; <D E& '1 2& 'C D2 3H I : ;44% &44G H552 355H I88 88: ;HH- .KK, -PP5 6YY' (^^/ 0ii kk3 4tt vv1 2yy& 'yyJ Kyy{ |
-yyë ízz ~~ ~~: ;Ç
-% 0  $" -88" -PP (TT ^^ "bb kk &oo vv $~~" -
+VV) A
+WW #\\ %
+XX "]] #(
+YY7 >\\ ]] ^^0 7
 
-  
-- 7 $
+mm) 3
+nn #rr %
+oo4 ;rr ss0 7ù
+dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventController.cs
 
-* 2
+  <
+# , %%m v22q zBB! *WW #
 
-* 2
-M [   ""$ 2
-L S** ,, $
-) :$$, =F
- "" "" '' '' ,,% *00 "
-$$ (''& 5
+ 
+) 1  
 
-44) 6
-44Q _:: <<$ 2
-55L SDD FF 
-66) :>>, =F
-88 << << AA AA FF !HH7 <
->> (AA& 5
+%%) 4
+%%S Z	%%| É
 
-KK  +
-KK. 4PPC I
-NN SS VV 
-PP RR 
+22) 7
+22W ^
+22Ä á
 
-YY  &
-YY) /^^; A
-\\ aa cc. 4
-^^ `` 
+??) 4
+??S ZAA BB0 7
+??m oAA 
 
-ff  /
-ff4 6ii4 6
-hh nn qq 
-ii kk? H
-tt )ii' 3
-kk mm 
-tt. 0vv@ B
+SS) 3
+SSP WUU WW) 0
+SSj lUU ∞
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\UserController.cs
 
-yy* 9"
-yyT b
-ÄÄ 
-ÇÇ$ 2$
+ F
+# , !!k t11! *<< "II "UU "
 
-yyï ú
-éé 
-êê $"
-zz$ 5
-ÜÜ !
-àà  1R
-~~ 
-ÇÇ 
-ÇÇ 
-ãã 
-ãã !
-êê% *
-îî "
+ 
+( 0  
 
-àà 
-ââ0 9
+!!) 3
+!!Q X	!!z Å
 
-ââ ,
-ãã* 9Ñ
-jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\UserRepository.cs
+--) 3
+--O V00 110 7
+--i k// 00 
+
+;;) 3
+;;Q X<<( /
+
+HH) 7
+HHY `II( /
+
+TT) 7
+TTY `UU( /ô
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\VoteController.cs
 
  <
-% /  " !## !)) !
+# , ++! *>>! *TT! *kk! *
 
- 
-* 4= G (
+ 
+( 0  
 
-  C
-K SY as {
-\ dQ Y
- & *(
-? CH Le i@ D
+##) 3(
+$$) 0)) ** ++0 7
+%% #** %
+&& ")) #
 
-  9
-A IX `
-R Wr w
- ( ,
-> BG Kd h
+99) 6
+::* 1== >>0 7
+;; #== %
 
-!!  8
-!!@ E$$1 6
-## %%( ,
-##7 8##: ;
-$$ $$# '
+MM) 3(
+NN) 0RR SS TT0 7
+OO #RR %
+PP 'SS" -
 
-''  ;
-''C K))X `
-)) **( ,
-))> B))G Kö
-jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Implementation\VoteRepository.cs
+ff) 3
+gg' .jj kk0 7
+hh #jj %Ó
+PC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Program.cs
 
- 
+		 
 
-		 
-		* 4		= Gz
-lC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\ICandidateRepository.cs
+ 
+) - "
+# 4 
+> B& *
+* 4  
 
-
-
- )É
-uC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IEventAdministratorRepository.cs
+1 4
+6 = Ë
+PC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Startup.cs
 
-
-
- 2¶
-hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IEventRepository.cs
+ 
 
-
-
- %
+ 
+& 3 )
+ + 
 
- <
+   %d
+  9 A"" ## $$ %% '' 00 11 22 33 
+""3 :""> E(
+''# $)) ** ++ 
 
-\ j
-
-V ]
-
-? Pµ
-jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IGenericRepository.cs
-
-		 'æ
-		( )		1 2   6 7+ ,A B = >, -B C, -    : ;2 3H I
-
- 
-
-! #
-
- %
-
- %
-
-@ N
-
-E L
-
-" 3
-
- ,
-
-G U
-
-F M
-
-8 I
-
- 
-
-! '
-
- "
-
-' )
-
- 
-
- "
-
- )
-
-D R
-
-L S
-
-) :Ì
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IUserRepository.cs
-
- $
-
- 6
-
-> F
-
-O W
-
-		 ,
-
-		4 <
-
-		E J
-
-
-
- +
-
-
-
-3 8
-
- .
-
-6 >u
-gC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Interfaces\IVoteRepository.cs
-
- $Ã
-jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\Intrastructure\InitRepository.cs
-
- &
-
-		 )F
-		B J
-
-      â
-cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\UnitOfWork\IUnitOfWork.cs
-
-  
-
- 
-
- æ
-bC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\UnitOfWork\UnitOfWork.cs
-
- 
- &  
-
-		 
-		* 1 
-
- å
-âC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cså
-âC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Repository\obj\Debug\net5.0\Dach.ElectionSystem.Repository.AssemblyInfo.cs
+55 P
+552 5:: ;; << == >> AA DD 
+55K N99 
+<< <<" #
+DD &FF à
+ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csÑ
+ÅC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\obj\Debug\net5.0\Dach.ElectionSystem.WebApi.AssemblyInfo.csó
+îC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\obj\Debug\net5.0\Dach.ElectionSystem.WebApi.MvcApplicationPartsAssemblyInfo.cs

@@ -1,623 +1,607 @@
 ¶Q
 aC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Data\ValidateIntegrity.cs
-	namespace
-
- 	
-Dach
-
-
+	namespace 	
+Dach
  
-.
-
- 
-ElectionSystem
-
- 
-.
-
- 
-Services
-
- &
-.
-
-& '
-Data
-
-' +
-{ 
-public 
+. 
+ElectionSystem 
+. 
+Services &
+.& '
+Data' +
+{ 
+public 
 
-class 
-ValidateIntegrity "
-{ 
-private 
-readonly 
-IUserRepository (
-userRepository) 7
-;7 8
+class 
+ValidateIntegrity "
+{ 
 private 
 readonly 
-IVoteRepository (
-voteRepository) 7
+IUserRepository (
+userRepository) 7
 ;7 8
 private 
-readonly 
-IEventRepository )
-eventRepository* 9
-;9 :
+readonly 
+IVoteRepository (
+voteRepository) 7
+;7 8
 private 
-readonly  
-ICandidateRepository -
-candidateRepository. A
-;A B
-public 
-ValidateIntegrity  
-(  !
-IUserRepository 
-userRepository *
-,* +
-IVoteRepository 
-voteRepository *
-,* +
-IEventRepository 
-eventRepository ,
-,, - 
-ICandidateRepository  
-candidateRepository! 4
-)4 5
-{ 	
-this 
-. 
-userRepository 
-=  !
-userRepository" 0
-;0 1
+readonly 
+IEventRepository )
+eventRepository* 9
+;9 :
+private 
+readonly  
+ICandidateRepository -
+candidateRepository. A
+;A B
+public 
+ValidateIntegrity  
+(  !
+IUserRepository 
+userRepository *
+,* +
+IVoteRepository 
+voteRepository *
+,* +
+IEventRepository 
+eventRepository ,
+,, - 
+ICandidateRepository  
+candidateRepository! 4
+)4 5
+{ 	
 this 
 . 
-voteRepository 
+userRepository 
 =  !
-voteRepository" 0
+userRepository" 0
 ;0 1
 this 
-. 
-eventRepository  
-=! "
-eventRepository# 2
-;2 3
+. 
+voteRepository 
+=  !
+voteRepository" 0
+;0 1
 this 
-. 
-candidateRepository $
-=% &
-candidateRepository' :
-;: ;
-} 	
-public** 
-async** 
-Task** 
-<** 
-Event** 
->**  
-ValidateEvent**! .
-(**. /
-int**/ 2
-id**3 5
-)**5 6
-{++ 	
-var,, 
-
-existEvent,, 
-=,, 
-await,, "
-eventRepository,,# 2
-.,,2 3
-GetAsync,,3 ;
-(,,; <
-u,,< =
-=>,,> @
-u,,A B
-.,,B C
-Id,,C E
-==,,F H
-id,,I K
-),,K L
-;,,L M
-if-- 
-(-- 
+. 
+eventRepository  
+=! "
+eventRepository# 2
+;2 3
+this 
+. 
+candidateRepository $
+=% &
+candidateRepository' :
+;: ;
+} 	
+public++ 
+async++ 
+Task++ 
+<++ 
+Event++ 
+>++  
+ValidateEvent++! .
+(++. /
+int++/ 2
+id++3 5
+)++5 6
+{,, 	
+var-- 
 
 existEvent-- 
-.-- 
-Count--  
-(--  !
-)--! "
-!=--# %
-$num--& '
-)--' (
-throw.. 
-new.. 
-CustomException.. )
-(..) *
-MessageCodesApi..* 9
-...9 :
-NotFindRecord..: G
-,..G H
-ResponseType..I U
-...U V
-Error..V [
-,..[ \
-HttpStatusCode..] k
-...k l
-NotFound..l t
-,..t u
-$"..v x-
- No se encuntra el evento con Id:	..x ò
-{
-..ò ô
-id
-..ô õ
-}
-..õ ú
-"
-..ú ù
-)
-..ù û
-;
-..û ü
-var// 
-eventCurrent// 
-=// 
+=-- 
+await-- "
+eventRepository--# 2
+.--2 3
+GetAsync--3 ;
+(--; <
+u--< =
+=>--> @
+u--A B
+.--B C
+Id--C E
+==--F H
+id--I K
+)--K L
+;--L M
+if.. 
+(.. 
 
-existEvent// )
-.//) *
-First//* /
-(/// 0
-)//0 1
-;//1 2
-if00 
-(00 
+existEvent.. 
+... 
+Count..  
+(..  !
+)..! "
+!=..# %
+$num..& '
+)..' (
+throw// 
+new// 
+CustomException// )
+(//) *
+MessageCodesApi//* 9
+.//9 :
+NotFindRecord//: G
+,//G H
+ResponseType//I U
+.//U V
+Error//V [
+,//[ \
+HttpStatusCode//] k
+.//k l
+NotFound//l t
+,//t u
+$"//v x-
+ No se encuntra el evento con Id:	//x ò
+{
+//ò ô
+id
+//ô õ
+}
+//õ ú
+"
+//ú ù
+)
+//ù û
+;
+//û ü
+var00 
 eventCurrent00 
-.00 
-IsDelete00 %
-)00% &
-throw11 
-new11 
-CustomException11 )
-(11) *
-MessageCodesApi11* 9
-.119 :
-NotFindRecord11: G
-,11G H
-ResponseType11I U
-.11U V
-Error11V [
-,11[ \
-HttpStatusCode11] k
-.11k l
-NotFound11l t
-,11t u
-$"11v x
-El evento con Id:	11x â
+=00 
+
+existEvent00 )
+.00) *
+First00* /
+(00/ 0
+)000 1
+;001 2
+if11 
+(11 
+eventCurrent11 
+.11 
+IsDelete11 %
+)11% &
+throw22 
+new22 
+CustomException22 )
+(22) *
+MessageCodesApi22* 9
+.229 :
+NotFindRecord22: G
+,22G H
+ResponseType22I U
+.22U V
+Error22V [
+,22[ \
+HttpStatusCode22] k
+.22k l
+NotFound22l t
+,22t u
+$"22v x
+El evento con Id:	22x â
 {
-11â ä
+22â ä
 id
-11ä å
+22ä å
 }
-11å ç
+22å ç
  ha sido borrado
-11ç ù
+22ç ù
 "
-11ù û
+22ù û
 )
-11û ü
+22û ü
 ;
-11ü †
-return22 
+22ü †
+return33 
 
-existEvent22 
-.22 
-FirstOrDefault22 ,
-(22, -
-)22- .
-;22. /
-}33 	
-public55 
-async55 
-Task55 
-<55 
-User55 
->55 
-ValidateUser55  ,
-(55, -
-int55- 0
-idUser551 7
-)557 8
-{66 	
-var77 
-	existUser77 
-=77 
-await77 !
-userRepository77" 0
-.770 1
-GetAsync771 9
-(779 :
-u77: ;
-=>77< >
-u77? @
-.77@ A
-Id77A C
-==77D F
-idUser77G M
-)77M N
-;77N O
-if88 
-(88 
+existEvent33 
+.33 
+FirstOrDefault33 ,
+(33, -
+)33- .
+;33. /
+}44 	
+public66 
+async66 
+Task66 
+<66 
+User66 
+>66 
+ValidateUser66  ,
+(66, -
+int66- 0
+idUser661 7
+)667 8
+{77 	
+var88 
 	existUser88 
-.88 
-Count88 
-(88  
-)88  !
-!=88" $
-$num88% &
-)88& '
-throw99 
-new99 
-CustomException99 )
-(99) *
-MessageCodesApi99* 9
-.999 :
-NotFindRecord99: G
-,99G H
-ResponseType99I U
-.99U V
-Error99V [
-,99[ \
-HttpStatusCode99] k
-.99k l
-Unauthorized99l x
-,99x y
-$"99z |.
-!No se encuntra el Usuario con Id:	99| ù
+=88 
+await88 !
+userRepository88" 0
+.880 1
+GetAsync881 9
+(889 :
+u88: ;
+=>88< >
+u88? @
+.88@ A
+Id88A C
+==88D F
+idUser88G M
+)88M N
+;88N O
+if99 
+(99 
+	existUser99 
+.99 
+Count99 
+(99  
+)99  !
+!=99" $
+$num99% &
+)99& '
+throw:: 
+new:: 
+CustomException:: )
+(::) *
+MessageCodesApi::* 9
+.::9 :
+NotFindRecord::: G
+,::G H
+ResponseType::I U
+.::U V
+Error::V [
+,::[ \
+HttpStatusCode::] k
+.::k l
+Unauthorized::l x
+,::x y
+$"::z |.
+!No se encuntra el Usuario con Id:	::| ù
 {
-99ù û
+::ù û
 idUser
-99û §
+::û §
 }
-99§ •
+::§ •
 "
-99• ¶
+::• ¶
 )
-99¶ ß
+::¶ ß
 ;
-99ß ®
-return:: 
-	existUser:: 
-.:: 
-FirstOrDefault:: +
-(::+ ,
-)::, -
-;::- .
-};; 	
-public== 
-async== 
-Task== 
-<== 
-User== 
->== 
-ValidateUser==  ,
-(==, -
-IRequestBase==- 9
-request==: A
-)==A B
-{>> 	
-var?? 
-	existUser?? 
-=?? 
-await?? !
-userRepository??" 0
-.??0 1
-GetAsync??1 9
-(??9 :
-u??: ;
-=>??< >
-u??? @
-.??@ A
-Id??A C
-==??D F
-System??G M
-.??M N
-Convert??N U
-.??U V
-ToInt32??V ]
-(??] ^
-request??^ e
-.??e f
+::ß ®
+return;; 
+	existUser;; 
+.;; 
+FirstOrDefault;; +
+(;;+ ,
+);;, -
+;;;- .
+}<< 	
+public>> 
+async>> 
+Task>> 
+<>> 
+User>> 
+>>> 
+ValidateUser>>  ,
+(>>, -
+IRequestBase>>- 9
+request>>: A
+)>>A B
+{?? 	
+var@@ 
+	existUser@@ 
+=@@ 
+await@@ !
+userRepository@@" 0
+.@@0 1
+GetAsync@@1 9
+(@@9 :
+u@@: ;
+=>@@< >
+u@@? @
+.@@@ A
+Id@@A C
+==@@D F
+System@@G M
+.@@M N
+Convert@@N U
+.@@U V
+ToInt32@@V ]
+(@@] ^
+request@@^ e
+.@@e f
 
-TokenModel??f p
-.??p q
-Id??q s
-)??s t
-&&??u w
-u@@@ A
-.@@A B
-UserName@@B J
-==@@K M
-request@@N U
-.@@U V
-
-TokenModel@@V `
-.@@` a
-Username@@a i
-&&@@j l
+TokenModel@@f p
+.@@p q
+Id@@q s
+)@@s t
+&&@@u w
 uAA@ A
-.AAA B
-EmailAAB G
-==AAH J
-requestAAK R
-.AAR S
+.AAA B
+UserNameAAB J
+==AAK M
+requestAAN U
+.AAU V
 
-TokenModelAAS ]
-.AA] ^
-EmailAA^ c
-,AAc d
-includePropertiesBB@ Q
-:BBQ R
-$"BBS U
-{BBU V
-nameofBBV \
-(BB\ ]
-UserBB] a
-.BBa b"
-ListEventAdministratorBBb x
-)BBx y
-}BBy z
-,BBz {
-{BB{ |
-nameof	BB| Ç
+TokenModelAAV `
+.AA` a
+UsernameAAa i
+&&AAj l
+uBB@ A
+.BBA B
+EmailBBB G
+==BBH J
+requestBBK R
+.BBR S
+
+TokenModelBBS ]
+.BB] ^
+EmailBB^ c
+,BBc d
+includePropertiesCC@ Q
+:CCQ R
+$"CCS U
+{CCU V
+nameofCCV \
+(CC\ ]
+UserCC] a
+.CCa b"
+ListEventAdministratorCCb x
+)CCx y
+}CCy z
+,CCz {
+{CC{ |
+nameof	CC| Ç
 (
-BBÇ É
+CCÇ É
 User
-BBÉ á
+CCÉ á
 .
-BBá à
+CCá à
 EventNumber
-BBà ì
+CCà ì
 )
-BBì î
+CCì î
 }
-BBî ï
+CCî ï
 "
-BBï ñ
+CCï ñ
 )
-BBñ ó
+CCñ ó
 ;
-BBó ò
-ifCC 
-(CC 
-	existUserCC 
-.CC 
-CountCC 
-(CC  
-)CC  !
-!=CC" $
-$numCC% &
-)CC& '
-throwDD 
-newDD 
-CustomExceptionDD )
-(DD) *
-MessageCodesApiDD* 9
-.DD9 :
-DataInconsistencyDD: K
-,DDK L
-ResponseTypeDDM Y
-.DDY Z
-ErrorDDZ _
-,DD_ `
-HttpStatusCodeDDa o
-.DDo p
-UnauthorizedDDp |
-,DD| }
-$"	DD~ Ä0
+CCó ò
+ifDD 
+(DD 
+	existUserDD 
+.DD 
+CountDD 
+(DD  
+)DD  !
+!=DD" $
+$numDD% &
+)DD& '
+throwEE 
+newEE 
+CustomExceptionEE )
+(EE) *
+MessageCodesApiEE* 9
+.EE9 :
+DataInconsistencyEE: K
+,EEK L
+ResponseTypeEEM Y
+.EEY Z
+ErrorEEZ _
+,EE_ `
+HttpStatusCodeEEa o
+.EEo p
+UnauthorizedEEp |
+,EE| }
+$"	EE~ Ä0
 "No se encuntra usuario con correo:
-DDÄ ¢
+EEÄ ¢
 {
-DD¢ £
+EE¢ £
 request
-DD£ ™
+EE£ ™
 .
-DD™ ´
+EE™ ´
 
 TokenModel
-DD´ µ
+EE´ µ
 .
-DDµ ∂
+EEµ ∂
 Email
-DD∂ ª
+EE∂ ª
 }
-DDª º
+EEª º
 "
-DDº Ω
+EEº Ω
 )
-DDΩ æ
+EEΩ æ
 ;
-DDæ ø
-returnEE 
-	existUserEE 
-.EE 
-FirstOrDefaultEE +
-(EE+ ,
-)EE, -
-;EE- .
-}FF 	
-publicHH 
-asyncHH 
-TaskHH 
-<HH 
-VoteHH 
->HH 
-ValidateVoteHH  ,
-(HH, -
-intHH- 0
-idHH1 3
-)HH3 4
-{II 	
-varJJ 
-	existVoteJJ 
-=JJ 
-awaitJJ !
-voteRepositoryJJ" 0
-.JJ0 1
-GetAsyncJJ1 9
-(JJ9 :
-uJJ: ;
-=>JJ< >
-uJJ? @
-.JJ@ A
-IdJJA C
-==JJD F
-idJJG I
-)JJI J
-;JJJ K
-ifKK 
-(KK 
+EEæ ø
+returnFF 
+	existUserFF 
+.FF 
+FirstOrDefaultFF +
+(FF+ ,
+)FF, -
+;FF- .
+}GG 	
+publicII 
+asyncII 
+TaskII 
+<II 
+VoteII 
+>II 
+ValidateVoteII  ,
+(II, -
+intII- 0
+idII1 3
+)II3 4
+{JJ 	
+varKK 
 	existVoteKK 
-.KK 
-CountKK 
-(KK  
-)KK  !
-!=KK" $
-$numKK% &
-)KK& '
-throwLL 
-newLL 
-CustomExceptionLL )
-(LL) *
-MessageCodesApiLL* 9
-.LL9 :
-NotFindRecordLL: G
-,LLG H
-ResponseTypeLLI U
-.LLU V
-ErrorLLV [
-,LL[ \
-HttpStatusCodeLL] k
-.LLk l
-NotFoundLLl t
-,LLt u
-$"LLv x+
-No se encuntra el voto con Id:	LLx ñ
+=KK 
+awaitKK !
+voteRepositoryKK" 0
+.KK0 1
+GetAsyncKK1 9
+(KK9 :
+uKK: ;
+=>KK< >
+uKK? @
+.KK@ A
+IdKKA C
+==KKD F
+idKKG I
+)KKI J
+;KKJ K
+ifLL 
+(LL 
+	existVoteLL 
+.LL 
+CountLL 
+(LL  
+)LL  !
+!=LL" $
+$numLL% &
+)LL& '
+throwMM 
+newMM 
+CustomExceptionMM )
+(MM) *
+MessageCodesApiMM* 9
+.MM9 :
+NotFindRecordMM: G
+,MMG H
+ResponseTypeMMI U
+.MMU V
+ErrorMMV [
+,MM[ \
+HttpStatusCodeMM] k
+.MMk l
+NotFoundMMl t
+,MMt u
+$"MMv x+
+No se encuntra el voto con Id:	MMx ñ
 {
-LLñ ó
+MMñ ó
 id
-LLó ô
+MMó ô
 }
-LLô ö
+MMô ö
 "
-LLö õ
+MMö õ
 )
-LLõ ú
+MMõ ú
 ;
-LLú ù
-returnMM 
-	existVoteMM 
-.MM 
-FirstOrDefaultMM +
-(MM+ ,
-)MM, -
-;MM- .
-}NN 	
-publicPP 
-asyncPP 
-TaskPP 
-<PP 
-	CandidatePP #
->PP# $
-ValidateCandiatePP% 5
-(PP5 6
-intPP6 9
-idPP: <
-)PP< =
-{QQ 	
-varRR 
-existCandidateRR 
-=RR  
-awaitRR! &
-candidateRepositoryRR' :
-.RR: ;
-GetAsyncIncludeRR; J
-(RRJ K
-uRRK L
-=>RRM O
-uRRP Q
-.RRQ R
-IdRRR T
-==RRU W
-idRRX Z
-,SSL M
-includePropertiesSSN _
-:SS_ `
-uSSa b
-=>SSc e
-$"SSf h
-{SSh i
-nameofSSi o
-(SSo p
-uSSp q
-.SSq r
-UserSSr v
-)SSv w
-}SSw x
-"SSx y
-)SSy z
-;SSz {
-ifTT 
-(TT 
-existCandidateTT 
-.TT 
-CountTT $
-(TT$ %
-)TT% &
-!=TT' )
-$numTT* +
-)TT+ ,
-throwUU 
-newUU 
-CustomExceptionUU )
-(UU) *
-MessageCodesApiUU* 9
-.UU9 :
-NotFindRecordUU: G
-,UUG H
-ResponseTypeUUI U
-.UUU V
-ErrorUUV [
-,UU[ \
-HttpStatusCodeUU] k
-.UUk l
-NotFoundUUl t
-,UUt u
-$"UUv x0
-#No se encuntra el candidato con Id:	UUx õ
+MMú ù
+returnNN 
+	existVoteNN 
+.NN 
+FirstOrDefaultNN +
+(NN+ ,
+)NN, -
+;NN- .
+}OO 	
+publicQQ 
+asyncQQ 
+TaskQQ 
+<QQ 
+	CandidateQQ #
+>QQ# $
+ValidateCandiateQQ% 5
+(QQ5 6
+intQQ6 9
+idQQ: <
+)QQ< =
+{RR 	
+varSS 
+existCandidateSS 
+=SS  
+awaitSS! &
+candidateRepositorySS' :
+.SS: ;
+GetAsyncIncludeSS; J
+(SSJ K
+uSSK L
+=>SSM O
+uSSP Q
+.SSQ R
+IdSSR T
+==SSU W
+idSSX Z
+,TTL M
+includePropertiesTTN _
+:TT_ `
+uTTa b
+=>TTc e
+$"TTf h
+{TTh i
+nameofTTi o
+(TTo p
+uTTp q
+.TTq r
+UserTTr v
+)TTv w
+}TTw x
+"TTx y
+)TTy z
+;TTz {
+ifUU 
+(UU 
+existCandidateUU 
+.UU 
+CountUU $
+(UU$ %
+)UU% &
+!=UU' )
+$numUU* +
+)UU+ ,
+throwVV 
+newVV 
+CustomExceptionVV )
+(VV) *
+MessageCodesApiVV* 9
+.VV9 :
+NotFindRecordVV: G
+,VVG H
+ResponseTypeVVI U
+.VVU V
+ErrorVVV [
+,VV[ \
+HttpStatusCodeVV] k
+.VVk l
+NotFoundVVl t
+,VVt u
+$"VVv x0
+#No se encuntra el candidato con Id:	VVx õ
 {
-UUõ ú
+VVõ ú
 id
-UUú û
+VVú û
 }
-UUû ü
+VVû ü
 "
-UUü †
+VVü †
 )
-UU† °
+VV† °
 ;
-UU° ¢
-returnVV 
-existCandidateVV !
-.VV! "
-FirstOrDefaultVV" 0
-(VV0 1
-)VV1 2
-;VV2 3
-}WW 	
+VV° ¢
+returnWW 
+existCandidateWW !
+.WW! "
+FirstOrDefaultWW" 0
+(WW0 1
+)WW1 2
+;WW2 3
+}XX 	
 }ZZ 
 }[[ È	
 fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Intrastructure\InitServices.cs
@@ -703,363 +687,7 @@ fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Intrast
 }	 
 
 } 
-} Æ
-_C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Logger\ILoggerCustom.cs
-	namespace 	
-Dach
- 
-. 
-ElectionSystem 
-. 
-Services &
-.& '
-Logger' -
-{ 
-public 
-
-	interface 
-ILoggerCustom "
-{ 
-public		 
-void		 
-WriteLoggerWarning		 &
-(		& '
-string		' -
-	logModule		. 7
-,		7 8
-string		9 ?
-message		@ G
-,		G H
-string		I O
-logName		P W
-=		X Y
-null		Z ^
-)		^ _
-;		_ `
-public
-
- 
-void
-
- 
-WriteLoggerError
-
- $
-(
-
-$ %
-string
-
-% +
-	logModule
-
-, 5
-,
-
-5 6
-string
-
-7 =
-message
-
-> E
-,
-
-E F
-string
-
-G M
-logName
-
-N U
-=
-
-V W
-null
-
-X \
-)
-
-\ ]
-;
-
-] ^
-public 
-void 
-WriteLoggerInfo #
-(# $
-string$ *
-	logModule+ 4
-,4 5
-string6 <
-message= D
-,D E
-stringF L
-logNameM T
-=U V
-nullW [
-)[ \
-;\ ]
-public 
-void 
-WriteLoggerDebug $
-($ %
-string% +
-	logModule, 5
-,5 6
-string7 =
-message> E
-,E F
-stringG M
-logNameN U
-=V W
-nullX \
-)\ ]
-;] ^
-} 
-} ¡"
-^C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Logger\LoggerCustom.cs
-	namespace 	
-Dach
- 
-. 
-ElectionSystem 
-. 
-Services &
-.& '
-Logger' -
-{ 
-public 
-
-class 
-LoggerCustom 
-: 
-ILoggerCustom  -
-{ 
-private 
-readonly 
-string 
-_pathLogConfigFile  2
-;2 3
-private 
-readonly 
-ILog 
-_log "
-;" #
-public 
-LoggerCustom 
-( 
-) 
-{ 	
-_pathLogConfigFile 
-=  
-$str! 2
-;2 3
-_log 
-= 
-
-LogManager 
-. 
-	GetLogger '
-(' (
-typeof( .
-(. /
-LoggerCustom/ ;
-); <
-)< =
-;= >
-this 
-. #
-SetLog4NetConfiguration (
-(( )
-)) *
-;* +
-} 	
-public 
-void 
-WriteLoggerDebug $
-($ %
-string% +
-	logModule, 5
-,5 6
-string7 =
-message> E
-,E F
-stringG M
-logNameN U
-=V W
-nullX \
-)\ ]
-{ 	
-_log 
-. 
-DebugFormat 
-( 
-$str (
-,( )
-	logModule* 3
-,3 4
-message5 <
-)< =
-;= >
-} 	
-public 
-void 
-WriteLoggerError $
-($ %
-string% +
-	logModule, 5
-,5 6
-string7 =
-message> E
-,E F
-stringG M
-logNameN U
-=V W
-nullX \
-)\ ]
-{ 	
-_log 
-. 
-ErrorFormat 
-( 
-$str (
-,( )
-	logModule* 3
-,3 4
-message5 <
-)< =
-;= >
-} 	
-public   
-void   
-WriteLoggerInfo   #
-(  # $
-string  $ *
-	logModule  + 4
-,  4 5
-string  6 <
-message  = D
-,  D E
-string  F L
-logName  M T
-=  U V
-null  W [
-)  [ \
-{!! 	
-_log"" 
-."" 
-
-InfoFormat"" 
-("" 
-$str"" '
-,""' (
-	logModule"") 2
-,""2 3
-message""4 ;
-)""; <
-;""< =
-}## 	
-public%% 
-void%% 
-WriteLoggerWarning%% &
-(%%& '
-string%%' -
-	logModule%%. 7
-,%%7 8
-string%%9 ?
-message%%@ G
-,%%G H
-string%%I O
-logName%%P W
-=%%X Y
-null%%Z ^
-)%%^ _
-{&& 	
-_log'' 
-.'' 
-
-WarnFormat'' 
-('' 
-$str'' '
-,''' (
-	logModule'') 2
-,''2 3
-message''4 ;
-)''; <
-;''< =
-}(( 	
-private** 
-void** #
-SetLog4NetConfiguration** ,
-(**, -
-)**- .
-{++ 	
-XmlDocument-- 
-log4netConfig-- )
-=--* +
-new--, /
-(--/ 0
-)--0 1
-;--1 2
-log4netConfig.. 
-... 
-Load.. "
-(.." #
-File..# '
-...' (
-OpenRead..( 0
-(..0 1
-_pathLogConfigFile..1 C
-)..C D
-)..D E
-;..E F
-var// 
-repo// 
-=// 
-
-LogManager// %
-.//% &
-CreateRepository//& 6
-(//6 7
-Assembly00 
-.00 
-GetEntryAssembly00 )
-(00) *
-)00* +
-,00+ ,
-typeof00- 3
-(003 4
-log4net004 ;
-.00; <
-
-Repository00< F
-.00F G
-	Hierarchy00G P
-.00P Q
-	Hierarchy00Q Z
-)00Z [
-)00[ \
-;00\ ]
-log4net11 
-.11 
-Config11 
-.11 
-XmlConfigurator11 .
-.11. /
-	Configure11/ 8
-(118 9
-repo119 =
-,11= >
-log4netConfig11? L
-[11L M
-$str11M V
-]11V W
-)11W X
-;11X Y
-}33 	
-}44 
-}55 Ñ
+} Ñ
 eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\Notification\INotification.cs
 	namespace 	
 Dach
@@ -1279,7 +907,7 @@ TokenModel 
 )4 5
 ;5 6
 } 
-} p
+} Ín
 `C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\TokenJWT\TokenService.cs
 	namespace 	
 Dach
@@ -1605,519 +1233,489 @@ WriteToken;;2 <
 )EE5 6
 {FF 	
 tryGG 
-{HH 
-_loggerII 
-.II 
-LogII 
-(II 
-LogLevelII $
-.II$ %
-ErrorII% *
-,II* +
-$"II, .
-Estoy en TokenII. <
-"II< =
-)II= >
-;II> ?
-varJJ 
-tokenJJ 
-=JJ 
-contextJJ #
-.JJ# $
-RequestJJ$ +
-.JJ+ ,
-HeadersJJ, 3
-[JJ3 4
-$strJJ4 C
-]JJC D
-.JJD E
-FirstOrDefaultJJE S
-(JJS T
-)JJT U
-?JJU V
-.JJV W
-SplitJJW \
-(JJ\ ]
-$strJJ] `
-)JJ` a
-.JJa b
-LastJJb f
-(JJf g
-)JJg h
-;JJh i
-ifKK 
-(KK 
-tokenKK 
-==KK 
-nullKK !
-)KK! "
-throwLL 
-newLL 
-CustomExceptionLL -
-(LL- .
-MessageCodesApiLL. =
-.LL= >
-WithOutTokenLL> J
-,LLJ K
-ResponseTypeLLL X
-.LLX Y
-ErrorLLY ^
-,LL^ _
-HttpStatusCodeLL` n
-.LLn o
-UnauthorizedLLo {
-)LL{ |
-;LL| }
-varMM 
-tokenHandlerMM  
-=MM! "
-newMM# &#
-JwtSecurityTokenHandlerMM' >
-(MM> ?
-)MM? @
-;MM@ A
-varNN 
-keyNN 
-=NN 
-EncodingNN "
-.NN" #
-ASCIINN# (
-.NN( )
-GetBytesNN) 1
-(NN1 2
-	secretKeyNN2 ;
-)NN; <
-;NN< =
-tokenHandlerOO 
-.OO 
-ValidateTokenOO *
-(OO* +
-tokenOO+ 0
-,OO0 1
-newOO2 5%
-TokenValidationParametersOO6 O
-{PP 
-ValidateIssuerQQ "
-=QQ# $
-falseQQ% *
-,QQ* +
-ValidateAudienceRR $
-=RR% &
-falseRR' ,
-,RR, -
-ValidateLifetimeSS $
-=SS% &
-trueSS' +
-,SS+ ,$
-ValidateIssuerSigningKeyTT ,
-=TT- .
-trueTT/ 3
-,TT3 4
-LifetimeValidatorUU %
-=UU& '
-thisUU( ,
-.UU, -
-LifetimeValidatorUU- >
-,UU> ?
-IssuerSigningKeyVV $
-=VV% &
-newVV' * 
-SymmetricSecurityKeyVV+ ?
-(VV? @
-keyVV@ C
-)VVC D
-}WW 
-,WW 
-outWW 
-SecurityTokenWW $
-validatedTokenWW% 3
-)WW3 4
-;WW4 5
-}ZZ 
-catch[[ 
-([[ 
-ArgumentException[[ $
-ex[[% '
-)[[' (
-{]] 
-_logger^^ 
-.^^ 
-LogError^^  
-(^^  !
-ex^^! #
-.^^# $
-Message^^$ +
-)^^+ ,
-;^^, -
-throw__ 
-new__ 
-CustomException__ )
-(__) *
-MessageCodesApi__* 9
-.__9 :
-InvalidToken__: F
-,__F G
-ResponseType__H T
-.__T U
-Error__U Z
-,__Z [
-HttpStatusCode__\ j
-.__j k
-Unauthorized__k w
-)__w x
-;__x y
-}`` 
-catchaa 
-(aa ,
- SecurityTokenValidationExceptionaa 3
-exaa4 6
-)aa6 7
-{bb 
-_loggercc 
-.cc 
-LogErrorcc  
-(cc  !
-excc! #
-.cc# $
-Messagecc$ +
-)cc+ ,
-;cc, -
-throwdd 
-newdd 
-CustomExceptiondd )
-(dd) *
-MessageCodesApidd* 9
-.dd9 :
-TokenExpireddd: F
-,ddF G
-ResponseTypeddH T
-.ddT U
-ErrorddU Z
-,ddZ [
-HttpStatusCodedd\ j
-.ddj k
-Unauthorizedddk w
-)ddw x
-;ddx y
-}ee 
-}ff 	
-publichh 
+{HH 
+varII 
+tokenII 
+=II 
+contextII #
+.II# $
+RequestII$ +
+.II+ ,
+HeadersII, 3
+[II3 4
+$strII4 C
+]IIC D
+.IID E
+FirstOrDefaultIIE S
+(IIS T
+)IIT U
+?IIU V
+.IIV W
+SplitIIW \
+(II\ ]
+$strII] `
+)II` a
+.IIa b
+LastIIb f
+(IIf g
+)IIg h
+;IIh i
+ifJJ 
+(JJ 
+tokenJJ 
+==JJ 
+nullJJ !
+)JJ! "
+throwKK 
+newKK 
+CustomExceptionKK -
+(KK- .
+MessageCodesApiKK. =
+.KK= >
+WithOutTokenKK> J
+,KKJ K
+ResponseTypeKKL X
+.KKX Y
+ErrorKKY ^
+,KK^ _
+HttpStatusCodeKK` n
+.KKn o
+UnauthorizedKKo {
+)KK{ |
+;KK| }
+varLL 
+tokenHandlerLL  
+=LL! "
+newLL# &#
+JwtSecurityTokenHandlerLL' >
+(LL> ?
+)LL? @
+;LL@ A
+varMM 
+keyMM 
+=MM 
+EncodingMM "
+.MM" #
+ASCIIMM# (
+.MM( )
+GetBytesMM) 1
+(MM1 2
+	secretKeyMM2 ;
+)MM; <
+;MM< =
+tokenHandlerNN 
+.NN 
+ValidateTokenNN *
+(NN* +
+tokenNN+ 0
+,NN0 1
+newNN2 5%
+TokenValidationParametersNN6 O
+{OO 
+ValidateIssuerPP "
+=PP# $
+falsePP% *
+,PP* +
+ValidateAudienceQQ $
+=QQ% &
+falseQQ' ,
+,QQ, -
+ValidateLifetimeRR $
+=RR% &
+trueRR' +
+,RR+ ,$
+ValidateIssuerSigningKeySS ,
+=SS- .
+trueSS/ 3
+,SS3 4
+LifetimeValidatorTT %
+=TT& '
+thisTT( ,
+.TT, -
+LifetimeValidatorTT- >
+,TT> ?
+IssuerSigningKeyUU $
+=UU% &
+newUU' * 
+SymmetricSecurityKeyUU+ ?
+(UU? @
+keyUU@ C
+)UUC D
+}VV 
+,VV 
+outVV 
+SecurityTokenVV $
+validatedTokenVV% 3
+)VV3 4
+;VV4 5
+}YY 
+catchZZ 
+(ZZ 
+ArgumentExceptionZZ $
+exZZ% '
+)ZZ' (
+{\\ 
+_logger]] 
+.]] 
+LogError]]  
+(]]  !
+ex]]! #
+.]]# $
+Message]]$ +
+)]]+ ,
+;]], -
+throw^^ 
+new^^ 
+CustomException^^ )
+(^^) *
+MessageCodesApi^^* 9
+.^^9 :
+InvalidToken^^: F
+,^^F G
+ResponseType^^H T
+.^^T U
+Error^^U Z
+,^^Z [
+HttpStatusCode^^\ j
+.^^j k
+Unauthorized^^k w
+)^^w x
+;^^x y
+}__ 
+catch`` 
+(`` ,
+ SecurityTokenValidationException`` 3
+ex``4 6
+)``6 7
+{aa 
+_loggerbb 
+.bb 
+LogErrorbb  
+(bb  !
+exbb! #
+.bb# $
+Messagebb$ +
+)bb+ ,
+;bb, -
+throwcc 
+newcc 
+CustomExceptioncc )
+(cc) *
+MessageCodesApicc* 9
+.cc9 :
+TokenExpiredcc: F
+,ccF G
+ResponseTypeccH T
+.ccT U
+ErrorccU Z
+,ccZ [
+HttpStatusCodecc\ j
+.ccj k
+Unauthorizedcck w
+)ccw x
+;ccx y
+}dd 
+}ee 	
+publicgg 
 
-TokenModelhh 
-GetTokenModelhh '
-(hh' (
-HttpContexthh( 3
-contexthh4 ;
-)hh; <
-{ii 	
-tryjj 
-{kk 
-varll 
-tokenll 
-=ll 
-contextll #
-.ll# $
-Requestll$ +
-.ll+ ,
-Headersll, 3
-[ll3 4
-$strll4 C
-]llC D
-.llD E
-FirstOrDefaultllE S
-(llS T
-)llT U
-?llU V
-.llV W
-SplitllW \
-(ll\ ]
-$strll] `
-)ll` a
-.lla b
-Lastllb f
-(llf g
-)llg h
-;llh i
-ifmm 
-(mm 
-tokenmm 
-==mm 
-nullmm !
-)mm! "
-thrownn 
-newnn 
-CustomExceptionnn -
-(nn- .
-MessageCodesApinn. =
-.nn= >
-WithOutTokennn> J
-,nnJ K
-ResponseTypennL X
-.nnX Y
-ErrornnY ^
-,nn^ _
-HttpStatusCodenn` n
-.nnn o
-Unauthorizednno {
-)nn{ |
-;nn| }
-varoo 
-tokenHandleroo  
-=oo! "
-newoo# &#
-JwtSecurityTokenHandleroo' >
-(oo> ?
-)oo? @
-;oo@ A
-varpp 
-jwtSecurityTokenpp $
-=pp% &
-tokenHandlerpp' 3
-.pp3 4
-ReadJwtTokenpp4 @
-(pp@ A
-tokenppA F
-)ppF G
-;ppG H
-varqq 
-claimsqq 
-=qq 
-jwtSecurityTokenqq -
-.qq- .
-Claimsqq. 4
-.qq4 5
-ToListqq5 ;
-(qq; <
-)qq< =
-;qq= >
-varrr 
-usernamerr 
-=rr 
-claimsrr %
-.rr% &
-FirstOrDefaultrr& 4
-(rr4 5
-crr5 6
-=>rr7 9
-crr: ;
-.rr; <
-Typerr< @
-==rrA C
-nameofrrD J
-(rrJ K
-ModelsrrK Q
-.rrQ R
-EnumsrrR W
-.rrW X
-ClaimrrX ]
-.rr] ^
-Namerr^ b
-)rrb c
-)rrc d
-.rrd e
-Valuerre j
-;rrj k
-varss 
-emailss 
-=ss 
-claimsss "
-.ss" #
-FirstOrDefaultss# 1
-(ss1 2
-css2 3
-=>ss4 6
-css7 8
-.ss8 9
-Typess9 =
-==ss> @
-nameofssA G
-(ssG H
-ModelsssH N
-.ssN O
-EnumsssO T
-.ssT U
-ClaimssU Z
-.ssZ [
-Emailss[ `
-)ss` a
-)ssa b
-.ssb c
-Valuessc h
-;ssh i
-vartt 
-idtt 
-=tt 
-claimstt 
-.tt  
-FirstOrDefaulttt  .
-(tt. /
-ctt/ 0
-=>tt1 3
-ctt4 5
-.tt5 6
-Typett6 :
-==tt; =
-nameoftt> D
-(ttD E
-ModelsttE K
-.ttK L
-EnumsttL Q
-.ttQ R
-ClaimttR W
-.ttW X
-IdttX Z
-)ttZ [
-)tt[ \
-.tt\ ]
-Valuett] b
-;ttb c
-varuu 
+TokenModelgg 
+GetTokenModelgg '
+(gg' (
+HttpContextgg( 3
+contextgg4 ;
+)gg; <
+{hh 	
+tryii 
+{jj 
+varkk 
+tokenkk 
+=kk 
+contextkk #
+.kk# $
+Requestkk$ +
+.kk+ ,
+Headerskk, 3
+[kk3 4
+$strkk4 C
+]kkC D
+.kkD E
+FirstOrDefaultkkE S
+(kkS T
+)kkT U
+?kkU V
+.kkV W
+SplitkkW \
+(kk\ ]
+$strkk] `
+)kk` a
+.kka b
+Lastkkb f
+(kkf g
+)kkg h
+;kkh i
+ifll 
+(ll 
+tokenll 
+==ll 
+nullll !
+)ll! "
+throwmm 
+newmm 
+CustomExceptionmm -
+(mm- .
+MessageCodesApimm. =
+.mm= >
+WithOutTokenmm> J
+,mmJ K
+ResponseTypemmL X
+.mmX Y
+ErrormmY ^
+,mm^ _
+HttpStatusCodemm` n
+.mmn o
+Unauthorizedmmo {
+)mm{ |
+;mm| }
+varnn 
+tokenHandlernn  
+=nn! "
+newnn# &#
+JwtSecurityTokenHandlernn' >
+(nn> ?
+)nn? @
+;nn@ A
+varoo 
+jwtSecurityTokenoo $
+=oo% &
+tokenHandleroo' 3
+.oo3 4
+ReadJwtTokenoo4 @
+(oo@ A
+tokenooA F
+)ooF G
+;ooG H
+varpp 
+claimspp 
+=pp 
+jwtSecurityTokenpp -
+.pp- .
+Claimspp. 4
+.pp4 5
+ToListpp5 ;
+(pp; <
+)pp< =
+;pp= >
+varqq 
+usernameqq 
+=qq 
+claimsqq %
+.qq% &
+FirstOrDefaultqq& 4
+(qq4 5
+cqq5 6
+=>qq7 9
+cqq: ;
+.qq; <
+Typeqq< @
+==qqA C
+nameofqqD J
+(qqJ K
+ModelsqqK Q
+.qqQ R
+EnumsqqR W
+.qqW X
+ClaimqqX ]
+.qq] ^
+Nameqq^ b
+)qqb c
+)qqc d
+.qqd e
+Valueqqe j
+;qqj k
+varrr 
+emailrr 
+=rr 
+claimsrr "
+.rr" #
+FirstOrDefaultrr# 1
+(rr1 2
+crr2 3
+=>rr4 6
+crr7 8
+.rr8 9
+Typerr9 =
+==rr> @
+nameofrrA G
+(rrG H
+ModelsrrH N
+.rrN O
+EnumsrrO T
+.rrT U
+ClaimrrU Z
+.rrZ [
+Emailrr[ `
+)rr` a
+)rra b
+.rrb c
+Valuerrc h
+;rrh i
+varss 
+idss 
+=ss 
+claimsss 
+.ss  
+FirstOrDefaultss  .
+(ss. /
+css/ 0
+=>ss1 3
+css4 5
+.ss5 6
+Typess6 :
+==ss; =
+nameofss> D
+(ssD E
+ModelsssE K
+.ssK L
+EnumsssL Q
+.ssQ R
+ClaimssR W
+.ssW X
+IdssX Z
+)ssZ [
+)ss[ \
+.ss\ ]
+Valuess] b
+;ssb c
+vartt 
 
-tokenModeluu 
-=uu  
-newuu! $
+tokenModeltt 
+=tt  
+newtt! $
 
-TokenModeluu% /
-(uu/ 0
-)uu0 1
-{vv 
-Usernameww 
-=ww 
-usernameww '
-,ww' (
-Emailxx 
-=xx 
-emailxx !
-,xx! "
-Idyy 
-=yy 
-idyy 
-}zz 
-;zz 
-return{{ 
+TokenModeltt% /
+(tt/ 0
+)tt0 1
+{uu 
+Usernamevv 
+=vv 
+usernamevv '
+,vv' (
+Emailww 
+=ww 
+emailww !
+,ww! "
+Idxx 
+=xx 
+idxx 
+}yy 
+;yy 
+returnzz 
 
-tokenModel{{ !
-;{{! "
-}|| 
-catch}} 
-(}} 
-	Exception}} 
-ex}} 
-)}}  
-{~~ 
-_logger 
-. 
-LogError  
-(  !
-ex! #
-.# $
-Message$ +
-)+ ,
-;, -
-throw
-ÄÄ 
-new
-ÄÄ 
-CustomException
-ÄÄ )
-(
-ÄÄ) *
-MessageCodesApi
-ÄÄ* 9
-.
-ÄÄ9 :
-InvalidParceToken
-ÄÄ: K
-,
-ÄÄK L
-ResponseType
-ÄÄM Y
-.
-ÄÄY Z
-Error
-ÄÄZ _
-,
-ÄÄ_ `
-HttpStatusCode
-ÄÄa o
-.
-ÄÄo p
-Unauthorized
-ÄÄp |
-)
-ÄÄ| }
-;
-ÄÄ} ~
+tokenModelzz !
+;zz! "
+}{{ 
+catch|| 
+(|| 
+	Exception|| 
+ex|| 
+)||  
+{}} 
+_logger~~ 
+.~~ 
+LogError~~  
+(~~  !
+ex~~! #
+.~~# $
+Message~~$ +
+)~~+ ,
+;~~, -
+throw 
+new 
+CustomException )
+() *
+MessageCodesApi* 9
+.9 :
+InvalidParceToken: K
+,K L
+ResponseTypeM Y
+.Y Z
+ErrorZ _
+,_ `
+HttpStatusCodea o
+.o p
+Unauthorizedp |
+)| }
+;} ~
 }
-ÅÅ 
+ÄÄ 
 }
-ÇÇ 	
+ÅÅ 	
 private
-ÑÑ 
+ÉÉ 
 bool
-ÑÑ 
+ÉÉ 
 LifetimeValidator
-ÑÑ &
+ÉÉ &
 (
-ÑÑ& '
+ÉÉ& '
 DateTime
-ÑÑ' /
+ÉÉ' /
 ?
-ÑÑ/ 0
+ÉÉ/ 0
 	notBefore
-ÑÑ1 :
+ÉÉ1 :
 ,
-ÑÑ: ;
+ÉÉ: ;
 DateTime
-ÑÑ< D
+ÉÉ< D
 ?
-ÑÑD E
+ÉÉD E
 expires
-ÑÑF M
+ÉÉF M
 ,
-ÑÑM N
+ÉÉM N
 SecurityToken
-ÑÑO \
+ÉÉO \
 securityToken
-ÑÑ] j
+ÉÉ] j
 ,
-ÑÑj k(
-TokenValidationParametersÑÑl Ö$
-validationParametersÑÑÜ ö
-)ÑÑö õ
+ÉÉj k(
+TokenValidationParametersÉÉl Ö$
+validationParametersÉÉÜ ö
+)ÉÉö õ
 {
-ÖÖ 	
+ÑÑ 	
 return
-ÜÜ 
+ÖÖ 
 (
-ÜÜ 
+ÖÖ 
 expires
-ÜÜ 
+ÖÖ 
 !=
-ÜÜ 
+ÖÖ 
 null
-ÜÜ #
+ÖÖ #
 &&
-ÜÜ$ &
+ÖÖ$ &
 DateTime
-ÜÜ' /
+ÖÖ' /
 .
-ÜÜ/ 0
+ÖÖ/ 0
 UtcNow
-ÜÜ0 6
+ÖÖ0 6
 <
-ÜÜ7 8
+ÖÖ7 8
 expires
-ÜÜ9 @
+ÖÖ9 @
 )
-ÜÜ@ A
+ÖÖ@ A
 ;
-ÜÜA B
+ÖÖA B
 }
-áá 	
+ÜÜ 	
 }
-àà 
-}ââ Ö
+áá 
+}àà Ö
 áC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Services\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
 [ 
 assembly 	

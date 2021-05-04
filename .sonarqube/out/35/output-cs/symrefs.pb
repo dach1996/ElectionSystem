@@ -1,60 +1,2 @@
-Ω
-MC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\Util.cs
-
- 
-
- &
-. 3> C   
- # 
- &, 4(
-  $ *. 4
-    (
-   !3 45 6
-
-** *
-**2 7..7 <
-**@ D--6 :
-,, 33! '(
--- 00* 311 22+ 4
-.. 00= G22 (
-00 11 (22 )334 ?
-33 55  +66* 5
-44 66 77 (
-55 55 554 5666 7
-
-@@ /
-@@7 ?NN$ ,
-@@H MFF; @
-@@V ZEE: >
-BB LL NN  
-CC  KK% +(
-EE  HH. 7II JJ/ 8
-FF !HHA KJJ (
-HH "II! ,JJ" -KK8 C
-KK "LL6 A
-
-RR +
-RR, -RR8 9TT% &
-RR/ 1RRB DUU# %
-RR: @__= C
-RRE I__# '
-TT XX' 2
-TT> ?TTC D
-UU ZZ \\ %
-VV VV  !(
-XX #ZZ1 ;\\; E__) 3
-ZZ" #ZZ' (
-\\ ]] __ 
-\\, -\\1 2
-
-ll )(
-ll. >oo" 2ww! 1xx  0
-nn tt# 1
-oo rr #yy, 2
-qq rr 
-tt  vv) 9yy +
-vv &yy8 N
-ww yy zz #2
-xx xx xx2 3yy yy3 4à
-ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csÑ
-ÅC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\obj\Debug\net5.0\Dach.ElectionSystem.Common.AssemblyInfo.cs
+R
+PC:\Users\wwwda\AppData\Local\Temp\.NETFramework,Version=v4.5.SqlClrAttributes.cs

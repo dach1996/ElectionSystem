@@ -1,5 +1,49 @@
-˝
-MC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\Util.cs0 8j$%&'()/:;<=>?G^ghijkpsurX	 !"*+,-.012345678@ABCDEFHIJKLMNORSTUVWXYZ[\]^_`acelmnoqrtvwxyz{~x
-Ç) ,-.0123567BCEFHIJKLNTUVXZ\]_qrtvxyzç
-ÖC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csrí
-ÅC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.Common\obj\Debug\net5.0\Dach.ElectionSystem.Common.AssemblyInfo.csjr	
+•
+`C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Auth\AuthHandler.cs 8r)	
+"#$%&'()*+,-.xÇ$%&'()*+≈
+mC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Auth\ForggotenPasswordHandler.cs 8r5	
+!"#$%&'()*+,-./012345679:;<xÇ#$%&'()*+,13679Œ
+pC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Candidate\CandidateCreateHandler.cs 8j,.3r5	
+ !"#$%)*-/012456789:;<=@AxÇ !"#$-/012456789:;<ª
+pC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Candidate\CandidateDeleteHandler.cs 8r+	 !#$%&'()*+,-./23xÇ#$%&'()*+,-.£
+mC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Candidate\CandidateGetHandler.cs 8r"	 !"#$%&)*Ç !"ª
+pC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Candidate\CandidateUpdateHandler.cs 8r*	
+ !#$%&'()*+,-.12xÇ !#$%&'()*+,-‚
+ÇC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\EventAdministrator\EventAdministratorCreateHandler.cs 8j#%',1r5	
+!"$&()*+-./023456789:;<=?@xÇ$&()*-./4579:;<‰
+ÇC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\EventAdministrator\EventAdministratorDeleteHandler.cs 8j"$).3r4	
+ !#%&'(*+,-/012456789:;>?xÇ#%&'*+,-/01456789:¬
+C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\EventAdministrator\EventAdministratorGetHandler.cs 8j %r%	!"#$&'()*+./xÇ!"#(*Â
+ÇC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\EventAdministrator\EventAdministratorUpdateHandler.cs 8j&(-27r5	
+ $%')*+,./01345689:;<=>?CDxÇ')*+./0134589:;<=>÷
+hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Event\EventCreateHandler.cs 8j*,068@BDr>	
+ !"#$%()+-./1234579:;<=>?ACEFGHIKLxÇ!"#$+-./1234579ACEFGH¥
+hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Event\EventDeleteHandler.cs 8j"$+r)	
+ !#%&'()*,-./12xÇ#%&'()*,-.©
+eC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Event\EventGetHandler.cs 8r)	
+ !"#$%&'()*+,/0xÇ
+ !#$%&(*ﬂ
+hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Event\EventUpdateHandler.cs 8
+j(*/49<Er>	
+ !"&')+,-.01235678:;=>?@ABCDFGHIJNOxÇ !)+,-.01235678:;=>?@ABCDFGHI≤
+jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\User\ChangePasswordHandler.cs 8j$&(r'	
+!"#%')*+,-.01xÇ#%')*+,-≈
+jC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\User\IncreaseEventsHandler.cs 8j(*14r2	
+ !"&')+,-./02356789:<=xÇ !)+,-./02356789ø
+fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\User\UserCreateHandler.cs 8j)+r3	
+ "&'(*,-./0123456789:<=xÇ (*,-./0456789¬
+fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\User\UserDeleteHandler.cs 8r8	
+ !"#$%&')*+-./0123456789:;<>?xÇ"#%&)*-/1245689;∑
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\User\UserGetHandler.cs 8r4	
+ !#$%&'()*+,-./012345678xÇ %'(*+,-./012∫
+fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\User\UserUpdateHandler.cs 8j#%.r-	
+!"$&'()*+,-/0123467xÇ$&'()*+,-/0123Ã
+fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vote\VoteCreateHandler.cs 8j&(*,037r8	
+ !$%')+-./124589:;<=>?@ABCEFxÇ ')+-./1245:;=?@AB±
+fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vote\VoteDeleteHandler.cs 8j"$r)	
+ !#%&'(*+,-./23xÇ#%&'(*+,-.ó
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vote\VoteGetHandler.cs 8r 	 !"#$'(Ç "≈
+fC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\Vote\VoteUpdateHandler.cs 8j%'+037r2	
+#$&()*,-./1245689:;<@AxÇ&()*,-./1245689:;î
+åC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csr†
+èC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.BusinessLogic\obj\Debug\net5.0\Dach.ElectionSystem.BusinessLogic.AssemblyInfo.csjr	
