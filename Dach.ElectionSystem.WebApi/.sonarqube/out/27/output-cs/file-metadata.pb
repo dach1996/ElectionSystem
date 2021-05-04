@@ -1,0 +1,12 @@
+l
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\AuthController.csutf-8q
+hC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\CandidateController.csutf-8z
+qC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventAdministratorController.csutf-8m
+dC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\EventController.csutf-8l
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\UserController.csutf-8l
+cC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Controllers\VoteController.csutf-8Y
+PC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Program.csutf-8Y
+PC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\Startup.csutf-8ì
+áC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\obj\Release\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csutf-8è
+ÉC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\obj\Release\net5.0\Dach.ElectionSystem.WebApi.AssemblyInfo.csutf-8¢
+ñC:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi\obj\Release\net5.0\Dach.ElectionSystem.WebApi.MvcApplicationPartsAssemblyInfo.csutf-8

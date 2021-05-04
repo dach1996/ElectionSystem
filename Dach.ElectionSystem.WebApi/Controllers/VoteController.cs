@@ -20,23 +20,25 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         #region Methods Controllers
 
         /// <summary>
-        /// Registrar Voto
+        /// Registrar Participante
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
+        /// <param name="idUser"></param>
+        ///  <returns></returns>
 
-        /// <returns></returns>
-
-        [Route("events/{idEvent}")]
+        [Route("events/{idEvent}/users/{idUser}")]
         [HttpPost]
         [ProducesResponseType(200, Type = typeof(VoteCreateResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> CreateVote(
             [FromBody] VoteCreateRequest request,
-            [FromRoute] int idEvent
+            [FromRoute] int idEvent,
+            [FromRoute] int idUser
            )
         {
+            request.IdUser = idUser;
             request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
         }

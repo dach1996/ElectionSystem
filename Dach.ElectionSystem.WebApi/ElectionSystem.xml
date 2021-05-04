@@ -144,13 +144,14 @@
             Incrementar el número de eventos permitidos
             </summary>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest,System.Int32)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest,System.Int32,System.Int32)">
             <summary>
-            Registrar Voto
+            Registrar Participante
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
-            <returns></returns>
+            <param name="idUser"></param>
+             <returns></returns>
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.DesactiveVote(Dach.ElectionSystem.Models.Request.Vote.VoteDeleteRequest,System.Int32)">
             <summary>

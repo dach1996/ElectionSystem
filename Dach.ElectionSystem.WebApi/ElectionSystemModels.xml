@@ -302,6 +302,41 @@
             Error al Enviar Mail
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.UserRegisterEvent">
+            <summary>
+            Erro usuario registrado en el Evento
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.LimitMaxParticipants">
+            <summary>
+            Máximo de participantes excedido para el evento
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.UserIsnotAdministratorEvent">
+            <summary>
+            Usuario no es administrador del evento
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.CandidateDontRegister">
+             <summary>
+            Candidato no se encuentra registrado
+             </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.UserNotRegisterEvent">
+            <summary>
+            Erro usuario registrado en el Evento
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.UserHasVote">
+            <summary>
+            Usuario ya registra voto
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.IsCandidateInEvent">
+            <summary>
+            Usuario ya registra voto
+            </summary>
+        </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ModelInvalid">
             <summary>
             Error del sistema
@@ -887,7 +922,12 @@
             Cédula Usuario
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.Date">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.DateInscription">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Vote.DateVote">
             <summary>
             Cédula Usuario
             </summary>
@@ -1437,6 +1477,22 @@
         <member name="T:Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest">
             <summary>
             Request para crear Usuarios
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest.IdUser">
+            <summary>
+            Id de Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest.Date">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest.HasVote">
+            <summary>
+            Cédula Usuario
             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Vote.VoteDeleteRequest">
