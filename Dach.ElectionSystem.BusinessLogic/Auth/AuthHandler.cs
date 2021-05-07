@@ -17,16 +17,19 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
     {
         #region Constructor
         private readonly ITokenService _tokenService;
+        private readonly ILogger<AuthHandler> logger;
         private readonly string _secretKey;
         private readonly IUserRepository _usuarioRepository;
-
+    
         public AuthHandler(
             IUserRepository usuarioRepository,
             ITokenService tokenService,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            ILogger<AuthHandler> logger)
         {
             _usuarioRepository = usuarioRepository;
             _tokenService = tokenService;
+            this.logger = logger;
             _secretKey = configuration.GetSection("SecretKey").Value;
         }
 
@@ -40,6 +43,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
             if (!user.IsActive)
                 throw new CustomException(Models.Enums.MessageCodesApi.UserIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
             var token = _tokenService.GenerateTokenJwt(user);
+            logger.LogWarning($"El usuario {user} ha logeado ");
             return new LoginResponse() { Token = token };
         }
     }

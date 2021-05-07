@@ -44,6 +44,7 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
             catch (CustomException customEx)
             {
                 await HandleCustomExceptionAsync(httpContext, customEx);
+                logger.LogWarning(customEx.MessageCodesApi.GetEnumMember());
             }
             catch (Exception exception)
             {
@@ -69,6 +70,7 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
                 ResponseType = customEx.ResponseType.ToString(),
                 Message = $"{customEx.MessageCodesApi.GetEnumMember()} {customEx.MessageSpecific}"
             };
+   
             return context.Response.WriteAsync(response.ToString());
         }
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)

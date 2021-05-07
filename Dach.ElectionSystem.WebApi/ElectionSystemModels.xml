@@ -671,6 +671,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.AllowFreeAccess">
+            <summary>
+            Permitir libre inscripción al evento
+            </summary>
+            <value></value>
+        </member>
         <member name="P:Dach.ElectionSystem.Models.Persitence.Event.IdUser">
             <summary>
             Id Usuario Creador de evento
@@ -959,6 +965,31 @@
             Relación con Candidato
             </summary>
             <value></value>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Persitence.VoteRegisterEmail">
+            <summary>
+            Clase para persistencia de votos
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.VoteRegisterEmail.Id">
+            <summary>
+            Id único usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.VoteRegisterEmail.IdEvent">
+            <summary>
+            Id del evento
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.VoteRegisterEmail.UserEmail">
+            <summary>
+            Correo del usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.VoteRegisterEmail.IdUserAdministrator">
+            <summary>
+            Cédula Usuario
+            </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.RequestBase.IRequestBase">
             <summary>
@@ -1474,6 +1505,27 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest">
+            <summary>
+            Request para crear Usuarios
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest.EmailUser">
+            <summary>
+            Correo de Usuarios
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest.Date">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest.HasVote">
+            <summary>
+            Cédula Usuario
+            </summary>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest">
             <summary>
             Request para crear Usuarios
@@ -1788,6 +1840,35 @@
             <summary>
             Clase respuesta de Update Usuario
             </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse">
+            <summary>
+            Clase VoteCreateEmailResponse
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse.EmailUserRegister">
+            <summary>
+            Lista de Correos de usuarios registrados
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse.NumberRegister">
+            <summary>
+            Número de correos de Usuarios
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse.EmailUserWithOutRegister">
+            <summary>
+            Lista de Correos de usuarios no registrados
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse.NumberSendEmail">
+            <summary>
+            Cantidad de Correos de usuarios no registrados
+            </summary>
+            <value></value>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Response.Vote.VoteCreateResponse">
             <summary>

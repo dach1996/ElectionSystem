@@ -148,5 +148,13 @@ namespace Dach.ElectionSystem.Repository.Implementation
                 return await query.ToListAsync();
             }
         }
+
+        public async Task<bool> CreateManyAsync(IEnumerable<T> entity)
+        {
+            await _unitOfWork.Context.Set<T>().AddRangeAsync(entity);
+            var created = true;
+            _unitOfWork.Context.SaveChanges();
+            return created;
+        }
     }
 }

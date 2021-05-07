@@ -66,6 +66,7 @@
     <Build Include="dbo\Tables\ADMINISTRADOR_EVENTO.sql" />
     <Build Include="dbo\Tables\VOTOS.sql" />
     <Build Include="dbo\Tables\EVENTOS_CANTIDAD.sql" />
+    <Build Include="dbo\Tables\VOTOS_REGISTRO_CORREO.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Dach.ElectionSystem.DataBase.refactorlog" />

@@ -17,6 +17,7 @@ namespace Dach.ElectionSystem.Repository.Interfaces
                             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                             Expression<Func<T, string>> includeProperties  = null);
         Task<bool> CreateAsync(T entity);
+        Task<bool> CreateManyAsync(IEnumerable<T> entity);
         Task<bool> DeleteByIdAsync(int Id);
         Task<bool> Update(T entity);
         Task<IQueryable<T>> GetQueryAsync(Expression<Func<T, bool>> whereCondition = null,

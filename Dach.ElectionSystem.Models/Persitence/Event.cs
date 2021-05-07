@@ -83,6 +83,13 @@ namespace Dach.ElectionSystem.Models.Persitence
         public string CodeEvent { get; set; }
 
         /// <summary>
+        /// Permitir libre inscripción al evento
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_LIBRE_ACCESO")]
+        public bool AllowFreeAccess { get; set; }
+
+        /// <summary>
         /// Id Usuario Creador de evento
         /// </summary>
         /// <value></value>

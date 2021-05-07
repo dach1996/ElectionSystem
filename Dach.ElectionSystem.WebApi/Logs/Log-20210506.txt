@@ -1,0 +1,492 @@
+[00:41:59][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:41:59][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:41:59][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:41:59][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:42:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:42:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 137.5131ms
+[00:42:01][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:42:01][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 472.4688ms
+[00:42:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190
+[00:42:03][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:42:04][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:IDX10230: Lifetime validation failed. Delegate returned false, securitytoken: 'System.IdentityModel.Tokens.Jwt.JwtSecurityToken'.
+[00:42:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190 - 401 - application/json 271.2323ms
+[00:42:08][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 70
+[00:42:08][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[00:42:08][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[00:42:09][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[00:42:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (45ms) [Parameters=[@__request_Email_0='?' (Size = 4000), @__passwordHash_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[USU_CORREO] = @__request_Email_0) AND (([u].[USU_PASSWORD] = @__passwordHash_1) OR ([u].[USU_TEM_PASSWORD] = @__passwordHash_1))
+[00:42:09][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[00:42:09][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 1521.3995ms
+[00:42:09][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[00:42:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 70 - 200 - application/json;+charset=utf-8 1595.3272ms
+[00:42:25][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190
+[00:42:25][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:42:25][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[00:42:25][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[00:42:25][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (5ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[00:42:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[00:42:47][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2')
+[00:43:46][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:43:46][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:43:46][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:43:46][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:43:47][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:43:47][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 131.2259ms
+[00:43:47][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:43:48][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 402.5983ms
+[00:43:51][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190
+[00:43:51][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:43:51][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:43:51][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[00:43:52][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[00:43:52][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (44ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[00:43:55][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (40ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[00:43:56][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2')
+[00:44:29][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS] ([VTO_FECHA_INSCRIPCION], [VTO_FECHA_VOTACION], [VTO_REGISTRO], [VTO_CAN_ID], [VTO_EVT_ID], [VTO_USU_ID], [VTO_ESTADO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [VTO_ID]
+FROM [VOTOS]
+WHERE @@ROWCOUNT = 1 AND [VTO_ID] = scope_identity();
+[00:44:29][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS] ([VTO_FECHA_INSCRIPCION], [VTO_FECHA_VOTACION], [VTO_REGISTRO], [VTO_CAN_ID], [VTO_EVT_ID], [VTO_USU_ID], [VTO_ESTADO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [VTO_ID]
+FROM [VOTOS]
+WHERE @@ROWCOUNT = 1 AND [VTO_ID] = scope_identity();
+[00:44:29][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS] ([VTO_FECHA_INSCRIPCION], [VTO_FECHA_VOTACION], [VTO_REGISTRO], [VTO_CAN_ID], [VTO_EVT_ID], [VTO_USU_ID], [VTO_ESTADO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [VTO_ID]
+FROM [VOTOS]
+WHERE @@ROWCOUNT = 1 AND [VTO_ID] = scope_identity();
+[00:45:18][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[00:45:18][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi) in 87126.6957ms
+[00:45:18][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:45:18][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190 - 200 - application/json;+charset=utf-8 87592.8605ms
+[00:45:21][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190
+[00:45:21][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:45:21][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[00:45:21][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[00:45:21][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[00:45:23][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[00:45:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2')
+[00:46:33][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:46:33][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:46:33][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:46:33][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:46:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:46:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 136.4081ms
+[00:46:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:46:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 405.4832ms
+[00:46:40][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190
+[00:46:40][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:46:40][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:46:41][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[00:46:41][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[00:46:42][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (41ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[00:46:49][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (37ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[00:47:01][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2')
+[00:50:01][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:50:01][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:50:01][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:50:01][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:50:02][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:50:02][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 126.1717ms
+[00:50:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:50:03][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 480.8695ms
+[00:50:07][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190
+[00:50:07][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:50:08][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:50:08][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[00:50:08][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[00:50:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (43ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[00:50:11][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (40ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[00:50:12][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2')
+[00:50:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS] ([VTO_FECHA_INSCRIPCION], [VTO_FECHA_VOTACION], [VTO_REGISTRO], [VTO_CAN_ID], [VTO_EVT_ID], [VTO_USU_ID], [VTO_ESTADO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [VTO_ID]
+FROM [VOTOS]
+WHERE @@ROWCOUNT = 1 AND [VTO_ID] = scope_identity();
+[00:50:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS] ([VTO_FECHA_INSCRIPCION], [VTO_FECHA_VOTACION], [VTO_REGISTRO], [VTO_CAN_ID], [VTO_EVT_ID], [VTO_USU_ID], [VTO_ESTADO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [VTO_ID]
+FROM [VOTOS]
+WHERE @@ROWCOUNT = 1 AND [VTO_ID] = scope_identity();
+[00:50:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS] ([VTO_FECHA_INSCRIPCION], [VTO_FECHA_VOTACION], [VTO_REGISTRO], [VTO_CAN_ID], [VTO_EVT_ID], [VTO_USU_ID], [VTO_ESTADO])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [VTO_ID]
+FROM [VOTOS]
+WHERE @@ROWCOUNT = 1 AND [VTO_ID] = scope_identity();
+[00:50:41][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[00:50:41][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi) in 33421.4609ms
+[00:50:41][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:50:41][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190 - 200 - application/json;+charset=utf-8 33843.0808ms
+[00:50:44][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190
+[00:50:44][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:50:44][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[00:50:44][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[00:50:44][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[00:50:45][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[00:50:46][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2')
+[00:57:40][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[00:57:40][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[00:57:40][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[00:57:40][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[00:57:41][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[00:57:41][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 138.5254ms
+[00:57:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[00:57:42][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 403.6298ms
+[00:57:59][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190
+[00:57:59][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[00:57:59][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:57:59][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[00:58:00][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[00:58:01][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (43ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[00:58:02][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (34ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[00:58:03][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2')
+[00:58:31][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS_REGISTRO_CORREO] ([VRC_EVT_ID], [VRC_USU_ASIGNADOR_ID], [VRC_USU_CORREO])
+VALUES (@p0, @p1, @p2);
+SELECT [VRC_ID]
+FROM [VOTOS_REGISTRO_CORREO]
+WHERE @@ROWCOUNT = 1 AND [VRC_ID] = scope_identity();
+[00:58:31][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS_REGISTRO_CORREO] ([VRC_EVT_ID], [VRC_USU_ASIGNADOR_ID], [VRC_USU_CORREO])
+VALUES (@p0, @p1, @p2);
+SELECT [VRC_ID]
+FROM [VOTOS_REGISTRO_CORREO]
+WHERE @@ROWCOUNT = 1 AND [VRC_ID] = scope_identity();
+[00:59:10][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[00:59:10][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi) in 70242.5476ms
+[00:59:10][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[00:59:10][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 190 - 200 - application/json;+charset=utf-8 70640.8545ms
+[01:05:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 219
+[01:05:28][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[01:05:28][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[01:05:28][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[01:05:28][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[01:05:29][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[01:05:30][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2', N'pruebas2@gmail.com23')
+[01:07:29][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[01:07:29][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:07:29][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:07:29][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:07:29][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[01:07:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 143.1910ms
+[01:07:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[01:07:31][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 390.7386ms
+[01:09:46][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[01:09:46][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:09:46][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:09:46][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:09:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 219
+[01:09:46][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[01:09:47][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[01:09:48][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[01:09:48][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[01:09:49][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 305.7640ms
+[01:09:50][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[01:09:51][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[01:09:51][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1036.7586ms
+[01:09:54][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (98ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[01:09:56][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (51ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[01:09:57][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2', N'pruebas2@gmail.com23')
+[01:10:05][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VRC_ID], [v].[VRC_EVT_ID], [v].[VRC_USU_ASIGNADOR_ID], [v].[VRC_USU_CORREO]
+FROM [VOTOS_REGISTRO_CORREO] AS [v]
+WHERE [v].[VRC_USU_CORREO] NOT IN (N'pruebas2@gmail.com1', N'pruebas2@gmail.com2', N'pruebas2@gmail.com23') OR [v].[VRC_USU_CORREO] IS NULL
+[01:16:50][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[01:16:50][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:16:50][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:16:50][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:16:50][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[01:16:51][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 189.9639ms
+[01:16:51][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[01:16:52][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 486.1162ms
+[01:17:26][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[01:17:26][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:17:26][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:17:26][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:17:26][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[01:17:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 160.4255ms
+[01:17:27][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[01:17:28][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 443.3179ms
+[01:17:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 219
+[01:17:30][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[01:17:30][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:IDX10230: Lifetime validation failed. Delegate returned false, securitytoken: 'System.IdentityModel.Tokens.Jwt.JwtSecurityToken'.
+[01:17:30][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 219 - 401 - application/json 292.0109ms
+[01:17:34][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 70
+[01:17:34][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[01:17:34][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[01:17:35][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[01:17:35][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (42ms) [Parameters=[@__request_Email_0='?' (Size = 4000), @__passwordHash_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[USU_CORREO] = @__request_Email_0) AND (([u].[USU_PASSWORD] = @__passwordHash_1) OR ([u].[USU_TEM_PASSWORD] = @__passwordHash_1))
+[01:17:35][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[01:17:35][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 1521.8635ms
+[01:17:35][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[01:17:35][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 70 - 200 - application/json;+charset=utf-8 1595.0243ms
+[01:17:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 219
+[01:17:37][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[01:17:37][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[01:17:37][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[01:17:37][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (5ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[01:17:39][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[01:17:45][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2', N'pruebas2@gmail.com23')
+[01:17:45][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VRC_ID], [v].[VRC_EVT_ID], [v].[VRC_USU_ASIGNADOR_ID], [v].[VRC_USU_CORREO]
+FROM [VOTOS_REGISTRO_CORREO] AS [v]
+WHERE [v].[VRC_USU_CORREO] IN (N'pruebas2@gmail.com1', N'pruebas2@gmail.com2', N'pruebas2@gmail.com23')
+[01:18:37][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[01:18:37][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[01:18:37][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[01:18:37][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[01:18:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[01:18:37][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 148.1187ms
+[01:18:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[01:18:38][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 403.2198ms
+[01:18:41][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 219
+[01:18:41][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[01:18:41][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[01:18:41][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "CreateVoteEmail", controller = "Vote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest, Int32) on controller Dach.ElectionSystem.WebApi.Controllers.VoteController (Dach.ElectionSystem.WebApi).
+[01:18:42][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[01:18:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (39ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32), @__request_TokenModel_Username_1='?' (Size = 4000), @__request_TokenModel_Email_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK], [e].[EVT_CAN_ID], [e].[EVT_CAN_USU_ID], [e].[EVT_CAN_NUMERO_EVENTO], [a].[ADMINEVENT_ID], [a].[ADMINEVENT_FECHA], [a].[ADMINEVENT_EVENT_ID], [a].[ADMINEVENT_USER_ID], [a].[ADMINEVENT_PRVILEGIOS], [a].[ADMINEVENT_ESTADO]
+FROM [USUARIOS] AS [u]
+LEFT JOIN [EVENTOS_CANTIDAD] AS [e] ON [u].[USU_ID] = [e].[EVT_CAN_USU_ID]
+LEFT JOIN [ADMINISTRADOR_EVENTO] AS [a] ON [u].[USU_ID] = [a].[ADMINEVENT_USER_ID]
+WHERE (([u].[USU_ID] = @__ToInt32_0) AND ([u].[USU_NICK] = @__request_TokenModel_Username_1)) AND ([u].[USU_CORREO] = @__request_TokenModel_Email_2)
+ORDER BY [u].[USU_ID], [e].[EVT_CAN_ID], [a].[ADMINEVENT_ID]
+[01:18:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (3ms) [Parameters=[@__request_IdEvent_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VTO_ID], [v].[VTO_FECHA_INSCRIPCION], [v].[VTO_FECHA_VOTACION], [v].[VTO_REGISTRO], [v].[VTO_CAN_ID], [v].[VTO_EVT_ID], [v].[VTO_USU_ID], [v].[VTO_ESTADO]
+FROM [VOTOS] AS [v]
+WHERE [v].[VTO_EVT_ID] = @__request_IdEvent_0
+[01:18:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE [u].[USU_CORREO] IN (N'pruebas2@gmail.com', N'pruebas1@gmail.com', N'pruebas3@gmail.com', N'pruebas4@gmail.com', N'pruebas2@gmail.com1', N'pruebas2@gmail.com2', N'pruebas2@gmail.com23')
+[01:18:43][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[VRC_ID], [v].[VRC_EVT_ID], [v].[VRC_USU_ASIGNADOR_ID], [v].[VRC_USU_CORREO]
+FROM [VOTOS_REGISTRO_CORREO] AS [v]
+WHERE [v].[VRC_USU_CORREO] IN (N'pruebas2@gmail.com1', N'pruebas2@gmail.com2', N'pruebas2@gmail.com23')
+[01:19:02][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VOTOS_REGISTRO_CORREO] ([VRC_EVT_ID], [VRC_USU_ASIGNADOR_ID], [VRC_USU_CORREO])
+VALUES (@p0, @p1, @p2);
+SELECT [VRC_ID]
+FROM [VOTOS_REGISTRO_CORREO]
+WHERE @@ROWCOUNT = 1 AND [VRC_ID] = scope_identity();
+[01:19:04][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[01:19:04][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi) in 22189.3911ms
+[01:19:04][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail (Dach.ElectionSystem.WebApi)'
+[01:19:04][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/votes/events/2/users application/json 219 - 200 - application/json;+charset=utf-8 22572.1541ms
+[22:51:06][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[22:51:06][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[22:51:06][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[22:51:06][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger - -
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger - - - 301 0 - 109.4652ms
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 77.5871ms
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-bundle.js - -
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-standalone-preset.js - -
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui.css - -
+[22:51:06][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[22:51:06][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[22:51:06][INF][Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware]:Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 66.5136ms
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 64.9169ms
+[22:51:06][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/swagger-ui.css - - - 200 142933 text/css 64.9041ms
+[22:51:07][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[22:51:07][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 436.8331ms
+[22:54:31][INF][Microsoft.Hosting.Lifetime]:Now listening on: http://localhost:44317
+[22:54:31][INF][Microsoft.Hosting.Lifetime]:Application started. Press Ctrl+C to shut down.
+[22:54:31][INF][Microsoft.Hosting.Lifetime]:Hosting environment: Development
+[22:54:31][INF][Microsoft.Hosting.Lifetime]:Content root path: C:\Users\wwwda\source\repos\ElectionSystem\Dach.ElectionSystem.WebApi
+[22:54:32][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/index.html - -
+[22:54:32][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/index.html - - - 200 - text/html;charset=utf-8 195.2618ms
+[22:54:33][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - -
+[22:54:33][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 GET http://localhost:44317/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 465.9532ms
+[22:55:43][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 84
+[22:55:43][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
+[22:55:44][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[22:55:44][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[22:55:44][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[22:55:45][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (53ms) [Parameters=[@__request_Email_0='?' (Size = 4000), @__passwordHash_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[USU_CORREO] = @__request_Email_0) AND (([u].[USU_PASSWORD] = @__passwordHash_1) OR ([u].[USU_TEM_PASSWORD] = @__passwordHash_1))
+[22:55:45][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 1774.1622ms
+[22:55:45][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[22:55:46][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 84 - 401 - application/json 2095.5907ms
+[22:56:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 75
+[22:56:09][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[22:56:09][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[22:56:09][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[22:56:09][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (5ms) [Parameters=[@__request_Email_0='?' (Size = 4000), @__passwordHash_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[USU_CORREO] = @__request_Email_0) AND (([u].[USU_PASSWORD] = @__passwordHash_1) OR ([u].[USU_TEM_PASSWORD] = @__passwordHash_1))
+[22:56:09][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 126.608ms
+[22:56:09][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[22:56:09][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 75 - 401 - application/json 317.2931ms
+[22:57:00][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71
+[22:57:00][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[22:57:00][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[22:57:00][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[22:57:00][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (2ms) [Parameters=[@__request_Email_0='?' (Size = 4000), @__passwordHash_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[USU_CORREO] = @__request_Email_0) AND (([u].[USU_PASSWORD] = @__passwordHash_1) OR ([u].[USU_TEM_PASSWORD] = @__passwordHash_1))
+[22:57:00][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 109.6393ms
+[22:57:00][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[22:57:01][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 71 - 401 - application/json 272.0371ms
+[22:57:07][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request starting HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 70
+[22:57:07][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executing endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[22:57:07][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Route matched with {action = "Auth", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Auth(Dach.ElectionSystem.Models.Auth.LoginRequest) on controller Dach.ElectionSystem.WebApi.Properties.AuthController (Dach.ElectionSystem.WebApi).
+[22:57:07][INF][Microsoft.EntityFrameworkCore.Infrastructure]:Entity Framework Core 5.0.4 initialized 'WebApiDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[22:57:07][INF][Microsoft.EntityFrameworkCore.Database.Command]:Executed DbCommand (1ms) [Parameters=[@__request_Email_0='?' (Size = 4000), @__passwordHash_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[USU_ID], [u].[USU_FECHA_NACIMIENTO], [u].[USU_CEDULA], [u].[USU_CORREO], [u].[USU_APELLIDO], [u].[USU_NOMBRE], [u].[USU_ESTADO], [u].[USU_ADMINISTRADOR], [u].[USU_PASSWORD], [u].[USU_SEGUNDO_APELLIDO], [u].[USU_SEGUNDO_NOMBRE], [u].[USU_TEM_PASSWORD], [u].[USU_NICK]
+FROM [USUARIOS] AS [u]
+WHERE ([u].[USU_CORREO] = @__request_Email_0) AND (([u].[USU_PASSWORD] = @__passwordHash_1) OR ([u].[USU_TEM_PASSWORD] = @__passwordHash_1))
+[22:57:08][WRN][Dach.ElectionSystem.BusinessLogic.Auth.AuthHandler]:El usuario Dach.ElectionSystem.Models.Persitence.User ha logeado 
+[22:57:08][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor]:Executing OkObjectResult, writing value of type 'Dach.ElectionSystem.Models.ResponseBase.GenericResponse`1[[Dach.ElectionSystem.Models.Response.Auth.LoginResponse, Dach.ElectionSystem.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[22:57:08][INF][Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker]:Executed action Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi) in 290.1753ms
+[22:57:08][INF][Microsoft.AspNetCore.Routing.EndpointMiddleware]:Executed endpoint 'Dach.ElectionSystem.WebApi.Properties.AuthController.Auth (Dach.ElectionSystem.WebApi)'
+[22:57:08][INF][Microsoft.AspNetCore.Hosting.Diagnostics]:Request finished HTTP/1.1 POST http://localhost:44317/api/auth/login application/json 70 - 200 - application/json;+charset=utf-8 290.6683ms

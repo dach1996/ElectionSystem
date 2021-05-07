@@ -44,6 +44,27 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         }
 
         /// <summary>
+        /// Registrar Participantes por  correo electrónico
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="idEvent"></param>
+        ///  <returns></returns>
+
+        [Route("events/{idEvent}/users")]
+        [HttpPost]
+        [ProducesResponseType(200, Type = typeof(VoteCreateEmailResponse))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        public async Task<IActionResult> CreateVoteEmail(
+            [FromBody] VoteCreateEmailRequest request,
+            [FromRoute] int idEvent
+           )
+        {
+            request.IdEvent = idEvent;
+            return Success(await _mediator.Send(request));
+        }
+
+        /// <summary>
         /// Desactivar Votante
         /// </summary>
         /// <param name="request"></param>

@@ -153,6 +153,14 @@
             <param name="idUser"></param>
              <returns></returns>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest,System.Int32)">
+            <summary>
+            Registrar Participantes por  correo electrónico
+            </summary>
+            <param name="request"></param>
+            <param name="idEvent"></param>
+             <returns></returns>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.DesactiveVote(Dach.ElectionSystem.Models.Request.Vote.VoteDeleteRequest,System.Int32)">
             <summary>
             Desactivar Votante
