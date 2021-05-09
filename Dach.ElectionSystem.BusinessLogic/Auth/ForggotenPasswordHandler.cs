@@ -2,13 +2,11 @@
 using Dach.ElectionSystem.Models.Auth;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Repository.Interfaces;
-using Dach.ElectionSystem.Services.TokenJWT;
 using MediatR;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
-
+using Dach.ElectionSystem.Models.Mail;
 namespace Dach.ElectionSystem.BusinessLogic.Auth
 {
 
@@ -18,13 +16,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
         private readonly Services.Notification.INotification notification;
         private readonly string _secretKey;
         private readonly IUserRepository _usuarioRepository;
+        private readonly IConfiguration configuration;
 
         public ForggotenPasswordHandler(
             IUserRepository usuarioRepository,
             IConfiguration configuration,
-           Services.Notification.INotification notification)
+            Services.Notification.INotification notification)
         {
             _usuarioRepository = usuarioRepository;
+            this.configuration = configuration;
             this.notification = notification;
             _secretKey = configuration.GetSection("SecretKey").Value;
         }
@@ -41,13 +41,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
             var isUpdate = await _usuarioRepository.Update(user);
             if (!isUpdate)
                 throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+            //Preparamos para envíar correo
+            var templates =  configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
+            var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName== Models.Static.Template.ForggotenPassword);
             var isSend = notification.SendMail(
-                new Models.Mail.MailModel()
+                new MailModel()
                 {
-                    From = "electionsystemec@gmail.com",
-                    Subject = "Recuperar Contraseña",
+                    Subject = templateForggotenPassword.TemplateName,
                     To = request.Email,
-                    Template = "d-547cb7b55c5e4924b4a939227abf1e50",
+                    Template = templateForggotenPassword.TemplateKey,
                     Params = new { Username = $"{user.FirstName} {user.FirstLastName}", Password = newPasswordGenerate }
                 }
             );

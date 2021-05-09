@@ -33,31 +33,66 @@ namespace Dach.ElectionSystem.Models.Base
         /// Permitir máximo personas para Evento
         /// </summary>
         /// <value></value>
-        
+
         [Required]
         public virtual bool MaxPeople { get; set; }
         /// <summary>
         /// Número máximo de personas para evento
         /// </summary>
         /// <value></value>
-        
+
         [Required]
-        [Range(0,Int32.MaxValue) ]
+        [Range(0, Int32.MaxValue)]
         public virtual int NumberMaxPeople { get; set; }
         /// <summary>
         /// Máximo de Candidatos
         /// </summary>
         /// <value></value>
-        
+
         [Required]
-        [Range(2,30) ]
+        [Range(2, 30)]
         public virtual int NumberMaxCandidate { get; set; }
-        
+
         /// <summary>
         /// Categoría de Evento
         /// </summary>
         /// <value></value>
         [Required]
         public virtual string Category { get; set; }
+
+        /// <summary>
+        /// Fecha de Registro
+        /// </summary>
+        /// <value></value>
+        public virtual DateTime DateRegister { get; set; }
+
+        /// <summary>
+        /// Fecha Máxima para registrar Candidatos
+        /// </summary>
+        /// <value></value>
+        [Required]
+        public virtual DateTime? DateMaxRegisterCandidate { get; set; }
+
+        /// <summary>
+        /// Fecha  Máxima para registrar participantes
+        /// </summary>
+        /// <value></value>
+        [Required]
+        public virtual DateTime? DateMaxRegisterParticipants { get; set; }
+
+        /// <summary>
+        /// Fecha  mínima para realizar votación
+        /// </summary>
+        /// <value></value>
+        [Required]
+        public virtual DateTime? DateMinVote { get; set; }
+
+        /// <summary>
+        /// Fecha máxima para realizar votación
+        /// </summary>
+        /// <value></value>
+        [Required]
+        public virtual DateTime? DateMaxVote { get; set; }
+
     }
 }

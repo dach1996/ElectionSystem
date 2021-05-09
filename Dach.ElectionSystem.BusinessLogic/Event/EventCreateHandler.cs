@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using Dach.ElectionSystem.Services.EventService;
 
 namespace Dach.ElectionSystem.BusinessLogic.Event
 {
@@ -22,18 +23,21 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity validateIntegrity;
         private readonly IConfiguration configuration;
+        private readonly IEventService eventService;
 
         public EventCreateHandler(
         IEventRepository eventRepository,
         IMapper mapper,
         ValidateIntegrity validateIntegrity,
-        IConfiguration configuration
+        IConfiguration configuration,
+        IEventService eventService
         )
         {
             this._eventRepository = eventRepository;
             this._mapper = mapper;
             this.validateIntegrity = validateIntegrity;
             this.configuration = configuration;
+            this.eventService = eventService;
         }
         #endregion
         #region Handler
@@ -48,8 +52,13 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             //Valida coerencia de Datos del request
             if (request.MaxPeople && request.NumberMaxCandidate <= 5)
                 throw new CustomException(Models.Enums.MessageCodesApi.MaxPeopleEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+            //Valida que el nombre del evento no se encuentre registrado
             if (events.Any(e => e.Name == request.Name))
                 throw new CustomException(Models.Enums.MessageCodesApi.EventRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+            //Validamos las fechas
+            request.DateRegister = DateTime.Now;
+            await eventService.ValidateDateRegisterEvents(request);
+            //Mapeamos el evento
             var newEvent = _mapper.Map<Models.Persitence.Event>(request);
             //Registramos al usuario como creador del evento
             newEvent.UserCreator = userCurrent;

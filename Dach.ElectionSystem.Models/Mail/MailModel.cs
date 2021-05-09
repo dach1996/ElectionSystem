@@ -6,12 +6,6 @@ namespace Dach.ElectionSystem.Models.Mail
     public class MailModel
     {
         /// <summary>
-        /// De
-        /// </summary>
-        /// <value></value>
-        public string From { get; set; }
-
-        /// <summary>
         /// Asunto
         /// </summary>
         /// <value></value>

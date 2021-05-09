@@ -1,4 +1,5 @@
 using Dach.ElectionSystem.Services.Data;
+using Dach.ElectionSystem.Services.EventService;
 using Dach.ElectionSystem.Services.Notification;
 using Dach.ElectionSystem.Services.TokenJWT;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,7 @@ namespace Dach.ElectionSystem.Services.Intrastructure
                 services.AddTransient<ITokenService, TokenService>();
                 services.AddTransient<ValidateIntegrity, ValidateIntegrity>();
                 services.AddTransient<INotification, NotificationSendGrid>();
+                services.AddTransient<IEventService, EventServiceImpl>();
          }
     }
 }

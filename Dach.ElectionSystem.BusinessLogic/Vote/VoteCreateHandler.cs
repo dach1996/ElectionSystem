@@ -1,13 +1,11 @@
 ﻿using System;
 using AutoMapper;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
-using Dach.ElectionSystem.Models.Persitence;
 using Dach.ElectionSystem.Models.Request.Vote;
 using Dach.ElectionSystem.Models.Response.Vote;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -39,6 +37,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
             await validateIntegrity.ValidateUser(request.IdUser);
             //Validamos que exista el Evento
             var eventCurrent = await validateIntegrity.ValidateEvent(request.IdEvent);
+            //Validar la fecha máxima para registrar participantes
+            var isDateValid = eventCurrent.DateMaxRegisterParticipants >= DateTime.Now;
+            if (!isDateValid)
+                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
+                                            $"La fecha máxima para poder registrar participantes ha terminado.");
             // encuentra los participantes del evento
             var participants = await _voteRepository.GetAsync(v => v.IdEvent == request.IdEvent);
             //Valida que l usuario no esté registrado ya como votante en el evento

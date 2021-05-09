@@ -146,7 +146,7 @@
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteCreateRequest,System.Int32,System.Int32)">
             <summary>
-            Registrar Participante
+            Registrar Participante siendo Administrador
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
@@ -155,7 +155,15 @@
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.CreateVoteEmail(Dach.ElectionSystem.Models.Request.Vote.VoteCreateEmailRequest,System.Int32)">
             <summary>
-            Registrar Participantes por  correo electrónico
+            Registrar Participantes por  correo electrónico siendo Administrador
+            </summary>
+            <param name="request"></param>
+            <param name="idEvent"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.AutoCreateVote(Dach.ElectionSystem.Models.Request.Vote.VoteAutoCreateRequest,System.Int32)">
+            <summary>
+            Autoregistrase en el evento siendo usuario
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>

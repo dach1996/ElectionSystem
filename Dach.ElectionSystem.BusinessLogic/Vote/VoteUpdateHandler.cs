@@ -9,7 +9,6 @@ using Dach.ElectionSystem.Models.Response.Vote;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace Dach.ElectionSystem.BusinessLogic.Vote
 {
@@ -36,6 +35,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         {
             //Validamos que exista el Evento
             var eventCurrent = await validateIntegrity.ValidateEvent(request.IdEvent);
+            //Validar la fecha máxima para realizar votación
+            var isDateValid = eventCurrent.DateMinVote <= DateTime.Now && eventCurrent.DateMaxVote>= DateTime.Now;
+            if (!isDateValid)
+                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
+                                            $"Las fechas máximas para la votación ha terminado: Min: {eventCurrent.DateMinVote} - Max:  {eventCurrent.DateMaxVote}");
             //Validamos que exista el Candidato
             var candidateCurrent = await validateIntegrity.ValidateCandiate(request.IdCandidate);
             if (candidateCurrent.IdEvent != eventCurrent.Id)

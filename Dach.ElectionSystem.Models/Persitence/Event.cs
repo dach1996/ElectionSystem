@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Dach.ElectionSystem.Models.Persitence
@@ -96,6 +97,46 @@ namespace Dach.ElectionSystem.Models.Persitence
         [Column("EVT_ID_USUARIO_CREADOR")]
         [ForeignKey(nameof(UserCreator))]
         public int IdUser { get; set; }
+
+        /// <summary>
+        /// Fecha de Registro
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_FECHA_REGISTRO")]
+        [Required]
+        public DateTime DateRegister { get; set; }
+
+        /// <summary>
+        /// Fecha de Registro
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_FECHA_MAX_REGISTRO_CANDIDATOS")]
+        [Required]
+        public DateTime DateMaxRegisterCandidate { get; set; }
+
+        /// <summary>
+        /// Fecha de Registro
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_FECHA_MAX_REGISTRO_PARTICIPANTES")]
+        [Required]
+        public DateTime DateMaxRegisterParticipants { get; set; }
+
+        /// <summary>
+        /// Fecha de Registro
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_FECHA_MIN_VOTACION")]
+        [Required]
+        public DateTime DateMinVote { get; set; }
+
+        /// <summary>
+        /// Fecha de Registro
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_FECHA_MAX_VOTACION")]
+        [Required]
+        public DateTime DateMaxVote { get; set; }
 
         /// <summary>
         /// Evento está Activo

@@ -16,7 +16,7 @@ using Dach.ElectionSystem.Utils.Filters;
 using Dach.ElectionSystem.Services.Intrastructure;
 using Dach.ElectionSystem.BusinessLogic.Auth;
 using System;
-
+using Serilog;
 
 namespace Dach.ElectionSystem.WebApi
 {
@@ -25,7 +25,6 @@ namespace Dach.ElectionSystem.WebApi
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
         }
 
         public IConfiguration Configuration { get; }
@@ -42,6 +41,7 @@ namespace Dach.ElectionSystem.WebApi
                  loggingBuilder.AddSeq(Configuration.GetSection("Seq"));
                  loggingBuilder.AddFile(Configuration.GetSection("LogConfiguration"));
              });
+
             services.AddSwaggerGen(c =>
              {
                  c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Elecciones", Version = "v1" });

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.Response.Vote;
 using MediatR;
@@ -16,7 +17,7 @@ namespace Dach.ElectionSystem.Models.Request.Vote
         /// Correo de Usuarios
         /// </summary>
         /// <value></value>
-        
+        [Required]
         public List<string> EmailUser { get; set; }
 
         /// <summary>

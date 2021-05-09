@@ -128,7 +128,19 @@ namespace Dach.ElectionSystem.Models.Enums
         /// Usuario ya registra voto
         /// </summary>
         [EnumMember(Value = "El usuario se encuentra registrado como candidato en el evento")]
-        IsCandidateInEvent = 137,        
+        IsCandidateInEvent = 137,
+
+        /// <summary>
+        /// El código del evento es incorrecto
+        /// </summary>
+        [EnumMember(Value = "El código del evento es incorrecto")]
+        IncorrectCodeEvent = 138,
+
+        /// <summary>
+        /// Requiere por lo menos envíar un Email
+        /// </summary>
+        [EnumMember(Value = "Email no válido")]
+        InvalidEmail = 139,
 
         /// <summary>
         /// Error del sistema
@@ -162,6 +174,25 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "El usuario actual no es el creador de Evento")]
         EventCreator = 155,
+
+        /// <summary>
+        /// Error maximos  evento permitidos
+        /// </summary>
+        [EnumMember(Value = "El evento no permite registros libres")]
+        EventNotAllowFreeRegister = 156,
+
+
+        /// <summary>
+        /// Error maximos  evento permitidos
+        /// </summary>
+        [EnumMember(Value = "Usuario no se encuentra autorizado para registrace por código el evento")]
+        NotAllowRegisterByCode = 157,
+
+        /// <summary>
+        /// Fechas Incorrectas
+        /// </summary>
+        [EnumMember(Value = "Fechas incorrectas")]
+        IncorrectDates = 158,
 
         /// <summary>
         /// Error del sistema

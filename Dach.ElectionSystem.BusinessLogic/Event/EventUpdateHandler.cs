@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 
 using System.Threading;
@@ -8,8 +9,8 @@ using Dach.ElectionSystem.Models.Request.Event;
 using Dach.ElectionSystem.Models.Response.Event;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.Data;
+using Dach.ElectionSystem.Services.EventService;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace Dach.ElectionSystem.BusinessLogic.Event
 {
@@ -20,17 +21,21 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         private readonly IMapper _mapper;
         private readonly IUserRepository userRepository;
         private readonly ValidateIntegrity validateIntegrity;
+        private readonly IEventService eventService;
 
         public EventUpdateHandler(
             IEventRepository eventRepository,
             IMapper mapper,
             IUserRepository userRepository,
-            ValidateIntegrity validateIntegrity)
+            ValidateIntegrity validateIntegrity,
+            IEventService eventService
+            )
         {
             this._eventRepository = eventRepository;
             this._mapper = mapper;
             this.userRepository = userRepository;
             this.validateIntegrity = validateIntegrity;
+            this.eventService = eventService;
         }
         #endregion
         #region Handler
@@ -57,6 +62,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
            //Valida coerencia de Datos del request
             if (request.MaxPeople && request.NumberMaxCandidate <= 5)
                     throw new CustomException(Models.Enums.MessageCodesApi.MaxPeopleEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+            //Validamos las fechas
+            request.DateRegister=DateTime.Now;
+            await eventService.ValidateDateRegisterEvents(request);
             //Actualiza el evento
             eventCurrent.Category = request.Category;
             eventCurrent.Description = request.Description;
@@ -66,6 +74,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             eventCurrent.Name = request.Name;
             eventCurrent.NumberMaxCandidate = request.NumberMaxCandidate;
             eventCurrent.NumberMaxPeople = request.NumberMaxPeople;
+            eventCurrent.DateMaxRegisterCandidate = request.DateMaxRegisterCandidate.Value;
+            eventCurrent.DateMaxRegisterParticipants = request.DateMaxRegisterParticipants.Value;
+            eventCurrent.DateMaxVote = request.DateMaxVote.Value;
+            eventCurrent.DateMinVote = request.DateMinVote.Value;
             //Actualiza en la base de datos
             var isUpdate = await _eventRepository.Update(eventCurrent);
             if (!isUpdate)

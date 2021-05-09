@@ -3,8 +3,10 @@ using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Response.Candidate;
 using Dach.ElectionSystem.Repository.Interfaces;
+using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,25 +18,34 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         #region Constructor
         private readonly ICandidateRepository _candidateRepository;
         private readonly IMapper mapper;
+        private readonly ValidateIntegrity validateIntegrity;
+
         public CandidateUpdateHandler(
             ICandidateRepository candidateRepository,
-            IMapper mapper  )
+            IMapper mapper,
+            ValidateIntegrity validateIntegrity)
         {
             this._candidateRepository = candidateRepository;
-            this.mapper = mapper;         
+            this.mapper = mapper;
+            this.validateIntegrity = validateIntegrity;
         }
         #endregion
 
         #region Handler
-             public async Task<CandidateUpdateResponse> Handle(CandidateUpdateRequest request, CancellationToken cancellationToken)
+        public async Task<CandidateUpdateResponse> Handle(CandidateUpdateRequest request, CancellationToken cancellationToken)
         {
-            var updateCandidate = (await _candidateRepository.GetAsync(c => c.Id==request.IdCandidate)).FirstOrDefault();
-            if(updateCandidate==null)
-             throw new CustomException(Models.Enums.MessageCodesApi.NotFindRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
-            
+             //Valida que el evento exista
+            var eventCurrent = await validateIntegrity.ValidateEvent(request.IdEvent);
+            // Valida que la candidata Exista
+            var updateCandidate = await validateIntegrity.ValidateCandiate(request.IdCandidate);
+            //Validar la fecha máxima para crear candidatos
+            var isDateValid = eventCurrent.DateMaxRegisterCandidate >= DateTime.Now;
+            if (!isDateValid)
+                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
+                                            $"La fecha máxima para poder registrar candidatos ha terminado.");
             updateCandidate.Age = request.Age.Value;
             updateCandidate.Details = request.Details;
-            updateCandidate.Image =  request.Image;
+            updateCandidate.Image = request.Image;
             updateCandidate.PostionsWorks = request.PostionsWorks;
             updateCandidate.Role = request.Role;
             updateCandidate.ProposalDetails = request.ProposalDetails;
@@ -45,6 +56,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
             return response;
         }
         #endregion
-       
+
     }
 }

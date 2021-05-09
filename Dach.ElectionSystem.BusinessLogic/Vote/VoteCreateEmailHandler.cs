@@ -1,14 +1,13 @@
 ﻿using System;
-using AutoMapper;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.Vote;
 using Dach.ElectionSystem.Models.Response.Vote;
 using Dach.ElectionSystem.Repository.Interfaces;
-using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Dach.ElectionSystem.Services.Data;
 
 namespace Dach.ElectionSystem.BusinessLogic.Vote
 {
@@ -18,25 +17,38 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         private readonly IVoteRepository _voteRepository;
         private readonly IUserRepository userRepository;
         private readonly IVoteRegisterEmailRepository voteRegisterEmailRepository;
+        private readonly ValidateIntegrity validateIntegrity;
 
         public VoteCreateEmailHandler(
         IVoteRepository voteRepository,
         IUserRepository userRepository,
-        IVoteRegisterEmailRepository voteRegisterEmailRepository
+        IVoteRegisterEmailRepository voteRegisterEmailRepository,
+        ValidateIntegrity validateIntegrity
         )
         {
             this._voteRepository = voteRepository;
             this.userRepository = userRepository;
             this.voteRegisterEmailRepository = voteRegisterEmailRepository;
+            this.validateIntegrity = validateIntegrity;
         }
         #endregion
         #region Handler
         public async Task<VoteCreateEmailResponse> Handle(VoteCreateEmailRequest request, CancellationToken cancellationToken)
         {
+            //Valida que por lo menos se envíe un correo
+            var hasEmail = request.EmailUser.Any();
+            if (!hasEmail)
+                throw new CustomException(Models.Enums.MessageCodesApi.InvalidEmail, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
             //Valida si el usuario es administrador del evento
             var isAdministrator = request.UserContext.ListEventAdministrator.Any(e => e.IdEvent == request.IdEvent);
             if (!isAdministrator)
                 throw new CustomException(Models.Enums.MessageCodesApi.UserIsnotAdministratorEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+            //Validar la fecha máxima para registrar participantes
+            var eventCurrent = await validateIntegrity.ValidateEvent(request.IdEvent);
+            var isDateValid = eventCurrent.DateMaxRegisterParticipants >= DateTime.Now;
+            if (!isDateValid)
+                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
+                                            $"La fecha máxima para poder registrar participantes ha terminado.");
             // encuentra los participantes del evento
             var participants = await _voteRepository.GetAsync(v => v.IdEvent == request.IdEvent);
             // Consulta la lista de usuarios que existen registrados con el mail
@@ -76,9 +88,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
             {
                 EmailUserRegister = usersExist.Select(ue => ue.Email).ToList(),
                 NumberRegister = usersExist.Count(),
-                EmailUserWithOutRegister = listParticipantesRegisterVoteEmail.Select(p => p.UserEmail).ToList(),
-                NumberSendEmail =listParticipantesRegisterVoteEmail.Count()
+                EmailUserWithOutRegister = emailUserNotExist.ToList(),
+                NumberSendEmail = listParticipantesRegisterVoteEmail.Count()
             };
+
         }
         #endregion
     }

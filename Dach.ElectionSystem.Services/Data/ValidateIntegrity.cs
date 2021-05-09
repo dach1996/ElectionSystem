@@ -1,3 +1,4 @@
+using System.Reflection.Metadata;
 using System;
 using System.Linq;
 using System.Net;
@@ -7,6 +8,7 @@ using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Persitence;
 using Dach.ElectionSystem.Models.RequestBase;
 using Dach.ElectionSystem.Repository.Interfaces;
+using Dach.ElectionSystem.Models.Base;
 
 namespace Dach.ElectionSystem.Services.Data
 {
@@ -42,7 +44,7 @@ namespace Dach.ElectionSystem.Services.Data
 
         public async Task<Event> ValidateEvent(int id)
         {
-            var existEvent = await eventRepository.GetAsync(u => u.Id == id, includeProperties:$"{nameof(Event.ListCandidate)}");
+            var existEvent = await eventRepository.GetAsync(u => u.Id == id, includeProperties: $"{nameof(Event.ListCandidate)}");
             if (existEvent.Count() != 1)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el evento con Id:{id}");
             var eventCurrent = existEvent.First();

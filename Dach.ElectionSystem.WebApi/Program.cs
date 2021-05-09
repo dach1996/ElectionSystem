@@ -1,10 +1,7 @@
-using Daenet.Common.Logging.Sql;
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Serilog;
-using System.IO;
-
 namespace Dach.ElectionSystem.WebApi
 {
     public static class Program
