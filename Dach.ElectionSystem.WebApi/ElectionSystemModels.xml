@@ -11,7 +11,7 @@
         </member>
         <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Image">
             <summary>
-            Imagen del candidato
+            Imagen del candidatos
             </summary>
             <value></value>
         </member>

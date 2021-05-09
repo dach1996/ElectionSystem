@@ -26,28 +26,38 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.1.1" />
   </ItemGroup>
-	<PropertyGroup>
-		<DocumentationFile>ElectionSystem.xml</DocumentationFile>
-		<NoWarn>$(NoWarn);1591</NoWarn>
-		<UserSecretsId>0754e811-d084-40c1-b564-61af42453c50</UserSecretsId>
-	</PropertyGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\Dach.ElectionSystem.BusinessLogic\Dach.ElectionSystem.BusinessLogic.csproj" />
-	  <ProjectReference Include="..\Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj" />
-	  <ProjectReference Include="..\Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj" />
-	  <ProjectReference Include="..\Dach.ElectionSystem.Services\Dach.ElectionSystem.Services.csproj" />
-	  <ProjectReference Include="..\Dach.ElectionSystem.Utils\Dach.ElectionSystem.Utils.csproj" />
-	</ItemGroup>
 
-	<ItemGroup>
-		<None Update="ElectionSystem.xml">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Logs\" />
-	</ItemGroup>
-
-	<ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+  <PropertyGroup>
+    <DocumentationFile>ElectionSystem.xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <UserSecretsId>0754e811-d084-40c1-b564-61af42453c50</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dach.ElectionSystem.BusinessLogic\Dach.ElectionSystem.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj" />
+    <ProjectReference Include="..\Dach.ElectionSystem.Repository\Dach.ElectionSystem.Repository.csproj" />
+    <ProjectReference Include="..\Dach.ElectionSystem.Services\Dach.ElectionSystem.Services.csproj" />
+    <ProjectReference Include="..\Dach.ElectionSystem.Utils\Dach.ElectionSystem.Utils.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="ElectionSystem.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ElectionSystemModels.xml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
