@@ -1,29 +1,25 @@
 using System.Text.Json.Serialization;
-using Dach.ElectionSystem.Models.Base;
 using Dach.ElectionSystem.Models.RequestBase;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 
-namespace Dach.ElectionSystem.Models.Request.EventAdministrator
+namespace Dach.ElectionSystem.Models.Request.Event
 {
     /// <summary>
-    /// Clase base para Request de EventAdministratoro
+    /// Clase cargar Imágenes a un evento
     /// </summary>
-    public class EventAdministratorBaseRequest : EventAdministratorBase, IRequestBase
+    public class EventImageRequest : IRequestBase, IRequest<Unit>
     {
-
-
         /// <summary>
-        /// Id Usuario
+        /// Imagen a Cargar
         /// </summary>
         /// <value></value>
-        [JsonIgnore]
-        public int IdUser { get; set; }
-
+        public IFormFile Image { get; set; }
 
         /// <summary>
-        /// Id Evento
+        /// Id del evento
         /// </summary>
         /// <value></value>
-        [JsonIgnore]
         public int IdEvent { get; set; }
 
         /// <summary>

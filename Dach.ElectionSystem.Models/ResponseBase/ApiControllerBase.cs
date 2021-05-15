@@ -11,6 +11,7 @@ namespace Dach.ElectionSystem.Models.ResponseBase
     /// </summary>
     public class ApiControllerBase : ControllerBase
     {
+
         /// <summary>
         /// En caso de peticiones exitosas
         /// </summary>
@@ -26,7 +27,7 @@ namespace Dach.ElectionSystem.Models.ResponseBase
                 ResponseType = nameof(ResponseType.Data),
                 Message = "Operación realizada con Éxito",
                 Content = data
-            }); 
+            });
         }
         /// <summary>
         /// Respuestas no encontradas

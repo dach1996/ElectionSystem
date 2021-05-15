@@ -4,7 +4,9 @@ using Dach.ElectionSystem.Models.Response.Event;
 using Dach.ElectionSystem.Models.ResponseBase;
 using Dach.ElectionSystem.Utils.Filters;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 
@@ -80,14 +82,30 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         [Route("{id}")]
         [Route("")]
-        public async Task<IActionResult> GetHandler([FromQuery] EventGetRequest request, [FromRoute] int? id)
+        public async Task<IActionResult> GetHandler(
+            [FromQuery] EventGetRequest request,
+            [FromRoute] int? id)
         {
             request.Id = id;
             return
             Success(await _mediator.Send(request));
         }
 
-        #endregion
 
+        [HttpPost]
+        [ProducesResponseType(200, Type = typeof(Unit))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [Route("{idEvent}/image")]
+        public async Task<IActionResult> UpdateImage(
+            [FromForm] EventImageRequest request,
+            [FromRoute] int idEvent
+         )
+        {
+            request.IdEvent = idEvent;
+            return Success(await _mediator.Send(request));
+        }
     }
+
+    #endregion
 }

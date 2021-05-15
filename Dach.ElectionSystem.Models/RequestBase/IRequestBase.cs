@@ -11,6 +11,12 @@ namespace Dach.ElectionSystem.Models.RequestBase
         /// Token para contexto
         /// </summary>
         TokenModel TokenModel { get; set; }
+        /// <summary>
+        /// Path de server
+        /// </summary>
+        /// <value></value>
+        [JsonIgnore]
+        public string PartRoot { get; set; }
 
     }
 }

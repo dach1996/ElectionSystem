@@ -11,7 +11,7 @@
         </member>
         <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Image">
             <summary>
-            Imagen del candidatos
+            Imagen del candidato
             </summary>
             <value></value>
         </member>
@@ -496,6 +496,21 @@
             <summary>
             Rol User
             </summary>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Enums.TypeImage">
+            <summary>
+            Tipo de imagen o recurso
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.TypeImage.Candidate">
+            <summary>
+             Candidato
+             </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.TypeImage.Event">
+            <summary>
+             Evento
+             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.ExceptionGeneric.CustomException">
             <summary>
@@ -1097,6 +1112,12 @@
             Token para contexto
             </summary>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.IRequestBase.PartRoot">
+            <summary>
+            Path de server
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.RequestBase.IUserContext">
             <summary>
             Contexto de Usuario
@@ -1123,6 +1144,12 @@
             Usuario del Contexto
             </summary>
             <returns></returns>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.RequestBaseImpl.PartRoot">
+            <summary>
+            Path de server
+            </summary>
+            <value></value>
         </member>
         <member name="T:Dach.ElectionSystem.Models.RequestBase.TokenModel">
             <summary>
@@ -1182,7 +1209,13 @@
         </member>
         <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateBaseRequest.UserContext">
             <summary>
-            
+            Contexto de usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateBaseRequest.PartRoot">
+            <summary>
+            Path de server
             </summary>
             <value></value>
         </member>
@@ -1283,6 +1316,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorBaseRequest.PartRoot">
+            <summary>
+            Path de server
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorCreateRequest">
             <summary>
             Clase EventAdministratorCreateRequest
@@ -1350,6 +1389,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventBaseRequest.PartRoot">
+            <summary>
+            Path de server
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Event.EventCreateRequest">
             <summary>
             Clase EventCreateRequest
@@ -1412,6 +1457,41 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.Event.EventImageRequest">
+            <summary>
+            Clase cargar Imágenes a un evento
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventImageRequest.Image">
+            <summary>
+            Imagen a Cargar
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventImageRequest.IdEvent">
+            <summary>
+            Id del evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventImageRequest.TokenModel">
+            <summary>
+            Clase contexto de Token
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventImageRequest.UserContext">
+            <summary>
+            Contexto de Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventImageRequest.PartRoot">
+            <summary>
+            Path de server
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest">
             <summary>
             Clase EventUpdateRequest
@@ -1431,6 +1511,43 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest.DateRegister">
             <summary>
             Fecha registro
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.Image.ImageRequest">
+            <summary>
+            Request para conseguir imágen
+            </summary>
+        </member>
+        <member name="M:Dach.ElectionSystem.Models.Request.Image.ImageRequest.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fromResource"></param>
+            <param name="id"></param>
+            <param name="image"></param>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Image.ImageRequest.FromResource">
+            <summary>
+            Tipo de recurso Ejemplo (Candidate, Event)
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Image.ImageRequest.Id">
+            <summary>
+            Id de recursos
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Image.ImageRequest.Image">
+            <summary>
+            Nombre de recurso
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Image.ImageRequest.FullPath">
+            <summary>
+            Ruta completa de la imagen
             </summary>
             <value></value>
         </member>
@@ -1559,6 +1676,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.PartRoot">
+            <summary>
+            Path de server
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.User.UserRequestBase">
             <summary>
             Base de Modelo
@@ -1572,6 +1695,12 @@
         <member name="P:Dach.ElectionSystem.Models.Request.User.UserRequestBase.UserContext">
             <summary>
             Contexto de Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserRequestBase.PartRoot">
+            <summary>
+            Path de server
             </summary>
             <value></value>
         </member>
@@ -1627,6 +1756,12 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteBaseRequest.IdEvent">
             <summary>
             Id de Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteBaseRequest.PartRoot">
+            <summary>
+            Path de server
             </summary>
             <value></value>
         </member>

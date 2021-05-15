@@ -30,5 +30,11 @@ namespace Dach.ElectionSystem.Models.Request.Vote
         [JsonIgnore]
         public int IdEvent { get; set; }
 
+        /// <summary>
+        /// Path de server
+        /// </summary>
+        /// <value></value>
+        [JsonIgnore]
+        public string PartRoot { get; set; }
     }
 }

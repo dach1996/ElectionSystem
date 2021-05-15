@@ -19,6 +19,17 @@
             Olvidé contraseña
             </summary>
         </member>
+        <member name="T:Dach.ElectionSystem.WebApi.Properties.ImageController">
+            <summary>
+            Controlador Autorizador mediante Token JWT
+            </summary>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Properties.ImageController.GetImages(System.String,System.String,System.String)">
+            <summary>
+            Consultar Imágenes del servidor
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.CreateCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateCreateRequest,System.Int32)">
             <summary>
             Crear Candidato
@@ -124,7 +135,12 @@
             Actualizar Usuario
             </summary>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler(Dach.ElectionSystem.Models.Request.User.UserGetRequest,System.Nullable{System.Int32})">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.GetByIdHandler(Dach.ElectionSystem.Models.Request.User.UserGetRequest,System.Nullable{System.Int32})">
+            <summary>
+            Consultar Usuarios por Id
+            </summary>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.UserController.GetHandler(Dach.ElectionSystem.Models.Request.User.UserGetRequest)">
             <summary>
             Consultar Usuarios
             </summary>

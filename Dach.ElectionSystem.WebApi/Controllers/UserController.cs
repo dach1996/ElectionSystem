@@ -33,21 +33,32 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         public async Task<IActionResult> UpdateUser([FromBody] UserUpdateRequest request) => Success(await _mediator.Send(request));
 
         /// <summary>
-        /// Consultar Usuarios
+        /// Consultar Usuarios por Id
         /// </summary>
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(GenericResponse<UserGetResponse>))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         [Route("{id}")]
-        [Route("")]
         [ServiceFilter(typeof(Utils.Filters.ModelFilterAttribute))]
-        public async Task<IActionResult> GetHandler([FromQuery] UserGetRequest request, [FromRoute] int? id)
+        public async Task<IActionResult> GetByIdHandler([FromQuery] UserGetRequest request, [FromRoute] int? id)
         {
             if (id != null)
                 request.Id = id;
             return Success(await _mediator.Send(request));
         }
+
+        /// <summary>
+        /// Consultar Usuarios
+        /// </summary>
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(GenericResponse<UserGetResponse>))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [ServiceFilter(typeof(Utils.Filters.ModelFilterAttribute))]
+        public async Task<IActionResult> GetHandler([FromQuery] UserGetRequest request)
+        => Success(await _mediator.Send(request));
+
 
         /// <summary>
         /// Crear Usuario
@@ -72,7 +83,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
         => Success(await _mediator.Send(request));
 
-         /// <summary>
+        /// <summary>
         /// Incrementar el número de eventos permitidos
         /// </summary>
         [HttpPost]

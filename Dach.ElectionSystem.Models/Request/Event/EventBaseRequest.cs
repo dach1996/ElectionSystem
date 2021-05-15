@@ -23,5 +23,12 @@ namespace Dach.ElectionSystem.Models.Request.Event
         /// <value></value>
         [JsonIgnore]
         public Persitence.User UserContext { get; set; }
+
+        /// <summary>
+        /// Path de server
+        /// </summary>
+        /// <value></value>
+        [JsonIgnore]
+        public string PartRoot { get; set; }
     }
 }

@@ -32,6 +32,7 @@ namespace Dach.ElectionSystem.Utils.Filters
                 var modelContext = (IRequestBase)context.ActionArguments[parameterDescriptor.Name];
                 modelContext.TokenModel = tokenService.GetTokenModel(context.HttpContext);
                 modelContext.UserContext =  await validateIntegrity.ValidateUser(modelContext);
+                modelContext.PartRoot = context.HttpContext.Request.Headers["Host"];
             }
             await base.OnActionExecutionAsync(context, next);
         }

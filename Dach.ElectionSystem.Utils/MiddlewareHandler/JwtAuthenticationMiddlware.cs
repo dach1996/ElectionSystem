@@ -33,7 +33,8 @@ namespace Dach.ElectionSystem.Utils.Segurity.JWT
             return
                 request.Request.Path.StartsWithSegments("/swagger") ||
                 request.Request.Path.StartsWithSegments(baseUrl + "/Auth")||
-                (request.Request.Path==(baseUrl + "/users")&& request.Request.Method=="POST");
+                (request.Request.Path==(baseUrl + "/users")&& request.Request.Method=="POST")||
+                request.Request.Path.StartsWithSegments("/Images");
         }
 
     }

@@ -18,7 +18,15 @@ namespace Dach.ElectionSystem.Models.RequestBase
         /// Usuario del Contexto
         /// </summary>
         /// <returns></returns>
-         [JsonIgnore]
+        [JsonIgnore]
         public User UserContext { get; set; }
+
+
+        /// <summary>
+        /// Path de server
+        /// </summary>
+        /// <value></value>
+        [JsonIgnore]
+        public string PartRoot { get; set; }
     }
 }
