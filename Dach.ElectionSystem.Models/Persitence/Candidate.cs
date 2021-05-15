@@ -21,13 +21,6 @@ namespace Dach.ElectionSystem.Models.Persitence
         public int Id { get; set; }
 
         /// <summary>
-        /// Ruta de imagen Candidato
-        /// </summary>
-        /// <value></value>
-        [Column("CAN_IMAGEN")]
-        public string Image { get; set; }
-
-        /// <summary>
         /// Ruta Video de Candidato
         /// </summary>
         /// <value></value>
@@ -98,7 +91,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// </summary>
         /// <value></value>
         public Event Event { get; set; }
-        
+
         /// <summary>
         /// Relación con Usuario
         /// </summary>
@@ -110,7 +103,22 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// </summary>
         /// <value></value>
         public ICollection<Vote> ListVotes { get; set; }
-        
+
+        /// <summary>
+        /// Relación con Imagenes de candidato
+        /// </summary>
+        /// <value></value>
+        public ICollection<CandidateImage> ListCandidateImage { get; set; }
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public Candidate()
+        {
+            ListCandidateImage = new List<CandidateImage>();
+        }
         #endregion
     }
 }

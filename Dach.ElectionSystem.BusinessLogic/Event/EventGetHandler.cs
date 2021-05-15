@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -36,7 +37,12 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             .Skip(request.Offset)
             .Take(request.Limit)
             .ToList();
-            listEvents.ForEach(e => e.Image = $"{request.PartRoot}/{e.Image}");
+     
+            listEvents.ForEach(e =>
+            {
+                if (!string.IsNullOrEmpty(e.Image))
+                    e.Image = $"{request.PartRoot}/{e.Image}";
+            });
             return new EventGetResponse()
             {
                 ListEvents = _mapper.Map<List<EventResponseBase>>(response)

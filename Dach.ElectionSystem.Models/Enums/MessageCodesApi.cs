@@ -143,6 +143,18 @@ namespace Dach.ElectionSystem.Models.Enums
         InvalidEmail = 139,
 
         /// <summary>
+        /// Error al guardar la imagen
+        /// </summary>
+        [EnumMember(Value = "Erro al guardar la imágen")]
+        ErrorSaveImage = 140,
+
+        /// <summary>
+        /// Error al guardar la imagen
+        /// </summary>
+        [EnumMember(Value = "Error Máxima cantidad de imágenes permitidas")]
+        MaxImageAllow = 141,
+
+        /// <summary>
         /// Error del sistema
         /// </summary>
         [EnumMember(Value = "Modelo de datos Invalido")]

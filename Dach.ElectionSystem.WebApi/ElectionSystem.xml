@@ -56,6 +56,14 @@
             <param name="idCandidate"></param>
             <returns></returns>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.UploadImagen(Dach.ElectionSystem.Models.Request.Candidate.CandidateImageRequest,System.Int32)">
+            <summary>
+            Subir Imagen
+            </summary>
+            <param name="request"></param>
+            <param name="idEvent"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.GetHandler(Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest,System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
             Consultar Candidato

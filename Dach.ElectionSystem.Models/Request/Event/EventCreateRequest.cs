@@ -16,5 +16,12 @@ namespace Dach.ElectionSystem.Models.Request.Event
         /// <value></value>
         [JsonIgnore]
         public override DateTime DateRegister { get; set; }
+
+        /// <summary>
+        /// Imagen de evento
+        /// </summary>
+        /// <value></value>
+        [JsonIgnore]
+        public override string Image { get; set; }
     }
 }

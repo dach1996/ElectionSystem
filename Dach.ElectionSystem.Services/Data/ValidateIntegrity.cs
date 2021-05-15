@@ -83,7 +83,8 @@ namespace Dach.ElectionSystem.Services.Data
         public async Task<Candidate> ValidateCandiate(int id)
         {
             var existCandidate = await candidateRepository.GetAsyncInclude(u => u.Id == id
-                                                                            , includeProperties: u => $"{nameof(u.User)}");
+                                                                            , includeProperties: 
+                                                                            u => $"{nameof(u.User)},{nameof(u.ListCandidateImage)}");
             if (existCandidate.Count() != 1)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el candidato con Id:{id}");
             return existCandidate.FirstOrDefault();

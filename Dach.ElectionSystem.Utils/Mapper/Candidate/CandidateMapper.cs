@@ -1,4 +1,5 @@
-﻿using Dach.ElectionSystem.Models.Request.Candidate;
+﻿using System.Linq;
+using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Response.Candidate;
 
 namespace Dach.ElectionSystem.Utils.Mapper.Candidate
@@ -17,9 +18,10 @@ namespace Dach.ElectionSystem.Utils.Mapper.Candidate
 
             //Mapper to Candidate Delete
             profile.CreateMap<Models.Persitence.Candidate, CandidateDeleteResponse>();
-            //Mapper to Candidate - Get Update
-
-            profile.CreateMap<Models.Persitence.Candidate, CandidateResponseBase>();
+            //Mapper to Candidate - Get 
+            profile.CreateMap<Models.Persitence.Candidate, CandidateResponseBase>()
+            .ForMember(destinationMember=> destinationMember.ListCandidateImage,
+            act=> act.MapFrom(src =>src.ListCandidateImage.Select(lci => lci.ImageFullPath)));
 
         }
 

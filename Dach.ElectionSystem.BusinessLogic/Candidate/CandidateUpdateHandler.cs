@@ -45,7 +45,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                                             $"La fecha máxima para poder registrar candidatos ha terminado.");
             updateCandidate.Age = request.Age.Value;
             updateCandidate.Details = request.Details;
-            updateCandidate.Image = request.Image;
             updateCandidate.PostionsWorks = request.PostionsWorks;
             updateCandidate.Role = request.Role;
             updateCandidate.ProposalDetails = request.ProposalDetails;

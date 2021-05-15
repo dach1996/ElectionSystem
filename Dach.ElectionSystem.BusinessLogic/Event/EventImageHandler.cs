@@ -60,8 +60,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 Directory.CreateDirectory(pathToSave);
             //Creamos la ruta final del archivo
             var finalPathFile = $"{pathToSave}/{Guid.NewGuid()}_{originalFileName}".Replace("-", "_").Replace(" ", "_");
-            using (Stream fileStream = new FileStream(finalPathFile, FileMode.Create))
-                await request.Image.CopyToAsync(fileStream, cancellationToken);
+            using Stream fileStream = new FileStream(finalPathFile, FileMode.Create);
+            await request.Image.CopyToAsync(fileStream, cancellationToken);
             //Actualizamos registro en la base de datos
             eventCurrent.Image = finalPathFile;
             var isUpdate = await _eventRepository.Update(eventCurrent);

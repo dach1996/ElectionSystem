@@ -20,19 +20,19 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         #endregion
         #region Methods Controllers
 
-       /// <summary>
-       /// Crear Candidato
-       /// </summary>
-       /// <param name="request"></param>
-       /// <param name="idEvent"></param>
-       /// <returns></returns>
+        /// <summary>
+        /// Crear Candidato
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="idEvent"></param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200, Type = typeof(CandidateCreateResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> CreateCandidate(
             [FromBody] CandidateCreateRequest request,
-            [FromRoute] int idEvent )
+            [FromRoute] int idEvent)
         {
             request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
@@ -78,6 +78,26 @@ namespace Dach.ElectionSystem.WebApi.Controllers
             [FromRoute] int idCandidate)
         {
             request.IdCandidate = idCandidate;
+            request.IdEvent = idEvent;
+            return Success(await _mediator.Send(request));
+        }
+
+        /// <summary>
+        /// Subir Imagen
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="idEvent"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("image")]
+        [ProducesResponseType(200, Type = typeof(GenericResponse<Unit>))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<Unit>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<Unit>))]
+        public async Task<IActionResult> UploadImagen(
+            [FromForm] CandidateImageRequest request,
+            [FromRoute] int idEvent
+           )
+        {
             request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
         }

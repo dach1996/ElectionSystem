@@ -29,12 +29,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         public async Task<CandidateGetResponse> Handle(CandidateGetRequest request, CancellationToken cancellationToken)
         {
             List<Models.Persitence.Candidate> listCandidates;
-            listCandidates = (await candidateRepository.GetAsync()).ToList();
+            listCandidates = (await candidateRepository.GetAsyncInclude(includeProperties: i => $"{nameof(i.ListCandidateImage)}")).ToList();
             var response = mapper.Map<List<CandidateResponseBase>>(listCandidates);
-            return new CandidateGetResponse()
-            {
-                ListCandidate = response
-            };
+            return new CandidateGetResponse(response);
         }
         #endregion
 

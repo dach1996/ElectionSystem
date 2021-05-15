@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Dach.ElectionSystem.Models.Base;
 
 namespace Dach.ElectionSystem.Models.Response.Candidate
@@ -18,6 +19,12 @@ namespace Dach.ElectionSystem.Models.Response.Candidate
         /// </summary>
         /// <value></value>
         public bool IsActive { get; set; }
+
+        /// <summary>
+        /// Lista de Imágenes
+        /// </summary>
+        /// <value></value>
+        public IList<string> ListCandidateImage { get; set; }
 
     }
 }

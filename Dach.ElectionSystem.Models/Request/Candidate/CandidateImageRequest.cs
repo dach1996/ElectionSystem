@@ -1,15 +1,16 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.RequestBase;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 
-namespace Dach.ElectionSystem.Models.Request.Event
+namespace Dach.ElectionSystem.Models.Request.Candidate
 {
     /// <summary>
-    /// Clase cargar Imágenes a un evento
+    /// Clase cargar imágenes del candidato
     /// </summary>
-    public class EventImageRequest : IRequestBase, IRequest<Unit>
+    public class CandidateImageRequest : IRequestBase, IRequest<Unit>
     {
         /// <summary>
         /// Imagen a Cargar

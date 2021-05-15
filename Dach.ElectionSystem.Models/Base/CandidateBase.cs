@@ -7,11 +7,6 @@ namespace Dach.ElectionSystem.Models.Base
     /// </summary>
     public class CandidateBase
     {
-         /// <summary>
-        /// Imagen del candidato
-        /// </summary>
-        /// <value></value>
-        public string Image { get; set; }
         /// <summary>
         /// Video del Candidato
         /// </summary>
