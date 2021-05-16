@@ -16,7 +16,7 @@ namespace Dach.ElectionSystem.Models.RequestBase
         /// </summary>
         /// <value></value>
         [JsonIgnore]
-        public string PartRoot { get; set; }
+        string PathRoot { get; set; }
 
     }
 }

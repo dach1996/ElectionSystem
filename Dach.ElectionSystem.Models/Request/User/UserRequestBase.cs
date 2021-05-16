@@ -28,6 +28,6 @@ namespace Dach.ElectionSystem.Models.Request.User
         /// </summary>
         /// <value></value>
         [JsonIgnore]
-        public string PartRoot { get; set; }
+        public string PathRoot { get; set; }
     }
 }

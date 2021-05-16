@@ -89,6 +89,15 @@ namespace Dach.ElectionSystem.Services.Data
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el candidato con Id:{id}");
             return existCandidate.FirstOrDefault();
         }
+          public async Task<Candidate> ValidateCandiateWithUserAndEvent(int idUser, int idEvent)
+        {
+            var existCandidate = await candidateRepository.GetAsyncInclude(u => u.IdUser == idUser &&
+                                                                                u.IdEvent == idEvent
+                                                                            , includeProperties: u => $"{nameof(u.User)},{nameof(u.ListCandidateImage)},{nameof(u.Event)}");
+            if (existCandidate.Count() != 1)
+                throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"El usaurio :{idUser} no es candidato en el evento : {idEvent}");
+            return existCandidate.FirstOrDefault();
+        }
         #endregion
     }
 }

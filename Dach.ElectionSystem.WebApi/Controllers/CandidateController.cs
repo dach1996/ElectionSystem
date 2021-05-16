@@ -102,6 +102,26 @@ namespace Dach.ElectionSystem.WebApi.Controllers
             return Success(await _mediator.Send(request));
         }
 
+        /// <summary>
+        /// Borrar Imagen
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="idEvent"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("image")]
+        [ProducesResponseType(200, Type = typeof(GenericResponse<Unit>))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<Unit>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<Unit>))]
+        public async Task<IActionResult> DeleteImage(
+            [FromQuery] CandidateImageDeleteRequest request,
+            [FromRoute] int idEvent
+           )
+        {
+            request.IdEvent = idEvent;
+            return Success(await _mediator.Send(request));
+        }
+
 
         /// <summary>
         /// Consultar Candidato

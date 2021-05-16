@@ -381,6 +381,11 @@
             Error al guardar la imagen
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ResourceNotFound">
+            <summary>
+            No se encuentra archivo
+            </summary>
+        </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ModelInvalid">
             <summary>
             Error del sistema
@@ -1174,7 +1179,7 @@
             Token para contexto
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.RequestBase.IRequestBase.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.IRequestBase.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -1207,7 +1212,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.RequestBase.RequestBaseImpl.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.RequestBase.RequestBaseImpl.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -1275,7 +1280,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateBaseRequest.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateBaseRequest.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -1332,6 +1337,41 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.Candidate.CandidateImageDeleteRequest">
+            <summary>
+            Clase cargar imágenes del candidato
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateImageDeleteRequest.NameResoruce">
+            <summary>
+             Nombre de imagen a Borrar
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateImageDeleteRequest.IdEvent">
+            <summary>
+            Id del evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateImageDeleteRequest.TokenModel">
+            <summary>
+            Clase contexto de Token
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateImageDeleteRequest.UserContext">
+            <summary>
+            Contexto de Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateImageDeleteRequest.PathRoot">
+            <summary>
+            Path de server
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Candidate.CandidateImageRequest">
             <summary>
             Clase cargar imágenes del candidato
@@ -1361,7 +1401,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateImageRequest.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateImageRequest.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -1413,7 +1453,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorBaseRequest.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorBaseRequest.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -1486,7 +1526,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventBaseRequest.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventBaseRequest.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -1589,7 +1629,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventImageRequest.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventImageRequest.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -1785,7 +1825,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -1807,7 +1847,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserRequestBase.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserRequestBase.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -1868,7 +1908,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteBaseRequest.PartRoot">
+        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteBaseRequest.PathRoot">
             <summary>
             Path de server
             </summary>
@@ -2322,7 +2362,7 @@
             Clase para template
             </summary>
         </member>
-        <member name="F:Dach.ElectionSystem.Models.Static.Template.ForggotenPassword">
+        <member name="F:Dach.ElectionSystem.Models.Static.Template.ForggotenPass">
             <summary>
             Template para olvidó contraseña
             </summary>
@@ -2333,6 +2373,11 @@
             </summary>
         </member>
         <member name="F:Dach.ElectionSystem.Models.Static.Template.NewCandidate">
+            <summary>
+            Template para Bienvenida
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Static.Template.NewParticipant">
             <summary>
             Template para Bienvenida
             </summary>

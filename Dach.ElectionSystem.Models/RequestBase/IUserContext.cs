@@ -1,4 +1,3 @@
-using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.Persitence;
 
 namespace Dach.ElectionSystem.Models.RequestBase

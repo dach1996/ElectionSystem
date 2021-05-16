@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Dach.ElectionSystem.Models.Mail;
+using System.Collections.Generic;
 
 namespace Dach.ElectionSystem.BusinessLogic.Candidate
 {
@@ -75,7 +76,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                 new MailModel()
                 {
                     Subject = templateForggotenPassword.TemplateName,
-                    To = userCurrent.Email,
+                    To =  new List<string>(){userCurrent.Email},
                     Template = templateForggotenPassword.TemplateKey,
                     Params = new
                     {

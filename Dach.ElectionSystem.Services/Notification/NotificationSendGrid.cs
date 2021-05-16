@@ -1,3 +1,4 @@
+using System.Linq;
 using System;
 using Dach.ElectionSystem.Models.Mail;
 using Microsoft.Extensions.Configuration;
@@ -19,8 +20,9 @@ namespace Dach.ElectionSystem.Services.Notification
             var sendGridClient = new SendGridClient(configuration.GetSection("SendgridConfiguration:ApiKey").Value);
             var sendGridMessage = new SendGridMessage();
             sendGridMessage.SetFrom(configuration.GetSection("SendgridConfiguration:FromEmail").Value, configuration.GetSection("SendgridConfiguration:From").Value);
-            sendGridMessage.AddTo(model.To);
-            sendGridMessage.Subject=model.Subject;
+            var listEmail = model.To.Select(e => new EmailAddress(e)).ToList();
+            sendGridMessage.AddTos(listEmail);
+            sendGridMessage.Subject = model.Subject;
             sendGridMessage.SetTemplateId(model.Template);
             sendGridMessage.SetTemplateData(model.Params);
             var response = sendGridClient.SendEmailAsync(sendGridMessage).Result;

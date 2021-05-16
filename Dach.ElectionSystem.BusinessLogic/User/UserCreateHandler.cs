@@ -7,6 +7,7 @@ using Dach.ElectionSystem.Repository.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -64,7 +65,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                 new MailModel()
                 {
                     Subject = templateForggotenPassword.TemplateName,
-                    To = request.Email,
+                    To =  new List<string>(){request.Email},
                     Template = templateForggotenPassword.TemplateKey,
                     Params = new
                     {

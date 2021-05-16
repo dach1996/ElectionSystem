@@ -45,6 +45,6 @@ namespace Dach.ElectionSystem.Models.Request.EventAdministrator
         /// </summary>
         /// <value></value>
         [JsonIgnore]
-        public string PartRoot { get; set; }
+        public string PathRoot { get; set; }
     }
 }

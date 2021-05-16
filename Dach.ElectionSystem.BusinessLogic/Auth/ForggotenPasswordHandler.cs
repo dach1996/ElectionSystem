@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using System.Threading;
 using System.Threading.Tasks;
 using Dach.ElectionSystem.Models.Mail;
+using System.Collections.Generic;
+
 namespace Dach.ElectionSystem.BusinessLogic.Auth
 {
 
@@ -43,12 +45,12 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
                 throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
             //Preparamos para envíar correo
             var templates =  configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
-            var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName== Models.Static.Template.ForggotenPassword);
+            var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName== Models.Static.Template.ForggotenPass);
             var isSend = notification.SendMail(
                 new MailModel()
                 {
                     Subject = templateForggotenPassword.TemplateName,
-                    To = request.Email,
+                    To = new List<string>(){request.Email},
                     Template = templateForggotenPassword.TemplateKey,
                     Params = new { Username = $"{user.FirstName} {user.FirstLastName}", Password = newPasswordGenerate }
                 }

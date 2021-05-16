@@ -155,6 +155,13 @@ namespace Dach.ElectionSystem.Models.Enums
         MaxImageAllow = 141,
 
         /// <summary>
+        /// No se encuentra archivo
+        /// </summary>
+        [EnumMember(Value = "No se encuentra recurso")]
+        ResourceNotFound = 142,
+
+
+        /// <summary>
         /// Error del sistema
         /// </summary>
         [EnumMember(Value = "Modelo de datos Invalido")]

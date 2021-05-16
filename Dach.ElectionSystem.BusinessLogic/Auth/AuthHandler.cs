@@ -5,7 +5,6 @@ using Dach.ElectionSystem.Models.Response.Auth;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.TokenJWT;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Threading;

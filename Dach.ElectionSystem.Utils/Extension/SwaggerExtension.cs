@@ -60,6 +60,8 @@ namespace Dach.ElectionSystem.Utils.Extension
             {
                 if (parameter.Name.StartsWith("TokenModel"))
                     operation.Value.Parameters.Remove(parameter);
+                if (parameter.Name.StartsWith("PathRoot"))
+                    operation.Value.Parameters.Remove(parameter);
                 if (parameter.Name.ToUpper().StartsWith("ID") &&
                 (operation.Key == OperationType.Get
                 || operation.Key == OperationType.Delete) &&

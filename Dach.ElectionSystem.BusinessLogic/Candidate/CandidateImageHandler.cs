@@ -37,14 +37,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         #region Handler
         public async Task<Unit> Handle(CandidateImageRequest request, CancellationToken cancellationToken)
         {
-            //Validar que el evento exista
-            var eventCurrent = await validateIntegrity.ValidateEvent(request.IdEvent);
-            //Valida que el Usuario que envía el request, sea administrtador del evento
-            var candidateCurrent = eventCurrent.ListCandidate.FirstOrDefault(c => c.IdUser == request.UserContext.Id);
-            if (candidateCurrent == null)
-                throw new CustomException(Models.Enums.MessageCodesApi.CandidateDontRegister, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound,
-                                            $"El usuario con Id: {request.UserContext.Id} no es candidato en el evento: {eventCurrent.Name}");
-            candidateCurrent = await validateIntegrity.ValidateCandiate(candidateCurrent.Id);
+            //Valida que exista el candidato mediante el id de usuario y el evento
+            var candidateCurrent = await validateIntegrity.ValidateCandiateWithUserAndEvent(request.UserContext.Id, request.IdEvent);
             //Generar ruta del archivo
             var pathEnviroment = configuration.GetSection("PathSaveImage").Value;
             var pathToSave = $"{pathEnviroment}/{Models.Enums.TypeImage.Candidate}/{candidateCurrent.Id}";
@@ -66,10 +60,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
             //Actualizamos registro en la base de datos
             var imageCandidate = new CandidateImage()
             {
-                Event = eventCurrent,
+                Event = candidateCurrent.Event,
                 Candidate = candidateCurrent,
                 Image = finalPathFile,
-                Environment = request.PartRoot
+                Environment = request.PathRoot
             };
             //Agregamos la imagen a la lista
             candidateCurrent.ListCandidateImage.Add(imageCandidate);

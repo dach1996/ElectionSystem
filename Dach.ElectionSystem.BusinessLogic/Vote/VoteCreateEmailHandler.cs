@@ -8,6 +8,10 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Dach.ElectionSystem.Services.Data;
+using Dach.ElectionSystem.Models.Mail;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
 namespace Dach.ElectionSystem.BusinessLogic.Vote
 {
@@ -18,18 +22,27 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         private readonly IUserRepository userRepository;
         private readonly IVoteRegisterEmailRepository voteRegisterEmailRepository;
         private readonly ValidateIntegrity validateIntegrity;
+        private readonly Services.Notification.INotification notification;
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<VoteCreateEmailHandler> logger;
+
 
         public VoteCreateEmailHandler(
         IVoteRepository voteRepository,
         IUserRepository userRepository,
         IVoteRegisterEmailRepository voteRegisterEmailRepository,
-        ValidateIntegrity validateIntegrity
-        )
+        ValidateIntegrity validateIntegrity,
+        Services.Notification.INotification notification,
+        IConfiguration configuration,
+        ILogger<VoteCreateEmailHandler> logger)
         {
             this._voteRepository = voteRepository;
             this.userRepository = userRepository;
             this.voteRegisterEmailRepository = voteRegisterEmailRepository;
             this.validateIntegrity = validateIntegrity;
+            this.notification = notification;
+            _configuration = configuration;
+            this.logger = logger;
         }
         #endregion
         #region Handler
@@ -83,7 +96,28 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
             var isRegisterVoteMail = await voteRegisterEmailRepository.CreateManyAsync(listParticipantesWithOutRegisterToRegister);
             if (!isRegisterVoteMail)
                 throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-            // TODO: Enviar Correo a usuario que registrados en tabla de Mail
+            //Enviar Correo a usuario que registrados en tabla de Mail
+            var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
+            var templateSendEvent = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.NewParticipant);
+            var isSend = notification.SendMail(
+                new MailModel()
+                {
+                    Subject = templateSendEvent.TemplateName,
+                    To = new List<string>(emailUserNotExist),
+                    Template = templateSendEvent.TemplateKey,
+                    Params = new
+                    {
+                        EventName = eventCurrent.Name,
+                        LinkRegister = _configuration.GetSection("LinkToRegister").Value,
+                        CodeRegister = eventCurrent.CodeEvent,
+                        DateStartVote = eventCurrent.DateMinVote.ToString("dd/MM/yyyy")
+                    }
+                }
+            );
+            if (!isSend)
+                logger.LogWarning("No se pudo Envíar correo");
+
+            //Devolver Respuesta
             return new VoteCreateEmailResponse()
             {
                 EmailUserRegister = usersExist.Select(ue => ue.Email).ToList(),

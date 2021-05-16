@@ -41,7 +41,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             listEvents.ForEach(e =>
             {
                 if (!string.IsNullOrEmpty(e.Image))
-                    e.Image = $"{request.PartRoot}/{e.Image}";
+                    e.Image = $"{request.PathRoot}/{e.Image}";
             });
             return new EventGetResponse()
             {

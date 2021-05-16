@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Dach.ElectionSystem.Models.Mail
 {
     /// <summary>
@@ -15,7 +17,7 @@ namespace Dach.ElectionSystem.Models.Mail
         /// Para
         /// </summary>
         /// <value></value>
-        public string To { get; set; }
+        public List<string> To { get; set; }
 
         /// <summary>
         /// TemplateId
