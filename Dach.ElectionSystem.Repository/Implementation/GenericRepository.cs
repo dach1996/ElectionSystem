@@ -1,5 +1,5 @@
-﻿using Dach.ElectionSystem.Repository.Interfaces;
-using Dach.ElectionSystem.Repository.UnitOfWork;
+﻿using Dach.ElectionSystem.Repository.DBContext;
+using Dach.ElectionSystem.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,22 +12,22 @@ namespace Dach.ElectionSystem.Repository.Implementation
     public class GenericRepository<T> : IGenericRepository<T> where T : class
 
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public GenericRepository(IUnitOfWork unitOfWork)
+        private readonly WebApiDbContext _context;
+        public GenericRepository(WebApiDbContext context)
         {
-            _unitOfWork = unitOfWork;
+            _context = context;
         }
 
         public async Task<IEnumerable<T>> GetAsync()
         {
-            return await _unitOfWork.Context.Set<T>().ToListAsync();
+            return await _context.Set<T>().ToListAsync();
         }
 
         public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> whereCondition,
                                   Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                   string includeProperties = "")
         {
-            IQueryable<T> query = _unitOfWork.Context.Set<T>();
+            IQueryable<T> query = _context.Set<T>();
 
             if (whereCondition != null)
             {
@@ -53,7 +53,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
                                   Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                   string includeProperties = "")
         {
-            IQueryable<T> query = _unitOfWork.Context.Set<T>();
+            IQueryable<T> query = _context.Set<T>();
 
             if (whereCondition != null)
             {
@@ -77,11 +77,11 @@ namespace Dach.ElectionSystem.Repository.Implementation
 
             bool created = false;
 
-            var save = await _unitOfWork.Context.Set<T>().AddAsync(entity);
+            var save = await _context.Set<T>().AddAsync(entity);
 
             if (save != null)
                 created = true;
-            _unitOfWork.Context.SaveChanges();
+            _context.SaveChanges();
 
             return created;
         }
@@ -91,11 +91,11 @@ namespace Dach.ElectionSystem.Repository.Implementation
 
             bool update = false;
 
-            var save = _unitOfWork.Context.Set<T>().Update(entity);
+            var save = _context.Set<T>().Update(entity);
 
             if (save != null)
                 update = true;
-            _unitOfWork.Context.SaveChanges();
+            _context.SaveChanges();
             return await Task.Run<bool>(() => update);
         }
 
@@ -104,18 +104,18 @@ namespace Dach.ElectionSystem.Repository.Implementation
             bool remove = false;
             var getEntity = await this.GetByIdAsync(Id);
 
-                var save = _unitOfWork.Context.Set<T>().Remove(getEntity);
+                var save = _context.Set<T>().Remove(getEntity);
 
                 if (save != null)
                     remove = true;
-                _unitOfWork.Context.SaveChanges();
+                _context.SaveChanges();
 
             return remove;
         }
 
         public async Task<T> GetByIdAsync(int Id)
         {
-            return await _unitOfWork.Context.Set<T>().FindAsync(Id);
+            return await _context.Set<T>().FindAsync(Id);
         }
 
         public async Task<IEnumerable<T>> GetAsyncInclude(Expression<Func<T, bool>> whereCondition = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
@@ -123,7 +123,7 @@ namespace Dach.ElectionSystem.Repository.Implementation
         {
 
 
-            IQueryable<T> query = _unitOfWork.Context.Set<T>();
+            IQueryable<T> query = _context.Set<T>();
 
             if (whereCondition != null)
             {
@@ -151,9 +151,9 @@ namespace Dach.ElectionSystem.Repository.Implementation
 
         public async Task<bool> CreateManyAsync(IEnumerable<T> entity)
         {
-            await _unitOfWork.Context.Set<T>().AddRangeAsync(entity);
+            await _context.Set<T>().AddRangeAsync(entity);
             var created = true;
-            _unitOfWork.Context.SaveChanges();
+            _context.SaveChanges();
             return created;
         }
     }

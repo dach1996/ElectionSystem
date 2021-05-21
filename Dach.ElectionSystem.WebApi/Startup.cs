@@ -16,7 +16,6 @@ using Dach.ElectionSystem.Utils.Filters;
 using Dach.ElectionSystem.Services.Intrastructure;
 using Dach.ElectionSystem.BusinessLogic.Auth;
 using System;
-using Serilog;
 
 namespace Dach.ElectionSystem.WebApi
 {

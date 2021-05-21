@@ -1,18 +1,47 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Dach.ElectionSystem.Repository.DBContext;
+using Microsoft.EntityFrameworkCore.Storage;
 namespace Dach.ElectionSystem.Repository.UnitOfWork
-{ 
+{
     public class UnitOfWork : IUnitOfWork
     {
         public WebApiDbContext Context { get; set; }
-        
-        public UnitOfWork(WebApiDbContext context)
+        public IDbContextTransaction Transaction { get; set; }
+        public async Task BeginTransactionAsync()
         {
-            Context = context;
+            if (Transaction == null)
+                Transaction = await Context.Database.BeginTransactionAsync();
         }
-        public void SaveChanges()
+
+        public async Task CommitAsync()
         {
-            Context.SaveChanges();
+            if (Transaction != null)
+            {
+                await Context.Database.CommitTransactionAsync().ConfigureAwait(false);
+                Transaction = null;
+            }
+        }
+
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            Transaction?.Dispose();
+        }
+
+        public async Task RollBackAsync()
+        {
+            if (Transaction != null)
+            {
+                await Context.Database.RollbackTransactionAsync().ConfigureAwait(false);
+                Transaction = null;
+            }
         }
     }
 }
