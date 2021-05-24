@@ -63,8 +63,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             if (request.MaxPeople && request.NumberMaxCandidate <= 5)
                     throw new CustomException(Models.Enums.MessageCodesApi.MaxPeopleEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
             //Validamos las fechas
-            request.DateRegister=DateTime.Now;
-            await eventService.ValidateDateRegisterEvents(request);
+            request.DateRegister=eventCurrent.DateRegister;
+            //TODO: Quitar esta invalidación
+           // await eventService.ValidateDateRegisterEvents(request);
             //Actualiza el evento
             eventCurrent.Category = request.Category;
             eventCurrent.Description = request.Description;

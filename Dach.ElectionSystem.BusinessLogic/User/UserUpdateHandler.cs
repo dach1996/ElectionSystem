@@ -33,8 +33,24 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         public async Task<UserUpdateResponse> Handle(UserUpdateRequest request, CancellationToken cancellationToken)
         {
             //Validamos integridad de datos
-             var userCurrent = await validateIntegrity.ValidateUser(request);     
+            var userCurrent = await validateIntegrity.ValidateUser(request);
             //Actualizar datos de usuario 
+            UpdateDataUser(request, userCurrent);
+            //Actualizar Usuario
+            var isUserUpdate = await userRepository.Update(userCurrent);
+            if (!isUserUpdate)
+                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+            var userResponse = mapper.Map<UserUpdateResponse>(userCurrent);
+            return userResponse;
+        }
+
+        /// <summary>
+        /// Acualiza la información del usuario
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="userCurrent"></param>
+        private void UpdateDataUser(UserUpdateRequest request, Models.Persitence.User userCurrent)
+        {
             var userUpdate = mapper.Map<Models.Persitence.User>(request);
             userCurrent.DNI = userUpdate.DNI;
             userCurrent.FirstName = userUpdate.FirstName;
@@ -43,12 +59,6 @@ namespace Dach.ElectionSystem.BusinessLogic.User
             userCurrent.SecondName = userUpdate.SecondName;
             userCurrent.UserName = userUpdate.UserName;
             userCurrent.BirthDate = userUpdate.BirthDate;
-            //Actualizar Usuario
-            var isUserUpdate = await userRepository.Update(userCurrent);
-            if (!isUserUpdate)
-                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-            var userResponse = mapper.Map<UserUpdateResponse>(userCurrent);
-            return userResponse;
         }
         #endregion
     }

@@ -22,6 +22,7 @@ namespace Dach.ElectionSystem.Utils.Mapper.Candidate
             profile.CreateMap<Models.Persitence.Candidate, CandidateResponseBase>()
             .ForMember(destinationMember=> destinationMember.ListCandidateImage,
             act=> act.MapFrom(src =>src.ListCandidateImage.Select(lci => lci.ImageFullPath)));
+            
 
         }
 

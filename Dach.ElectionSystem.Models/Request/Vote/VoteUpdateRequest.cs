@@ -1,6 +1,6 @@
-﻿using Dach.ElectionSystem.Models.Response.User;
-using Dach.ElectionSystem.Models.Response.Vote;
+﻿using Dach.ElectionSystem.Models.Response.Vote;
 using MediatR;
+using System;
 using System.Text.Json.Serialization;
 
 
@@ -11,11 +11,23 @@ namespace Dach.ElectionSystem.Models.Request.Vote
     /// </summary>
     public class VoteUpdateRequest : VoteBaseRequest, IRequest<VoteUpdateResponse>
     {
-       /// <summary>
+        /// <summary>
         /// Id de Evento
         /// </summary>
         /// <value></value>
         [JsonIgnore]
         public int IdCandidate { get; set; }
+
+        /// <summary>
+        /// Cédula Usuario
+        /// </summary>
+        [JsonIgnore]
+        public override DateTime? Date { get; set; }
+
+        /// <summary>
+        /// Cédula Usuario
+        /// </summary>
+        [JsonIgnore]
+        public override bool HasVote { get; set; }
     }
 }

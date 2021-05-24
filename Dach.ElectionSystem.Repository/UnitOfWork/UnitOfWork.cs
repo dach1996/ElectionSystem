@@ -7,7 +7,15 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         public WebApiDbContext Context { get; set; }
+
+        public UnitOfWork(WebApiDbContext context)
+        {
+            Context = context;
+        }
+
         public IDbContextTransaction Transaction { get; set; }
+
+        
         public async Task BeginTransactionAsync()
         {
             if (Transaction == null)
@@ -18,6 +26,7 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
         {
             if (Transaction != null)
             {
+                await Context.SaveChangesAsync();
                 await Context.Database.CommitTransactionAsync().ConfigureAwait(false);
                 Transaction = null;
             }
@@ -33,6 +42,7 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
         protected virtual void Dispose(bool disposing)
         {
             Transaction?.Dispose();
+            Context?.Dispose();
         }
 
         public async Task RollBackAsync()

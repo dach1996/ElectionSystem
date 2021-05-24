@@ -1,6 +1,4 @@
-﻿
-using Dach.ElectionSystem.Models.Request.Event;
-using Dach.ElectionSystem.Repository.Interfaces;
+﻿using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using System.Threading;
@@ -9,7 +7,6 @@ using Microsoft.Extensions.Configuration;
 using System.Net.Http.Headers;
 using System.IO;
 using System;
-using System.Linq;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Persitence;

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Dach.ElectionSystem.Models.Base;
 
 namespace Dach.ElectionSystem.Models.Response.Event
 {
@@ -9,11 +8,16 @@ namespace Dach.ElectionSystem.Models.Response.Event
     public class EventGetResponse
     {
         /// <summary>
+        /// Número total de evento
+        /// </summary>
+        /// <value></value>
+        public int TotalEvents { get; set; }
+        
+        
+        /// <summary>
         /// Lista de Eventos
         /// </summary>
         /// <value></value>
         public List<EventResponseBase> ListEvents { get; set; }
-        
-        
     }
 }

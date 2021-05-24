@@ -2,12 +2,11 @@
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Response.Candidate;
-using Dach.ElectionSystem.Repository.Interfaces;
+using Dach.ElectionSystem.Repository.UnitOfWork;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,43 +15,79 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
     public class CandidateUpdateHandler : IRequestHandler<CandidateUpdateRequest, CandidateUpdateResponse>
     {
         #region Constructor
-        private readonly ICandidateRepository _candidateRepository;
-        private readonly IMapper mapper;
-        private readonly ValidateIntegrity validateIntegrity;
+        private readonly IMapper _mapper;
+        private readonly ValidateIntegrity _validateIntegrity;
+        private readonly ILogger<CandidateUpdateHandler> _logger;
+        private readonly IElectionUnitOfWork _electionUnitOfWork;
 
         public CandidateUpdateHandler(
-            ICandidateRepository candidateRepository,
             IMapper mapper,
-            ValidateIntegrity validateIntegrity)
+            ValidateIntegrity validateIntegrity,
+            ILogger<CandidateUpdateHandler> logger,
+            IElectionUnitOfWork electionUnitOfWork)
         {
-            this._candidateRepository = candidateRepository;
-            this.mapper = mapper;
-            this.validateIntegrity = validateIntegrity;
+            _mapper = mapper;
+            _validateIntegrity = validateIntegrity;
+            _logger = logger;
+            _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion
 
         #region Handler
         public async Task<CandidateUpdateResponse> Handle(CandidateUpdateRequest request, CancellationToken cancellationToken)
         {
-             //Valida que el evento exista
-            var eventCurrent = await validateIntegrity.ValidateEvent(request.IdEvent);
-            // Valida que la candidata Exista
-            var updateCandidate = await validateIntegrity.ValidateCandiate(request.IdCandidate);
-            //Validar la fecha máxima para crear candidatos
-            var isDateValid = eventCurrent.DateMaxRegisterCandidate >= DateTime.Now;
-            if (!isDateValid)
-                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
-                                            $"La fecha máxima para poder registrar candidatos ha terminado.");
-            updateCandidate.Age = request.Age.Value;
-            updateCandidate.Details = request.Details;
-            updateCandidate.PostionsWorks = request.PostionsWorks;
-            updateCandidate.Role = request.Role;
-            updateCandidate.ProposalDetails = request.ProposalDetails;
-            var isUpdate = await _candidateRepository.Update(updateCandidate);
-            if (!isUpdate)
-                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-            var response = mapper.Map<CandidateUpdateResponse>(updateCandidate);
-            return response;
+            using (_electionUnitOfWork)
+            {
+                try
+                {
+                    await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
+                    //Valida que el evento exista
+                    var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
+                    // Valida que la candidata Exista
+                    var candidateCurrent = await _validateIntegrity.ValidateCandiate(request.IdCandidate);
+                    //Validar la fecha máxima para crear candidatos
+                    var isDateValid = eventCurrent.DateMaxRegisterCandidate >= DateTime.Now;
+                    if (!isDateValid)
+                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
+                                                    $"La fecha máxima para poder registrar candidatos ha terminado.");
+                    //Validamos que el usuario y el candidato sean el mismo
+                    if (request.UserContext.Id != candidateCurrent.IdUser)
+                        throw new CustomException(Models.Enums.MessageCodesApi.UserIsNotCandidate, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway);
+                    //Actualizamos los datos del modelo
+                    UpdateDataCandidate(request, candidateCurrent);
+                    //Actualiza en la base de datos
+                    var isUpdate = await _electionUnitOfWork.GetCandidateRepository().Update(candidateCurrent);
+                    //Valida si se pudo guardar
+                    if (!isUpdate)
+                        throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                    //Crea Respuesta
+                    var response = _mapper.Map<CandidateUpdateResponse>(candidateCurrent);
+                    //Guarda cambios de la transacción
+                    await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(CandidateUpdateHandler), nameof(Handle), ex.Message);
+                    await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
+                    throw;
+                }
+            }
+
+        }
+        /// <summary>
+        /// Actualiza la informaicón de la candidata
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="candidateCurrent"></param>
+        private static void UpdateDataCandidate(CandidateUpdateRequest request, Models.Persitence.Candidate candidateCurrent)
+        {
+            candidateCurrent.Age = request.Age.Value;
+            candidateCurrent.Details = request.Details;
+            candidateCurrent.PostionsWorks = request.PostionsWorks;
+            candidateCurrent.Role = request.Role;
+            candidateCurrent.ProposalDetails = request.ProposalDetails;
+            candidateCurrent.Video = request.Video;
         }
         #endregion
 

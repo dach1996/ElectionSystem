@@ -1,5 +1,6 @@
 
 using System.Text.Json.Serialization;
+using Dach.ElectionSystem.Models.Enums;
 using Dach.ElectionSystem.Models.RequestBase;
 using Dach.ElectionSystem.Models.Response.User;
 using MediatR;
@@ -55,5 +56,13 @@ namespace Dach.ElectionSystem.Models.Request.User
         /// <value></value>
         [JsonIgnore]
         public string PathRoot { get; set; }
+
+
+        /// <summary>
+        /// Tipo de filtro
+        /// </summary>
+        /// <value></value>
+        public TypeFilterUser TypeFilter { get; set; }
+
     }
 }

@@ -10,7 +10,6 @@ using Dach.ElectionSystem.Models.Response.EventAdministrator;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
 {
@@ -48,13 +47,13 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
                 throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
                 $"No existe registrado el administrador con Id: {request.IdUser} en el evento");
             //Valida que el administrador se encuentre desactivado
-            var isUserAdministratorActive = events.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser).State;
+            var isUserAdministratorActive = events.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser).IsActive;
             if (!isUserAdministratorActive)
                 throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
                 $"El usuario administrador se encuentra Acticado");
             //Creamos el nuevo administrador
             var updateEventAdministrator = events.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser);
-            updateEventAdministrator.State = true;
+            updateEventAdministrator.IsActive = true;
             updateEventAdministrator.Date = DateTime.Now;
             var isUpdate = await _eventAdministratorRepository.Update(updateEventAdministrator);
             if (!isUpdate)

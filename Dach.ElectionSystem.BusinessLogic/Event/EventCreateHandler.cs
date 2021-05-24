@@ -44,7 +44,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         public async Task<EventCreateResponse> Handle(EventCreateRequest request, CancellationToken cancellationToken)
         {
             //Valida el usuario que envía request
-            var userCurrent = await validateIntegrity.ValidateUser(request);
+            var userCurrent = request.UserContext;
             //Valida el número de eventos permitidos para el usuario
             var events = await _eventRepository.GetAsync(e => e.IdUser == userCurrent.Id && !e.IsDelete);
             if (events.Count() >= userCurrent.EventNumber.NumberMaxEvent)
@@ -57,7 +57,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 throw new CustomException(Models.Enums.MessageCodesApi.EventRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
             //Validamos las fechas
             request.DateRegister = DateTime.Now;
-            await eventService.ValidateDateRegisterEvents(request);
+           //TODO: Quitar esta invalidación
+           // await eventService.ValidateDateRegisterEvents(request);
             //Mapeamos el evento
             var newEvent = _mapper.Map<Models.Persitence.Event>(request);
             //Registramos al usuario como creador del evento

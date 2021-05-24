@@ -1,4 +1,5 @@
-﻿using Dach.ElectionSystem.Models.Response.Candidate;
+﻿using System.Text.Json.Serialization;
+using Dach.ElectionSystem.Models.Response.Candidate;
 using MediatR;
 
 namespace Dach.ElectionSystem.Models.Request.Candidate
@@ -12,12 +13,14 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
         /// Id de Evento
         /// </summary>
         /// <value></value>
+        [JsonIgnore]
         public int IdEvent { get; set; }
 
         /// <summary>
         /// Id de Candidato
         /// </summary>
         /// <value></value>
+         [JsonIgnore]
         public int IdCandidate { get; set; }
     }
 }

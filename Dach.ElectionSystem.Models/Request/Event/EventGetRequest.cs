@@ -53,5 +53,13 @@ namespace Dach.ElectionSystem.Models.Request.Event
         /// </summary>
         /// <value></value>
         public string Category { get; set; }
+
+        /// <summary>
+        /// Tipo de Filtros
+        /// </summary>
+        /// <value></value>
+        public TypeFilterEvent TypeFilter { get; set; }
+        
+        
     }
 }

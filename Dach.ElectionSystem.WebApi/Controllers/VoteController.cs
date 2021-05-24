@@ -92,14 +92,16 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <param name="idEvent"></param>
         /// <returns></returns>
         [HttpDelete]
-        [Route("events/{idEvent}")]
+        [Route("events/{idEvent}/users/{idUser}")]
         [ProducesResponseType(200, Type = typeof(VoteDeleteResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> DesactiveVote(
             [FromQuery] VoteDeleteRequest request,
-            [FromRoute] int idEvent)
+            [FromRoute] int idEvent,
+            [FromRoute] int idUser)
         {
+            request.IdUser = idUser;
             request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
         }
@@ -129,7 +131,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
 
 
         /// <summary>
-        /// Consultar Votos
+        /// Consultar Participantes
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
@@ -139,8 +141,6 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         [Route("events/{idEvent}")]
-        [Route("events")]
-        [Route("users/{idUser}")]
         public async Task<IActionResult> GetHandler(
             [FromQuery] VoteGetRequest request,
             [FromRoute] int idEvent)

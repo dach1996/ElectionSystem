@@ -74,6 +74,21 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// Consulta de Eventos
         /// </summary>
         /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(EventGetResponse))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [Route("")]
+        public async Task<IActionResult> GetHandler(
+            [FromQuery] EventGetRequest request)
+             => Success(await _mediator.Send(request));
+
+
+        /// <summary>
+        /// Consulta de Evento
+        /// </summary>
+        /// <param name="request"></param>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
@@ -81,14 +96,12 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         [Route("{id}")]
-        [Route("")]
-        public async Task<IActionResult> GetHandler(
+        public async Task<IActionResult> GetByIdHandler(
             [FromQuery] EventGetRequest request,
             [FromRoute] int? id)
         {
             request.Id = id;
-            return
-            Success(await _mediator.Send(request));
+            return Success(await _mediator.Send(request));
         }
 
 

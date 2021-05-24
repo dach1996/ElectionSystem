@@ -2,7 +2,6 @@
 using Dach.ElectionSystem.Models.Auth;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Response.Auth;
-using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.TokenJWT;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -10,7 +9,6 @@ using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 using Dach.ElectionSystem.Repository.UnitOfWork;
-
 namespace Dach.ElectionSystem.BusinessLogic.Auth
 {
     public class AuthHandler : IRequestHandler<LoginRequest, LoginResponse>

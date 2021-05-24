@@ -2,62 +2,80 @@
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.EventAdministrator;
 using Dach.ElectionSystem.Models.Response.EventAdministrator;
-using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Dach.ElectionSystem.Repository.UnitOfWork;
 
 namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
 {
     public class EventAdministratorCreateHandler : IRequestHandler<EventAdministratorCreateRequest, EventAdministratorCreateResponse>
     {
         #region Constructor 
-        private readonly IEventAdministratorRepository _eventAdministratorRepository;
         private readonly IMapper _mapper;
-        private readonly ValidateIntegrity validateIntegrity;
+        private readonly ValidateIntegrity _validateIntegrity;
+        private readonly ILogger<EventAdministratorCreateHandler> _logger;
+        private readonly IElectionUnitOfWork _electionUnitOfWork;
 
         public EventAdministratorCreateHandler(
-        IEventAdministratorRepository EventAdministratorRepository,
         IMapper mapper,
-        ValidateIntegrity validateIntegrity
-        )
+        ValidateIntegrity validateIntegrity,
+        ILogger<EventAdministratorCreateHandler> logger,
+        IElectionUnitOfWork electionUnitOfWork)
         {
-            this._eventAdministratorRepository = EventAdministratorRepository;
-            this._mapper = mapper;
-            this.validateIntegrity = validateIntegrity;
+            _mapper = mapper;
+            _validateIntegrity = validateIntegrity;
+            _logger = logger;
+            _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion
         #region Handler
         public async Task<EventAdministratorCreateResponse> Handle(EventAdministratorCreateRequest request, CancellationToken cancellationToken)
         {
-            //Valida que exista el evento
-            var events = await validateIntegrity.ValidateEvent(request.IdEvent);
-            //Valida que exista el usuario
-            var user = await validateIntegrity.ValidateUser(request.IdUser);
-            //Valida que el usuario de contexto sea administrador en este e vento
-            var isUserCurrentAdministrator = request.UserContext.ListEventAdministrator.Exists(e => e.Id == events.Id);
-             if (!isUserCurrentAdministrator)
-                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
-                "El no tiene permisos para registrar administradores a este evento");
-            //Valida que el usuario a ingresar no sea administrador en este momento
-            var isUserAdministrator = user.ListEventAdministrator.Exists(e => e.Id == events.Id);
-            if (isUserAdministrator)
-                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
-                "El usuario ya se encuentra registrado como administrador en este Evento");
-            //Creamos el nuevo administrador
-            var eventAdministrator = new Models.Persitence.EventAdministrator()
+            using (_electionUnitOfWork)
             {
-                IdUser = user.Id,
-                IdEvent = events.Id,
-                Privileges = "All",
-                Date = DateTime.Now
-            };
-            var isCreate = await _eventAdministratorRepository.CreateAsync(eventAdministrator);
-            if (!isCreate)
-                throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-            return _mapper.Map<EventAdministratorCreateResponse>(eventAdministrator);
+                try
+                {
+                    await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
+                    //Valida que exista el evento
+                    var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
+                    //Valida que exista el usuario
+                    var userToAdmin = await _validateIntegrity.ValidateUser(request.IdUser);
+                    //Valida que el usuario de contexto sea administrador en este e vento
+                    var isUserCurrentAdministrator = request.UserContext.ListEventAdministrator.Exists(e => e.IdEvent == eventCurrent.Id);
+                    if (!isUserCurrentAdministrator)
+                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
+                        "El no tiene permisos para registrar administradores a este evento");
+                    //Valida que el usuario a ingresar no sea administrador en este momento
+                    var isUserAdministrator = userToAdmin.ListEventAdministrator.Exists(e => e.IdEvent == eventCurrent.Id);
+                    if (isUserAdministrator)
+                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
+                        "El usuario ya se encuentra registrado como administrador en este Evento");
+                    //Creamos el nuevo administrador
+                    var eventAdministrator = new Models.Persitence.EventAdministrator()
+                    {
+                        IdUser = userToAdmin.Id,
+                        IdEvent = eventCurrent.Id,
+                        Privileges = "All",
+                        Date = DateTime.Now
+                    };
+                    var isCreate = await _electionUnitOfWork.GetEventAdministratorRepository().CreateAsync(eventAdministrator);
+                    if (!isCreate)
+                        throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                    await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
+                    return _mapper.Map<EventAdministratorCreateResponse>(eventAdministrator);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(EventAdministratorCreateHandler), nameof(Handle), ex.Message);
+                    await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
+                    throw;
+                }
+            }
+
         }
         #endregion
     }

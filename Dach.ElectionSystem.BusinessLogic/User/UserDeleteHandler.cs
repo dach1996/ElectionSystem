@@ -3,6 +3,7 @@ using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.User;
 using Dach.ElectionSystem.Repository.Interfaces;
+using Dach.ElectionSystem.Repository.UnitOfWork;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
@@ -14,49 +15,63 @@ namespace Dach.ElectionSystem.BusinessLogic.User
     public class UserDeleteHandler : IRequestHandler<UserDeleteRequest, UserDeleteResponse>
     {
         #region Constructor
-        private readonly ILogger<UserDeleteHandler> logger;
-        private readonly IUserRepository userRepository;
+        private readonly ILogger<UserDeleteHandler> _logger;
+        private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IMapper mapper;
         public UserDeleteHandler(
             ILogger<UserDeleteHandler> logger,
-            IUserRepository userRepository,
-            IMapper mapper
-            )
+            IMapper mapper,
+            IElectionUnitOfWork electionUnitOfWork)
         {
-            this.logger = logger;
-            this.userRepository = userRepository;
+            _logger = logger;
             this.mapper = mapper;
+            _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion
         #region Handler
         public async Task<UserDeleteResponse> Handle(UserDeleteRequest request, CancellationToken cancellationToken)
         {
-            var userCurrent = await userRepository.GetByIdAsync(Convert.ToInt32(request.TokenModel.Id));
-            if (userCurrent == null)
+            using (_electionUnitOfWork)
             {
-                logger.LogWarning($"No se encuentra usuario Token con ID:{request.TokenModel.Id}");
-                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                try
+                {
+                    await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
+
+                    var userCurrent = await _electionUnitOfWork.GetUserRepository().GetByIdAsync(Convert.ToInt32(request.TokenModel.Id));
+                    if (userCurrent == null)
+                    {
+                        _logger.LogWarning($"No se encuentra usuario Token con ID:{request.TokenModel.Id}");
+                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                    }
+
+                    var userToDesactive = await _electionUnitOfWork.GetUserRepository().GetByIdAsync(Convert.ToInt32(request.Id));
+                    if (userToDesactive == null)
+                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+
+                    if (!userToDesactive.IsActive)
+                    {
+                        _logger.LogWarning($"El usuario con Id: {request.Id} ya está desactivado");
+                        throw new CustomException(Models.Enums.MessageCodesApi.UserIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                    }
+                    userToDesactive.IsActive = false;
+                    var isUpdate = await _electionUnitOfWork.GetUserRepository().Update(userToDesactive);
+                    if (!isUpdate)
+                    {
+                        _logger.LogWarning($"No se pudo actualizar Usuario");
+                        throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
+                    }
+                    await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
+                    return mapper.Map<UserDeleteResponse>(userToDesactive);
+
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(IncreaseEventsHandler), nameof(Handle), ex.Message);
+                    await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
+                    throw;
+                }
             }
 
-            var userToDesactive = await userRepository.GetByIdAsync(Convert.ToInt32(request.Id));
-            if (userToDesactive == null)
-            {
-                
-                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
-            }
-            if (!userToDesactive.IsActive)
-            {
-                logger.LogWarning($"El usuario con Id: {request.Id} ya está desactivado");
-                throw new CustomException(Models.Enums.MessageCodesApi.UserIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
-            }
-            userToDesactive.IsActive = false;
-            var isUpdate = await userRepository.Update(userToDesactive);
-            if (!isUpdate)
-            {
-                logger.LogWarning($"No se pudo actualizar Usuario");
-                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
-            }
-            return mapper.Map<UserDeleteResponse>(userToDesactive);
         }
         #endregion
     }

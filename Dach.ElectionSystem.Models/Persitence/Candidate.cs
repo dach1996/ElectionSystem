@@ -118,6 +118,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         public Candidate()
         {
             ListCandidateImage = new List<CandidateImage>();
+            IsActive = true;
         }
         #endregion
     }

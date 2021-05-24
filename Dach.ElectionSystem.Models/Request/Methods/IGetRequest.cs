@@ -11,18 +11,18 @@ namespace Dach.ElectionSystem.Models.Request.Methods
         /// Paginación
         /// </summary>
         /// <value></value>
-        public int Offset { get; set; }
+        int Offset { get; set; }
 
         /// <summary>
         /// Orden
         /// </summary>
         /// <value></value>
-        public OrderBy? OrderBy { get; set; }
+        OrderBy? OrderBy { get; set; }
         
         /// <summary>
         /// Límite de Registros
         /// </summary>
         /// <value></value>
-        public int Limit { get; set; }        
+        int Limit { get; set; }        
     }
 }

@@ -160,6 +160,23 @@ namespace Dach.ElectionSystem.Models.Enums
         [EnumMember(Value = "No se encuentra recurso")]
         ResourceNotFound = 142,
 
+        /// <summary>
+        /// No se encuentra archivo
+        /// </summary>
+        [EnumMember(Value = "El candidato no pertence al evento")]
+        CandidateDontExistInEvent = 144,
+
+        /// <summary>
+        /// Candidato está desactivado
+        /// </summary>
+        [EnumMember(Value = "El candidato se encuentra desactivado")]
+        CandidateIsDesactive = 145,
+
+        /// <summary>
+        /// Participante está desactivado
+        /// </summary>
+        [EnumMember(Value = "El participante ya se encuentra desactivado")]
+        ParticipantIsDesactive = 146,
 
         /// <summary>
         /// Error del sistema
@@ -212,6 +229,12 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "Fechas incorrectas")]
         IncorrectDates = 158,
+
+        /// <summary>
+        /// Fechas Incorrectas
+        /// </summary>
+        [EnumMember(Value = "El usuario no pertene al candidato")]
+        UserIsNotCandidate = 159,
 
         /// <summary>
         /// Error del sistema

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
+using Dach.ElectionSystem.Models.Enums;
+using Dach.ElectionSystem.Models.Request.Methods;
 using Dach.ElectionSystem.Models.Response.Vote;
 using MediatR;
 namespace Dach.ElectionSystem.Models.Request.Vote

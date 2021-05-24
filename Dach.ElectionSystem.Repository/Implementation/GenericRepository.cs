@@ -78,10 +78,9 @@ namespace Dach.ElectionSystem.Repository.Implementation
             bool created = false;
 
             var save = await _context.Set<T>().AddAsync(entity);
-
+            await _context.SaveChangesAsync();
             if (save != null)
                 created = true;
-            _context.SaveChanges();
 
             return created;
         }
@@ -92,10 +91,9 @@ namespace Dach.ElectionSystem.Repository.Implementation
             bool update = false;
 
             var save = _context.Set<T>().Update(entity);
-
+            await _context.SaveChangesAsync();
             if (save != null)
                 update = true;
-            _context.SaveChanges();
             return await Task.Run<bool>(() => update);
         }
 
@@ -103,12 +101,10 @@ namespace Dach.ElectionSystem.Repository.Implementation
         {
             bool remove = false;
             var getEntity = await this.GetByIdAsync(Id);
-
-                var save = _context.Set<T>().Remove(getEntity);
-
-                if (save != null)
-                    remove = true;
-                _context.SaveChanges();
+            var save = _context.Set<T>().Remove(getEntity);
+            await _context.SaveChangesAsync();
+            if (save != null)
+                remove = true;
 
             return remove;
         }
@@ -152,8 +148,8 @@ namespace Dach.ElectionSystem.Repository.Implementation
         public async Task<bool> CreateManyAsync(IEnumerable<T> entity)
         {
             await _context.Set<T>().AddRangeAsync(entity);
+            await _context.SaveChangesAsync();
             var created = true;
-            _context.SaveChanges();
             return created;
         }
     }

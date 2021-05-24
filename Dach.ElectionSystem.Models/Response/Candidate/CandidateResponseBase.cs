@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Dach.ElectionSystem.Models.Base;
+using Dach.ElectionSystem.Models.Response.User;
 
 namespace Dach.ElectionSystem.Models.Response.Candidate
 {
@@ -15,6 +16,12 @@ namespace Dach.ElectionSystem.Models.Response.Candidate
         public int Id { get; set; }
 
         /// <summary>
+        /// Id del Usuario
+        /// </summary>
+        /// <value></value>
+        public int IdUser { get; set; }
+
+        /// <summary>
         /// Id de candidato
         /// </summary>
         /// <value></value>
@@ -26,5 +33,10 @@ namespace Dach.ElectionSystem.Models.Response.Candidate
         /// <value></value>
         public IList<string> ListCandidateImage { get; set; }
 
+        /// <summary>
+        /// Usuario Correspondiente a candidato
+        /// </summary>
+        /// <value></value>
+        public UserResponseBase User { get; set; }
     }
 }

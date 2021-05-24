@@ -6,12 +6,12 @@ namespace Dach.ElectionSystem.Models.Request.Event
     /// <summary>
     /// Clase EventDeleteRequest
     /// </summary>
-     public class EventDeleteRequest : RequestBaseImpl, IRequest<EventDeleteResponse>
+    public class EventDeleteRequest : RequestBaseImpl, IRequest<EventDeleteResponse>
     {
-         /// <summary>
+        /// <summary>
         /// Id de Evento
         /// </summary>
-        public int Id { get; set; }
+        public int IdEvent { get; set; }
 
     }
 }

@@ -52,8 +52,8 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> DesactiveCandidate(
             [FromQuery] CandidateDeleteRequest request,
-            [FromRoute] int? idEvent,
-            [FromRoute] int? idCandidate)
+            [FromRoute] int idEvent,
+            [FromRoute] int idCandidate)
         {
             request.IdEvent = idEvent;
             request.IdCandidate = idCandidate;
@@ -124,7 +124,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
 
 
         /// <summary>
-        /// Consultar Candidato
+        /// Consultar candidato de evento por Id
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
@@ -135,14 +135,33 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         [Route("{idCandidate}")]
-        [Route("")]
-        public async Task<IActionResult> GetHandler(
+        public async Task<IActionResult> GetByIdHandler(
          [FromQuery] CandidateGetRequest request,
-         [FromRoute] int? idEvent,
+         [FromRoute] int idEvent,
          [FromRoute] int? idCandidate)
         {
             request.IdEvent = idEvent;
             request.IdCandidate = idCandidate;
+            return Success(await _mediator.Send(request));
+        }
+
+        
+        /// <summary>
+        /// Consultar Candidatos de evento
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="idEvent"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(CandidateGetResponse))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [Route("")]
+        public async Task<IActionResult> GetByEventHandler(
+         [FromQuery] CandidateGetRequest request,
+         [FromRoute] int idEvent)
+        {
+            request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
         }
         #endregion

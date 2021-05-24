@@ -17,7 +17,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         {
             this.Date = DateTime.Now;
             this.Privileges = "All";
-            this.State = true;
+            this.IsActive = true;
         }
         /// <summary>
         /// Id Candidato
@@ -53,7 +53,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// </summary>
         /// <value></value>
         [Column("ADMINEVENT_ESTADO")]
-        public bool State { get; set; }
+        public bool IsActive { get; set; }
         
         /// <summary>
         /// Privilegios

@@ -15,13 +15,13 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
         /// </summary>
         /// <value></value>
         [JsonIgnore]
-        public int? IdEvent { get; set; }
+        public int IdEvent { get; set; }
 
         /// <summary>
         /// Id de Candidato
         /// </summary>
         /// <value></value>
         [JsonIgnore]
-        public int? IdCandidate { get; set; }
+        public int IdCandidate { get; set; }
     }
 }

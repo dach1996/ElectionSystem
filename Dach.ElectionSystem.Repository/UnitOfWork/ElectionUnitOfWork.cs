@@ -1,4 +1,5 @@
 using System;
+using Dach.ElectionSystem.Repository.DBContext;
 using Dach.ElectionSystem.Repository.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,7 +9,7 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
     {
         private readonly IServiceProvider _serviceProvider;
 
-        public ElectionUnitOfWork(IServiceProvider serviceProvider)
+        public ElectionUnitOfWork(IServiceProvider serviceProvider, WebApiDbContext context):base(context) 
         {
             _serviceProvider = serviceProvider;
         }

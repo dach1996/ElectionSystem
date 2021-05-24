@@ -3,7 +3,7 @@ using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Mail;
 using Dach.ElectionSystem.Models.Request.User;
 using Dach.ElectionSystem.Models.Response.User;
-using Dach.ElectionSystem.Repository.Interfaces;
+using Dach.ElectionSystem.Repository.UnitOfWork;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -17,67 +17,97 @@ namespace Dach.ElectionSystem.BusinessLogic.User
     public class UserCreateHandler : IRequestHandler<UserCreateRequest, UserCreateResponse>
     {
         #region Constructor
-        private readonly ILogger<UserCreateHandler> logger;
-        private readonly IUserRepository userRepository;
+        private readonly ILogger<UserCreateHandler> _logger;
         private readonly IMapper mapper;
         private readonly IConfiguration _configuration;
+        private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly Services.Notification.INotification notification;
+
 
         public UserCreateHandler(
             ILogger<UserCreateHandler> logger,
-            IUserRepository userRepository,
             IMapper mapper,
             IConfiguration configuration,
-            Services.Notification.INotification notification)
+            Services.Notification.INotification notification,
+            IElectionUnitOfWork electionUnitOfWork)
         {
-            this.logger = logger;
-            this.userRepository = userRepository;
+            _logger = logger;
             this.mapper = mapper;
             _configuration = configuration;
             this.notification = notification;
+            _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion
 
         #region Handler
         public async Task<UserCreateResponse> Handle(UserCreateRequest request, CancellationToken cancellationToken)
         {
-            var _secretKey = _configuration.GetSection("SecretKey").Value;
-            //Hash a la clave
-            var passwordOriginal = request.Password;
-            request.Password = Common.Util.ComputeSHA256(request.Password, _secretKey);
-            //Valida que el usuario exista
-            var emailExist = await userRepository.GetAsync(u => u.Email == request.Email);
-            if (emailExist.Any())
-                throw new CustomException(Models.Enums.MessageCodesApi.EmailRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
-            var userNew = mapper.Map<Models.Persitence.User>(request);
-            userNew.EventNumber = new Models.Persitence.EventNumber()
+            using (_electionUnitOfWork)
             {
-                User = userNew
-            };
-            userNew.IsActive = true;
-            var isRegister = await userRepository.CreateAsync(userNew);
-            if (!isRegister)
-                throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-            //Preparamos para envíar correo
-            var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
-            var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.UserWelcome);
-            var isSend = notification.SendMail(
-                new MailModel()
+                try
                 {
-                    Subject = templateForggotenPassword.TemplateName,
-                    To =  new List<string>(){request.Email},
-                    Template = templateForggotenPassword.TemplateKey,
-                    Params = new
+                    await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
+                    var _secretKey = _configuration.GetSection("SecretKey").Value;
+                    //Hash a la clave
+                    var passwordOriginal = request.Password;
+                    request.Password = Common.Util.ComputeSHA256(request.Password, _secretKey);
+                    //Valida que el usuario exista
+                    var emailExist = await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.Email == request.Email);
+                    if (emailExist.Any())
+                        throw new CustomException(Models.Enums.MessageCodesApi.EmailRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
+                    var userNew = mapper.Map<Models.Persitence.User>(request);
+                    userNew.EventNumber = new Models.Persitence.EventNumber()
                     {
-                        Fullname = $"{userNew.FirstName} {userNew.FirstLastName}",
-                        Username = userNew.Email,
-                        Password = passwordOriginal
-                    }
+                        User = userNew
+                    };
+                    userNew.IsActive = true;
+                    var isRegister = await _electionUnitOfWork.GetUserRepository().CreateAsync(userNew);
+                    if (!isRegister)
+                        throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                    //Preparamos para envíar correo
+                    var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
+                    var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.UserWelcome);
+                    bool isSend = SendEmail(request, passwordOriginal, userNew, templateForggotenPassword);
+                    if (!isSend)
+                        _logger.LogWarning("No se pudo Envíar correo");
+                    await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
+                    return mapper.Map<UserCreateResponse>(userNew);
                 }
-            );
-            if (!isSend)
-                logger.LogWarning("No se pudo Envíar correo");
-            return mapper.Map<UserCreateResponse>(userNew);
+                catch (System.Exception ex)
+                {
+                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(UserCreateHandler), nameof(Handle), ex.Message);
+                    await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
+                    throw;
+                }
+            }
+        }
+        #endregion
+
+        #region Private Methods
+        /// <summary>
+        /// Enviar Email
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="passwordOriginal"></param>
+        /// <param name="userNew"></param>
+        /// <param name="templateForggotenPassword"></param>
+        /// <returns></returns>
+        private bool SendEmail(UserCreateRequest request, string passwordOriginal, Models.Persitence.User userNew, Template templateForggotenPassword)
+        {
+            return notification.SendMail(
+                                    new MailModel()
+                                    {
+                                        Subject = templateForggotenPassword.TemplateName,
+                                        To = new List<string>() { request.Email },
+                                        Template = templateForggotenPassword.TemplateKey,
+                                        Params = new
+                                        {
+                                            Fullname = $"{userNew.FirstName} {userNew.FirstLastName}",
+                                            Username = userNew.Email,
+                                            Password = passwordOriginal
+                                        }
+                                    }
+                                );
         }
         #endregion
     }

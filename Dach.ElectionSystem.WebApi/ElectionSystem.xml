@@ -38,7 +38,7 @@
             <param name="idEvent"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.DesactiveCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.DesactiveCandidate(Dach.ElectionSystem.Models.Request.Candidate.CandidateDeleteRequest,System.Int32,System.Int32)">
             <summary>
             Desactivar Candidato
             </summary>
@@ -72,13 +72,21 @@
             <param name="idEvent"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.GetHandler(Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.GetByIdHandler(Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest,System.Int32,System.Nullable{System.Int32})">
             <summary>
-            Consultar Candidato
+            Consultar candidato de evento por Id
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
             <param name="idCandidate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.GetByEventHandler(Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest,System.Int32)">
+            <summary>
+            Consultar Candidatos de evento
+            </summary>
+            <param name="request"></param>
+            <param name="idEvent"></param>
             <returns></returns>
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventAdministratorController.CreateEventAdministrator(System.Int32,System.Int32,Dach.ElectionSystem.Models.Request.EventAdministrator.EventAdministratorCreateRequest)">
@@ -138,9 +146,16 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest,System.Nullable{System.Int32})">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.GetHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest)">
             <summary>
             Consulta de Eventos
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.GetByIdHandler(Dach.ElectionSystem.Models.Request.Event.EventGetRequest,System.Nullable{System.Int32})">
+            <summary>
+            Consulta de Evento
             </summary>
             <param name="request"></param>
             <param name="id"></param>
@@ -201,7 +216,7 @@
             <param name="idEvent"></param>
              <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.DesactiveVote(Dach.ElectionSystem.Models.Request.Vote.VoteDeleteRequest,System.Int32)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.DesactiveVote(Dach.ElectionSystem.Models.Request.Vote.VoteDeleteRequest,System.Int32,System.Int32)">
             <summary>
             Desactivar Votante
             </summary>
@@ -220,7 +235,7 @@
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.VoteController.GetHandler(Dach.ElectionSystem.Models.Request.Vote.VoteGetRequest,System.Int32)">
             <summary>
-            Consultar Votos
+            Consultar Participantes
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
