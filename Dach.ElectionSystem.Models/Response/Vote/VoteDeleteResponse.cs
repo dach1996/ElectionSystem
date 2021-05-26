@@ -3,7 +3,7 @@
     /// <summary>
     /// Clase VoteDeleteResponse
     /// </summary>
-    public class VoteDeleteResponse : VoteResponseBase
+    public class VoteDeleteResponse : VoteBaseResponse
     {
    
     }

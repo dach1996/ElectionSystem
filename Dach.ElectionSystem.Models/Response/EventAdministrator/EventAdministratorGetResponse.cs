@@ -12,7 +12,7 @@ namespace Dach.ElectionSystem.Models.Response.EventAdministrator
         /// Lista de EventAdministratoros
         /// </summary>
         /// <value></value>
-        public List<EventAdministratorResponseBase> ListEventAdministrators { get; set; }
+        public List<EventAdministratorBaseResponse> ListEventAdministrators { get; set; }
         
         
     }

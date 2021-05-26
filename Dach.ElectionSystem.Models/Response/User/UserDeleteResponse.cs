@@ -3,7 +3,7 @@
     /// <summary>
     /// Clase respuesta de Delete User
     /// </summary>
-    public class UserDeleteResponse : UserResponseBase
+    public class UserDeleteResponse : UserBaseResponse
     {
     
     }

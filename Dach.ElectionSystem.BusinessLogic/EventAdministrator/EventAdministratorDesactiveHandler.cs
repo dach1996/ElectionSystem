@@ -14,17 +14,17 @@ using Microsoft.Extensions.Logging;
 
 namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
 {
-    public class EventAdministratorDeleteHandler : IRequestHandler<EventAdministratorDeleteRequest, EventAdministratorDeleteResponse>
+    public class EventAdministratorDesactiveHandler : IRequestHandler<EventAdministratorDesactiveRequest, EventAdministratorDesactiveResponse>
     {
         #region Constructor
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
-        private readonly ILogger<EventAdministratorDeleteHandler> _logger;
-        public EventAdministratorDeleteHandler(
+        private readonly ILogger<EventAdministratorDesactiveHandler> _logger;
+        public EventAdministratorDesactiveHandler(
             IMapper mapper,
             ValidateIntegrity validateIntegrity,
-            ILogger<EventAdministratorDeleteHandler> logger,
+            ILogger<EventAdministratorDesactiveHandler> logger,
             IElectionUnitOfWork electionUnitOfWork)
         {
             _mapper = mapper;
@@ -34,7 +34,7 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
         }
         #endregion
         #region Handler
-        public async Task<EventAdministratorDeleteResponse> Handle(EventAdministratorDeleteRequest request, CancellationToken cancellationToken)
+        public async Task<EventAdministratorDesactiveResponse> Handle(EventAdministratorDesactiveRequest request, CancellationToken cancellationToken)
         {
             using (_electionUnitOfWork)
             {
@@ -53,24 +53,19 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
                     if (!isUserAdministrator)
                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
                         $"No existe registrado el administrador con Id: {request.IdUser} en el evento");
-                    //Valida que el administrador no se encuentre activado
-                    var isUserAdministratorActive = events.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser).IsActive;
-                    if (!isUserAdministratorActive)
-                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
-                        $"El administrador con ID: {request.IdUser} se encuentra desactivado");
-                    //Seleccionamos el administrador a desactivar
+                    //Seleccionamos el administrador y  cambia de estado
                     var updateEventAdministrator = events.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser);
-                    updateEventAdministrator.IsActive = false;
+                    updateEventAdministrator.IsActive = !updateEventAdministrator.IsActive;
                     updateEventAdministrator.Date = DateTime.Now;
                     var isUpdate = await _electionUnitOfWork.GetEventAdministratorRepository().Update(updateEventAdministrator);
                     if (!isUpdate)
                         throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
-                    return _mapper.Map<EventAdministratorDeleteResponse>(updateEventAdministrator);
+                    await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
+                    return _mapper.Map<EventAdministratorDesactiveResponse>(updateEventAdministrator);
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(EventAdministratorDeleteHandler), nameof(Handle), ex.Message);
+                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(EventAdministratorDesactiveHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

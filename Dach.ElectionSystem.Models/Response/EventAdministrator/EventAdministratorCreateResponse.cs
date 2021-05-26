@@ -5,6 +5,6 @@ namespace Dach.ElectionSystem.Models.Response.EventAdministrator
     /// <summary>
     /// Clase EventAdministratorCreateResponse
     /// </summary>
-    public class EventAdministratorCreateResponse : EventAdministratorResponseBase
+    public class EventAdministratorCreateResponse : EventAdministratorBaseResponse
     {}
 }

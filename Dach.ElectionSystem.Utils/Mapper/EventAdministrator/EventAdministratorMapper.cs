@@ -12,8 +12,8 @@ namespace Dach.ElectionSystem.Utils.Mapper.EventAdministrator
             profile.CreateMap<Models.Persitence.EventAdministrator, EventAdministratorCreateResponse>();
 
             //Delete
-            profile.CreateMap<EventAdministratorDeleteRequest, Models.Persitence.EventAdministrator>();
-            profile.CreateMap<Models.Persitence.EventAdministrator, EventAdministratorDeleteResponse>();
+            profile.CreateMap<EventAdministratorDesactiveRequest, Models.Persitence.EventAdministrator>();
+            profile.CreateMap<Models.Persitence.EventAdministrator, EventAdministratorDesactiveResponse>();
 
             //Update
             profile.CreateMap<EventAdministratorUpdateRequest, Models.Persitence.EventAdministrator>();
@@ -21,7 +21,7 @@ namespace Dach.ElectionSystem.Utils.Mapper.EventAdministrator
 
               //Get
             profile.CreateMap<EventAdministratorGetRequest, Models.Persitence.EventAdministrator>();
-            profile.CreateMap<Models.Persitence.EventAdministrator, EventAdministratorResponseBase>();
+            profile.CreateMap<Models.Persitence.EventAdministrator, EventAdministratorBaseResponse>();
         }
     }
 }

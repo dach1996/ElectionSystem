@@ -1,8 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Text.Json.Serialization;
+
 namespace Dach.ElectionSystem.Utils.Extension
 {
     public static class SwaggerExtension
@@ -36,11 +41,12 @@ namespace Dach.ElectionSystem.Utils.Extension
                     }
                 });
                 c.DocumentFilter<SwaggerIgnoreFilter>();
+                c.OperationFilter<SwaggerIgnoreFilter>();
             });
 
 
         }
-        public class SwaggerIgnoreFilter : IDocumentFilter
+        public class SwaggerIgnoreFilter : IDocumentFilter, IOperationFilter
         {
             public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
             {
@@ -54,6 +60,23 @@ namespace Dach.ElectionSystem.Utils.Extension
                             DeleteParams(parameter, operation);
                         }
                     }
+                }
+            }
+            public void Apply(OpenApiOperation operation, OperationFilterContext context)
+            {
+                //Borramos los JsonIgnore de Query
+                var ignoredProperties = context.MethodInfo.GetParameters()
+               .SelectMany(p => p.ParameterType.GetProperties()
+               .Where(prop => prop.GetCustomAttribute<JsonIgnoreAttribute>() != null))
+               .ToList();
+
+                if (!ignoredProperties.Any()) return;
+
+                foreach (var property in ignoredProperties)
+                {
+                    operation.Parameters = operation.Parameters
+                        .Where(p => !p.Name.Equals(property.Name, StringComparison.InvariantCulture))
+                        .ToList();
                 }
             }
             private static void DeleteParams(OpenApiParameter parameter, KeyValuePair<OperationType, OpenApiOperation> operation)

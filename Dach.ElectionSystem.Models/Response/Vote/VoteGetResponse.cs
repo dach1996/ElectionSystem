@@ -36,6 +36,6 @@ namespace Dach.ElectionSystem.Models.Response.Vote
         /// Lista de Voteos
         /// </summary>
         /// <value></value>
-        public List<VoteResponseBase> ListVotes { get; set; }
+        public List<VoteBaseResponse> ListVotes { get; set; }
     }
 }

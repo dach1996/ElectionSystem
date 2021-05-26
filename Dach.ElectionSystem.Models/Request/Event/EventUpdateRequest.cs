@@ -10,10 +10,7 @@ namespace Dach.ElectionSystem.Models.Request.Event
     /// </summary>
     public class EventUpdateRequest : EventBaseRequest, IRequest<EventUpdateResponse>
     {
-        /// <summary>
-        /// Evento Activo
-        /// </summary>
-        public bool IsActive { get; set; }
+
         /// <summary>
         /// Id de Evento
         /// </summary>

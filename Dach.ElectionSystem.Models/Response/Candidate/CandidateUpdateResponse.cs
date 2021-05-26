@@ -3,7 +3,7 @@
     /// <summary>
     /// Clase CandidatePutResponse
     /// </summary>
-    public class CandidateUpdateResponse : CandidateResponseBase
+    public class CandidateUpdateResponse : CandidateBaseResponse
     {
    
     }

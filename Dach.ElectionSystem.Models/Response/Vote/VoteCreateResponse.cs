@@ -5,6 +5,6 @@ namespace Dach.ElectionSystem.Models.Response.Vote
     /// <summary>
     /// Clase VoteCreateResponse
     /// </summary>
-    public class VoteCreateResponse : VoteResponseBase
+    public class VoteCreateResponse : VoteBaseResponse
     {}
 }

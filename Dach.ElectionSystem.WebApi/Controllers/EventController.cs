@@ -4,9 +4,7 @@ using Dach.ElectionSystem.Models.Response.Event;
 using Dach.ElectionSystem.Models.ResponseBase;
 using Dach.ElectionSystem.Utils.Filters;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 
@@ -104,7 +102,31 @@ namespace Dach.ElectionSystem.WebApi.Controllers
             return Success(await _mediator.Send(request));
         }
 
+        /// <summary>
+        /// Consulta de resultados
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="idEvent"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(EventGetResultResponse))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        [Route("{idEvent}/results")]
+        public async Task<IActionResult> GetResultEvent(
+            [FromQuery] EventGetResultRequest request,
+            [FromRoute] int idEvent)
+        {
+            request.IdEvent = idEvent;
+            return Success(await _mediator.Send(request));
+        }
 
+        /// <summary>
+        /// Guardar Imágen del evento
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="idEvent"></param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200, Type = typeof(Unit))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]

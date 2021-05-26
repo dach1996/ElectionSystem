@@ -17,14 +17,14 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         #region Constructor
         private readonly ILogger<UserDeleteHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
         public UserDeleteHandler(
             ILogger<UserDeleteHandler> logger,
             IMapper mapper,
             IElectionUnitOfWork electionUnitOfWork)
         {
             _logger = logger;
-            this.mapper = mapper;
+            _mapper = mapper;
             _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion
@@ -61,7 +61,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                         throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
                     }
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
-                    return mapper.Map<UserDeleteResponse>(userToDesactive);
+                    return _mapper.Map<UserDeleteResponse>(userToDesactive);
 
                 }
                 catch (Exception ex)

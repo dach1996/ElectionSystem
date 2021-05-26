@@ -8,7 +8,7 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
     /// <summary>
     /// Clase CandidateDeleteRequest
     /// </summary>
-    public class CandidateDeleteRequest : RequestBaseImpl, IRequest<CandidateDeleteResponse>
+    public class CandidateDesactiveRequest : RequestBaseImpl, IRequest<CandidateDesactiveResponse>
     {
         /// <summary>
         /// Id de Evento

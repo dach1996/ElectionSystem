@@ -7,7 +7,7 @@ namespace Dach.ElectionSystem.Models.Request.EventAdministrator
     /// <summary>
     /// Clase EventAdministratorDeleteRequest
     /// </summary>
-    public class EventAdministratorDeleteRequest : RequestBaseImpl, IRequest<EventAdministratorDeleteResponse>
+    public class EventAdministratorDesactiveRequest : RequestBaseImpl, IRequest<EventAdministratorDesactiveResponse>
     {
         /// <summary>
         /// Id Usuario

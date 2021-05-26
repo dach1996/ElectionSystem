@@ -39,7 +39,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         }
 
         /// <summary>
-        /// Desactivar Candidato
+        /// Activar / Desactivar Candidato
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
@@ -47,11 +47,11 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("{idCandidate}")]
-        [ProducesResponseType(200, Type = typeof(CandidateDeleteResponse))]
+        [ProducesResponseType(200, Type = typeof(CandidateDesactiveResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> DesactiveCandidate(
-            [FromQuery] CandidateDeleteRequest request,
+            [FromQuery] CandidateDesactiveRequest request,
             [FromRoute] int idEvent,
             [FromRoute] int idCandidate)
         {

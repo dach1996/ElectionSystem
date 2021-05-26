@@ -18,6 +18,6 @@ namespace Dach.ElectionSystem.Models.Response.Event
         /// Lista de Eventos
         /// </summary>
         /// <value></value>
-        public List<EventResponseBase> ListEvents { get; set; }
+        public List<EventBaseResponse> ListEvents { get; set; }
     }
 }

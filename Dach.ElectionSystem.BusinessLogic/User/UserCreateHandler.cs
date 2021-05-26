@@ -18,10 +18,10 @@ namespace Dach.ElectionSystem.BusinessLogic.User
     {
         #region Constructor
         private readonly ILogger<UserCreateHandler> _logger;
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
-        private readonly Services.Notification.INotification notification;
+        private readonly Services.Notification.INotification _notification;
 
 
         public UserCreateHandler(
@@ -32,9 +32,9 @@ namespace Dach.ElectionSystem.BusinessLogic.User
             IElectionUnitOfWork electionUnitOfWork)
         {
             _logger = logger;
-            this.mapper = mapper;
+            _mapper = mapper;
             _configuration = configuration;
-            this.notification = notification;
+            _notification = notification;
             _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion
@@ -55,7 +55,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     var emailExist = await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.Email == request.Email);
                     if (emailExist.Any())
                         throw new CustomException(Models.Enums.MessageCodesApi.EmailRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
-                    var userNew = mapper.Map<Models.Persitence.User>(request);
+                    var userNew = _mapper.Map<Models.Persitence.User>(request);
                     userNew.EventNumber = new Models.Persitence.EventNumber()
                     {
                         User = userNew
@@ -71,7 +71,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     if (!isSend)
                         _logger.LogWarning("No se pudo Envíar correo");
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
-                    return mapper.Map<UserCreateResponse>(userNew);
+                    return _mapper.Map<UserCreateResponse>(userNew);
                 }
                 catch (System.Exception ex)
                 {
@@ -94,7 +94,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         /// <returns></returns>
         private bool SendEmail(UserCreateRequest request, string passwordOriginal, Models.Persitence.User userNew, Template templateForggotenPassword)
         {
-            return notification.SendMail(
+            return _notification.SendMail(
                                     new MailModel()
                                     {
                                         Subject = templateForggotenPassword.TemplateName,

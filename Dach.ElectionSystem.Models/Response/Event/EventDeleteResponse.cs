@@ -10,7 +10,7 @@ namespace Dach.ElectionSystem.Models.Response.Event
     /// <summary>
     /// Clase EventDeleteResponse
     /// </summary>
-    public class EventDeleteResponse : EventResponseBase
+    public class EventDeleteResponse : EventBaseResponse
     {
    
     }

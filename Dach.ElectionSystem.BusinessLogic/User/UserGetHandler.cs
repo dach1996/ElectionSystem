@@ -15,8 +15,8 @@ namespace Dach.ElectionSystem.BusinessLogic.User
     public class UserGetHandler : IRequestHandler<UserGetRequest, UserGetResponse>
     {
         #region Constructor
-        private readonly IMapper mapper;
-        private readonly ValidateIntegrity validateIntegrity;
+        private readonly IMapper _mapper;
+        private readonly ValidateIntegrity _validateIntegrity;
 
         private readonly IElectionUnitOfWork _electionUnitOfWork;
 
@@ -25,8 +25,8 @@ namespace Dach.ElectionSystem.BusinessLogic.User
             ValidateIntegrity validateIntegrity,
             IElectionUnitOfWork electionUnitOfWork)
         {
-            this.mapper = mapper;
-            this.validateIntegrity = validateIntegrity;
+            _mapper = mapper;
+            _validateIntegrity = validateIntegrity;
             _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion
@@ -34,7 +34,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         {
             using (_electionUnitOfWork)
             {
-                await validateIntegrity.ValidateUser(request);
+                await _validateIntegrity.ValidateUser(request);
                 List<Models.Persitence.User> listUser;
                 if (request.Id != null)
                     listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.Id == request.Id)).ToList();
@@ -48,7 +48,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.FirstLastName == request.LastName)).ToList();
                 if (request.Username != null)
                     listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.UserName == request.Username)).ToList();
-                var listUserGet = mapper.Map<List<Models.Persitence.User>, List<UserResponseBase>>(listUser);
+                var listUserGet = _mapper.Map<List<Models.Persitence.User>, List<UserBaseResponse>>(listUser);
                 return new UserGetResponse()
                 {
                     ListUser = listUserGet

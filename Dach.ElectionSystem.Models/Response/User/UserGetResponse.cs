@@ -11,6 +11,6 @@ namespace Dach.ElectionSystem.Models.Response.User
         /// Lista de Usuario
         /// </summary>
         /// <value></value>
-        public List<UserResponseBase> ListUser { get; set; }
+        public List<UserBaseResponse> ListUser { get; set; }
     }
 }

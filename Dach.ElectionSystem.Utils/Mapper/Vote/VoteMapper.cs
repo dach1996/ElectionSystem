@@ -21,7 +21,7 @@ namespace Dach.ElectionSystem.Utils.Mapper.Vote
 
               //Get
             profile.CreateMap<VoteGetRequest, Models.Persitence.Vote>();
-            profile.CreateMap<Models.Persitence.Vote, VoteResponseBase>();
+            profile.CreateMap<Models.Persitence.Vote, VoteBaseResponse>();
 
         }
 

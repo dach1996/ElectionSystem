@@ -1,37 +1,40 @@
-using System;
 using Dach.ElectionSystem.Models.Base;
 
-namespace Dach.ElectionSystem.Models.Response.EventAdministrator
+namespace Dach.ElectionSystem.Models.Response.Vote
 {
     /// <summary>
     /// Clase base para respuestas
     /// </summary>
-    public class EventAdministratorResponseBase : EventAdministratorBase
+    public class VoteBaseResponse : VoteBase
     {
         /// <summary>
-        /// Estado de EventAdministratoro
+        /// Estado de Voteo
         /// </summary>
         /// <value></value>
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// Id Usuario
+        /// Id de Voteo
         /// </summary>
         /// <value></value>
-        public int IdUser { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
-        /// Id Evento
+        /// Id de Evento
         /// </summary>
         /// <value></value>
         public int IdEvent { get; set; }
 
         /// <summary>
-        /// Fecha de Cambio
+        /// Id de Candidato
         /// </summary>
         /// <value></value>
-        public DateTime Date { get; set; }
-        
-        
+        public int IdCandidate { get; set; }
+
+        /// <summary>
+        /// Id de Usuario
+        /// </summary>
+        /// <value></value>
+        public int IdUser { get; set; }
     }
 }

@@ -63,7 +63,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 });
                 return new EventGetResponse()
                 {
-                    ListEvents = _mapper.Map<List<EventResponseBase>>(response),
+                    ListEvents = _mapper.Map<List<EventBaseResponse>>(response),
                     TotalEvents = totalEvents
                 };
             }

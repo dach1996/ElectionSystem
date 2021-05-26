@@ -5,7 +5,7 @@ namespace Dach.ElectionSystem.Models.Response.Event
     /// <summary>
     /// Clase EventUpdateResponse
     /// </summary>
-    public class EventUpdateResponse : EventResponseBase
+    public class EventUpdateResponse : EventBaseResponse
     {
        
     }

@@ -14,21 +14,21 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
     {
         #region Constructor
         private readonly IMapper _mapper;
-        private readonly ValidateIntegrity validateIntegrity;
+        private readonly ValidateIntegrity _validateIntegrity;
 
         public EventAdministratorGetHandler(
             IMapper mapper,
-             ValidateIntegrity validateIntegrity)
+            ValidateIntegrity validateIntegrity)
         {
-            this._mapper = mapper;
-            this.validateIntegrity = validateIntegrity;
+            _mapper = mapper;
+            _validateIntegrity = validateIntegrity;
         }
         #endregion
         #region Handler
         public async Task<EventAdministratorGetResponse> Handle(EventAdministratorGetRequest request, CancellationToken cancellationToken)
         {
             //Valida que exista el evento
-            var events = await validateIntegrity.ValidateEvent(request.IdEvent);
+            var events = await _validateIntegrity.ValidateEvent(request.IdEvent);
             //Valida que el usuario de contexto sea administrador en este e vento
             var isUserCurrentAdministrator = request.UserContext.ListEventAdministrator.Exists(e => e.Id == events.Id);
             if (!isUserCurrentAdministrator)
@@ -37,7 +37,7 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
             //Creamos la respuesta
             var response = new EventAdministratorGetResponse()
             {
-                ListEventAdministrators = _mapper.Map<List<EventAdministratorResponseBase>>(events.ListEventAdministrator)
+                ListEventAdministrators = _mapper.Map<List<EventAdministratorBaseResponse>>(events.ListEventAdministrator)
             };
             return response;
         }

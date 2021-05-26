@@ -7,7 +7,7 @@ namespace Dach.ElectionSystem.Models.Response.Candidate
     /// <summary>
     /// Clase base para respuesta de candidato
     /// </summary>
-    public class CandidateResponseBase : CandidateBase
+    public class CandidateBaseResponse : CandidateBase
     {
         /// <summary>
         /// Id de candidato
@@ -37,6 +37,6 @@ namespace Dach.ElectionSystem.Models.Response.Candidate
         /// Usuario Correspondiente a candidato
         /// </summary>
         /// <value></value>
-        public UserResponseBase User { get; set; }
+        public UserBaseResponse User { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Dach.ElectionSystem.Models.Response.User
     /// <summary>
     /// Clase base para respuesta de Usuario
     /// </summary>
-    public  class UserResponseBase : UserBase
+    public  class UserBaseResponse : UserBase
     {
 
         

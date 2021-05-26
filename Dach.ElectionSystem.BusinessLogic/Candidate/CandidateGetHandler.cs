@@ -15,7 +15,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
     {
         #region Constructor
         private readonly IElectionUnitOfWork _electionUnitOfWork;
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
 
         public CandidateGetHandler(
@@ -23,7 +23,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
             IElectionUnitOfWork electionUnitOfWork, 
             ValidateIntegrity validateIntegrity)
         {
-            this.mapper = mapper;
+            _mapper = mapper;
             _electionUnitOfWork = electionUnitOfWork;
             _validateIntegrity = validateIntegrity;
         }
@@ -47,7 +47,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                 .Skip(request.Offset)
                 .Take(request.Limit)
                 .ToList();
-                var response = mapper.Map<List<CandidateResponseBase>>(listCandidates);
+                var response = _mapper.Map<List<CandidateBaseResponse>>(listCandidates);
                 return new CandidateGetResponse(response, totalCandidate);
             }
         }

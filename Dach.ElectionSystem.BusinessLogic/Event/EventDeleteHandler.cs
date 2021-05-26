@@ -18,7 +18,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         private readonly ILogger<EventDeleteHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IMapper _mapper;
-        private readonly ValidateIntegrity validateIntegrity;
+        private readonly ValidateIntegrity _validateIntegrity;
 
         public EventDeleteHandler(
             IMapper mapper,
@@ -27,7 +27,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             ILogger<EventDeleteHandler> logger)
         {
             _mapper = mapper;
-            this.validateIntegrity = validateIntegrity;
+            _validateIntegrity = validateIntegrity;
             _electionUnitOfWork = electionUnitOfWork;
             _logger = logger;
         }
@@ -41,7 +41,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 {
                     await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
                     //Obtiene evento por ID y verifica si está borrado el evento
-                    var eventCurrent = await validateIntegrity.ValidateEvent(request.IdEvent);
+                    var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Valida que el usuario sea el creador del evento
                     var isUserCurrentCreatorEvent = eventCurrent.IdUser == request.UserContext.Id;
                     if (!isUserCurrentCreatorEvent)
@@ -52,6 +52,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                         throw new CustomException(Models.Enums.MessageCodesApi.EventIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
                     eventCurrent.IsDelete = true;
                     eventCurrent.Name = $"{eventCurrent.Name}_{DateTime.Now}_Delete";
+                    eventCurrent.IsActive = false;
                     var responseDelete = await _electionUnitOfWork.GetEventRepository().Update(eventCurrent);
                     //Valida que el evento se haya desactivado
                     if (!responseDelete)

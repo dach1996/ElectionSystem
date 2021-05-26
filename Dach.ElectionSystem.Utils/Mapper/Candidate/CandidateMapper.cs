@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Dach.ElectionSystem.Models.Request.Candidate;
 using Dach.ElectionSystem.Models.Response.Candidate;
+using Dach.ElectionSystem.Models.Response.Event;
 
 namespace Dach.ElectionSystem.Utils.Mapper.Candidate
 {
@@ -17,12 +18,16 @@ namespace Dach.ElectionSystem.Utils.Mapper.Candidate
             profile.CreateMap<Models.Persitence.Candidate, CandidateUpdateResponse>();
 
             //Mapper to Candidate Delete
-            profile.CreateMap<Models.Persitence.Candidate, CandidateDeleteResponse>();
+            profile.CreateMap<Models.Persitence.Candidate, CandidateDesactiveResponse>();
             //Mapper to Candidate - Get 
-            profile.CreateMap<Models.Persitence.Candidate, CandidateResponseBase>()
+            profile.CreateMap<Models.Persitence.Candidate, CandidateBaseResponse>()
             .ForMember(destinationMember=> destinationMember.ListCandidateImage,
             act=> act.MapFrom(src =>src.ListCandidateImage.Select(lci => lci.ImageFullPath)));
             
+            //Mapper to Candidate - Result 
+            profile.CreateMap<Models.Persitence.Candidate, CandidateWithVote>()
+            .ForMember(destinationMember=> destinationMember.ListCandidateImage,
+            act=> act.MapFrom(src =>src.ListCandidateImage.Select(lci => lci.ImageFullPath)));
 
         }
 

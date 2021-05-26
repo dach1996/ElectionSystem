@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.RequestBase;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -10,7 +8,7 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
     /// <summary>
     /// Clase cargar imágenes del candidato
     /// </summary>
-    public class CandidateImageRequest : IRequestBase, IRequest<Unit>
+    public class CandidateImageRequest : RequestBaseImpl, IRequest<Unit>
     {
         /// <summary>
         /// Imagen a Cargar
@@ -24,26 +22,5 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
         /// </summary>
         /// <value></value>
         public int IdEvent { get; set; }
-
-        /// <summary>
-        /// Clase contexto de Token
-        /// </summary>
-        /// <value></value>
-        [JsonIgnore]
-        public TokenModel TokenModel { get; set; }
-
-        /// <summary>
-        /// Contexto de Usuario
-        /// </summary>
-        /// <value></value>
-        [JsonIgnore]
-        public Persitence.User UserContext { get; set; }
-
-        /// <summary>
-        /// Path de server
-        /// </summary>
-        /// <value></value>
-        [JsonIgnore]
-        public string PathRoot { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Dach.ElectionSystem.Utils.Mapper.User
             profile.CreateMap<Models.Persitence.User, UserDeleteResponse>();
             //Mapper to User - Get Update
 
-            profile.CreateMap<Models.Persitence.User, UserResponseBase>();
+            profile.CreateMap<Models.Persitence.User, UserBaseResponse>();
 
         }
 

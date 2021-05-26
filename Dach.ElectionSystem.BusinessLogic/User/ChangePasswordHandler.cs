@@ -1,11 +1,11 @@
-﻿using AutoMapper;
-using Dach.ElectionSystem.Models.ExceptionGeneric;
+﻿using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.User;
-using Dach.ElectionSystem.Repository.Interfaces;
+using Dach.ElectionSystem.Repository.UnitOfWork;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,35 +14,52 @@ namespace Dach.ElectionSystem.BusinessLogic.User
     public class ChangePasswordHandler : IRequestHandler<ChangePasswordRequest, Unit>
     {
         #region Constructor
-        private readonly IUserRepository userRepository;
+        private readonly ILogger<ChangePasswordHandler> _logger;
+        private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IConfiguration _configuration;
-        private readonly ValidateIntegrity validateIntegrity;
+        private readonly ValidateIntegrity _validateIntegrity;
 
         public ChangePasswordHandler(
-            IUserRepository userRepository,
             IConfiguration configuration,
-            ValidateIntegrity validateIntegrity)
+            ValidateIntegrity validateIntegrity,
+            ILogger<ChangePasswordHandler> logger,
+            IElectionUnitOfWork electionUnitOfWork)
         {
-            this.userRepository = userRepository;
             _configuration = configuration;
-            this.validateIntegrity = validateIntegrity;
+            _validateIntegrity = validateIntegrity;
+            _logger = logger;
+            _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion
 
         #region Handler
         public async Task<Unit> Handle(ChangePasswordRequest request, CancellationToken cancellationToken)
         {
-            var _secretKey = _configuration.GetSection("SecretKey").Value;
-            //Traermos el usuario en contexto
-            var userCurrent = await validateIntegrity.ValidateUser(request);
-            //Encriptamos la contraseña
-            var newPassword = Common.Util.ComputeSHA256(request.NewPassword, _secretKey);
-            //Actualizamos al Usuario
-            userCurrent.Password = newPassword;
-            var isUserUpdate = await userRepository.Update(userCurrent);
-            if (!isUserUpdate)
-                throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-            return Unit.Value;
+            using (_electionUnitOfWork)
+            {
+                try
+                {
+                    await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
+                    var _secretKey = _configuration.GetSection("SecretKey").Value;
+                    //Traermos el usuario en contexto
+                    var userCurrent = await _validateIntegrity.ValidateUser(request);
+                    //Encriptamos la contraseña
+                    var newPassword = Common.Util.ComputeSHA256(request.NewPassword, _secretKey);
+                    //Actualizamos al Usuario
+                    userCurrent.Password = newPassword;
+                    var isUserUpdate = await _electionUnitOfWork.GetUserRepository().Update(userCurrent);
+                    if (!isUserUpdate)
+                        throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                    await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
+                    return Unit.Value;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(ChangePasswordHandler), nameof(Handle), ex.Message);
+                    await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
+                    throw;
+                }
+            }
         }
         #endregion
     }

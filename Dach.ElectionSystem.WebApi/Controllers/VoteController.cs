@@ -33,7 +33,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> CreateVote(
-            [FromBody] VoteCreateRequest request,
+            [FromQuery]VoteCreateRequest request,
             [FromRoute] int idEvent,
             [FromRoute] int idUser
            )
@@ -86,10 +86,11 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         }
 
         /// <summary>
-        /// Desactivar Votante
+        /// Activar o Desactivar Votante
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
+        /// <param name="idUser"></param>
         /// <returns></returns>
         [HttpDelete]
         [Route("events/{idEvent}/users/{idUser}")]
@@ -119,7 +120,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> UpdateVote(
-            [FromBody] VoteUpdateRequest request,
+            [FromQuery] VoteUpdateRequest request,
             [FromRoute] int idEvent,
             [FromRoute] int idCandidate)
         {
