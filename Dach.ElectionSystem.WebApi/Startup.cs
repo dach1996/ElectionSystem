@@ -31,6 +31,16 @@ namespace Dach.ElectionSystem.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+                        {
+                            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+                               {
+                                   builder.AllowAnyOrigin()
+                                          .AllowAnyMethod()
+                                          .AllowAnyHeader();
+                               }));
+
+                        });
             services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer(Environment.GetEnvironmentVariable("CONNECTION_SQL")));
             services.AddRepositorys();
             services.AddServices();
@@ -51,22 +61,25 @@ namespace Dach.ElectionSystem.WebApi
             services.AddMediatR(typeof(AuthHandler));
             services.AddAutoMapper(typeof(CustomMapperDto));
             services.AddScoped<ModelFilterAttribute>();
+
         }
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
 
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true)
+                .AllowCredentials());
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Sistema de Eleccione"));
+            app.UseRouting();
             app.UseHttpsRedirection();
             app.SetCustomMiddleWare();
-
-
-            app.UseRouting();
-
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
