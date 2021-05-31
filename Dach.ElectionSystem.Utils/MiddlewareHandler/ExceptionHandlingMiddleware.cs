@@ -17,7 +17,7 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
         #region Constructor
 
         private readonly RequestDelegate _next;
-        private readonly ILogger<ExceptionHandlingMiddleware> logger;
+        private readonly ILogger<ExceptionHandlingMiddleware> _logger;
 
         /// <summary>
         /// Constructor
@@ -25,7 +25,7 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
         public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
         {
             _next = next;
-            this.logger = logger;
+            _logger = logger;
         }
         #endregion
 
@@ -39,16 +39,17 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
         {
             try
             {
+                
                 await _next(httpContext).ConfigureAwait(false);
             }
             catch (CustomException customEx)
             {
                 await HandleCustomExceptionAsync(httpContext, customEx);
-                logger.LogWarning(customEx.MessageCodesApi.GetEnumMember());
+                _logger.LogWarning(customEx.MessageCodesApi.GetEnumMember());
             }
             catch (Exception exception)
             {
-                logger.LogError(exception,"Error Detectado: ");
+                _logger.LogError(exception,"Error Detectado: ");
                 await HandleExceptionAsync(httpContext, exception);
             }
         }

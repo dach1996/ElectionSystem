@@ -48,7 +48,13 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.FirstLastName == request.LastName)).ToList();
                 if (request.Username != null)
                     listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.UserName == request.Username)).ToList();
-                var listUserGet = _mapper.Map<List<Models.Persitence.User>, List<UserBaseResponse>>(listUser);
+
+                var result = listUser.OrderByDescending(e => e.Id)
+                .Skip(request.Offset)
+                .Take(request.Limit)
+                .ToList();
+
+                var listUserGet = _mapper.Map<List<Models.Persitence.User>, List<UserBaseResponse>>(result);
                 return new UserGetResponse()
                 {
                     ListUser = listUserGet

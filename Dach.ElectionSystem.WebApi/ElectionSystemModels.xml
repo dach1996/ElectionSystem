@@ -633,6 +633,21 @@
             <param name="context"></param>
             <returns></returns>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Log.LogRequestModel">
+            <summary>
+            Clase para logear el request
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Log.LogRequestModel.LogMessage">
+            <summary>
+            Mensaje a guardar en el log
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Log.LogRequestModel.ModelToLog">
+            <summary>
+            Modelo a guardar en el log
+            </summary>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Mail.MailModel">
             <summary>
             Modelo para Mail
@@ -1929,9 +1944,39 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Offset">
+            <summary>
+            Paginación
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.OrderBy">
+            <summary>
+            Orden de Consulta
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Limit">
+            <summary>
+            Cantidad de Registros
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Name">
+            <summary>
+            Nombre de evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Category">
+            <summary>
+            Categoría de Evento
+            </summary>
+            <value></value>
+        </member>
         <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.TypeFilter">
             <summary>
-            Tipo de filtro
+            Tipo de Filtros
             </summary>
             <value></value>
         </member>
