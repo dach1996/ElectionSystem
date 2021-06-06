@@ -3,7 +3,14 @@
    "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (web)",
+            "name": "Angular",
+            "request": "launch",
+            "type": "pwa-msedge",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Election Web Api",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
@@ -24,12 +31,6 @@
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
             }
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
         }
     ]
 }
