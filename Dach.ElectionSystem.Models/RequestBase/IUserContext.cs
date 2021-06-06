@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.Persitence;
 
 namespace Dach.ElectionSystem.Models.RequestBase
@@ -10,6 +11,7 @@ namespace Dach.ElectionSystem.Models.RequestBase
         /// <summary>
         /// Token para contexto
         /// </summary>
-           User UserContext { get; set; }
+        [JsonIgnore]
+        User UserContext { get; set; }
     }
 }

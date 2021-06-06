@@ -32,5 +32,6 @@
             "password": "dach1996"
         }
     ],
-    "omnisharp.enableRoslynAnalyzers": true
+    "omnisharp.enableRoslynAnalyzers": true,
+    "appService.deploySubpath": "."
 }

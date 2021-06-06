@@ -16,6 +16,7 @@ using Dach.ElectionSystem.Utils.Filters;
 using Dach.ElectionSystem.Services.Intrastructure;
 using Dach.ElectionSystem.BusinessLogic.Auth;
 using System;
+using Microsoft.ApplicationInsights;
 
 namespace Dach.ElectionSystem.WebApi
 {
@@ -45,6 +46,7 @@ namespace Dach.ElectionSystem.WebApi
             services.AddRepositorys();
             services.AddServices();
             services.ConfigureController();
+            services.AddApplicationInsightsTelemetry();
             services.AddLogging(loggingBuilder =>
              {
                  loggingBuilder.AddSeq(Configuration.GetSection("Seq"));

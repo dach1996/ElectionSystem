@@ -2,6 +2,7 @@
 using Dach.ElectionSystem.Models.RequestBase;
 using Dach.ElectionSystem.Services.Data;
 using Dach.ElectionSystem.Services.TokenJWT;
+using Dach.ElectionSystem.Utils.Json;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -58,7 +59,8 @@ namespace Dach.ElectionSystem.Utils.Filters
         /// <param name="logRequestModel"></param>
         private void LoggerRequest(LogRequestModel logRequestModel)
         {
-            var jsonRequest = JsonConvert.SerializeObject(logRequestModel.ModelToLog);
+            var jsonRequest = JsonConvert.SerializeObject(logRequestModel.ModelToLog,
+             new JsonSerializerSettings { ContractResolver = new JsonPropertiesResolver()});
             _logger.Log(LogLevel.Warning, "{LogMessage}: {@Model}", logRequestModel.LogMessage, jsonRequest);
         }
     }

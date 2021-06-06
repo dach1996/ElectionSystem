@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "cweijan.vscode-database-client2"
+        "cweijan.vscode-database-client2",
+        "ms-azuretools.vscode-azureappservice"
     ]
 }
