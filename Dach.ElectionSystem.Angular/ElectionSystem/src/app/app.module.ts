@@ -7,6 +7,10 @@ import { RegisterComponent } from './register/register.component';
 import { ForggotePasswordComponent } from './forggote-password/forggote-password.component';
 import { DashboardComponent } from './Into/dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
+import { LoadingComponent } from './utils/loading/loading.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AlertComponent } from './utils/alert/alert.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,15 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     ForggotePasswordComponent,
-    DashboardComponent  ],
+    DashboardComponent,
+    LoadingComponent,
+    AlertComponent  ],
   imports: [
     BrowserModule,
+    SweetAlert2Module,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,8 @@
 
-
-<section class="h-100-vh mb-2">
-  <div class="page-header align-items-start section-height-50 pt-2 pb-8 m-3 border-radius-lg" style="background-image: url('../assets/img/curved-images/curved14.jpg');">
+<app-loading *ngIf="loading"></app-loading>
+<div [ngClass]="loading? 'opacity-loader' : ' '">
+<section class="h-100-vh mb-1">
+  <div class="page-header align-items-start section-height-50 pt-2 pb-1 m-3 border-radius-lg" style="background-image: url('../assets/img/curved-images/curved14.jpg');">
     <span class="mask bg-gradient-dark opacity-6"></span>
     <div class="container">
       <div class="row justify-content-center">
@@ -21,15 +22,24 @@
           </div>
         
           <div class="card-body">
-            <form role="form text-left">
+            <form role="form text-left" (ngSubmit)='createUser()'>
               <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="email-addon">
+                <input type="text" class="form-control"  [(ngModel)]="userCreateRequest.dni"  name="cedula"  placeholder="Cédula" aria-label="Name" aria-describedby="email-addon">
               </div>
               <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                <input type="email" [(ngModel)]="userCreateRequest.email"  name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
               </div>
               <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                <input type="text" class="form-control" [(ngModel)]="userCreateRequest.firstName"  name="Nombre"  placeholder="Nombre" aria-label="Password" aria-describedby="password-addon">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Apellido" [(ngModel)]="userCreateRequest.firstLastName"  name="Apellido" aria-label="Password" aria-describedby="password-addon">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" [(ngModel)]="userCreateRequest.userName" name="usuario"   placeholder="Usuario" aria-label="Password" aria-describedby="password-addon">
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" [(ngModel)]="userCreateRequest.password" name="password"   placeholder="Contraseña" aria-label="Password" aria-describedby="password-addon">
               </div>
               <div class="form-check form-check-info text-left">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
@@ -38,7 +48,7 @@
                 </label>
               </div>
               <div class="text-center">
-                <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Registrar</button>
+                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Registrar</button>
               </div>
               <p class="text-sm mt-3 mb-0">Ya tienes una cuenta creada? <a routerLink="/login" class="text-dark font-weight-bolder">Ingresar</a></p>
             </form>
@@ -48,56 +58,5 @@
     </div>
   </div>
 </section>
+</div>
 <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-          Company
-        </a>
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-          About Us
-        </a>
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-          Team
-        </a>
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-          Products
-        </a>
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-          Blog
-        </a>
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-          Pricing
-        </a>
-      </div>
-      <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
-          <span class="text-lg fab fa-dribbble"></span>
-        </a>
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
-          <span class="text-lg fab fa-twitter"></span>
-        </a>
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
-          <span class="text-lg fab fa-instagram"></span>
-        </a>
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
-          <span class="text-lg fab fa-pinterest"></span>
-        </a>
-        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
-          <span class="text-lg fab fa-github"></span>
-        </a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-8 mx-auto text-center mt-1">
-        <p class="mb-0 text-secondary">
-          Copyright © <script>
-            document.write(new Date().getFullYear())
-          </script> Soft by Creative Tim.
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>

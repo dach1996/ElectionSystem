@@ -1,0 +1,5 @@
+.opacity-loader {
+    opacity: 0.2;
+    pointer-events: none;
+    filter:  alpha(opacity=50);
+  }

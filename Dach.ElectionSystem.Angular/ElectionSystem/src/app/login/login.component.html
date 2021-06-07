@@ -1,37 +1,43 @@
-<div class="container position-sticky z-index-sticky top-0">
+
+<app-loading *ngIf="loading"></app-loading>
+
+<div [ngClass]="loading? 'opacity-loader' : ' '">
+ <div  class="container position-sticky z-index-sticky top-0">
+
   <div class="row">
     <div class="col-12">
  
-      <!-- End Navbar -->
+  
     </div>
   </div>
 </div>
 <section>
   <div class="page-header section-height-75">
+
     <div class="container">
       <div class="row">
         <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
           <div class="card card-plain mt-5">
             <div class="card-header pb-0 text-left bg-transparent">
               <h3 class="font-weight-bolder text-info text-gradient">Bienvenido</h3>
-              <p class="mb-0">Ingresa tu Email y Contraseña para acceder</p>
-            </div>
+             </div>
             <div class="card-body">
-              <form role="form text-left" (click)="login()">
+              <form role="form text-left" (ngSubmit)="login()">
                 <label>Email</label>
                 <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                  <input type="email" class="form-control" [(ngModel)]="loginRequest.email" name="email" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                 </div>
+                
                 <label>Contraseña</label>
                 <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Contraseña" aria-label="Password" aria-describedby="password-addon">
+                  <input type="email" class="form-control" [(ngModel)]="loginRequest.password" name="password" placeholder="Contraseña" aria-label="Password" aria-describedby="password-addon">
                 </div>
                 <div class="form-check form-switch">
                   <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                   <label class="form-check-label" for="rememberMe">Recordar</label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Ingresar</button>
+                  <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Ingresar</button>
                 </div>
               </form>
             </div>
@@ -58,7 +64,7 @@
     </div>
   </div>
 </section>
-<!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+
 <footer class="footer py-4 fixed-bottom">
   <div class="container">
     <div class="row">
@@ -85,3 +91,4 @@
     </div>
   </div>
 </footer>
+</div>

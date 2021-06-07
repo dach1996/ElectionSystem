@@ -9,7 +9,7 @@ export interface UserCreateRequest {
   /**
    * Fecha de nacimiento Usuario
    */
-  birthDate: string;
+  birthDate: Date;
 
   /**
    * Cédula Usuario
