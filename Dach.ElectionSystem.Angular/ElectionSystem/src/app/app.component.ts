@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ScriptService } from './service/scripService';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ElectionSystem';
+  constructor(private scriptService: ScriptService,
+    private route: Router) {
+    console.log('Loading External Scripts');
+    this.scriptService.load('FontAwesome', 'ButtonsJs');
+  }
 }

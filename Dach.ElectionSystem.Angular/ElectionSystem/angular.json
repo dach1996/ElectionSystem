@@ -30,12 +30,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/assets/vendor/nucleo/css/nucleo.css",
-              "src/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
-              "src/assets/css/argon.css"
+              "src/assets/css/nucleo-icons.css",
+              "src/assets/css/nucleo-svg.css",
+              "src/assets/css/soft-ui-dashboard.css",
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src//assets/js/core/popper.min.js",
+              "src/assets/js/core/bootstrap.min.js",
+              "src/assets/js/plugins/smooth-scrollbar.min.js"
+             
+            ]
           },
           "configurations": {
             "production": {

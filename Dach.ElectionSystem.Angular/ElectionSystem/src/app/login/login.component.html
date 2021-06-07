@@ -1,155 +1,87 @@
-<nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+<div class="container position-sticky z-index-sticky top-0">
+  <div class="row">
+    <div class="col-12">
+ 
+      <!-- End Navbar -->
+    </div>
+  </div>
+</div>
+<section>
+  <div class="page-header section-height-75">
     <div class="container">
-      <a class="navbar-brand" href="dashboard.html">
-        <img src="../../assets/img/brand/white.png">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
-        <div class="navbar-collapse-header">
-          <div class="row">
-            <div class="col-6 collapse-brand">
-              <a href="dashboard.html">
-                <img src="../../assets/img/brand/blue.png">
-              </a>
+      <div class="row">
+        <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+          <div class="card card-plain mt-5">
+            <div class="card-header pb-0 text-left bg-transparent">
+              <h3 class="font-weight-bolder text-info text-gradient">Bienvenido</h3>
+              <p class="mb-0">Ingresa tu Email y Contraseña para acceder</p>
             </div>
-            <div class="col-6 collapse-close">
-              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <hr class="d-lg-none" />
-        <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" data-original-title="Like us on Facebook">
-              <i class="fab fa-facebook-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Facebook</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" data-original-title="Follow us on Instagram">
-              <i class="fab fa-instagram"></i>
-              <span class="nav-link-inner--text d-lg-none">Instagram</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" data-original-title="Follow us on Twitter">
-              <i class="fab fa-twitter-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Twitter</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial" target="_blank" data-toggle="tooltip" data-original-title="Star us on Github">
-              <i class="fab fa-github"></i>
-              <span class="nav-link-inner--text d-lg-none">Github</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Main content -->
-  <div class="main-content">
-    <!-- Header -->
-    <div class="header bg-gradient-primary py-7 py-lg-7 pt-lg-6">
-      <div class="container">
-        <div class="header-body text-center mb-3">
-          <div class="row justify-content-center">
-            <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <h1 class="text-white">Bienvenido</h1>
-              <p class="text-lead text-white">Ingresa tus datos para poder administrar tus eventos.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
-      </div>
-    </div>
-    <!-- Page content -->
-    <div class="container mt--8 pb-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-5 col-md-7">
-          <div class="card bg-secondary border-0 mb-0">
-          
-            <div class="card-body px-lg-5 py-lg-5">
-              <div class="text-center text-muted mb-4">
-                <small>Ingresa tus datos para ingreso</small>
-              </div>
-              <form  (ngSubmit) = "login()">
-                <div class="form-group mb-3">
-                  <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                    </div>
-                    <input [(ngModel)]="loginRequest.email" name="email" class="form-control" placeholder="Email" type="email"  />
-                  </div>
+            <div class="card-body">
+              <form role="form text-left" (click)="login()">
+                <label>Email</label>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                 </div>
-                <div class="form-group">
-                  <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Password" type="password">
-                  </div>
+                <label>Contraseña</label>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Contraseña" aria-label="Password" aria-describedby="password-addon">
                 </div>
-                <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                  <label class="custom-control-label" for=" customCheckLogin">
-                    <span class="text-muted">Remember me</span>
-                  </label>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
+                  <label class="form-check-label" for="rememberMe">Recordar</label>
                 </div>
                 <div class="text-center">
-                  <button  type="submit" class="btn btn-primary my-4" text="">Sign in</button>
+                  <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Ingresar</button>
                 </div>
               </form>
             </div>
+            <div class="card-footer text-center pt-0 px-lg-2 px-1">
+              
+              <p class="mb-1 text-sm mx-auto">
+                ¿Todavía no tienes una cuenta?
+                <a  routerLink="/register" class="text-info text-gradient font-weight-bold">Registrate Aquí</a>
+              </p>
+              <p class="mb-4 text-sm mx-auto">
+                ¿Olvidaste tu contraseña?
+                <a  routerLink="/forggotepassword" class="text-info text-gradient font-weight-bold">Recupérala</a>
+              </p>
+            </div>
+            
           </div>
-        
-          <div class="row mt-3">
-            <div class="col-6">
-              <a href="#" class="text-light"><small>Forgot password?</small></a>
-            </div>
-            <div class="col-6 text-right">
-              <a routerLink="/register" class="text-light"><small>Create new account</small></a>
-            </div>
+        </div>
+        <div class="col-md-6">
+          <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+            <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('../assets/img/curved-images/curved6.jpg')"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Footer -->
-  <footer class="py-5" id="footer-main">
-    <div class="container">
-      <div class="row align-items-center justify-content-xl-between">
-        <div class="col-xl-6">
-          <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
-          </div>
-        </div>
-        <div class="col-xl-6">
-          <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-            </li>
-          </ul>
-        </div>
+</section>
+<!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+<footer class="footer py-4 fixed-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-4 mx-auto text-center">
+        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+          Company
+        </a>
+        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+          About Us
+        </a>
+        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+          Team
+        </a>
+        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+          Products
+        </a>
+        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+          Blog
+        </a>
+        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+          Pricing
+        </a>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>

@@ -8,10 +8,11 @@ import { LoginRequest } from '../serviceApi/models';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  public loginRequest: LoginRequest ={
-    email:'',
-    password:''
-  }
+  public loginRequest: LoginRequest = {
+    email: '',
+    password: '',
+  };
+
   constructor(private route: Router) {}
   login() {
     this.route.navigate(['/dashboard']);
