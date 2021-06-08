@@ -22,6 +22,8 @@ import { EventUpdateResponse } from '../models/event-update-response';
 import { OrderBy } from '../models/order-by';
 import { TypeFilterEvent } from '../models/type-filter-event';
 import { Unit } from '../models/unit';
+import { LoginResponseGenericResponse } from '../models';
+import { ResponseGeneric } from '../models/generic-response';
 
 @Injectable({
   providedIn: 'root',
@@ -192,7 +194,7 @@ export class EventService extends BaseService {
      * Tipo de Filtros
      */
     TypeFilter?: TypeFilterEvent;
-  }): Observable<StrictHttpResponse<EventGetResponse>> {
+  }): Observable<StrictHttpResponse<ResponseGeneric<EventGetResponse>>> {
 
     const rb = new RequestBuilder(this.rootUrl, EventService.ApiEventsGetPath, 'get');
     if (params) {
@@ -203,14 +205,14 @@ export class EventService extends BaseService {
       rb.query('Category', params.Category, {});
       rb.query('TypeFilter', params.TypeFilter, {});
     }
-
+    rb.header("Authorization",localStorage.getItem("token")!);
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json'
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<EventGetResponse>;
+        return r as StrictHttpResponse<ResponseGeneric<EventGetResponse>>;
       })
     );
   }
@@ -259,7 +261,7 @@ export class EventService extends BaseService {
   }): Observable<EventGetResponse> {
 
     return this.apiEventsGet$Json$Response(params).pipe(
-      map((r: StrictHttpResponse<EventGetResponse>) => r.body as EventGetResponse)
+      map((r: StrictHttpResponse<ResponseGeneric<EventGetResponse>>) => r.body as EventGetResponse)
     );
   }
 
@@ -540,7 +542,7 @@ export class EventService extends BaseService {
       rb.query('TypeFilter', params.TypeFilter, {});
       rb.path('id', params.id, {});
     }
-
+    rb.header("Authorization",localStorage.getItem("token")!);
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json'

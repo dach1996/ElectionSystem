@@ -7,9 +7,10 @@
         {
             "type": "pwa-msedge",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
+            "name": "Angular App",
             "url": "http://localhost:4200",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
+       
         }
     ]
 }

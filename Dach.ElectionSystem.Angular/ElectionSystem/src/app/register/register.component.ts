@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
           this.loading = false;
           if (err.error.code == 150)
             this.errorMessage = 'Es necesario llenar todos los campos';
-          this.errorMessage = err.error.message;
+          else this.errorMessage = err.error.message;
           Swal.fire({
             icon: 'error',
             text: 'Error: ' + this.errorMessage,
