@@ -2399,6 +2399,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Event.EventBaseResponse.User">
+            <summary>
+            Usuario
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Response.Event.EventCreateResponse">
             <summary>
             Clase EventCreateResponse

@@ -56,7 +56,7 @@ namespace Dach.ElectionSystem.Services.Data
 
         public async Task<User> ValidateUser(int idUser)
         {
-            var existUser = await userRepository.GetAsync(u => u.Id == idUser);
+            var existUser = await userRepository.GetAsyncInclude(u => u.Id == idUser,includeProperties: e => $"{nameof(e.EventNumber)}");
             if (existUser.Count() != 1)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.Unauthorized, $"No se encuntra el Usuario con Id:{idUser}");
             return existUser.FirstOrDefault();

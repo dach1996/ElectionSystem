@@ -33,10 +33,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 List<Models.Persitence.Event> listEvents;
                 //Verificamos si la consulta es por id o todos los registros
                 if (request.Id != null)
-                    listEvents = (await _electionUnitOfWork.GetEventRepository().GetAsync(e => e.Id == request.Id && !e.IsDelete)).ToList();
+                    listEvents = (await _electionUnitOfWork.GetEventRepository().GetAsyncInclude(e => e.Id == request.Id && !e.IsDelete, includeProperties: e => $"{nameof(e.UserCreator)}")).ToList();
                 else
                 {
-                    listEvents = (await _electionUnitOfWork.GetEventRepository().GetAsync(e => !e.IsDelete)).ToList();
+                    listEvents = (await _electionUnitOfWork.GetEventRepository().GetAsyncInclude(e => !e.IsDelete, includeProperties: e => $"{nameof(e.UserCreator)}")).ToList();
                     listEvents = request.TypeFilter switch
                     {
                         Models.Enums.TypeFilterEvent.Administrator => (await _electionUnitOfWork.GetEventAdministratorRepository().GetAsyncInclude(e => e.IdUser == request.UserContext.Id, includeProperties: e => $"{nameof(e.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),

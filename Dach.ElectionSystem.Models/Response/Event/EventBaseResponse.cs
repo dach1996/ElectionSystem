@@ -1,4 +1,5 @@
 using Dach.ElectionSystem.Models.Base;
+using Dach.ElectionSystem.Models.Response.User;
 
 namespace Dach.ElectionSystem.Models.Response.Event
 {
@@ -26,6 +27,11 @@ namespace Dach.ElectionSystem.Models.Response.Event
         /// <value></value>
         public string CodeEvent { get; set; }
 
+        /// <summary>
+        /// Usuario
+        /// </summary>
+        /// <value></value>
+        public UserBaseResponse User { get; set; }
 
     }
 }
