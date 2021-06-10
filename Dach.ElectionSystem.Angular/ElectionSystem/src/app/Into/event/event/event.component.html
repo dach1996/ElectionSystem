@@ -1,6 +1,7 @@
 <app-loading *ngIf="loading"></app-loading>
 
 <div [ngClass]="loading? 'opacity-loader' : ' '">
+    <a type=" button" class="btn btn-primary btn-lg" [routerLink]="['/dashboard/event/create']">Crear Nuevo Evento</a>
     <div class="row">
         <div class="col-12">
         <div class="card mb-4">
@@ -27,25 +28,33 @@
                                     <img src="https://{{event.image}}" class="avatar avatar-sm me-3">
                                 </div>
                                 <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">John Michael</h6>
-                                    <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
+                                    <h6 class="mb-0 text-sm">{{event.user?.firstName}} {{event.user?.firstLastName}}</h6>
+                                    <p class="text-xs text-secondary mb-0">{{event.user?.email}}</p>
                                 </div>
                                 </div>
                             </td>
                             <td>
                                 <p class="text-xs font-weight-bold mb-0">{{event.name}}</p>
-                                <p class="text-xs text-secondary mb-0">Organization</p>
+                                <p class="text-xs text-secondary mb-0">{{event.category}}</p>
                             </td>
                             <td class="align-middle text-center text-sm">
-                                <span class="badge badge-sm bg-gradient-success">{{event.isActive}}</span>
+                                <span *ngIf="event.isActive" class="badge badge-sm bg-gradient-success">Activo</span>
+                                <span *ngIf="!event.isActive" class="badge badge-sm bg-danger-success">Inactivo</span>
                             </td>
                             <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-bold">{{event.dateRegister}}</span>
+                                <span class="text-secondary text-xs font-weight-bold">{{event.dateRegister | date:'dd/MM/yyyy'}}</span>
                             </td>
                             <td class="align-middle">
-                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                Edit
+                                <a [routerLink]="['/dashboard/event/edit', event.id]"  class="avatar avatar-sm rounded-circle">
+                                    <img alt="Image placeholder" src="https://png.pngtree.com/png-vector/20190826/ourlarge/pngtree-find-png-image_1699668.jpg">
                                 </a>
+                                <a [routerLink]="['/dashboard/event/edit', event.id]"  [ngClass]="event.user.id != userCurrent?.id?'opacity-loader':''" class="avatar avatar-sm rounded-circle mr-1">
+                                    <img alt="Image placeholder" src="https://image.freepik.com/vector-gratis/icono-lapiz-escribir-diseno_24877-44704.jpg">
+                                </a>
+                                <a [routerLink]="['/dashboard/event/edit', event.id]"  [ngClass]="event.user.id != userCurrent?.id?'opacity-loader':''"   (click)="desactiveEvent(event?.id!)" class="avatar avatar-sm rounded-circle">
+                                    <img alt="Image placeholder" src="https://static.vecteezy.com/system/resources/previews/000/630/479/non_2x/vector-trash-can-icon-symbol-illustration.jpg">
+                                </a>
+                                
                             </td>
                         </tr>
                     </tbody>

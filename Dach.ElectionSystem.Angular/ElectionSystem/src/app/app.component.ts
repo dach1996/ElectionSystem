@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ScriptService } from './service/scripService';
+import { ScriptService } from './service/scripService.service';
 
 @Component({
   selector: 'app-root',

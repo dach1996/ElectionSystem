@@ -1,3 +1,5 @@
+import { UserBaseResponse } from "../user-base-response";
+
 export interface EventGetViewModel {
 
  
@@ -17,5 +19,13 @@ export interface EventGetViewModel {
    */
   name: string;
 
+  /**
+   * name
+   */
+  category: string;
+  /**
+   * Usuario
+   */
 
+  user? : null | UserBaseResponse;
 }

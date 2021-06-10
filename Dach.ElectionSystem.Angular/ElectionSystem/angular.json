@@ -27,7 +27,8 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/web.config"
             ],
             "styles": [
               "src/assets/css/nucleo-icons.css",
@@ -39,6 +40,7 @@
               "src//assets/js/core/popper.min.js",
               "src/assets/js/core/bootstrap.min.js",
               "src/assets/js/plugins/smooth-scrollbar.min.js",
+              "src/assets/js/plugins/flatpickr.min.js",
               "src/assets/js/soft-ui-dashboard.min.js"
              
             ]

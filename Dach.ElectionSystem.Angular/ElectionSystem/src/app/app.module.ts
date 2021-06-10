@@ -6,7 +6,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForggotePasswordComponent } from './forggote-password/forggote-password.component';
 import { FormsModule } from '@angular/forms';
-import { LoadingComponent } from './utils/loading/loading.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { DashboardModule } from './Into/dashboard/dashboard.module';
@@ -28,7 +27,7 @@ import { UtilsModule } from './utils/utils.module';
     AppRoutingModule,
     HttpClientModule
   ],
-  exports:[LoadingComponent],
+  exports:[],
   providers: [],
   bootstrap: [AppComponent]
 })

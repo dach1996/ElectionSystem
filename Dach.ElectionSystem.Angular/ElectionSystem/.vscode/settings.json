@@ -3,6 +3,6 @@
         "node_modules{,/**}",
         ".vscode{,/**}"
     ],
-    "appService.defaultWebAppToDeploy": "None",
-    "appService.deploySubpath": "Dach.ElectionSystem.Angular\\ElectionSystem\\dist\\ElectionSystem"
+    "appService.defaultWebAppToDeploy": "/subscriptions/a0beb4f5-4538-4974-acc0-0a5a08e78476/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/AngularElectionWebApp",
+    "appService.deploySubpath": "dist\\ElectionSystem",
 }

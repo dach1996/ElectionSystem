@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
         (res) => {
           if (res.status == HttpStatusCode.Ok) {
             localStorage.setItem('token', 'Bearer ' + res.body.content?.token!);
+            localStorage.setItem('userCurrent', JSON.stringify(res.body.content?.user!));
             this.loading = false;
             this.route.navigate(['/dashboard']);
           }

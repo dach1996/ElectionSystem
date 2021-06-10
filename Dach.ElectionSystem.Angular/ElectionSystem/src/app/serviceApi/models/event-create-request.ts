@@ -14,22 +14,22 @@ export interface EventCreateRequest {
   /**
    * Fecha Máxima para registrar Candidatos
    */
-  dateMaxRegisterCandidate: string;
+  dateMaxRegisterCandidate: Date;
 
   /**
    * Fecha  Máxima para registrar participantes
    */
-  dateMaxRegisterParticipants: string;
+  dateMaxRegisterParticipants: Date;
 
   /**
    * Fecha máxima para realizar votación
    */
-  dateMaxVote: string;
+  dateMaxVote: Date;
 
   /**
    * Fecha  mínima para realizar votación
    */
-  dateMinVote: string;
+  dateMinVote: Date;
 
   /**
    * Descripción de evento
