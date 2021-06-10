@@ -1,4 +1,5 @@
-﻿using Dach.ElectionSystem.Models.RequestBase;
+﻿using System.Text.Json.Serialization;
+using Dach.ElectionSystem.Models.RequestBase;
 using Dach.ElectionSystem.Models.Response.Event;
 using MediatR;
 namespace Dach.ElectionSystem.Models.Request.Event
@@ -11,6 +12,7 @@ namespace Dach.ElectionSystem.Models.Request.Event
         /// <summary>
         /// Id de Evento
         /// </summary>
+        [JsonIgnore]
         public int IdEvent { get; set; }
 
     }

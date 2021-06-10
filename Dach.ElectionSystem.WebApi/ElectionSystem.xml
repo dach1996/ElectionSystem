@@ -122,11 +122,12 @@
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest)">
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest,System.Int32)">
             <summary>
             Desactivar Evento
             </summary>
             <param name="request"></param>
+            <param name="idEvent"></param>
             <returns></returns>
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.UpdateEvent(Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest,System.Nullable{System.Int32})">

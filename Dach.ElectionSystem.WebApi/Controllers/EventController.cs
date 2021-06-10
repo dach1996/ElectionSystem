@@ -41,13 +41,18 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// Desactivar Evento
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="idEvent"></param>
         /// <returns></returns>
         [HttpDelete]
-        [Route("{id}")]
+        [Route("{idEvent}")]
         [ProducesResponseType(200, Type = typeof(EventDeleteResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        public async Task<IActionResult> DesactiveEvent([FromRoute] EventDeleteRequest request) => Success(await _mediator.Send(request));
+        public async Task<IActionResult> DesactiveEvent([FromBody] EventDeleteRequest request, [FromRoute] int idEvent)
+        {
+            request.IdEvent = idEvent;   
+            return Success(await _mediator.Send(request));
+        }
 
         /// <summary>
         /// Actualizar Evento
