@@ -1,6 +1,4 @@
-﻿using Dach.ElectionSystem.Models.Base;
-
-namespace Dach.ElectionSystem.Models.Response.Event
+﻿namespace Dach.ElectionSystem.Models.Response.Event
 {
     /// <summary>
     /// Clase EventCreateResponse

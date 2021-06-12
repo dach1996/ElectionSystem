@@ -50,7 +50,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> DesactiveEvent([FromBody] EventDeleteRequest request, [FromRoute] int idEvent)
         {
-            request.IdEvent = idEvent;   
+            request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
         }
 
@@ -106,6 +106,22 @@ namespace Dach.ElectionSystem.WebApi.Controllers
             request.Id = id;
             return Success(await _mediator.Send(request));
         }
+
+        /// <summary>
+        /// Verificar Enrolamiento con el evento
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [Route("verifyRelationship")]
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(EventHasRoledWithEventResponse))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        public async Task<IActionResult> HasRoledWithEvent(
+           [FromBody] EventHasRoledWithEventRequest request
+        )
+        => Success(await _mediator.Send(request));
+
 
         /// <summary>
         /// Consulta de resultados

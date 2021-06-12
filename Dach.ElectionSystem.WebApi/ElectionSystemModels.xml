@@ -1708,6 +1708,23 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.Event.EventHasRoledWithEventRequest">
+            <summary>
+            Clase Event Get Request
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventHasRoledWithEventRequest.IdEvent">
+            <summary>
+            Id de Evento
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventHasRoledWithEventRequest.IdUserComapare">
+            <summary>
+            Id de Usuario
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Event.EventImageRequest">
             <summary>
             Clase cargar Imágenes a un evento
@@ -2469,6 +2486,17 @@
         <member name="P:Dach.ElectionSystem.Models.Response.Event.CandidateWithVote.NumberVotes">
             <summary>
             Cantidad de Votos
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.Event.EventHasRoledWithEventResponse">
+            <summary>
+            Clase EventGetResponse
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Event.EventHasRoledWithEventResponse.HasRelationshipEvent">
+            <summary>
+            Tiene relación con el evento?
             </summary>
             <value></value>
         </member>

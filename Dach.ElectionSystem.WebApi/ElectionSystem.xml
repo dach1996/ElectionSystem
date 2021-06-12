@@ -153,6 +153,13 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.HasRoledWithEvent(Dach.ElectionSystem.Models.Request.Event.EventHasRoledWithEventRequest)">
+            <summary>
+            Verificar Enrolamiento con el evento
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.GetResultEvent(Dach.ElectionSystem.Models.Request.Event.EventGetResultRequest,System.Int32)">
             <summary>
             Consulta de resultados
