@@ -23,6 +23,7 @@ import { OrderBy } from '../models/order-by';
 import { TypeFilterEvent } from '../models/type-filter-event';
 import { Unit } from '../models/unit';
 import { ResponseGeneric } from '../models/generic-response';
+import { EventVerifyRelationShip } from '../models/event-verify-relationship';
 
 @Injectable({
   providedIn: 'root',
@@ -318,6 +319,49 @@ export class EventService extends BaseService {
         filter((r: any) => r instanceof HttpResponse),
         map((r: HttpResponse<any>) => {
           return r as StrictHttpResponse<EventGetResultResponse>;
+        })
+      );
+  }
+
+  /**
+   * Path part for operation apiEventsIdEventResultsGet
+   */
+  static readonly ApiEventsVerifyRelationship =
+    '/api/events/verifyRelationship';
+
+  /**
+   * Consulta de resultados.
+   *
+   *
+   *
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiEventsIdEventResultsGet$Json()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  apiEventsVerifyRelationShip$Json$Response(params: {
+   body : EventVerifyRelationShip
+  }): Observable<StrictHttpResponse<any>> {
+    const rb = new RequestBuilder(
+      this.rootUrl,
+      EventService.ApiEventsVerifyRelationship,
+      'get'
+    );
+    if (params) {
+      rb.body(params.body, 'application/*+json');
+    }
+    rb.header('Authorization', localStorage.getItem('token')!);
+    return this.http
+      .request(
+        rb.build({
+          responseType: 'json',
+          accept: 'text/json',
+        })
+      )
+      .pipe(
+        filter((r: any) => r instanceof HttpResponse),
+        map((r: HttpResponse<any>) => {
+          return r as StrictHttpResponse<any>;
         })
       );
   }

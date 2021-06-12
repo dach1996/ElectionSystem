@@ -57,3 +57,4 @@ export { VoteCreateResponse } from './models/vote-create-response';
 export { VoteDeleteResponse } from './models/vote-delete-response';
 export { VoteGetResponse } from './models/vote-get-response';
 export { VoteUpdateResponse } from './models/vote-update-response';
+export { EventVerifyRelationShip } from './models/event-verify-relationship';
