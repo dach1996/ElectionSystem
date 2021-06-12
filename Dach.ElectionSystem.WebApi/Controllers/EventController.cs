@@ -113,7 +113,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [Route("verifyRelationship")]
-        [HttpGet]
+        [HttpPost]
         [ProducesResponseType(200, Type = typeof(EventHasRoledWithEventResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
