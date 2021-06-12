@@ -45,7 +45,7 @@
                                 <span class="text-secondary text-xs font-weight-bold">{{event.dateRegister | date:'dd/MM/yyyy'}}</span>
                             </td>
                             <td class="align-middle">
-                                <a [routerLink]="['/dashboard/event/edit', event.id]"  class="avatar avatar-sm rounded-circle">
+                                <a (click)="openEventModalSelected(event)" class="avatar avatar-sm rounded-circle">
                                     <img alt="Image placeholder" src="https://png.pngtree.com/png-vector/20190826/ourlarge/pngtree-find-png-image_1699668.jpg">
                                 </a>
                                 <a [routerLink]="['/dashboard/event/edit', event.id]"  [ngClass]="event.user.id != userCurrent?.id?'opacity-loader':''" class="avatar avatar-sm rounded-circle mr-1">

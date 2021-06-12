@@ -97,14 +97,23 @@
                             </form>
                           </div>
                           <div class="col-md-6">
-    
+                            <div class="row">
+                              <div class="col-md">
+                                <label class="form-label" for="file">Elige una imagen para el evento</label>
+                                <div class="input-group mb-4">
+                                  <input type="file" class="form-control" id="file"  (change)="changeImage($event)" />
+                                </div>
+                              </div>
+                              <div class="col-md-2 mt-4">
+                                  <button class="btn bg-gradient-dark" (click)="updateImage()">Subir</button>
+                                </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                 </div>
             </div>
             </div>
-    </div>
-        
+      </div> 
       </section>
     </div>

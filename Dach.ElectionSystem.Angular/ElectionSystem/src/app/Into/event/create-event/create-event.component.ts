@@ -9,12 +9,12 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-create-edit-event',
   templateUrl: './create-event.component.html',
-  styleUrls: ['./create-event.component.css','../../../app.component.css' ],
+  styleUrls: ['./create-event.component.css', '../../../app.component.css'],
 })
 export class EventCreateComponent implements OnInit, PageBase {
   public loading: boolean = false;
   public errorMessage: string = '';
-  public titlePage: string='CREAR NUEVO EVENTO';
+  public titlePage: string = 'CREAR NUEVO EVENTO';
   public eventCreateRequest: EventCreateRequest = {
     category: 'Elección de candidato',
     dateMaxRegisterCandidate: new Date(),
@@ -29,7 +29,7 @@ export class EventCreateComponent implements OnInit, PageBase {
   };
 
   constructor(private route: Router, private eventService: EventService) {}
-  
+
   ngOnInit(): void {}
   createEvent(): void {
     this.loading = true;
@@ -41,7 +41,8 @@ export class EventCreateComponent implements OnInit, PageBase {
             this.loading = false;
             Swal.fire({
               icon: 'success',
-              text: 'Evento: '+this.eventCreateRequest.name+' ha sido Creado',
+              text:
+                'Evento: ' + this.eventCreateRequest.name + ' ha sido Creado',
               confirmButtonText: 'Continuar',
             }).then((result) => {
               this.route.navigate(['/dashboard/event']);

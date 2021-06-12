@@ -18,13 +18,14 @@ export class EventEditComponent implements OnInit, PageBase {
   public loading: boolean = false;
   public errorMessage: string = '';
   public idEvent: number | undefined;
-  public event?: EventBaseResponse | undefined;
+  public event: EventBaseResponse | undefined;
+  public imageFile: File | undefined;
   constructor(
     private route: Router,
     private eventService: EventService,
     private routeActive: ActivatedRoute
   ) {}
-  titlePage: string='EDITAR EVENTO';
+  titlePage: string = 'EDITAR EVENTO';
   ngOnInit(): void {
     this.loading = true;
     this.routeActive.paramMap.subscribe((paramsMap: ParamMap) => {
@@ -56,8 +57,10 @@ export class EventEditComponent implements OnInit, PageBase {
     this.loading = true;
     let eventUpdate: EventUpdateRequest = {
       category: this.event?.category!,
-      dateMaxRegisterCandidate:  new Date(this.event?.dateMaxRegisterCandidate!),
-      dateMaxRegisterParticipants: new Date(this.event?.dateMaxRegisterParticipants!),
+      dateMaxRegisterCandidate: new Date(this.event?.dateMaxRegisterCandidate!),
+      dateMaxRegisterParticipants: new Date(
+        this.event?.dateMaxRegisterParticipants!
+      ),
       dateMaxVote: new Date(this.event?.dateMaxVote!),
       dateMinVote: new Date(this.event?.dateMinVote!),
       description: this.event?.description!,
@@ -79,6 +82,41 @@ export class EventEditComponent implements OnInit, PageBase {
               confirmButtonText: 'Continuar',
             }).then((result) => {
               this.route.navigate(['/dashboard/event']);
+            });
+          }
+        },
+        (err) => {
+          this.loading = false;
+          if (err.error.code == 150)
+            this.errorMessage = 'Es necesario llenar todos los campos';
+          else this.errorMessage = err.error.message;
+          Swal.fire({
+            icon: 'error',
+            text: this.errorMessage,
+            confirmButtonColor: '#d33',
+          });
+        }
+      );
+  }
+  changeImage(event: any) {
+    this.imageFile = event.target.files[0];
+  }
+  updateImage(): void {
+    if (this.imageFile === undefined) return;
+    this.loading = true;
+    this.eventService
+      .apiEventsIdEventImagePost$Json$Response({
+        idEvent: this.idEvent!,
+        Image: this.imageFile,
+      })
+      .subscribe(
+        (res) => {
+          if (res.code == HttpStatusCode.Ok) {
+            this.loading = false;
+            Swal.fire({
+              icon: 'success',
+              text: 'Imagen cargada exitosamente',
+              confirmButtonText: 'Continuar',
             });
           }
         },

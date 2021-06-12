@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
@@ -339,71 +339,26 @@ export class EventService extends BaseService {
    */
   apiEventsIdEventImagePost$Json$Response(params: {
     idEvent: number;
-    body?: {
-      Image: Blob;
-      IdEvent?: number;
-      'TokenModel.Username'?: string;
-      'TokenModel.Email'?: string;
-      'TokenModel.Id'?: string;
-      'UserContext.Id'?: number;
-      'UserContext.DNI'?: string;
-      'UserContext.UserName'?: string;
-      'UserContext.Password'?: string;
-      'UserContext.TemPassword'?: string;
-      'UserContext.FirstName'?: string;
-      'UserContext.SecondName'?: string;
-      'UserContext.FirstLastName'?: string;
-      'UserContext.SecondLastName'?: string;
-      'UserContext.BirthDate'?: string;
-      'UserContext.Email'?: string;
-      'UserContext.IsActive'?: boolean;
-      'UserContext.IsAdministrator'?: boolean;
-      'UserContext.ListEventAdministrator'?: Array<EventAdministrator>;
-      'UserContext.ListCandidate'?: Array<Candidate>;
-      'UserContext.EventNumber.Id'?: number;
-      'UserContext.EventNumber.IdUser'?: number;
-      'UserContext.EventNumber.NumberMaxEvent'?: number;
-      'UserContext.EventNumber.User.Id'?: number;
-      'UserContext.EventNumber.User.DNI'?: string;
-      'UserContext.EventNumber.User.UserName'?: string;
-      'UserContext.EventNumber.User.Password'?: string;
-      'UserContext.EventNumber.User.TemPassword'?: string;
-      'UserContext.EventNumber.User.FirstName'?: string;
-      'UserContext.EventNumber.User.SecondName'?: string;
-      'UserContext.EventNumber.User.FirstLastName'?: string;
-      'UserContext.EventNumber.User.SecondLastName'?: string;
-      'UserContext.EventNumber.User.BirthDate'?: string;
-      'UserContext.EventNumber.User.Email'?: string;
-      'UserContext.EventNumber.User.IsActive'?: boolean;
-      'UserContext.EventNumber.User.IsAdministrator'?: boolean;
-      'UserContext.EventNumber.User.ListEventAdministrator'?: Array<EventAdministrator>;
-      'UserContext.EventNumber.User.ListCandidate'?: Array<Candidate>;
-      'UserContext.EventNumber.User.EventNumber'?: EventNumber;
-      PathRoot?: string;
-    };
-  }): Observable<StrictHttpResponse<Unit>> {
-    const rb = new RequestBuilder(
-      this.rootUrl,
-      EventService.ApiEventsIdEventImagePostPath,
-      'post'
-    );
-    if (params) {
-      rb.path('idEvent', params.idEvent, {});
-      rb.body(params.body, 'multipart/form-data');
-    }
-    rb.header('Authorization', localStorage.getItem('token')!);
-    return this.http
-      .request(
-        rb.build({
-          responseType: 'json',
-          accept: 'text/json',
-        })
-      )
-      .pipe(
-        filter((r: any) => r instanceof HttpResponse),
-        map((r: HttpResponse<any>) => {
-          return r as StrictHttpResponse<Unit>;
-        })
+    Image: File;
+  }): Observable<any> {
+    const formData = new FormData();
+    var url =
+      this.rootUrl +
+      EventService.ApiEventsIdEventImagePostPath.replace(
+        '{idEvent}',
+        params.idEvent.toString()
       );
+    // Store form name as "file" with file data
+    formData.append('Image', params.Image);
+
+    // Make http post request over api
+    // with formData as req
+
+    let headers = new HttpHeaders();
+    headers = headers.append(
+      'Authorization',
+      `${localStorage.getItem('token')!}`
+    );
+    return this.http.post(url, formData, { headers: headers });
   }
 }

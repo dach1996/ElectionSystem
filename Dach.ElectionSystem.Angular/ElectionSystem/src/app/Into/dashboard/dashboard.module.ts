@@ -10,6 +10,7 @@ import { EventCreateComponent } from '../event/create-event/create-event.compone
 import { BrowserModule } from '@angular/platform-browser';
 import { EventEditComponent } from '../event/event-edit/event-edit.component';
 import { EditUserComponent } from '../user/edit-user/edit-user.component';
+import { EventModalSelectComponent } from '../event/event-modal-select/event-modal-select.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +18,12 @@ import { EditUserComponent } from '../user/edit-user/edit-user.component';
     EventCreateComponent,
     EventEditComponent,
     DashboardComponent,
-    EditUserComponent
+    EditUserComponent,
+    EventModalSelectComponent
   ],
   imports: [
     BrowserModule,
+ 
     CommonModule,
     DashboardRoutingModule,
     HttpClientModule,

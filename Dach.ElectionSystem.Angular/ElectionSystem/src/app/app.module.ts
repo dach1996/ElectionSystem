@@ -15,6 +15,7 @@ import { CreateCandidateComponent } from './Into/candidate/create-candidate/crea
 import { DesactiveCandidateComponent } from './Into/candidate/desactive-candidate/desactive-candidate.component';
 import { CandidateComponent } from './Into/candidate/candidate/candidate.component';
 import { UpdateCandidateComponent } from './Into/candidate/update-candidate/update-candidate.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { UpdateCandidateComponent } from './Into/candidate/update-candidate/upda
     CreateCandidateComponent,
     DesactiveCandidateComponent,
     CandidateComponent,
-    UpdateCandidateComponent,
+    UpdateCandidateComponent
     
   ],
   imports: [
@@ -36,7 +37,8 @@ import { UpdateCandidateComponent } from './Into/candidate/update-candidate/upda
     DashboardModule,
     UtilsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   exports:[],
   providers: [],

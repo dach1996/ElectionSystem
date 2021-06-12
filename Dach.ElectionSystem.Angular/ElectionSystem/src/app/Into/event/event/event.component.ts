@@ -1,6 +1,7 @@
 import { HttpStatusCode } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PageBase } from 'src/app/models/pageBase';
 import { StorageCache } from 'src/app/service/storageCache.service';
 import {
@@ -11,6 +12,7 @@ import {
 } from 'src/app/serviceApi/models';
 import { EventService } from 'src/app/serviceApi/services';
 import Swal from 'sweetalert2';
+import { EventModalSelectComponent } from '../event-modal-select/event-modal-select.component';
 
 @Component({
   selector: 'app-event',
@@ -34,9 +36,10 @@ export class EventComponent implements OnInit, PageBase {
   constructor(
     private route: Router,
     private storage: StorageCache,
-    private eventService: EventService
+    private eventService: EventService,
+    private modalService: NgbModal
   ) {}
-  titlePage: string ='LISTA DE EVENTOS EXISTENTES';
+  titlePage: string = 'LISTA DE EVENTOS EXISTENTES';
   loadEvents(): void {
     this.loading = true;
     this.eventService.apiEventsGet$Json$Response(this.eventRequest).subscribe(
@@ -89,7 +92,10 @@ export class EventComponent implements OnInit, PageBase {
         }
       );
   }
-
+  openEventModalSelected(event:EventBaseResponse) {
+    const modalEvent = this.modalService.open(EventModalSelectComponent);
+    modalEvent.componentInstance.event = event;
+  }
   ngOnInit(): void {
     this.loadEvents();
   }

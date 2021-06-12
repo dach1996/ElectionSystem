@@ -234,11 +234,7 @@ export class RequestBuilder {
    * Sets the body content, along with the content type
    */
   body(value: any, contentType = 'application/json'): void {
-    if (value instanceof Blob) {
-      this._bodyContentType = value.type;
-    } else {
       this._bodyContentType = contentType;
-    }
     if (this._bodyContentType === 'application/x-www-form-urlencoded' && value !== null && typeof value === 'object') {
       // Handle URL-encoded data
       const pairs: string[][] = [];
