@@ -10,6 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { DashboardModule } from './Into/dashboard/dashboard.module';
 import { UtilsModule } from './utils/utils.module';
+import { EditCandidateComponent } from './Into/candidate/edit-candidate/edit-candidate.component';
+import { CreateCandidateComponent } from './Into/candidate/create-candidate/create-candidate.component';
+import { DesactiveCandidateComponent } from './Into/candidate/desactive-candidate/desactive-candidate.component';
+import { CandidateComponent } from './Into/candidate/candidate/candidate.component';
+import { UpdateCandidateComponent } from './Into/candidate/update-candidate/update-candidate.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,11 @@ import { UtilsModule } from './utils/utils.module';
     LoginComponent,
     RegisterComponent,
     ForggotePasswordComponent,
+    EditCandidateComponent,
+    CreateCandidateComponent,
+    DesactiveCandidateComponent,
+    CandidateComponent,
+    UpdateCandidateComponent,
     
   ],
   imports: [
