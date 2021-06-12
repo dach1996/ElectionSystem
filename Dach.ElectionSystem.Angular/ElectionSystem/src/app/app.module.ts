@@ -16,7 +16,8 @@ import { UtilsModule } from './utils/utils.module';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ForggotePasswordComponent
+    ForggotePasswordComponent,
+    
   ],
   imports: [
     BrowserModule,

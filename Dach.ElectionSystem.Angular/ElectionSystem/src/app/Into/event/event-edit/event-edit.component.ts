@@ -1,6 +1,7 @@
 import { HttpStatusCode } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { PageBase } from 'src/app/models/pageBase';
 import {
   EventBaseResponse,
   EventUpdateRequest,
@@ -13,7 +14,7 @@ import Swal from 'sweetalert2';
   templateUrl: './event-edit.component.html',
   styleUrls: ['./event-edit.component.css', '../../../app.component.css'],
 })
-export class EventEditComponent implements OnInit {
+export class EventEditComponent implements OnInit, PageBase {
   public loading: boolean = false;
   public errorMessage: string = '';
   public idEvent: number | undefined;
@@ -23,6 +24,7 @@ export class EventEditComponent implements OnInit {
     private eventService: EventService,
     private routeActive: ActivatedRoute
   ) {}
+  titlePage: string='EDITAR EVENTO';
   ngOnInit(): void {
     this.loading = true;
     this.routeActive.paramMap.subscribe((paramsMap: ParamMap) => {

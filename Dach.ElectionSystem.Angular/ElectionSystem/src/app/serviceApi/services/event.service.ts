@@ -261,6 +261,7 @@ export class EventService extends BaseService {
     );
     if (params) {
       rb.path('id', params.id, {});
+      rb.body({}, 'application/*+json');
     }
     rb.header('Authorization', localStorage.getItem('token')!);
     return this.http

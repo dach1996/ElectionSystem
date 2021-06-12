@@ -132,11 +132,11 @@
               </g>
             </svg>
           </div>
-          <span class="nav-link-text ms-1">LogOut</span>
+          <span class="nav-link-text ms-1">Registros</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link  " href="../pages/sign-up.html">
+        <a class="nav-link  " routerLink='/login'>
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <title>spaceship</title>
@@ -154,7 +154,7 @@
               </g>
             </svg>
           </div>
-          <span class="nav-link-text ms-1">Sign Up</span>
+          <span class="nav-link-text ms-1">Salir</span>
         </a>
       </li>
     </ul>
@@ -181,9 +181,9 @@
         </div>
         <ul class="navbar-nav  justify-content-end">
           <li class="nav-item d-flex align-items-center">
-            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0" [routerLink]="['user/edit/1']">
               <i class="fa fa-user me-sm-1"></i>
-              <span class="d-sm-inline d-none">{{userCurrent?.firstName!}} {{userCurrent?.firstName!}}</span>
+              <span class="d-sm-inline d-none">{{userCurrent?.firstName!}} {{userCurrent?.firstLastName!}}</span>
             </a>
           </li>
           <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -280,7 +280,31 @@
   <!-- End Navbar -->
   <div class="container-fluid py-4">
    <div>
-     <router-outlet></router-outlet>
+    <div class="container-fluid mb-3">
+      <div class="page-header min-height-100 border-radius-xl" style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
+        <span class="mask bg-gradient-primary opacity-6"></span>
+      </div>
+      <div class="card card-body blur shadow-blur mx-4 mt-n6">
+        <div class="row gx-4">
+          <div class="col-auto">
+            <div class="avatar avatar-xl position-relative">
+              <img src="../assets/img/bruce-mars.jpg" alt="..." class="w-100 border-radius-lg shadow-sm">
+            </div>
+          </div>
+          <div class="col-auto my-auto">
+            <div class="h-100">
+              <h4 class="mb-1">
+                  {{titlePage}}
+              </h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+     <router-outlet (activate)="messageTitleEvent($event)"></router-outlet>
    </div>
     <footer class="footer pt-3">
       <div class="container-fluid">

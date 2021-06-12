@@ -1,0 +1,98 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div [ngClass]="loading? 'opacity-loader' : ' '">
+  <div class="main-content position-relative bg-gray-100">
+ 
+    <div class="container-fluid py-0">
+      <div class="row">
+
+        <div class="col-12 mt-4">
+          <div class="card mb-4">
+            <div class="card-body p-3">
+                  <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                      <form role="form" (ngSubmit)='updateUser()'  method="post" autocomplete="off">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md">
+                              <label>Cédula</label>
+                              <div class="input-group mb-4">
+                                <input class="form-control" aria-label="First Name..." type="text" *ngIf="user" [(ngModel)]="user.dni" name="name">
+                              </div>
+                            </div>
+                            <div class="col-md">
+                            <div class="form-group mb-4">
+                              <label>Username</label>
+                              <input *ngIf="user"  [(ngModel)]="user.userName"  name="descripcion" class="form-control" id="message" rows="4"/>
+                            </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md">
+                              <label>Nombre</label>
+                              <div class="input-group mb-4">
+                                <input class="form-control" aria-label="First Name..." type="text" *ngIf="user" [(ngModel)]="user.firstName" name="primernombre">
+                              </div>
+                            </div>
+                            <div class="col-md">
+                            <div class="form-group mb-4">
+                              <label>Segundo Nombre</label>
+                              <input *ngIf="user"  [(ngModel)]="user.secondName"  name="secondName" class="form-control" id="message" rows="4"/>
+                            </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md">
+                              <label>Apellido</label>
+                              <div class="input-group mb-4">
+                                <input class="form-control" aria-label="First Name..." type="text" *ngIf="user" [(ngModel)]="user.firstLastName" name="firstLastName">
+                              </div>
+                            </div>
+                            <div class="col-md">
+                            <div class="form-group mb-4">
+                              <label>Segundo Apellido</label>
+                              <input *ngIf="user"  [(ngModel)]="user.secondLastName"  name="secondLastName" class="form-control" id="message" rows="4"/>
+                            </div>
+                            </div>
+                          </div>
+                            <div class="">
+                              <div class="row">
+                                  <div class="col-md">
+                                      <label>Fecha de Nacimiento</label>
+                                      <div class="input-group">
+                                      <input *ngIf="user" [ngModel]="user.birthDate | date:'yyyy-MM-dd' "  (ngModelChange)="user.birthDate = $event"  name="dateMaxRegisterCandidate"  type="date" class="form-control" placeholder="" >
+                                </div>
+                                </div>
+                                <div class="col-md">
+                                  <div class="form-group">
+                                    <label>Contraseña</label>
+                                    <input *ngIf="passwordRequest"  [(ngModel)]="passwordRequest.newPassword"  name="password" class="form-control"  rows="4"/>
+                                  </div>
+                                  </div>
+                                
+                                </div>
+                              </div>
+                            </div>
+                  
+                          <div class="row align-items-center">
+                            <div class="col-md-6 text-center">
+                              <button type="submit" class="btn bg-gradient-dark">Actualizar Usuario</button>
+                            </div>
+                            <div class="col-md-6 text-center">
+                              <button type="button" (click)="changePassword()" class="btn bg-gradient-dark text-center">Cambiar Contraseña</button>
+                            </div>
+                          </div>
+                       
+                      </form>
+                    </div> 
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>

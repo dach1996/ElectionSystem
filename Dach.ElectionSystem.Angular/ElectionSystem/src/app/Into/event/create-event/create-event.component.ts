@@ -1,6 +1,7 @@
 import { HttpStatusCode } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PageBase } from 'src/app/models/pageBase';
 import { EventCreateRequest } from 'src/app/serviceApi/models';
 import { EventService } from 'src/app/serviceApi/services';
 import Swal from 'sweetalert2';
@@ -10,9 +11,10 @@ import Swal from 'sweetalert2';
   templateUrl: './create-event.component.html',
   styleUrls: ['./create-event.component.css','../../../app.component.css' ],
 })
-export class EventCreateComponent implements OnInit {
+export class EventCreateComponent implements OnInit, PageBase {
   public loading: boolean = false;
   public errorMessage: string = '';
+  public titlePage: string='CREAR NUEVO EVENTO';
   public eventCreateRequest: EventCreateRequest = {
     category: 'Elección de candidato',
     dateMaxRegisterCandidate: new Date(),
@@ -27,6 +29,7 @@ export class EventCreateComponent implements OnInit {
   };
 
   constructor(private route: Router, private eventService: EventService) {}
+  
   ngOnInit(): void {}
   createEvent(): void {
     this.loading = true;

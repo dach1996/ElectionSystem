@@ -1,6 +1,7 @@
 import { HttpStatusCode } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { PageBase } from 'src/app/models/pageBase';
 import { StorageCache } from 'src/app/service/storageCache.service';
 import {
   EventBaseResponse,
@@ -16,7 +17,7 @@ import Swal from 'sweetalert2';
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.css', '../../../app.component.css'],
 })
-export class EventComponent implements OnInit {
+export class EventComponent implements OnInit, PageBase {
   public loading: boolean = false;
   public errorMessage: string = '';
   public listEvents: Array<EventBaseResponse> = [];
@@ -35,6 +36,7 @@ export class EventComponent implements OnInit {
     private storage: StorageCache,
     private eventService: EventService
   ) {}
+  titlePage: string ='LISTA DE EVENTOS EXISTENTES';
   loadEvents(): void {
     this.loading = true;
     this.eventService.apiEventsGet$Json$Response(this.eventRequest).subscribe(
@@ -62,19 +64,19 @@ export class EventComponent implements OnInit {
     this.eventService
       .apiEventsIdDelete$Json$Response({ id: idEvent })
       .subscribe(
-        res => {
+        (res) => {
           if (res.status == HttpStatusCode.Ok) {
             this.loading = false;
             Swal.fire({
               icon: 'success',
-              text: 'Evento ha sido Delete',
+              text: 'Evento ha sido Eliminado con éxito',
               confirmButtonText: 'Continuar',
             }).then((result) => {
-              this.route.navigate(['/dashboard/event']);
+              this.ngOnInit();
             });
           }
         },
-        err => {
+        (err) => {
           if (err.error.code == 150)
             this.errorMessage = 'Es necesario llenar todos los campos';
           else this.errorMessage = err.error.message;
@@ -83,8 +85,8 @@ export class EventComponent implements OnInit {
             text: 'Error: ' + this.errorMessage,
             confirmButtonColor: '#d33',
           });
-        },
-        () => (this.loading = false)
+          this.loading = false;
+        }
       );
   }
 

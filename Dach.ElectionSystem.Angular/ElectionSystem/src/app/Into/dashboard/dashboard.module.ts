@@ -9,7 +9,7 @@ import { UtilsModule } from 'src/app/utils/utils.module';
 import { EventCreateComponent } from '../event/create-event/create-event.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { EventEditComponent } from '../event/event-edit/event-edit.component';
-import { StorageCache } from '../../service/storageCache.service'
+import { EditUserComponent } from '../user/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { StorageCache } from '../../service/storageCache.service'
     EventCreateComponent,
     EventEditComponent,
     DashboardComponent,
-    
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <app-loading *ngIf="loading"></app-loading>
 
-<div [ngClass]="loading? 'opacity-loader' : ' '">
+<div [ngClass]="loading? 'opacity-loader' : ' '" class="mx-4">
     <a type=" button" class="btn btn-primary btn-lg" [routerLink]="['/dashboard/event/create']">Crear Nuevo Evento</a>
     <div class="row">
         <div class="col-12">
@@ -13,8 +13,8 @@
                 <table class="table align-items-center mb-0">
                 <thead>
                     <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Evento</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nombre</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre Evento</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nombre Creador</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estatus</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha Creación</th>
                     <th class="text-secondary opacity-7"></th>
@@ -28,13 +28,13 @@
                                     <img src="https://{{event.image}}" class="avatar avatar-sm me-3">
                                 </div>
                                 <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">{{event.user?.firstName}} {{event.user?.firstLastName}}</h6>
+                                    <h6 class="mb-0 text-sm">{{event.name}}</h6>
                                     <p class="text-xs text-secondary mb-0">{{event.user?.email}}</p>
                                 </div>
                                 </div>
                             </td>
                             <td>
-                                <p class="text-xs font-weight-bold mb-0">{{event.name}}</p>
+                                <p class="text-xs font-weight-bold mb-0">{{event.user?.firstName}} {{event.user?.firstLastName}}</p>
                                 <p class="text-xs text-secondary mb-0">{{event.category}}</p>
                             </td>
                             <td class="align-middle text-center text-sm">
@@ -51,7 +51,7 @@
                                 <a [routerLink]="['/dashboard/event/edit', event.id]"  [ngClass]="event.user.id != userCurrent?.id?'opacity-loader':''" class="avatar avatar-sm rounded-circle mr-1">
                                     <img alt="Image placeholder" src="https://image.freepik.com/vector-gratis/icono-lapiz-escribir-diseno_24877-44704.jpg">
                                 </a>
-                                <a [routerLink]="['/dashboard/event/edit', event.id]"  [ngClass]="event.user.id != userCurrent?.id?'opacity-loader':''"   (click)="desactiveEvent(event?.id!)" class="avatar avatar-sm rounded-circle">
+                                <a  [ngClass]="event.user.id != userCurrent?.id?'opacity-loader':''"   (click)="desactiveEvent(event?.id!)" class="avatar avatar-sm rounded-circle">
                                     <img alt="Image placeholder" src="https://static.vecteezy.com/system/resources/previews/000/630/479/non_2x/vector-trash-can-icon-symbol-illustration.jpg">
                                 </a>
                                 
