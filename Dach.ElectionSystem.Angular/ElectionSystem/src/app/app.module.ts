@@ -16,6 +16,7 @@ import { DesactiveCandidateComponent } from './Into/candidate/desactive-candidat
 import { CandidateComponent } from './Into/candidate/candidate/candidate.component';
 import { UpdateCandidateComponent } from './Into/candidate/update-candidate/update-candidate.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { ListUserComponent } from './Into/user/list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CreateCandidateComponent,
     DesactiveCandidateComponent,
     CandidateComponent,
-    UpdateCandidateComponent
+    UpdateCandidateComponent,
+    //ListUserComponent
     
   ],
   imports: [

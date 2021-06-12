@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EventEditComponent } from '../event/event-edit/event-edit.component';
 import { EditUserComponent } from '../user/edit-user/edit-user.component';
 import { EventModalSelectComponent } from '../event/event-modal-select/event-modal-select.component';
+import { ListUserComponent } from '../user/list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EventModalSelectComponent } from '../event/event-modal-select/event-mod
     EventEditComponent,
     DashboardComponent,
     EditUserComponent,
-    EventModalSelectComponent
+    EventModalSelectComponent,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,

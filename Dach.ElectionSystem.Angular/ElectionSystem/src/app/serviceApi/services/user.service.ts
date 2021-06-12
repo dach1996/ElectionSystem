@@ -128,6 +128,47 @@ export class UserService extends BaseService {
       );
   }
 
+  apiUsersGetAll$Json$Response(params: {
+  
+    /**
+     * Paginación
+     */
+    Offset: number;
+
+    /**
+     * Cantidad de Registros
+     */
+    Limit: number;
+
+  }): Observable<StrictHttpResponse<UserGetResponseGenericResponse>> {
+    const rb = new RequestBuilder(
+      this.rootUrl,
+      UserService.ApiUsersGetPath,
+      'get'
+    );
+    if (params) {
+
+      rb.query('Offset', params.Offset, {});
+      rb.query('OrderBy', 'Desc', {});
+      rb.query('Limit', params.Limit, {});
+
+    }
+    rb.header('Authorization', localStorage.getItem('token')!);
+    return this.http
+      .request(
+        rb.build({
+          responseType: 'json',
+          accept: 'text/json',
+        })
+      )
+      .pipe(
+        filter((r: any) => r instanceof HttpResponse),
+        map((r: HttpResponse<any>) => {
+          return r as StrictHttpResponse<UserGetResponseGenericResponse>;
+        })
+      );
+  }
+
   /**
    * Path part for operation apiUsersPut
    */
