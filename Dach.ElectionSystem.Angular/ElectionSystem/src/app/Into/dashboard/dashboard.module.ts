@@ -13,6 +13,7 @@ import { EditUserComponent } from '../user/edit-user/edit-user.component';
 import { EventModalSelectComponent } from '../event/event-modal-select/event-modal-select.component';
 import { EventManagintComponent } from '../event/managin-event/managin-event/managin-event.component';
 import { EventDetailsComponent } from '../event/managin-event/event-details/event-details.component';
+import { ListUserComponent } from '../user/list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { EventDetailsComponent } from '../event/managin-event/event-details/even
     EventModalSelectComponent,
     EventManagintComponent,
     EventDetailsComponent
+    //ListUserComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { EventDetailsComponent } from '../event/managin-event/event-details/even
 import { EventParticipantsComponent } from '../event/managin-event/event-participants/event-participants.component';
 import { EventManagintComponent } from '../event/managin-event/managin-event/managin-event.component';
 import { EditUserComponent } from '../user/edit-user/edit-user.component';
+import { ListUserComponent } from '../user/list-user/list-user.component';
 import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
         {path:'candidate', component:EventCandidatesComponent},
         {path:'participant', component:EventParticipantsComponent}
       ]},
+      {  path: 'list',    component: ListUserComponent },
     ],
   },
 ];
