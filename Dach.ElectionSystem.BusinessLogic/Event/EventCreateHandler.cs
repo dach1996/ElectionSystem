@@ -68,6 +68,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     var newEvent = _mapper.Map<Models.Persitence.Event>(request);
                     //Registramos al usuario como creador del evento
                     newEvent.UserCreator = userCurrent;
+                    newEvent.Image=null;
                     //Registramos al usuario como Administrador
                     newEvent.ListEventAdministrator = new List<Models.Persitence.EventAdministrator>()
                         {

@@ -93,7 +93,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         {
             eventCurrent.Category = request.Category;
             eventCurrent.Description = request.Description;
-            eventCurrent.Image = request.Description;
             eventCurrent.MaxPeople = request.MaxPeople;
             eventCurrent.Name = request.Name;
             eventCurrent.NumberMaxCandidate = request.NumberMaxCandidate;
