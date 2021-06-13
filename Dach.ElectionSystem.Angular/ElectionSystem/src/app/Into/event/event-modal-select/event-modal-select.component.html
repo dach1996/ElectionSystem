@@ -1,20 +1,73 @@
 
-<app-loading *ngIf="loading"></app-loading>
-<div [ngClass]="loading? 'opacity-loader' : ' '">
-  <div class="modal-content">
-    <div class="modal-header justify-content-center">
-      <h5 class="modal-title" id="exampleModalLabel">Evento: {{event?.name}}</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
+  <div class="modal-content" >
+    <div >
+
     <div class="modal-body">
-      Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out.
-      <br><br>
-      It’s like a little kid, a little boy, looking at colors, and no one told him what colors are good, before somebody tells you you shouldn’t like pink because that’s for girls, or you’d instantly become a gay two-year-old.
-    </div>
-    <div class="modal-footer justify-content-between">
-      <button type="button" class="btn bg-gradient-dark"  (click)="activeModal.close('Close click')"  data-bs-dismiss="modal">Close</button>
-      <button type="button" class="btn bg-gradient-primary">Save changes</button>
+      <div class="card">
+        <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
+          <a href="javascript:;" class="d-block text-center">
+            <img src="https://{{event?.image}}" class="img-fluid border-radius-lg">
+          </a>
+        </div>
+      
+        <div class="card-body pt-2">
+          <span class="text-gradient text-primary text-uppercase text-xs font-weight-bold my-2">{{event?.category}}</span>
+          <a href="javascript:;" class="card-title h5 d-block text-darker">
+            {{event?.name}}
+          </a>
+          <p class="card-description mb-4">
+            {{event?.description}}
+          </p>
+          <div class="card  card-body border card-plain border-radius mb-1">
+          <span class="text-gradient text-primary text-uppercase text-xs font-weight-bold ">Creador</span>
+          <div class="author align-items-center">
+            <img src="../../../../assets/img/team-3.jpg" alt="..." class="avatar shadow">
+            <div class="name ps-3">
+              <span>{{event?.user?.firstName}} {{event?.user?.firstLastName}}</span>
+              <div class="stats">
+                <small>{{event?.user?.birthDate | date:'dd/MM/yyyy'}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card  card-body border card-plain border-radius">
+          <span class="text-gradient text-primary text-uppercase text-xs font-weight-bold">Candidatos</span>
+          <div class="row text-center">
+            <div class="col-12">
+              <div class="avatar-group">
+                <a href="javascript:;" class="avatar avatar-lg rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                  <img alt="Image placeholder" src="./assets/img/team-1.jpg">
+                </a>
+                <a href="javascript:;" class="avatar avatar-lg rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                  <img alt="Image placeholder" src="./assets/img/team-2.jpg">
+                </a>
+                <a href="javascript:;" class="avatar avatar-lg rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
+                  <img alt="Image placeholder" src="./assets/img/team-3.jpg">
+                </a>
+                <a href="javascript:;" class="avatar avatar-lg rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                  <img alt="Image placeholder" src="./assets/img/team-4.jpg">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>   </div>
+    <div class="modal-footer">
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-start">
+            <button *ngIf="hasRelationShip" type="button" (click)="administratorEvent(event?.id!)"   class="btn bg-gradient-info">Ingresar</button>
+          </div>
+        </div>
+        <div class="col">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn bg-gradient-danger "  (click)="activeModal.close('Close click')"  data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
-</div>
+  </div>
+
   

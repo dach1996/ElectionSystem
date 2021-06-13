@@ -345,7 +345,7 @@ export class EventService extends BaseService {
     const rb = new RequestBuilder(
       this.rootUrl,
       EventService.ApiEventsVerifyRelationship,
-      'get'
+      'post'
     );
     if (params) {
       rb.body(params.body, 'application/*+json');

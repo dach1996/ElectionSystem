@@ -28,7 +28,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DesactiveCandidateComponent,
     CandidateComponent,
     UpdateCandidateComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +37,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UtilsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
   ],
   exports:[],
   providers: [],

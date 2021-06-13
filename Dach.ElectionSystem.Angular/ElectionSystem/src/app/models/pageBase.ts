@@ -8,4 +8,8 @@ export declare interface PageBase {
    * Parámetro título de página
    */
   titlePage: string;
+  /**
+   * Mensaje de error
+   */
+  errorMessage: string;
 }

@@ -27,7 +27,12 @@ export class ForggotePasswordComponent implements OnInit {
         (res) => {
           if (res.status == HttpStatusCode.Ok) {
             this.loading = false;
-            this.route.navigate(['/login']);
+            Swal.fire({
+              icon: 'success',
+              text: 'Ha sido enviado a tu correo una contraseña temporal',
+              confirmButtonText: 'Continuar',
+            }).then(()=>
+            this.route.navigate(['/login']));
           }
         },
         (err) => {

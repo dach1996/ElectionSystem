@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { EventComponent } from '../event/event/event.component';
@@ -11,6 +11,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EventEditComponent } from '../event/event-edit/event-edit.component';
 import { EditUserComponent } from '../user/edit-user/edit-user.component';
 import { EventModalSelectComponent } from '../event/event-modal-select/event-modal-select.component';
+import { EventManagintComponent } from '../event/managin-event/managin-event/managin-event.component';
+import { EventDetailsComponent } from '../event/managin-event/event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -19,16 +21,18 @@ import { EventModalSelectComponent } from '../event/event-modal-select/event-mod
     EventEditComponent,
     DashboardComponent,
     EditUserComponent,
-    EventModalSelectComponent
+    EventModalSelectComponent,
+    EventManagintComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule,
- 
     CommonModule,
     DashboardRoutingModule,
     HttpClientModule,
     FormsModule,
-    UtilsModule
-  ]
+    UtilsModule,
+  ],
+  providers:[DatePipe]
 })
 export class DashboardModule { }

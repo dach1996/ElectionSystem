@@ -5,6 +5,8 @@ import { PageBase } from 'src/app/models/pageBase';
 import { StorageCache } from 'src/app/service/storageCache.service';
 import { EventBaseResponse } from 'src/app/serviceApi/models';
 import { EventService } from 'src/app/serviceApi/services';
+import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-event-modal-select',
@@ -17,11 +19,18 @@ export class EventModalSelectComponent implements OnInit, PageBase {
   constructor(
     public activeModal: NgbActiveModal,
     private eventService: EventService,
-    private storage: StorageCache
-  ) {}
+    private storage: StorageCache,
+    public datepipe: DatePipe,
+    private route : Router
+  ) {
+
+    
+  }
+  errorMessage: string='';
   loading: boolean = false;
   titlePage: string = '';
   ngOnInit(): void {
+    
     this.loading = true;
     this.eventService
       .apiEventsVerifyRelationShip$Json$Response({
@@ -35,6 +44,7 @@ export class EventModalSelectComponent implements OnInit, PageBase {
           if (res.status == HttpStatusCode.Ok) {
             this.loading = false;
             this.hasRelationShip = true;
+            this.datepipe.transform(this.event?.user?.birthDate, 'dd/MM/yyyy');
           }
         },
         (err) => {
@@ -42,5 +52,9 @@ export class EventModalSelectComponent implements OnInit, PageBase {
           this.hasRelationShip = false;
         }
       );
+  }
+  administratorEvent(idEvent:number):void{
+    this.activeModal.close();
+    this.route.navigate(['/dashboard/event/administrator/'+idEvent]);
   }
 }
