@@ -24,8 +24,8 @@ import { ListUserComponent } from '../user/list-user/list-user.component';
     EditUserComponent,
     EventModalSelectComponent,
     EventManagintComponent,
-    EventDetailsComponent
-    //ListUserComponent
+    EventDetailsComponent,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,
