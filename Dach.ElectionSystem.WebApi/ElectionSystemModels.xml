@@ -211,6 +211,12 @@
             Email Usuario
             </summary>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.UserBase.Age">
+            <summary>
+            Edad de Usuario
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Base.VoteBase">
             <summary>
             Clase base para Votos

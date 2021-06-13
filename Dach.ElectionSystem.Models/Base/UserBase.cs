@@ -23,7 +23,7 @@ namespace Dach.ElectionSystem.Models.Base
         /// <summary>
         /// Contraseña Usuario
         /// </summary>
-     
+
         public virtual string Password { get; set; }
 
         /// <summary>
@@ -56,7 +56,22 @@ namespace Dach.ElectionSystem.Models.Base
         /// <summary>
         /// Email Usuario
         /// </summary>
- 
+
         public virtual string Email { get; set; }
+
+        /// <summary>
+        /// Edad de Usuario
+        /// </summary>
+        /// <value></value>
+        public int Age
+        {
+            get
+            {
+                int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
+                int dob = int.Parse(BirthDate?.ToString("yyyyMMdd"));
+                int age = (now - dob) / 10000;
+                return age;
+            }
+        }
     }
 }
