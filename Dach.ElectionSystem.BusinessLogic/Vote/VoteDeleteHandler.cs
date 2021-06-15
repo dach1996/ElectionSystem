@@ -43,7 +43,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     //Validamos que exista el Evento
                     _ = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Validamos que exista el voto
-                    var voteCurrent = await _validateIntegrity.ValidateVote(request.IdEvent, request.UserContext.Id);
+                    var voteCurrent = await _validateIntegrity.ValidateVote(request.IdEvent, request.IdUser);
                     //Valida que el usuario que envía el request sea administrador del evento
                     await _validateIntegrity.IsAdministratorEvent(request.IdUser, request.IdEvent);
                     //Valida que el participante no haya realizaco su voto
