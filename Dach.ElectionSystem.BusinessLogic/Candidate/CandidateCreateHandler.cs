@@ -79,7 +79,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.NewCandidate);
                     bool isSend = NewMethod(eventCurrent, userCurrent, templateForggotenPassword);
                     if (!isSend)
-                        _logger.LogWarning("No se pudo Envíar correo");
+                         _logger.LogWarning($"No se pudo Envíar correo: {userCurrent.Email}");
                     var response = _mapper.Map<CandidateCreateResponse>(newCandidate);
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return response;

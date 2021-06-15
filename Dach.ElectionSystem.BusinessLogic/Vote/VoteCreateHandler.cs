@@ -10,6 +10,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Dach.ElectionSystem.Repository.UnitOfWork;
+using Dach.ElectionSystem.Models.Mail;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 namespace Dach.ElectionSystem.BusinessLogic.Vote
 {
@@ -19,18 +22,24 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
         private readonly ILogger<VoteCreateHandler> _logger;
+        private readonly Services.Notification.INotification _notification;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
+         private readonly IConfiguration _configuration;
 
         public VoteCreateHandler(
         IMapper mapper,
         ValidateIntegrity validateIntegrity,
         IElectionUnitOfWork electionUnitOfWork,
-        ILogger<VoteCreateHandler> logger)
+        ILogger<VoteCreateHandler> logger,
+        Services.Notification.INotification notification,
+        IConfiguration configuration)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
             _electionUnitOfWork = electionUnitOfWork;
             _logger = logger;
+            _notification = notification;
+            _configuration = configuration;
         }
         #endregion
         #region Handler
@@ -43,7 +52,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     //Iniciamos transacción
                     await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
                     //Validamos que exista el usuario a registrar
-                    await _validateIntegrity.ValidateUser(request.IdUser);
+                    var userCurrent = await _validateIntegrity.ValidateUser(request.IdUser);
                     //Validamos que exista el Evento
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Validar la fecha máxima para registrar participantes
@@ -76,6 +85,26 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     var isCreate = await _electionUnitOfWork.GetVoteRepository().CreateAsync(newVote);
                     if (!isCreate)
                         throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                    //Enviamos correos
+                    var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
+                    var templateSendEvent = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.NewParticipant);
+                    var isSend = _notification.SendMail(
+                        new MailModel()
+                        {
+                            Subject = templateSendEvent.TemplateName,
+                            To = new List<string>(){userCurrent.Email},
+                            Template = templateSendEvent.TemplateKey,
+                            Params = new
+                            {
+                                EventName = eventCurrent.Name,
+                                LinkRegister = _configuration.GetSection("LinkToRegister").Value,
+                                CodeRegister = eventCurrent.CodeEvent,
+                                DateStartVote = eventCurrent.DateMinVote.ToString("dd/MM/yyyy")
+                            }
+                        }
+                    );
+                    if (!isSend)
+                        _logger.LogWarning($"No se pudo Envíar correo: {userCurrent.Email}");
                     //Guardamos los cambios
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return _mapper.Map<VoteCreateResponse>(newVote);

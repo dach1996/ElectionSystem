@@ -115,7 +115,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                         }
                     );
                     if (!isSend)
-                        _logger.LogWarning("No se pudo Envíar correo");
+                        _logger.LogWarning($"No se pudo Envíar correo");
 
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     //Devolver Respuesta

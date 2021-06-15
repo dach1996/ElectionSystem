@@ -72,7 +72,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.UserWelcome);
                     bool isSend = SendEmail(request, passwordOriginal, userNew, templateForggotenPassword);
                     if (!isSend)
-                        _logger.LogWarning("No se pudo Envíar correo");
+                         _logger.LogWarning($"No se pudo Envíar correo: {userNew.Email}");
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return _mapper.Map<UserCreateResponse>(userNew);
                 }
