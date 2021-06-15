@@ -16,6 +16,7 @@ import { EventDetailsComponent } from '../event/managin-event/event-details/even
 import { ListUserComponent } from '../user/list-user/list-user.component';
 import { EventCandidatesComponent } from '../event/managin-event/event-candidates/event-candidates.component';
 import { EventParticipantsComponent } from '../event/managin-event/event-participants/event-participants.component';
+import { EventAdministratorModalComponent } from '../event/managin-event/event-administrator-modal/event-administrator-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EventParticipantsComponent } from '../event/managin-event/event-partici
     EventDetailsComponent,
     EventCandidatesComponent,
     EventParticipantsComponent,
-    ListUserComponent
+    ListUserComponent,
+    EventAdministratorModalComponent
   ],
   imports: [
     BrowserModule,

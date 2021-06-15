@@ -1,6 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
+import { UserBaseResponse } from "./user-base-response";
+
 /**
  * Clase base para respuestas
  */
@@ -40,4 +42,9 @@ export interface VoteBaseResponse {
    * Estado de Voteo
    */
   isActive?: boolean;
+
+  /**
+   * Usuario
+   */
+  user?: UserBaseResponse;
 }

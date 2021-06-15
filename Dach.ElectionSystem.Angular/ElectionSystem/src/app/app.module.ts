@@ -16,6 +16,7 @@ import { DesactiveCandidateComponent } from './Into/candidate/desactive-candidat
 import { CandidateComponent } from './Into/candidate/candidate/candidate.component';
 import { UpdateCandidateComponent } from './Into/candidate/update-candidate/update-candidate.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EventAdministratorModalComponent } from './Into/event/managin-event/event-administrator-modal/event-administrator-modal.component';
 // import { ListUserComponent } from './Into/user/list-user/list-user.component';
 
 @NgModule({

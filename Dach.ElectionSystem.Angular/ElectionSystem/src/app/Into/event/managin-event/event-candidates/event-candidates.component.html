@@ -1,7 +1,7 @@
 <app-loading *ngIf="loading"></app-loading>
 
 <div [ngClass]="loading? 'opacity-loader' : ' '" class="mx-4">
-    
+    <button (click)="openEventAdministratorModal()" class="btn btn-info">Asignar Nueva Candidato</button>
     <div class="row">
         <div class="col-12">
         <div class=" mb-4">

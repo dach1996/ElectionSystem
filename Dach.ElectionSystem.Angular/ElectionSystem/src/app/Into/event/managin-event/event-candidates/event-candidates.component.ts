@@ -1,31 +1,38 @@
 import { HttpStatusCode } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PageBase } from 'src/app/models/pageBase';
 import { CandidateBaseResponse } from 'src/app/serviceApi/models';
 import { CandidateService } from 'src/app/serviceApi/services';
 import Swal from 'sweetalert2';
+import { EventAdministratorModalComponent } from '../event-administrator-modal/event-administrator-modal.component';
 
 @Component({
   selector: 'app-event-candidates',
   templateUrl: './event-candidates.component.html',
-  styleUrls: ['./event-candidates.component.css'],
+  styleUrls: [
+    './event-candidates.component.css',
+    '../../../../app.component.css',
+  ],
 })
 export class EventCandidatesComponent implements OnInit, PageBase {
   loading: boolean = false;
   titlePage: string = '';
   errorMessage: string = '';
+  idEvent?: number;
   public listCandidate?: Array<CandidateBaseResponse>;
   constructor(
     private candidateService: CandidateService,
-    private activeRouter: ActivatedRoute
+    private activeRouter: ActivatedRoute,
+    private modalService: NgbModal
   ) {}
   ngOnInit(): void {
     this.loading = true;
     this.activeRouter.parent?.params.subscribe((paramsMap) => {
-      let idEvent = Number(paramsMap.idEvent);
+      this.idEvent = Number(paramsMap.idEvent);
       this.candidateService
-        .apiEventsIdEventCandidatesGet$Json$Response({ idEvent: idEvent })
+        .apiEventsIdEventCandidatesGet$Json$Response({ idEvent: this.idEvent })
         .subscribe(
           (res) => {
             if (res.status == HttpStatusCode.Ok) {
@@ -45,6 +52,19 @@ export class EventCandidatesComponent implements OnInit, PageBase {
             });
           }
         );
+    });
+  }
+
+  openEventAdministratorModal(): void {
+    let modal = this.modalService.open(EventAdministratorModalComponent, {
+      size: 'lg',
+      centered: true,
+    });
+    modal.componentInstance.titlePage = 'CANDIDATO';
+    modal.componentInstance.idEvent = this.idEvent;
+    modal.componentInstance.messageEvent.subscribe(() => {
+      modal.close();
+      this.ngOnInit();
     });
   }
 }

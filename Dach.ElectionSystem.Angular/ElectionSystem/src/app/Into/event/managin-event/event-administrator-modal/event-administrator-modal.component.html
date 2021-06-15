@@ -1,0 +1,45 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div [ngClass]="loading? 'opacity-loader' : ' '" class="m-4">
+    <div class="row">
+        <div class="col-12">
+        <div class=" card ">
+            <div class="card-header border">
+              ASIGNAR NUEVO {{titlePage}} AL EVENTO
+            </div>
+            <div class=" border card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                <thead>
+                    <tr class="text-center">
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Nombre</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Correo</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Usuario</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 "></th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr *ngFor="let user of listUser" class="text-center ">
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">{{user.firstName}} {{user.firstLastName}}</p>
+                            </td>
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">{{user.email}} </p>
+                            </td>
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">{{user.userName}}</p>
+                            </td>
+                            <td class="align-middle">
+                                <button (click)="assignUserEvent(user.id!)" class="avatar avatar-sm rounded-circle">
+                                    <img alt="Image placeholder" src="https://image.flaticon.com/icons/png/512/1692/1692860.png">
+                                </button>   
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

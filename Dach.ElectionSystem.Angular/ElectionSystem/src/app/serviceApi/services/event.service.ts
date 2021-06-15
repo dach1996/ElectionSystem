@@ -9,19 +9,15 @@ import { RequestBuilder } from '../request-builder';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
-import { Candidate } from '../models/candidate';
-import { EventAdministrator } from '../models/event-administrator';
 import { EventCreateRequest } from '../models/event-create-request';
 import { EventCreateResponse } from '../models/event-create-response';
 import { EventDeleteResponse } from '../models/event-delete-response';
 import { EventGetResponse } from '../models/event-get-response';
 import { EventGetResultResponse } from '../models/event-get-result-response';
-import { EventNumber } from '../models/event-number';
 import { EventUpdateRequest } from '../models/event-update-request';
 import { EventUpdateResponse } from '../models/event-update-response';
 import { OrderBy } from '../models/order-by';
 import { TypeFilterEvent } from '../models/type-filter-event';
-import { Unit } from '../models/unit';
 import { ResponseGeneric } from '../models/generic-response';
 import { EventVerifyRelationShip } from '../models/event-verify-relationship';
 
