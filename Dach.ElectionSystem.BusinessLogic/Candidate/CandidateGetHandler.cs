@@ -37,10 +37,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                 _ = await _validateIntegrity.HasRegisterWithEvent(request.UserContext.Id,request.IdEvent);
                 List<Models.Persitence.Candidate> listCandidates;
                 if (request.IdCandidate != null)
-                    listCandidates = (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.Id == request.IdCandidate && c.IdEvent == request.IdEvent && c.IsActive,
+                    listCandidates = (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.Id == request.IdCandidate && c.IdEvent == request.IdEvent ,
                     includeProperties: i => $"{nameof(i.ListCandidateImage)},{nameof(i.User)}")).ToList();
                 else
-                    listCandidates = (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.IdEvent == request.IdEvent && c.IsActive,
+                    listCandidates = (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.IdEvent == request.IdEvent,
                     includeProperties: i => $"{nameof(i.ListCandidateImage)},{nameof(i.User)}")).ToList();
                 var totalCandidate = listCandidates.Count;
                 listCandidates = listCandidates.OrderByDescending(e => e.Id)

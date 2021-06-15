@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Dach.ElectionSystem.Models.Request.Vote;
 using Dach.ElectionSystem.Models.Response.Vote;
-using Dach.ElectionSystem.Repository.Interfaces;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
@@ -36,7 +35,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
             using (_electionUnitOfWork)
             {
                 _=await _validateIntegrity.HasRegisterWithEvent(request.UserContext.Id, request.IdEvent);
-                var votes = (await _electionUnitOfWork.GetVoteRepository().GetAsync(votes => votes.IdEvent == request.IdEvent)).ToList();
+                var votes = (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(votes => votes.IdEvent == request.IdEvent, includeProperties: v=> $"{nameof(v.User)}" )).ToList();
                 var NumberParticipantsWithOutVote = votes.Count(p => !p.HasVote && p.IsActive);
                 var NumberParticipantsWithVote = votes.Count(p => p.HasVote && p.IsActive);
                 var NumberParticipantsActive = votes.Count(p => p.IsActive);

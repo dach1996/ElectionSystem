@@ -1,4 +1,5 @@
 using Dach.ElectionSystem.Models.Base;
+using Dach.ElectionSystem.Models.Response.User;
 
 namespace Dach.ElectionSystem.Models.Response.Vote
 {
@@ -36,5 +37,11 @@ namespace Dach.ElectionSystem.Models.Response.Vote
         /// </summary>
         /// <value></value>
         public int IdUser { get; set; }
+
+        /// <summary>
+        /// Usuario
+        /// </summary>
+        /// <value></value>
+        public UserBaseResponse User { get; set; }
     }
 }

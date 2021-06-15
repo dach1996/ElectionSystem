@@ -56,9 +56,12 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     if (emailExist.Any())
                         throw new CustomException(Models.Enums.MessageCodesApi.EmailRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
                     var userNew = _mapper.Map<Models.Persitence.User>(request);
+                    var numberEventsString = _configuration.GetSection("NumberEventsToCreate").Value;
+                    _ = int.TryParse(numberEventsString, out var numberEvents);
                     userNew.EventNumber = new Models.Persitence.EventNumber()
                     {
-                        User = userNew
+                        User = userNew,
+                        NumberMaxEvent = numberEvents
                     };
                     userNew.IsActive = true;
                     var isRegister = await _electionUnitOfWork.GetUserRepository().CreateAsync(userNew);

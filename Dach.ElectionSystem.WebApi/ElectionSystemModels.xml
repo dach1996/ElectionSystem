@@ -2602,6 +2602,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Vote.VoteBaseResponse.User">
+            <summary>
+            Usuario
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Response.Vote.VoteCreateEmailResponse">
             <summary>
             Clase VoteCreateEmailResponse
