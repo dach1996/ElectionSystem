@@ -45,7 +45,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     //Validamos que exista el voto
                     var voteCurrent = await _validateIntegrity.ValidateVote(request.IdEvent, request.IdUser);
                     //Valida que el usuario que envía el request sea administrador del evento
-                    await _validateIntegrity.IsAdministratorEvent(request.IdUser, request.IdEvent);
+                    await _validateIntegrity.IsAdministratorEvent(request.UserContext.Id, request.IdEvent);
                     //Valida que el participante no haya realizaco su voto
                     if (voteCurrent.HasVote)
                         throw new CustomException(Models.Enums.MessageCodesApi.UserHasVote, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest,"No se puede desactivar un usuario que ya participó");

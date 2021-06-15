@@ -140,7 +140,7 @@ namespace Dach.ElectionSystem.Services.Data
             var eventCurrent = events.FirstOrDefault();
             var isAdministrator = eventCurrent.ListEventAdministrator.Any(administrator => administrator.IdUser == idUser);
             if (!isAdministrator)
-                throw new CustomException(MessageCodesApi.ResourceNotFound, ResponseType.Error, HttpStatusCode.NotFound, $"El usuario con  ID: {idUser} no posee ningún registro en el evento con ID: {idEvent}");
+                throw new CustomException(MessageCodesApi.UserIsnotAdministratorEvent, ResponseType.Error, HttpStatusCode.NotFound, $"El usuario con  ID: {idUser} no es administrador en el evento con ID: {idEvent}");
         }
         #endregion
     }
