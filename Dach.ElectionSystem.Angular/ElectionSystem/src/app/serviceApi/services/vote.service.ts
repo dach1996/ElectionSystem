@@ -90,7 +90,7 @@ export class VoteService extends BaseService {
   apiVotesEventsIdEventUsersIdUserDelete$Json$Response(params: {
     idEvent: number;
     idUser: number;
-  }): Observable<StrictHttpResponse<VoteDeleteResponse>> {
+  }): Observable<StrictHttpResponse<ResponseGeneric<VoteDeleteResponse>>> {
 
     const rb = new RequestBuilder(this.rootUrl, VoteService.ApiVotesEventsIdEventUsersIdUserDeletePath, 'delete');
     if (params) {
@@ -104,7 +104,7 @@ export class VoteService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<VoteDeleteResponse>;
+        return r as StrictHttpResponse<ResponseGeneric<VoteDeleteResponse>>
       })
     );
   }

@@ -233,7 +233,7 @@ export class CandidateService extends BaseService {
   apiEventsIdEventCandidatesIdCandidateDelete$Json$Response(params: {
     idEvent: number;
     idCandidate: number;
-  }): Observable<StrictHttpResponse<CandidateDesactiveResponse>> {
+  }): Observable<StrictHttpResponse<ResponseGeneric<CandidateDesactiveResponse>>> {
 
     const rb = new RequestBuilder(this.rootUrl, CandidateService.ApiEventsIdEventCandidatesIdCandidateDeletePath, 'delete');
     if (params) {
@@ -247,7 +247,7 @@ export class CandidateService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<CandidateDesactiveResponse>;
+        return r as StrictHttpResponse<ResponseGeneric<CandidateDesactiveResponse>>;
       })
     );
   }

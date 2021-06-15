@@ -54,6 +54,39 @@ export class EventCandidatesComponent implements OnInit, PageBase {
         );
     });
   }
+  desactiveCandidate(idCandidate: number): void {
+    this.candidateService
+      .apiEventsIdEventCandidatesIdCandidateDelete$Json$Response({
+        idCandidate: idCandidate,
+        idEvent: this.idEvent!,
+      })
+      .subscribe(
+        (res) => {
+          if (res.status == HttpStatusCode.Ok) {
+            this.loading = false;
+            Swal.fire({
+              icon: 'success',
+              text: 'El Candidato ha sido: '+ (res.body.content?.isActive?'Activado':'Desactivado'),
+              confirmButtonText: 'Continuar',
+            }).then(() => {
+              this.ngOnInit();
+            });
+          }
+        },
+        (err) => {
+          this.loading = false;
+          if (err.error.code == 131)
+            this.errorMessage =
+              'El usuario seleccionado ya es Participante en el evento';
+          else this.errorMessage = err.error.message;
+          Swal.fire({
+            icon: 'error',
+            text: this.errorMessage,
+            confirmButtonColor: '#d33',
+          });
+        }
+      );
+  }
 
   openEventAdministratorModal(): void {
     let modal = this.modalService.open(EventAdministratorModalComponent, {
