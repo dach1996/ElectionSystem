@@ -19,5 +19,6 @@ namespace Dach.ElectionSystem.Models.Auth
         /// </summary>
         [Required]
         public string Password { get; set; }
+                public object prueba { get; set; }
     }
 }

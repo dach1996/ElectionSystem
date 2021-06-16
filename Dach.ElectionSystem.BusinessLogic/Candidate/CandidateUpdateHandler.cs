@@ -7,6 +7,7 @@ using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -54,7 +55,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     if (request.UserContext.Id != candidateCurrent.IdUser)
                         throw new CustomException(Models.Enums.MessageCodesApi.UserIsNotCandidate, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway);
                     //Actualizamos los datos del modelo
-                    UpdateDataCandidate(request, candidateCurrent);
+                    var additionalInformation = JsonSerializer.Serialize(request.AdditionalInformation); 
+                    candidateCurrent.AdditionalInformation = additionalInformation;
                     //Actualiza en la base de datos
                     var isUpdate = await _electionUnitOfWork.GetCandidateRepository().Update(candidateCurrent);
                     //Valida si se pudo guardar
@@ -75,20 +77,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
             }
 
         }
-        /// <summary>
-        /// Actualiza la informaicón de la candidata
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="candidateCurrent"></param>
-        private static void UpdateDataCandidate(CandidateUpdateRequest request, Models.Persitence.Candidate candidateCurrent)
-        {
-            candidateCurrent.Age = request.Age.Value;
-            candidateCurrent.Details = request.Details;
-            candidateCurrent.PostionsWorks = request.PostionsWorks;
-            candidateCurrent.Role = request.Role;
-            candidateCurrent.ProposalDetails = request.ProposalDetails;
-            candidateCurrent.Video = request.Video;
-        }
+
         #endregion
 
     }

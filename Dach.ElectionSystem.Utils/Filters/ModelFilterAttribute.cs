@@ -59,9 +59,16 @@ namespace Dach.ElectionSystem.Utils.Filters
         /// <param name="logRequestModel"></param>
         private void LoggerRequest(LogRequestModel logRequestModel)
         {
-            var jsonRequest = JsonConvert.SerializeObject(logRequestModel.ModelToLog,
+            try
+            {
+                 var jsonRequest = JsonConvert.SerializeObject(logRequestModel.ModelToLog,
              new JsonSerializerSettings { ContractResolver = new JsonPropertiesResolver()});
             _logger.Log(LogLevel.Warning, "{LogMessage}: {@Model}", logRequestModel.LogMessage, jsonRequest);
+            }
+            catch (System.Exception)
+            {
+                _logger.Log(LogLevel.Warning, "{LogMessage}: {@Model}");
+            }  
         }
     }
 

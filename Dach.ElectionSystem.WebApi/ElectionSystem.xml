@@ -74,11 +74,11 @@
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.GetByIdHandler(Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest,System.Int32,System.Nullable{System.Int32})">
             <summary>
-            Consultar candidato de evento por Id
+            Consultar candidato de evento por id de usuario
             </summary>
             <param name="request"></param>
             <param name="idEvent"></param>
-            <param name="idCandidate"></param>
+            <param name="idUser"></param>
             <returns></returns>
         </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.CandidateController.GetByEventHandler(Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest,System.Int32)">

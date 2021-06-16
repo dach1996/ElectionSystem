@@ -9,39 +9,9 @@
             Clase base para candidato
             </summary>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Video">
+        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.AdditionalInformation">
             <summary>
-            Video del Candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Details">
-            <summary>
-            Detalles de Candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Role">
-            <summary>
-            Rol de candidato en el Evento
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.Age">
-            <summary>
-            Edad del candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.ProposalDetails">
-            <summary>
-            Propuesta de candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Base.CandidateBase.PostionsWorks">
-            <summary>
-            Posiciones de trabajo 
+            Información Adicional
             </summary>
             <value></value>
         </member>
@@ -716,41 +686,10 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.Video">
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.AdditionalInformation">
             <summary>
-            Ruta Video de Candidato
+            Información Adicional
             </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.Details">
-            <summary>
-            Detalles de Candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.Role">
-            <summary>
-            Rol de Candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.Age">
-            <summary>
-            Edad de Candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.ProposalDetails">
-            <summary>
-            Propuesta de Candidato
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.PostionsWorks">
-            <summary>
-            Puestos Laborales de candidato
-            </summary>
-            <value></value>
         </member>
         <member name="P:Dach.ElectionSystem.Models.Persitence.Candidate.IsActive">
             <summary>
@@ -1379,6 +1318,12 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateBaseRequest.PathRoot">
             <summary>
             Path de server
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateBaseRequest.AdditionalInformation">
+            <summary>
+            Información Adicional
             </summary>
             <value></value>
         </member>
@@ -2308,6 +2253,12 @@
         <member name="P:Dach.ElectionSystem.Models.Response.Candidate.CandidateBaseResponse.User">
             <summary>
             Usuario Correspondiente a candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Candidate.CandidateBaseResponse.AdditionalInformation">
+            <summary>
+            Información Adicional
             </summary>
             <value></value>
         </member>

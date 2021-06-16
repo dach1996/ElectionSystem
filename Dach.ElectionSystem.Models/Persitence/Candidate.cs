@@ -20,47 +20,13 @@ namespace Dach.ElectionSystem.Models.Persitence
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        
         /// <summary>
-        /// Ruta Video de Candidato
+        /// Información Adicional
         /// </summary>
-        /// <value></value>
-        [Column("CAN_VIDEO")]
-        public string Video { get; set; }
+        [Column("CAN_INFORMACION_ADICIONAL")]
+        public string AdditionalInformation { get; set; }
 
-        /// <summary>
-        /// Detalles de Candidato
-        /// </summary>
-        /// <value></value>
-        [Column("CAN_DETALLES")]
-        public string Details { get; set; }
-
-        /// <summary>
-        /// Rol de Candidato
-        /// </summary>
-        /// <value></value>
-        [Column("CAN_ROL")]
-        public string Role { get; set; }
-
-        /// <summary>
-        /// Edad de Candidato
-        /// </summary>
-        /// <value></value>
-        [Column("CAN_EDAD")]
-        public int Age { get; set; }
-
-        /// <summary>
-        /// Propuesta de Candidato
-        /// </summary>
-        /// <value></value>
-        [Column("CAN_PROPUESTA")]
-        public string ProposalDetails { get; set; }
-
-        /// <summary>
-        /// Puestos Laborales de candidato
-        /// </summary>
-        /// <value></value>
-        [Column("CAN_PUESTOS_LABORALES")]
-        public string PostionsWorks { get; set; }
 
         /// <summary>
         /// Estado de Candidato

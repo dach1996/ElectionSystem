@@ -128,7 +128,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
-        /// <param name="idCandidate"></param>
+        /// <param name="idUser"></param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(CandidateGetResponse))]

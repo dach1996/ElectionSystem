@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Dach.ElectionSystem.Models.Base;
 using Dach.ElectionSystem.Models.RequestBase;
@@ -7,7 +8,7 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
     /// <summary>
     /// Clase  Base para Request de candidatos
     /// </summary>
-    public class CandidateBaseRequest : CandidateBase, IRequestBase
+    public class CandidateBaseRequest : IRequestBase
     {
         /// <summary>
         /// Token Model
@@ -30,5 +31,11 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
         /// <value></value>
         [JsonIgnore]
         public string PathRoot { get; set; }
+
+        /// <summary>
+        /// Información Adicional
+        /// </summary>
+        /// <value></value>
+        public Dictionary<string,object> AdditionalInformation { get; set; }
     }
 }
