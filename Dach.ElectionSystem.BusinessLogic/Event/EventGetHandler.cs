@@ -44,6 +44,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                         Models.Enums.TypeFilterEvent.Mine => listEvents.Where(e => e.IdUser == request.UserContext.Id).ToList(),
                         Models.Enums.TypeFilterEvent.MineWithVote => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id && v.HasVote && v.IsActive, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
                         Models.Enums.TypeFilterEvent.MineWithOutVote => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id && !v.HasVote && v.IsActive, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
+                        Models.Enums.TypeFilterEvent.Participant => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
                         Models.Enums.TypeFilterEvent.Candidate => (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.IdUser == request.UserContext.Id && c.IsActive, includeProperties: c => $"{nameof(c.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
                         _ => listEvents
                     };

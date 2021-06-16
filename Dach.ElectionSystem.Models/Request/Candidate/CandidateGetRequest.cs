@@ -21,7 +21,7 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
         /// Id de Candidato
         /// </summary>
         /// <value></value>
-        public int? IdCandidate { get; set; }
+        public int? IdUser { get; set; }
 
         /// <summary>
         /// Paginación

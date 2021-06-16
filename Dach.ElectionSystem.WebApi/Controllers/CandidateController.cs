@@ -124,7 +124,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
 
 
         /// <summary>
-        /// Consultar candidato de evento por Id
+        /// Consultar candidato de evento por id de usuario
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
@@ -134,14 +134,14 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(200, Type = typeof(CandidateGetResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
-        [Route("{idCandidate}")]
+        [Route("{idUser}")]
         public async Task<IActionResult> GetByIdHandler(
          [FromQuery] CandidateGetRequest request,
          [FromRoute] int idEvent,
-         [FromRoute] int? idCandidate)
+         [FromRoute] int? idUser)
         {
             request.IdEvent = idEvent;
-            request.IdCandidate = idCandidate;
+            request.IdUser = idUser;
             return Success(await _mediator.Send(request));
         }
 

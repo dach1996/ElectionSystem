@@ -567,6 +567,11 @@
             Soy candidato
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.TypeFilterEvent.Participant">
+            <summary>
+            Soy Participante
+            </summary>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Enums.TypeFilterUser">
             <summary>
             Selección de registros
@@ -1422,7 +1427,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest.IdCandidate">
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest.IdUser">
             <summary>
             Id de Candidato
             </summary>
