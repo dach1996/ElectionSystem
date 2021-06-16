@@ -112,7 +112,7 @@ export class CandidateService extends BaseService {
   /**
    * Path part for operation apiEventsIdEventCandidatesIdCandidateGet
    */
-  static readonly ApiEventsIdEventCandidatesIdCandidateGetPath = '/api/events/{idEvent}/candidates/{idCandidate}';
+  static readonly ApiEventsIdEventCandidatesIdCandidateGetPath = '/api/events/{idEvent}/candidates/{idUser}';
 
 
   /**
@@ -142,22 +142,17 @@ export class CandidateService extends BaseService {
      */
     Limit: number;
 
-    /**
-     * Total de candidatos en el evento
-     */
-    TotalCandidates?: number;
     idEvent: number;
-    idCandidate: number;
-  }): Observable<StrictHttpResponse<CandidateGetResponse>> {
+    idUser: number;
+  }): Observable<StrictHttpResponse<ResponseGeneric<CandidateGetResponse>>> {
 
     const rb = new RequestBuilder(this.rootUrl, CandidateService.ApiEventsIdEventCandidatesIdCandidateGetPath, 'get');
     if (params) {
       rb.query('Offset', params.Offset, {});
       rb.query('OrderBy', params.OrderBy, {});
       rb.query('Limit', params.Limit, {});
-      rb.query('TotalCandidates', params.TotalCandidates, {});
       rb.path('idEvent', params.idEvent, {});
-      rb.path('idCandidate', params.idCandidate, {});
+      rb.path('idUser', params.idUser, {});
     }
     rb.header('Authorization', localStorage.getItem('token')!);
     return this.http.request(rb.build({
@@ -166,7 +161,7 @@ export class CandidateService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<CandidateGetResponse>;
+        return r as StrictHttpResponse<ResponseGeneric<CandidateGetResponse>>
       })
     );
   }

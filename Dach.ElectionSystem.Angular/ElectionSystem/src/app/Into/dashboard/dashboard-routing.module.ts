@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditCandidateComponent } from '../candidate/edit-candidate/edit-candidate.component';
 import { EventCreateComponent } from '../event/create-event/create-event.component';
 import { EventEditComponent } from '../event/event-edit/event-edit.component';
 import { EventComponent } from '../event/event/event.component';
@@ -7,6 +8,10 @@ import { EventCandidatesComponent } from '../event/managin-event/event-candidate
 import { EventDetailsComponent } from '../event/managin-event/event-details/event-details.component';
 import { EventParticipantsComponent } from '../event/managin-event/event-participants/event-participants.component';
 import { EventManagintComponent } from '../event/managin-event/managin-event/managin-event.component';
+import { RecordsAdministratorComponent } from '../myRecords/records-administrator/records-administrator.component';
+import { RecordsCandidateComponent } from '../myRecords/records-candidate/records-candidate.component';
+import { RecordsManaginComponent } from '../myRecords/records-managin/records-managin.component';
+import { RecordsParticipantComponent } from '../myRecords/records-participant/records-participant.component';
 import { EditUserComponent } from '../user/edit-user/edit-user.component';
 import { ListUserComponent } from '../user/list-user/list-user.component';
 import { DashboardComponent } from './dashboard.component';
@@ -23,11 +28,19 @@ const routes: Routes = [
       {  path: 'user/edit/:idUser',    component: EditUserComponent },
       {  path: 'event/administrator/:idEvent',    component: EventManagintComponent, 
       children:[
-        {path:'', component:EventDetailsComponent},
-        {path:'detail', component:EventDetailsComponent},
-        {path:'candidate', component:EventCandidatesComponent},
-        {path:'participant', component:EventParticipantsComponent}
+                {path:'', component:EventDetailsComponent},
+                {path:'detail', component:EventDetailsComponent},
+                {path:'candidate', component:EventCandidatesComponent},
+                {path:'participant', component:EventParticipantsComponent}
       ]},
+      {  path: 'myRecords', component: RecordsManaginComponent, 
+      children:[
+                {path: '', component: RecordsCandidateComponent},
+                {path: 'candidate', component: RecordsCandidateComponent},
+                {path: 'participant', component: RecordsParticipantComponent},
+                {path: 'administrator', component: RecordsAdministratorComponent},
+      ]},
+      {path: 'event/:idEvent/candidate/:idUser', component:EditCandidateComponent},
       {  path: 'list',    component: ListUserComponent },
     ],
   },

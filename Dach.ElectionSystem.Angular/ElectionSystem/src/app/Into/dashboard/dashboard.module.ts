@@ -17,6 +17,12 @@ import { ListUserComponent } from '../user/list-user/list-user.component';
 import { EventCandidatesComponent } from '../event/managin-event/event-candidates/event-candidates.component';
 import { EventParticipantsComponent } from '../event/managin-event/event-participants/event-participants.component';
 import { EventAdministratorModalComponent } from '../event/managin-event/event-administrator-modal/event-administrator-modal.component';
+import { RecordsManaginComponent } from '../myRecords/records-managin/records-managin.component';
+import { RecordsCandidateComponent } from '../myRecords/records-candidate/records-candidate.component';
+import { RecordsParticipantComponent } from '../myRecords/records-participant/records-participant.component';
+import { RecordsAdministratorComponent } from '../myRecords/records-administrator/records-administrator.component';
+import { EditCandidateComponent } from '../candidate/edit-candidate/edit-candidate.component';
+import { CandidateComponent } from '../candidate/candidate/candidate.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,13 @@ import { EventAdministratorModalComponent } from '../event/managin-event/event-a
     EventCandidatesComponent,
     EventParticipantsComponent,
     ListUserComponent,
-    EventAdministratorModalComponent
+    EventAdministratorModalComponent,
+    EditCandidateComponent,
+    CandidateComponent,
+    RecordsManaginComponent,
+    RecordsCandidateComponent,
+    RecordsParticipantComponent,
+    RecordsAdministratorComponent
   ],
   imports: [
     BrowserModule,

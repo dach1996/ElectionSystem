@@ -11,12 +11,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { DashboardModule } from './Into/dashboard/dashboard.module';
 import { UtilsModule } from './utils/utils.module';
 import { EditCandidateComponent } from './Into/candidate/edit-candidate/edit-candidate.component';
-import { CreateCandidateComponent } from './Into/candidate/create-candidate/create-candidate.component';
-import { DesactiveCandidateComponent } from './Into/candidate/desactive-candidate/desactive-candidate.component';
 import { CandidateComponent } from './Into/candidate/candidate/candidate.component';
-import { UpdateCandidateComponent } from './Into/candidate/update-candidate/update-candidate.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { EventAdministratorModalComponent } from './Into/event/managin-event/event-administrator-modal/event-administrator-modal.component';
 // import { ListUserComponent } from './Into/user/list-user/list-user.component';
 
 @NgModule({
@@ -25,11 +21,6 @@ import { EventAdministratorModalComponent } from './Into/event/managin-event/eve
     LoginComponent,
     RegisterComponent,
     ForggotePasswordComponent,
-    EditCandidateComponent,
-    CreateCandidateComponent,
-    DesactiveCandidateComponent,
-    CandidateComponent,
-    UpdateCandidateComponent
     //ListUserComponent
     
   ],
