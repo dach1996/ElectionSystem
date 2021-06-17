@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+import { AdditionalInformationCandidate } from './candidate-information-additional';
 import { UserBaseResponse } from './user-base-response';
 
 /**
@@ -7,16 +8,8 @@ import { UserBaseResponse } from './user-base-response';
  */
 export interface CandidateBaseResponse {
 
-  /**
-   * Edad del candidato
-   */
-  age: number;
-
-  /**
-   * Detalles de Candidato
-   */
-  details: string;
-
+  additionalInformation: string;
+  information?: AdditionalInformationCandidate;
   /**
    * Id de candidato
    */
@@ -37,24 +30,6 @@ export interface CandidateBaseResponse {
    */
   listCandidateImage?: null | Array<string>;
 
-  /**
-   * Posiciones de trabajo
-   */
-  postionsWorks?: null | string;
-
-  /**
-   * Propuesta de candidato
-   */
-  proposalDetails: string;
-
-  /**
-   * Rol de candidato en el Evento
-   */
-  role: string;
   user?: UserBaseResponse;
 
-  /**
-   * Video del Candidato
-   */
-  video?: null | string;
 }

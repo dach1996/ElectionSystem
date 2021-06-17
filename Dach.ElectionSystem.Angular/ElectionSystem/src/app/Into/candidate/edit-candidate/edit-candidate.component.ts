@@ -3,43 +3,50 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { PageBase } from 'src/app/models/pageBase';
 import { CandidateBaseResponse, OrderBy } from 'src/app/serviceApi/models';
+import { AdditionalInformationCandidate } from 'src/app/serviceApi/models/candidate-information-additional';
 import { CandidateService } from 'src/app/serviceApi/services';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-candidate',
   templateUrl: './edit-candidate.component.html',
-  styleUrls: ['./edit-candidate.component.css','../../../app.component.css']
+  styleUrls: ['./edit-candidate.component.css', '../../../app.component.css'],
 })
 export class EditCandidateComponent implements OnInit, PageBase {
-
   constructor(
     private candidateService: CandidateService,
     private activeRouter: ActivatedRoute
-  ) { }
-  loading: boolean=false;
-  titlePage: string='EDITAR MI INFORMACIÓN DE CANDIDATO';
-  errorMessage: string='';
-  candidate? : CandidateBaseResponse;
+  ) {}
+  loading: boolean = false;
+  titlePage: string = 'EDITAR MI INFORMACIÓN DE CANDIDATO';
+  errorMessage: string = '';
+  candidate?: CandidateBaseResponse;
+  information?: AdditionalInformationCandidate;
+  idEvent?: number;
+  imageFile: File | undefined;
 
   ngOnInit(): void {
     this.loading = true;
     this.activeRouter.paramMap.subscribe((paramsMap: ParamMap) => {
-      let idEvent =  Number(paramsMap.get('idEvent')!);
+      let idEvent = Number(paramsMap.get('idEvent')!);
       let idUser = Number(paramsMap.get('idUser')!);
+      this.idEvent= idEvent;
       this.candidateService
-        .apiEventsIdEventCandidatesIdCandidateGet$Json$Response({ 
-          Limit:100,
-          Offset:0,
-          OrderBy:OrderBy.Desc,
-          idUser : idUser,
-          idEvent : idEvent 
+        .apiEventsIdEventCandidatesIdCandidateGet$Json$Response({
+          Limit: 100,
+          Offset: 0,
+          OrderBy: OrderBy.Desc,
+          idUser: idUser,
+          idEvent: idEvent,
         })
         .subscribe(
           (res) => {
             if (res.status == HttpStatusCode.Ok) {
               this.loading = false;
               this.candidate = res.body?.content?.listCandidate?.[0];
+              this.information = <AdditionalInformationCandidate>(
+                JSON.parse(this.candidate?.additionalInformation!)
+              );
             }
           },
           (err) => {
@@ -55,5 +62,86 @@ export class EditCandidateComponent implements OnInit, PageBase {
           }
         );
     });
+  }
+  updateCandidate(){
+    let updateCandidate : AdditionalInformationCandidate={
+      goals : this.information?.goals!,
+      likes: this.information?.likes!,
+      pastime: this.information?.pastime!,
+      sports: this.information?.sports!,
+      urlVideo: this.information?.urlVideo!,
+      alias: this.information?.alias
+    }
+    this.candidateService
+    .apiEventsIdEventCandidatesIdCandidatePut$Json$Response({
+      idCandidate : this.candidate?.id!,
+      idEvent : this.idEvent!,
+      body: updateCandidate
+    })
+    .subscribe(
+      (res) => {
+        if (res.status == HttpStatusCode.Ok) {
+          this.loading = false;
+          Swal.fire({
+            icon: 'success',
+            text: 'Sus  datos han sido actualizados con éxito',
+            confirmButtonText: 'Continuar',
+          }).then(()=>{
+            
+          });
+        }
+      },
+      (err) => {
+        this.loading = false;
+        if (err.error.code == 150)
+          this.errorMessage = 'Es necesario llenar todos los campos';
+        else this.errorMessage = err.error.message;
+        Swal.fire({
+          icon: 'error',
+          text: this.errorMessage,
+          confirmButtonColor: '#d33',
+        });
+      }
+    );
+
+  }
+  changeImage(event: any) {
+    this.imageFile = event.target.files[0];
+  }
+  updateImage(){
+    if (this.imageFile === undefined) return;
+    this.loading = true;
+    this.candidateService
+      .apiUploadImage$Json$Response({
+        idEvent: this.idEvent!,
+        Image: this.imageFile,
+      })
+      .subscribe(
+        (res) => {
+          if (res.code == HttpStatusCode.Ok) {
+            this.loading = false;
+            Swal.fire({
+              icon: 'success',
+              text: 'Imagen cargada exitosamente',
+              confirmButtonText: 'Continuar',
+            }).then(()=>{
+              this.ngOnInit();
+            });
+          }
+        },
+        (err) => {
+          this.loading = false;
+          if (err.error.code == 150)
+            this.errorMessage = 'Es necesario llenar todos los campos';
+          if(err.error.code == 141)
+          this.errorMessage = 'Número Máximo de imágenes de candidato alcanzado.';
+            else this.errorMessage = err.error.message;
+          Swal.fire({
+            icon: 'error',
+            text: this.errorMessage,
+            confirmButtonColor: '#d33',
+          });
+        }
+      );
   }
 }

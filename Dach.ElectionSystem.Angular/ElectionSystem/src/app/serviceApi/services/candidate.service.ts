@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
@@ -21,6 +21,7 @@ import { EventNumber } from '../models/event-number';
 import { OrderBy } from '../models/order-by';
 import { UnitGenericResponse } from '../models/unit-generic-response';
 import { ResponseGeneric } from '../models/generic-response';
+import { AdditionalInformation, AdditionalInformationCandidate } from '../models/candidate-information-additional';
 
 @Injectable({
   providedIn: 'root',
@@ -186,14 +187,17 @@ export class CandidateService extends BaseService {
   apiEventsIdEventCandidatesIdCandidatePut$Json$Response(params: {
     idEvent: number;
     idCandidate: number;
-    body?: CandidateUpdateRequest
-  }): Observable<StrictHttpResponse<CandidateUpdateResponse>> {
+    body?: AdditionalInformationCandidate
+  }): Observable<StrictHttpResponse<ResponseGeneric<CandidateUpdateResponse>>> {
 
+    let additionalInformation: AdditionalInformation ={
+      additionalInformation: params?.body
+    }
     const rb = new RequestBuilder(this.rootUrl, CandidateService.ApiEventsIdEventCandidatesIdCandidatePutPath, 'put');
     if (params) {
       rb.path('idEvent', params.idEvent, {});
       rb.path('idCandidate', params.idCandidate, {});
-      rb.body(params.body, 'application/*+json');
+      rb.body(additionalInformation, 'application/*+json');
     }
     rb.header('Authorization', localStorage.getItem('token')!);
     return this.http.request(rb.build({
@@ -202,7 +206,7 @@ export class CandidateService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<CandidateUpdateResponse>;
+        return r as StrictHttpResponse<ResponseGeneric<CandidateUpdateResponse>>;
       })
     );
   }
@@ -265,26 +269,30 @@ export class CandidateService extends BaseService {
    *
    * This method sends `multipart/form-data` and handles request body of type `multipart/form-data`.
    */
-  apiEventsIdEventCandidatesImagePost$Json$Response(params: {
+  apiUploadImage$Json$Response(params: {
     idEvent: number;
-    body?: { 'Image': Blob, 'IdEvent'?: number, 'TokenModel.Username'?: string, 'TokenModel.Email'?: string, 'TokenModel.Id'?: string, 'UserContext.Id'?: number, 'UserContext.DNI'?: string, 'UserContext.UserName'?: string, 'UserContext.Password'?: string, 'UserContext.TemPassword'?: string, 'UserContext.FirstName'?: string, 'UserContext.SecondName'?: string, 'UserContext.FirstLastName'?: string, 'UserContext.SecondLastName'?: string, 'UserContext.BirthDate'?: string, 'UserContext.Email'?: string, 'UserContext.IsActive'?: boolean, 'UserContext.IsAdministrator'?: boolean, 'UserContext.ListEventAdministrator'?: Array<EventAdministrator>, 'UserContext.ListCandidate'?: Array<Candidate>, 'UserContext.EventNumber.Id'?: number, 'UserContext.EventNumber.IdUser'?: number, 'UserContext.EventNumber.NumberMaxEvent'?: number, 'UserContext.EventNumber.User.Id'?: number, 'UserContext.EventNumber.User.DNI'?: string, 'UserContext.EventNumber.User.UserName'?: string, 'UserContext.EventNumber.User.Password'?: string, 'UserContext.EventNumber.User.TemPassword'?: string, 'UserContext.EventNumber.User.FirstName'?: string, 'UserContext.EventNumber.User.SecondName'?: string, 'UserContext.EventNumber.User.FirstLastName'?: string, 'UserContext.EventNumber.User.SecondLastName'?: string, 'UserContext.EventNumber.User.BirthDate'?: string, 'UserContext.EventNumber.User.Email'?: string, 'UserContext.EventNumber.User.IsActive'?: boolean, 'UserContext.EventNumber.User.IsAdministrator'?: boolean, 'UserContext.EventNumber.User.ListEventAdministrator'?: Array<EventAdministrator>, 'UserContext.EventNumber.User.ListCandidate'?: Array<Candidate>, 'UserContext.EventNumber.User.EventNumber'?: EventNumber, 'PathRoot'?: string }
-  }): Observable<StrictHttpResponse<UnitGenericResponse>> {
+    Image: File;
+  }): Observable<any> {
+    const formData = new FormData();
+    var url =
+      this.rootUrl +
+      CandidateService.ApiEventsIdEventCandidatesImagePostPath.replace(
+        '{idEvent}',
+        params.idEvent.toString()
+      );
+    // Store form name as "file" with file data
+    formData.append('Image', params.Image);
 
-    const rb = new RequestBuilder(this.rootUrl, CandidateService.ApiEventsIdEventCandidatesImagePostPath, 'post');
-    if (params) {
-      rb.path('idEvent', params.idEvent, {});
-      rb.body(params.body, 'multipart/form-data');
-    }
-    rb.header('Authorization', localStorage.getItem('token')!);
-    return this.http.request(rb.build({
-      responseType: 'json',
-      accept: 'text/json'
-    })).pipe(
-      filter((r: any) => r instanceof HttpResponse),
-      map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<UnitGenericResponse>;
-      })
+    // Make http post request over api
+    // with formData as req
+
+    let headers = new HttpHeaders();
+    headers = headers.append(
+      'Authorization',
+      `${localStorage.getItem('token')!}`
     );
+    return this.http.post(url, formData, { headers: headers });
+  
   }
 
 
