@@ -67,13 +67,6 @@ namespace Dach.ElectionSystem.Models.Base
         public virtual DateTime DateRegister { get; set; }
 
         /// <summary>
-        /// Fecha Máxima para registrar Candidatos
-        /// </summary>
-        /// <value></value>
-        [Required]
-        public virtual DateTime? DateMaxRegisterCandidate { get; set; }
-
-        /// <summary>
         /// Fecha  Máxima para registrar participantes
         /// </summary>
         /// <value></value>
@@ -84,14 +77,14 @@ namespace Dach.ElectionSystem.Models.Base
         /// Fecha  mínima para realizar votación
         /// </summary>
         /// <value></value>
-        [Required]
+
         public virtual DateTime? DateMinVote { get; set; }
 
         /// <summary>
         /// Fecha máxima para realizar votación
         /// </summary>
         /// <value></value>
-        [Required]
+
         public virtual DateTime? DateMaxVote { get; set; }
 
     }

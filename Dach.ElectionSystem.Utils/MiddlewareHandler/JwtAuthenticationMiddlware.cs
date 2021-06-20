@@ -1,6 +1,5 @@
 ﻿using Dach.ElectionSystem.Services.TokenJWT;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace Dach.ElectionSystem.Utils.Segurity.JWT

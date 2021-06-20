@@ -62,13 +62,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     var hasRegisterCandidate = eventCurrent.ListCandidate.Any(c => c.IdUser == userCurrent.Id);
                     if (hasRegisterCandidate)
                         throw new CustomException(Models.Enums.MessageCodesApi.IsCandidateInEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
-                    //Validar la fecha máxima para crear candidatos
-                    //TODO:BORRAR INVALIDACION
-                    /*var isDateValid = eventCurrent.DateMaxRegisterCandidate >= DateTime.Now;
-                    if (!isDateValid)
-                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
-                                                    $"La fecha máxima para poder registrar candidatos ha terminado.");
-                                                    */
+                    //Validar la fecha máxima para crear candidatos              
                     //Creamos el nuevo Candidato
                     var newCandidate = _mapper.Map<Models.Persitence.Candidate>(request);
                     var isCreate = await _electionUnitOfWork.GetCandidateRepository().CreateAsync(newCandidate);
@@ -76,10 +70,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                         throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
                     //Preparamos para envíar correo
                     var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
-                    var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.NewCandidate);
-                    bool isSend = NewMethod(eventCurrent, userCurrent, templateForggotenPassword);
+                    var templateNewCandidate = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.NewCandidate);
+                    bool isSend = SendMail(eventCurrent, userCurrent, templateNewCandidate);
                     if (!isSend)
-                         _logger.LogWarning($"No se pudo Envíar correo: {userCurrent.Email}");
+                        _logger.LogWarning($"No se pudo Envíar correo: {userCurrent.Email}");
                     var response = _mapper.Map<CandidateCreateResponse>(newCandidate);
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return response;
@@ -94,20 +88,19 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
 
         }
 
-        private bool NewMethod(Models.Persitence.Event eventCurrent, Models.Persitence.User userCurrent, Template templateForggotenPassword)
+        private bool SendMail(Models.Persitence.Event eventCurrent, Models.Persitence.User userCurrent, Template templateNewCandidate)
         {
             return _notification.SendMail(
                 new MailModel()
                 {
-                    Subject = templateForggotenPassword.TemplateName,
+                    Subject = templateNewCandidate.TemplateName,
                     To = new List<string>() { userCurrent.Email },
-                    Template = templateForggotenPassword.TemplateKey,
+                    Template = templateNewCandidate.TemplateKey,
                     Params = new
                     {
                         EventName = eventCurrent.Name,
                         Fullname = $"{userCurrent.FirstName} {userCurrent.FirstLastName}",
-                        DateMaxRegisterCandidate = eventCurrent.DateMaxRegisterCandidate.ToString("dd/MM/yyyy"),
-                        DateMinVote = eventCurrent.DateMinVote.ToString("dd/MM/yyyy")
+                        DateMinVote = eventCurrent.DateMaxRegisterParticipants.ToString("dd/MM/yyyy")
                     }
                 }
             );

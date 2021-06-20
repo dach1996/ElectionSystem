@@ -23,5 +23,20 @@ namespace Dach.ElectionSystem.Models.Request.Event
         /// <value></value>
         [JsonIgnore]
         public override string Image { get; set; }
+
+        /// <summary>
+        /// Fecha  mínima para realizar votación
+        /// </summary>
+        /// <value></value>
+        [JsonIgnore]
+        public override DateTime? DateMinVote { get; set; }
+
+        /// <summary>
+        /// Fecha máxima para realizar votación
+        /// </summary>
+        /// <value></value>
+        [JsonIgnore]
+        public override DateTime? DateMaxVote { get; set; }
+
     }
 }

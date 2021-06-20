@@ -79,12 +79,6 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Base.EventBase.DateMaxRegisterCandidate">
-            <summary>
-            Fecha Máxima para registrar Candidatos
-            </summary>
-            <value></value>
-        </member>
         <member name="P:Dach.ElectionSystem.Models.Base.EventBase.DateMaxRegisterParticipants">
             <summary>
             Fecha  Máxima para registrar participantes
@@ -872,12 +866,6 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.DateMaxRegisterCandidate">
-            <summary>
-            Fecha de Registro
-            </summary>
-            <value></value>
-        </member>
         <member name="P:Dach.ElectionSystem.Models.Persitence.Event.DateMaxRegisterParticipants">
             <summary>
             Fecha de Registro
@@ -1596,6 +1584,18 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventCreateRequest.DateMinVote">
+            <summary>
+            Fecha  mínima para realizar votación
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventCreateRequest.DateMaxVote">
+            <summary>
+            Fecha máxima para realizar votación
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest">
             <summary>
             Clase EventDeleteRequest
@@ -1730,6 +1730,18 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest.DateRegister">
             <summary>
             Fecha registro
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest.DateMinVote">
+            <summary>
+            Fecha  mínima para realizar votación
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest.DateMaxVote">
+            <summary>
+            Fecha máxima para realizar votación
             </summary>
             <value></value>
         </member>

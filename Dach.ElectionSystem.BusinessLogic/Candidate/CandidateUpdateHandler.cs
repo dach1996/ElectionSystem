@@ -47,11 +47,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     // Valida que la candidata Exista
                     var candidateCurrent = await _validateIntegrity.ValidateCandiate(request.IdCandidate);
                     //Validar la fecha máxima para crear candidatos
-                    var isDateValid = eventCurrent.DateMaxRegisterCandidate >= DateTime.Now;
-                    if (!isDateValid)
-                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
-                                                    $"La fecha máxima para poder registrar candidatos ha terminado.");
-                    //Validamos que el usuario y el candidato sean el mismo
+                    
+                     //Validamos que el usuario y el candidato sean el mismo
                     if (request.UserContext.Id != candidateCurrent.IdUser)
                         throw new CustomException(Models.Enums.MessageCodesApi.UserIsNotCandidate, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway);
                     //Actualizamos los datos del modelo

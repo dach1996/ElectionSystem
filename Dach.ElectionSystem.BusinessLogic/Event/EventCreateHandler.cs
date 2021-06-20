@@ -3,8 +3,6 @@ using AutoMapper;
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.Event;
 using Dach.ElectionSystem.Models.Response.Event;
-using Dach.ElectionSystem.Repository.Interfaces;
-using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,13 +60,14 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                         throw new CustomException(Models.Enums.MessageCodesApi.EventRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
                     //Validamos las fechas
                     request.DateRegister = DateTime.Now;
-                    //TODO: Quitar esta invalidación
-                    // await eventService.ValidateDateRegisterEvents(request);
+                    request.DateMaxVote = DateTime.Now;
+                    request.DateMinVote = DateTime.Now;
+                    await _eventService.ValidateDateRegisterEvents(request);
                     //Mapeamos el evento
                     var newEvent = _mapper.Map<Models.Persitence.Event>(request);
                     //Registramos al usuario como creador del evento
                     newEvent.UserCreator = userCurrent;
-                    newEvent.Image=null;
+                    newEvent.Image = null;
                     //Registramos al usuario como Administrador
                     newEvent.ListEventAdministrator = new List<Models.Persitence.EventAdministrator>()
                         {

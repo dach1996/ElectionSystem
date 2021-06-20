@@ -106,14 +106,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         [Required]
         public DateTime DateRegister { get; set; }
 
-        /// <summary>
-        /// Fecha de Registro
-        /// </summary>
-        /// <value></value>
-        [Column("EVT_FECHA_MAX_REGISTRO_CANDIDATOS")]
-        [Required]
-        public DateTime DateMaxRegisterCandidate { get; set; }
-
+     
         /// <summary>
         /// Fecha de Registro
         /// </summary>

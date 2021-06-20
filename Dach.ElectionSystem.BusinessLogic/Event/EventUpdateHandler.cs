@@ -68,8 +68,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                         throw new CustomException(Models.Enums.MessageCodesApi.MaxPeopleEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
                     //Validamos las fechas
                     request.DateRegister = eventCurrent.DateRegister;
-                    //TODO: Quitar esta invalidación
-                    // await eventService.ValidateDateRegisterEvents(request);
+                    await _eventService.ValidateDateRegisterEvents(request);
                     //Actualiza el evento
                     UpdateDataEvent(request, eventCurrent);
                     //Actualiza en la base de datos
@@ -97,7 +96,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             eventCurrent.Name = request.Name;
             eventCurrent.NumberMaxCandidate = request.NumberMaxCandidate;
             eventCurrent.NumberMaxPeople = request.NumberMaxPeople;
-            eventCurrent.DateMaxRegisterCandidate = request.DateMaxRegisterCandidate.Value;
             eventCurrent.DateMaxRegisterParticipants = request.DateMaxRegisterParticipants.Value;
             eventCurrent.DateMaxVote = request.DateMaxVote.Value;
             eventCurrent.DateMinVote = request.DateMinVote.Value;
