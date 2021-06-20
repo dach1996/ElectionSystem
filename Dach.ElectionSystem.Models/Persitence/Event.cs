@@ -106,7 +106,7 @@ namespace Dach.ElectionSystem.Models.Persitence
         [Required]
         public DateTime DateRegister { get; set; }
 
-     
+
         /// <summary>
         /// Fecha de Registro
         /// </summary>
@@ -137,6 +137,20 @@ namespace Dach.ElectionSystem.Models.Persitence
         /// <value></value>
         [Column("EVT_ESTADO")]
         public bool IsActive { get; set; }
+
+        /// <summary>
+        /// Evento ha iniciado
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_INICIADO")]
+        public bool IsStarted { get; set; }
+
+        /// <summary>
+        /// Evento ha terminado
+        /// </summary>
+        /// <value></value>
+        [Column("EVT_TERMINADO")]
+        public bool IsFinished { get; set; }
 
         /// <summary>
         /// Borrado Lógico del Evento

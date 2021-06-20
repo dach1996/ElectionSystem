@@ -36,6 +36,25 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> CreateEvent([FromBody] EventCreateRequest request) => Success(await _mediator.Send(request));
 
+        /// <summary>
+        /// Iniciar/Terminar Evento
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="idEvent"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("{idEvent}/startstop")]
+        [ProducesResponseType(200, Type = typeof(EventCreateResponse))]
+        [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
+        [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
+        public async Task<IActionResult> StartStopEvent(
+            [FromRoute] int idEvent, 
+            [FromBody] EventStartStopRequest request)
+        {
+            request.IdEvent = idEvent;
+            return Success(await _mediator.Send(request));
+        }
+
 
         /// <summary>
         /// Desactivar Evento

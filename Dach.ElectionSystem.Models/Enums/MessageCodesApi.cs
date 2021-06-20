@@ -237,6 +237,18 @@ namespace Dach.ElectionSystem.Models.Enums
         UserIsNotCandidate = 159,
 
         /// <summary>
+        /// Evento comenzado
+        /// </summary>
+        [EnumMember(Value = "El evento ha comenzado")]
+        EventIsStarted = 160,
+
+        /// <summary>
+        /// Evento Terminado
+        /// </summary>
+        [EnumMember(Value = "El evento ha Terminado")]
+        EventIsFinished = 161,
+
+        /// <summary>
         /// Error del sistema
         /// </summary>
         [EnumMember(Value = "No se pudo crear registro")]

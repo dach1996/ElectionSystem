@@ -122,6 +122,14 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.StartStopEvent(System.Int32,Dach.ElectionSystem.Models.Request.Event.EventStartStopRequest)">
+            <summary>
+            Iniciar/Terminar Evento
+            </summary>
+            <param name="request"></param>
+            <param name="idEvent"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dach.ElectionSystem.WebApi.Controllers.EventController.DesactiveEvent(Dach.ElectionSystem.Models.Request.Event.EventDeleteRequest,System.Int32)">
             <summary>
             Desactivar Evento

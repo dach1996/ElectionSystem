@@ -87,5 +87,17 @@ namespace Dach.ElectionSystem.Models.Base
 
         public virtual DateTime? DateMaxVote { get; set; }
 
+        /// <summary>
+        /// Evento ha iniciado
+        /// </summary>
+        /// <value></value>
+        public virtual bool IsStarted { get; set; }
+
+        /// <summary>
+        /// Evento ha terminado
+        /// </summary>
+        /// <value></value>
+        public virtual bool IsFinished { get; set; }
+
     }
 }

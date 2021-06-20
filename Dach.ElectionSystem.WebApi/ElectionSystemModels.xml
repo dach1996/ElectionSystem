@@ -97,6 +97,18 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.EventBase.IsStarted">
+            <summary>
+            Evento ha iniciado
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Base.EventBase.IsFinished">
+            <summary>
+            Evento ha terminado
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Base.GroupBase">
             <summary>
             Clase base para grupo
@@ -419,6 +431,16 @@
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.UserIsNotCandidate">
             <summary>
             Fechas Incorrectas
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.EventIsStarted">
+            <summary>
+            Evento comenzado
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.EventIsFinished">
+            <summary>
+            Evento Terminado
             </summary>
         </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.NotCreateRecord">
@@ -887,6 +909,18 @@
         <member name="P:Dach.ElectionSystem.Models.Persitence.Event.IsActive">
             <summary>
             Evento está Activo
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.IsStarted">
+            <summary>
+            Evento ha iniciado
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Persitence.Event.IsFinished">
+            <summary>
+            Evento ha terminado
             </summary>
             <value></value>
         </member>
@@ -1716,6 +1750,22 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:Dach.ElectionSystem.Models.Request.Event.EventStartStopRequest">
+            <summary>
+            Clase EventStartStop
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventStartStopRequest.IdEvent">
+            <summary>
+            Id de Evento
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventStartStopRequest.DaysAllow">
+            <summary>
+            Dias Permitidos para votación
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.Event.EventUpdateRequest">
             <summary>
             Clase EventUpdateRequest
@@ -2473,6 +2523,11 @@
             Tiene relación con el evento?
             </summary>
             <value></value>
+        </member>
+        <member name="T:Dach.ElectionSystem.Models.Response.Event.EventStartStopResponse">
+            <summary>
+            Clase EventDeleteResponse
+            </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Response.Event.EventUpdateResponse">
             <summary>
