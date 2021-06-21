@@ -43,6 +43,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
                     //Valida que exista el candidato mediante el id de usuario y el evento
                     var candidateCurrent = await _validateIntegrity.ValidateCandiateWithUserAndEvent(request.UserContext.Id, request.IdEvent);
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(candidateCurrent.IdEvent).ConfigureAwait(false);
                     //Generar ruta del archivo
                     var pathEnviroment = _configuration.GetSection("PathSaveImage").Value;
                     var pathToSave = $"{pathEnviroment}/{Models.Enums.TypeImage.Candidate}/{candidateCurrent.Id}";

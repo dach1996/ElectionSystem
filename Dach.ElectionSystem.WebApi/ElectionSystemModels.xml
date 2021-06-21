@@ -443,6 +443,11 @@
             Evento Terminado
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.EventDontStarted">
+            <summary>
+            Evento no empieza
+            </summary>
+        </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.NotCreateRecord">
             <summary>
             Error del sistema

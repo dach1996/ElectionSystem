@@ -44,6 +44,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     if (!isDateValid)
                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
                                                     $"La fecha máxima para poder registrar participantes ha terminado.");
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
+                    if (eventCurrent.DateMaxRegisterParticipants < DateTime.Now)
+                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest, $"La fecha máxima para registrad candidatos ha pasado: {eventCurrent.DateMaxRegisterParticipants}");
                     // encuentra los participantes del evento
                     var participantsEvent = await _electionUnitOfWork.GetVoteRepository().GetAsync(v => v.IdEvent == request.IdEvent && v.IdUser == request.UserContext.Id);
                     // Valida si el usuario no se encuentra registrado previamente

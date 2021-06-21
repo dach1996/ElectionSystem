@@ -54,6 +54,8 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
                     if (isUserAdministrator)
                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
                         "El usuario ya se encuentra registrado como administrador en este Evento");
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
                     //Creamos el nuevo administrador
                     var eventAdministrator = new Models.Persitence.EventAdministrator()
                     {

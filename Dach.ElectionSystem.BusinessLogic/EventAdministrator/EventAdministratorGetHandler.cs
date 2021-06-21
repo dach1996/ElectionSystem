@@ -28,16 +28,13 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
         public async Task<EventAdministratorGetResponse> Handle(EventAdministratorGetRequest request, CancellationToken cancellationToken)
         {
             //Valida que exista el evento
-            var events = await _validateIntegrity.ValidateEvent(request.IdEvent);
+            var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
             //Valida que el usuario de contexto sea administrador en este e vento
-            var isUserCurrentAdministrator = request.UserContext.ListEventAdministrator.Exists(e => e.Id == events.Id);
-            if (!isUserCurrentAdministrator)
-                throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
-                "El no tiene permisos para consultar administradores a este evento");
+           await _validateIntegrity.IsAdministratorEvent(request.UserContext.Id, eventCurrent.Id);
             //Creamos la respuesta
             var response = new EventAdministratorGetResponse()
             {
-                ListEventAdministrators = _mapper.Map<List<EventAdministratorBaseResponse>>(events.ListEventAdministrator)
+                ListEventAdministrators = _mapper.Map<List<EventAdministratorBaseResponse>>(eventCurrent.ListEventAdministrator)
             };
             return response;
         }

@@ -8,7 +8,6 @@ using Dach.ElectionSystem.Models.Request.Event;
 using Dach.ElectionSystem.Models.Response.Event;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using Dach.ElectionSystem.Services.Data;
-using Dach.ElectionSystem.Services.EventService;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -19,20 +18,17 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         #region Constructor
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
-        private readonly IEventService _eventService;
         private readonly ILogger<EventUpdateHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
 
         public EventUpdateHandler(
             IMapper mapper,
             ValidateIntegrity validateIntegrity,
-            IEventService eventService,
             ILogger<EventUpdateHandler> logger,
             IElectionUnitOfWork electionUnitOfWork)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
-            _eventService = eventService;
             _logger = logger;
             _electionUnitOfWork = electionUnitOfWork;
         }
@@ -68,7 +64,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                         throw new CustomException(Models.Enums.MessageCodesApi.MaxPeopleEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
                     //Validamos las fechas
                     request.DateRegister = eventCurrent.DateRegister;
-                    await _eventService.ValidateDateRegisterEvents(request);
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
                     //Actualiza el evento
                     UpdateDataEvent(request, eventCurrent);
                     //Actualiza en la base de datos
@@ -97,8 +94,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             eventCurrent.NumberMaxCandidate = request.NumberMaxCandidate;
             eventCurrent.NumberMaxPeople = request.NumberMaxPeople;
             eventCurrent.DateMaxRegisterParticipants = request.DateMaxRegisterParticipants.Value;
-            eventCurrent.DateMaxVote = request.DateMaxVote.Value;
-            eventCurrent.DateMinVote = request.DateMinVote.Value;
         }
         #endregion
     }

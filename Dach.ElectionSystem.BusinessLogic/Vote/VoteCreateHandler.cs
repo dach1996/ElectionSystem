@@ -24,7 +24,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         private readonly ILogger<VoteCreateHandler> _logger;
         private readonly Services.Notification.INotification _notification;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
-         private readonly IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
 
         public VoteCreateHandler(
         IMapper mapper,
@@ -56,10 +56,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     //Validamos que exista el Evento
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Validar la fecha máxima para registrar participantes
-                    var isDateValid = eventCurrent.DateMaxRegisterParticipants >= DateTime.Now;
-                     if (!isDateValid)
-                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
-                                                     $"La fecha máxima para poder registrar participantes ha terminado.");
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
+                    if (eventCurrent.DateMaxRegisterParticipants < DateTime.Now)
+                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest, $"La fecha máxima para registrad candidatos ha pasado: {eventCurrent.DateMaxRegisterParticipants}");
                     // encuentra los participantes del evento
                     var participants = await _electionUnitOfWork.GetVoteRepository().GetAsync(v => v.IdEvent == request.IdEvent);
                     //Valida que l usuario no esté registrado ya como votante en el evento
@@ -91,7 +90,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                         new MailModel()
                         {
                             Subject = templateSendEvent.TemplateName,
-                            To = new List<string>(){userCurrent.Email},
+                            To = new List<string>() { userCurrent.Email },
                             Template = templateSendEvent.TemplateKey,
                             Params = new
                             {

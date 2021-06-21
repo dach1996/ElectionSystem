@@ -43,24 +43,20 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
                 {
                     await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
                     //Valida que exista el evento
-                    var events = await _validateIntegrity.ValidateEvent(request.IdEvent);
-                    //Valida que el usuario de contexto sea administrador en este e vento
-                    var isUserCurrentCreatorEvent = events.IdUser == request.UserContext.Id;
-                    if (!isUserCurrentCreatorEvent)
-                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
-                        "Para Eliminar administradores debe ser el creador del evento");
+                    var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
+                    //Valida que el usuario de contexto sea creador del evento
+                    await _validateIntegrity.IsCreatorEvent(request.UserContext.Id, eventCurrent.Id).ConfigureAwait(false);
                     //Valida que exista el usuario  administrador
-                    var isUserAdministrator = events.ListEventAdministrator.ToList().Exists(e => e.IdUser == request.IdUser);
-                    if (!isUserAdministrator)
-                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
-                        $"No existe registrado el administrador con Id: {request.IdUser} en el evento");
+                    await _validateIntegrity.IsAdministratorEvent(request.IdUser, eventCurrent.Id);
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
                     //Valida que el administrador se encuentre desactivado
-                    var isUserAdministratorActive = events.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser).IsActive;
+                    var isUserAdministratorActive = eventCurrent.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser).IsActive;
                     if (!isUserAdministratorActive)
                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
                         $"El usuario administrador se encuentra Acticado");
                     //Creamos el nuevo administrador
-                    var updateEventAdministrator = events.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser);
+                    var updateEventAdministrator = eventCurrent.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser);
                     updateEventAdministrator.IsActive = true;
                     updateEventAdministrator.Date = DateTime.Now;
                     var isUpdate = await _electionUnitOfWork.GetEventAdministratorRepository().Update(updateEventAdministrator);

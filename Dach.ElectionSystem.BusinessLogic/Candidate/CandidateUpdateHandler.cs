@@ -45,14 +45,14 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     //Valida que el evento exista
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     // Valida que la candidata Exista
-                    var candidateCurrent = await _validateIntegrity.ValidateCandiate(request.IdCandidate);
-                    //Validar la fecha máxima para crear candidatos
-                    
-                     //Validamos que el usuario y el candidato sean el mismo
+                    var candidateCurrent = await _validateIntegrity.ValidateCandiate(eventCurrent.Id);
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(candidateCurrent.IdEvent).ConfigureAwait(false);
+                    //Validamos que el usuario y el candidato sean el mismo
                     if (request.UserContext.Id != candidateCurrent.IdUser)
                         throw new CustomException(Models.Enums.MessageCodesApi.UserIsNotCandidate, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway);
                     //Actualizamos los datos del modelo
-                    var additionalInformation = JsonSerializer.Serialize(request.AdditionalInformation); 
+                    var additionalInformation = JsonSerializer.Serialize(request.AdditionalInformation);
                     candidateCurrent.AdditionalInformation = additionalInformation;
                     //Actualiza en la base de datos
                     var isUpdate = await _electionUnitOfWork.GetCandidateRepository().Update(candidateCurrent);

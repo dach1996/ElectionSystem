@@ -47,7 +47,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     if (!isCorrectEvent)
                         throw new CustomException(Models.Enums.MessageCodesApi.CandidateDontExistInEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
                     //Valida que la persona que la persona que envía el request sea administrador del evento
-                    await _validateIntegrity.IsAdministratorEvent(request.UserContext.Id,request.IdEvent);
+                    await _validateIntegrity.IsAdministratorEvent(request.UserContext.Id, request.IdEvent);
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(candidateCurrent.IdEvent).ConfigureAwait(false);
                     //Desactva el candidato
                     candidateCurrent.IsActive = !candidateCurrent.IsActive;
                     //Actualiza la información

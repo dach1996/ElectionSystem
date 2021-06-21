@@ -62,7 +62,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     var hasRegisterCandidate = eventCurrent.ListCandidate.Any(c => c.IdUser == userCurrent.Id);
                     if (hasRegisterCandidate)
                         throw new CustomException(Models.Enums.MessageCodesApi.IsCandidateInEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound);
-                    //Validar la fecha máxima para crear candidatos              
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
                     //Creamos el nuevo Candidato
                     var newCandidate = _mapper.Map<Models.Persitence.Candidate>(request);
                     var isCreate = await _electionUnitOfWork.GetCandidateRepository().CreateAsync(newCandidate);

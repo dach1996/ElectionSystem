@@ -39,9 +39,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             {
                 try
                 {
-                    
-                    
-                    
                     //Obtiene evento por ID y verifica si está borrado el evento
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Valida que el usuario sea el creador del evento
@@ -52,6 +49,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     //Valida que el e venton no haya sido borrado
                     if (!eventCurrent.IsActive)
                         throw new CustomException(Models.Enums.MessageCodesApi.EventIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
                     eventCurrent.IsDelete = true;
                     eventCurrent.Name = $"{eventCurrent.Name}_{DateTime.Now}_Delete";
                     eventCurrent.IsActive = false;

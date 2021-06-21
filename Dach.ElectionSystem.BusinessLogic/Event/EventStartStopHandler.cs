@@ -44,10 +44,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     //Valida que el evento exista
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent).ConfigureAwait(false);
                     //Valida que el Usuario que envía el request, sea administrtador del evento
-                    var isUserAdministrator = eventCurrent.ListEventAdministrator.Count(e => e.IdUser == request.UserContext.Id);
-                    if (isUserAdministrator == 0)
-                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound,
-                                                    $"El usuario con Id: {request.UserContext.Id} no es administrador en el evento: {eventCurrent.Name}");
+                    await _validateIntegrity.IsCreatorEvent(request.UserContext.Id, eventCurrent.Id).ConfigureAwait(false);
+                    //Valida que el evento se encuentre activado
+                    if (!eventCurrent.IsActive)
+                        throw new CustomException(Models.Enums.MessageCodesApi.EventIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound,
+                                                       $"El evento con id: {eventCurrent.Id} está desactivado");
                     //Valida que el evento no haya finalizado
                     if (eventCurrent.IsFinished)
                         throw new CustomException(Models.Enums.MessageCodesApi.EventIsFinished, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);

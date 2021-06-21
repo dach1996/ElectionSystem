@@ -42,19 +42,21 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
                 {
                     await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
                     //Valida que exista el evento
-                    var events = await _validateIntegrity.ValidateEvent(request.IdEvent);
+                    var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Valida que el usuario de contexto sea administrador en este e vento
-                    var isUserCurrentCreatorEvent = events.IdUser == request.UserContext.Id;
+                    var isUserCurrentCreatorEvent = eventCurrent.IdUser == request.UserContext.Id;
                     if (!isUserCurrentCreatorEvent)
                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
                         "Para Eliminar administradores debe ser el creador del evento");
                     //Valida que exista el usuario sea administrador
-                    var isUserAdministrator = events.ListEventAdministrator.Any(e => e.IdUser == request.IdUser);
+                    var isUserAdministrator = eventCurrent.ListEventAdministrator.Any(e => e.IdUser == request.IdUser);
                     if (!isUserAdministrator)
                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
                         $"No existe registrado el administrador con Id: {request.IdUser} en el evento");
                     //Seleccionamos el administrador y  cambia de estado
-                    var updateEventAdministrator = events.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser);
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
+                    var updateEventAdministrator = eventCurrent.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser);
                     updateEventAdministrator.IsActive = !updateEventAdministrator.IsActive;
                     updateEventAdministrator.Date = DateTime.Now;
                     var isUpdate = await _electionUnitOfWork.GetEventAdministratorRepository().Update(updateEventAdministrator);

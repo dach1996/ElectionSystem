@@ -54,9 +54,58 @@ namespace Dach.ElectionSystem.Services.Data
             return existEvent.FirstOrDefault();
         }
 
+        /// <summary>
+        /// Valida que el evento haya comenzado
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task ValidateStartedEvent(int id)
+        {
+            var listEvents = await eventRepository.GetAsync(u => u.Id == id, includeProperties: $"{nameof(Event.ListCandidate)},{nameof(Event.ListEventAdministrator)}");
+            var eventCurrent = listEvents.FirstOrDefault();
+            if (!eventCurrent.IsStarted)
+                throw new CustomException(MessageCodesApi.EventIsStarted, ResponseType.Error, HttpStatusCode.NotFound);
+        }
+
+        /// <summary>
+        /// Valida que el evento haya comenzado
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task ValidateEventStateNotStarterNotFinished(int id)
+        {
+            var listEvents = await eventRepository.GetAsync(u => u.Id == id, includeProperties: $"{nameof(Event.ListCandidate)},{nameof(Event.ListEventAdministrator)}");
+            var eventCurrent = listEvents.FirstOrDefault();
+            if (eventCurrent.IsFinished)
+                throw new CustomException(MessageCodesApi.EventIsFinished, ResponseType.Error, HttpStatusCode.NotFound);
+            if (eventCurrent.IsStarted)
+                throw new CustomException(MessageCodesApi.EventIsStarted, ResponseType.Error, HttpStatusCode.NotFound);
+        }
+
+        /// <summary>
+        /// Valida estado del evento para votar
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task ValidateEventStateToVote(int id)
+        {
+            var listEvents = await eventRepository.GetAsync(u => u.Id == id, includeProperties: $"{nameof(Event.ListCandidate)},{nameof(Event.ListEventAdministrator)}");
+            var eventCurrent = listEvents.FirstOrDefault();
+            if (eventCurrent.IsFinished)
+                throw new CustomException(MessageCodesApi.EventIsFinished, ResponseType.Error, HttpStatusCode.NotFound);
+            if (!eventCurrent.IsStarted)
+                throw new CustomException(MessageCodesApi.EventDontStarted, ResponseType.Error, HttpStatusCode.NotFound);
+        }
+
+
+        /// <summary>
+        /// Validar Usuario
+        /// </summary>
+        /// <param name="idUser"></param>
+        /// <returns></returns>
         public async Task<User> ValidateUser(int idUser)
         {
-            var existUser = await userRepository.GetAsyncInclude(u => u.Id == idUser,includeProperties: e => $"{nameof(e.EventNumber)}");
+            var existUser = await userRepository.GetAsyncInclude(u => u.Id == idUser, includeProperties: e => $"{nameof(e.EventNumber)}");
             if (existUser.Count() != 1)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.Unauthorized, $"No se encuntra el Usuario con Id:{idUser}");
             return existUser.FirstOrDefault();
@@ -141,6 +190,23 @@ namespace Dach.ElectionSystem.Services.Data
             var isAdministrator = eventCurrent.ListEventAdministrator.Any(administrator => administrator.IdUser == idUser);
             if (!isAdministrator)
                 throw new CustomException(MessageCodesApi.UserIsnotAdministratorEvent, ResponseType.Error, HttpStatusCode.NotFound, $"El usuario con  ID: {idUser} no es administrador en el evento con ID: {idEvent}");
+        }
+
+        /// <summary>
+        /// Valida que el usuario sea creador del evento
+        /// </summary>
+        /// <param name="idUser"></param>
+        /// <param name="idEvent"></param>
+        /// <returns></returns>
+        public async Task IsCreatorEvent(int idUser, int idEvent)
+        {
+            var events = await eventRepository.GetAsync(u => u.Id == idEvent, includeProperties: $"{nameof(Event.ListEventAdministrator)}");
+            if (!events.Any())
+                throw new CustomException(MessageCodesApi.ResourceNotFound, ResponseType.Error, HttpStatusCode.NotFound, $"El evento con id :{idEvent} no existe");
+            var eventCurrent = events.FirstOrDefault();
+            var isCreator = eventCurrent.IdUser == idUser;
+            if (!isCreator)
+                throw new CustomException(MessageCodesApi.EventCreator, ResponseType.Error, HttpStatusCode.NotFound, $"El usuario con  ID: {idUser} no es creador del evento con ID: {idEvent}");
         }
         #endregion
     }

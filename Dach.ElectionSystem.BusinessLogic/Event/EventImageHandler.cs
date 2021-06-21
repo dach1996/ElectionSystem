@@ -50,6 +50,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     if (isUserAdministrator == 0)
                         throw new CustomException(Models.Enums.MessageCodesApi.UserIsnotAdministratorEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound,
                                                     $"El usuario con Id: {request.UserContext.Id} no es administrador en el evento: {eventCurrent.Name}");
+                    //Validar que el evento no haya empezado ni terminado
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
                     //Generar ruta del archivo
                     var originalFileName = ContentDispositionHeaderValue.Parse(request.Image.ContentDisposition).FileName.Trim('"');
                     var pathEnviroment = _configuration.GetSection("PathSaveImage").Value;

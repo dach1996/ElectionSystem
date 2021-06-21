@@ -44,10 +44,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     //Validamos que exista el Evento
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Validar la fecha máxima para realizar votación
-                    var isDateValid = eventCurrent.DateMinVote <= DateTime.Now && eventCurrent.DateMaxVote >= DateTime.Now;
-                    if (!isDateValid)
-                        throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadGateway,
-                                                    $"Las fechas máximas para la votación ha terminado: Min: {eventCurrent.DateMinVote} - Max:  {eventCurrent.DateMaxVote}");
+                    await _validateIntegrity.ValidateEventStateToVote(eventCurrent.Id).ConfigureAwait(false);
                     //Validamos que exista el Candidato
                     var candidateCurrent = await _validateIntegrity.ValidateCandiate(request.IdCandidate);
                     if (candidateCurrent.IdEvent != eventCurrent.Id)
