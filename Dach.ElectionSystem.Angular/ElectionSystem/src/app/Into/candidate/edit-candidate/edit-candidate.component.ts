@@ -21,7 +21,7 @@ export class EditCandidateComponent implements OnInit, PageBase {
   titlePage: string = 'EDITAR MI INFORMACIÓN DE CANDIDATO';
   errorMessage: string = '';
   candidate?: CandidateBaseResponse;
-  information: AdditionalInformationCandidate = {
+  information?: AdditionalInformationCandidate = {
     goals: '',
     likes: '',
     pastime: '',
@@ -51,9 +51,10 @@ export class EditCandidateComponent implements OnInit, PageBase {
             if (res.status == HttpStatusCode.Ok) {
               this.loading = false;
               this.candidate = res.body?.content?.listCandidate?.[0];
-              this.information = <AdditionalInformationCandidate>(
-                JSON.parse(this.candidate?.additionalInformation!)
-              );
+              if (this.candidate?.additionalInformation!)
+                this.information = <AdditionalInformationCandidate>(
+                  JSON.parse(this.candidate?.additionalInformation!)
+                );
             }
           },
           (err) => {
@@ -71,6 +72,7 @@ export class EditCandidateComponent implements OnInit, PageBase {
     });
   }
   updateCandidate() {
+    this.loading = true;
     let updateCandidate: AdditionalInformationCandidate = {
       goals: this.information?.goals!,
       likes: this.information?.likes!,
@@ -93,7 +95,9 @@ export class EditCandidateComponent implements OnInit, PageBase {
               icon: 'success',
               text: 'Sus  datos han sido actualizados con éxito',
               confirmButtonText: 'Continuar',
-            }).then(() => {});
+            }).then(() => {
+              this.ngOnInit();
+            });
           }
         },
         (err) => {
@@ -140,6 +144,47 @@ export class EditCandidateComponent implements OnInit, PageBase {
           if (err.error.code == 141)
             this.errorMessage =
               'Número Máximo de imágenes de candidato alcanzado.';
+          else this.errorMessage = err.error.message;
+          Swal.fire({
+            icon: 'error',
+            text: this.errorMessage,
+            confirmButtonColor: '#d33',
+          });
+        }
+      );
+  }
+
+  deleteImage(image: string) {
+    this.loading=true;
+    let parts = image.split('/');
+    let resoucer = parts[parts.length-1];
+    if (resoucer === undefined) return;
+    this.loading = true;
+    this.candidateService
+      .apiEventsIdEventCandidatesImageDelete$Json$Response({
+        idEvent: this.idEvent!,
+        NameResoruce: resoucer,
+      })
+      .subscribe(
+        (res) => {
+          if (res.body.code == HttpStatusCode.Ok) {
+            this.loading = false;
+            Swal.fire({
+              icon: 'success',
+              text: 'Imagen Borrada Exitosamente',
+              confirmButtonText: 'Continuar',
+            }).then(() => {
+              this.ngOnInit();
+            });
+          }
+        },
+        (err) => {
+          this.loading = false;
+          if (err.error.code == 150)
+            this.errorMessage = 'Es necesario llenar todos los campos';
+          if (err.error.code == 141)
+            this.errorMessage =
+              'Error al intentar borrar la imágen';
           else this.errorMessage = err.error.message;
           Swal.fire({
             icon: 'error',

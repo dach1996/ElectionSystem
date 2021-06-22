@@ -320,7 +320,7 @@ export class CandidateService extends BaseService {
      */
     NameResoruce: string;
     idEvent: number;
-  }): Observable<StrictHttpResponse<UnitGenericResponse>> {
+  }): Observable<StrictHttpResponse<ResponseGeneric<UnitGenericResponse>>> {
 
     const rb = new RequestBuilder(this.rootUrl, CandidateService.ApiEventsIdEventCandidatesImageDeletePath, 'delete');
     if (params) {
@@ -334,7 +334,7 @@ export class CandidateService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<UnitGenericResponse>;
+        return r as StrictHttpResponse<ResponseGeneric<UnitGenericResponse>>
       })
     );
   }
