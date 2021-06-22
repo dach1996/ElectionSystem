@@ -11,5 +11,7 @@ export enum TypeFilterEvent {
   MineWithVote = 'MineWithVote',
   MineWithOutVote = 'MineWithOutVote',
   Candidate = 'Candidate',
-  Participant = 'Participant'
+  Participant = 'Participant',
+  Relation = 'Relation',
+
 }

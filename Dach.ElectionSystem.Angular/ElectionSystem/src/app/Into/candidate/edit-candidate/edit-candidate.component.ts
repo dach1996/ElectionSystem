@@ -53,7 +53,7 @@ export class EditCandidateComponent implements OnInit, PageBase {
               this.candidate = res.body?.content?.listCandidate?.[0];
               if (this.candidate?.additionalInformation!)
                 this.information = <AdditionalInformationCandidate>(
-                  JSON.parse(this.candidate?.additionalInformation!)
+                  JSON.parse(this.candidate.additionalInformation)
                 );
             }
           },

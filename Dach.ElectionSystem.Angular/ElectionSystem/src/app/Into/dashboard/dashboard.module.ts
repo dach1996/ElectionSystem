@@ -23,6 +23,8 @@ import { RecordsParticipantComponent } from '../myRecords/records-participant/re
 import { RecordsAdministratorComponent } from '../myRecords/records-administrator/records-administrator.component';
 import { EditCandidateComponent } from '../candidate/edit-candidate/edit-candidate.component';
 import { CandidateComponent } from '../candidate/candidate/candidate.component';
+import { ResultsComponent } from '../results/results/results.component';
+import { VoteComponent } from '../vote/vote/vote.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,10 @@ import { CandidateComponent } from '../candidate/candidate/candidate.component';
     RecordsManaginComponent,
     RecordsCandidateComponent,
     RecordsParticipantComponent,
-    RecordsAdministratorComponent
+    RecordsAdministratorComponent,
+    ResultsComponent,
+    VoteComponent
+
   ],
   imports: [
     BrowserModule,
