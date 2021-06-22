@@ -48,5 +48,11 @@ namespace Dach.ElectionSystem.Models.Enums
         /// </summary>
         [EnumMember(Value = "Soy participante en el evento")]
         Participant = 6,
+
+        /// <summary>
+        /// Relación
+        /// </summary>
+        [EnumMember(Value = "Tengo relación con el Evento")]
+        Relation = 7,
     }
 }

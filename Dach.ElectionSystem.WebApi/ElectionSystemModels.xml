@@ -563,6 +563,11 @@
             Soy Participante
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.TypeFilterEvent.Relation">
+            <summary>
+            Relación
+            </summary>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Enums.TypeFilterUser">
             <summary>
             Selección de registros
@@ -2526,6 +2531,24 @@
         <member name="P:Dach.ElectionSystem.Models.Response.Event.EventHasRoledWithEventResponse.HasRelationshipEvent">
             <summary>
             Tiene relación con el evento?
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Event.EventHasRoledWithEventResponse.AdmnistratorRelation">
+            <summary>
+            Relación siendo Administrador
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Event.EventHasRoledWithEventResponse.CandidateRelation">
+            <summary>
+            Relación siendo Candidato
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Response.Event.EventHasRoledWithEventResponse.ParticipantRelation">
+            <summary>
+            Relación siendo Participante
             </summary>
             <value></value>
         </member>

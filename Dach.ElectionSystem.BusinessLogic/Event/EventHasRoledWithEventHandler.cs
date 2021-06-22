@@ -1,11 +1,14 @@
-﻿using AutoMapper;
-using Dach.ElectionSystem.Models.Request.Event;
+﻿using Dach.ElectionSystem.Models.Request.Event;
 using Dach.ElectionSystem.Models.Response.Event;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using Dach.ElectionSystem.Services.Data;
+using System.Linq;
+using Dach.ElectionSystem.Models.Enums;
+using Dach.ElectionSystem.Models.ExceptionGeneric;
+using System.Net;
 
 namespace Dach.ElectionSystem.BusinessLogic.Event
 {
@@ -30,15 +33,22 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             {
                 //Validamos que exista el usuario
                 _ = await _validateIntegrity.ValidateUser(request.IdUserComapare);
-                //Validamos que exista el evento
-                _ = await _validateIntegrity.ValidateEvent(request.IdEvent);
                 //Validamos que el usuario tenga algún registro en el evento
-                _ = await _validateIntegrity.HasRegisterWithEvent(request.IdUserComapare, request.IdEvent);
-                //Encontramos los datos necesarios
-                return new EventHasRoledWithEventResponse()
-                {
-                    HasRelationshipEvent = true
-                };
+                var events = await _electionUnitOfWork.GetEventRepository().GetAsyncInclude(u => u.Id == request.IdEvent, includeProperties: e => $"{nameof(e.ListCandidate)},{nameof(e.ListEventAdministrator)},{nameof(e.ListVote)}");
+                if (!events.Any())
+                    throw new CustomException(MessageCodesApi.ResourceNotFound, ResponseType.Error, HttpStatusCode.NotFound, $"El evento con id :{request.IdEvent} no existe");
+                var eventCurrent = events.FirstOrDefault();
+                var response = new EventHasRoledWithEventResponse();
+                if (eventCurrent.ListEventAdministrator.Any(le => le.IdUser == request.IdUserComapare && le.IsActive))
+                    response.AdmnistratorRelation = true;
+                if (eventCurrent.ListVote.Any(le => le.IdUser == request.IdUserComapare && le.IsActive))
+                    response.ParticipantRelation = true;
+                if (eventCurrent.ListCandidate.Any(le => le.IdUser == request.IdUserComapare && le.IsActive))
+                    response.CandidateRelation = true;
+                if (!response.AdmnistratorRelation && !response.CandidateRelation && !response.ParticipantRelation)
+                    throw new CustomException(MessageCodesApi.ResourceNotFound, ResponseType.Error, HttpStatusCode.NotFound, $"El usuario con  ID: {request.IdUserComapare} no posee ningún registro en el evento con ID: {request.IdEvent}");
+                response.HasRelationshipEvent = true;
+                return response;
             }
         }
         #endregion

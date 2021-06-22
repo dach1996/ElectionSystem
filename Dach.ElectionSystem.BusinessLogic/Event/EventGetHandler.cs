@@ -46,6 +46,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                         Models.Enums.TypeFilterEvent.MineWithOutVote => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id && !v.HasVote && v.IsActive, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
                         Models.Enums.TypeFilterEvent.Participant => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
                         Models.Enums.TypeFilterEvent.Candidate => (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.IdUser == request.UserContext.Id && c.IsActive, includeProperties: c => $"{nameof(c.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
+                        Models.Enums.TypeFilterEvent.Relation => await GetEventsWithRelation(request.UserContext.Id),
+                        
                         _ => listEvents
                     };
 
@@ -68,6 +70,19 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     TotalEvents = totalEvents
                 };
             }
+        }
+
+        private async Task<List<Models.Persitence.Event>> GetEventsWithRelation(int idUser)
+        {
+
+            var events = await _electionUnitOfWork
+                .GetEventRepository()
+                .GetAsyncInclude(
+                includeProperties: e => $"{nameof(e.ListCandidate)},{nameof(e.ListEventAdministrator)},{nameof(e.ListVote)}");
+            var eventsFilter = events.Where(e => e.ListEventAdministrator.Any(le => le.IdUser == idUser && le.IsActive) ||
+                e.ListVote.Any(le => le.IdUser == idUser && le.IsActive) ||
+                e.ListCandidate.Any(le => le.IdUser == idUser && le.IsActive)).ToList();
+            return eventsFilter;
         }
         #endregion
     }
