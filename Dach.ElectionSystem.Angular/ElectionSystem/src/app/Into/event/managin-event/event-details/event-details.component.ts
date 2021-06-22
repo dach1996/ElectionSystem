@@ -30,7 +30,7 @@ export class EventDetailsComponent implements OnInit, PageBase {
         (res) => {
           if (res.status == HttpStatusCode.Ok) {
             this.loading = false;
-            this.event = res.body?.content?.listEvents?.[0];
+            this.event = <EventBaseResponse> res.body?.content?.listEvents?.[0] ;
             if (res.body.content?.listEvents?.length == 0)
               Swal.fire({
                 icon: 'error',

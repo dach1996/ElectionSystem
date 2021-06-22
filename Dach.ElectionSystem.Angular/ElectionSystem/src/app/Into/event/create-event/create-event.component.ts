@@ -17,10 +17,7 @@ export class EventCreateComponent implements OnInit, PageBase {
   public titlePage: string = 'CREAR NUEVO EVENTO';
   public eventCreateRequest: EventCreateRequest = {
     category: 'Elección de candidato',
-    dateMaxRegisterCandidate: new Date(),
     dateMaxRegisterParticipants: new Date(),
-    dateMaxVote: new Date(),
-    dateMinVote: new Date(),
     description: '',
     maxPeople: false,
     name: '',

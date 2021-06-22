@@ -12,24 +12,9 @@ export interface EventUpdateRequest {
   category: string;
 
   /**
-   * Fecha Máxima para registrar Candidatos
-   */
-  dateMaxRegisterCandidate: Date;
-
-  /**
    * Fecha  Máxima para registrar participantes
    */
   dateMaxRegisterParticipants: Date;
-
-  /**
-   * Fecha máxima para realizar votación
-   */
-  dateMaxVote: Date;
-
-  /**
-   * Fecha  mínima para realizar votación
-   */
-  dateMinVote: Date;
 
   /**
    * Descripción de evento

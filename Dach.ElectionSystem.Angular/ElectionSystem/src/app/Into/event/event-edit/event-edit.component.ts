@@ -57,12 +57,9 @@ export class EventEditComponent implements OnInit, PageBase {
     this.loading = true;
     let eventUpdate: EventUpdateRequest = {
       category: this.event?.category!,
-      dateMaxRegisterCandidate: new Date(this.event?.dateMaxRegisterCandidate!),
       dateMaxRegisterParticipants: new Date(
         this.event?.dateMaxRegisterParticipants!
       ),
-      dateMaxVote: new Date(this.event?.dateMaxVote!),
-      dateMinVote: new Date(this.event?.dateMinVote!),
       description: this.event?.description!,
       maxPeople: this.event?.maxPeople!,
       numberMaxCandidate: this.event?.numberMaxCandidate!,

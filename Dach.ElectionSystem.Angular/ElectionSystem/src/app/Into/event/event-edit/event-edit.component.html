@@ -53,13 +53,7 @@
                                   </div>
                                   <div class="mb-4">
                                     <div class="row">
-                                          
-                                        <div class="col-md">
-                                            <label>Fecha Max. Registro Candidatos</label>
-                                            <div class="input-group">
-                                            <input *ngIf="event" [ngModel]="event.dateMaxRegisterCandidate | date:'yyyy-MM-dd' "  (ngModelChange)="event.dateMaxRegisterCandidate = $event"  name="dateMaxRegisterCandidate"  type="date" class="form-control" placeholder="" >
-                                      </div>
-                                      </div>
+                                        
                                         <div class="col-md">
                                             <label>Fecha Max. Registro Participantes</label>
                                             <div class="input-group">
@@ -68,23 +62,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="mb-4">
-                                    <div class="row">
-                                          
-                                        <div class="col-md">
-                                            <label>Fecha Inicio Evento</label>
-                                            <div class="input-group">
-                                            <input  *ngIf="event"  [ngModel]="event.dateMinVote | date:'yyyy-MM-dd' : 'UTC'"  (ngModelChange)="event.dateMinVote = $event"  name="dateMinVote"  type="date" class="form-control" placeholder="" >
-                                      </div>
-                                      </div>
-                                        <div class="col-md">
-                                            <label>Fecha Fin Proyecto</label>
-                                            <div class="input-group">
-                                            <input *ngIf="event" [ngModel]="event.dateMaxVote | date:'yyyy-MM-dd' : 'UTC'"  (ngModelChange)="event.dateMaxVote = $event"   name="dateMaxVote" type="date" class="form-control" placeholder="" >
-                                      </div>
-                                      </div>
-                                    </div>
-                                  </div>
+                         
                                 <div class="row">
                                   <div class="col-md-12">
                                 

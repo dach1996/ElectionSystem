@@ -19,11 +19,6 @@ export interface EventBaseResponse {
   codeEvent?: null | string;
 
   /**
-   * Fecha Máxima para registrar Candidatos
-   */
-  dateMaxRegisterCandidate: Date;
-
-  /**
    * Fecha  Máxima para registrar participantes
    */
   dateMaxRegisterParticipants: Date;

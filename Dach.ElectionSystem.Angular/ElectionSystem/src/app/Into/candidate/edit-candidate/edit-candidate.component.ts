@@ -21,7 +21,14 @@ export class EditCandidateComponent implements OnInit, PageBase {
   titlePage: string = 'EDITAR MI INFORMACIÓN DE CANDIDATO';
   errorMessage: string = '';
   candidate?: CandidateBaseResponse;
-  information?: AdditionalInformationCandidate;
+  information: AdditionalInformationCandidate = {
+    goals: '',
+    likes: '',
+    pastime: '',
+    sports: '',
+    urlVideo: '',
+    alias: '',
+  };
   idEvent?: number;
   imageFile: File | undefined;
 
@@ -30,7 +37,7 @@ export class EditCandidateComponent implements OnInit, PageBase {
     this.activeRouter.paramMap.subscribe((paramsMap: ParamMap) => {
       let idEvent = Number(paramsMap.get('idEvent')!);
       let idUser = Number(paramsMap.get('idUser')!);
-      this.idEvent= idEvent;
+      this.idEvent = idEvent;
       this.candidateService
         .apiEventsIdEventCandidatesIdCandidateGet$Json$Response({
           Limit: 100,
@@ -63,52 +70,49 @@ export class EditCandidateComponent implements OnInit, PageBase {
         );
     });
   }
-  updateCandidate(){
-    let updateCandidate : AdditionalInformationCandidate={
-      goals : this.information?.goals!,
+  updateCandidate() {
+    let updateCandidate: AdditionalInformationCandidate = {
+      goals: this.information?.goals!,
       likes: this.information?.likes!,
       pastime: this.information?.pastime!,
       sports: this.information?.sports!,
       urlVideo: this.information?.urlVideo!,
-      alias: this.information?.alias
-    }
+      alias: this.information?.alias,
+    };
     this.candidateService
-    .apiEventsIdEventCandidatesIdCandidatePut$Json$Response({
-      idCandidate : this.candidate?.id!,
-      idEvent : this.idEvent!,
-      body: updateCandidate
-    })
-    .subscribe(
-      (res) => {
-        if (res.status == HttpStatusCode.Ok) {
+      .apiEventsIdEventCandidatesIdCandidatePut$Json$Response({
+        idCandidate: this.candidate?.id!,
+        idEvent: this.idEvent!,
+        body: updateCandidate,
+      })
+      .subscribe(
+        (res) => {
+          if (res.status == HttpStatusCode.Ok) {
+            this.loading = false;
+            Swal.fire({
+              icon: 'success',
+              text: 'Sus  datos han sido actualizados con éxito',
+              confirmButtonText: 'Continuar',
+            }).then(() => {});
+          }
+        },
+        (err) => {
           this.loading = false;
+          if (err.error.code == 150)
+            this.errorMessage = 'Es necesario llenar todos los campos';
+          else this.errorMessage = err.error.message;
           Swal.fire({
-            icon: 'success',
-            text: 'Sus  datos han sido actualizados con éxito',
-            confirmButtonText: 'Continuar',
-          }).then(()=>{
-            
+            icon: 'error',
+            text: this.errorMessage,
+            confirmButtonColor: '#d33',
           });
         }
-      },
-      (err) => {
-        this.loading = false;
-        if (err.error.code == 150)
-          this.errorMessage = 'Es necesario llenar todos los campos';
-        else this.errorMessage = err.error.message;
-        Swal.fire({
-          icon: 'error',
-          text: this.errorMessage,
-          confirmButtonColor: '#d33',
-        });
-      }
-    );
-
+      );
   }
   changeImage(event: any) {
     this.imageFile = event.target.files[0];
   }
-  updateImage(){
+  updateImage() {
     if (this.imageFile === undefined) return;
     this.loading = true;
     this.candidateService
@@ -124,7 +128,7 @@ export class EditCandidateComponent implements OnInit, PageBase {
               icon: 'success',
               text: 'Imagen cargada exitosamente',
               confirmButtonText: 'Continuar',
-            }).then(()=>{
+            }).then(() => {
               this.ngOnInit();
             });
           }
@@ -133,9 +137,10 @@ export class EditCandidateComponent implements OnInit, PageBase {
           this.loading = false;
           if (err.error.code == 150)
             this.errorMessage = 'Es necesario llenar todos los campos';
-          if(err.error.code == 141)
-          this.errorMessage = 'Número Máximo de imágenes de candidato alcanzado.';
-            else this.errorMessage = err.error.message;
+          if (err.error.code == 141)
+            this.errorMessage =
+              'Número Máximo de imágenes de candidato alcanzado.';
+          else this.errorMessage = err.error.message;
           Swal.fire({
             icon: 'error',
             text: this.errorMessage,
