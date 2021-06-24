@@ -1,5 +1,6 @@
 import { HttpStatusCode } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PageBase } from 'src/app/models/pageBase';
 import {
   CandidateBaseResponse,
@@ -9,6 +10,7 @@ import {
 } from 'src/app/serviceApi/models';
 import { CandidateService, EventService } from 'src/app/serviceApi/services';
 import Swal from 'sweetalert2';
+import { ModalDetailCandidateComponent } from '../modal-detail-candidate/modal-detail-candidate.component';
 
 @Component({
   selector: 'app-vote',
@@ -21,7 +23,8 @@ export class VoteComponent implements OnInit, PageBase {
   listCandidates?: Array<CandidateBaseResponse>
   constructor(
     private eventService: EventService,
-    private candidateService: CandidateService
+    private candidateService: CandidateService,
+    private modalService: NgbModal
   ) {}
   loading: boolean = false;
   titlePage: string = 'PARTICIPAR EN EVENTO';
@@ -95,5 +98,14 @@ export class VoteComponent implements OnInit, PageBase {
       },
       () => (this.loading = false)
     );
+  }
+  openCandidateDetailModal(candidate: CandidateBaseResponse): void {
+    let modal = this.modalService.open(ModalDetailCandidateComponent, {
+      size: 'lg',
+      centered: true,
+    });
+    modal.componentInstance.titlePage = 'DETALLES DE CANDIDATO';
+    modal.componentInstance.candidate = candidate;
+    modal.componentInstance.event = this.event;
   }
 }

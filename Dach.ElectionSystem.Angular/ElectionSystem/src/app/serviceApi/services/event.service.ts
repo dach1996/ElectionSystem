@@ -143,6 +143,49 @@ export class EventService extends BaseService {
       );
   }
 
+  static readonly ApiStartStopPostPath = '/api/events/{idEvent}/startstop';
+
+  /**
+   * Crear nuevo evento.
+   *
+   *
+   *
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiEventsPost$Json()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  apiStartStopPost$Json$Response(params?: {
+    idEvent: number;
+    body: {
+      daysAllow: number;
+    };
+  }): Observable<StrictHttpResponse<EventCreateResponse>> {
+    const rb = new RequestBuilder(
+      this.rootUrl,
+      EventService.ApiStartStopPostPath,
+      'post'
+    );
+    if (params) {
+      rb.path('idEvent', params.idEvent, {});
+      rb.body(params.body, 'application/*+json');
+    }
+    rb.header('Authorization', localStorage.getItem('token')!);
+    return this.http
+      .request(
+        rb.build({
+          responseType: 'json',
+          accept: 'text/json',
+        })
+      )
+      .pipe(
+        filter((r: any) => r instanceof HttpResponse),
+        map((r: HttpResponse<any>) => {
+          return r as StrictHttpResponse<any>;
+        })
+      );
+  }
+
   static readonly ApiEventsIdGetPath = '/api/events/{id}';
 
   /**
@@ -336,7 +379,7 @@ export class EventService extends BaseService {
    * This method doesn't expect any request body.
    */
   apiEventsVerifyRelationShip$Json$Response(params: {
-   body : EventVerifyRelationShip
+    body: EventVerifyRelationShip;
   }): Observable<StrictHttpResponse<any>> {
     const rb = new RequestBuilder(
       this.rootUrl,

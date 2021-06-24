@@ -99,6 +99,12 @@
                       </div>
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="d-grid col" >
+                      <button *ngIf="!event?.isStarted && !event?.isFinished"  (click)="startStopEvent()" class="btn btn-success" type="button">Comenzar Evento</button>
+                      <button  *ngIf="event?.isStarted && !event?.isFinished" (click)="startStopEvent()" class="btn btn-danger" type="button">Finalizar Evento</button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col-md-6"></div>

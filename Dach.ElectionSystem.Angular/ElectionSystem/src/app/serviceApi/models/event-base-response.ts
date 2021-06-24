@@ -1,13 +1,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { UserBaseResponse } from "./user-base-response";
+import { UserBaseResponse } from './user-base-response';
 
 /**
  * Clase base para respuestas
  */
 export interface EventBaseResponse {
-
   /**
    * Categoría de Evento
    */
@@ -81,5 +80,15 @@ export interface EventBaseResponse {
   /**
    * Usuario
    */
-  user : UserBaseResponse ;
+  user: UserBaseResponse;
+
+  /**
+   * Evento ha comenzado
+   */
+  isStarted: boolean;
+
+  /**
+   * Evento ha terminado
+   */
+  isFinished: boolean;
 }

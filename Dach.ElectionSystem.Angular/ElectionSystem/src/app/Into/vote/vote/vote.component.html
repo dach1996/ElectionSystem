@@ -1,26 +1,57 @@
 <app-loading *ngIf="loading"></app-loading>
 
 <div [ngClass]="loading ? 'opacity-loader' : ' '" class="mx-4">
-    <div class="row px-5">
-        <div class="col-md-8">
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Lista de evento en los que soy participante</label>
-                <select [(ngModel)]="event" class="form-control" id="exampleFormControlSelect1">
-                  <option *ngFor="let event of listEvents" [ngValue]='event'>{{event.name}}</option>
-                </select>
-              </div>
-        </div>
-        <div class="col-md-4 mt-4">
-            <button class="btn btn-danger" (click)="loadCandidates()">Buscar</button>
-        </div>
+  <div class="row px-5">
+    <div class="col-md-8">
+      <div class="form-group">
+        <label for="exampleFormControlSelect1"
+          >Lista de evento en los que soy participante</label
+        >
+        <select
+          [(ngModel)]="event"
+          class="form-control"
+          id="exampleFormControlSelect1"
+        >
+          <option *ngFor="let event of listEvents" [ngValue]="event">
+            {{ event.name }}
+          </option>
+        </select>
+      </div>
     </div>
-    
+    <div class="col-md-4 mt-4">
+      <button class="btn btn-danger" (click)="loadCandidates()">Buscar</button>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-12">
       <div class="card border mb-4">
-        <div class="card-header"></div>
+        <div class="card-header py-0"></div>
         <div class="card-body">
-            <span *ngFor="let candidate of listCandidates">{{candidate.user?.firstName!}}</span>
+          <div class="row">
+            <div>Aqui poner datos del evento</div>
+          </div>          
+        </div>
+      </div>
+      <div class="row">
+        <div *ngFor="let candidate of listCandidates" class="col-sm-6 mb-3">
+          <div class="card">
+            
+            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
+              <a href="javascript:;" class="d-block">
+                <img *ngIf="candidate.listCandidateImage" src="https://{{candidate.listCandidateImage[0]}}" class="img-fluid border-radius-lg">
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{candidate.user?.firstName!}} {{candidate.user?.firstLastName}}</h5>
+              <p class="card-text">{{candidate.user?.email}}</p>
+
+              <p class="card-text">Traer los dellates y convertir para mostrar </p>
+              <p class="card-text">{{candidate.information?.pastime}}</p>
+              <p class="card-text">{{candidate.information?.sports}}</p>
+              <a (click)="openCandidateDetailModal(candidate)" class="btn btn-primary">Ver Detalles</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -25,6 +25,7 @@ import { EditCandidateComponent } from '../candidate/edit-candidate/edit-candida
 import { CandidateComponent } from '../candidate/candidate/candidate.component';
 import { ResultsComponent } from '../results/results/results.component';
 import { VoteComponent } from '../vote/vote/vote.component';
+import { ModalDetailCandidateComponent } from '../vote/modal-detail-candidate/modal-detail-candidate.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { VoteComponent } from '../vote/vote/vote.component';
     RecordsParticipantComponent,
     RecordsAdministratorComponent,
     ResultsComponent,
-    VoteComponent
+    VoteComponent,
+    ModalDetailCandidateComponent
 
   ],
   imports: [

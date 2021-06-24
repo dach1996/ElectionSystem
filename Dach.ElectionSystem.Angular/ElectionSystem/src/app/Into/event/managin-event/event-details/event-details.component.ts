@@ -22,7 +22,7 @@ export class EventDetailsComponent implements OnInit, PageBase {
   public errorMessage: string = '';
 
   ngOnInit(): void {
-    this.loading=true;
+    this.loading = true;
     this.activeRouter.parent?.params.subscribe((paramsMap) => {
       let idEvent = Number(paramsMap.idEvent);
 
@@ -30,7 +30,7 @@ export class EventDetailsComponent implements OnInit, PageBase {
         (res) => {
           if (res.status == HttpStatusCode.Ok) {
             this.loading = false;
-            this.event = <EventBaseResponse> res.body?.content?.listEvents?.[0] ;
+            this.event = <EventBaseResponse>res.body?.content?.listEvents?.[0];
             if (res.body.content?.listEvents?.length == 0)
               Swal.fire({
                 icon: 'error',
@@ -52,5 +52,40 @@ export class EventDetailsComponent implements OnInit, PageBase {
         }
       );
     });
+  }
+  startStopEvent() {
+    this.loading = true;
+    this.eventService
+      .apiStartStopPost$Json$Response({
+        body:{
+          daysAllow:5
+        },
+        idEvent: this.event?.id!,
+      })
+      .subscribe(
+        (res) => {
+          if (res.status == HttpStatusCode.Ok) {
+            this.loading = false;
+            Swal.fire({
+              icon: 'success',
+              text: 'Evento: ' + this.event?.name + ' ha sido Actualizado',
+              confirmButtonText: 'Continuar',
+            }).then(()=>{
+                this.ngOnInit();
+            });
+          }
+        },
+        (err) => {
+          this.loading = false;
+          if (err.error.code == 150)
+            this.errorMessage = 'Es necesario llenar todos los campos';
+          else this.errorMessage = err.error.message;
+          Swal.fire({
+            icon: 'error',
+            text: this.errorMessage,
+            confirmButtonColor: '#d33',
+          });
+        }
+      );
   }
 }
