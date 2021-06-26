@@ -41,6 +41,7 @@ export class ResultsComponent implements OnInit, AfterViewInit, PageBase {
 
   ngOnInit() {
     this.loadEvents();
+    Math.round(5);
 
   }
   public barChartOptions?: ChartOptions;
@@ -174,5 +175,8 @@ export class ResultsComponent implements OnInit, AfterViewInit, PageBase {
           this.loadBarChart();
         }
       );
+  }
+  round5(number:number):number{
+    return Math.ceil(number/5)*5
   }
 }

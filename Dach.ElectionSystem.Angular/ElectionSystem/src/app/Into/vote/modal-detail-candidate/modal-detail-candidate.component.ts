@@ -34,6 +34,7 @@ export class ModalDetailCandidateComponent implements OnInit, PageBase {
   ) {}
 
   ngOnInit(): void {
+    
     this.loading = true;
     this.voteService
       .apiVotesEventsIdEventGet$Json$Response({
