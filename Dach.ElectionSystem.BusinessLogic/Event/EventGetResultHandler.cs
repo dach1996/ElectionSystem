@@ -46,7 +46,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 response.Candidates = _mapper.Map<List<CandidateWithVote>>(eventCurrent.ListCandidate);
                 response.Candidates.ForEach(c =>
                 {
-                    c.NumberVotes = eventCurrent.ListVote.Count(votes => votes.IdCandidate == c.IdUser);
+                    c.NumberVotes = eventCurrent.ListVote.Count(votes => votes.IdCandidate == c.Id);
                 });
                 //Asignamos los datos del evento
                 response.Event = _mapper.Map<EventBaseResponse>(eventCurrent);
