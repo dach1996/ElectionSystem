@@ -1,123 +1,178 @@
+import { HttpStatusCode } from '@angular/common/http';
 import {
   AfterViewInit,
   Component,
-  ElementRef,
   OnInit,
-  ViewChild,
 } from '@angular/core';
-import { Chart } from 'chart.js';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import { Label } from 'ng2-charts';
 import { PageBase } from 'src/app/models/pageBase';
+import {
+  EventBaseResponse,
+  EventGetResultResponse,
+  OrderBy,
+  TypeFilterEvent,
+} from 'src/app/serviceApi/models';
+import { EventService } from 'src/app/serviceApi/services';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.css'],
+  styleUrls: ['./results.component.css', '../../../app.component.css'],
 })
 export class ResultsComponent implements OnInit, AfterViewInit, PageBase {
- 
-  constructor() {}
+  constructor(private eventService: EventService) {}
   loading: boolean = false;
   titlePage: string = 'RESULTADOS DE EVENTO';
   errorMessage: string = '';
-  @ViewChild('lineCanvas') private lineCanvas?: ElementRef;
+  event?: EventBaseResponse;
+  listEvents?: Array<EventBaseResponse>;
+  results?: EventGetResultResponse;
 
-  ngAfterViewInit(): void {
-    const gradientStroke1 = this.lineCanvas?.nativeElement.getContext('2d').createLinearGradient(0, 230, 0, 50);
-  
-    gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
+  private eventRequest = {
+    Offset: 0,
+    OrderBy: OrderBy.Asc,
+    Limit: 100,
+    TypeFilter: TypeFilterEvent.Relation,
+  };
+  ngAfterViewInit(): void {}
 
-    var gradientStroke2 = this.lineCanvas?.nativeElement.getContext('2d').createLinearGradient(0, 230, 0, 50);
+  ngOnInit() {
+    this.loadEvents();
 
-    gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
-    gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
+  }
+  public barChartOptions?: ChartOptions;
+  public barChartLabels: Label[] = ['', ''];
+  public barChartType: ChartType = 'bar';
+  public barChartLegend = true;
+  public barChartPlugins = [pluginDataLabels];
+  public barChartData: ChartDataSets[] = [];
 
-    new Chart(this.lineCanvas?.nativeElement, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-            label: "Mobile apps",
-            lineTension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#cb0c9f",
-            backgroundColor: gradientStroke1,            
-            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-            maxBarThickness: 6
+  loadBarChart(): void {
+    let namesCandidates = this.results?.candidates?.map(
+      (c) => c.user?.firstName + ' ' + c.user?.firstLastName
+    );
+    let votesCandidates = this.results?.candidates?.map(
+      (c) => c.numberVotes
+    ) as number[];
 
-          },
-          {
-            label: "Websites",
-            lineTension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#3A416F",
-            backgroundColor:gradientStroke2,
-            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-            maxBarThickness: 6
-
-          },
-        ],
+    this.barChartLabels = namesCandidates!;
+    this.barChartData = [
+      {
+        label: 'Canidatas',
+        data: votesCandidates,
+        lineTension: 0.4,
+        borderWidth: 0,
+        backgroundColor: '#fff',
+        pointRadius: 0,
+        maxBarThickness: 6,
       },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-          display: false,
-        },
-        tooltips: {
-          enabled: true,
-          mode: "index",
-          intersect: false,
-        },
-        scales: {
-          yAxes: [{
+    ];
+    this.barChartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: { display: false },
+      tooltips: {
+        enabled: true,
+        mode: 'index',
+        intersect: false,
+      },
+      scales: {
+        yAxes: [
+          {
             gridLines: {
-              borderDash: [2],
-              borderDashOffset: 2,
-              color: '#dee2e6',
-              zeroLineColor: '#dee2e6',
-              zeroLineWidth: 1,
-              zeroLineBorderDash: [2],
-              drawBorder: false,
-            },
-            ticks: {
-              suggestedMin: 0,
-              suggestedMax: 500,
-              beginAtZero: true,
-              padding: 10,
-              fontSize: 11,
-              fontColor: '#adb5bd',
-              lineHeight: 3,
-              fontStyle: 'normal',
-              fontFamily: "Open Sans",
-            },
-          }, ],
-          xAxes: [{
-            gridLines: {
-              zeroLineColor: 'rgba(0,0,0,0)',
               display: false,
             },
             ticks: {
-              padding: 10,
-              fontSize: 11,
-              fontColor: '#adb5bd',
+              suggestedMin: 0,
+              suggestedMax: Math.max.apply(null, votesCandidates),
+              beginAtZero: true,
+              padding: 0,
+              fontSize: 14,
               lineHeight: 3,
+              fontColor: '#fff',
               fontStyle: 'normal',
-              fontFamily: "Open Sans",
+              fontFamily: 'Open Sans',
             },
-          }, ],
-        },
+          },
+        ],
+        xAxes: [
+          {
+            gridLines: {
+              display: false,
+            },
+            ticks: {
+              display: false,
+              padding: 20,
+            },
+          },
+        ],
       },
-    
-    });
+    };
   }
-  
-  ngOnInit() {    
-
-  
+  loadEvents(): void {
+    this.loading = true;
+    this.eventService.apiEventsGet$Json$Response(this.eventRequest).subscribe(
+      (res) => {
+        if (res.status == HttpStatusCode.Ok) {
+          this.listEvents = res.body.content?.listEvents!;
+          if (this.listEvents === null)
+            Swal.fire({
+              icon: 'error',
+              text:
+                'Error: ' + 'No se encontraron eventos relacionados con usted.',
+              confirmButtonColor: '#d33',
+            });
+        }
+      },
+      (err) => {
+        if (err.error.code == 150)
+          this.errorMessage = 'Es necesario llenar todos los campos';
+        else this.errorMessage = err.error.message;
+        Swal.fire({
+          icon: 'error',
+          text: 'Error: ' + this.errorMessage,
+          confirmButtonColor: '#d33',
+        });
+      },
+      () => (this.loading = false)
+    );
+  }
+  loadResults(): void {
+    this.loading = true;
+    this.eventService
+      .apiEventsIdEventResultsGet$Json$Response({ idEvent: this.event?.id! })
+      .subscribe(
+        (res) => {
+          if (res.status == HttpStatusCode.Ok) {
+            this.results = res.body.content!;
+            this.loadBarChart();
+            if (this.listEvents === null)
+              Swal.fire({
+                icon: 'error',
+                text:
+                  'Error: ' +
+                  'No se encontraron eventos relacionados con usted.',
+                confirmButtonColor: '#d33',
+              });
+          }
+        },
+        (err) => {
+          if (err.error.code == 150)
+            this.errorMessage = 'Es necesario llenar todos los campos';
+          else this.errorMessage = err.error.message;
+          Swal.fire({
+            icon: 'error',
+            text: 'Error: ' + this.errorMessage,
+            confirmButtonColor: '#d33',
+          });
+        },
+        () => {
+          this.loading = false;
+          this.loadBarChart();
+        }
+      );
   }
 }

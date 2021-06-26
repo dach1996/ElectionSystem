@@ -337,7 +337,7 @@ export class EventService extends BaseService {
    */
   apiEventsIdEventResultsGet$Json$Response(params: {
     idEvent: number;
-  }): Observable<StrictHttpResponse<EventGetResultResponse>> {
+  }): Observable<StrictHttpResponse<ResponseGeneric<EventGetResultResponse>>> {
     const rb = new RequestBuilder(
       this.rootUrl,
       EventService.ApiEventsIdEventResultsGetPath,
@@ -357,7 +357,7 @@ export class EventService extends BaseService {
       .pipe(
         filter((r: any) => r instanceof HttpResponse),
         map((r: HttpResponse<any>) => {
-          return r as StrictHttpResponse<EventGetResultResponse>;
+          return r as StrictHttpResponse<ResponseGeneric<EventGetResultResponse>>;
         })
       );
   }
