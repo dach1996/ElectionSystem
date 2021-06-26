@@ -4,7 +4,6 @@ import { PageBase } from 'src/app/models/pageBase';
 import { ScriptService } from 'src/app/service/scripService.service';
 import { StorageCache } from 'src/app/service/storageCache.service';
 import { UserBaseResponse } from 'src/app/serviceApi/models';
-import { EventComponent } from '../event/event/event.component';
 
 @Component({
   selector: 'app-dashboard',
