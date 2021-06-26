@@ -1,4 +1,4 @@
-DECLARE @Init int = 1
+DECLARE @Init int = 0
 
 ALTER DATABASE SCOPED CONFIGURATION SET IDENTITY_CACHE = OFF
 
@@ -37,19 +37,19 @@ DBCC CHECKIDENT (VOTOS_REGISTRO_CORREO, RESEED, @Init)
 GO
 --UsuarioPrueba
 
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas1','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas1@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas2','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas2@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas3','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas3@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas4','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas4@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas5','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas5@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas6','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas6@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas7','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas7@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas8','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas8@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas9','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas9@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas10','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','prueba101@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas11','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas11@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas12','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas12@gmail.com',1,0)
-INSERT INTO USUARIOS VALUES('1716361411','Pruebas13','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Pruebas','Pruebas','Pruebas','Pruebas','2021-03-24','pruebas13@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('1716361411','Pruebas1','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Laura','María','Vanegas','Hidalgo','1996-03-24','pruebas1@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('1716361412','Pruebas2','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Luis','Rubén','Cabrero','Gonzales','1997-04-24','pruebas2@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('1716361413','Pruebas3','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Felipe','José','Castañeda','Hidalgo','1990-03-24','pruebas3@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('1716361414','Pruebas4','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Susana','Lucía','Angeles','Cárdenas','1987-03-24','pruebas4@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('1716361415','Pruebas5','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Sara','Vannesa','Del Rio','Villacis','1988-03-24','pruebas5@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('1716361416','Pruebas6','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Carlos','Gabrién','Montaño','Terán','1989-03-24','pruebas6@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('1716361417','Pruebas7','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'José','Camilo','Andraca','Bravo','1970-03-24','pruebas7@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('1716361418','Pruebas8','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'María','Nancy','Pizano','Lopez','1980-03-24','pruebas8@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('1716361419','Pruebas9','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Jesús','José','Pizarro','PruebasCortés','1989-03-24','pruebas9@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('17163614110','Pruebas10','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Josefina','Alexandra','Villa','Díaz','1988-03-24','prueba101@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('17163614111','Pruebas11','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Manuel','Lucas','Nuñez','Villacís','1995-03-24','pruebas11@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('17163614112','Pruebas12','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Manuela','Ana','Lira','Ortiz','2000-03-24','pruebas12@gmail.com',1,0)
+INSERT INTO USUARIOS VALUES('17163614113','Pruebas13','3960d343ea3ea3ed7fd2042e84201c5851ac79731251c6421ff1c8a01046fbc8',Null,'Lucía','Federica','Brito','Rodriguez','2001-03-24','pruebas13@gmail.com',1,0)
 
 --Nuumero de Evenntos
 INSERT INTO EVENTOS_CANTIDAD VALUES(1,5)
