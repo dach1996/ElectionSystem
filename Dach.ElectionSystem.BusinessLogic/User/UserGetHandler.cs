@@ -41,13 +41,17 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                 else if (request.TypeFilter == Models.Enums.TypeFilterUser.Mine)
                     listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.Id == request.UserContext.Id)).ToList();
                 else
+                {
                     listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync()).ToList();
-                if (request.FirstName != null)
-                    listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.FirstName == request.FirstName)).ToList();
-                if (request.LastName != null)
-                    listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.FirstLastName == request.LastName)).ToList();
-                if (request.Username != null)
-                    listUser = (await _electionUnitOfWork.GetUserRepository().GetAsync(u => u.UserName == request.Username)).ToList();
+                    if (!string.IsNullOrWhiteSpace(request.FirstName))
+                        listUser = listUser.Where(u => u.FirstName.Contains(request.FirstName)).ToList();
+                    if (!string.IsNullOrWhiteSpace(request.LastName))
+                        listUser = listUser.Where(u => u.FirstName.Contains(request.LastName)).ToList();
+                    if (!string.IsNullOrWhiteSpace(request.Email))
+                        listUser = listUser.Where(u => u.FirstName.Contains(request.Email)).ToList();
+                    if (!string.IsNullOrWhiteSpace(request.Username))
+                        listUser = listUser.Where(u => u.FirstName.Contains(request.Username)).ToList();
+                }
 
                 var result = listUser.OrderByDescending(e => e.Id)
                 .Skip(request.Offset)

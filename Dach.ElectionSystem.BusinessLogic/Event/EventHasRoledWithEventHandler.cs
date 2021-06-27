@@ -34,7 +34,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 //Validamos que exista el usuario
                 _ = await _validateIntegrity.ValidateUser(request.IdUserComapare);
                 //Validamos que el usuario tenga algún registro en el evento
-                var events = await _electionUnitOfWork.GetEventRepository().GetAsyncInclude(u => u.Id == request.IdEvent, includeProperties: e => $"{nameof(e.ListCandidate)},{nameof(e.ListEventAdministrator)},{nameof(e.ListVote)}");
+                var events = await _electionUnitOfWork.GetEventRepository().GetAsyncInclude(u => u.Id == request.IdEvent && !u.IsDelete, includeProperties: e => $"{nameof(e.ListCandidate)},{nameof(e.ListEventAdministrator)},{nameof(e.ListVote)}");
                 if (!events.Any())
                     throw new CustomException(MessageCodesApi.ResourceNotFound, ResponseType.Error, HttpStatusCode.NotFound, $"El evento con id :{request.IdEvent} no existe");
                 var eventCurrent = events.FirstOrDefault();

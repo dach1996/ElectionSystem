@@ -20,26 +20,33 @@ namespace Dach.ElectionSystem.Models.Request.User
         /// </summary>
         /// <value></value>
         public int? Id { get; set; }
-        /// <summary>
-        /// Nick de Usuario
-        /// </summary>
-        /// <value></value>
-        public string Username { get; set; }
+
         /// <summary>
         /// Nombre Usuario
         /// </summary>
         /// <value></value>
         public string FirstName { get; set; }
+
+
+        /// <summary>
+        /// Email de usuario
+        /// </summary>
+        /// <value></value>
+        public string Email { get; set; }
+
         /// <summary>
         /// Apellido Usuario
         /// </summary>
         /// <value></value>
         public string LastName { get; set; }
+
         /// <summary>
-        /// Rol de Usuario
+        /// Apellido Usuario
         /// </summary>
         /// <value></value>
-        public Models.Enums.RolUser? Role { get; set; }
+        public string Username { get; set; }
+
+
         /// <summary>
         /// Token Contexto
         /// </summary>
@@ -86,17 +93,10 @@ namespace Dach.ElectionSystem.Models.Request.User
         public int Limit { get; set; }
 
         /// <summary>
-        /// Nombre de evento
+        /// Mostrar solo activos
         /// </summary>
         /// <value></value>
-        public string Name { get; set; }
-
-
-        /// <summary>
-        /// Categoría de Evento
-        /// </summary>
-        /// <value></value>
-        public string Category { get; set; }
+        public bool? OnlyActives { get; set; }
 
         /// <summary>
         /// Tipo de Filtros

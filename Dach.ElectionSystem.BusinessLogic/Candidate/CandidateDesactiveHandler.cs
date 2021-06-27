@@ -40,8 +40,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                 try
                 {
                     await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
+                    //Valida que el evento no esté inactivo
+                    _ = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Valida que exista la candidata
-                    var candidateCurrent = await _validateIntegrity.ValidateCandiate(request.IdCandidate);
+                    var candidateCurrent = await _validateIntegrity.ValidateCandiate(request.IdCandidate,false);
                     //valida que el evento sea correcto
                     var isCorrectEvent = candidateCurrent.IdEvent == request.IdEvent;
                     if (!isCorrectEvent)

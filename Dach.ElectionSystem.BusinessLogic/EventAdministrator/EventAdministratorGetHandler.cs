@@ -28,7 +28,7 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
         public async Task<EventAdministratorGetResponse> Handle(EventAdministratorGetRequest request, CancellationToken cancellationToken)
         {
             //Valida que exista el evento
-            var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
+            var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent,false);
             //Valida que el usuario de contexto sea administrador en este e vento
            await _validateIntegrity.IsAdministratorEvent(request.UserContext.Id, eventCurrent.Id);
             //Creamos la respuesta

@@ -20,7 +20,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
 
         public CandidateGetHandler(
             IMapper mapper,
-            IElectionUnitOfWork electionUnitOfWork, 
+            IElectionUnitOfWork electionUnitOfWork,
             ValidateIntegrity validateIntegrity)
         {
             _mapper = mapper;
@@ -34,10 +34,13 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         {
             using (_electionUnitOfWork)
             {
-                _ = await _validateIntegrity.HasRegisterWithEvent(request.UserContext.Id,request.IdEvent);
+                //Valida que el evento no esté inactivo
+                _ = await _validateIntegrity.ValidateEvent(request.IdEvent);
+                //Valida que tenga relación con el evento
+                _ = await _validateIntegrity.HasRegisterWithEvent(request.UserContext.Id, request.IdEvent);
                 List<Models.Persitence.Candidate> listCandidates;
                 if (request.IdUser != null)
-                    listCandidates = (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.IdUser == request.IdUser && c.IdEvent == request.IdEvent ,
+                    listCandidates = (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.IdUser == request.IdUser && c.IdEvent == request.IdEvent,
                     includeProperties: i => $"{nameof(i.ListCandidateImage)},{nameof(i.User)}")).ToList();
                 else
                     listCandidates = (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.IdEvent == request.IdEvent,
@@ -47,6 +50,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                 .Skip(request.Offset)
                 .Take(request.Limit)
                 .ToList();
+                if (request.OnlyActives.HasValue)
+                    listCandidates = listCandidates.Where(e => e.IsActive).ToList();
                 var response = _mapper.Map<List<CandidateBaseResponse>>(listCandidates);
                 return new CandidateGetResponse(response, totalCandidate);
             }

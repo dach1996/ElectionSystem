@@ -39,15 +39,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     listEvents = (await _electionUnitOfWork.GetEventRepository().GetAsyncInclude(e => !e.IsDelete, includeProperties: e => $"{nameof(e.UserCreator)}")).ToList();
                     listEvents = request.TypeFilter switch
                     {
-                        Models.Enums.TypeFilterEvent.Administrator => (await _electionUnitOfWork.GetEventAdministratorRepository().GetAsyncInclude(e => e.IdUser == request.UserContext.Id, includeProperties: e => $"{nameof(e.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
+                        Models.Enums.TypeFilterEvent.Administrator => (await _electionUnitOfWork.GetEventAdministratorRepository().GetAsyncInclude(e => e.IdUser == request.UserContext.Id, includeProperties: e => $"{nameof(e.Event)}")).Select(e => e.Event).ToList(),
                         Models.Enums.TypeFilterEvent.All => listEvents,
                         Models.Enums.TypeFilterEvent.Mine => listEvents.Where(e => e.IdUser == request.UserContext.Id).ToList(),
-                        Models.Enums.TypeFilterEvent.MineWithVote => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id && v.HasVote && v.IsActive, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
-                        Models.Enums.TypeFilterEvent.MineWithOutVote => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id && !v.HasVote && v.IsActive, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
-                        Models.Enums.TypeFilterEvent.Participant => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
-                        Models.Enums.TypeFilterEvent.Candidate => (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.IdUser == request.UserContext.Id && c.IsActive, includeProperties: c => $"{nameof(c.Event)}")).Select(e => e.Event).Where(e => e.IsActive).ToList(),
+                        Models.Enums.TypeFilterEvent.MineWithVote => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id && v.HasVote && v.IsActive, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).ToList(),
+                        Models.Enums.TypeFilterEvent.MineWithOutVote => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id && !v.HasVote && v.IsActive, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).ToList(),
+                        Models.Enums.TypeFilterEvent.Participant => (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(v => v.IdUser == request.UserContext.Id, includeProperties: v => $"{nameof(v.Event)}")).Select(e => e.Event).ToList(),
+                        Models.Enums.TypeFilterEvent.Candidate => (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(c => c.IdUser == request.UserContext.Id && c.IsActive, includeProperties: c => $"{nameof(c.Event)}")).Select(e => e.Event).ToList(),
                         Models.Enums.TypeFilterEvent.Relation => await GetEventsWithRelation(request.UserContext.Id),
-                        
+
                         _ => listEvents
                     };
 
@@ -57,9 +57,13 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 var response = listEvents.OrderByDescending(e => e.Id)
                 .Skip(request.Offset)
                 .Take(request.Limit)
+                .Where(e => !e.IsDelete)
                 .ToList();
-
-                listEvents.ForEach(e =>
+                if (!string.IsNullOrWhiteSpace(request.Name))
+                    response = response.Where(e => e.Name.Contains(request.Name)).ToList();
+                if (request.OnlyActives.HasValue)
+                    response = response.Where(e => e.IsActive).ToList();
+                response.ForEach(e =>
                 {
                     if (!string.IsNullOrEmpty(e.Image))
                         e.Image = $"{request.PathRoot}/{e.Image}";

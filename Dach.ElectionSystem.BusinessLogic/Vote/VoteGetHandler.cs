@@ -34,8 +34,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         {
             using (_electionUnitOfWork)
             {
-                _=await _validateIntegrity.HasRegisterWithEvent(request.UserContext.Id, request.IdEvent);
-                var votes = (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(votes => votes.IdEvent == request.IdEvent, includeProperties: v=> $"{nameof(v.User)}" )).ToList();
+                _ = await _validateIntegrity.HasRegisterWithEvent(request.UserContext.Id, request.IdEvent);
+                var votes = (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(votes => votes.IdEvent == request.IdEvent, includeProperties: v => $"{nameof(v.User)}")).ToList();
+                if (request.OnlyActives.HasValue)
+                    votes = votes.Where(v => v.IsActive).ToList();
                 var NumberParticipantsWithOutVote = votes.Count(p => !p.HasVote && p.IsActive);
                 var NumberParticipantsWithVote = votes.Count(p => p.HasVote && p.IsActive);
                 var NumberParticipantsActive = votes.Count(p => p.IsActive);

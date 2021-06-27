@@ -41,6 +41,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                 try
                 {
                     await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
+                    //Valida que el evento no esté inactivo
+                    _ = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Valida que exista el candidato mediante el id de usuario y el evento
                     var candidateCurrent = await _validateIntegrity.ValidateCandiateWithUserAndEvent(request.UserContext.Id, request.IdEvent);
                     //Validar que el evento no haya empezado ni terminado

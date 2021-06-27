@@ -47,9 +47,9 @@ namespace Dach.ElectionSystem.Models.Request.Candidate
         public int Limit { get; set; }
 
         /// <summary>
-        /// Total de candidatos en el evento
+        /// Mostrar solo activos
         /// </summary>
         /// <value></value>
-        public int TotalCandidates { get; set; }
+        public bool? OnlyActives { get; set; }
     }
 }

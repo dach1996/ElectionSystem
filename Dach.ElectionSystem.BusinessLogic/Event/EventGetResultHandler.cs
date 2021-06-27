@@ -33,6 +33,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         {
             using (_electionUnitOfWork)
             {
+                //Valida que el evento no esté inactivo
+                _ = await _validateIntegrity.ValidateEvent(request.IdEvent);
                 //Valida el usuario que envía request
                 var userCurrent = request.UserContext;
                 //Validamos que el usuario tenga algún registro en el evento

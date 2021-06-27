@@ -40,7 +40,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 try
                 {
                     //Obtiene evento por ID y verifica si está borrado el evento
-                    var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
+                    var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent,false);
                     //Valida que el usuario sea el creador del evento
                     var isUserCurrentCreatorEvent = eventCurrent.IdUser == request.UserContext.Id;
                     if (!isUserCurrentCreatorEvent)

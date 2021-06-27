@@ -43,6 +43,10 @@ namespace Dach.ElectionSystem.Models.Request.Vote
         [Range(1, int.MaxValue)]
         public int Limit { get; set; }
 
-
+        /// <summary>
+        /// Mostrar solo activos
+        /// </summary>
+        /// <value></value>
+        public bool? OnlyActives { get; set; }
     }
 }

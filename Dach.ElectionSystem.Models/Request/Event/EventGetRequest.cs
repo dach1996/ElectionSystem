@@ -23,7 +23,7 @@ namespace Dach.ElectionSystem.Models.Request.Event
         /// </summary>
         /// <value></value>
         [Required]
-        [Range(0,int.MaxValue)]
+        [Range(0, int.MaxValue)]
         public int Offset { get; set; }
 
         /// <summary>
@@ -38,8 +38,15 @@ namespace Dach.ElectionSystem.Models.Request.Event
         /// </summary>
         /// <value></value>
         [Required]
-        [Range(1,int.MaxValue)]
+        [Range(1, int.MaxValue)]
         public int Limit { get; set; }
+        
+        /// <summary>
+        /// Mostrar solo activos
+        /// </summary>
+        /// <value></value>
+        public bool? OnlyActives { get; set; }
+
 
         /// <summary>
         /// Nombre de evento
@@ -49,17 +56,11 @@ namespace Dach.ElectionSystem.Models.Request.Event
 
 
         /// <summary>
-        /// Categoría de Evento
-        /// </summary>
-        /// <value></value>
-        public string Category { get; set; }
-
-        /// <summary>
         /// Tipo de Filtros
         /// </summary>
         /// <value></value>
         public TypeFilterEvent TypeFilter { get; set; }
-        
-        
+
+
     }
 }

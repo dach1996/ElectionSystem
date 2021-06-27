@@ -18,11 +18,18 @@ namespace Dach.ElectionSystem.Models.Request.Methods
         /// </summary>
         /// <value></value>
         OrderBy? OrderBy { get; set; }
-        
+
         /// <summary>
         /// Límite de Registros
         /// </summary>
         /// <value></value>
-        int Limit { get; set; }        
+        int Limit { get; set; }
+
+        /// <summary>
+        /// Mostrar solo activos
+        /// </summary>
+        /// <value></value>
+        bool? OnlyActives { get; set; }
+
     }
 }

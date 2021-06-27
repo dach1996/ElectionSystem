@@ -43,12 +43,14 @@ namespace Dach.ElectionSystem.Services.Data
         /// <returns></returns>
 
 
-        public async Task<Event> ValidateEvent(int id)
+        public async Task<Event> ValidateEvent(int id, bool validateState = true)
         {
             var existEvent = await eventRepository.GetAsync(u => u.Id == id, includeProperties: $"{nameof(Event.ListCandidate)},{nameof(Event.ListEventAdministrator)}");
             if (existEvent.Count() != 1)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el evento con Id:{id}");
             var eventCurrent = existEvent.First();
+            if (validateState && !eventCurrent.IsActive)
+                throw new CustomException(MessageCodesApi.EventIsInactive, ResponseType.Error, HttpStatusCode.BadRequest, $"El evento con Id:{id} se encuentra desactivado");
             if (eventCurrent.IsDelete)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"El evento con Id:{id} ha sido borrado");
             return existEvent.FirstOrDefault();
@@ -128,22 +130,28 @@ namespace Dach.ElectionSystem.Services.Data
         /// <param name="idEvent"></param>
         /// <param name="idUser"></param>
         /// <returns></returns>
-        public async Task<Vote> ValidateVote(int idEvent, int idUser)
+        public async Task<Vote> ValidateVote(int idEvent, int idUser, bool validateActiveState = true)
         {
             var existVote = await voteRepository.GetAsync(v => v.IdEvent == idEvent && v.IdUser == idUser);
             if (existVote.Count() != 1)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el registro de participante con UserID: {idUser}, EventID: {idEvent}");
-            return existVote.FirstOrDefault();
+            var voteCurrent = existVote.FirstOrDefault();
+            if (validateActiveState && !voteCurrent.IsActive)
+                throw new CustomException(MessageCodesApi.ParticipantIsDesactive, ResponseType.Error, HttpStatusCode.NotFound, $"El participante con UserID: {idUser}, EventID: {idEvent} está desactivado");
+            return voteCurrent;
         }
 
-        public async Task<Candidate> ValidateCandiate(int id)
+        public async Task<Candidate> ValidateCandiate(int id, bool validateActiveState = true)
         {
-            var existCandidate = await candidateRepository.GetAsyncInclude(u => u.Id == id
+            var listCandidates = await candidateRepository.GetAsyncInclude(u => u.Id == id
                                                                             , includeProperties:
                                                                             u => $"{nameof(u.User)},{nameof(u.ListCandidateImage)}");
-            if (existCandidate.Count() != 1)
+            if (listCandidates.Count() != 1)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el candidato con Id:{id}");
-            return existCandidate.FirstOrDefault();
+            var candidateCurrent = listCandidates.FirstOrDefault();
+            if (validateActiveState && !candidateCurrent.IsActive)
+                throw new CustomException(MessageCodesApi.CandidateIsDesactive, ResponseType.Error, HttpStatusCode.NotFound, $"El candidato con Id:{id} se encuentra desactivado");
+            return candidateCurrent;
         }
 
         /// <summary>

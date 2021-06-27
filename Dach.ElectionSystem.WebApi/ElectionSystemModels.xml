@@ -1428,9 +1428,9 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest.TotalCandidates">
+        <member name="P:Dach.ElectionSystem.Models.Request.Candidate.CandidateGetRequest.OnlyActives">
             <summary>
-            Total de candidatos en el evento
+            Mostrar solo activos
             </summary>
             <value></value>
         </member>
@@ -1679,15 +1679,15 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventGetRequest.Name">
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventGetRequest.OnlyActives">
             <summary>
-            Nombre de evento
+            Mostrar solo activos
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventGetRequest.Category">
+        <member name="P:Dach.ElectionSystem.Models.Request.Event.EventGetRequest.Name">
             <summary>
-            Categoría de Evento
+            Nombre de evento
             </summary>
             <value></value>
         </member>
@@ -1871,6 +1871,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Methods.IGetRequest.OnlyActives">
+            <summary>
+            Mostrar solo activos
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.User.ChangePasswordRequest">
             <summary>
             Request para cambiar de contraseña
@@ -1947,15 +1953,15 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Username">
-            <summary>
-            Nick de Usuario
-            </summary>
-            <value></value>
-        </member>
         <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.FirstName">
             <summary>
             Nombre Usuario
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Email">
+            <summary>
+            Email de usuario
             </summary>
             <value></value>
         </member>
@@ -1965,9 +1971,9 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Role">
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Username">
             <summary>
-            Rol de Usuario
+            Apellido Usuario
             </summary>
             <value></value>
         </member>
@@ -2007,15 +2013,9 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Name">
+        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.OnlyActives">
             <summary>
-            Nombre de evento
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserGetRequest.Category">
-            <summary>
-            Categoría de Evento
+            Mostrar solo activos
             </summary>
             <value></value>
         </member>
@@ -2191,6 +2191,12 @@
         <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteGetRequest.Limit">
             <summary>
             Cantidad de Registros
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Request.Vote.VoteGetRequest.OnlyActives">
+            <summary>
+            Mostrar solo activos
             </summary>
             <value></value>
         </member>

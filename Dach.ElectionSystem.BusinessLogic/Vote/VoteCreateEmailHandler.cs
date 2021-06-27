@@ -115,7 +115,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                                 EventName = eventCurrent.Name,
                                 LinkRegister = _configuration.GetSection("LinkToRegister").Value,
                                 CodeRegister = eventCurrent.CodeEvent,
-                                DateStartVote = eventCurrent.DateMinVote.ToString("dd/MM/yyyy")
+                                DateStartVote = eventCurrent.DateMaxRegisterParticipants.ToString("dd/MM/yyyy")
                             }
                         }
                     );
