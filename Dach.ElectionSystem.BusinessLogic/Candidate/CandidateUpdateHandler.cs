@@ -45,7 +45,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     //Valida que el evento exista
                     await _validateIntegrity.ValidateEvent(request.IdEvent);
                     // Valida que la candidata Exista
-                    var candidateCurrent = await _validateIntegrity.ValidateCandiate(request.IdCandidate);
+                    var candidateCurrent = await _validateIntegrity.ValidateCandiateWithUserAndEvent(request.UserContext.Id, request.IdEvent);
                     //Validar que el evento no haya empezado ni terminado
                     await _validateIntegrity.ValidateEventStateNotStarterNotFinished(candidateCurrent.IdEvent).ConfigureAwait(false);
                     //Validamos que el usuario y el candidato sean el mismo

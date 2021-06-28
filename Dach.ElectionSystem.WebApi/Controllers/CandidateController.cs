@@ -65,19 +65,16 @@ namespace Dach.ElectionSystem.WebApi.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <param name="idEvent"></param>
-        /// <param name="idCandidate"></param>
         /// <returns></returns>
         [HttpPut]
-        [Route("{idCandidate}")]
         [ProducesResponseType(200, Type = typeof(CandidateUpdateResponse))]
         [ProducesResponseType(400, Type = typeof(GenericResponse<string>))]
         [ProducesResponseType(401, Type = typeof(GenericResponse<string>))]
         public async Task<IActionResult> UpdateCandidate(
             [FromBody] CandidateUpdateRequest request,
-            [FromRoute] int idEvent,
-            [FromRoute] int idCandidate)
+            [FromRoute] int idEvent
+           )
         {
-            request.IdCandidate = idCandidate;
             request.IdEvent = idEvent;
             return Success(await _mediator.Send(request));
         }
@@ -145,7 +142,7 @@ namespace Dach.ElectionSystem.WebApi.Controllers
             return Success(await _mediator.Send(request));
         }
 
-        
+
         /// <summary>
         /// Consultar Candidatos de evento
         /// </summary>

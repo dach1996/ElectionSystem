@@ -49,10 +49,10 @@ namespace Dach.ElectionSystem.Services.Data
             if (existEvent.Count() != 1)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el evento con Id:{id}");
             var eventCurrent = existEvent.First();
-            if (validateState && !eventCurrent.IsActive)
-                throw new CustomException(MessageCodesApi.EventIsInactive, ResponseType.Error, HttpStatusCode.BadRequest, $"El evento con Id:{id} se encuentra desactivado");
             if (eventCurrent.IsDelete)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"El evento con Id:{id} ha sido borrado");
+            if (validateState && !eventCurrent.IsActive)
+                throw new CustomException(MessageCodesApi.EventIsInactive, ResponseType.Error, HttpStatusCode.BadRequest, $"El evento con Id:{id} se encuentra desactivado");
             return existEvent.FirstOrDefault();
         }
 
