@@ -9,6 +9,7 @@ import {
   CandidateBaseResponse,
   EventBaseResponse,
 } from 'src/app/serviceApi/models';
+import { AdditionalInformationCandidate } from 'src/app/serviceApi/models/candidate-information-additional';
 import { VoteService } from 'src/app/serviceApi/services';
 import Swal from 'sweetalert2';
 
@@ -34,7 +35,9 @@ export class ModalDetailCandidateComponent implements OnInit, PageBase {
   ) {}
 
   ngOnInit(): void {
-    
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.body.appendChild(tag);
     this.loading = true;
     this.voteService
       .apiVotesEventsIdEventGet$Json$Response({
@@ -47,6 +50,10 @@ export class ModalDetailCandidateComponent implements OnInit, PageBase {
             let voteUserCurrent = res.body.content?.listVotes?.find(
               (v) => v.idUser == this.storage.UserCurrent?.id
             );
+            if (this.candidate?.additionalInformation!)
+              this.candidate.information = <AdditionalInformationCandidate>(
+                JSON.parse(this.candidate.additionalInformation)
+              );
             if (voteUserCurrent !== null && voteUserCurrent !== undefined)
               this.hasVote = voteUserCurrent?.hasVote!;
           }
@@ -82,8 +89,7 @@ export class ModalDetailCandidateComponent implements OnInit, PageBase {
           }
         },
         (err) => {
-
-         this.errorMessage = err.error.message;
+          this.errorMessage = err.error.message;
           Swal.fire({
             icon: 'error',
             text: 'Error: ' + this.errorMessage,
@@ -92,5 +98,11 @@ export class ModalDetailCandidateComponent implements OnInit, PageBase {
         },
         () => (this.loading = false)
       );
+  }
+
+  extratIdFromVideo(url: string): string {
+    let results = url.match('v=([a-zA-Z0-9]+)&?');
+    if (results !== null) return results[1];
+    else return '';
   }
 }

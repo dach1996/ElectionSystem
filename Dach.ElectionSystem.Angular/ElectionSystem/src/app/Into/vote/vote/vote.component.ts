@@ -101,7 +101,7 @@ export class VoteComponent implements OnInit, PageBase {
   }
   openCandidateDetailModal(candidate: CandidateBaseResponse): void {
     let modal = this.modalService.open(ModalDetailCandidateComponent, {
-      size: 'lg',
+      size: 'md',
       centered: true,
     });
     modal.componentInstance.titlePage = 'DETALLES DE CANDIDATO';

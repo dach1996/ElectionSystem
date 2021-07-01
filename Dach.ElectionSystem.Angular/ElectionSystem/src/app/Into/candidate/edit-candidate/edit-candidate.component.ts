@@ -83,7 +83,6 @@ export class EditCandidateComponent implements OnInit, PageBase {
     };
     this.candidateService
       .apiEventsIdEventCandidatesIdCandidatePut$Json$Response({
-        idCandidate: this.candidate?.id!,
         idEvent: this.idEvent!,
         body: updateCandidate,
       })

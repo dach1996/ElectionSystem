@@ -170,7 +170,7 @@ export class CandidateService extends BaseService {
   /**
    * Path part for operation apiEventsIdEventCandidatesIdCandidatePut
    */
-  static readonly ApiEventsIdEventCandidatesIdCandidatePutPath = '/api/events/{idEvent}/candidates/{idCandidate}';
+  static readonly ApiEventsIdEventCandidatesIdCandidatePutPath = '/api/events/{idEvent}/candidates';
 
 
 
@@ -186,7 +186,6 @@ export class CandidateService extends BaseService {
    */
   apiEventsIdEventCandidatesIdCandidatePut$Json$Response(params: {
     idEvent: number;
-    idCandidate: number;
     body?: AdditionalInformationCandidate
   }): Observable<StrictHttpResponse<ResponseGeneric<CandidateUpdateResponse>>> {
 
@@ -196,7 +195,6 @@ export class CandidateService extends BaseService {
     const rb = new RequestBuilder(this.rootUrl, CandidateService.ApiEventsIdEventCandidatesIdCandidatePutPath, 'put');
     if (params) {
       rb.path('idEvent', params.idEvent, {});
-      rb.path('idCandidate', params.idCandidate, {});
       rb.body(additionalInformation, 'application/*+json');
     }
     rb.header('Authorization', localStorage.getItem('token')!);

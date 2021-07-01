@@ -27,6 +27,7 @@ import { ResultsComponent } from '../results/results/results.component';
 import { VoteComponent } from '../vote/vote/vote.component';
 import { ModalDetailCandidateComponent } from '../vote/modal-detail-candidate/modal-detail-candidate.component';
 import { ChartsModule } from 'ng2-charts';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ChartsModule } from 'ng2-charts';
     HttpClientModule,
     FormsModule,
     UtilsModule,
-    ChartsModule
+    ChartsModule,
+    YouTubePlayerModule,
 
   ],
   providers:[DatePipe]
