@@ -45,6 +45,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     _ = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Valida que exista el candidato mediante el id de usuario y el evento
                     var candidateCurrent = await _validateIntegrity.ValidateCandiateWithUserAndEvent(request.UserContext.Id, request.IdEvent);
+                                        //Valida que la candidata esté activa para actualizar los datos
+                    if(!candidateCurrent.IsActive)
+                       throw new CustomException(Models.Enums.MessageCodesApi.CandidateIsDesactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);    
                     //Validar que el evento no haya empezado ni terminado
                     await _validateIntegrity.ValidateEventStateNotStarterNotFinished(candidateCurrent.IdEvent).ConfigureAwait(false);
                     //Generar ruta del archivo

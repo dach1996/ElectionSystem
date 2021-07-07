@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using Dach.ElectionSystem.Services.Data;
+using Microsoft.Extensions.Configuration;
 
 namespace Dach.ElectionSystem.BusinessLogic.Event
 {
@@ -20,17 +21,21 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
+        private readonly IConfiguration _configuration;
 
         public EventStartStopHandler(
         IMapper mapper,
         IElectionUnitOfWork electionUnitOfWork,
         ILogger<EventStartStopHandler> logger,
-        ValidateIntegrity validateIntegrity)
+        ValidateIntegrity validateIntegrity,
+        IConfiguration configuration
+        )
         {
             _mapper = mapper;
             _electionUnitOfWork = electionUnitOfWork;
             _logger = logger;
             _validateIntegrity = validateIntegrity;
+            _configuration = configuration;
         }
         #endregion
         #region Handler
@@ -52,12 +57,17 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     //Valida que el evento no haya finalizado
                     if (eventCurrent.IsFinished)
                         throw new CustomException(Models.Enums.MessageCodesApi.EventIsFinished, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+                    // TODO: Correo informando los resultados
                     //Valida que el evento no haya empezado
                     if (!eventCurrent.IsStarted)
                     {
                         eventCurrent.IsStarted = true;
                         eventCurrent.DateMinVote = DateTime.Now;
                         eventCurrent.DateMaxVote = DateTime.Now.AddDays(request.DaysAllow);
+                        //Valida cantidad mínima de candidatos para comenzar el evento
+                        _ = int.TryParse(_configuration.GetSection("MinCandidateToEvent").Value, out var numberMinCandidate);
+                        if (eventCurrent.NumberMaxCandidate < numberMinCandidate)
+                            throw new CustomException(Models.Enums.MessageCodesApi.MinCandidateRequired, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest, $"El número mínimo de candidatos debe ser: {numberMinCandidate} para comenzar el evento");
                     }
                     else
                     {

@@ -45,7 +45,7 @@ namespace Dach.ElectionSystem.Services.Data
 
         public async Task<Event> ValidateEvent(int id, bool validateState = true)
         {
-            var existEvent = await eventRepository.GetAsync(u => u.Id == id, includeProperties: $"{nameof(Event.ListCandidate)},{nameof(Event.ListEventAdministrator)}");
+            var existEvent = await eventRepository.GetAsync(u => u.Id == id, includeProperties: $"{nameof(Event.ListCandidate)},{nameof(Event.ListVote)},{nameof(Event.ListEventAdministrator)}");
             if (existEvent.Count() != 1)
                 throw new CustomException(MessageCodesApi.NotFindRecord, ResponseType.Error, HttpStatusCode.NotFound, $"No se encuntra el evento con Id:{id}");
             var eventCurrent = existEvent.First();

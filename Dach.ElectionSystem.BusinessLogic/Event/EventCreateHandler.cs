@@ -58,6 +58,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     //Valida que el nombre del evento no se encuentre registrado
                     if (events.Any(e => e.Name == request.Name))
                         throw new CustomException(Models.Enums.MessageCodesApi.EventRegistered, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+                    //Valida cantidad mínima de candidatos en el evento
+                    _ = int.TryParse(_configuration.GetSection("MinCandidateToEvent").Value, out var numberMinCandidate);
+                    if (request.NumberMaxCandidate < numberMinCandidate)
+                        throw new CustomException(Models.Enums.MessageCodesApi.MinCandidateRequired, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest, $"El número mínimo de candidatos debe ser: {numberMinCandidate}");
                     //Validamos las fechas
                     request.DateRegister = DateTime.Now;
                     request.DateMaxVote = DateTime.Now;

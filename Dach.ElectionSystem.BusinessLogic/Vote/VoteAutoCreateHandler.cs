@@ -54,6 +54,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     var hasRegister = participantsEvent.Any();
                     if (hasRegister)
                         throw new CustomException(Models.Enums.MessageCodesApi.UserRegisterEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+                    //Valida que no se supere el número máximo de participantes en caso de existir
+                    if (eventCurrent.MaxPeople && participantsEvent.Count(p=>p.IsActive) >= eventCurrent.NumberMaxPeople)
+                        throw new CustomException(Models.Enums.MessageCodesApi.LimitMaxParticipants, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
                     // Validamos que el código enviado sea correcto
                     var isCodeCorrect = eventCurrent.CodeEvent == request.CodeEvent;
                     if (!isCodeCorrect)

@@ -53,9 +53,9 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
                     if (!isUserAdministrator)
                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict,
                         $"No existe registrado el administrador con Id: {request.IdUser} en el evento");
-                    //Seleccionamos el administrador y  cambia de estado
                     //Validar que el evento no haya empezado ni terminado
                     await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
+                    //Actualiza el Evento
                     var updateEventAdministrator = eventCurrent.ListEventAdministrator.FirstOrDefault(e => e.IdUser == request.IdUser);
                     updateEventAdministrator.IsActive = !updateEventAdministrator.IsActive;
                     updateEventAdministrator.Date = DateTime.Now;

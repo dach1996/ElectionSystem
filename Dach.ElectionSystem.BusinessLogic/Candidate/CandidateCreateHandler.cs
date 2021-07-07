@@ -53,6 +53,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
                     //Valida que el evento exista
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
+                    //Valida el Número máximo de candidatas creadas
+                    if (eventCurrent.NumberMaxCandidate <= eventCurrent.ListCandidate.Count(c=>c.IsActive))
+                        throw new CustomException(Models.Enums.MessageCodesApi.MaxCandidateRegister, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
                     //Valida que el usuario sea administrador del evento
                     var userCurrent = await _validateIntegrity.ValidateUser(request.IdUser);
                     var isUserCurrentAdministrator = request.UserContext.ListEventAdministrator.Any(e => e.IdEvent == eventCurrent.Id);

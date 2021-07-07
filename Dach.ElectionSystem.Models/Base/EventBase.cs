@@ -50,7 +50,7 @@ namespace Dach.ElectionSystem.Models.Base
         /// <value></value>
 
         [Required]
-        [Range(2, 30)]
+        [Range(0, Int32.MaxValue)]
         public virtual int NumberMaxCandidate { get; set; }
 
         /// <summary>
@@ -98,6 +98,12 @@ namespace Dach.ElectionSystem.Models.Base
         /// </summary>
         /// <value></value>
         public virtual bool IsFinished { get; set; }
+
+        /// <summary>
+        /// Permitir Acceso Libre
+        /// </summary>
+        /// <value></value>
+        public bool AllowFreeAccess { get; set; }
 
     }
 }

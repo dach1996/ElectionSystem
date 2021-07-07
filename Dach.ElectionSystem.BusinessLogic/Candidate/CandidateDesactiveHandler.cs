@@ -7,6 +7,7 @@ using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -41,7 +42,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                 {
                     await _electionUnitOfWork.BeginTransactionAsync().ConfigureAwait(false);
                     //Valida que el evento no esté inactivo
-                    _ = await _validateIntegrity.ValidateEvent(request.IdEvent);
+                    var eventCurrent  = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Valida que exista la candidata
                     var candidateCurrent = await _validateIntegrity.ValidateCandiate(request.IdCandidate,false);
                     //valida que el evento sea correcto
@@ -54,6 +55,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     await _validateIntegrity.ValidateEventStateNotStarterNotFinished(candidateCurrent.IdEvent).ConfigureAwait(false);
                     //Desactva el candidato
                     candidateCurrent.IsActive = !candidateCurrent.IsActive;
+                    //Validar cantidad de Candidatas activas permitidas en el evento
+                    if (candidateCurrent.IsActive && eventCurrent.NumberMaxCandidate <= eventCurrent.ListCandidate.Count(c => c.IsActive))
+                        throw new CustomException(Models.Enums.MessageCodesApi.MaxCandidateRegister, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
                     //Actualiza la información
                     var isUpdate = await _electionUnitOfWork.GetCandidateRepository().Update(candidateCurrent);
                     if (!isUpdate)

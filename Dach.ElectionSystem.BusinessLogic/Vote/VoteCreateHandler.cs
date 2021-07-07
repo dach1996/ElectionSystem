@@ -55,8 +55,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     var userCurrent = await _validateIntegrity.ValidateUser(request.IdUser);
                     //Validamos que exista el Evento
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
-                    //Validar la fecha máxima para registrar participantes
+                    //Validar que el evento no haya empezado ni terminado
                     await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
+                    //Validar la fecha máxima para registrar participantes
                     if (eventCurrent.DateMaxRegisterParticipants < DateTime.Now)
                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectDates, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest, $"La fecha máxima para registrad candidatos ha pasado: {eventCurrent.DateMaxRegisterParticipants}");
                     // encuentra los participantes del evento
@@ -66,7 +67,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     if (hasRegister)
                         throw new CustomException(Models.Enums.MessageCodesApi.UserRegisterEvent, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
                     //Valida que no se supere el número máximo de participantes en caso de existir
-                    if (eventCurrent.MaxPeople && participants.Count() > eventCurrent.NumberMaxPeople)
+                    if (eventCurrent.MaxPeople && participants.Count(p => p.IsActive) >= eventCurrent.NumberMaxPeople)
                         throw new CustomException(Models.Enums.MessageCodesApi.LimitMaxParticipants, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
                     //Valida que el usuario que envía el request sea la administrador del evento
                     if (!eventCurrent.ListEventAdministrator.Any(e => e.IdUser == request.UserContext.Id))

@@ -2,7 +2,6 @@
 using Dach.ElectionSystem.Models.ExceptionGeneric;
 using Dach.ElectionSystem.Models.Request.Vote;
 using Dach.ElectionSystem.Models.Response.Vote;
-using Dach.ElectionSystem.Repository.Interfaces;
 using MediatR;
 using System.Linq;
 using System.Threading;
@@ -52,7 +51,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     var hasEmail = request.EmailUser.Any();
                     if (!hasEmail)
                         throw new CustomException(Models.Enums.MessageCodesApi.InvalidEmail, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
-
                     //Valida si el usuario es administrador del evento
                     var isAdministrator = request.UserContext.ListEventAdministrator.Any(e => e.IdEvent == request.IdEvent);
                     if (!isAdministrator)
@@ -75,7 +73,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     var emailUserNotExist = request.EmailUser.Where(m => !usersExist.Any(ue => ue.Email == m)).ToList();
                     // Obtiene la lista de usuario que no están registrados en el event
                     var userToRegister = usersExist.Where(p => !participants.Any(ue => ue.IdUser == p.Id)).ToList();
-                    //Registramos las usuarios para ser participantes
+                    //seleccionamos las usuarios que existen registrados para ser participantes
                     var listParticipantesToRegister = userToRegister.Select(utr => new Models.Persitence.Vote()
                     {
                         IdEvent = request.IdEvent,
@@ -84,11 +82,17 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                         IdUser = utr.Id
                     }
                     );
+                    //Verificamos la canditadad de participantes disponibles
+                    var participantsActivesInEvent = eventCurrent.ListVote.Count(p => p.IsActive);
+                    var numberTotalParticipants = listParticipantesToRegister.Count() + participantsActivesInEvent;
+                    if (eventCurrent.MaxPeople && numberTotalParticipants > eventCurrent.NumberMaxPeople)
+                        throw new CustomException(Models.Enums.MessageCodesApi.LimitMaxParticipants, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest
+                        , $"En el evento existen registrados: {participantsActivesInEvent}, solo existen: {eventCurrent.NumberMaxPeople - participantsActivesInEvent} Cupos");
+                    //Registramos los datos en la base
                     var isRegisterVote = await _electionUnitOfWork.GetVoteRepository().CreateManyAsync(listParticipantesToRegister);
                     if (!isRegisterVote)
                         throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-                    //Registramos los usuarios que no están registrados en la tabla de votos_email
-
+                    //Registramos los usuarios que no están registrados, en la tabla de votos_email
                     var listParticipantesRegisterVoteEmail = await _electionUnitOfWork.GetVoteRegisterEmailRepository().GetAsync(v => emailUserNotExist.Any(ur => ur == v.UserEmail));
                     var listParticipantesWithOutRegister = emailUserNotExist.Where(eune => !listParticipantesRegisterVoteEmail.Any(prvm => prvm.UserEmail == eune)).ToList();
                     var listParticipantesWithOutRegisterToRegister = listParticipantesWithOutRegister.Select(mailParticipant => new Models.Persitence.VoteRegisterEmail()
@@ -96,8 +100,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                         IdEvent = request.IdEvent,
                         IdUserAdministrator = request.UserContext.Id,
                         UserEmail = mailParticipant
-                    }
-                    );
+                    });
                     var isRegisterVoteMail = await _electionUnitOfWork.GetVoteRegisterEmailRepository().CreateManyAsync(listParticipantesWithOutRegisterToRegister);
                     if (!isRegisterVoteMail)
                         throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
@@ -139,8 +142,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     throw;
                 }
             }
-
-
         }
         #endregion
     }

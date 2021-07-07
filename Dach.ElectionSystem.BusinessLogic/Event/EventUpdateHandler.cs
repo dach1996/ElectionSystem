@@ -9,6 +9,7 @@ using Dach.ElectionSystem.Models.Response.Event;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using Dach.ElectionSystem.Services.Data;
 using MediatR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace Dach.ElectionSystem.BusinessLogic.Event
@@ -20,17 +21,20 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         private readonly ValidateIntegrity _validateIntegrity;
         private readonly ILogger<EventUpdateHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
+        private readonly IConfiguration _configuration;
 
         public EventUpdateHandler(
             IMapper mapper,
             ValidateIntegrity validateIntegrity,
             ILogger<EventUpdateHandler> logger,
-            IElectionUnitOfWork electionUnitOfWork)
+            IElectionUnitOfWork electionUnitOfWork,
+            IConfiguration configuration)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
             _logger = logger;
             _electionUnitOfWork = electionUnitOfWork;
+            _configuration = configuration;
         }
         #endregion
         #region Handler
@@ -49,6 +53,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     if (isUserAdministrator == 0)
                         throw new CustomException(Models.Enums.MessageCodesApi.IncorrectData, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.NotFound,
                                                     $"El usuario con Id: {request.UserContext.Id} no es administrador en el evento: {eventCurrent.Name}");
+
+                   //Valida el número mínimo de candidatos
+                    _ = int.TryParse(_configuration.GetSection("MinCandidateToEvent").Value, out var numberMinCandidate);
+                    if (request.NumberMaxCandidate < numberMinCandidate)
+                        throw new CustomException(Models.Enums.MessageCodesApi.MinCandidateRequired, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest, $"El número mínimo de candidatos debe ser: {numberMinCandidate}");
                     //Valida que el usuario administrador no tenga un evento con el mismo nombre:
                     var administratorEvent = await _electionUnitOfWork.GetUserRepository().GetByIdAsync(eventCurrent.IdUser);
                     if (administratorEvent == null)
@@ -94,6 +103,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             eventCurrent.NumberMaxCandidate = request.NumberMaxCandidate;
             eventCurrent.NumberMaxPeople = request.NumberMaxPeople;
             eventCurrent.DateMaxRegisterParticipants = request.DateMaxRegisterParticipants.Value;
+            eventCurrent.AllowFreeAccess = request.AllowFreeAccess;
         }
         #endregion
     }

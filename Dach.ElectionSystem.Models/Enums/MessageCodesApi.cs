@@ -255,6 +255,18 @@ namespace Dach.ElectionSystem.Models.Enums
         EventDontStarted = 162,
 
         /// <summary>
+        /// Error Mínimo de Candidatos Permitidos
+        /// </summary>
+        [EnumMember(Value = "El Número Mínimo de candidatos requeridos es incorrecto.")]
+        MinCandidateRequired = 163,
+
+        /// <summary>
+        /// Error Máximo de Candidatos Permitidos
+        /// </summary>
+        [EnumMember(Value = "Ha superado el número máximo de candidatas activas permitidas en el evento")]
+        MaxCandidateRegister = 164,
+
+        /// <summary>
         /// Error del sistema
         /// </summary>
         [EnumMember(Value = "No se pudo crear registro")]

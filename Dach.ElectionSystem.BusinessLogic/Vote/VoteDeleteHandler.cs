@@ -7,6 +7,7 @@ using Dach.ElectionSystem.Services.Data;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -43,16 +44,20 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     //Validamos que exista el Evento
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Validamos que exista el voto
-                    var voteCurrent = await _validateIntegrity.ValidateVote(request.IdEvent, request.IdUser,false);
+                    var voteCurrent = await _validateIntegrity.ValidateVote(request.IdEvent, request.IdUser, false);
                     //Valida que el usuario que envía el request sea administrador del evento
                     await _validateIntegrity.IsAdministratorEvent(request.UserContext.Id, request.IdEvent);
                     //Valida que el evento no haya empezado
-                     await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
+                    await _validateIntegrity.ValidateEventStateNotStarterNotFinished(eventCurrent.Id).ConfigureAwait(false);
                     //Valida que el participante no haya realizaco su voto
                     if (voteCurrent.HasVote)
-                        throw new CustomException(Models.Enums.MessageCodesApi.UserHasVote, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest,"No se puede desactivar un usuario que ya participó");
+                        throw new CustomException(Models.Enums.MessageCodesApi.UserHasVote, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest, "No se puede desactivar un usuario que ya participó");
                     //Desactiva el participante
                     voteCurrent.IsActive = !voteCurrent.IsActive;
+                    //Valida el total de participantes
+                    if (voteCurrent.IsActive && eventCurrent.MaxPeople && eventCurrent.NumberMaxPeople >= eventCurrent.ListVote.Count(p => p.IsActive))
+                        throw new CustomException(Models.Enums.MessageCodesApi.LimitMaxParticipants, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+                    //Actualiza el participante
                     var isUpdate = await _electionUnitOfWork.GetVoteRepository().Update(voteCurrent);
                     //Actualiza información
                     if (!isUpdate)
