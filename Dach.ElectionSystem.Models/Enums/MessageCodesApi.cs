@@ -267,6 +267,12 @@ namespace Dach.ElectionSystem.Models.Enums
         MaxCandidateRegister = 164,
 
         /// <summary>
+        /// El Evento no puede finalizar debido  a un empate
+        /// </summary>
+        [EnumMember(Value = "El evento no puede finalizar debido a un empate")]
+        EventHasTie = 165,
+
+        /// <summary>
         /// Error del sistema
         /// </summary>
         [EnumMember(Value = "No se pudo crear registro")]

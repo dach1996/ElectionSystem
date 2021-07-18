@@ -11,6 +11,8 @@ using Microsoft.Extensions.Logging;
 using Dach.ElectionSystem.Repository.UnitOfWork;
 using Dach.ElectionSystem.Services.Data;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
+using Dach.ElectionSystem.Models.Mail;
 
 namespace Dach.ElectionSystem.BusinessLogic.Event
 {
@@ -22,20 +24,22 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
         private readonly IConfiguration _configuration;
+        private readonly Services.Notification.INotification _notification;
 
         public EventStartStopHandler(
         IMapper mapper,
         IElectionUnitOfWork electionUnitOfWork,
         ILogger<EventStartStopHandler> logger,
         ValidateIntegrity validateIntegrity,
-        IConfiguration configuration
-        )
+        IConfiguration configuration,
+        Services.Notification.INotification notification)
         {
             _mapper = mapper;
             _electionUnitOfWork = electionUnitOfWork;
             _logger = logger;
             _validateIntegrity = validateIntegrity;
             _configuration = configuration;
+            _notification = notification;
         }
         #endregion
         #region Handler
@@ -57,7 +61,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     //Valida que el evento no haya finalizado
                     if (eventCurrent.IsFinished)
                         throw new CustomException(Models.Enums.MessageCodesApi.EventIsFinished, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
-                    // TODO: Correo informando los resultados
                     //Valida que el evento no haya empezado
                     if (!eventCurrent.IsStarted)
                     {
@@ -73,11 +76,20 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     {
                         eventCurrent.IsFinished = true;
                         eventCurrent.DateMaxVote = DateTime.Now;
+                        var candidates = eventCurrent.ListVote
+                            .GroupBy(v => v.IdCandidate)
+                            .Select(cw => new { IdCandidate = cw.Key, TotalVotes = cw.Count() })
+                            .OrderByDescending(cw => cw.TotalVotes)
+                            .ToList();
+                        if (candidates?[0]?.TotalVotes == candidates?[1]?.TotalVotes)
+                            throw new CustomException(Models.Enums.MessageCodesApi.EventHasTie, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
                     }
                     var isUpdate = await _electionUnitOfWork.GetEventRepository().Update(eventCurrent);
                     if (!isUpdate)
                         throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
+                    if (eventCurrent.IsFinished)
+                        await SendEmailResultsEvent(eventCurrent).ConfigureAwait(false);
                     return _mapper.Map<EventStartStopResponse>(eventCurrent);
                 }
                 catch (Exception ex)
@@ -88,6 +100,50 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                 }
             }
 
+        }
+
+        private async Task SendEmailResultsEvent(Models.Persitence.Event eventCurrent)
+        {
+            //Obtenemos los mail de todos los usuarios relacionados al evento
+            var emailAdministrators = (await _electionUnitOfWork.GetEventAdministratorRepository().GetAsyncInclude(a => a.IdEvent == eventCurrent.Id, includeProperties: i => $"{nameof(i.User)}")).Select(a => a.User.Email);
+            var emailParticipants = (await _electionUnitOfWork.GetVoteRepository().GetAsyncInclude(p => p.IdEvent == eventCurrent.Id, includeProperties: i => $"{nameof(i.User)}")).Select(a => a.User.Email);
+            var emailCandidates = (await _electionUnitOfWork.GetCandidateRepository().GetAsyncInclude(p => p.IdEvent == eventCurrent.Id, includeProperties: i => $"{nameof(i.User)}")).Select(a => a.User.Email);
+            //Creamos la lista completa de email
+            var listUserWithRelationship = new List<string>();
+            listUserWithRelationship.AddRange(emailAdministrators);
+            listUserWithRelationship.AddRange(emailParticipants);
+            listUserWithRelationship.AddRange(emailCandidates);
+            //Obtenemos solo los valores distintos
+            var listEmailsUniques = listUserWithRelationship.Distinct().ToList();
+            //Obtenemos la candidata Ganadora
+            var candidates = eventCurrent.ListVote.GroupBy(v => v.IdCandidate)
+                .Select(cw => new { IdCandidate = cw.Key, TotalVotes = cw.Count() })
+                .OrderByDescending(cw => cw.TotalVotes);
+            var candidateWinner = candidates.FirstOrDefault();
+            var candidateWinnerComplete = (await _electionUnitOfWork.GetCandidateRepository()
+                .GetAsyncInclude(c => c.Id == candidateWinner.IdCandidate,
+                     includeProperties: i => $"{nameof(i.ListCandidateImage)}"))
+                .FirstOrDefault();
+            //Configuramos el Template
+            var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
+            var templateNewCandidate = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.EventResult);
+            var isSend = _notification.SendMail(
+               new MailModel()
+               {
+                   Subject = templateNewCandidate.TemplateName,
+                   To = listEmailsUniques,
+                   Template = templateNewCandidate.TemplateKey,
+                   Params = new
+                   {
+                       CandidateName = $"{candidateWinnerComplete.User.FirstName} {candidateWinnerComplete.User.FirstLastName}",
+                       PathImage = $"https://{candidateWinnerComplete.ListCandidateImage.FirstOrDefault().ImageFullPath}",
+                       candidateWinner.TotalVotes,
+                       EventName = eventCurrent.Name
+                   }
+               }
+           );
+            if (!isSend)
+                _logger.LogWarning($"No se pudo Envíar correo de Resultado Eventos");
         }
         #endregion
     }

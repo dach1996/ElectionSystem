@@ -24,5 +24,10 @@ namespace Dach.ElectionSystem.Models.Static
         /// Template para Bienvenida
         /// </summary>
         public readonly static string NewParticipant = "Nuevo Participante";
+
+        /// <summary>
+        /// Resultados de Evento
+        /// </summary>
+        public readonly static string EventResult = "Resultados de Evento";
     }
 }

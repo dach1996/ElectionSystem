@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.Utils",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.Models", "Dach.ElectionSystem.Models\Dach.ElectionSystem.Models.csproj", "{C88F2754-711F-4673-8482-C79657765038}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Dach.ElectionSystem.DataBase", "Dach.ElectionSystem.DataBase\Dach.ElectionSystem.DataBase.sqlproj", "{7D782192-0CE5-472F-B6D8-AAC054A5D2B8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.BusinessLogic", "Dach.ElectionSystem.BusinessLogic\Dach.ElectionSystem.BusinessLogic.csproj", "{C2D8260A-62D6-4F93-A36F-F58FF33991EB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dach.ElectionSystem.Common", "Dach.ElectionSystem.Common\Dach.ElectionSystem.Common.csproj", "{4C4E5CA1-E103-4764-A474-CA736EDF12F0}"

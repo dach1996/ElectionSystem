@@ -454,6 +454,21 @@
             Evento no empieza
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.MinCandidateRequired">
+            <summary>
+            Error Mínimo de Candidatos Permitidos
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.MaxCandidateRegister">
+            <summary>
+            Error Máximo de Candidatos Permitidos
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.EventHasTie">
+            <summary>
+            El Evento no puede finalizar debido  a un empate
+            </summary>
+        </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.NotCreateRecord">
             <summary>
             Error del sistema
@@ -2773,6 +2788,11 @@
         <member name="F:Dach.ElectionSystem.Models.Static.Template.NewParticipant">
             <summary>
             Template para Bienvenida
+            </summary>
+        </member>
+        <member name="F:Dach.ElectionSystem.Models.Static.Template.EventResult">
+            <summary>
+            Resultados de Evento
             </summary>
         </member>
     </members>
