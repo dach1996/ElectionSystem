@@ -1,5 +1,12 @@
 .opacity-loader {
-    opacity: 0.2;
-    pointer-events: none;
-    filter:  alpha(opacity=50);
-  }
+  opacity: 0.2;
+  pointer-events: none;
+  filter: alpha(opacity=50);
+}
+
+.error-field {
+  color: rgb(194, 3, 3);
+  text-decoration: italic;
+  font-weight: 500;
+  font-size: 0.9em;
+}

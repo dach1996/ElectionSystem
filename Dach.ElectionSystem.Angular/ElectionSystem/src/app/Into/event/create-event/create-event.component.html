@@ -25,8 +25,12 @@
                               aria-label="First Name..."
                               type="text"
                               [(ngModel)]="eventCreateRequest.name"
+                              #name="ngModel"
                               name="name"
-                            />
+                              minlength="4" maxlength="55" required/>
+                          </div>
+                          <div class="error-field" *ngIf="name.touched && !name.valid">
+                            <div class="error-field" *ngIf="name.errors">Ingrese un Nombre válido</div>
                           </div>
                         </div>
                       </div>
@@ -36,9 +40,8 @@
                           [(ngModel)]="eventCreateRequest.description"
                           name="descripcion"
                           class="form-control"
-                          id="message"
-                          rows="4"
-                        ></textarea>
+                          id="message"></textarea>
+                          
                       </div>
                       <div class="mb-4">
                         <div class="row">
@@ -47,12 +50,13 @@
                             <div class="form-check form-switch mb-4">
                               <input
                                 [(ngModel)]="eventCreateRequest.maxPeople"
-                                name="maxPeople"
+                                 name="maxPeople"
                                 class="form-check-input"
                                 type="checkbox"
                                 id="flexSwitchCheckDefault"
-                                checked=""
+                                checked=""  
                               />
+                              
                             </div>
                           </div>
                           <div class="col-md">
@@ -60,25 +64,35 @@
                             <div class="input-group">
                               <input
                                 [(ngModel)]="eventCreateRequest.numberMaxPeople"
+                                #numberMaxPeople="ngModel"
                                 name="numberMaxPeople"
-                                type="email"
+                                type="number"
                                 class="form-control"
                                 placeholder=""
+                                min="2"
+                                max="99999"
                               />
+                            </div>
+                            <div class="error-field" *ngIf="numberMaxPeople.touched && !numberMaxPeople.valid">
+                              <div class="error-field" *ngIf="numberMaxPeople.errors">Ingrese un número válido</div>
                             </div>
                           </div>
                           <div class="col-md">
                             <label>Cantidad de Cantidados</label>
                             <div class="input-group">
                               <input
-                                [(ngModel)]="
-                                  eventCreateRequest.numberMaxCandidate
-                                "
+                                [(ngModel)]="eventCreateRequest.numberMaxCandidate"
+                                #numberMaxCandidate="ngModel"
                                 name="numberMaxCandidate"
-                                type="email"
+                                type="number"
                                 class="form-control"
                                 placeholder=""
+                                min="2"
+                                max="99999"
                               />
+                            </div>
+                            <div class="error-field" *ngIf="numberMaxCandidate.touched && !numberMaxCandidate.valid">
+                              <div class="error-field" *ngIf="numberMaxCandidate.errors">Ingrese un número válido</div>
                             </div>
                           </div>
                         </div>
@@ -89,14 +103,17 @@
                             <label>Fecha Max. Registro Participantes</label>
                             <div class="input-group">
                               <input
-                                [(ngModel)]="
-                                  eventCreateRequest.dateMaxRegisterParticipants
-                                "
+                                [(ngModel)]="eventCreateRequest.dateMaxRegisterParticipants"
+                                #dateMaxRegisterParticipants="ngModel"
                                 name="dateMaxRegisterParticipants"
                                 type="date"
                                 class="form-control"
                                 placeholder=""
+                                min="today()"
                               />
+                            </div>
+                            <div class="error-field" *ngIf="dateMaxRegisterParticipants.touched && !dateMaxRegisterParticipants.valid"> 
+                              <div class="error-field" *ngIf="dateMaxRegisterParticipants.errors">Ingrese un número válido</div>
                             </div>
                           </div>
                         </div>
@@ -118,7 +135,12 @@
                     </div>
                   </form>
                 </div>
-                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                  <div>
+                    
+                         <img src="/assets/img/event-icon.png" class="m-auto">  
+                 </div> 
+                </div>
               </div>
             </div>
           </div>

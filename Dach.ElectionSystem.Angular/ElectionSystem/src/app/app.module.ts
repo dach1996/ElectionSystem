@@ -11,7 +11,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { DashboardModule } from './Into/dashboard/dashboard.module';
 import { UtilsModule } from './utils/utils.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { ListUserComponent } from './Into/user/list-user/list-user.component';
+ // import { ListUserComponent } from './Into/user/list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     RegisterComponent,
     ForggotePasswordComponent,
-    //ListUserComponent
+     //ListUserComponent
     
   ],
   imports: [

@@ -20,9 +20,15 @@
                         <tr *ngFor="let event of listEvents">
                             <td>
                                 <div class="d-flex px-2 py-1">
-                                <div>
-                                    <img src="https://{{event.image}}" class="avatar avatar-sm me-3">
-                                </div>
+                                    <div>
+                                        <div *ngIf="event.image">
+                                            <img src="https://{{event.image}}" class="avatar avatar-sm me-3">  
+                                        </div>
+                                    
+                                        <div *ngIf="!event.image">
+                                            <img src="/assets/img/event-icon.png" class="avatar avatar-sm me-3">  
+                                        </div>
+                                    </div> 
                                 <div class="d-flex flex-column justify-content-center">
                                     <h6 class="mb-0 text-sm">{{event.name}}</h6>
                                     <p class="text-xs text-secondary mb-0">{{event.user?.email}}</p>

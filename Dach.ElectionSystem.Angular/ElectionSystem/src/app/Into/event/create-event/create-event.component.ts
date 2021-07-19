@@ -11,7 +11,9 @@ import Swal from 'sweetalert2';
   templateUrl: './create-event.component.html',
   styleUrls: ['./create-event.component.css', '../../../app.component.css'],
 })
+
 export class EventCreateComponent implements OnInit, PageBase {
+  
   public loading: boolean = false;
   public errorMessage: string = '';
   public titlePage: string = 'CREAR NUEVO EVENTO';
@@ -59,4 +61,8 @@ export class EventCreateComponent implements OnInit, PageBase {
         }
       );
   }
+ 
+  
+
+
 }
