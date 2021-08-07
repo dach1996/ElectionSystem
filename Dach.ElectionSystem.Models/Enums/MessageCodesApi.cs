@@ -273,6 +273,12 @@ namespace Dach.ElectionSystem.Models.Enums
         EventHasTie = 165,
 
         /// <summary>
+        /// El evento no tiene votos en ningun candidato
+        /// </summary>
+        [EnumMember(Value = "El evento no tiene votos en ningun candidato")]
+        EventWitOutVotes = 166,
+
+        /// <summary>
         /// Error del sistema
         /// </summary>
         [EnumMember(Value = "No se pudo crear registro")]

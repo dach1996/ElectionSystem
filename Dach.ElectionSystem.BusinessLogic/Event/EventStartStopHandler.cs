@@ -81,7 +81,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                             .Select(cw => new { IdCandidate = cw.Key, TotalVotes = cw.Count() })
                             .OrderByDescending(cw => cw.TotalVotes)
                             .ToList();
-                        if (candidates?[0]?.TotalVotes == candidates?[1]?.TotalVotes)
+                        //valida que exista candidatos con votos
+                        if (!candidates.Any())
+                            throw new CustomException(Models.Enums.MessageCodesApi.EventWitOutVotes, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
+                        //Valida que la cantidad candidatos  
+                        if (candidates.Count >= 2 && candidates?[0]?.TotalVotes == candidates?[1]?.TotalVotes)
                             throw new CustomException(Models.Enums.MessageCodesApi.EventHasTie, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.BadRequest);
                     }
                     var isUpdate = await _electionUnitOfWork.GetEventRepository().Update(eventCurrent);
