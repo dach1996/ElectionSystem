@@ -17,6 +17,7 @@ using Dach.ElectionSystem.Services.Intrastructure;
 using Dach.ElectionSystem.BusinessLogic.Auth;
 using System;
 using Microsoft.ApplicationInsights;
+using System.IO;
 
 namespace Dach.ElectionSystem.WebApi
 {
@@ -57,12 +58,11 @@ namespace Dach.ElectionSystem.WebApi
                  loggingBuilder.AddSeq(Configuration.GetSection("Seq"));
                  loggingBuilder.AddFile(Configuration.GetSection("LogConfiguration"));
              });
-
             services.AddSwaggerGen(c =>
              {
                  c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Elecciones", Version = "v1" });
-                 c.IncludeXmlComments("ElectionSystem.xml");
-                 c.IncludeXmlComments("ElectionSystemModels.xml");
+                 c.IncludeXmlComments($"{AppContext.BaseDirectory}ElectionSystem.xml");
+                 c.IncludeXmlComments($"{AppContext.BaseDirectory}ElectionSystemModels.xml");
              });
             services.ConfigureSwaggerServices();
             services.AddMediatR(typeof(AuthHandler));
@@ -83,7 +83,11 @@ namespace Dach.ElectionSystem.WebApi
                 .SetIsOriginAllowed(origin => true)
                 .AllowCredentials());
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Sistema de Eleccione"));
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Sistema de Eleccione");
+                c.RoutePrefix = string.Empty;
+            });
             app.UseRouting();
             app.UseHttpsRedirection();
             app.SetCustomMiddleWare();

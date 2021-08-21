@@ -5,10 +5,15 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>../Dach.ElectionSystem.WebApi/ElectionSystemModels.xml</DocumentationFile>
+    <DocumentationFile>ElectionSystemModels.xml</DocumentationFile>
     <OutputPath></OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="ElectionSystemModels.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
