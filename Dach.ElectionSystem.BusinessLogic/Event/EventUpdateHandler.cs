@@ -85,9 +85,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     return _mapper.Map<EventUpdateResponse>(eventCurrent);
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(EventUpdateHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

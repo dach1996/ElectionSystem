@@ -96,9 +96,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                         await SendEmailResultsEvent(eventCurrent).ConfigureAwait(false);
                     return _mapper.Map<EventStartStopResponse>(eventCurrent);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(EventStartStopHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

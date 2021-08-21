@@ -65,9 +65,8 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return _mapper.Map<EventAdministratorDesactiveResponse>(updateEventAdministrator);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(EventAdministratorDesactiveHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

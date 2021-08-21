@@ -71,9 +71,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return Unit.Value;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(ForggotenPasswordHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

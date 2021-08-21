@@ -135,9 +135,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                         NumberSendEmail = listParticipantesRegisterVoteEmail.Count()
                     };
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(VoteCreateEmailHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

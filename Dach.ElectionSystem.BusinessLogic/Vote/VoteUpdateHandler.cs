@@ -65,9 +65,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return _mapper.Map<VoteUpdateResponse>(voteCurrent);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(VoteUpdateHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

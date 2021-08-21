@@ -60,9 +60,8 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     return Unit.Value;
 
                 }
-                catch (System.Exception ex)
+                catch (System.Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(IncreaseEventsHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

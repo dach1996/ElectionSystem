@@ -67,9 +67,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     //Retorna el mensaje de respuesta
                     return _mapper.Map<VoteDeleteResponse>(voteCurrent);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(VoteDeleteResponse), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

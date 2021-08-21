@@ -66,9 +66,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     var response = _mapper.Map<CandidateDesactiveResponse>(candidateCurrent);
                     return response;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(CandidateDesactiveHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

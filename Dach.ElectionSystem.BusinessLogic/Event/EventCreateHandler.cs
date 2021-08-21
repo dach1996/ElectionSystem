@@ -92,9 +92,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                     return responseEvent;
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(EventCreateHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

@@ -82,9 +82,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return response;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(CandidateCreateHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

@@ -76,9 +76,8 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return _mapper.Map<UserCreateResponse>(userNew);
                 }
-                catch (System.Exception ex)
+                catch (System.Exception)
                 {
-                    _logger.LogError(ex, "Error en {@Class}({@Method}): {@Message}", nameof(UserCreateHandler), nameof(Handle), ex.Message);
                     await _electionUnitOfWork.RollBackAsync().ConfigureAwait(false);
                     throw;
                 }

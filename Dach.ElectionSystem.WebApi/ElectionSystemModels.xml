@@ -469,6 +469,11 @@
             El Evento no puede finalizar debido  a un empate
             </summary>
         </member>
+        <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.EventWitOutVotes">
+            <summary>
+            El evento no tiene votos en ningun candidato
+            </summary>
+        </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.NotCreateRecord">
             <summary>
             Error del sistema
