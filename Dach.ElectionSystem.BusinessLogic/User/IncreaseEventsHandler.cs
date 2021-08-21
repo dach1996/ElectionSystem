@@ -55,7 +55,10 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     var isUserUpdate = await _electionUnitOfWork.GetUserRepository().Update(userToIncreaseEvents);
                     if (!isUserUpdate)
                         throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-                    _logger.LogInformation($"Se actualizó los eventos del usuario {userToIncreaseEvents.UserName} a: {userToIncreaseEvents.EventNumber.NumberMaxEvent} Eventos");
+                    _logger.LogWarning("El usuario: '{@UserAdmin}', actualizó el número de eventos permitidos para el usuario '{@UserUpdate}' a: {@NumberEvents} Eventos",
+                    request.UserContext.UserName
+                    ,userToIncreaseEvents.UserName
+                    ,userToIncreaseEvents.EventNumber.NumberMaxEvent);
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return Unit.Value;
 

@@ -42,7 +42,12 @@ namespace Dach.ElectionSystem.WebApi
                                }));
 
                         });
-            services.AddDbContext<WebApiDbContext>(options => options.UseSqlServer(Environment.GetEnvironmentVariable("CONNECTION_SQL")));
+            services.AddDbContext<WebApiDbContext>(options =>
+            {
+                options.UseSqlServer(Environment.GetEnvironmentVariable("CONNECTION_SQL"),
+                o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
+
+            });
             services.AddRepositorys();
             services.AddServices();
             services.ConfigureController();

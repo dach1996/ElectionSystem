@@ -18,7 +18,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
     public class EventCreateHandler : IRequestHandler<EventCreateRequest, EventCreateResponse>
     {
         #region Constructor 
-        private readonly ILogger<EventCreateHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
@@ -28,14 +27,13 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         IMapper mapper,
         IConfiguration configuration,
         IEventService eventService,
-        IElectionUnitOfWork electionUnitOfWork,
-        ILogger<EventCreateHandler> logger)
+        IElectionUnitOfWork electionUnitOfWork
+        )
         {
             _mapper = mapper;
             _configuration = configuration;
             _eventService = eventService;
             _electionUnitOfWork = electionUnitOfWork;
-            _logger = logger;
         }
         #endregion
         #region Handler

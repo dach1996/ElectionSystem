@@ -14,7 +14,6 @@ namespace Dach.ElectionSystem.BusinessLogic.User
     public class ChangePasswordHandler : IRequestHandler<ChangePasswordRequest, Unit>
     {
         #region Constructor
-        private readonly ILogger<ChangePasswordHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IConfiguration _configuration;
         private readonly ValidateIntegrity _validateIntegrity;
@@ -22,12 +21,10 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         public ChangePasswordHandler(
             IConfiguration configuration,
             ValidateIntegrity validateIntegrity,
-            ILogger<ChangePasswordHandler> logger,
             IElectionUnitOfWork electionUnitOfWork)
         {
             _configuration = configuration;
             _validateIntegrity = validateIntegrity;
-            _logger = logger;
             _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion

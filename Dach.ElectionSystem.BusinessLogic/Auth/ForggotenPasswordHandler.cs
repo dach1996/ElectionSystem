@@ -54,7 +54,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
                     var isUpdate = await _electionUnitOfWork.GetUserRepository().Update(user);
                     if (!isUpdate)
                         throw new CustomException(Models.Enums.MessageCodesApi.NotUpdateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-                    //Preparamos para envíar correo
+                    //Preparamos para enviar correo
                     var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
                     var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.ForggotenPass);
                     var isSend = _notification.SendMail(
@@ -68,6 +68,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
                     );
                     if (!isSend)
                         throw new CustomException(Models.Enums.MessageCodesApi.MailError, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
+                    _logger.LogWarning("Se ha envíado correo a: '{@Mail}', asunto: '{@Subject}'", request.Email,templateForggotenPassword.TemplateName);
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return Unit.Value;
                 }

@@ -16,18 +16,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
     public class CandidateDesactiveHandler : IRequestHandler<CandidateDesactiveRequest, CandidateDesactiveResponse>
     {
         #region Constructor
-        private readonly ILogger<CandidateDesactiveHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
         public CandidateDesactiveHandler(
             IMapper mapper,
-            ILogger<CandidateDesactiveHandler> logger,
             IElectionUnitOfWork electionUnitOfWork,
             ValidateIntegrity validateIntegrity)
         {
             _mapper = mapper;
-            _logger = logger;
             _electionUnitOfWork = electionUnitOfWork;
             _validateIntegrity = validateIntegrity;
         }

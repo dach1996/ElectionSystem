@@ -104,7 +104,8 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                         }
                     );
                     if (!isSend)
-                        _logger.LogWarning($"No se pudo Envíar correo: {userCurrent.Email}");
+                        _logger.LogError("No se pudo Enviar correo: '{@Mail}', Asunto: '{@Subject}'", userCurrent.Email, templateSendEvent.TemplateName);
+
                     //Guardamos los cambios
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return _mapper.Map<VoteCreateResponse>(newVote);

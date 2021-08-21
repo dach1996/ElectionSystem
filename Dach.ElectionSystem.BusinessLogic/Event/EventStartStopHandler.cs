@@ -146,7 +146,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                }
            );
             if (!isSend)
-                _logger.LogWarning($"No se pudo Envíar correo de Resultado Eventos");
+                _logger.LogWarning($"No se pudo Enviar correo de Resultado Eventos");
         }
         #endregion
     }

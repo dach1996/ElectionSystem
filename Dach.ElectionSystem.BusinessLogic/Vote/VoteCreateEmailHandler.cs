@@ -123,7 +123,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                         }
                     );
                     if (!isSend)
-                        _logger.LogWarning($"No se pudo Envíar correo");
+                        _logger.LogError("No se pudo Enviar grupo de correos con  Asunto: '{@Subject}'", templateSendEvent.TemplateName);
 
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     //Devolver Respuesta

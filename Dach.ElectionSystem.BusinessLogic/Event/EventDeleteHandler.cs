@@ -15,7 +15,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
     public class EventDeleteHandler : IRequestHandler<EventDeleteRequest, EventDeleteResponse>
     {
         #region Constructor
-        private readonly ILogger<EventDeleteHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
@@ -23,13 +22,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         public EventDeleteHandler(
             IMapper mapper,
             ValidateIntegrity validateIntegrity,
-            IElectionUnitOfWork electionUnitOfWork,
-            ILogger<EventDeleteHandler> logger)
+            IElectionUnitOfWork electionUnitOfWork)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
             _electionUnitOfWork = electionUnitOfWork;
-            _logger = logger;
         }
         #endregion
         #region Handler

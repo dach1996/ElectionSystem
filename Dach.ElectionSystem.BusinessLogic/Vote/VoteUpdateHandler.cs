@@ -17,19 +17,16 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         #region Constructor
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
-        private readonly ILogger<VoteUpdateHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
 
         public VoteUpdateHandler(
             IMapper mapper,
             ValidateIntegrity validateIntegrity,
-            IElectionUnitOfWork electionUnitOfWork,
-            ILogger<VoteUpdateHandler> logger)
+            IElectionUnitOfWork electionUnitOfWork)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
             _electionUnitOfWork = electionUnitOfWork;
-            _logger = logger;
         }
         #endregion
         #region Handler

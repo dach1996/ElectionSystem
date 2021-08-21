@@ -374,7 +374,7 @@
         </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.InvalidEmail">
             <summary>
-            Requiere por lo menos envíar un Email
+            Requiere por lo menos enviar un Email
             </summary>
         </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ModelInvalid">

@@ -49,7 +49,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
                 if (!user.IsActive)
                     throw new CustomException(Models.Enums.MessageCodesApi.UserIsInactive, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Unauthorized);
                 var token = _tokenService.GenerateTokenJwt(user);
-                _logger.LogWarning($"El usuario con username: {user.UserName}, Nombre: {user.FirstName} {user.FirstLastName} y correo: {user.Email} ha logeado ");
+                _logger.LogWarning("Se ha registrado un ingreso del Usuario: '{@Username}', Mail: '{@Mail}",user.UserName, user.Email);
                 return new LoginResponse()
                 {
                     Token = token,

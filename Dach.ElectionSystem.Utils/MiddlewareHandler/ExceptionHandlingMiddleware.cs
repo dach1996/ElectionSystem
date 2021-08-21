@@ -39,17 +39,17 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
         {
             try
             {
-                
+
                 await _next(httpContext).ConfigureAwait(false);
             }
             catch (CustomException customEx)
             {
                 await HandleCustomExceptionAsync(httpContext, customEx);
-                _logger.LogWarning(customEx.MessageCodesApi.GetEnumMember());
+                _logger.LogWarning(customEx, "CustomException: {@CustomMessage} ", customEx.MessageCodesApi.GetEnumMember());
             }
             catch (Exception exception)
             {
-                _logger.LogError(exception,"Error Detectado: ");
+                _logger.LogError(exception, "Internal Error {@Message}: ", exception.Message);
                 await HandleExceptionAsync(httpContext, exception);
             }
         }
@@ -71,7 +71,7 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
                 ResponseType = customEx.ResponseType.ToString(),
                 Message = $"{customEx.MessageCodesApi.GetEnumMember()} {customEx.MessageSpecific}"
             };
-   
+
             return context.Response.WriteAsync(response.ToString());
         }
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
@@ -83,7 +83,7 @@ namespace Dach.ElectionSystem.Utils.MiddlewareHandler
             {
                 Code = (int)MessageCodesApi.ErrorGeneric,
                 ResponseType = ResponseType.Error.ToString(),
-                Message = exception.Message + exception.InnerException?? String.Empty,
+                Message = exception.Message + exception.InnerException ?? String.Empty,
                 Content = null
             };
             return context.Response.WriteAsync(response.ToString());

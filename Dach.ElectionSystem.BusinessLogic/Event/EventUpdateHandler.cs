@@ -19,20 +19,17 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         #region Constructor
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
-        private readonly ILogger<EventUpdateHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IConfiguration _configuration;
 
         public EventUpdateHandler(
             IMapper mapper,
             ValidateIntegrity validateIntegrity,
-            ILogger<EventUpdateHandler> logger,
             IElectionUnitOfWork electionUnitOfWork,
             IConfiguration configuration)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
-            _logger = logger;
             _electionUnitOfWork = electionUnitOfWork;
             _configuration = configuration;
         }

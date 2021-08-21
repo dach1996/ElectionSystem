@@ -16,7 +16,6 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
     public class EventAdministratorUpdateHandler : IRequestHandler<EventAdministratorUpdateRequest, EventAdministratorUpdateResponse>
     {
         #region Constructor
-        private readonly ILogger<EventAdministratorUpdateHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
@@ -24,12 +23,10 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
         public EventAdministratorUpdateHandler(
             IMapper mapper,
             ValidateIntegrity validateIntegrity,
-            ILogger<EventAdministratorUpdateHandler> logger,
             IElectionUnitOfWork electionUnitOfWork)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
-            _logger = logger;
             _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion

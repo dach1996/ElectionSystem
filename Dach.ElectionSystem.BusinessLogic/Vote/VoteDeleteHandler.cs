@@ -16,7 +16,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
     public class VoteDesactiveHandler : IRequestHandler<VoteDeleteRequest, VoteDeleteResponse>
     {
         #region Constructor
-        private readonly ILogger<VoteDesactiveHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
@@ -24,13 +23,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
         public VoteDesactiveHandler(
             IMapper mapper,
             ValidateIntegrity validateIntegrity,
-            IElectionUnitOfWork electionUnitOfWork,
-            ILogger<VoteDesactiveHandler> logger)
+            IElectionUnitOfWork electionUnitOfWork)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
             _electionUnitOfWork = electionUnitOfWork;
-            _logger = logger;
         }
         #endregion
         #region Handler

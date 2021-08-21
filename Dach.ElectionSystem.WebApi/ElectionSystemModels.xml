@@ -356,7 +356,7 @@
         </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.InvalidEmail">
             <summary>
-            Requiere por lo menos envíar un Email
+            Requiere por lo menos enviar un Email
             </summary>
         </member>
         <member name="F:Dach.ElectionSystem.Models.Enums.MessageCodesApi.ErrorSaveImage">
@@ -679,6 +679,16 @@
         <member name="P:Dach.ElectionSystem.Models.Log.LogRequestModel.ModelToLog">
             <summary>
             Modelo a guardar en el log
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Log.LogRequestModel.UrlTemplate">
+            <summary>
+            Url a llamar
+            </summary>
+        </member>
+        <member name="P:Dach.ElectionSystem.Models.Log.LogRequestModel.UrlData">
+            <summary>
+            Url con Datos
             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Mail.MailModel">
@@ -1958,16 +1968,6 @@
             Constraseña de Usuario
             </summary>
         </member>
-        <member name="T:Dach.ElectionSystem.Models.Request.User.UserDeleteRequest">
-            <summary>
-            Clase para Request Delete User
-            </summary>
-        </member>
-        <member name="P:Dach.ElectionSystem.Models.Request.User.UserDeleteRequest.Id">
-            <summary>
-            Id de usuario
-            </summary>
-        </member>
         <member name="T:Dach.ElectionSystem.Models.Request.User.UserGetRequest">
             <summary>
             Clase Model para User Get Request
@@ -2622,11 +2622,6 @@
         <member name="T:Dach.ElectionSystem.Models.Response.User.UserCreateResponse">
             <summary>
             Response para crear usuario
-            </summary>
-        </member>
-        <member name="T:Dach.ElectionSystem.Models.Response.User.UserDeleteResponse">
-            <summary>
-            Clase respuesta de Delete User
             </summary>
         </member>
         <member name="T:Dach.ElectionSystem.Models.Response.User.UserGetResponse">

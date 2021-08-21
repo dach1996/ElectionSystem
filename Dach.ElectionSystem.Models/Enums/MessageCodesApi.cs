@@ -137,7 +137,7 @@ namespace Dach.ElectionSystem.Models.Enums
         IncorrectCodeEvent = 138,
 
         /// <summary>
-        /// Requiere por lo menos envíar un Email
+        /// Requiere por lo menos enviar un Email
         /// </summary>
         [EnumMember(Value = "Email no válido")]
         InvalidEmail = 139,

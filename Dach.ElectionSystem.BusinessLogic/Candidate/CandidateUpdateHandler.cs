@@ -18,18 +18,15 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         #region Constructor
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
-        private readonly ILogger<CandidateUpdateHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
 
         public CandidateUpdateHandler(
             IMapper mapper,
             ValidateIntegrity validateIntegrity,
-            ILogger<CandidateUpdateHandler> logger,
             IElectionUnitOfWork electionUnitOfWork)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
-            _logger = logger;
             _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion

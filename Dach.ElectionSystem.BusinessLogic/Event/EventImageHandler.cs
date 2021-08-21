@@ -18,7 +18,6 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
     public class EventImageHandler : IRequestHandler<EventImageRequest, Unit>
     {
         #region Constructor 
-        private readonly ILogger<EventImageHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         private readonly ValidateIntegrity _validateIntegrity;
         private readonly IConfiguration _configuration;
@@ -26,13 +25,11 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
         public EventImageHandler(
         ValidateIntegrity validateIntegrity,
         IConfiguration configuration,
-        IElectionUnitOfWork electionUnitOfWork,
-        ILogger<EventImageHandler> logger)
+        IElectionUnitOfWork electionUnitOfWork)
         {
             _validateIntegrity = validateIntegrity;
             _configuration = configuration;
             _electionUnitOfWork = electionUnitOfWork;
-            _logger = logger;
         }
         #endregion
         #region Handler

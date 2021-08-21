@@ -17,18 +17,15 @@ namespace Dach.ElectionSystem.BusinessLogic.EventAdministrator
         #region Constructor 
         private readonly IMapper _mapper;
         private readonly ValidateIntegrity _validateIntegrity;
-        private readonly ILogger<EventAdministratorCreateHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
 
         public EventAdministratorCreateHandler(
         IMapper mapper,
         ValidateIntegrity validateIntegrity,
-        ILogger<EventAdministratorCreateHandler> logger,
         IElectionUnitOfWork electionUnitOfWork)
         {
             _mapper = mapper;
             _validateIntegrity = validateIntegrity;
-            _logger = logger;
             _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion

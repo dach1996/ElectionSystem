@@ -72,12 +72,12 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     var isCreate = await _electionUnitOfWork.GetCandidateRepository().CreateAsync(newCandidate);
                     if (!isCreate)
                         throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-                    //Preparamos para envíar correo
+                    //Preparamos para enviar correo
                     var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
                     var templateNewCandidate = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.NewCandidate);
                     bool isSend = SendMail(eventCurrent, userCurrent, templateNewCandidate);
                     if (!isSend)
-                        _logger.LogWarning($"No se pudo Envíar correo: {userCurrent.Email}");
+                        _logger.LogError("No se pudo Enviar correo: '{@Mail}', Asunto: '{@Subject}'", userCurrent.Email, templateNewCandidate.TemplateName );
                     var response = _mapper.Map<CandidateCreateResponse>(newCandidate);
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return response;

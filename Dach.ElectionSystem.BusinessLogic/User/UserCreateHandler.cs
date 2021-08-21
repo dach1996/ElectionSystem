@@ -67,12 +67,12 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     var isRegister = await _electionUnitOfWork.GetUserRepository().CreateAsync(userNew);
                     if (!isRegister)
                         throw new CustomException(Models.Enums.MessageCodesApi.NotCreateRecord, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.InternalServerError);
-                    //Preparamos para envíar correo
+                    //Preparamos para enviar correo
                     var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
                     var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.UserWelcome);
                     bool isSend = SendEmail(request, passwordOriginal, userNew, templateForggotenPassword);
                     if (!isSend)
-                         _logger.LogWarning($"No se pudo Envíar correo: {userNew.Email}");
+                        _logger.LogError("No se pudo Enviar correo: '{@Mail}', Asunto: '{@Subject}'", request.Email, templateForggotenPassword.TemplateName);
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return _mapper.Map<UserCreateResponse>(userNew);
                 }

@@ -19,17 +19,14 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
         #region Constructor 
         private readonly ValidateIntegrity _validateIntegrity;
         private readonly IConfiguration _configuration;
-        private readonly ILogger<CandidateImageHandler> _logger;
         private readonly IElectionUnitOfWork _electionUnitOfWork;
         public CandidateImageHandler(
         ValidateIntegrity validateIntegrity,
         IConfiguration configuration,
-        ILogger<CandidateImageHandler> logger,
         IElectionUnitOfWork electionUnitOfWork)
         {
             _validateIntegrity = validateIntegrity;
             _configuration = configuration;
-            _logger = logger;
             _electionUnitOfWork = electionUnitOfWork;
         }
         #endregion

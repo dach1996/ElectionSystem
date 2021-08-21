@@ -20,50 +20,41 @@ namespace Dach.ElectionSystem.Services.TokenJWT
     {
 
         #region Contructor
-        private readonly ILogger<TokenService> _logger;
-        private readonly string secretKey;
-        private readonly string expireTime;
-        public TokenService(IConfiguration configuraton, ILogger<TokenService> logger)
+        private readonly string _secretKey;
+        private readonly string _expireTime;
+        public TokenService(IConfiguration configuraton)
         {
-            _logger = logger;
-            secretKey = configuraton.GetSection("SecretKey").Value;
-            expireTime = configuraton.GetValue<string>("ParamsJWT:JWT_EXPIRE_MINUTES");
+            _secretKey = configuraton.GetSection("SecretKey").Value;
+            _expireTime = configuraton.GetValue<string>("ParamsJWT:JWT_EXPIRE_MINUTES");
         }
         #endregion
 
         public string GenerateTokenJwt(User user)
         {
-            try
-            {
-                var securityKey = new SymmetricSecurityKey(Encoding.Default.GetBytes(secretKey));
-                var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
-                // Crea claims
-                var claimsIdentity = new System.Collections.Generic.List<System.Security.Claims.Claim>()
+            var securityKey = new SymmetricSecurityKey(Encoding.Default.GetBytes(_secretKey));
+            var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
+
+            // Crea claims
+            var claimsIdentity = new System.Collections.Generic.List<System.Security.Claims.Claim>()
                 {
                     new System.Security.Claims.Claim(Models.Enums.Claim.Name.ToString(), user.UserName??String.Empty),
                     new System.Security.Claims.Claim(Models.Enums.Claim.Email.ToString(), user.Email),
                     new System.Security.Claims.Claim(Models.Enums.Claim.Id.ToString(), user.Id.ToString()),
                 };
 
-                //Crear tokens
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var jwtSecurityToken = tokenHandler.CreateJwtSecurityToken(
+            //Crear tokens
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtSecurityToken = tokenHandler.CreateJwtSecurityToken(
 
-                    subject: new ClaimsIdentity(claimsIdentity),
-                    notBefore: DateTime.UtcNow,
-                    expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(expireTime)),
-                    signingCredentials: signingCredentials
-                    );
+                subject: new ClaimsIdentity(claimsIdentity),
+                notBefore: DateTime.UtcNow,
+                expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(_expireTime)),
+                signingCredentials: signingCredentials
+                );
 
-                var jwtTokenString = tokenHandler.WriteToken(jwtSecurityToken);
-                return jwtTokenString;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message);
-                throw;
-            }
+            var jwtTokenString = tokenHandler.WriteToken(jwtSecurityToken);
+            return jwtTokenString;
         }
 
         public void ValidateToken(HttpContext context)
@@ -74,7 +65,7 @@ namespace Dach.ElectionSystem.Services.TokenJWT
                 if (token == null)
                     throw new CustomException(MessageCodesApi.WithOutToken, ResponseType.Error, HttpStatusCode.Unauthorized);
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes(secretKey);
+                var key = Encoding.ASCII.GetBytes(_secretKey);
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
                 {
                     ValidateIssuer = false,
@@ -87,15 +78,12 @@ namespace Dach.ElectionSystem.Services.TokenJWT
 
 
             }
-            catch (ArgumentException ex)
-
+            catch (ArgumentException)
             {
-                _logger.LogError(ex.Message);
                 throw new CustomException(MessageCodesApi.InvalidToken, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
-            catch (SecurityTokenValidationException ex)
+            catch (SecurityTokenValidationException)
             {
-                _logger.LogError(ex.Message);
                 throw new CustomException(MessageCodesApi.TokenExpired, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
         }
@@ -121,16 +109,14 @@ namespace Dach.ElectionSystem.Services.TokenJWT
                 };
                 return tokenModel;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                _logger.LogError(ex.Message);
                 throw new CustomException(MessageCodesApi.InvalidParceToken, ResponseType.Error, HttpStatusCode.Unauthorized);
             }
         }
 
         private bool LifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
-        {
-            return (expires != null && DateTime.UtcNow < expires);
-        }
+        => expires != null && DateTime.UtcNow < expires;
+
     }
 }

@@ -6,6 +6,7 @@ using Dach.ElectionSystem.Utils.Json;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -37,10 +38,14 @@ namespace Dach.ElectionSystem.Utils.Filters
                 var parameterInterfaces = parameterDescriptor.ParameterType.GetInterfaces();
                 if (!parameterInterfaces.Any(t => t == typeof(IRequestBase))) continue;
                 var modelContext = (IRequestBase)context.ActionArguments[parameterDescriptor.Name];
+                var templateUrl = context.ActionDescriptor.AttributeRouteInfo.Template;
+                var urlWithData = context.HttpContext.Request.Path.Value;
                 _ = Task.Run(() =>
                   {
                       LoggerRequest(new LogRequestModel()
                       {
+                          UrlData = urlWithData,
+                          UrlTemplate = templateUrl,
                           LogMessage = "Request",
                           ModelToLog = modelContext
                       });
@@ -61,14 +66,14 @@ namespace Dach.ElectionSystem.Utils.Filters
         {
             try
             {
-                 var jsonRequest = JsonConvert.SerializeObject(logRequestModel.ModelToLog,
-             new JsonSerializerSettings { ContractResolver = new JsonPropertiesResolver()});
-            _logger.Log(LogLevel.Warning, "{LogMessage}: {@Model}", logRequestModel.LogMessage, jsonRequest);
+                var jsonRequest = JsonConvert.SerializeObject(logRequestModel.ModelToLog,
+            new JsonSerializerSettings { ContractResolver = new JsonPropertiesResolver() });
+                _logger.LogWarning("Template: '{@PathTemplate}', Data: '{@PathData}' {@LogMessage}: '{@Model}'", logRequestModel.UrlTemplate, logRequestModel.UrlData, logRequestModel.LogMessage, jsonRequest);
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                _logger.Log(LogLevel.Warning, "{LogMessage}: {@Model}");
-            }  
+                _logger.LogError(ex, "Error al registrar Log: {@Message}", ex.Message);
+            }
         }
     }
 
