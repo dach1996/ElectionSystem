@@ -20,6 +20,13 @@ namespace Dach.ElectionSystem.Services.Notification
         }
         public bool SendMail(MailModel model)
         {
+            var sendEmailConfig = _configuration.GetSection("SendMails").Value;
+            var sendMailIsBool = bool.TryParse(sendEmailConfig, out var sendMail);
+            if (sendMailIsBool && !sendMail)
+            {
+                _logger.LogWarning("La configuración de Email: '{@configMail}' es: '{@value}'", "SendMails", sendMail);
+                return false;
+            }
             var sendGridClient = new SendGridClient(_configuration.GetSection("SendgridConfiguration:ApiKey").Value);
             var sendGridMessage = new SendGridMessage();
             sendGridMessage.SetFrom(_configuration.GetSection("SendgridConfiguration:FromEmail").Value, _configuration.GetSection("SendgridConfiguration:From").Value);

@@ -15,7 +15,7 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
 
         public IDbContextTransaction Transaction { get; set; }
 
-        
+
         public async Task BeginTransactionAsync()
         {
             if (Transaction == null)
@@ -27,7 +27,7 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
             if (Transaction != null)
             {
                 await Context.SaveChangesAsync();
-                await Context.Database.CommitTransactionAsync().ConfigureAwait(false);
+                await Transaction.CommitAsync().ConfigureAwait(false);
                 Transaction = null;
             }
         }
@@ -49,7 +49,7 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
         {
             if (Transaction != null)
             {
-                await Context.Database.RollbackTransactionAsync().ConfigureAwait(false);
+                await Transaction.RollbackAsync().ConfigureAwait(false);
                 Transaction = null;
             }
         }

@@ -11,7 +11,7 @@ namespace Dach.ElectionSystem.Repository.UnitOfWork
 
         public ElectionUnitOfWork(IServiceProvider serviceProvider, WebApiDbContext context):base(context) 
         {
-            _serviceProvider = serviceProvider;
+            _serviceProvider = serviceProvider.CreateScope().ServiceProvider;
         }
         public ICandidateRepository GetCandidateRepository()
          => _serviceProvider.GetService<ICandidateRepository>();

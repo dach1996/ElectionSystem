@@ -1,7 +1,0 @@
-[00:05:41][WRN][Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware]:Failed to determine the https port for redirect.
-[00:05:41][ERR][Dach.ElectionSystem.Services.TokenJWT.TokenService]:IDX12741: JWT: 'System.String' must have three segments (JWS) or five segments (JWE).
-[00:05:41][WRN][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Token Incorrecto
-[00:05:46][WRN][Dach.ElectionSystem.BusinessLogic.Auth.AuthHandler]:El usuario Dach.ElectionSystem.Models.Persitence.User ha logeado 
-[00:06:07][WRN][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:No se pudo encontrar registro
-[00:06:13][WRN][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:No se pudo encontrar registro
-[00:06:19][WRN][Dach.ElectionSystem.Utils.MiddlewareHandler.ExceptionHandlingMiddleware]:Datos Incorrectos

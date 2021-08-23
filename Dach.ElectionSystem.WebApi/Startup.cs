@@ -46,7 +46,11 @@ namespace Dach.ElectionSystem.WebApi
             services.AddDbContext<WebApiDbContext>(options =>
             {
                 options.UseSqlServer(Environment.GetEnvironmentVariable("CONNECTION_SQL"),
-                o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
+                o =>
+                {
+                    o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+                    o.CommandTimeout(60);
+                });
 
             });
             services.AddRepositorys();
