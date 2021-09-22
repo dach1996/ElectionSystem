@@ -54,7 +54,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     //Valida que el evento exista
                     var eventCurrent = await _validateIntegrity.ValidateEvent(request.IdEvent);
                     //Valida el Número máximo de candidatas creadas
-                    if (eventCurrent.NumberMaxCandidate <= eventCurrent.ListCandidate.Count(c=>c.IsActive))
+                    if (eventCurrent.NumberMaxCandidate < eventCurrent.ListCandidate.Count(c => c.IsActive))
                         throw new CustomException(Models.Enums.MessageCodesApi.MaxCandidateRegister, Models.Enums.ResponseType.Error, System.Net.HttpStatusCode.Conflict);
                     //Valida que el usuario sea administrador del evento
                     var userCurrent = await _validateIntegrity.ValidateUser(request.IdUser);
@@ -75,9 +75,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
                     //Preparamos para enviar correo
                     var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
                     var templateNewCandidate = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.NewCandidate);
-                    bool isSend = SendMail(eventCurrent, userCurrent, templateNewCandidate);
+                    bool isSend = await SendMail(eventCurrent, userCurrent, templateNewCandidate);
                     if (!isSend)
-                        _logger.LogError("No se pudo Enviar correo: '{@Mail}', Asunto: '{@Subject}'", userCurrent.Email, templateNewCandidate.TemplateName );
+                        _logger.LogError("No se pudo Enviar correo: '{@Mail}', Asunto: '{@Subject}'", userCurrent.Email, templateNewCandidate.TemplateName);
                     var response = _mapper.Map<CandidateCreateResponse>(newCandidate);
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
                     return response;
@@ -91,9 +91,9 @@ namespace Dach.ElectionSystem.BusinessLogic.Candidate
 
         }
 
-        private bool SendMail(Models.Persitence.Event eventCurrent, Models.Persitence.User userCurrent, Template templateNewCandidate)
+        private async Task<bool> SendMail(Models.Persitence.Event eventCurrent, Models.Persitence.User userCurrent, Template templateNewCandidate)
         {
-            return _notification.SendMail(
+            return  await _notification.SendMail(
                 new MailModel()
                 {
                     Subject = templateNewCandidate.TemplateName,

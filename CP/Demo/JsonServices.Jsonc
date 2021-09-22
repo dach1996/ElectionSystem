@@ -1,0 +1,202 @@
+
+//Crear Los 1000 usuarios
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "dach19962012@gmail.com",
+  "password": "Pruebas123"
+}
+//Servicio Crear Usuario {{UrlBase}}/api/users
+{
+  "dni": "1716361462",
+  "userName": "dannycardenas96",
+  "password": "Pruebas123",
+  "firstName": "Danny",
+  "secondName": "Alexander",
+  "firstLastName": "Cárdenas",
+  "secondLastName": "Hidalgo",
+  "birthDate": "1996-04-10",
+  "email": "dach19962012@gmail.com"
+}
+
+
+// Servicio Recuperar Contraseña {{UrlBase}}/api/auth/forgottenpassword
+{
+  "Email": "dach19962012@gmail.com"
+}
+
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "dach19962012@gmail.com",
+  "password": "Pruebas123"
+}
+// Servicio Crear Evento : {{UrlBase}}/api/events
+
+{
+  "Name": "Elección de la Reina - Universidad Israel 2022",
+  "Image": "",
+  "Description": "Evento realizado cada año por la Universdiad Israel con el fin de escoger una representante para ser la reina en un periodo",
+  "MaxPeople": false,
+  "NumberMaxPeople": 0,
+  "NumberMaxCandidate": 6,
+  "Category": "Eleccion multiple",
+  "dateMaxRegisterParticipants": "2021-09-30"
+}
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "danny.cardenas@bayteq.com",
+  "password": "Pruebas123"
+}
+
+// Servicio Crear Evento : {{UrlBase}}/api/events
+{
+  "Name": "Elección Reina Ecuador 2022",
+  "Image": "",
+  "Description": "Evento realizado cada año en el Ecuador",
+  "MaxPeople": false,
+  "NumberMaxPeople": 0,
+  "NumberMaxCandidate": 6,
+  "Category": "Eleccion multiple",
+  "dateMaxRegisterParticipants": "2021-09-30"
+}
+
+//Subir imagen con id 1 Nombre. Elecciones 2021
+
+//{{UrlBase}}/api/events?OrderBy=Desc&Offset=0&Limit=100
+
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "dach19962012@gmail.com",
+  "password": "Pruebas123"
+}
+
+//Subir Imagen{{UrlBase}}/api/events/1/image
+
+//Registrar Candidatos 1002 al 1007
+
+//Ingresar Votos
+{{UrlBase}}/api/votes/events/1/users/1
+{{UrlBase}}/api/votes/events/1/users/2
+
+//Ejecutar script de 1000 votos
+
+Editar información de cada Usuario
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "grace.cadena@gmail.com",
+  "password": "Pruebas123"
+}
+//{{UrlBase}}/api/events/1/candidates Actualizar 
+{
+  "additionalInformation":{
+      "Datos":"Vivo en Loja",
+      "urlVideo":"https://www.youtube.com/watch?v=y8trd3gjJt0",
+      "Color":"Mi color favorito es Verde",
+      "Animal":"Mi animal favorito es el Gato"
+  }
+}
+
+
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "josellyn.reinoso@gmail.com",
+  "password": "Pruebas123"
+}
+//{{UrlBase}}/api/events/1/candidates Actualizar 
+{
+  "additionalInformation":{
+      "Datos":"Vivo en Quito",
+      "urlVideo":"https://www.youtube.com/watch?v=y8trd3gjJt0",
+      "Color":"Mi color favorito es Gris",
+      "Animal":"Mi animal favorito es el perro"
+  }
+}
+
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "maria.gabriela@gmail.com",
+  "password": "Pruebas123"
+}
+//{{UrlBase}}/api/events/1/candidates Actualizar 
+{
+  "additionalInformation":{
+      "Datos":"Vivo en Cuenca",
+      "urlVideo":"https://www.youtube.com/watch?v=y8trd3gjJt0",
+      "Color":"Mi color favorito es Verde",
+      "Animal":"Mi animal favorito es el Gato"
+  }
+}
+
+
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "melanny.alejandra@gmail.com",
+  "password": "Pruebas123"
+}
+//{{UrlBase}}/api/events/1/candidates Actualizar 
+{
+  "additionalInformation":{
+      "Datos":"Vivo en Guayaquil",
+      "urlVideo":"https://www.youtube.com/watch?v=y8trd3gjJt0",
+      "Color":"Mi color favorito es Verde",
+      "Animal":"Mi animal favorito es el Gato"
+  }
+}
+
+
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "michelle.jacome@gmail.com",
+  "password": "Pruebas123"
+}
+//{{UrlBase}}/api/events/1/candidates Actualizar 
+{
+  "additionalInformation":{
+      "Datos":"Vivo en Quito",
+      "urlVideo":"https://www.youtube.com/watch?v=y8trd3gjJt0",
+      "Color":"Mi color favorito es Verde",
+      "Animal":"Mi animal favorito es el Gato"
+  }
+}
+
+
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "ximena.valeriae@gmail.com",
+  "password": "Pruebas123"
+}
+
+//{{UrlBase}}/api/events/1/candidates Actualizar 
+{
+  "additionalInformation":{
+      "Datos":"Vivo en Cuenca",
+      "urlVideo":"https://www.youtube.com/watch?v=y8trd3gjJt0",
+      "Color":"Mi color favorito es Verde",
+      "Animal":"Mi animal favorito es el Gato"
+  }
+}
+
+--Comenzar evento
+
+//Probar Usuario {{UrlBase}}/api/auth/login
+{
+  "email": "dach19962012@gmail.com",
+  "password": "Pruebas123"
+}
+
+//{{UrlBase}}/api/events/1/startstop
+{
+  "DaysAllow":4
+  }
+
+  {
+    "email": " hermenegildo_valencia@gmail.com",
+    "password": "Pruebas123"
+  }
+
+ // {{UrlBase}}/api/votes/events/1/candidates/5
+ 
+
+ //Resultados {{UrlBase}}/api/events/1/results
+
+ --Terminar evento
+ //{{UrlBase}}/api/events/1/startstop

@@ -130,7 +130,10 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
             //Configuramos el Template
             var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
             var templateNewCandidate = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.EventResult);
-            var isSend = _notification.SendMail(
+            if (!candidateWinnerComplete.ListCandidateImage.Any())
+                _logger.LogWarning("No se encuentra registrada ninguna imagen para el ganador del concurso '{@WinerName}'",
+                $"{candidateWinnerComplete.User.FirstName} {candidateWinnerComplete.User.FirstLastName}");
+            var isSend = await _notification.SendMail(
                new MailModel()
                {
                    Subject = templateNewCandidate.TemplateName,
@@ -139,7 +142,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Event
                    Params = new
                    {
                        CandidateName = $"{candidateWinnerComplete.User.FirstName} {candidateWinnerComplete.User.FirstLastName}",
-                       PathImage = $"https://{candidateWinnerComplete.ListCandidateImage.FirstOrDefault().ImageFullPath}",
+                       PathImage = $"https://{candidateWinnerComplete.ListCandidateImage.FirstOrDefault()?.ImageFullPath}",
                        candidateWinner.TotalVotes,
                        EventName = eventCurrent.Name
                    }

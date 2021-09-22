@@ -107,7 +107,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Vote
                     //Enviar Correo a usuario que registrados en tabla de Mail
                     var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
                     var templateSendEvent = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.NewParticipant);
-                    var isSend = _notification.SendMail(
+                    var isSend = await _notification.SendMail(
                         new MailModel()
                         {
                             Subject = templateSendEvent.TemplateName,

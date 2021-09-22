@@ -70,7 +70,7 @@ namespace Dach.ElectionSystem.BusinessLogic.User
                     //Preparamos para enviar correo
                     var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
                     var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.UserWelcome);
-                    bool isSend = SendEmail(request, passwordOriginal, userNew, templateForggotenPassword);
+                    bool isSend = await SendEmail(request, passwordOriginal, userNew, templateForggotenPassword);
                     if (!isSend)
                         _logger.LogError("No se pudo Enviar correo: '{@Mail}', Asunto: '{@Subject}'", request.Email, templateForggotenPassword.TemplateName);
                     await _electionUnitOfWork.CommitAsync().ConfigureAwait(false);
@@ -94,9 +94,9 @@ namespace Dach.ElectionSystem.BusinessLogic.User
         /// <param name="userNew"></param>
         /// <param name="templateForggotenPassword"></param>
         /// <returns></returns>
-        private bool SendEmail(UserCreateRequest request, string passwordOriginal, Models.Persitence.User userNew, Template templateForggotenPassword)
+        private async Task<bool> SendEmail(UserCreateRequest request, string passwordOriginal, Models.Persitence.User userNew, Template templateForggotenPassword)
         {
-            return _notification.SendMail(
+            return await _notification.SendMail(
                                     new MailModel()
                                     {
                                         Subject = templateForggotenPassword.TemplateName,

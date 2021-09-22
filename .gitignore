@@ -152,6 +152,7 @@ AutoTest.Net/
 
 *!.sonarqube
 
+
 # Web workbench (sass)
 .sass-cache/
 

@@ -57,7 +57,7 @@ namespace Dach.ElectionSystem.BusinessLogic.Auth
                     //Preparamos para enviar correo
                     var templates = _configuration.GetSection("SendgridConfiguration:Templates").Get<Template[]>();
                     var templateForggotenPassword = templates.FirstOrDefault(t => t.TemplateName == Models.Static.Template.ForggotenPass);
-                    var isSend = _notification.SendMail(
+                    var isSend = await _notification.SendMail(
                         new MailModel()
                         {
                             Subject = templateForggotenPassword.TemplateName,
