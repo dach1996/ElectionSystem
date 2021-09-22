@@ -5,12 +5,12 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PageBase } from 'src/app/models/pageBase';
 import { StorageCache } from 'src/app/service/storageCache.service';
 import {
-  EventBaseResponse,
-  OrderBy,
-  TypeFilterEvent,
   UserBaseResponse,
+  OrderBy,
+  TypeFilterUser,
+  
 } from 'src/app/serviceApi/models';
-import { EventService, UserService } from 'src/app/serviceApi/services';
+import { UserService } from 'src/app/serviceApi/services';
 import Swal from 'sweetalert2';
  
 @Component({
@@ -23,13 +23,13 @@ export class ListUserComponent implements OnInit, PageBase {
   public errorMessage: string = '';
   public listUser: Array<UserBaseResponse> = [];
   public userCurrent: UserBaseResponse | undefined;
-  public eventRequest = {
+  public userRequest = {
     Offset: 0,
     OrderBy: OrderBy.Asc,
     Limit: 10,
     Name: '',
     Category: '',
-    TypeFilter: TypeFilterEvent.All,
+    TypeFilter: TypeFilterUser.All,
     id: null,
   };
   constructor(
@@ -39,7 +39,7 @@ export class ListUserComponent implements OnInit, PageBase {
     private modalService: NgbModal
   ) {}
   titlePage: string = 'LISTA DE USUARIOS';
-  loadEvents(): void {
+  loadUsers (): void {
     this.loading = true;
     this.userService.apiUsersGetAll$Json$Response({
 Limit:100,
@@ -94,11 +94,11 @@ Offset:0
         }
       );
   }
-  openEventModalSelected(event:EventBaseResponse) {
+  openUserModalSelected(event:UserBaseResponse) {
     //const modalEvent = this.modalService.open( );
    //modalEvent.componentInstance.event = event;
   }*/
   ngOnInit(): void {
-    this.loadEvents();
+    this.loadUsers();
   }
 }
